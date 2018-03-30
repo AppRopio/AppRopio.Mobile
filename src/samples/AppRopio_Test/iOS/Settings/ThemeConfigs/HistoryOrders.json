@@ -1,0 +1,13 @@
+﻿{
+    "historyOrderCell": {
+        "image": {
+            "path": "Images/Products/no_photo.png"
+        },
+        "orderNumber": { "textColor": { "HEX": "CBD5DE" } }
+    },
+    "historyOrderItemCell": {
+        "image": {
+            "path": "Images/Products/no_photo.png"
+        }
+    }
+}

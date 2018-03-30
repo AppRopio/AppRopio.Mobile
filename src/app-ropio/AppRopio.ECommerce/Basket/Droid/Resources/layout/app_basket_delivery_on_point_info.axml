@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/app_drawer_layout_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include
+        layout="@layout/app_basket_delivery_on_point_toolbar" />
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <LinearLayout
+            android:id="@+id/app_basket_delivery_on_point_item_linearLayout"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toStartOf="@+id/app_basket_delivery_on_point_item_selected_icon"
+            android:layout_marginRight="@dimen/app_basket_delivery_on_point_item_padding">
+            <TextView
+                style="@style/app_basket_delivery_on_point_item_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/app_basket_delivery_on_point_item_padding"
+                android:layout_marginTop="@dimen/app_basket_delivery_on_point_item_padding"
+                app:MvxBind="Text Item.Name" />
+            <TextView
+                style="@style/app_basket_delivery_on_point_item_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/app_basket_delivery_on_point_item_padding"
+                android:layout_marginTop="@dimen/app_basket_delivery_on_point_item_address_marginTop"
+                app:MvxBind="Text Item.Address" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    style="@style/app_basket_delivery_on_point_item_distance_icon" />
+                <TextView
+                    style="@style/app_basket_delivery_on_point_item_distance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical"
+                    app:MvxBind="Text Item.Distance" />
+            </LinearLayout>
+            <TextView
+                style="@style/app_basket_delivery_on_point_item_workTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/app_basket_delivery_on_point_item_padding"
+                android:layout_marginTop="@dimen/app_basket_delivery_on_point_item_address_marginTop"
+                app:MvxBind="Text Item.WorkTime" />
+            <TextView
+                style="@style/app_basket_delivery_on_point_item_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/app_basket_delivery_on_point_item_padding"
+                android:layout_marginTop="@dimen/app_basket_delivery_on_point_item_address_marginTop"
+                android:maxLines="999"
+                app:MvxBind="Text Item.AdditionalInfo" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>

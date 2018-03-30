@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+<!--  Heights  -->
+    <dimen
+        name="app_button_height">52dp</dimen>
+    <dimen
+        name="app_loader_height">50dp</dimen>
+    <dimen
+        name="app_separator_height">1dp</dimen>
+<!--    -->
+<!--  Other sizes  -->
+    <dimen
+        name="app_clickable_size">56dp</dimen>
+<!--    -->
+<!--  Text sizes  -->
+    <dimen
+        name="app_toolbar_titleText_size">20sp</dimen>
+    <dimen
+        name="app_buttonBase_text_size">14sp</dimen>
+    <dimen
+        name="app_input_hint_text_size">12sp</dimen>
+    <dimen
+        name="app_input_text_size">16sp</dimen>
+    <dimen
+        name="app_input2_text_size">14sp</dimen>
+    <dimen
+        name="app_input_error_text_size">12sp</dimen>
+    <dimen
+        name="app_h1_text_size">20sp</dimen>
+    <dimen
+        name="app_h2_text_size">18sp</dimen>
+    <dimen
+        name="app_h3_text_size">16sp</dimen>
+    <dimen
+        name="app_h4_text_size">14sp</dimen>
+    <dimen
+        name="app_h5_text_size">12sp</dimen>
+    <dimen
+        name="app_b1_text_size">16sp</dimen>
+    <dimen
+        name="app_b2_text_size">14sp</dimen>
+    <dimen
+        name="app_b3_text_size">12sp</dimen>
+<!--    -->
+</resources>

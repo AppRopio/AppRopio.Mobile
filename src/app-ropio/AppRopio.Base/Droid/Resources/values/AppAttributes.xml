@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<!--  Color Palette  -->
+	<attr
+		name  ="app_color_textBase"
+		format="color" />
+	<attr
+		name  ="app_color_textMenu"
+		format="color" />
+	<attr
+		name  ="app_color_textAccent"
+		format="color" />
+	<attr
+		name  ="app_color_textAccentHighlighted"
+		format="color" />
+	<attr
+		name  ="app_color_textAccentDisabled"
+		format="color" />
+	<attr
+		name  ="app_color_textGray"
+		format="color" />
+	<attr
+		name  ="app_color_textNotification"
+		format="color" />
+	<attr
+		name  ="app_color_background"
+		format="color" />
+	<attr
+		name  ="app_color_backgroundMenu"
+		format="color" />
+	<attr
+		name  ="app_color_backgroundSearch"
+		format="color" />
+	<attr
+		name  ="app_color_backgroundNotification"
+		format="color" />
+	<attr
+		name  ="app_color_placeholder"
+		format="color" />
+	<attr
+		name  ="app_color_separator"
+		format="color" />
+	<attr
+		name  ="app_color_accent"
+		format="color" />
+	<attr
+		name  ="app_color_highlightedControl"
+		format="color" />
+	<attr
+		name  ="app_color_disabledControl"
+		format="color" />
+	<attr
+		name  ="app_color_invalid"
+		format="color" />
+	<!--	-->
+    <!--  Fonts Palette  -->
+	<attr
+		name="app_font_regular"
+        format="reference"/>
+	<attr
+		name="app_font_light"
+		format="reference"/>
+	<attr
+		name="app_font_medium"
+		format="reference"/>
+	<attr
+		name="app_font_semibold"
+        format="reference"/>
+	<attr
+		name="app_font_bold"
+		format="reference"/>
+	<attr
+		name="app_font_italic"
+		format="reference"/>
+    <!--	-->
+    <!--  Controls Palette  -->
+    
+    <!--    -->
+</resources>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3753EB62-6E31-4BD4-B153-93C1FDDA211F}</ProjectGuid>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>AppRopio.Payments.Best2Pay.Core</RootNamespace>
+    <AssemblyName>AppRopio.Payments.Best2Pay.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile151</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="App.cs" />
+    <Compile Include="PluginLoader.cs" />
+    <Compile Include="ViewModels\Best2Pay\Best2PayViewModel.cs" />
+    <Compile Include="ViewModels\Best2Pay\IBest2PayViewModel.cs" />
+    <Compile Include="Services\Implementation\Best2PayRouterSubscriber.cs" />
+    <Compile Include="Services\Implementation\Best2PayPaymentNavigationVmService.cs" />
+    <Compile Include="Services\IBest2PayPaymentNavigationVmService.cs" />
+    <Compile Include="ViewModels\Best2Pay\Services\Best2PayVmService.cs" />
+    <Compile Include="ViewModels\Best2Pay\Services\IBest2PayVmService.cs" />
+    <Compile Include="Models\Best2PayConfig.cs" />
+    <Compile Include="Services\IBest2PayConfigService.cs" />
+    <Compile Include="Services\Implementation\Best2PayConfigService.cs" />
+    <Compile Include="Best2PayConstants.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\Newtonsoft.Json.10.0.3\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Platform">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Platform.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Core">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Core.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Binding">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Binding.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Localization">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Localization.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\AppRopio.Base\Core\AppRopio.Base.Core.csproj">
+      <Project>{EA6D5113-1E80-494B-886D-3D7FDFA04E99}</Project>
+      <Name>AppRopio.Base.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Base\Core\AppRopio.Payments.Core.csproj">
+      <Project>{36A0974D-3DCE-490B-B186-2913785074CE}</Project>
+      <Name>AppRopio.Payments.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Base\API\AppRopio.Payments.API.csproj">
+      <Project>{9E008650-B5B9-40C9-8FBA-8B1A666082B0}</Project>
+      <Name>AppRopio.Payments.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\API\AppRopio.Payments.Best2Pay.API.csproj">
+      <Project>{6A0E8A43-7E69-464B-9FBD-F0570B34DFE2}</Project>
+      <Name>AppRopio.Payments.Best2Pay.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Payments\AppRopio.Models.Payments.csproj">
+      <Project>{36D85C96-D45F-465B-98E6-AF1BC36400D5}</Project>
+      <Name>AppRopio.Models.Payments</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\AppRopio.Base\API\AppRopio.Base.API.csproj">
+      <Project>{124841B9-39F6-44B5-8B96-50183FBFE341}</Project>
+      <Name>AppRopio.Base.API</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+    <Folder Include="ViewModels\Best2Pay\" />
+    <Folder Include="Services\" />
+    <Folder Include="Services\Implementation\" />
+    <Folder Include="ViewModels\Best2Pay\Services\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+</Project>

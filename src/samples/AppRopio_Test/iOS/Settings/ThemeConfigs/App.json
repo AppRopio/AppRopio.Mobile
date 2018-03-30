@@ -1,0 +1,273 @@
+﻿{
+    "controlPalette": {
+        "navigationBar": {
+            "translucent": true,
+            "opaque": true,
+            "backgroundColor": { "ref": "@color/background" },
+            "tintColor": { "ref": "@color/textBase" },
+            "title": {
+                "textColor": { "ref": "@color/textBase" },
+                "font": {
+                    "ref": "@font/bold",
+                    "size": 16
+                }
+            },
+            "largeTitle": {
+                "textColor": { "ref": "@color/textBase" },
+                "font": {
+                    "ref": "@font/bold",
+                    "size": 34
+                }
+            },
+            "useCustomView": false,
+            "prefersLargeTitles": true,
+            "backImage": { "path": "Images/Main/Back.png" }
+        },
+        "searchBar": {
+            "backgroundColor": { "ref": "@color/background" },
+            "textField": {
+                "font": {
+                    "ref": "@font/semibold",
+                    "size": 14
+                },
+                "textColor": { "ref": "@color/textBase" },
+                "placeholder": {
+                    "textColor": { "ref": "@color/placeholder" },
+                    "font": {
+                        "ref": "@font/semibold",
+                        "size": 14
+                    }
+                },
+                "tintColor": { "ref": "@color/accent" },
+                "background": { "ref": "@color/backgroundSearch" }
+            },
+            "searchImage": { "path": "Images/Main/Search_small.png" }
+        },
+        "textField": {
+            "font": {
+                "ref": "@font/bold",
+                "size": 16
+            },
+            "textColor": { "ref": "@color/textBase" },
+            "placeholder": {
+                "textColor": { "ref": "@color/placeholder" },
+                "font": {
+                    "ref": "@font/regular",
+                    "size": 14
+                }
+            },
+            "tintColor": { "ref": "@color/accent" },
+            "invalidTintColor": { "ref": "@color/invalid" },
+            "separatorColor": { "ref": "@color/separator" }
+        },
+        "button": {
+            "base": {
+                "font": {
+                    "ref": "@font/bold",
+                    "size": 14
+                },
+                "layer": {
+                    "cornerRadius": 24,
+                    "maskToBounds": true
+                },
+                "uppercaseTitle": true,
+                "states": {
+                    "normal": {
+                        "content": { "ref": "@color/textAccent" },
+                        "background": { "ref": "@color/accent" }
+                    },
+                    "highlighted": {
+                        "content": { "ref": "@color/textAccentHighlighted" },
+                        "background": { "ref": "@color/highlightedControl" }
+                    },
+                    "disabled": {
+                        "content": { "ref": "@color/textAccentDisabled" },
+                        "background": { "ref": "@color/disabledControl" }
+                    },
+                    "invalid": {}
+                }
+            },
+            "border": {
+                "font": {
+                    "ref": "@font/semibold",
+                    "size": 14
+                },
+                "layer": {
+                    "cornerRadius": 24,
+                    "border": {
+                        "width": 2,
+                        "color": { "ref": "@color/accent" }
+                    }
+                },
+                "uppercaseTitle": true,
+                "states": {
+                    "normal": {
+                        "content": { "ref": "@color/textBase" },
+                        "background": { "ref": "@color/background" }
+                    },
+                    "highlighted": {
+                        "content": { "ref": "@color/textBase" },
+                        "background": { "ref": "@color/background" }
+                    },
+                    "disabled": {},
+                    "invalid": {}
+                }
+            },
+            "accessory": {
+                "font": {
+                    "ref": "@font/bold",
+                    "size": 14
+                },
+                "uppercaseTitle": true,
+                "states": {
+                    "normal": {
+                        "content": { "ref": "@color/textAccent" },
+                        "background": { "ref": "@color/accent" }
+                    },
+                    "highlighted": {
+                        "content": { "ref": "@color/textAccentHighlighted" },
+                        "background": { "ref": "@color/highlightedControl" }
+                    },
+                    "disabled": {
+                        "content": { "ref": "@color/textAccentDisabled" },
+                        "background": { "ref": "@color/disabledControl" }
+                    },
+                    "invalid": {}
+                }
+            },
+            "text": {
+                "font": {
+                    "ref": "@font/regular",
+                    "size": 14
+                },
+                "states": {
+                    "normal": {
+                        "content": { "ref": "@color/textGray" },
+                        "background": {}
+                    },
+                    "highlighted": { "content": { "ref": "@color/textBase" } },
+                    "selected": { "content": { "ref": "@color/textBase" } },
+                    "disabled": {},
+                    "invalid": {}
+                }
+            },
+            "icon": {
+                "font": {
+                    "ref": "@font/bold",
+                    "size": 14
+                },
+                "states": {
+                    "normal": { "content": { "ref": "@color/textGray" } },
+                    "highlighted": { "content": { "ref": "@color/textBase" } },
+                    "selected": {},
+                    "disabled": {},
+                    "invalid": {}
+                }
+            }
+        },
+        "switch": { "onTintColor": { "ref": "@color/accent" } },
+        "notifications": {
+            "error": {
+                "icon": { "path": "Images/Main/notification_error_icon.png" },
+                "text": {
+                    "textColor": { "ref": "@color/textNotification" },
+                    "font": {
+                        "ref": "@font/semibold",
+                        "size": 14
+                    }
+                },
+                "background": { "ref": "@color/invalid" }
+            },
+            "alert": {
+                "icon": { "path": "Images/Main/notification_alert_icon.png" },
+                "text": {
+                    "textColor": { "ref": "@color/textNotification" },
+                    "font": {
+                        "ref": "@font/semibold",
+                        "size": 14
+                    }
+                },
+                "background": { "ref": "@color/backgroundNotification" }
+            },
+            "confirm": {
+                "text": {
+                    "textColor": { "ref": "@color/textNotification" },
+                    "font": {
+                        "ref": "@font/semibold",
+                        "size": 14
+                    }
+                },
+                "button": {
+                    "font": {
+                        "ref": "@font/bold",
+                        "size": 14
+                    },
+                    "states": {
+                        "normal": {
+                            "content": { "ref": "@color/accent" },
+                            "background": {}
+                        },
+                        "highlighted": { "content": { "ref": "@color/highlightedControl" } },
+                        "disabled": {},
+                        "invalid": {}
+                    }
+                },
+                "background": { "ref": "@color/backgroundNotification" }
+            }
+        },
+        "inputView": {
+            "previous": {
+                "image": { "path": "" },
+                "states": {
+                    "normal": { "content": { "ref": "@color/textBase" } },
+                    "highlighted": { "content": { "ref": "@color/textAccentHighlighted" } }
+                }
+            },
+            "next": {
+                "image": { "path": "" },
+                "states": {
+                    "normal": { "content": { "ref": "@color/textBase" } },
+                    "highlighted": { "content": { "ref": "@color/textAccentHighlighted" } }
+                }
+            },
+            "continue": {
+                "font": { "ref": "@font/bold", "size": 14 },
+                "image": { "path": "" },
+                "states": {
+                    "normal": { "content": { "ref": "@color/textBase" } },
+                    "highlighted": { "content": { "ref": "@color/textAccentHighlighted" } }
+                }
+            }
+        }
+    },
+    "colorPalette": {
+        "textBase": { "HEX": "1E2C3A" },
+        "textMenu": { "HEX": "E4EFF9" },
+        "textAccent": { "HEX": "0A1A2A" },
+        "textAccentHighlighted": { "HEX": "141414" },
+        "textAccentDisabled": { "HEX": "1E2C3A" },
+        "textGray": { "HEX": "CBD5DE" },
+        "textNotification": { "HEX": "C9FFF5" },
+
+        "background": { "HEX": "FFFFFF" },
+        "backgroundMenu": { "HEX": "2F4356" },
+        "backgroundSearch": { "HEX": "1A8E8E93" },
+        "backgroundNotification": { "HEX": "2586F7" },
+
+        "placeholder": { "HEX": "8E8E93" },
+        "separator": { "HEX": "F3F4F9" },
+
+        "accent": { "HEX": "FFD535" },
+        "highlightedControl": { "HEX": "F9C21F" },
+        "disabledControl": { "HEX": "E3EBF3" },
+        "invalid": { "HEX": "EA0048" }
+    },
+    "fontsPalette": {
+        "regular": ".SFUIText",
+        "light": ".SFUIText-Light",
+        "medium": ".SFUIText-Medium",
+        "semibold": ".SFUIText-Semibold",
+        "bold": ".SFUIText-Bold",
+        "italic": ".SFUIText-Italic"
+    }
+}

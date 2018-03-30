@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document
+	type                 ="com.apple.InterfaceBuilder3.CocoaTouch.XIB"
+	version              ="3.0"
+	toolsVersion         ="13196"
+	targetRuntime        ="iOS.CocoaTouch"
+	propertyAccessControl="none"
+	useAutolayout        ="YES"
+	useTraitCollections  ="YES"
+	colorMatched         ="YES">
+	<device
+		id         ="retina4_7"
+		orientation="portrait">
+		<adaptation
+			id="fullscreen" />
+	</device>
+	<dependencies>
+		<plugIn
+			identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin"
+			version   ="13173" />
+		<capability
+			name           ="documents saved in the Xcode 8 format"
+			minToolsVersion="8.0" />
+	</dependencies>
+	<objects>
+		<placeholder
+			placeholderIdentifier="IBFilesOwner"
+			id                   ="-1"
+			userLabel            ="File's Owner" />
+		<placeholder
+			placeholderIdentifier="IBFirstResponder"
+			id                   ="-2"
+			customClass          ="UIResponder" />
+		<tableViewCell
+			contentMode     ="scaleToFill"
+			selectionStyle  ="none"
+			indentationWidth="10"
+			rowHeight       ="115"
+			id              ="cxk-wN-pdQ"
+			customClass     ="MyReviewCell">
+			<rect
+				key   ="frame"
+				x     ="0.0"
+				y     ="0.0"
+				width ="320"
+				height="115" />
+			<autoresizingMask
+				key         ="autoresizingMask"
+				flexibleMaxX="YES"
+				flexibleMaxY="YES" />
+			<tableViewCellContentView
+				key                 ="contentView"
+				opaque              ="NO"
+				clipsSubviews       ="YES"
+				multipleTouchEnabled="YES"
+				contentMode         ="center"
+				tableViewCell       ="cxk-wN-pdQ"
+				id                  ="YTl-1W-gDM">
+				<rect
+					key   ="frame"
+					x     ="0.0"
+					y     ="0.0"
+					width ="320"
+					height="114.5" />
+				<autoresizingMask
+					key="autoresizingMask" />
+				<subviews>
+					<view
+						clipsSubviews                            ="YES"
+						contentMode                              ="scaleToFill"
+						translatesAutoresizingMaskIntoConstraints="NO"
+						id                                       ="bzV-cZ-NPT">
+						<rect
+							key   ="frame"
+							x     ="8"
+							y     ="7"
+							width ="98"
+							height="98.5" />
+						<subviews>
+							<imageView
+								clipsSubviews                            ="YES"
+								userInteractionEnabled                   ="NO"
+								contentMode                              ="scaleAspectFill"
+								horizontalHuggingPriority                ="251"
+								verticalHuggingPriority                  ="251"
+								translatesAutoresizingMaskIntoConstraints="NO"
+								id                                       ="eYf-1z-5Ks">
+								<rect
+									key   ="frame"
+									x     ="0.0"
+									y     ="0.0"
+									width ="98"
+									height="98.5" />
+								<constraints>
+									<constraint
+										firstAttribute="width"
+										constant      ="98"
+										id            ="BYA-DZ-Wa4" />
+									<constraint
+										firstAttribute="height"
+										constant      ="98"
+										id            ="NAD-4s-Wmz" />
+								</constraints>
+							</imageView>
+							<view
+								contentMode                              ="scaleToFill"
+								translatesAutoresizingMaskIntoConstraints="NO"
+								id                                       ="uvE-d4-3GR">
+								<rect
+									key   ="frame"
+									x     ="-12"
+									y     ="74.5"
+									width ="44"
+									height="16" />
+								<subviews>
+									<label
+										opaque                                   ="NO"
+										userInteractionEnabled                   ="NO"
+										contentMode                              ="left"
+										horizontalHuggingPriority                ="251"
+										verticalHuggingPriority                  ="251"
+										text                                     ="5"
+										textAlignment                            ="natural"
+										lineBreakMode                            ="tailTruncation"
+										baselineAdjustment                       ="alignBaselines"
+										adjustsFontSizeToFit                     ="NO"
+										translatesAutoresizingMaskIntoConstraints="NO"
+										id                                       ="qh3-e9-h75"
+										customClass="ARLabel">
+										<rect
+											key   ="frame"
+											x     ="22"
+											y     ="0.0"
+											width ="10.5"
+											height="16" />
+										<fontDescription
+											key      ="fontDescription"
+											type     ="system"
+											pointSize="17" />
+										<nil
+											key="textColor" />
+										<nil
+											key="highlightedColor" />
+									</label>
+								</subviews>
+								<color
+									key       ="backgroundColor"
+									red       ="1"
+									green     ="1"
+									blue      ="0.2341517857"
+									alpha     ="1"
+									colorSpace="calibratedRGB" />
+								<constraints>
+									<constraint
+										firstAttribute ="bottom"
+										secondItem     ="qh3-e9-h75"
+										secondAttribute="bottom"
+										id             ="5QP-3u-G6s" />
+									<constraint
+										firstAttribute="width"
+										constant      ="44"
+										id            ="SD2-eQ-fYA" />
+									<constraint
+										firstAttribute="height"
+										constant      ="16"
+										id            ="UUT-Xf-DRu" />
+									<constraint
+										firstItem      ="qh3-e9-h75"
+										firstAttribute ="centerX"
+										secondItem     ="uvE-d4-3GR"
+										secondAttribute="centerX"
+										constant       ="5"
+										id             ="bDp-xn-dlc" />
+									<constraint
+										firstItem      ="qh3-e9-h75"
+										firstAttribute ="top"
+										secondItem     ="uvE-d4-3GR"
+										secondAttribute="top"
+										id             ="bEY-7i-Ew7" />
+								</constraints>
+								<userDefinedRuntimeAttributes>
+									<userDefinedRuntimeAttribute
+										type   ="number"
+										keyPath="layer.cornerRadius">
+										<integer
+											key  ="value"
+											value="8" />
+									</userDefinedRuntimeAttribute>
+								</userDefinedRuntimeAttributes>
+							</view>
+						</subviews>
+						<color
+							key             ="backgroundColor"
+							white           ="1"
+							alpha           ="1"
+							colorSpace      ="custom"
+							customColorSpace="genericGamma22GrayColorSpace" />
+						<constraints>
+							<constraint
+								firstAttribute ="bottom"
+								secondItem     ="uvE-d4-3GR"
+								secondAttribute="bottom"
+								constant       ="8"
+								id             ="3Mx-DV-euZ" />
+							<constraint
+								firstAttribute ="trailing"
+								secondItem     ="eYf-1z-5Ks"
+								secondAttribute="trailing"
+								id             ="5rI-ae-WAg" />
+							<constraint
+								firstItem      ="eYf-1z-5Ks"
+								firstAttribute ="leading"
+								secondItem     ="bzV-cZ-NPT"
+								secondAttribute="leading"
+								id             ="J7E-eI-q0d" />
+							<constraint
+								firstItem      ="eYf-1z-5Ks"
+								firstAttribute ="top"
+								secondItem     ="bzV-cZ-NPT"
+								secondAttribute="top"
+								id             ="VQF-XX-Dmd" />
+							<constraint
+								firstAttribute ="bottom"
+								secondItem     ="eYf-1z-5Ks"
+								secondAttribute="bottom"
+								id             ="ouH-x3-dLx" />
+							<constraint
+								firstItem      ="uvE-d4-3GR"
+								firstAttribute ="leading"
+								secondItem     ="bzV-cZ-NPT"
+								secondAttribute="leading"
+								constant       ="-12"
+								id             ="uZu-cz-HlE" />
+						</constraints>
+					</view>
+					<label
+						opaque                                   ="NO"
+						userInteractionEnabled                   ="NO"
+						contentMode                              ="left"
+						horizontalHuggingPriority                ="251"
+						verticalHuggingPriority                  ="251"
+						text                                     ="Label"
+						textAlignment                            ="natural"
+						lineBreakMode                            ="tailTruncation"
+						baselineAdjustment                       ="alignBaselines"
+						adjustsFontSizeToFit                     ="NO"
+						translatesAutoresizingMaskIntoConstraints="NO"
+						id                                       ="EiR-tF-fTa"
+						customClass="ARLabel">
+						<rect
+							key   ="frame"
+							x     ="116"
+							y     ="6"
+							width ="188"
+							height="21" />
+						<fontDescription
+							key      ="fontDescription"
+							type     ="system"
+							pointSize="17" />
+						<nil
+							key="textColor" />
+						<nil
+							key="highlightedColor" />
+					</label>
+					<label
+						opaque                                   ="NO"
+						userInteractionEnabled                   ="NO"
+						contentMode                              ="left"
+						horizontalHuggingPriority                ="251"
+						verticalHuggingPriority                  ="251"
+						text                                     ="Label"
+						textAlignment                            ="natural"
+						lineBreakMode                            ="tailTruncation"
+						numberOfLines                            ="2"
+						baselineAdjustment                       ="alignBaselines"
+						adjustsFontSizeToFit                     ="NO"
+						translatesAutoresizingMaskIntoConstraints="NO"
+						id                                       ="Nzb-pt-jTN"
+						customClass="ARLabel">
+						<rect
+							key   ="frame"
+							x     ="116"
+							y     ="34"
+							width ="188"
+							height="21" />
+						<fontDescription
+							key      ="fontDescription"
+							type     ="system"
+							pointSize="17" />
+						<nil
+							key="textColor" />
+						<nil
+							key="highlightedColor" />
+					</label>
+					<label
+						opaque                                   ="NO"
+						userInteractionEnabled                   ="NO"
+						contentMode                              ="left"
+						horizontalHuggingPriority                ="251"
+						text                                     ="Label"
+						textAlignment                            ="natural"
+						lineBreakMode                            ="tailTruncation"
+						numberOfLines                            ="2"
+						baselineAdjustment                       ="alignBaselines"
+						adjustsFontSizeToFit                     ="NO"
+						translatesAutoresizingMaskIntoConstraints="NO"
+						id                                       ="93e-As-v1i"
+						customClass="ARLabel">
+						<rect
+							key   ="frame"
+							x     ="116"
+							y     ="57"
+							width ="188"
+							height="47.5" />
+						<fontDescription
+							key      ="fontDescription"
+							type     ="system"
+							pointSize="17" />
+						<nil
+							key="textColor" />
+						<nil
+							key="highlightedColor" />
+					</label>
+				</subviews>
+				<constraints>
+					<constraint
+						firstAttribute ="bottom"
+						secondItem     ="93e-As-v1i"
+						secondAttribute="bottom"
+						constant       ="10"
+						id             ="5X2-jC-Yuw" />
+					<constraint
+						firstAttribute ="trailing"
+						secondItem     ="93e-As-v1i"
+						secondAttribute="trailing"
+						constant       ="16"
+						id             ="8JQ-eO-113" />
+					<constraint
+						firstAttribute ="trailing"
+						secondItem     ="EiR-tF-fTa"
+						secondAttribute="trailing"
+						constant       ="16"
+						id             ="IjT-Ak-Kxg" />
+					<constraint
+						firstItem      ="93e-As-v1i"
+						firstAttribute ="leading"
+						secondItem     ="bzV-cZ-NPT"
+						secondAttribute="trailing"
+						constant       ="10"
+						id             ="JPz-uH-87g" />
+					<constraint
+						firstItem      ="bzV-cZ-NPT"
+						firstAttribute ="leading"
+						secondItem     ="YTl-1W-gDM"
+						secondAttribute="leading"
+						constant       ="8"
+						id             ="KWl-ZA-1dS" />
+					<constraint
+						firstItem      ="EiR-tF-fTa"
+						firstAttribute ="top"
+						secondItem     ="bzV-cZ-NPT"
+						secondAttribute="top"
+						constant       ="-1"
+						id             ="arm-Fi-GyM" />
+					<constraint
+						firstItem      ="Nzb-pt-jTN"
+						firstAttribute ="leading"
+						secondItem     ="bzV-cZ-NPT"
+						secondAttribute="trailing"
+						constant       ="10"
+						id             ="bRI-vH-fxU" />
+					<constraint
+						firstItem      ="bzV-cZ-NPT"
+						firstAttribute ="centerY"
+						secondItem     ="YTl-1W-gDM"
+						secondAttribute="centerY"
+						constant       ="-1"
+						id             ="gUh-yf-oUF" />
+					<constraint
+						firstItem      ="EiR-tF-fTa"
+						firstAttribute ="leading"
+						secondItem     ="bzV-cZ-NPT"
+						secondAttribute="trailing"
+						constant       ="10"
+						id             ="iYv-KR-3hW" />
+					<constraint
+						firstItem      ="Nzb-pt-jTN"
+						firstAttribute ="top"
+						secondItem     ="EiR-tF-fTa"
+						secondAttribute="bottom"
+						constant       ="7"
+						id             ="qUc-Dt-T2C" />
+					<constraint
+						firstAttribute ="trailing"
+						secondItem     ="Nzb-pt-jTN"
+						secondAttribute="trailing"
+						constant       ="16"
+						id             ="vfT-k8-mCE" />
+					<constraint
+						firstItem      ="93e-As-v1i"
+						firstAttribute ="top"
+						secondItem     ="Nzb-pt-jTN"
+						secondAttribute="bottom"
+						constant       ="2"
+						id             ="wqL-7g-Exa" />
+				</constraints>
+			</tableViewCellContentView>
+			<connections>
+				<outlet
+					property   ="BadgeLabel"
+					destination="qh3-e9-h75"
+					id         ="name-outlet-qh3-e9-h75" />
+				<outlet
+					property   ="BadgeView"
+					destination="uvE-d4-3GR"
+					id         ="name-outlet-uvE-d4-3GR" />
+				<outlet
+					property   ="DateLabel"
+					destination="EiR-tF-fTa"
+					id         ="name-outlet-EiR-tF-fTa" />
+				<outlet
+					property   ="ProductImageView"
+					destination="eYf-1z-5Ks"
+					id         ="name-outlet-eYf-1z-5Ks" />
+				<outlet
+					property   ="ProductTitleLabel"
+					destination="Nzb-pt-jTN"
+					id         ="name-outlet-Nzb-pt-jTN" />
+				<outlet
+					property   ="ReviewTextLabel"
+					destination="93e-As-v1i"
+					id         ="name-outlet-93e-As-v1i" />
+			</connections>
+			<point
+				key="canvasLocation"
+				x  ="40"
+				y  ="89.5" />
+		</tableViewCell>
+	</objects>
+</document>

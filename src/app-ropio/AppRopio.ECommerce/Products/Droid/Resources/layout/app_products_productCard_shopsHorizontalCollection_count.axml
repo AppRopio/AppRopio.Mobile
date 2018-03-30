@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/app_products_productCard_shopsHorizontalCollection_height_count">
+    <TextView
+        style="@style/app_products_productCard_shopsHorizontalCollection_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_products_productCard_shopsHorizontalCollection_title_height"
+        android:layout_marginLeft="@dimen/app_products_productCard_horizontalMargins"
+        android:gravity="center_vertical"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@+id/app_products_productCard_arrow"
+        app:MvxBind="Text Name" />
+    <mvvmcross.droid.support.v7.recyclerview.MvxRecyclerView
+        android:id="@+id/app_products_productCard_shopsHorizontalCollection_recyclerView"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingLeft="@dimen/app_products_productCard_horizontalMargins"
+        android:paddingRight="@dimen/app_products_productCard_horizontalMargins"
+        android:clipToPadding="false"
+        app:MvxItemTemplate="@layout/app_products_productcard_shopshorizontalcollection_item"
+        app:MvxBind="ItemsSource Items; ItemClick SelectionChangedCommand" />
+    <View
+        style="@style/AppRopioTheme.Control.Separator"
+        android:layout_marginTop="@dimen/app_products_productCard_verticalMargins"
+        android:layout_height="@dimen/app_products_productCard_weight_separatorHeight" />
+</LinearLayout>

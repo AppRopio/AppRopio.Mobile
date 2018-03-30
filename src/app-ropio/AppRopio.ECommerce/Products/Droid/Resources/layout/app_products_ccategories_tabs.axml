@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.TabLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/app_products_ccategories_tabs"
+    android:id="@+id/app_products_ccategories_tabs"
+    app:tabGravity="fill"
+    app:tabMode="scrollable"
+    app:tabTextAppearance="@style/app_products_ccategories_tabs_text" />

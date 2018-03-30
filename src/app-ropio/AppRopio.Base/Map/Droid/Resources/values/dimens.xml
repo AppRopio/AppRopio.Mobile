@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+<!--  List  -->
+    <dimen
+        name="app_map_list_item_padding">16dp</dimen>
+    <dimen
+        name="app_map_list_item_address_marginTop">10dp</dimen>
+<!--    -->
+</resources>

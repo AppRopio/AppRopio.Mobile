@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<style
+		name  ="app_navigation_status_bar"
+        parent="AppRopioTheme.Control.StatusBar">
+	</style>
+	<style
+		name  ="app_navigation_toolbar"
+		parent="AppRopioTheme.Control.Toolbar">
+	</style>
+    <style
+        name  ="app_navigation_toolbar_theme"
+        parent="AppRopioTheme.Control.ToolbarTheme">
+    </style>
+    <style
+        name  ="app_navigation_toolbar_title"
+        parent="AppRopioTheme.Control.Toolbar.Title">
+    </style>
+	<style
+		name="app_navigation_view_item_name">
+		<item
+			name="android:textSize">@dimen/app_activity_drawer_item_name_textSize</item>
+		<item
+			name="android:fontFamily">?attr/app_font_regular</item>
+		<item
+			name="android:textColor">?attr/app_color_textMenu</item>
+		<item
+			name="android:gravity">center_vertical</item>
+	</style>
+	<style
+		name="app_navigation_view_item_badge">
+		<item
+			name="android:textSize">@dimen/app_activity_drawer_item_badge_textSize</item>
+		<item
+			name="android:fontFamily">?attr/app_font_regular</item>
+		<item
+			name="android:textColor">?attr/app_color_accent</item>
+		<item
+			name="android:gravity">center</item>
+	</style>
+	<style
+		name="app_navigation_view_items">
+		<item
+			name="android:background">?attr/app_color_backgroundMenu</item>
+		<item
+			name="android:divider">@null</item>
+		<item
+			name="android:scrollbars">none</item>
+	</style>
+</resources>

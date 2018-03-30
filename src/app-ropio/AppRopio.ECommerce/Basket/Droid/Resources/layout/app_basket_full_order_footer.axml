@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<View xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/AppRopioTheme.Control.Separator"
+    android:layout_height="@dimen/app_basket_full_order_footer_height" />

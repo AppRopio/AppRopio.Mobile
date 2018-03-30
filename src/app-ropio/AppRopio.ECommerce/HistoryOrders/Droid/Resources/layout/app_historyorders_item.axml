@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_historyorders_item_contentHeight">
+        <appropio.base.droid.controls.ARImageView
+            android:id="@+id/app_historyorders_item_image"
+            android:layout_width="@dimen/app_historyorders_item_image_size"
+            android:layout_height="@dimen/app_historyorders_item_image_size"
+            android:layout_marginLeft="@dimen/app_historyorders_item_horizontalMargins"
+            android:layout_marginTop="@dimen/app_historyorders_item_verticalMargins"
+            android:src="?attr/app_historyorders_ic_nophoto"
+            app:MvxBind="ImageUrl ImageUrl" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/app_historyorders_item_horizontalMargins"
+            android:layout_marginRight="@dimen/app_historyorders_item_horizontalMargins"
+            android:layout_marginTop="@dimen/app_historyorders_item_verticalMargins"
+            android:layout_marginBottom="@dimen/app_historyorders_item_verticalMargins"
+            android:layout_toRightOf="@+id/app_historyorders_item_image">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    style="@style/app_historyorders_item_orderNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:paddingRight="@dimen/app_historyorders_item_horizontalMargins"
+                    app:MvxBind="Text OrderNumber" />
+                <TextView
+                    style="@style/app_historyorders_item_badge"
+                    android:layout_width="@dimen/app_historyorders_item_badgeWidth"
+                    android:layout_height="wrap_content"
+                    app:MvxBind="Text PaymentStatusText(PaymentStatus); Background PaymentStatusBackground(PaymentStatus); Visibility PaymentStatusVisibility(PaymentStatus)" />
+            </LinearLayout>
+            <TextView
+                style="@style/app_historyorders_item_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/app_historyorders_item_verticalPaddings"
+                app:MvxBind="Text OrderStatus" />
+            <TextView
+                style="@style/app_historyorders_item_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/app_historyorders_item_verticalPaddings"
+                app:MvxBind="Text PriceFormat(TotalPrice)" />
+        </LinearLayout>
+    </RelativeLayout>
+    <View
+        style="@style/AppRopioTheme.Control.Separator" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_clickable_size"
+        app:MvxBind="Click GoToItemsCommand">
+        <TextView
+            style="@style/app_historyorders_item_count"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="@dimen/app_historyorders_item_horizontalMargins"
+            android:layout_gravity="center_vertical"
+            app:MvxBind="Text Format('Состав заказа ({0})', ItemsCount)" />
+        <ImageView
+            style="@style/app_historyorders_ic_arrow" />
+    </LinearLayout>
+    <View
+        style="@style/AppRopioTheme.Control.Separator"
+        android:layout_height="@dimen/app_historyorders_item_separatorHeight" />
+</LinearLayout>

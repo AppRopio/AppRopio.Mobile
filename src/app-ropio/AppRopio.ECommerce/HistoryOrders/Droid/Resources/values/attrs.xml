@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<attr
+		name  ="app_historyorders_ic_arrow"
+		format="reference" />
+	<attr
+		name  ="app_historyorders_ic_nophoto"
+		format="reference" />
+</resources>

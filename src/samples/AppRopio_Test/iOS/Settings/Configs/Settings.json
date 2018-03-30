@@ -1,0 +1,18 @@
+﻿{
+  "elements": [
+    {
+      "type": "Region",
+      "title": "Регион"
+    },
+    {
+      "type": "Geolocation",
+      "title": "Геолокация",
+      "isEnabled": true
+    },
+    {
+      "type": "Notifications",
+      "title": "Уведомления",
+      "isEnabled": true
+    }
+  ]
+}

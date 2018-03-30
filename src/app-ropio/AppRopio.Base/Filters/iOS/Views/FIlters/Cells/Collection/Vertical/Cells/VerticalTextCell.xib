@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document
+	type                 ="com.apple.InterfaceBuilder3.CocoaTouch.XIB"
+	version              ="3.0"
+	toolsVersion         ="12121"
+	systemVersion        ="16F73"
+	targetRuntime        ="iOS.CocoaTouch"
+	propertyAccessControl="none"
+	useAutolayout        ="YES"
+	useTraitCollections  ="YES"
+	colorMatched         ="YES">
+	<device
+		id         ="retina4_7"
+		orientation="portrait">
+		<adaptation
+			id="fullscreen" />
+	</device>
+	<dependencies>
+		<deployment
+			identifier="iOS" />
+		<plugIn
+			identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin"
+			version   ="12089" />
+		<capability
+			name           ="documents saved in the Xcode 8 format"
+			minToolsVersion="8.0" />
+	</dependencies>
+	<objects>
+		<placeholder
+			placeholderIdentifier="IBFilesOwner"
+			id                   ="-1"
+			userLabel            ="File's Owner" />
+		<placeholder
+			placeholderIdentifier="IBFirstResponder"
+			id                   ="-2"
+			customClass          ="UIResponder" />
+		<collectionViewCell
+			opaque              ="NO"
+			clipsSubviews       ="YES"
+			multipleTouchEnabled="YES"
+			contentMode         ="center"
+			id                  ="cZE-iV-UFb"
+			customClass         ="VerticalTextCell">
+			<rect
+				key   ="frame"
+				x     ="0.0"
+				y     ="0.0"
+				width ="80"
+				height="44" />
+			<autoresizingMask
+				key         ="autoresizingMask"
+				flexibleMaxX="YES"
+				flexibleMinY="YES" />
+			<view
+				key                 ="contentView"
+				opaque              ="NO"
+				clipsSubviews       ="YES"
+				multipleTouchEnabled="YES"
+				contentMode         ="center">
+				<rect
+					key   ="frame"
+					x     ="0.0"
+					y     ="0.0"
+					width ="80"
+					height="44" />
+				<autoresizingMask
+					key="autoresizingMask" />
+				<subviews>
+					<view
+						contentMode                              ="scaleToFill"
+						translatesAutoresizingMaskIntoConstraints="NO"
+						id                                       ="2IS-3o-jGu">
+						<rect
+							key   ="frame"
+							x     ="0.0"
+							y     ="0.0"
+							width ="80"
+							height="44" />
+						<subviews>
+							<label
+								opaque                                   ="NO"
+								userInteractionEnabled                   ="NO"
+								contentMode                              ="left"
+								horizontalHuggingPriority                ="251"
+								verticalHuggingPriority                  ="251"
+								text                                     ="Label"
+								textAlignment                            ="natural"
+								lineBreakMode                            ="tailTruncation"
+								baselineAdjustment                       ="alignBaselines"
+								adjustsFontSizeToFit                     ="NO"
+								translatesAutoresizingMaskIntoConstraints="NO"
+								id                                       ="aWs-M5-KnD"
+                                customClass="ARLabel">
+								<rect
+									key   ="frame"
+									x     ="19"
+									y     ="11"
+									width ="42"
+									height="21" />
+								<fontDescription
+									key      ="fontDescription"
+									type     ="system"
+									pointSize="17" />
+								<nil
+									key="textColor" />
+								<nil
+									key="highlightedColor" />
+							</label>
+						</subviews>
+						<color
+							key       ="backgroundColor"
+							white     ="0.0"
+							alpha     ="0.0"
+							colorSpace="calibratedWhite" />
+						<constraints>
+							<constraint
+								firstItem      ="aWs-M5-KnD"
+								firstAttribute ="centerX"
+								secondItem     ="2IS-3o-jGu"
+								secondAttribute="centerX"
+								id             ="AmY-BF-fJ4" />
+							<constraint
+								firstItem      ="aWs-M5-KnD"
+								firstAttribute ="centerY"
+								secondItem     ="2IS-3o-jGu"
+								secondAttribute="centerY"
+								id             ="HVO-J0-Y5Y" />
+						</constraints>
+					</view>
+				</subviews>
+			</view>
+			<color
+				key       ="backgroundColor"
+				white     ="0.0"
+				alpha     ="0.0"
+				colorSpace="calibratedWhite" />
+			<constraints>
+				<constraint
+					firstAttribute ="bottom"
+					secondItem     ="2IS-3o-jGu"
+					secondAttribute="bottom"
+					id             ="Pka-Sf-e9h" />
+				<constraint
+					firstAttribute ="trailing"
+					secondItem     ="2IS-3o-jGu"
+					secondAttribute="trailing"
+					id             ="lat-6T-m7I" />
+				<constraint
+					firstItem      ="2IS-3o-jGu"
+					firstAttribute ="top"
+					secondItem     ="cZE-iV-UFb"
+					secondAttribute="top"
+					id             ="pTv-sY-7il" />
+				<constraint
+					firstItem      ="2IS-3o-jGu"
+					firstAttribute ="leading"
+					secondItem     ="cZE-iV-UFb"
+					secondAttribute="leading"
+					id             ="uf1-Cw-xcw" />
+			</constraints>
+			<connections>
+				<outlet
+					property   ="_name"
+					destination="aWs-M5-KnD"
+					id         ="go7-s7-aAO" />
+				<outlet
+					property   ="_selectedView"
+					destination="2IS-3o-jGu"
+					id         ="fdV-3n-xoI" />
+			</connections>
+		</collectionViewCell>
+	</objects>
+</document>

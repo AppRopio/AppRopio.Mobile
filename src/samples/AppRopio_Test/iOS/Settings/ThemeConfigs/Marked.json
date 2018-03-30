@@ -1,0 +1,53 @@
+﻿{
+    "products": 
+    {
+        "productCell": 
+        {
+            "image": { "path": "Images/Products/no_photo.png" },
+            "badge": { "textColor": { "HEX": "FFFFFF" } },
+            "markButton": {
+                "background": {
+                    "HEX": "",
+                    "ref": ""
+                },
+                "states": {
+                    "normal": {
+                        "content": { "ref": "" },
+                        "background": ""
+                    },
+                    "highlighted": {
+                        "content": { "ref": "" },
+                        "background": ""
+                    },
+                    "selected": {
+                        "content": { "ref": "" },
+                        "background": ""
+                    },
+                    "disabled": {
+                        "content": { "ref": "" },
+                        "background": ""
+                    },
+                    "invalid": {
+                        "content": { "ref": "" },
+                        "background": ""
+                    }
+                },
+                "image": {
+                    "path": "Images/Products/unmarked.png",
+                    "highlightedPath": "Images/Products/marked.png"
+                }
+            },
+            "layer": {
+                "cornerRadius": 0,
+                "border": {
+                    "width": 1,
+                    "color": { "ref": "@color/separator" }
+                }
+            }
+        },
+        "emptyView": 
+        {
+            "image": { "path": "Images/Marked/empty_image.png" }
+        }
+    }
+}

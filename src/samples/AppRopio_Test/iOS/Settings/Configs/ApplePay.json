@@ -1,0 +1,5 @@
+﻿{
+  "merchantId": "your_merchant_id",
+  "countryCode": "RU",
+  "supportedNetworks": ["Visa", "MasterCard"]
+}

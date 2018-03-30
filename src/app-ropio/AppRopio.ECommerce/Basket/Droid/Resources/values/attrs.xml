@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <attr
+        name="app_basket_ic_empty_image"
+        format="reference" />
+    <attr
+        name="app_basket_ic_item_minus"
+        format="reference" />
+    <attr
+        name="app_basket_ic_item_plus"
+        format="reference" />
+    <attr
+        name="app_basket_ic_item_more"
+        format="reference" />
+    <attr
+        name="app_basket_full_order_ic_item_check"
+        format="reference" />
+    <attr
+        name="app_basket_full_order_ic_deliveryTime_calendar"
+        format="reference"/>
+    <attr
+        name="app_basket_payment_ic_item_check"
+        format="reference"/>
+    <attr
+        name="app_basket_thanks_ic_image"
+        format="reference"/>
+    <attr
+        name="app_basket_thanks_ic_close"
+        format="reference"/>
+    <attr
+        name="app_basket_delivery_on_address_ic_close"
+        format="reference"/>
+    <attr
+        name="app_basket_delivery_on_point_ic_close"
+        format="reference"/>
+    <attr
+        name="app_basket_delivery_on_point_ic_distance"
+        format="reference"/>
+    <attr
+        name="app_basket_delivery_on_point_item_callButton"
+        format="reference"/>
+    <attr
+        name="app_basket_delivery_on_point_item_infoButton"
+        format="reference"/>
+    <attr
+        name="app_basket_delivery_on_point_item_mapButton"
+        format="reference"/>
+    <attr
+        name="app_basket_delivery_on_point_item_routeButton"
+        format="reference"/>
+    <attr
+        name="app_basket_delivery_point_on_map_ic_pin"
+        format="reference"/>
+    <attr
+        name="app_basket_delivery_on_point_ic_toolbar_search"
+        format="reference"/>
+    <attr
+        name="app_basket_cartIndicator_ic_basket"
+        format="reference"/>
+    <attr
+        name="app_basket_ic_item_large_minus"
+        format="reference"/>
+    <attr
+        name="app_basket_ic_item_large_plus"
+        format="reference"/>
+</resources>
+

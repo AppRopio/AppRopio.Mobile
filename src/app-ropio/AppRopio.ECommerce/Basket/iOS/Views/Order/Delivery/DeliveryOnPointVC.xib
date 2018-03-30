@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DeliveryOnPointVC">
+            <connections>
+                <outlet property="_nextButton" destination="dBt-2N-xEL" id="Ko8-P4-flM"/>
+                <outlet property="_searchBar" destination="lJh-ah-cOL" id="mpF-q3-Kod"/>
+                <outlet property="_tableView" destination="xIB-jG-ZMH" id="ZvF-Gm-1mb"/>
+                <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="2">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xIB-jG-ZMH">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <view key="tableHeaderView" contentMode="scaleToFill" id="POO-ma-JNp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lJh-ah-cOL" customClass="BindableSearchBar">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dBt-2N-xEL">
+                    <rect key="frame" x="16" y="599" width="343" height="48"/>
+                    <color key="backgroundColor" red="0.054901960780000002" green="0.1019607843" blue="0.1529411765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="QmZ-bq-Y4W"/>
+                    </constraints>
+                    <state key="normal">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottomMargin" secondItem="dBt-2N-xEL" secondAttribute="bottom" constant="20" id="0Oh-cB-Ber"/>
+                <constraint firstAttribute="trailing" secondItem="xIB-jG-ZMH" secondAttribute="trailing" id="AMH-VS-iuW"/>
+                <constraint firstAttribute="bottom" secondItem="xIB-jG-ZMH" secondAttribute="bottom" id="C2y-hH-MOe"/>
+                <constraint firstItem="xIB-jG-ZMH" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="SmM-P0-WFa"/>
+                <constraint firstAttribute="trailing" secondItem="dBt-2N-xEL" secondAttribute="trailing" constant="16" id="YeQ-eK-9Dg"/>
+                <constraint firstItem="dBt-2N-xEL" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="16" id="lB6-CX-l2N"/>
+                <constraint firstItem="xIB-jG-ZMH" firstAttribute="top" secondItem="2" secondAttribute="top" id="ywt-Zy-FfY"/>
+            </constraints>
+            <point key="canvasLocation" x="49" y="4"/>
+        </view>
+    </objects>
+</document>

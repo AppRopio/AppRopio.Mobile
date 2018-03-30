@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <mvvmcross.droid.support.v7.recyclerview.MvxRecyclerView
+        android:id="@+id/app_basket_full_order_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/app_basket_full_order_buttonLayout"
+        app:MvxBind="ItemsSource Items; ItemClick SelectionChangedCommand" />
+    <LinearLayout
+        android:id="@+id/app_basket_full_order_buttonLayout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/app_basket_full_order_deliveryLayout_height"
+            android:paddingLeft="@dimen/app_basket_full_order_deliveryLayout_horizontalMargin"
+            android:paddingRight="@dimen/app_basket_full_order_deliveryLayout_horizontalMargin">
+            <TextView
+                style="@style/app_basket_full_order_deliveryLayout_title"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".5"
+                android:gravity="center_vertical"
+                android:text="ДОСТАВКА" />
+            <TextView
+                style="@style/app_basket_full_order_deliveryLayout_price"
+                android:id="@+id/app_basket_full_order_deliveryLayout_price"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".5"
+                android:gravity="center_vertical|right" />
+        </LinearLayout>
+        <Button
+            style="@style/app_basket_full_order_button"
+            android:id="@+id/app_basket_full_order_button"
+            app:MvxBind="Click NextCommand; Enabled CanGoNext; Visibility Visibility(Items.Count); Text PriceFormatUnit(DeliveryViewModel.Amount, ParsePriceFormatUnitParameter('PrefixString=ЗАКАЗАТЬ ЗА ,Format=ru')); " />
+    </LinearLayout>
+    <include
+        layout="@layout/app_base_loading" />
+</RelativeLayout>

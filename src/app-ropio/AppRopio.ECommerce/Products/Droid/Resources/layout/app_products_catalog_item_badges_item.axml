@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/app_products_catalog_item_badges_padding"
+    android:paddingRight="@dimen/app_products_catalog_item_badges_padding">
+    <TextView
+        style="@style/app_products_catalog_item_badges_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/app_products_catalog_item_badge_height"
+        app:MvxBind="Text Name; Background BadgeBackground(Color)" />
+</LinearLayout>

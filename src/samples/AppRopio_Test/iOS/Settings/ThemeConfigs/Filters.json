@@ -1,0 +1,38 @@
+﻿{
+    "sortTypes":
+    {
+        "title":{},
+        "cancelButton":
+        {
+            "image":
+            {
+                "path":"Images/Filters/Cancel.png"
+            },
+            "states":
+            {
+                "normal": { "content": { "ref":"@color/textBase" } }
+            }
+        },
+        "sortCell":
+        {
+            "title": {},
+            "size": {}
+        }
+    },
+    "filters":
+    {
+        "clearButton":{},
+        "applyButton":{},
+        "filtersCell":{},
+        "selection": {
+            "searchBar": {}
+        },
+        "filtersCell": {
+            "multiSelection": {
+                "multiSelectionCell": {
+                    "image": { "path": "Images/Products/cross_icon.png" }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{53D2EC0B-5133-4AB1-BB14-9D8BE1F932F0}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>AppRopio.Base.Contacts.iOS</RootNamespace>
+    <AssemblyName>AppRopio.Base.Contacts.iOS</AssemblyName>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchFastDev>true</MtouchFastDev>
+    <IOSDebuggerPort>51662</IOSDebuggerPort>
+    <DeviceSpecificBuild>false</DeviceSpecificBuild>
+    <MtouchLink></MtouchLink>
+    <MtouchHttpClientHandler></MtouchHttpClientHandler>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <DefineConstants></DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchHttpClientHandler></MtouchHttpClientHandler>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\Newtonsoft.Json.10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="Plugin.Messaging.Abstractions">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\Xam.Plugins.Messaging.5.0.0\lib\Xamarin.iOS10\Plugin.Messaging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Messaging">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\Xam.Plugins.Messaging.5.0.0\lib\Xamarin.iOS10\Plugin.Messaging.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Platform">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Platform.5.6.3\lib\Xamarin.iOS10\MvvmCross.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Platform.iOS">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Platform.5.6.3\lib\Xamarin.iOS10\MvvmCross.Platform.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Core">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Core.5.6.3\lib\Xamarin.iOS10\MvvmCross.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.iOS">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Core.5.6.3\lib\Xamarin.iOS10\MvvmCross.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Binding">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.6.3\lib\Xamarin.iOS10\MvvmCross.Binding.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Binding.iOS">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.6.3\lib\Xamarin.iOS10\MvvmCross.Binding.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Localization">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.6.3\lib\Xamarin.iOS10\MvvmCross.Localization.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Views\" />
+    <Folder Include="Services\" />
+    <Folder Include="Services\Implementation\" />
+    <Folder Include="Models\" />
+    <Folder Include="Views\Contacts\" />
+    <Folder Include="Converters\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Plugin.cs" />
+    <Compile Include="Services\IContactsThemeConfigService.cs" />
+    <Compile Include="Services\Implementation\ContactsThemeConfigService.cs" />
+    <Compile Include="Models\ContactsThemeConfig.cs" />
+    <Compile Include="Views\Contacts\ContactsViewController.cs" />
+    <Compile Include="Views\Contacts\ContactsViewController.designer.cs">
+      <DependentUpon>ContactsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Contacts\ContactCell.cs" />
+    <Compile Include="Views\Contacts\ContactCell.designer.cs">
+      <DependentUpon>ContactCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\Base64ImageConverter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\API\AppRopio.Base.API.csproj">
+      <Project>{124841B9-39F6-44B5-8B96-50183FBFE341}</Project>
+      <Name>AppRopio.Base.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\AppRopio.Base.Core.csproj">
+      <Project>{EA6D5113-1E80-494B-886D-3D7FDFA04E99}</Project>
+      <Name>AppRopio.Base.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\iOS\AppRopio.Base.iOS.csproj">
+      <Project>{2F005241-B90A-484A-A3A0-51684D5ECE54}</Project>
+      <Name>AppRopio.Base.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Base\AppRopio.Models.Base.csproj">
+      <Project>{C4F2B57C-507E-4B99-B2E4-FA4B3C99FD59}</Project>
+      <Name>AppRopio.Models.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Contacts\AppRopio.Models.Contacts.csproj">
+      <Project>{747299BF-FAF3-4C47-BF4C-B1A949BB5F56}</Project>
+      <Name>AppRopio.Models.Contacts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\AppRopio.Base.Contacts.Core.csproj">
+      <Project>{2BD59760-4635-4B39-835F-CFD29A45BC96}</Project>
+      <Name>AppRopio.Base.Contacts.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\API\AppRopio.Base.Contacts.API.csproj">
+      <Project>{B972BFB8-3481-4411-83DE-50CF6780D028}</Project>
+      <Name>AppRopio.Base.Contacts.API</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Views\Contacts\ContactsViewController.xib" />
+    <InterfaceDefinition Include="Views\Contacts\ContactCell.xib" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\..\..\AppRopio.ECommerce\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\..\..\AppRopio.ECommerce\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets')" />
+</Project>

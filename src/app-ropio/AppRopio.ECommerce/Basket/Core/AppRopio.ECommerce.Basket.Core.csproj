@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B2302667-FF48-4A51-9032-84F45B8F173C}</ProjectGuid>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>AppRopio.ECommerce.Basket.Core</RootNamespace>
+    <AssemblyName>AppRopio.ECommerce.Basket.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile151</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\IBasketViewModel.cs" />
+    <Compile Include="App.cs" />
+    <Compile Include="PluginLoader.cs" />
+    <Compile Include="Models\BasketConfig.cs" />
+    <Compile Include="Services\IBasketConfigService.cs" />
+    <Compile Include="Services\Implementation\BasketConfigService.cs" />
+    <Compile Include="Services\Implementation\BasketRouterSubscriber.cs" />
+    <Compile Include="ViewModels\Basket\Items\BasketItemVM.cs" />
+    <Compile Include="ViewModels\Basket\Items\IBasketItemVM.cs" />
+    <Compile Include="ViewModels\Basket\BasketViewModel.cs" />
+    <Compile Include="ViewModels\Basket\Services\IBasketVmService.cs" />
+    <Compile Include="ViewModels\Basket\Services\BasketVmService.cs" />
+    <Compile Include="ViewModels\Basket\Items\Services\IBasketItemVmService.cs" />
+    <Compile Include="ViewModels\Basket\Items\Services\BasketItemVmService.cs" />
+    <Compile Include="Messages\Basket\ItemDeletedMessage.cs" />
+    <Compile Include="ViewModels\Order\IOrderViewModel.cs" />
+    <Compile Include="ViewModels\Order\Full\FullOrderViewModel.cs" />
+    <Compile Include="ViewModels\Order\Partial\IUserViewModel.cs" />
+    <Compile Include="ViewModels\Order\Partial\IDeliveryViewModel.cs" />
+    <Compile Include="ViewModels\Order\Services\IOrderVmService.cs" />
+    <Compile Include="ViewModels\Order\Partial\UserViewModel.cs" />
+    <Compile Include="ViewModels\Order\Partial\DeliveryViewModel.cs" />
+    <Compile Include="Enums\OrderViewType.cs" />
+    <Compile Include="ViewModels\Order\Full\IFullOrderViewModel.cs" />
+    <Compile Include="BasketConstants.cs" />
+    <Compile Include="ViewModels\Order\Items\IOrderFieldItemVM.cs" />
+    <Compile Include="ViewModels\Order\Items\OrderFieldItemVM.cs" />
+    <Compile Include="ViewModels\Order\Delivery\DeliveryOnAddressVM.cs" />
+    <Compile Include="ViewModels\Order\Delivery\IDeliveryOnAddressVM.cs" />
+    <Compile Include="ViewModels\Order\Delivery\IDeliveryOnPointVM.cs" />
+    <Compile Include="ViewModels\Order\Delivery\DeliveryOnPointVM.cs" />
+    <Compile Include="Models\Bundle\BasketBundle.cs" />
+    <Compile Include="Models\Bundle\DeliveryBundle.cs" />
+    <Compile Include="ViewModels\Order\Delivery\IBaseDeliveryVM.cs" />
+    <Compile Include="ViewModels\Order\Delivery\BaseDeliveryVM.cs" />
+    <Compile Include="Services\IBasketNavigationVmService.cs" />
+    <Compile Include="Services\Implementation\BasketNavigationVmService.cs" />
+    <Compile Include="ViewModels\Order\Services\IUserVmService.cs" />
+    <Compile Include="ViewModels\Order\Services\IDeliveryVmService.cs" />
+    <Compile Include="ViewModels\Order\Delivery\Items\DeliveryPointItemVM.cs" />
+    <Compile Include="ViewModels\Order\Delivery\Items\IDeliveryPointItemVM.cs" />
+    <Compile Include="ViewModels\Order\Delivery\Items\IHasCoordinates.cs" />
+    <Compile Include="ViewModels\Order\Delivery\IDeliveryPointOnMapVM.cs" />
+    <Compile Include="ViewModels\Order\Delivery\DeliveryPointOnMapVM.cs" />
+    <Compile Include="Models\Bundle\DeliveryPointBundle.cs" />
+    <Compile Include="ViewModels\Order\Services\Implementation\DeliveryVmService.cs" />
+    <Compile Include="ViewModels\Order\Services\Implementation\OrderVmService.cs" />
+    <Compile Include="ViewModels\Order\Services\Implementation\UserVmService.cs" />
+    <Compile Include="ViewModels\Order\Delivery\IDeliveryPointAdditionalInfoVM.cs" />
+    <Compile Include="ViewModels\Order\Delivery\DeliveryPointAdditionalInfoVM.cs" />
+    <Compile Include="ViewModels\Order\Payment\Items\IPaymentItemVM.cs" />
+    <Compile Include="ViewModels\Order\Payment\Items\PaymentItemVM.cs" />
+    <Compile Include="ViewModels\Order\Payment\IPaymentViewModel.cs" />
+    <Compile Include="ViewModels\Order\Payment\PaymentViewModel.cs" />
+    <Compile Include="Models\Bundle\PaymentBundle.cs" />
+    <Compile Include="Messages\Order\DeliveryConfirmedMessage.cs" />
+    <Compile Include="Services\IBasketObservableService.cs" />
+    <Compile Include="Services\Implementation\BasketObservableService.cs" />
+    <Compile Include="ViewModels\Order\Items\IOrderFieldsGroupVM.cs" />
+    <Compile Include="ViewModels\Order\Items\OrderFieldsGroupVM.cs" />
+    <Compile Include="ViewModels\Order\Items\Delivery\DeliveryTypeItemVM.cs" />
+    <Compile Include="ViewModels\Order\Items\Delivery\IDeliveryDayItemVM.cs" />
+    <Compile Include="ViewModels\Order\Items\Delivery\IDeliveryTimeItemVM.cs" />
+    <Compile Include="ViewModels\Order\Items\Delivery\IDeliveryTypeItemVM.cs" />
+    <Compile Include="ViewModels\Order\Items\Delivery\DeliveryDayItemVM.cs" />
+    <Compile Include="ViewModels\Order\Items\Delivery\DeliveryTimeItemVM.cs" />
+    <Compile Include="Messages\Order\OrderProcessingMessage.cs" />
+    <Compile Include="Messages\Basket\NeedUpdateMessage.cs" />
+    <Compile Include="Services\Implementation\ProductDeleteVmService.cs" />
+    <Compile Include="Services\Implementation\ProductQuantityVmService.cs" />
+    <Compile Include="Services\IProductDeleteVmService.cs" />
+    <Compile Include="Services\IProductQuantityVmService.cs" />
+    <Compile Include="ViewModels\ProductCard\BasketProductCardViewModel.cs" />
+    <Compile Include="ViewModels\ProductCard\IBasketProductCardViewModel.cs" />
+    <Compile Include="ViewModels\ProductCard\Services\IBasketProductCardVmService.cs" />
+    <Compile Include="ViewModels\ProductCard\Services\BasketProductCardVmService.cs" />
+    <Compile Include="Messages\ProductAddToBasketMessage.cs" />
+    <Compile Include="Messages\ProductQuantityChangedMessage.cs" />
+    <Compile Include="ViewModels\Order\Thanks\IThanksViewModel.cs" />
+    <Compile Include="ViewModels\Order\Thanks\ThanksViewModel.cs" />
+    <Compile Include="Models\Bundle\ThanksBundle.cs" />
+    <Compile Include="ViewModels\CartIndicator\IBasketCartIndicatorViewModel.cs" />
+    <Compile Include="ViewModels\CartIndicator\BasketCartIndicatorViewModel.cs" />
+    <Compile Include="Messages\Order\OrderCreationFinishedMessage.cs" />
+    <Compile Include="Messages\PaymentSelectedMessage.cs" />
+    <Compile Include="ViewModels\Order\IOrderFieldAutocompleteVM.cs" />
+    <Compile Include="ViewModels\Order\OrderFieldAutocompleteVM.cs" />
+    <Compile Include="ViewModels\Order\Items\IOrderFieldAutocompleteItemVM.cs" />
+    <Compile Include="ViewModels\Order\Items\OrderFieldAutocompleteItemVM.cs" />
+    <Compile Include="Models\Bundle\OrderFieldAutocompleteBundle.cs" />
+    <Compile Include="Messages\Autocomplete\AutocompleteStartMessage.cs" />
+    <Compile Include="Messages\Autocomplete\AutocompleteApplyMessage.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Plugin.ExternalMaps.Abstractions">
+      <HintPath>..\..\packages\Xam.Plugin.ExternalMaps.4.0.1\lib\netstandard1.0\Plugin.ExternalMaps.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.ExternalMaps">
+      <HintPath>..\..\packages\Xam.Plugin.ExternalMaps.4.0.1\lib\netstandard1.0\Plugin.ExternalMaps.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.3\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation">
+      <HintPath>..\..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\netstandard1.1\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Messaging.Abstractions">
+      <HintPath>..\..\packages\Xam.Plugins.Messaging.5.0.0\lib\netstandard1.0\Plugin.Messaging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Messaging">
+      <HintPath>..\..\packages\Xam.Plugins.Messaging.5.0.0\lib\netstandard1.0\Plugin.Messaging.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Permissions.Abstractions">
+      <HintPath>..\..\packages\Plugin.Permissions.2.1.0\lib\netstandard1.0\Plugin.Permissions.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Permissions">
+      <HintPath>..\..\packages\Plugin.Permissions.2.1.0\lib\netstandard1.0\Plugin.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Platform">
+      <HintPath>..\..\packages\MvvmCross.Platform.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Core">
+      <HintPath>..\..\packages\MvvmCross.Core.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Binding">
+      <HintPath>..\..\packages\MvvmCross.Binding.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Binding.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Localization">
+      <HintPath>..\..\packages\MvvmCross.Binding.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Messenger">
+      <HintPath>..\..\packages\MvvmCross.Plugin.Messenger.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Plugins.Messenger.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+    <Folder Include="Models\" />
+    <Folder Include="Services\" />
+    <Folder Include="Services\Implementation\" />
+    <Folder Include="ViewModels\Basket\" />
+    <Folder Include="ViewModels\Basket\Items\" />
+    <Folder Include="ViewModels\Order\" />
+    <Folder Include="ViewModels\Basket\Services\" />
+    <Folder Include="ViewModels\Basket\Items\Services\" />
+    <Folder Include="Messages\" />
+    <Folder Include="Messages\Basket\" />
+    <Folder Include="ViewModels\Order\Full\" />
+    <Folder Include="ViewModels\Order\Partial\" />
+    <Folder Include="ViewModels\Order\Services\" />
+    <Folder Include="Enums\" />
+    <Folder Include="ViewModels\Order\Items\" />
+    <Folder Include="ViewModels\Order\Delivery\" />
+    <Folder Include="Models\Bundle\" />
+    <Folder Include="ViewModels\Order\Delivery\Items\" />
+    <Folder Include="ViewModels\Order\Services\Implementation\" />
+    <Folder Include="ViewModels\Order\Payment\" />
+    <Folder Include="ViewModels\Order\Payment\Items\" />
+    <Folder Include="Messages\Order\" />
+    <Folder Include="ViewModels\Order\Items\Delivery\" />
+    <Folder Include="ViewModels\ProductCard\" />
+    <Folder Include="ViewModels\ProductCard\Services\" />
+    <Folder Include="ViewModels\Order\Thanks\" />
+    <Folder Include="ViewModels\CartIndicator\" />
+    <Folder Include="Messages\Autocomplete\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\AppRopio.Base\API\AppRopio.Base.API.csproj">
+      <Project>{124841B9-39F6-44B5-8B96-50183FBFE341}</Project>
+      <Name>AppRopio.Base.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\AppRopio.Base\Core\AppRopio.Base.Core.csproj">
+      <Project>{EA6D5113-1E80-494B-886D-3D7FDFA04E99}</Project>
+      <Name>AppRopio.Base.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\API\AppRopio.ECommerce.Basket.API.csproj">
+      <Project>{F22152B2-AF3C-4BAA-8A78-B2C4C6ED2109}</Project>
+      <Name>AppRopio.ECommerce.Basket.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Basket\AppRopio.Models.Basket.csproj">
+      <Project>{55D9E12B-8008-4DAD-8CB6-5A128777340C}</Project>
+      <Name>AppRopio.Models.Basket</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Base\AppRopio.Models.Base.csproj">
+      <Project>{C4F2B57C-507E-4B99-B2E4-FA4B3C99FD59}</Project>
+      <Name>AppRopio.Models.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Products\AppRopio.Models.Products.csproj">
+      <Project>{B621BAAF-BBB9-43D8-9990-7431667877AC}</Project>
+      <Name>AppRopio.Models.Products</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Products\Core\AppRopio.ECommerce.Products.Core.csproj">
+      <Project>{F2ECB410-3A5A-44E0-818A-C655FEE87DEA}</Project>
+      <Name>AppRopio.ECommerce.Products.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Loyalty\Abstractions\AppRopio.ECommerce.Loyalty.Abstractions.csproj">
+      <Project>{B97AC2F0-C860-4F8C-BCCA-7A503A03D880}</Project>
+      <Name>AppRopio.ECommerce.Loyalty.Abstractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Payments\AppRopio.Models.Payments.csproj">
+      <Project>{36D85C96-D45F-465B-98E6-AF1BC36400D5}</Project>
+      <Name>AppRopio.Models.Payments</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\AppRopio.Payments\Base\Core\AppRopio.Payments.Core.csproj">
+      <Project>{36A0974D-3DCE-490B-B186-2913785074CE}</Project>
+      <Name>AppRopio.Payments.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="..\..\packages\NETStandard.Library.2.0.1\build\NETStandard.Library.targets" Condition="Exists('..\..\packages\NETStandard.Library.2.0.1\build\NETStandard.Library.targets')" />
+</Project>

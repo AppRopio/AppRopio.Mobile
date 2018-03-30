@@ -1,0 +1,976 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Build.Download.0.4.7\build\Xamarin.Build.Download.props" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Build.Download.0.4.7\build\Xamarin.Build.Download.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectGuid>{33FCAFB5-4F54-43B9-B158-2E836FC0E06B}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>AppRopio_Test</RootNamespace>
+    <AssemblyName>AppRopio_Test</AssemblyName>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>__UNIFIED__;__MOBILE__;__IOS__;DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Distribution: NOTISSIMUS Company Limited (P889EV8R57)</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchFastDev>false</MtouchFastDev>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>i386, x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <PlatformTarget>x86</PlatformTarget>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchExtraArgs>--linkskip=MvvmCross --linkskip=MvvmCross.Core --linkskip=MvvmCross.Binding --linkskip=MvvmCross.Platform</MtouchExtraArgs>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Distribution: NOTISSIMUS Company Limited (P889EV8R57)</CodesignKey>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <PlatformTarget>x86</PlatformTarget>
+    <MtouchUseLlvm>false</MtouchUseLlvm>
+    <CodesignProvision>AppRopio Test iOS Distribution</CodesignProvision>
+    <MtouchUseThumb>false</MtouchUseThumb>
+<MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+<MtouchExtraArgs>--linkskip=MvvmCross --linkskip=MvvmCross.Core --linkskip=MvvmCross.Binding --linkskip=MvvmCross.Platform</MtouchExtraArgs>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <DefineConstants>__UNIFIED__;__MOBILE__;__IOS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>i386, x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <PlatformTarget>x86</PlatformTarget>
+    <MtouchUseLlvm>false</MtouchUseLlvm>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchFloat32>true</MtouchFloat32>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer: Максим Евтух (CSX6R4KTV4)</CodesignKey>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchFastDev>false</MtouchFastDev>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <PlatformTarget>x86</PlatformTarget>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <CodesignProvision></CodesignProvision>
+    <MtouchExtraArgs>--linkskip=MvvmCross --linkskip=MvvmCross.Core --linkskip=MvvmCross.Binding --linkskip=MvvmCross.Platform</MtouchExtraArgs>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\AppStore</OutputPath>
+    <DefineConstants></DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Distribution: NOTISSIMUS Company Limited (P889EV8R57)</CodesignKey>
+    <MtouchNoSymbolStrip>false</MtouchNoSymbolStrip>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <AssemblyName>AppRopio.Test.iOS</AssemblyName>
+<MtouchDebug>false</MtouchDebug>
+<MtouchUseLlvm>false</MtouchUseLlvm>
+<CodesignProvision>AppRopio Test iOS Distribution</CodesignProvision>
+<MtouchExtraArgs>--linkskip=MvvmCross --linkskip=MvvmCross.Core --linkskip=MvvmCross.Binding --linkskip=MvvmCross.Platform</MtouchExtraArgs>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="ModernHttpClient">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\modernhttpclient.2.4.2\lib\Xamarin.iOS10\ModernHttpClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Microsoft.Net.Http.2.2.29\lib\Xamarin.iOS10\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Microsoft.Net.Http.2.2.29\lib\Xamarin.iOS10\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetCross.Memory.Unsafe">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\DotNetCross.Memory.Unsafe.0.2.3.4\lib\netstandard1.0\DotNetCross.Memory.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="AppsFlyerXamarinBinding">
+      <HintPath>..\..\..\..\lib\iOS\AppsFlyerXamarinBinding.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook">
+      <HintPath>..\..\..\..\lib\iOS\Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="VKontakte.iOS">
+      <HintPath>..\..\..\..\lib\iOS\VKontakte.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="Remotion.Linq">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Remotion.Linq.2.1.2\lib\portable-net45+win+wpa81+wp80\Remotion.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Newtonsoft.Json.10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.ExternalMaps.Abstractions">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xam.Plugin.ExternalMaps.4.0.1\lib\Xamarin.iOS10\Plugin.ExternalMaps.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.ExternalMaps">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xam.Plugin.ExternalMaps.4.0.1\lib\Xamarin.iOS10\Plugin.ExternalMaps.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLCrypto">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\PCLCrypto.2.0.147\lib\xamarinios10\PCLCrypto.dll</HintPath>
+    </Reference>
+    <Reference Include="PInvoke.Windows.Core">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\PInvoke.Windows.Core.0.5.111\lib\portable-net45+win8+wpa81\PInvoke.Windows.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="PInvoke.Kernel32">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\PInvoke.Kernel32.0.5.111\lib\portable-net45+win8+wpa81\PInvoke.Kernel32.dll</HintPath>
+    </Reference>
+    <Reference Include="PInvoke.BCrypt">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\PInvoke.BCrypt.0.5.111\lib\portable-net45+win8+wpa81\PInvoke.BCrypt.dll</HintPath>
+    </Reference>
+    <Reference Include="PInvoke.NCrypt">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\PInvoke.NCrypt.0.5.111\lib\portable-net45+win8+wpa81\PInvoke.NCrypt.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Permissions.Abstractions">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Plugin.Permissions.2.1.0\lib\Xamarin.iOS10\Plugin.Permissions.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Permissions">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Plugin.Permissions.2.1.0\lib\Xamarin.iOS10\Plugin.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="Realm.DataBinding">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Realm.DataBinding.1.2.0\lib\Xamarin.iOS10\Realm.DataBinding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\System.Collections.Immutable.1.4.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\System.Runtime.CompilerServices.Unsafe.4.4.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="Validation">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Validation.2.4.18\lib\netstandard1.3\Validation.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Messaging.Abstractions">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xam.Plugins.Messaging.5.0.0\lib\Xamarin.iOS10\Plugin.Messaging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Messaging">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xam.Plugins.Messaging.5.0.0\lib\Xamarin.iOS10\Plugin.Messaging.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings.Abstractions">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xam.Plugins.Settings.3.1.1\lib\Xamarin.iOS10\Plugin.Settings.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xam.Plugins.Settings.3.1.1\lib\Xamarin.iOS10\Plugin.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Core">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Firebase.iOS.Core.4.0.8\lib\Xamarin.iOS10\Firebase.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.InstanceID">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Firebase.iOS.InstanceID.2.0.4\lib\Xamarin.iOS10\Firebase.InstanceID.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Analytics">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Firebase.iOS.Analytics.4.0.4\lib\Xamarin.iOS10\Firebase.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Analytics">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Google.iOS.Analytics.3.17.0.2\lib\Xamarin.iOS10\Google.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Realm">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Realm.Database.2.1.0\lib\netstandard1.4\Realm.dll</HintPath>
+    </Reference>
+    <Reference Include="Realm.Sync">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Realm.2.1.0\lib\netstandard1.4\Realm.Sync.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Geolocator.Abstractions">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xam.Plugin.Geolocator.4.1.3\lib\Xamarin.iOS10\Plugin.Geolocator.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Geolocator">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xam.Plugin.Geolocator.4.1.3\lib\Xamarin.iOS10\Plugin.Geolocator.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Platform">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Platform.5.6.3\lib\Xamarin.iOS10\MvvmCross.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Platform.iOS">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Platform.5.6.3\lib\Xamarin.iOS10\MvvmCross.Platform.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Binding">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Binding.5.6.3\lib\Xamarin.iOS10\MvvmCross.Binding.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.File">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Plugin.File.5.6.3\lib\Xamarin.iOS10\MvvmCross.Plugins.File.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.File.iOS">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Plugin.File.5.6.3\lib\Xamarin.iOS10\MvvmCross.Plugins.File.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Messenger">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Plugin.Messenger.5.6.3\lib\Xamarin.iOS10\MvvmCross.Plugins.Messenger.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Network">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Plugin.Network.5.6.3\lib\Xamarin.iOS10\MvvmCross.Plugins.Network.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Network.iOS">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Plugin.Network.5.6.3\lib\Xamarin.iOS10\MvvmCross.Plugins.Network.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Visibility">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Plugin.Visibility.5.6.3\lib\Xamarin.iOS10\MvvmCross.Plugins.Visibility.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Visibility.iOS">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Plugin.Visibility.5.6.3\lib\Xamarin.iOS10\MvvmCross.Plugins.Visibility.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Share.Abstractions">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Plugin.Share.7.1.1\lib\Xamarin.iOS10\Plugin.Share.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.DownloadCache.iOS">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Plugin.DownloadCache.5.6.3\lib\Xamarin.iOS10\MvvmCross.Plugins.DownloadCache.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Json">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Plugin.Json.5.6.3\lib\Xamarin.iOS10\MvvmCross.Plugins.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Core">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Core.5.6.3\lib\Xamarin.iOS10\MvvmCross.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.iOS">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Core.5.6.3\lib\Xamarin.iOS10\MvvmCross.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Binding.iOS">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Binding.5.6.3\lib\Xamarin.iOS10\MvvmCross.Binding.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Localization">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Binding.5.6.3\lib\Xamarin.iOS10\MvvmCross.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Share">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Plugin.Share.7.1.1\lib\Xamarin.iOS10\Plugin.Share.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.DownloadCache">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Plugin.DownloadCache.5.6.3\lib\Xamarin.iOS10\MvvmCross.Plugins.DownloadCache.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Microsoft.AppCenter.1.3.0\lib\Xamarin.iOS10\Microsoft.AppCenter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.iOS.Bindings">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Microsoft.AppCenter.1.3.0\lib\Xamarin.iOS10\Microsoft.AppCenter.iOS.Bindings.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.Push">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Microsoft.AppCenter.Push.1.3.0\lib\Xamarin.iOS10\Microsoft.AppCenter.Push.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.Push.iOS.Bindings">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Microsoft.AppCenter.Push.1.3.0\lib\Xamarin.iOS10\Microsoft.AppCenter.Push.iOS.Bindings.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.Distribute">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Microsoft.AppCenter.Distribute.1.3.0\lib\Xamarin.iOS10\Microsoft.AppCenter.Distribute.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.Distribute.iOS.Bindings">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Microsoft.AppCenter.Distribute.1.3.0\lib\Xamarin.iOS10\Microsoft.AppCenter.Distribute.iOS.Bindings.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.Crashes">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Microsoft.AppCenter.Crashes.1.3.0\lib\Xamarin.iOS10\Microsoft.AppCenter.Crashes.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.Crashes.iOS.Bindings">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Microsoft.AppCenter.Crashes.1.3.0\lib\Xamarin.iOS10\Microsoft.AppCenter.Crashes.iOS.Bindings.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.Analytics">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Microsoft.AppCenter.Analytics.1.3.0\lib\Xamarin.iOS10\Microsoft.AppCenter.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.Analytics.iOS.Bindings">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Microsoft.AppCenter.Analytics.1.3.0\lib\Xamarin.iOS10\Microsoft.AppCenter.Analytics.iOS.Bindings.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\58.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\80.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\120 copy.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\87.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\120.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\180.png" />
+    <ImageAsset Include="Assets.xcassets\LauchImage.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\LauchImage.imageset\splash_logo.png" />
+    <ImageAsset Include="Assets.xcassets\LauchImage.imageset\splash_logo%402x.png" />
+    <ImageAsset Include="Assets.xcassets\LauchImage.imageset\splash_logo%403x.png" />
+    <ImageAsset Include="Assets.xcassets\DemoImage.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\DemoImage.imageset\page_1.png" />
+    <ImageAsset Include="Assets.xcassets\DemoImage.imageset\page_1%402x.png" />
+    <ImageAsset Include="Assets.xcassets\DemoImage.imageset\page_1%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\splash_2 copy%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\60.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Settings\" />
+    <Folder Include="Settings\Configs\" />
+    <Folder Include="Settings\ThemeConfigs\" />
+    <Folder Include="Images\" />
+    <Folder Include="Images\Menu\" />
+    <Folder Include="Images\Basket\" />
+    <Folder Include="Images\Products\" />
+    <Folder Include="Images\Auth\" />
+    <Folder Include="Images\Auth\Auth\" />
+    <Folder Include="Images\Auth\SignIn\" />
+    <Folder Include="Images\Auth\Common\" />
+    <Folder Include="Images\Auth\Password\" />
+    <Folder Include="Images\Auth\SignUp\" />
+    <Folder Include="Images\Auth\Thanks\" />
+    <Folder Include="Images\Filters\" />
+    <Folder Include="Images\Main\" />
+    <Folder Include="Images\Marked\" />
+    <Folder Include="Images\OrdersHistory\" />
+    <Folder Include="Images\Thanks\" />
+    <Folder Include="Images\Settings\" />
+    <Folder Include="Assets.xcassets\LauchImage.imageset\" />
+    <Folder Include="Images\Feedback\" />
+    <Folder Include="Views\" />
+    <Folder Include="Assets.xcassets\DemoImage.imageset\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
+    <None Include="FodyWeavers.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="Bootstrap\AppRopio_AuthPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_GoogleAnalyticsPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_FirebaseAnalyticsPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_AppsFlyerPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_GeofencingPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_BeaconsPluginBootstrap.cs" />
+    <Compile Include="LinkerPleaseInclude.cs" />
+    <Compile Include="Bootstrap\AppRopio_ProfilePluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_MapPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_ContactsPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_MarkedPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_LoyaltyPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_MobileCenterBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_HistoryOrdersPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_CloudPaymentsPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_ApplePayPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_PaymentsPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_YandexKassaPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_Best2PayPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_InformationPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_BasketPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_FiltersPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_ProductsPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_SettingsPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_FeedbackPluginBootstrap.cs" />
+    <Compile Include="Views\DemoViewController.cs" />
+    <Compile Include="Views\DemoViewController.designer.cs">
+      <DependentUpon>DemoViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
+    <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\NetworkPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\VisibilityPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\DownloadCachePluginBootstrap.cs" />
+    <Compile Include="Bootstrap\JsonPluginBootstrap.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Settings\Configs\Menu.json" />
+    <BundleResource Include="Settings\ThemeConfigs\Menu.json" />
+    <BundleResource Include="Settings\ThemeConfigs\App.json" />
+    <BundleResource Include="Settings\Configs\Products.json" />
+    <BundleResource Include="Settings\Configs\App.json" />
+    <BundleResource Include="Settings\Configs\Auth.json" />
+    <BundleResource Include="Settings\Configs\GoogleAnalytics.json" />
+    <BundleResource Include="GoogleService-Info.plist" />
+    <BundleResource Include="Settings\Configs\AppsFlyer.json" />
+    <BundleResource Include="Settings\Configs\Basket.json" />
+    <BundleResource Include="Images\Basket\minus%402x.png" />
+    <BundleResource Include="Images\Basket\plus%402x.png" />
+    <BundleResource Include="Resources\OPENSANS-BOLD.TTF" />
+    <BundleResource Include="Resources\OPENSANS-LIGHT.TTF" />
+    <BundleResource Include="Resources\OPENSANS-REGULAR.TTF" />
+    <BundleResource Include="Resources\OPENSANS-SEMIBOLD.TTF" />
+    <BundleResource Include="Settings\ThemeConfigs\Products.json" />
+    <BundleResource Include="Settings\ThemeConfigs\Auth.json" />
+    <BundleResource Include="Images\Auth\Common\eyeClose%403x.png" />
+    <BundleResource Include="Images\Auth\Common\eyeOpen%403x.png" />
+    <BundleResource Include="Images\Basket\calendar%402x.png" />
+    <BundleResource Include="Images\Basket\calendar%403x.png" />
+    <BundleResource Include="Images\Basket\check%402x.png" />
+    <BundleResource Include="Images\Basket\check%403x.png" />
+    <BundleResource Include="Images\Basket\minus%403x.png" />
+    <BundleResource Include="Images\Basket\plus%403x.png" />
+    <BundleResource Include="Settings\ThemeConfigs\Basket.json" />
+    <BundleResource Include="Images\Basket\close%402x.png" />
+    <BundleResource Include="Images\Basket\close%403x.png" />
+    <BundleResource Include="Images\Basket\pin%402x.png" />
+    <BundleResource Include="Images\Basket\pin%403x.png" />
+    <BundleResource Include="Images\Auth\Thanks\icon%403x.png" />
+    <BundleResource Include="Settings\Configs\Filters.json" />
+    <BundleResource Include="Settings\ThemeConfigs\Filters.json" />
+    <BundleResource Include="Images\Products\Fav_active%402x.png" />
+    <BundleResource Include="Images\Products\Fav_active%403x.png" />
+    <BundleResource Include="Images\Products\Fav%402x.png" />
+    <BundleResource Include="Images\Products\Fav%403x.png" />
+    <BundleResource Include="Images\Products\filter%402x.png" />
+    <BundleResource Include="Images\Products\filter%403x.png" />
+    <BundleResource Include="Images\Products\sort%402x.png" />
+    <BundleResource Include="Images\Products\sort%403x.png" />
+    <BundleResource Include="Images\Main\Back%402x.png" />
+    <BundleResource Include="Images\Main\Back%403x.png" />
+    <BundleResource Include="Images\Menu\Menu%402x.png" />
+    <BundleResource Include="Images\Menu\Menu%403x.png" />
+    <BundleResource Include="Images\Filters\Cancel%402x.png" />
+    <BundleResource Include="Images\Filters\Cancel%403x.png" />
+    <BundleResource Include="Images\Filters\Choice%402x.png" />
+    <BundleResource Include="Images\Filters\Choice%403x.png" />
+    <BundleResource Include="Images\Main\Search_small%402x.png" />
+    <BundleResource Include="Images\Main\Search_small%403x.png" />
+    <BundleResource Include="Images\Products\marked%402x.png" />
+    <BundleResource Include="Images\Products\marked%403x.png" />
+    <BundleResource Include="Images\Products\unmarked%402x.png" />
+    <BundleResource Include="Images\Products\unmarked%403x.png" />
+    <BundleResource Include="Images\Products\history_icon%402x.png" />
+    <BundleResource Include="Images\Products\history_icon%403x.png" />
+    <BundleResource Include="Images\Products\link_icon%402x.png" />
+    <BundleResource Include="Images\Products\link_icon%403x.png" />
+    <BundleResource Include="Images\Auth\Password\iconNew%403x.png" />
+    <BundleResource Include="Images\Auth\Password\iconSended%403x.png" />
+    <BundleResource Include="Images\Auth\Password\iconReset%403x.png" />
+    <BundleResource Include="Images\Auth\logo%403x.png" />
+    <BundleResource Include="Images\Auth\SignIn\icon%402x.png" />
+    <BundleResource Include="Images\Auth\SignIn\icon%403x.png" />
+    <BundleResource Include="Images\Auth\Password\iconNew%402x.png" />
+    <BundleResource Include="Images\Auth\Password\iconSended%402x.png" />
+    <BundleResource Include="Images\Auth\Password\iconReset%402x.png" />
+    <BundleResource Include="Images\Auth\Thanks\icon%402x.png" />
+    <BundleResource Include="Images\Auth\SignUp\icon%402x.png" />
+    <BundleResource Include="Images\Auth\SignUp\icon%403x.png" />
+    <BundleResource Include="Images\Auth\Common\eyeClose%402x.png" />
+    <BundleResource Include="Images\Auth\Common\eyeOpen%402x.png" />
+    <BundleResource Include="Images\Auth\Auth\vk%402x.png" />
+    <BundleResource Include="Images\Auth\Auth\vk%403x.png" />
+    <BundleResource Include="Images\Auth\Auth\fb%402x.png" />
+    <BundleResource Include="Images\Auth\Auth\fb%403x.png" />
+    <BundleResource Include="Images\Basket\arrow_right%402x.png" />
+    <BundleResource Include="Images\Basket\arrow_right%403x.png" />
+    <BundleResource Include="Images\Basket\call%402x.png" />
+    <BundleResource Include="Images\Basket\call%403x.png" />
+    <BundleResource Include="Images\Basket\distance%402x.png" />
+    <BundleResource Include="Images\Basket\distance%403x.png" />
+    <BundleResource Include="Images\Basket\info%402x.png" />
+    <BundleResource Include="Images\Basket\info%403x.png" />
+    <BundleResource Include="Images\Basket\map%402x.png" />
+    <BundleResource Include="Images\Basket\map%403x.png" />
+    <BundleResource Include="Images\Basket\route%402x.png" />
+    <BundleResource Include="Images\Basket\route%403x.png" />
+    <BundleResource Include="Images\Basket\work_time%402x.png" />
+    <BundleResource Include="Images\Basket\work_time%403x.png" />
+    <BundleResource Include="loader.html" />
+    <BundleResource Include="Images\Menu\Logo%402x.png" />
+    <BundleResource Include="Images\Menu\Logo%403x.png" />
+    <BundleResource Include="Images\Main\hide_key%402x.png" />
+    <BundleResource Include="Images\Main\hide_key%403x.png" />
+    <BundleResource Include="Images\Main\hide_key_state%402x.png" />
+    <BundleResource Include="Images\Main\hide_key_state%403x.png" />
+    <BundleResource Include="Images\Products\share%402x.png" />
+    <BundleResource Include="Images\Products\share%403x.png" />
+    <BundleResource Include="Images\Main\accessory_arrow%402x.png" />
+    <BundleResource Include="Images\Main\accessory_arrow%403x.png" />
+    <BundleResource Include="Images\Main\notification_alert_icon%402x.png" />
+    <BundleResource Include="Images\Main\notification_alert_icon%403x.png" />
+    <BundleResource Include="Images\Main\notification_error_icon%402x.png" />
+    <BundleResource Include="Images\Main\notification_error_icon%403x.png" />
+    <BundleResource Include="Images\Basket\empty_image%402x.png" />
+    <BundleResource Include="Images\Basket\empty_image%403x.png" />
+    <BundleResource Include="Images\Products\empty_image%402x.png" />
+    <BundleResource Include="Images\Products\empty_image%403x.png" />
+    <BundleResource Include="Settings\Configs\Map.json" />
+    <BundleResource Include="Settings\ThemeConfigs\Map.json" />
+    <BundleResource Include="Images\Map\pin%402x.png" />
+    <BundleResource Include="Images\Map\pin%403x.png" />
+    <BundleResource Include="Images\Map\selected_pin%402x.png" />
+    <BundleResource Include="Images\Map\selected_pin%403x.png" />
+    <BundleResource Include="Settings\ThemeConfigs\Contacts.json" />
+    <BundleResource Include="Settings\Configs\Marked.json" />
+    <BundleResource Include="Settings\ThemeConfigs\Marked.json" />
+    <BundleResource Include="Images\Menu\address%402x.png" />
+    <BundleResource Include="Images\Menu\address%403x.png" />
+    <BundleResource Include="Images\Menu\basket%402x.png" />
+    <BundleResource Include="Images\Menu\basket%403x.png" />
+    <BundleResource Include="Images\Menu\catalog%402x.png" />
+    <BundleResource Include="Images\Menu\catalog%403x.png" />
+    <BundleResource Include="Images\Menu\contacts%402x.png" />
+    <BundleResource Include="Images\Menu\contacts%403x.png" />
+    <BundleResource Include="Images\Menu\fav%402x.png" />
+    <BundleResource Include="Images\Menu\fav%403x.png" />
+    <BundleResource Include="Images\Menu\history%402x.png" />
+    <BundleResource Include="Images\Menu\history%403x.png" />
+    <BundleResource Include="Images\Menu\info%402x.png" />
+    <BundleResource Include="Images\Menu\info%403x.png" />
+    <BundleResource Include="Images\Menu\news%402x.png" />
+    <BundleResource Include="Images\Menu\news%403x.png" />
+    <BundleResource Include="Images\Marked\empty_image%402x.png" />
+    <BundleResource Include="Images\Marked\empty_image%403x.png" />
+    <BundleResource Include="Images\Products\no_photo%402x.png" />
+    <BundleResource Include="Images\Products\no_photo%403x.png" />
+    <BundleResource Include="Images\Products\no_photo_large%402x.png" />
+    <BundleResource Include="Images\Products\no_photo_large%403x.png" />
+    <BundleResource Include="Settings\Configs\Loyalty.json" />
+    <BundleResource Include="Settings\ThemeConfigs\Loyalty.json" />
+    <BundleResource Include="Settings\Configs\HistoryOrders.json" />
+    <BundleResource Include="Settings\ThemeConfigs\HistoryOrders.json" />
+    <BundleResource Include="Images\OrdersHistory\arrow_right%402x.png" />
+    <BundleResource Include="Images\OrdersHistory\arrow_right%403x.png" />
+    <BundleResource Include="Images\Basket\minus_large%402x.png" />
+    <BundleResource Include="Images\Basket\minus_large%403x.png" />
+    <BundleResource Include="Images\Basket\plus_large%402x.png" />
+    <BundleResource Include="Images\Basket\plus_large%403x.png" />
+    <BundleResource Include="Settings\Configs\ApplePay.json" />
+    <BundleResource Include="Settings\ThemeConfigs\Payments.json" />
+    <BundleResource Include="Settings\Configs\CloudPayments.json" />
+    <BundleResource Include="Images\Thanks\basket%402x.png" />
+    <BundleResource Include="Images\Thanks\basket%403x.png" />
+    <BundleResource Include="Images\Thanks\close%403x.png" />
+    <BundleResource Include="Images\Thanks\close%402x.png" />
+    <BundleResource Include="Settings\Configs\YandexKassa.json" />
+    <BundleResource Include="Settings\Configs\Best2Pay.json" />
+    <BundleResource Include="Settings\ThemeConfigs\Information.json" />
+    <BundleResource Include="Settings\Configs\Information.json" />
+    <BundleResource Include="Images\Basket\basket_navbar%402x.png" />
+    <BundleResource Include="Images\Basket\basket_navbar%403x.png" />
+    <BundleResource Include="Settings\Configs\Settings.json" />
+    <BundleResource Include="Settings\ThemeConfigs\Settings.json" />
+    <BundleResource Include="Images\Settings\Selection%402x.png" />
+    <BundleResource Include="Images\Settings\Selection%403x.png" />
+    <BundleResource Include="Images\Settings\Search%402x.png" />
+    <BundleResource Include="Images\Settings\Search%403x.png" />
+    <BundleResource Include="Images\Menu\setting%402x.png" />
+    <BundleResource Include="Images\Menu\setting%403x.png" />
+    <BundleResource Include="Images\Map\Address%402x.png" />
+    <BundleResource Include="Images\Map\Address%403x.png" />
+    <BundleResource Include="Settings\ThemeConfigs\Feedback.json" />
+    <BundleResource Include="Images\Feedback\arrow_right%402x.png" />
+    <BundleResource Include="Images\Feedback\arrow_right%403x.png" />
+    <BundleResource Include="Images\Products\Search%402x.png" />
+    <BundleResource Include="Images\Products\Search%403x.png" />
+    <BundleResource Include="Images\Products\Close%402x.png" />
+    <BundleResource Include="Images\Products\Close%403x.png" />
+    <BundleResource Include="Images\Products\cross_icon%402x.png" />
+    <BundleResource Include="Images\Products\cross_icon%403x.png" />
+    <BundleResource Include="Images\Products\empty_icon%402x.png" />
+    <BundleResource Include="Images\Products\empty_icon%403x.png" />
+    <BundleResource Include="Images\Basket\contacts%402x.png" />
+    <BundleResource Include="Images\Basket\contacts%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\API\AppRopio.Base.API.csproj">
+      <Project>{124841B9-39F6-44B5-8B96-50183FBFE341}</Project>
+      <Name>AppRopio.Base.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Core\AppRopio.Base.Core.csproj">
+      <Project>{EA6D5113-1E80-494B-886D-3D7FDFA04E99}</Project>
+      <Name>AppRopio.Base.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\iOS\AppRopio.Base.iOS.csproj">
+      <Project>{2F005241-B90A-484A-A3A0-51684D5ECE54}</Project>
+      <Name>AppRopio.Base.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.ECommerce\Products\API\AppRopio.ECommerce.Products.API.csproj">
+      <Project>{AB6F8756-ADEC-4C34-A00B-988972E44E61}</Project>
+      <Name>AppRopio.ECommerce.Products.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.ECommerce\Products\Core\AppRopio.ECommerce.Products.Core.csproj">
+      <Project>{F2ECB410-3A5A-44E0-818A-C655FEE87DEA}</Project>
+      <Name>AppRopio.ECommerce.Products.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.ECommerce\Products\iOS\AppRopio.ECommerce.Products.iOS.csproj">
+      <Project>{81C286E1-FF5F-4914-8761-82D0AA86E1B8}</Project>
+      <Name>AppRopio.ECommerce.Products.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Navigation\Menu\Core\AppRopio.Navigation.Menu.Core.csproj">
+      <Project>{E9C4484A-135D-42D9-A9CB-E1A8884D5041}</Project>
+      <Name>AppRopio.Navigation.Menu.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Navigation\Menu\iOS\AppRopio.Navigation.Menu.iOS.csproj">
+      <Project>{B35AF323-7E0F-4B1E-8B2E-02D0D22551DF}</Project>
+      <Name>AppRopio.Navigation.Menu.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Auth\API\AppRopio.Base.Auth.API.csproj">
+      <Project>{4A505153-08D4-4269-B753-21EEC043FDD4}</Project>
+      <Name>AppRopio.Base.Auth.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Auth\Core\AppRopio.Base.Auth.Core.csproj">
+      <Project>{717297CF-D3BD-498C-978A-C565C7E447D5}</Project>
+      <Name>AppRopio.Base.Auth.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Auth\iOS\AppRopio.Base.Auth.iOS.csproj">
+      <Project>{497B2A01-631F-4F0F-B93D-BF53AF209132}</Project>
+      <Name>AppRopio.Base.Auth.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Analytics\GoogleAnalytics\Core\AppRopio.Analytics.GoogleAnalytics.Core.csproj">
+      <Project>{2A27A987-3DCD-4474-961C-06000D14CF40}</Project>
+      <Name>AppRopio.Analytics.GoogleAnalytics.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Analytics\GoogleAnalytics\iOS\AppRopio.Analytics.GoogleAnalytics.iOS.csproj">
+      <Project>{4A82B80A-46A9-4E49-A7C7-FF498C57FE6A}</Project>
+      <Name>AppRopio.Analytics.GoogleAnalytics.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Analytics\Firebase\Core\AppRopio.Analytics.Firebase.Core.csproj">
+      <Project>{4DF16D5C-5EF7-44B9-AD83-C737EA2BF38D}</Project>
+      <Name>AppRopio.Analytics.Firebase.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Analytics\Firebase\iOS\AppRopio.Analytics.Firebase.iOS.csproj">
+      <Project>{883D043E-FFD3-4A05-8C75-AB4312F5051F}</Project>
+      <Name>AppRopio.Analytics.Firebase.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Analytics\AppsFlyer\Core\AppRopio.Analytics.AppsFlyer.Core.csproj">
+      <Project>{FF262391-8114-4461-B2BD-4110535579A9}</Project>
+      <Name>AppRopio.Analytics.AppsFlyer.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Analytics\AppsFlyer\iOS\AppRopio.Analytics.AppsFlyer.iOS.csproj">
+      <Project>{7B13C972-DA64-4523-81FE-75F42827F843}</Project>
+      <Name>AppRopio.Analytics.AppsFlyer.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.ECommerce\Basket\API\AppRopio.ECommerce.Basket.API.csproj">
+      <Project>{F22152B2-AF3C-4BAA-8A78-B2C4C6ED2109}</Project>
+      <Name>AppRopio.ECommerce.Basket.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.ECommerce\Basket\Core\AppRopio.ECommerce.Basket.Core.csproj">
+      <Project>{B2302667-FF48-4A51-9032-84F45B8F173C}</Project>
+      <Name>AppRopio.ECommerce.Basket.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.ECommerce\Basket\iOS\AppRopio.ECommerce.Basket.iOS.csproj">
+      <Project>{28E7EA9F-EF2E-4F90-9FA4-54445B3C22C0}</Project>
+      <Name>AppRopio.ECommerce.Basket.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Geofencing\iOS\AppRopio.Geofencing.iOS.csproj">
+      <Project>{AA19DDCC-DE7B-482B-ABEC-7384730DC312}</Project>
+      <Name>AppRopio.Geofencing.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Geofencing\Core\AppRopio.Geofencing.Core.csproj">
+      <Project>{D4A1E5AF-60C2-4734-ABF9-536B7DCD219E}</Project>
+      <Name>AppRopio.Geofencing.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Geofencing\API\AppRopio.Geofencing.API.csproj">
+      <Project>{E33F68A0-1EBF-4888-AE9F-6EEC4E9ECB68}</Project>
+      <Name>AppRopio.Geofencing.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Beacons\API\AppRopio.Beacons.API.csproj">
+      <Project>{242BD5C5-C64E-411A-A906-720BA2B2CCA9}</Project>
+      <Name>AppRopio.Beacons.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Beacons\Core\AppRopio.Beacons.Core.csproj">
+      <Project>{86EF5D26-51DF-4372-BD3F-C84744EF1458}</Project>
+      <Name>AppRopio.Beacons.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Beacons\iOS\AppRopio.Beacons.iOS.csproj">
+      <Project>{85669DD7-16D5-4F0B-84D4-CDF979C1EB17}</Project>
+      <Name>AppRopio.Beacons.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Filters\iOS\AppRopio.Base.Filters.iOS.csproj">
+      <Project>{15D560A5-457C-4928-BED9-46BBD85F2F8D}</Project>
+      <Name>AppRopio.Base.Filters.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Filters\Core\AppRopio.Base.Filters.Core.csproj">
+      <Project>{19D459DF-4188-4F2B-BC76-CE7C4A459A9D}</Project>
+      <Name>AppRopio.Base.Filters.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Filters\API\AppRopio.Base.Filters.API.csproj">
+      <Project>{7C9F9E3E-A1BE-46B1-8DAE-65E829E6B0EE}</Project>
+      <Name>AppRopio.Base.Filters.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Profile\API\AppRopio.Base.Profile.API.csproj">
+      <Project>{9BEF212B-170E-434F-A182-ADF15FB2B451}</Project>
+      <Name>AppRopio.Base.Profile.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Profile\Core\AppRopio.Base.Profile.Core.csproj">
+      <Project>{D6E6C1A8-8158-4D4D-8864-22DE6B934FE7}</Project>
+      <Name>AppRopio.Base.Profile.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Profile\iOS\AppRopio.Base.Profile.iOS.csproj">
+      <Project>{874CC15C-5C21-460C-A1AE-F40113D12087}</Project>
+      <Name>AppRopio.Base.Profile.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Profile\AppRopio.Models.Profile.csproj">
+      <Project>{024A13DC-DD20-4F74-998F-2B82D1CAF4C3}</Project>
+      <Name>AppRopio.Models.Profile</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Products\AppRopio.Models.Products.csproj">
+      <Project>{B621BAAF-BBB9-43D8-9990-7431667877AC}</Project>
+      <Name>AppRopio.Models.Products</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Geofencing\AppRopio.Models.Geofencing.csproj">
+      <Project>{041F50F5-FC90-4A88-9726-1AFEAECA7315}</Project>
+      <Name>AppRopio.Models.Geofencing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Filters\AppRopio.Models.Filters.csproj">
+      <Project>{F538DE02-55D4-4F2F-9144-A94F70EB652A}</Project>
+      <Name>AppRopio.Models.Filters</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Beacons\AppRopio.Models.Beacons.csproj">
+      <Project>{8003DCDF-694E-49F6-B108-2B10C6C1FB9B}</Project>
+      <Name>AppRopio.Models.Beacons</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Basket\AppRopio.Models.Basket.csproj">
+      <Project>{55D9E12B-8008-4DAD-8CB6-5A128777340C}</Project>
+      <Name>AppRopio.Models.Basket</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Base\AppRopio.Models.Base.csproj">
+      <Project>{C4F2B57C-507E-4B99-B2E4-FA4B3C99FD59}</Project>
+      <Name>AppRopio.Models.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Auth\AppRopio.Models.Auth.csproj">
+      <Project>{EEBE1C14-C1C6-45B0-BD83-260151D97DDD}</Project>
+      <Name>AppRopio.Models.Auth</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Map\API\AppRopio.Base.Map.API.csproj">
+      <Project>{8590B5CF-3921-4778-8559-4E11219CEBEE}</Project>
+      <Name>AppRopio.Base.Map.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Map\Core\AppRopio.Base.Map.Core.csproj">
+      <Project>{7E05AFCC-3D18-47D3-A5CD-06FA46130219}</Project>
+      <Name>AppRopio.Base.Map.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Map\AppRopio.Models.Map.csproj">
+      <Project>{E4676E75-669E-4E6A-96AB-D613F1FB4732}</Project>
+      <Name>AppRopio.Models.Map</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Map\iOS\AppRopio.Base.Map.iOS.csproj">
+      <Project>{84101BD1-2422-4DF7-BE0A-AC211E497C01}</Project>
+      <Name>AppRopio.Base.Map.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Contacts\API\AppRopio.Base.Contacts.API.csproj">
+      <Project>{B972BFB8-3481-4411-83DE-50CF6780D028}</Project>
+      <Name>AppRopio.Base.Contacts.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Contacts\Core\AppRopio.Base.Contacts.Core.csproj">
+      <Project>{2BD59760-4635-4B39-835F-CFD29A45BC96}</Project>
+      <Name>AppRopio.Base.Contacts.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Contacts\iOS\AppRopio.Base.Contacts.iOS.csproj">
+      <Project>{53D2EC0B-5133-4AB1-BB14-9D8BE1F932F0}</Project>
+      <Name>AppRopio.Base.Contacts.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Contacts\AppRopio.Models.Contacts.csproj">
+      <Project>{747299BF-FAF3-4C47-BF4C-B1A949BB5F56}</Project>
+      <Name>AppRopio.Models.Contacts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Marked\AppRopio.Models.Marked.csproj">
+      <Project>{CB63C402-A2F2-48BA-83E4-A616CC439C74}</Project>
+      <Name>AppRopio.Models.Marked</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.ECommerce\Marked\iOS\AppRopio.ECommerce.Marked.iOS.csproj">
+      <Project>{E94AFFA6-0EE8-443A-A57E-91DBB5DE46F0}</Project>
+      <Name>AppRopio.ECommerce.Marked.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.ECommerce\Marked\Core\AppRopio.ECommerce.Marked.Core.csproj">
+      <Project>{D7B66AD6-DE32-493E-A746-223D23C4A403}</Project>
+      <Name>AppRopio.ECommerce.Marked.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.ECommerce\Marked\API\AppRopio.ECommerce.Marked.API.csproj">
+      <Project>{1840866B-21D7-4DD1-95F3-335D62C01CC3}</Project>
+      <Name>AppRopio.ECommerce.Marked.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.ECommerce\Loyalty\API\AppRopio.ECommerce.Loyalty.API.csproj">
+      <Project>{F40BC6FE-FE5F-4D5B-9453-923434FC2FC0}</Project>
+      <Name>AppRopio.ECommerce.Loyalty.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.ECommerce\Loyalty\Core\AppRopio.ECommerce.Loyalty.Core.csproj">
+      <Project>{6CEC3D40-8650-4F19-ADE5-373021826B31}</Project>
+      <Name>AppRopio.ECommerce.Loyalty.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.ECommerce\Loyalty\iOS\AppRopio.ECommerce.Loyalty.iOS.csproj">
+      <Project>{29D6072F-6086-42FC-B979-B780DA70D6CA}</Project>
+      <Name>AppRopio.ECommerce.Loyalty.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Loyalty\AppRopio.Models.Loyalty.csproj">
+      <Project>{4F3314CC-A2AB-4962-AF1F-0FAB3E13EFE8}</Project>
+      <Name>AppRopio.Models.Loyalty</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.ECommerce\Loyalty\Abstractions\AppRopio.ECommerce.Loyalty.Abstractions.csproj">
+      <Project>{B97AC2F0-C860-4F8C-BCCA-7A503A03D880}</Project>
+      <Name>AppRopio.ECommerce.Loyalty.Abstractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Analytics\MobileCenter\iOS\AppRopio.Analytics.MobileCenter.iOS.csproj">
+      <Project>{66789C73-43A3-4EA7-8E12-2EF60982F19C}</Project>
+      <Name>AppRopio.Analytics.MobileCenter.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Analytics\MobileCenter\Core\AppRopio.Analytics.MobileCenter.Core.csproj">
+      <Project>{2A2E97B5-DC27-4FC7-A7A2-63E4780FF49A}</Project>
+      <Name>AppRopio.Analytics.MobileCenter.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.HistoryOrders\AppRopio.Models.HistoryOrders.csproj">
+      <Project>{E4E61823-2231-48DE-8644-00497FD299C8}</Project>
+      <Name>AppRopio.Models.HistoryOrders</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.ECommerce\HistoryOrders\API\AppRopio.ECommerce.HistoryOrders.API.csproj">
+      <Project>{27CCC837-6EC5-40B4-8631-80C0541B08DE}</Project>
+      <Name>AppRopio.ECommerce.HistoryOrders.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.ECommerce\HistoryOrders\Core\AppRopio.ECommerce.HistoryOrders.Core.csproj">
+      <Project>{4639DABF-78CC-458B-8E9D-F1B857B3C42A}</Project>
+      <Name>AppRopio.ECommerce.HistoryOrders.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.ECommerce\HistoryOrders\iOS\AppRopio.ECommerce.HistoryOrders.iOS.csproj">
+      <Project>{7AAD4FD5-A934-45BF-87CD-59D895590FCB}</Project>
+      <Name>AppRopio.ECommerce.HistoryOrders.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Payments\CloudPayments\Core\AppRopio.Payments.CloudPayments.Core.csproj">
+      <Project>{50148F33-EA1B-4612-AD4D-84A8BB1BB416}</Project>
+      <Name>AppRopio.Payments.CloudPayments.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Payments\CloudPayments\iOS\AppRopio.Payments.CloudPayments.iOS.csproj">
+      <Project>{654159DE-7A31-4502-B5D4-BB7360B7FF98}</Project>
+      <Name>AppRopio.Payments.CloudPayments.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Payments\ApplePay\AppRopio.Payments.ApplePay.csproj">
+      <Project>{55C04CE9-B3AD-4671-90A1-59E53FB3961D}</Project>
+      <Name>AppRopio.Payments.ApplePay</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Payments\CloudPayments\API\AppRopio.Payments.CloudPayments.API.csproj">
+      <Project>{1A98F64C-EEAF-439D-B3D7-B40D74694244}</Project>
+      <Name>AppRopio.Payments.CloudPayments.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Payments\Base\Core\AppRopio.Payments.Core.csproj">
+      <Project>{36A0974D-3DCE-490B-B186-2913785074CE}</Project>
+      <Name>AppRopio.Payments.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Payments\YandexKassa\Core\AppRopio.Payments.YandexKassa.Core.csproj">
+      <Project>{58B770AC-C69C-49A4-9FCB-302186FC0D99}</Project>
+      <Name>AppRopio.Payments.YandexKassa.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Payments\YandexKassa\iOS\AppRopio.Payments.YandexKassa.iOS.csproj">
+      <Project>{807AD2A3-696D-4113-9B41-E608915E08FF}</Project>
+      <Name>AppRopio.Payments.YandexKassa.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Payments\Base\API\AppRopio.Payments.API.csproj">
+      <Project>{9E008650-B5B9-40C9-8FBA-8B1A666082B0}</Project>
+      <Name>AppRopio.Payments.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Payments\Base\Core\AppRopio.Payments.Core.csproj">
+      <Project>{36A0974D-3DCE-490B-B186-2913785074CE}</Project>
+      <Name>AppRopio.Payments.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Payments\AppRopio.Models.Payments.csproj">
+      <Project>{36D85C96-D45F-465B-98E6-AF1BC36400D5}</Project>
+      <Name>AppRopio.Models.Payments</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Payments\Base\iOS\AppRopio.Payments.iOS.csproj">
+      <Project>{6B4DA3CF-117C-449B-8A34-7A1DE96987CA}</Project>
+      <Name>AppRopio.Payments.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Payments\Best2Pay\Core\AppRopio.Payments.Best2Pay.Core.csproj">
+      <Project>{3753EB62-6E31-4BD4-B153-93C1FDDA211F}</Project>
+      <Name>AppRopio.Payments.Best2Pay.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Payments\Best2Pay\iOS\AppRopio.Payments.Best2Pay.iOS.csproj">
+      <Project>{F744A9F2-AA9B-4ACE-88AE-0165EA355CD5}</Project>
+      <Name>AppRopio.Payments.Best2Pay.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Information\AppRopio.Models.Information.csproj">
+      <Project>{18FC63AF-DFAC-4AD8-80C3-D48C7C266853}</Project>
+      <Name>AppRopio.Models.Information</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Settings\Core\AppRopio.Base.Settings.Core.csproj">
+      <Project>{2567456C-1009-4EA0-8444-D0B1D3344569}</Project>
+      <Name>AppRopio.Base.Settings.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Settings\iOS\AppRopio.Base.Settings.iOS.csproj">
+      <Project>{D0E574BA-564D-4550-B030-699122DB0419}</Project>
+      <Name>AppRopio.Base.Settings.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Feedback\Core\AppRopio.Feedback.Core.csproj">
+      <Project>{BFB67EFA-1590-4E89-98B9-CB65C5D974BB}</Project>
+      <Name>AppRopio.Feedback.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Feedback\iOS\AppRopio.Feedback.iOS.csproj">
+      <Project>{DE5342E2-5356-411B-8CD6-8258E04B8C46}</Project>
+      <Name>AppRopio.Feedback.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Settings\AppRopio.Models.Settings.csproj">
+      <Project>{E26E8E61-01AB-4D1C-88A8-FE57A0287A67}</Project>
+      <Name>AppRopio.Models.Settings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Feedback\AppRopio.Models.Feedback.csproj">
+      <Project>{1FA26338-9826-4DC9-B214-BE9159256E6D}</Project>
+      <Name>AppRopio.Models.Feedback</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Settings\API\AppRopio.Base.Settings.API.csproj">
+      <Project>{BF38EC97-5E5F-42BE-959A-05620DC0E5F1}</Project>
+      <Name>AppRopio.Base.Settings.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Feedback\API\AppRopio.Feedback.API.csproj">
+      <Project>{D3083AF1-F971-468D-8EB7-1F59A340C543}</Project>
+      <Name>AppRopio.Feedback.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Payments\Best2Pay\API\AppRopio.Payments.Best2Pay.API.csproj">
+      <Project>{6A0E8A43-7E69-464B-9FBD-F0570B34DFE2}</Project>
+      <Name>AppRopio.Payments.Best2Pay.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Payments\YandexKassa\API\AppRopio.Payments.YandexKassa.API.csproj">
+      <Project>{E73FC559-4557-4BD7-BDDB-B4ED09DBD9E8}</Project>
+      <Name>AppRopio.Payments.YandexKassa.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Information\API\AppRopio.Base.Information.API.csproj">
+      <Project>{BA05AB1F-8F86-415E-9EDB-0FECEF2E211B}</Project>
+      <Name>AppRopio.Base.Information.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Information\Core\AppRopio.Base.Information.Core.csproj">
+      <Project>{84265D8D-033F-4A4F-852A-96C93E8573A2}</Project>
+      <Name>AppRopio.Base.Information.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Information\iOS\AppRopio.Base.Information.iOS.csproj">
+      <Project>{2B532561-B567-41FE-BDAE-36A475F708BD}</Project>
+      <Name>AppRopio.Base.Information.iOS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="LaunchScreen.xib" />
+    <InterfaceDefinition Include="Views\DemoViewController.xib" />
+  </ItemGroup>
+  <ItemGroup>
+    <ITunesArtwork Include="iTunesArtwork" />
+    <ITunesArtwork Include="iTunesArtwork%402x" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets')" />
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Build.Download.0.4.7\build\Xamarin.Build.Download.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Build.Download.0.4.7\build\Xamarin.Build.Download.targets')" />
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Firebase.iOS.Core.4.0.8\build\Xamarin.Firebase.iOS.Core.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Firebase.iOS.Core.4.0.8\build\Xamarin.Firebase.iOS.Core.targets')" />
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Firebase.iOS.InstanceID.2.0.4\build\Xamarin.Firebase.iOS.InstanceID.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Firebase.iOS.InstanceID.2.0.4\build\Xamarin.Firebase.iOS.InstanceID.targets')" />
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Firebase.iOS.Analytics.4.0.4\build\Xamarin.Firebase.iOS.Analytics.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Firebase.iOS.Analytics.4.0.4\build\Xamarin.Firebase.iOS.Analytics.targets')" />
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Google.iOS.Analytics.3.17.0.2\build\Xamarin.Google.iOS.Analytics.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Google.iOS.Analytics.3.17.0.2\build\Xamarin.Google.iOS.Analytics.targets')" />
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Realm.Database.2.1.0\build\Realm.Database.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Realm.Database.2.1.0\build\Realm.Database.targets')" />
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Realm.2.1.0\build\Realm.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Realm.2.1.0\build\Realm.targets')" />
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Fody.2.2.0\build\netstandard1.0\Fody.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Fody.2.2.0\build\netstandard1.0\Fody.targets')" />
+</Project>

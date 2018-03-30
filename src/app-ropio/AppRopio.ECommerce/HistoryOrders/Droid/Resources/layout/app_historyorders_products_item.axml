@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <appropio.base.droid.controls.ARImageView
+        android:id="@+id/app_historyorders_products_item_image"
+        android:layout_width="@dimen/app_historyorders_products_item_imageSize"
+        android:layout_height="@dimen/app_historyorders_products_item_imageSize"
+        android:layout_margin="@dimen/app_historyorders_products_item_margin"
+        android:src="?attr/app_historyorders_ic_nophoto"
+        app:MvxBind="ImageUrl ImageUrl; Alpha HistoryOrdersProductAvailableAlpha(IsAvailable)" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/app_historyorders_products_item_margin"
+        android:layout_marginRight="@dimen/app_historyorders_products_item_margin"
+        android:layout_toRightOf="@+id/app_historyorders_products_item_image">
+        <TextView
+            style="@style/app_historyorders_products_item_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:MvxBind="Text Title; Alpha HistoryOrdersProductAvailableAlpha(IsAvailable)" />
+        <TextView
+            style="@style/app_historyorders_products_item_amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/app_historyorders_products_item_amount_bottomMargin"
+            app:MvxBind="Text Amount; Alpha HistoryOrdersProductAvailableAlpha(IsAvailable)" />
+        <TextView
+            style="@style/app_historyorders_products_item_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:MvxBind="Text PriceFormat(TotalPrice); Visibility Visibility(IsAvailable)" />
+        <TextView
+            style="@style/app_historyorders_products_item_available"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/app_historyorders_products_item_available_height"
+            android:background="@drawable/app_historyorders_products_item_available"
+            android:paddingTop="@dimen/app_historyorders_products_item_available_paddingsVertical"
+            android:paddingBottom="@dimen/app_historyorders_products_item_available_paddingsVertical"
+            android:paddingLeft="@dimen/app_historyorders_products_item_available_paddingsHorizontal"
+            android:paddingRight="@dimen/app_historyorders_products_item_available_paddingsHorizontal"
+            android:text="@string/app_historyorders_products_item_available"
+            android:visibility="gone"
+            app:MvxBind="Visibility InvertedVisibility(IsAvailable)" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:MvxBind="Click CancelCommand">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/app_color_background"
+        android:layout_alignParentBottom="true">
+        <TextView
+            style="@style/app_filters_sort_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/app_filters_sort_title_height" />
+        <View
+            style="@style/AppRopioTheme.Control.Separator"
+            android:layout_alignParentBottom="true" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <mvvmcross.droid.support.v7.recyclerview.MvxRecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/app_filters_sort_minHeight"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+                app:MvxItemTemplate="@layout/app_filters_sort_item"
+                app:MvxBind="ItemsSource Items; ItemClick SelectionChangedCommand" />
+            <include
+                layout="@layout/app_base_loading" />
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

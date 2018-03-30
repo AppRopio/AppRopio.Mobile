@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ResetMailViewController">
+            <connections>
+                <outlet property="DoneButton" destination="R3D-xI-1ha" id="ldz-0p-k7Y"/>
+                <outlet property="IconImage" destination="lmG-Yy-29Z" id="quB-2z-TGP"/>
+                <outlet property="TextDescriptionLabel" destination="tlv-ax-Pfc" id="5aF-Vc-m1X"/>
+                <outlet property="TextTitleLabel" destination="BsC-qj-NuL" id="Fdr-sh-AZ0"/>
+                <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="2">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CtK-9f-gqK">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3D-xI-1ha">
+                            <rect key="frame" x="20" y="512" width="335" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="dMr-Sa-uXO"/>
+                            </constraints>
+                            <state key="normal" title="Понятно"/>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ZQ-A9-FIo">
+                            <rect key="frame" x="57" y="177.5" width="260" height="172"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lmG-Yy-29Z">
+                                    <rect key="frame" x="52" y="0.0" width="156" height="81"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="156" id="MWe-w7-opt"/>
+                                        <constraint firstAttribute="height" constant="81" id="yfD-HZ-Bu3"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tlv-ax-Pfc">
+                                    <rect key="frame" x="0.0" y="111" width="260" height="61"/>
+                                    <string key="text">Проверьте свою почту,
+мы отправили вам инструкции
+для восстановления пароля.</string>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пароль отправлен." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BsC-qj-NuL">
+                                    <rect key="frame" x="53.5" y="86" width="153" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="tlv-ax-Pfc" secondAttribute="bottom" id="1U5-SU-whJ"/>
+                                <constraint firstItem="lmG-Yy-29Z" firstAttribute="top" secondItem="9ZQ-A9-FIo" secondAttribute="top" id="Cgq-JK-aaE"/>
+                                <constraint firstItem="BsC-qj-NuL" firstAttribute="top" secondItem="lmG-Yy-29Z" secondAttribute="bottom" constant="5" id="Ltd-5J-VAT"/>
+                                <constraint firstItem="tlv-ax-Pfc" firstAttribute="centerX" secondItem="9ZQ-A9-FIo" secondAttribute="centerX" id="P0n-gi-eFG"/>
+                                <constraint firstItem="tlv-ax-Pfc" firstAttribute="leading" secondItem="9ZQ-A9-FIo" secondAttribute="leading" id="QnG-S2-n2O"/>
+                                <constraint firstAttribute="trailing" secondItem="tlv-ax-Pfc" secondAttribute="trailing" id="V9B-AE-seH"/>
+                                <constraint firstItem="lmG-Yy-29Z" firstAttribute="centerX" secondItem="9ZQ-A9-FIo" secondAttribute="centerX" id="cLB-y9-5pn"/>
+                                <constraint firstItem="BsC-qj-NuL" firstAttribute="centerX" secondItem="9ZQ-A9-FIo" secondAttribute="centerX" id="dTA-GI-23C"/>
+                                <constraint firstItem="tlv-ax-Pfc" firstAttribute="top" secondItem="BsC-qj-NuL" secondAttribute="bottom" constant="4" id="iH6-fr-eeZ"/>
+                                <constraint firstAttribute="width" constant="260" id="mPf-xJ-0OS"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="9ZQ-A9-FIo" firstAttribute="centerX" secondItem="CtK-9f-gqK" secondAttribute="centerX" id="4m5-Tg-e6A"/>
+                        <constraint firstItem="9ZQ-A9-FIo" firstAttribute="centerY" secondItem="CtK-9f-gqK" secondAttribute="centerY" constant="-70" id="Rp9-5m-Fzb"/>
+                        <constraint firstItem="R3D-xI-1ha" firstAttribute="leading" secondItem="CtK-9f-gqK" secondAttribute="leading" constant="20" id="kqs-gd-hgb"/>
+                        <constraint firstAttribute="trailing" secondItem="R3D-xI-1ha" secondAttribute="trailing" constant="20" id="pY8-kW-e8X"/>
+                        <constraint firstAttribute="bottom" secondItem="R3D-xI-1ha" secondAttribute="bottom" constant="105" id="wG4-SK-j5I"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="CtK-9f-gqK" secondAttribute="bottom" id="4wy-DV-39c"/>
+                <constraint firstItem="CtK-9f-gqK" firstAttribute="top" secondItem="2" secondAttribute="top" id="PGW-rB-sWR"/>
+                <constraint firstAttribute="trailing" secondItem="CtK-9f-gqK" secondAttribute="trailing" id="Q3W-f5-4kF"/>
+                <constraint firstItem="CtK-9f-gqK" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="uf8-oa-DiH"/>
+            </constraints>
+            <point key="canvasLocation" x="25.5" y="52.5"/>
+        </view>
+    </objects>
+</document>

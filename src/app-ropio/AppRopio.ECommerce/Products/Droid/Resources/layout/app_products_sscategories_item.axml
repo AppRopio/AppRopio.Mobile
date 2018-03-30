@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_products_sscategories_item_height"
+        android:paddingLeft="@dimen/app_products_sscategories_item_horizontalMargin"
+        android:paddingRight="@dimen/app_products_sscategories_item_horizontalMargin">
+        <mvvmcross.binding.droid.views.MvxImageView
+            android:layout_width="@dimen/app_products_sscategories_item_height"
+            android:layout_height="@dimen/app_products_sscategories_item_height"
+            android:layout_marginRight="@dimen/app_products_sscategories_item_horizontalMargin"
+            android:scaleType="fitXY"
+            android:visibility="gone"
+            app:MvxBind="ImageUrl IconUrl; Visibility Visibility(IconUrl)" />
+        <TextView
+            style="@style/app_products_sscategories_item_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:MvxBind="Text Name" />
+    </LinearLayout>
+    <View
+        style="@style/AppRopioTheme.Control.Separator" />
+</LinearLayout>

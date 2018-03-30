@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppRopio_Test", "AppRopio_Test\AppRopio_Test.csproj", "{33FCAFB5-4F54-43B9-B158-2E836FC0E06B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhone = Release|iPhone
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{33FCAFB5-4F54-43B9-B158-2E836FC0E06B}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{33FCAFB5-4F54-43B9-B158-2E836FC0E06B}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{33FCAFB5-4F54-43B9-B158-2E836FC0E06B}.Release|iPhone.ActiveCfg = Release|iPhone
+		{33FCAFB5-4F54-43B9-B158-2E836FC0E06B}.Release|iPhone.Build.0 = Release|iPhone
+		{33FCAFB5-4F54-43B9-B158-2E836FC0E06B}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{33FCAFB5-4F54-43B9-B158-2E836FC0E06B}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{33FCAFB5-4F54-43B9-B158-2E836FC0E06B}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{33FCAFB5-4F54-43B9-B158-2E836FC0E06B}.Debug|iPhone.Build.0 = Debug|iPhone
+	EndGlobalSection
+EndGlobal

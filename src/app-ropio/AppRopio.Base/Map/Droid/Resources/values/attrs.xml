@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <attr
+        name="app_map_ic_map"
+        format="reference"/>
+    <attr
+        name="app_map_list_item_ic_distance"
+        format="reference"/>
+    <attr
+        name="app_map_list_item_callButton"
+        format="reference"/>
+    <attr
+        name="app_map_list_item_infoButton"
+        format="reference"/>
+    <attr
+        name="app_map_list_item_mapButton"
+        format="reference"/>
+    <attr
+        name="app_map_list_item_routeButton"
+        format="reference"/>
+    <attr
+        name="app_map_points_ic_pin"
+        format="reference"/>
+    <attr
+        name="app_map_points_ic_pin_deselected"
+        format="reference"/>
+</resources>

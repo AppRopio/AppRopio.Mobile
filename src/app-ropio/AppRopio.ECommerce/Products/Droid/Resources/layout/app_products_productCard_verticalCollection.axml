@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <include
+        layout="@layout/app_products_productcard_title" />
+    <mvvmcross.droid.support.v7.recyclerview.MvxRecyclerView
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/app_products_productCard_title_height"
+        android:layout_marginLeft="@dimen/app_products_productCard_horizontalMargins"
+        android:layout_marginRight="@dimen/app_products_productCard_horizontalMargins"
+        app:spanCount="@integer/app_products_productCard_spanCount"
+        app:layoutManager="android.support.v7.widget.StaggeredGridLayoutManager"
+        app:MvxItemTemplate="@layout/app_products_productcard_verticalcollection_item"
+        app:MvxBind="ItemsSource Items; ItemClick SelectionChangedCommand" />
+    <View
+        android:layout_marginTop="8dp"
+        style="@style/AppRopioTheme.Control.Separator" />
+</LinearLayout>

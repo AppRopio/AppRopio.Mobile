@@ -1,0 +1,261 @@
+﻿{
+    "cartIndicator": {
+        "image":  { "path": "Images/Basket/basket_navbar.png" }
+    },
+    "productCard": {
+        "incrementButton": {
+            "background": {
+                "HEX": "",
+                "ref": ""
+            },
+            "states": {
+                "normal": {
+                    "content": {
+                        "ref": ""
+                    },
+                    "background": ""
+                },
+                "highlighted": {
+                    "content": {
+                        "ref": ""
+                    },
+                    "background": ""
+                },
+                "selected": {
+                    "content": {
+                        "ref": ""
+                    },
+                    "background": ""
+                },
+                "disabled": {
+                    "content": {
+                        "ref": ""
+                    },
+                    "background": ""
+                },
+                "invalid": {
+                    "content": {
+                        "ref": ""
+                    },
+                    "background": ""
+                }
+            },
+            "image": {
+                "path": "Images/Basket/plus_large.png"
+            }
+        },
+        "decrementButton": {
+            "background": {
+                "HEX": "",
+                "ref": ""
+            },
+            "states": {
+                "normal": {
+                    "content": {
+                        "ref": ""
+                    },
+                    "background": ""
+                },
+                "highlighted": {
+                    "content": {
+                        "ref": ""
+                    },
+                    "background": ""
+                },
+                "selected": {
+                    "content": {
+                        "ref": ""
+                    },
+                    "background": ""
+                },
+                "disabled": {
+                    "content": {
+                        "ref": ""
+                    },
+                    "background": ""
+                },
+                "invalid": {
+                    "content": {
+                        "ref": ""
+                    },
+                    "background": ""
+                }
+            },
+            "image": {
+                "path": "Images/Basket/minus_large.png"
+            }
+        },
+        "quantityField": {
+            "layer": {
+                "background": { "ref": "@color/background" }
+            }
+        }
+    },
+    "basket": {
+        "cell": {
+            "incButton": {
+                "background": {
+                    "HEX": "",
+                    "ref": ""
+                },
+                "states": {
+                    "normal": {
+                        "content": { "ref": "" },
+                        "background": ""
+                    },
+                    "highlighted": {
+                        "content": { "ref": "" },
+                        "background": ""
+                    },
+                    "selected": {
+                        "content": { "ref": "" },
+                        "background": ""
+                    },
+                    "disabled": {
+                        "content": { "ref": "" },
+                        "background": ""
+                    },
+                    "invalid": {
+                        "content": { "ref": "" },
+                        "background": ""
+                    }
+                },
+                "image": { "path": "Images/Basket/plus.png" }
+            },
+            "decButton": {
+                "background": {
+                    "HEX": "",
+                    "ref": ""
+                },
+                "states": {
+                    "normal": {
+                        "content": { "ref": "" },
+                        "background": ""
+                    },
+                    "highlighted": {
+                        "content": { "ref": "" },
+                        "background": ""
+                    },
+                    "selected": {
+                        "content": { "ref": "" },
+                        "background": ""
+                    },
+                    "disabled": {
+                        "content": { "ref": "" },
+                        "background": ""
+                    },
+                    "invalid": {
+                        "content": { "ref": "" },
+                        "background": ""
+                    }
+                },
+                "image": { "path": "Images/Basket/minus.png" }
+            }
+        },
+        "emptyView": {
+            "image": { "path": "Images/Basket/empty_image.png" }
+        }
+    },
+    "order": {
+        "baseOrderFieldCell": {
+            "typeImages": {
+                "datetime": { "path": "Images/Basket/calendar.png" }
+            },
+            "typeActionButtons": {
+                "phone": {
+                    "image": { "path": "Images/Basket/contacts.png" }
+                }
+            },
+            "optionalTextView": {
+                "layer": {
+                    "cornerRadius": 5,
+                    "maskToBounds": true
+                }
+            }
+        },
+        "userInfo": null,
+        "deliveryInfo": {
+            "cell": {
+                "checkImage": { "path": "Images/Basket/check.png" },
+                "disclosureImage": { "path": "Images/Basket/arrow_right.png" }
+            },
+            "onAddress": {
+                "cell": {
+                    "typeImages": {
+                        "datetime": { "path": "Images/Basket/calendar.png" }
+                    }
+                },
+                "closeButton": {
+                    "image": { "path": "Images/Basket/close.png" }
+                }
+            },
+            "onPoint": {
+                "baseDeliveryPointInfo": {
+                    "distanceImage": { "path": "Images/Basket/distance.png" },
+                    "callButton": {
+                        "layer": {
+                            "cornerRadius": 20,
+                            "maskToBounds": true
+                        },
+                        "image": { "path": "Images/Basket/call.png" }
+                    },
+                    "infoButton": {
+                        "layer": {
+                            "cornerRadius": 20,
+                            "maskToBounds": true
+                        },
+                        "image": { "path": "Images/Basket/info.png" }
+                    },
+                    "mapButton": {
+                        "layer": {
+                            "cornerRadius": 20,
+                            "maskToBounds": true
+                        },
+                        "image": { "path": "Images/Basket/map.png" }
+                    },
+                    "routeButton": {
+                        "layer": {
+                            "cornerRadius": 20,
+                            "maskToBounds": true
+                        },
+                        "image": { "path": "Images/Basket/route.png" }
+                    }
+                },
+                "list": {
+                    "closeButton": {
+                        "image": { "path": "Images/Basket/close.png" }
+                    },
+                    "cell": {
+                        "checkImage": { "path": "Images/Basket/check.png" }
+                    }
+                },
+                "map": {
+                    "closeButton": {
+                        "image": { "path": "Images/Basket/close.png" }
+                    },
+                    "pinImage": { "path": "Images/Basket/pin.png" }
+                }
+            },
+            "timeIcon": { "path": "Images/Basket/calendar.png" }
+        },
+        "payments": {
+            "title": {},
+            "cancelButton": {
+                "image": {
+                    "path": "Images/Basket/close.png"
+                },
+                "states": {
+                    "normal": { "content": { "ref": "@color/textBase" } }
+                }
+            },
+            "cell": {
+                "size": {},
+                "title": {},
+                "checkImage": { "path": "Images/Basket/check.png" }
+            }
+        }
+    },
+    "thanks": {
+        "image": { "path": "Images/Basket/empty_image.png" }
+    }
+}

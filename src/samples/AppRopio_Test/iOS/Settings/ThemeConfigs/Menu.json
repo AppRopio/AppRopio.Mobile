@@ -1,0 +1,16 @@
+﻿{
+    "navBarMenuImage": {
+        "path": "Images/Menu/Menu.png"
+    },
+    "leftViewController": {
+        "logotypeHeaderImage": {
+            "path": "Images/Menu/Logo.png"
+        },
+        "menuTable": {
+            "sectionHeaderHeight": 30,
+            "menuCell": {
+                "size": { "height": 52 }
+            }
+        }
+    }
+}

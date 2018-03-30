@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<!--  Sort  -->
+	<dimen
+		name="app_filters_sort_title_height">48dp</dimen>
+	<dimen
+		name="app_filters_sort_item_height">48dp</dimen>
+	<dimen
+		name="app_filters_sort_horizontalMargin">16dp</dimen>
+	<dimen
+		name="app_filters_sort_minHeight">216dp</dimen>
+	<!--    -->
+	<!--  Filters  -->
+	<dimen
+		name="app_filters_filters_verticalMargins">6dp</dimen>
+	<dimen
+		name="app_filters_filters_horizontalMargins">16dp</dimen>
+	<dimen
+		name="app_filters_filters_title_height">56dp</dimen>
+	<dimen
+		name="app_filters_filters_horizontalCollection_height">113dp</dimen>
+	<dimen
+		name="app_filters_filters_horizontalCollection_content_height">56dp</dimen>
+	<dimen
+		name="app_filters_filters_horizontalCollection_color_size">40dp</dimen>
+	<dimen
+		name="app_filters_filters_horizontalCollection_color_radius">20dp</dimen>
+	<dimen
+		name="app_filters_filters_horizontalCollection_text_radius">4dp</dimen>
+	<dimen
+		name="app_filters_filters_horizontalCollection_text_minHeight">30dp</dimen>
+	<dimen
+		name="app_filters_filters_picker_spinner_item_titleHeight">36dp</dimen>
+	<dimen
+		name="app_filters_filters_multiSelection_item_height">56dp</dimen>
+	<dimen
+		name="app_filters_filters_multiSelection_item_text_minHeight">30dp</dimen>
+	<dimen
+		name="app_filters_filters_multiSelection_text_paddingRight">24dp</dimen>
+	<dimen
+		name="app_filters_filters_multiSelection_text_cornerRadius">4dp</dimen>
+	<dimen
+		name="app_filters_filters_multiSelection_image_paddingRight">8dp</dimen>
+	<dimen
+		name="app_filters_filters_verticalCollection_content_height">48dp</dimen>
+	<dimen
+		name="app_filters_filters_verticalCollection_horizontalMargins">8dp</dimen>
+	<dimen
+		name="app_filters_filters_minMax_content_height">48dp</dimen>
+	<dimen
+		name="app_filters_filters_minMax_content_horizontalPadding">10dp</dimen>
+	<dimen
+		name="app_filters_filters_minMax_content_input_marginLeft">5dp</dimen>
+	<!--    -->
+	<!--  Selection  -->
+	<dimen
+		name="app_filters_selection_item_height">56dp</dimen>
+	<dimen
+		name="app_filters_selection_horizontalMargins">16dp</dimen>
+	<!--    -->
+</resources>

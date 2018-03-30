@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document
+	type                 ="com.apple.InterfaceBuilder3.CocoaTouch.XIB"
+	version              ="3.0"
+	toolsVersion         ="12121"
+	systemVersion        ="16G29"
+	targetRuntime        ="iOS.CocoaTouch"
+	propertyAccessControl="none"
+	useAutolayout        ="YES"
+	useTraitCollections  ="YES"
+	colorMatched         ="YES">
+	<device
+		id         ="retina4_0"
+		orientation="portrait">
+		<adaptation
+			id="fullscreen" />
+	</device>
+	<dependencies>
+		<deployment
+			identifier="iOS" />
+		<plugIn
+			identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin"
+			version   ="12089" />
+		<capability
+			name           ="documents saved in the Xcode 8 format"
+			minToolsVersion="8.0" />
+	</dependencies>
+	<objects>
+		<placeholder
+			placeholderIdentifier="IBFilesOwner"
+			id                   ="-1"
+			userLabel            ="File's Owner" />
+		<placeholder
+			placeholderIdentifier="IBFirstResponder"
+			id                   ="-2"
+			customClass          ="UIResponder" />
+		<collectionViewCell
+			opaque              ="NO"
+			clipsSubviews       ="YES"
+			multipleTouchEnabled="YES"
+			contentMode         ="center"
+			id                  ="cZE-iV-UFb"
+			customClass         ="PDHShopIndicatorCell">
+			<rect
+				key   ="frame"
+				x     ="0.0"
+				y     ="0.0"
+				width ="180"
+				height="133" />
+			<autoresizingMask
+				key         ="autoresizingMask"
+				flexibleMaxX="YES"
+				flexibleMinY="YES" />
+			<view
+				key                 ="contentView"
+				opaque              ="NO"
+				clipsSubviews       ="YES"
+				multipleTouchEnabled="YES"
+				contentMode         ="center">
+				<rect
+					key   ="frame"
+					x     ="0.0"
+					y     ="0.0"
+					width ="180"
+					height="133" />
+				<autoresizingMask
+					key="autoresizingMask" />
+				<subviews>
+					<label
+						opaque                                   ="NO"
+						userInteractionEnabled                   ="NO"
+						contentMode                              ="left"
+						horizontalHuggingPriority                ="251"
+						verticalHuggingPriority                  ="251"
+						text                                     ="Label"
+						textAlignment                            ="natural"
+						lineBreakMode                            ="tailTruncation"
+						numberOfLines                            ="3"
+						baselineAdjustment                       ="alignBaselines"
+						adjustsFontSizeToFit                     ="NO"
+						translatesAutoresizingMaskIntoConstraints="NO"
+						id                                       ="r4h-h9-eSr"
+						customClass="ARLabel">
+						<rect
+							key   ="frame"
+							x     ="16"
+							y     ="45"
+							width ="148"
+							height="21" />
+						<fontDescription
+							key      ="fontDescription"
+							type     ="system"
+							pointSize="17" />
+						<nil
+							key="textColor" />
+						<nil
+							key="highlightedColor" />
+					</label>
+					<view
+						contentMode                              ="scaleToFill"
+						translatesAutoresizingMaskIntoConstraints="NO"
+						id                                       ="e48-hU-fXd">
+						<rect
+							key   ="frame"
+							x     ="160"
+							y     ="10"
+							width ="10"
+							height="10" />
+						<color
+							key       ="backgroundColor"
+							white     ="1"
+							alpha     ="1"
+							colorSpace="calibratedWhite" />
+						<constraints>
+							<constraint
+								firstAttribute="width"
+								constant      ="10"
+								id            ="Hi5-6L-nQA" />
+							<constraint
+								firstAttribute="height"
+								constant      ="10"
+								id            ="Une-eC-Z8M" />
+						</constraints>
+					</view>
+					<label
+						opaque                                   ="NO"
+						userInteractionEnabled                   ="NO"
+						contentMode                              ="left"
+						horizontalHuggingPriority                ="251"
+						verticalHuggingPriority                  ="251"
+						text                                     ="Label"
+						textAlignment                            ="natural"
+						lineBreakMode                            ="tailTruncation"
+						numberOfLines                            ="3"
+						baselineAdjustment                       ="alignBaselines"
+						adjustsFontSizeToFit                     ="NO"
+						translatesAutoresizingMaskIntoConstraints="NO"
+						id                                       ="IPR-yY-2HC"
+						customClass="ARLabel">
+						<rect
+							key   ="frame"
+							x     ="16"
+							y     ="16"
+							width ="134"
+							height="21" />
+						<fontDescription
+							key      ="fontDescription"
+							type     ="system"
+							pointSize="17" />
+						<nil
+							key="textColor" />
+						<nil
+							key="highlightedColor" />
+					</label>
+				</subviews>
+			</view>
+			<constraints>
+				<constraint
+					firstItem      ="r4h-h9-eSr"
+					firstAttribute ="leading"
+					secondItem     ="cZE-iV-UFb"
+					secondAttribute="leading"
+					constant       ="16"
+					id             ="V3Z-0g-AMg" />
+				<constraint
+					firstItem      ="IPR-yY-2HC"
+					firstAttribute ="top"
+					secondItem     ="cZE-iV-UFb"
+					secondAttribute="top"
+					constant       ="16"
+					id             ="YXq-kk-dXa" />
+				<constraint
+					firstItem      ="IPR-yY-2HC"
+					firstAttribute ="leading"
+					secondItem     ="cZE-iV-UFb"
+					secondAttribute="leading"
+					constant       ="16"
+					id             ="b6P-FV-Fig" />
+				<constraint
+					firstAttribute ="trailing"
+					secondItem     ="r4h-h9-eSr"
+					secondAttribute="trailing"
+					constant       ="16"
+					id             ="eiq-md-Bdr" />
+				<constraint
+					firstItem      ="e48-hU-fXd"
+					firstAttribute ="top"
+					secondItem     ="cZE-iV-UFb"
+					secondAttribute="top"
+					constant       ="10"
+					id             ="rcT-4y-cOz" />
+				<constraint
+					firstItem      ="r4h-h9-eSr"
+					firstAttribute ="top"
+					secondItem     ="IPR-yY-2HC"
+					secondAttribute="bottom"
+					constant       ="8"
+					id             ="ufL-Nk-Zcd" />
+				<constraint
+					firstAttribute ="trailing"
+					secondItem     ="IPR-yY-2HC"
+					secondAttribute="trailing"
+					constant       ="30"
+					id             ="w8e-nT-u4s" />
+				<constraint
+					firstAttribute ="trailing"
+					secondItem     ="e48-hU-fXd"
+					secondAttribute="trailing"
+					constant       ="10"
+					id             ="wYK-fr-x6T" />
+			</constraints>
+			<connections>
+				<outlet
+					property   ="_address"
+					destination="r4h-h9-eSr"
+					id         ="5NZ-5b-6uR" />
+				<outlet
+					property   ="_indicator"
+					destination="e48-hU-fXd"
+					id         ="ymy-3K-S25" />
+				<outlet
+					property   ="_name"
+					destination="IPR-yY-2HC"
+					id         ="2OV-jC-UiK" />
+			</connections>
+		</collectionViewCell>
+	</objects>
+</document>

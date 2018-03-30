@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/app_products_productCard_shortInfo_minHeight"
+        android:layout_marginLeft="@dimen/app_products_productCard_shortInfo_paddingHorizontal"
+        android:layout_marginRight="@dimen/app_products_productCard_shortInfo_paddingHorizontal"
+        android:layout_marginTop="@dimen/app_products_productCard_shortInfo_paddingVertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/app_products_productCard_shortInfo_paddingVertical">
+            <TextView
+                style="@style/app_products_productCard_shortInfo_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_centerVertical="true"
+                app:MvxBind="Text StateName; Visibility Visibility(StateName)" />
+            <mvvmcross.binding.droid.views.MvxLinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                app:MvxItemTemplate="@layout/app_products_catalog_item_badges_item"
+                app:MvxBind="ItemsSource Badges; Visibility Visibility(Badges.Count)" />
+        </RelativeLayout>
+        <TextView
+            style="@style/app_products_productCard_shortInfo_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/app_products_productCard_shortInfo_paddingVertical"
+            app:MvxBind="Text Name" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                style="@style/app_products_productCard_shortInfo_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/app_products_productCard_shortInfo_paddingHorizontal"
+                app:MvxBind="Text PriceUnit(Price, UnitName);" />
+            <TextView
+                style="@style/app_products_productCard_shortInfo_oldPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/app_products_productCard_shortInfo_paddingHorizontal"
+                app:MvxBind="Text PriceUnit(OldPrice, UnitNameOld); Visibility Visibility(OldPrice)" />
+            <TextView
+                style="@style/app_products_productCard_shortInfo_extraPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:MvxBind="Text PriceUnit(ExtraPrice, UnitNameExtra); Visibility Visibility(ExtraPrice)" />
+        </LinearLayout>
+    </LinearLayout>
+    <View
+        style="@style/AppRopioTheme.Control.Separator"
+        android:layout_marginTop="@dimen/app_products_productCard_shortInfo_paddingVertical"
+        android:layout_height="@dimen/app_products_productCard_weight_separatorHeight" />
+</LinearLayout>

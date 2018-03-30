@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{15D560A5-457C-4928-BED9-46BBD85F2F8D}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>AppRopio.Base.Filters.iOS</RootNamespace>
+    <AssemblyName>AppRopio.Base.Filters.iOS</AssemblyName>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchFastDev>true</MtouchFastDev>
+    <IOSDebuggerPort>61186</IOSDebuggerPort>
+    <DeviceSpecificBuild>false</DeviceSpecificBuild>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <DefineConstants></DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\Newtonsoft.Json.10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Platform">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Platform.5.6.3\lib\Xamarin.iOS10\MvvmCross.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Platform.iOS">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Platform.5.6.3\lib\Xamarin.iOS10\MvvmCross.Platform.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Core">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Core.5.6.3\lib\Xamarin.iOS10\MvvmCross.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.iOS">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Core.5.6.3\lib\Xamarin.iOS10\MvvmCross.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Binding">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.6.3\lib\Xamarin.iOS10\MvvmCross.Binding.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Binding.iOS">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.6.3\lib\Xamarin.iOS10\MvvmCross.Binding.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Localization">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.6.3\lib\Xamarin.iOS10\MvvmCross.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Messenger">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Plugin.Messenger.5.6.3\lib\Xamarin.iOS10\MvvmCross.Plugins.Messenger.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Visibility">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Plugin.Visibility.5.6.3\lib\Xamarin.iOS10\MvvmCross.Plugins.Visibility.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Visibility.iOS">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Plugin.Visibility.5.6.3\lib\Xamarin.iOS10\MvvmCross.Plugins.Visibility.iOS.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Views\" />
+    <Folder Include="Binding\" />
+    <Folder Include="Services\" />
+    <Folder Include="Services\Implementation\" />
+    <Folder Include="Models\" />
+    <Folder Include="Views\Sort\" />
+    <Folder Include="Views\FIlters\" />
+    <Folder Include="Views\FIlters\Cells\" />
+    <Folder Include="Views\FIlters\Selection\" />
+    <Folder Include="Views\FIlters\Cells\Selection\MultiSelection\Cells\" />
+    <Folder Include="Views\FIlters\Cells\Switch\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Binding\FiltersDateBinding.cs" />
+    <Compile Include="Services\IFiltersThemeConfigService.cs" />
+    <Compile Include="Models\FiltersThemeConfig.cs" />
+    <Compile Include="Services\Implementation\FiltersThemeConfigService.cs" />
+    <Compile Include="Views\Sort\Cells\SortCell.cs" />
+    <Compile Include="Views\Sort\Cells\SortCell.designer.cs">
+      <DependentUpon>SortCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sort\SortViewController.cs" />
+    <Compile Include="Views\Sort\SortViewController.designer.cs">
+      <DependentUpon>SortViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FIlters\Cells\Collection\Horizontal\Cells\HorizontalColorCell.cs" />
+    <Compile Include="Views\FIlters\Cells\Collection\Horizontal\Cells\HorizontalColorCell.designer.cs">
+      <DependentUpon>HorizontalColorCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FIlters\Cells\Collection\Horizontal\Cells\HorizontalTextCell.cs" />
+    <Compile Include="Views\FIlters\Cells\Collection\Horizontal\Cells\HorizontalTextCell.designer.cs">
+      <DependentUpon>HorizontalTextCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FIlters\Cells\Collection\Horizontal\FiltersHorizontalCollectionViewSource.cs" />
+    <Compile Include="Views\FIlters\Cells\Collection\Horizontal\HorizontalCollectionCell.cs" />
+    <Compile Include="Views\FIlters\Cells\Collection\Horizontal\HorizontalCollectionCell.designer.cs">
+      <DependentUpon>HorizontalCollectionCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FIlters\Cells\Collection\Vertical\Cells\VerticalTextCell.cs" />
+    <Compile Include="Views\FIlters\Cells\Collection\Vertical\Cells\VerticalTextCell.designer.cs">
+      <DependentUpon>VerticalTextCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FIlters\Cells\Collection\Vertical\VerticalCollectionCell.cs" />
+    <Compile Include="Views\FIlters\Cells\Collection\Vertical\VerticalCollectionCell.designer.cs">
+      <DependentUpon>VerticalCollectionCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FIlters\Cells\MinMax\BaseMinMaxCell.cs" />
+    <Compile Include="Views\FIlters\Cells\MinMax\Date\DateMinMaxCell.cs" />
+    <Compile Include="Views\FIlters\Cells\MinMax\Date\DateMinMaxCell.designer.cs" />
+    <Compile Include="Views\FIlters\Cells\MinMax\Number\NumberMinMaxCell.cs" />
+    <Compile Include="Views\FIlters\Cells\MinMax\Number\NumberMinMaxCell.designer.cs" />
+    <Compile Include="Views\FIlters\Cells\Picker\PickerCell.cs" />
+    <Compile Include="Views\FIlters\Cells\Picker\PickerCell.designer.cs">
+      <DependentUpon>PickerCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FIlters\Cells\Selection\MultiSelection\MultiSelectionCell.cs" />
+    <Compile Include="Views\FIlters\Cells\Selection\MultiSelection\MultiSelectionCell.designer.cs">
+      <DependentUpon>MultiSelectionCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FIlters\Cells\Selection\OneSelection\OneSelectionCell.cs" />
+    <Compile Include="Views\FIlters\Cells\Selection\OneSelection\OneSelectionCell.designer.cs">
+      <DependentUpon>OneSelectionCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FIlters\Selection\Cells\SelectionCell.cs" />
+    <Compile Include="Views\FIlters\Selection\Cells\SelectionCell.designer.cs">
+      <DependentUpon>SelectionCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FIlters\Selection\SelectionViewController.cs" />
+    <Compile Include="Views\FIlters\Selection\SelectionViewController.designer.cs">
+      <DependentUpon>SelectionViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FIlters\FiltersTableViewSource.cs" />
+    <Compile Include="Views\FIlters\FiltersViewController.cs" />
+    <Compile Include="Views\FIlters\FiltersViewController.designer.cs">
+      <DependentUpon>FiltersViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Plugin.cs" />
+    <Compile Include="Views\FIlters\Cells\Selection\MultiSelection\FiltersMultiSelectionCollectionViewSource.cs" />
+    <Compile Include="Views\FIlters\Cells\Selection\MultiSelection\Cells\MultiSelectionTextCell.cs" />
+    <Compile Include="Views\FIlters\Cells\Selection\MultiSelection\Cells\MultiSelectionTextCell.designer.cs">
+      <DependentUpon>MultiSelectionTextCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FIlters\Cells\Switch\SwitchCell.cs" />
+    <Compile Include="Views\FIlters\Cells\Switch\SwitchCell.designer.cs">
+      <DependentUpon>SwitchCell.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\AppRopio.Base.Filters.Core.csproj">
+      <Project>{19D459DF-4188-4F2B-BC76-CE7C4A459A9D}</Project>
+      <Name>AppRopio.Base.Filters.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\API\AppRopio.Base.Filters.API.csproj">
+      <Project>{7C9F9E3E-A1BE-46B1-8DAE-65E829E6B0EE}</Project>
+      <Name>AppRopio.Base.Filters.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\API\AppRopio.Base.API.csproj">
+      <Project>{124841B9-39F6-44B5-8B96-50183FBFE341}</Project>
+      <Name>AppRopio.Base.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\AppRopio.Base.Core.csproj">
+      <Project>{EA6D5113-1E80-494B-886D-3D7FDFA04E99}</Project>
+      <Name>AppRopio.Base.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\iOS\AppRopio.Base.iOS.csproj">
+      <Project>{2F005241-B90A-484A-A3A0-51684D5ECE54}</Project>
+      <Name>AppRopio.Base.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Filters\AppRopio.Models.Filters.csproj">
+      <Project>{F538DE02-55D4-4F2F-9144-A94F70EB652A}</Project>
+      <Name>AppRopio.Models.Filters</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Views\Sort\Cells\SortCell.xib" />
+    <InterfaceDefinition Include="Views\Sort\SortViewController.xib" />
+    <InterfaceDefinition Include="Views\FIlters\Cells\Collection\Horizontal\Cells\HorizontalColorCell.xib" />
+    <InterfaceDefinition Include="Views\FIlters\Cells\Collection\Horizontal\Cells\HorizontalTextCell.xib" />
+    <InterfaceDefinition Include="Views\FIlters\Cells\Collection\Horizontal\HorizontalCollectionCell.xib" />
+    <InterfaceDefinition Include="Views\FIlters\Cells\Collection\Vertical\Cells\VerticalTextCell.xib" />
+    <InterfaceDefinition Include="Views\FIlters\Cells\Collection\Vertical\VerticalCollectionCell.xib" />
+    <InterfaceDefinition Include="Views\FIlters\Cells\MinMax\Date\DateMinMaxCell.xib" />
+    <InterfaceDefinition Include="Views\FIlters\Cells\MinMax\Number\NumberMinMaxCell.xib" />
+    <InterfaceDefinition Include="Views\FIlters\Cells\Picker\PickerCell.xib" />
+    <InterfaceDefinition Include="Views\FIlters\Cells\Selection\MultiSelection\MultiSelectionCell.xib" />
+    <InterfaceDefinition Include="Views\FIlters\Cells\Selection\OneSelection\OneSelectionCell.xib" />
+    <InterfaceDefinition Include="Views\FIlters\Selection\Cells\SelectionCell.xib" />
+    <InterfaceDefinition Include="Views\FIlters\Selection\SelectionViewController.xib" />
+    <InterfaceDefinition Include="Views\FIlters\FiltersViewController.xib" />
+    <InterfaceDefinition Include="Views\FIlters\Cells\Selection\MultiSelection\Cells\MultiSelectionTextCell.xib" />
+    <InterfaceDefinition Include="Views\FIlters\Cells\Switch\SwitchCell.xib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\..\..\AppRopio.ECommerce\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\..\..\AppRopio.ECommerce\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets')" />
+</Project>

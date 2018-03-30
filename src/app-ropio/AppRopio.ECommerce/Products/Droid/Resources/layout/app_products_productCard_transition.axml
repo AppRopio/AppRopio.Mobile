@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_products_productCard_title_height"
+        android:layout_marginLeft="@dimen/app_products_productCard_horizontalMargins"
+        android:layout_marginTop="@dimen/app_products_productCard_verticalMargins">
+        <TextView
+            style="@style/app_products_productCard_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/app_products_productCard_transition_value"
+            android:gravity="center_vertical"
+            app:MvxBind="Text Name" />
+        <TextView
+            style="@style/app_products_productCard_transition_value"
+            android:id="@+id/app_products_productCard_transition_value"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/app_products_productCard_horizontalMargins"
+            android:layout_toStartOf="@+id/app_products_productCard_arrow"
+            android:gravity="center_vertical"
+            app:MvxBind="Text Value; Visibility Visibility(Value)" />
+        <ImageView
+            style="@style/app_products_productCard_arrow"
+            android:id="@+id/app_products_productCard_arrow"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <View
+        style="@style/AppRopioTheme.Control.Separator" />
+</LinearLayout>

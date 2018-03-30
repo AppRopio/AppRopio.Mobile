@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<!--  Basket Empty View  -->
+	<dimen
+		name="app_basket_basket_empty_title_topMargin">73dp</dimen>
+	<dimen
+		name="app_basket_basket_empty_subtitle_topMargin">14dp</dimen>
+	<!--    -->
+	<!--  Basket  -->
+	<dimen
+		name="app_basket_basket_item_icon_margin">10dp</dimen>
+	<dimen
+		name="app_basket_basket_item_icon_height">120dp</dimen>
+	<dimen
+		name="app_basket_basket_item_title_marginLeft">10dp</dimen>
+	<dimen
+		name="app_basket_basket_item_title_marginRight">10dp</dimen>
+	<dimen
+		name="app_basket_basket_item_price_margin">10dp</dimen>
+	<dimen
+		name="app_basket_basket_item_steperHeight">186dp</dimen>
+	<!--    -->
+	<!-- Full Order -->
+	<dimen
+		name="app_basket_full_order_footer_height">8dp</dimen>
+	<dimen
+		name="app_basket_full_order_header_height">48dp</dimen>
+	<dimen
+		name="app_basket_full_order_header_horizontalMargin">16dp</dimen>
+	<dimen
+		name="app_basket_full_order_user_item_height">78dp</dimen>
+	<dimen
+		name="app_basket_full_order_user_item_inputLayout_height">66dp</dimen>
+	<dimen
+		name="app_basket_full_order_delivery_item_height">56dp</dimen>
+	<dimen
+		name="app_basket_full_order_optional_item_height">56dp</dimen>
+	<dimen
+		name="app_basket_full_order_item_horizontalMargin">16dp</dimen>
+	<dimen
+		name="app_basket_full_order_item_input_horizontalMargin">14dp</dimen>
+	<dimen
+		name="app_basket_full_order_item_input_verticalMargin">6dp</dimen>
+	<dimen
+		name="app_basket_multiline_edittext_padding">6dp</dimen>
+	<dimen
+		name="app_basket_full_order_item_spinner_titleHeight">36dp</dimen>
+	<dimen
+		name="app_basket_full_order_deliveryLayout_height">40dp</dimen>
+	<dimen
+		name="app_basket_full_order_deliveryLayout_horizontalMargin">16dp</dimen>
+	<dimen
+		name="app_basket_full_order_item_deliveryTime_dialog_headerLayout_height">104dp</dimen>
+	<dimen
+		name="app_basket_full_order_item_deliveryTime_dialog_headerLayout_padding">16dp</dimen>
+	<dimen
+		name="app_basket_full_order_item_deliveryTime_dialog_bodyLayout_height">304dp</dimen>
+	<dimen
+		name="app_basket_full_order_item_deliveryTime_dialog_bodyLayout_padding">16dp</dimen>
+	<dimen
+		name="app_basket_full_order_item_deliveryTime_dialog_bodyLayout_listView_horizontalMargin">8dp</dimen>
+	<dimen
+		name="app_basket_full_order_item_deliveryTime_dialog_button_horizontalMargin">16dp</dimen>
+	<dimen
+		name="app_dialog_header_textSize">34sp</dimen>
+	<!--  -->
+	<!--  Payment  -->
+	<dimen
+		name="app_basket_payment_title_height">48dp</dimen>
+	<dimen
+		name="app_basket_payment_item_height">48dp</dimen>
+	<dimen
+		name="app_basket_payment_horizontalMargin">16dp</dimen>
+	<dimen
+		name="app_basket_payment_minHeight">216dp</dimen>
+	<!--    -->
+	<!--  Delivery on point  -->
+	<dimen
+		name="app_basket_delivery_on_point_item_padding">16dp</dimen>
+	<dimen
+		name="app_basket_delivery_on_point_item_address_marginTop">10dp</dimen>
+	<!--    -->
+	<!--  Cart Indicator  -->
+	<dimen
+		name="app_basket_cartIndicator_badge_height">16dp</dimen>
+    <dimen
+        name="app_basket_cartIndicator_badge_cornerRadius">8dp</dimen>
+    <dimen
+        name="app_basket_cartIndicator_badge_margin">10dp</dimen>
+	<!--    -->
+<!--  ProductCard  -->
+    <dimen
+        name="app_basket_productCardView_horizontalMargins">16dp</dimen>
+    <dimen
+        name="app_basket_productCardView_verticalMargins">6dp</dimen>
+    <dimen
+        name="app_basket_productCardView_contentMargins">10dp</dimen>
+    <dimen
+        name="app_basket_productCardView_quantityInput_cornerRadius">22dp</dimen>
+    <dimen
+        name="app_basket_productCardView_quantityInput_strokeWidth">2dp</dimen>
+<!--    -->
+</resources>

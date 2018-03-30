@@ -1,0 +1,13 @@
+﻿{
+    "myReviewCell": {
+        "productImage": {
+            "path": "Images/Products/no_photo.png"
+        }
+    },
+    "reviewDetails": {
+        "productImage": {
+            "path": "Images/Products/no_photo.png"
+        },
+        "deleteButton": {}
+    }
+}

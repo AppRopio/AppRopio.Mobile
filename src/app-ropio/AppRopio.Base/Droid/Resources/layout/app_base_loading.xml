@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProgressBar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/progress_bar"
+    android:layout_width="@dimen/app_loader_height"
+    android:layout_height="@dimen/app_loader_height"
+    android:layout_centerInParent="true"
+    android:layout_gravity="center"
+    android:indeterminateOnly="true"
+    android:indeterminateTint="?attr/app_color_accent"
+    app:MvxBind="Visibility Visibility(Loading)" />

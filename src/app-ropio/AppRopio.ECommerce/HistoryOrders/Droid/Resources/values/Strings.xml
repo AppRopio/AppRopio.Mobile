@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string
+		name="library_name">AppRopio.ECommerce.HistoryOrders.Droid</string>
+    <string
+        name="app_historyorders_details_delivery">Доставка</string>
+    <string
+        name="app_historyorders_details_payment">Оплата</string>
+    <string
+        name="app_historyorders_details_summary">ИТОГО</string>
+    <string
+        name="app_historyorders_details_button">ПОВТОРИТЬ ЗАКАЗ</string>
+    <string
+        name="app_historyorders_products_item_available">Нет в наличии</string>
+</resources>

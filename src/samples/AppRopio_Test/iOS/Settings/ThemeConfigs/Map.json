@@ -1,0 +1,58 @@
+﻿{
+    "points":
+    {
+        "basePointInfo":
+        {
+            "distanceImage": { "path": "Images/Basket/distance.png" },
+            "callButton":
+            {
+                "layer": {
+                    "cornerRadius": 20,
+                    "maskToBounds": true
+                },
+                "image": { "path": "Images/Basket/call.png" }
+            },
+            "infoButton":
+            {
+                "layer":
+                {
+                    "cornerRadius":20,
+                    "maskToBounds":true
+                },
+                "image": { "path": "Images/Basket/info.png" }
+            },
+            "routeButton":
+            {
+                "layer":
+                {
+                    "cornerRadius":20,
+                    "maskToBounds":true
+                },
+                "image": { "path": "Images/Basket/route.png" }
+            }
+        },
+        "list":
+        {
+            "mapImage": { "path": "Images/Map/Address.png" },
+            "cell":
+            {
+                "checkImage": { "path": "Images/Basket/check.png" }
+            }
+        },
+        "map":
+        {
+            "pinImage": 
+            {
+                "path": "Images/Map/pin.png",
+                "highlightedPath": "Images/Map/selected_pin.png"
+            }
+        },
+        "additionalInfo":
+        {
+            "closeButton":
+            {
+                "image": { "path": "Images/Basket/close.png" }
+            }
+        }
+    }
+}

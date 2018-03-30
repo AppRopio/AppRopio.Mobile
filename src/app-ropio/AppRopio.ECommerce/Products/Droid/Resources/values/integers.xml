@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<integer
+		name="app_products_contentsearch_hints_autocomplete_spanCount">2</integer>
+	<integer
+		name="app_products_productCard_spanCount">4</integer>
+    <integer
+        name="app_products_productCard_multilineText_maxLines">30</integer>
+    <integer
+        name="app_products_textContent_maxLines">999</integer>
+</resources>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/app_basket_full_order_item_deliveryTime_dialog_headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/app_basket_full_order_item_deliveryTime_dialog_headerLayout_padding"
+        android:minHeight="@dimen/app_basket_full_order_item_deliveryTime_dialog_headerLayout_height"
+        android:background="?attr/app_color_accent">
+        <TextView
+            style="@style/app_basket_full_order_item_deliveryTime_dialog_headerLayout_subtitle"
+            android:id="@+id/app_basket_full_order_item_deliveryTime_dialog_headerLayout_subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            style="@style/app_basket_full_order_item_deliveryTime_dialog_headerLayout_title"
+            android:id="@+id/app_basket_full_order_item_deliveryTime_dialog_headerLayout_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/app_basket_full_order_item_deliveryTime_dialog_bodyLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_basket_full_order_item_deliveryTime_dialog_bodyLayout_height">
+        <appropio.base.droid.controls.ARNumberPicker
+            android:theme="@style/app_basket_full_order_item_deliveryTime_dialog_items"
+            android:id="@+id/app_basket_full_order_item_deliveryTime_dialog_bodyLayout_listViewLeft"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/app_basket_full_order_item_deliveryTime_dialog_bodyLayout_height"
+            android:layout_weight=".5"
+            android:layout_marginRight="@dimen/app_basket_full_order_item_deliveryTime_dialog_bodyLayout_listView_horizontalMargin"
+            android:background="@android:color/transparent" />
+        <appropio.base.droid.controls.ARNumberPicker
+            android:theme="@style/app_basket_full_order_item_deliveryTime_dialog_items"
+            android:id="@+id/app_basket_full_order_item_deliveryTime_dialog_bodyLayout_listViewRight"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/app_basket_full_order_item_deliveryTime_dialog_bodyLayout_height"
+            android:layout_weight=".5"
+            android:layout_marginLeft="@dimen/app_basket_full_order_item_deliveryTime_dialog_bodyLayout_listView_horizontalMargin"
+            android:background="@android:color/transparent" />
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_button_height">
+        <Button
+            style="@style/app_basket_full_order_item_deliveryTime_dialog_positiveButton"
+            android:id="@+id/app_basket_full_order_item_deliveryTime_dialog_positiveButton"
+            android:paddingLeft="@dimen/app_basket_full_order_item_deliveryTime_dialog_button_horizontalMargin"
+            android:paddingRight="@dimen/app_basket_full_order_item_deliveryTime_dialog_button_horizontalMargin"
+            android:layout_toStartOf="@+id/app_basket_full_order_item_deliveryTime_dialog_negativeButton" />
+        <Button
+            style="@style/app_basket_full_order_item_deliveryTime_dialog_negativeButton"
+            android:id="@+id/app_basket_full_order_item_deliveryTime_dialog_negativeButton"
+            android:layout_alignParentRight="true"
+            android:paddingLeft="@dimen/app_basket_full_order_item_deliveryTime_dialog_button_horizontalMargin"
+            android:paddingRight="@dimen/app_basket_full_order_item_deliveryTime_dialog_button_horizontalMargin" />
+    </RelativeLayout>
+</LinearLayout>

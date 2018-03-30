@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<!--  Headers  -->
+	<style
+		name  ="AppRopio.TextAppearance.Header1"
+		parent="">
+		<item
+			name="android:textColor">?attr/app_color_textBase</item>
+		<item
+			name="android:textSize">@dimen/app_h1_text_size</item>
+		<item
+			name="android:fontFamily">?attr/app_font_medium</item>
+	</style>
+	<style
+		name  ="AppRopio.TextAppearance.Header2"
+		parent="AppRopio.TextAppearance.Header1">
+		<item
+			name="android:textSize">@dimen/app_h2_text_size</item>
+	</style>
+	<style
+		name  ="AppRopio.TextAppearance.Header3"
+		parent="AppRopio.TextAppearance.Header1">
+		<item
+			name="android:textSize">@dimen/app_h3_text_size</item>
+	</style>
+	<style
+		name  ="AppRopio.TextAppearance.Header4"
+		parent="AppRopio.TextAppearance.Header1">
+		<item
+			name="android:textSize">@dimen/app_h4_text_size</item>
+	</style>
+    <style
+        name  ="AppRopio.TextAppearance.Header5"
+        parent="AppRopio.TextAppearance.Header1">
+        <item
+            name="android:textSize">@dimen/app_h5_text_size</item>
+    </style>
+	<!--    -->
+	<!--  Body  -->
+	<style
+		name  ="AppRopio.TextAppearance.Body1"
+		parent="">
+		<item
+			name="android:textColor">?attr/app_color_textBase</item>
+		<item
+			name="android:textSize">@dimen/app_b1_text_size</item>
+		<item
+			name="android:fontFamily">?attr/app_font_regular</item>
+	</style>
+	<style
+		name  ="AppRopio.TextAppearance.Body2"
+		parent="AppRopio.TextAppearance.Body1">
+		<item
+			name="android:textSize">@dimen/app_b2_text_size</item>
+	</style>
+	<style
+		name  ="AppRopio.TextAppearance.Body3"
+		parent="AppRopio.TextAppearance.Body1">
+		<item
+			name="android:textSize">@dimen/app_b3_text_size</item>
+	</style>
+	<style
+		name  ="AppRopio.TextAppearance.Body1.Bold"
+		parent="AppRopio.TextAppearance.Body1">
+		<item
+			name="android:fontFamily">?attr/app_font_bold</item>
+	</style>
+	<style
+		name  ="AppRopio.TextAppearance.Body2.Bold"
+		parent="AppRopio.TextAppearance.Body2">
+		<item
+			name="android:fontFamily">?attr/app_font_bold</item>
+	</style>
+	<style
+		name  ="AppRopio.TextAppearance.Body3.Bold"
+		parent="AppRopio.TextAppearance.Body3">
+		<item
+			name="android:fontFamily">?attr/app_font_bold</item>
+	</style>
+	<style
+		name  ="AppRopio.TextAppearance.Body1.Medium"
+		parent="AppRopio.TextAppearance.Body1">
+		<item
+			name="android:fontFamily">?attr/app_font_medium</item>
+	</style>
+	<style
+		name  ="AppRopio.TextAppearance.Body2.Medium"
+		parent="AppRopio.TextAppearance.Body2">
+		<item
+			name="android:fontFamily">?attr/app_font_medium</item>
+	</style>
+	<style
+		name  ="AppRopio.TextAppearance.Body3.Medium"
+		parent="AppRopio.TextAppearance.Body3">
+		<item
+			name="android:fontFamily">?attr/app_font_medium</item>
+	</style>
+	<!--    -->
+	<!--  Inputs  -->
+	<style
+		name  ="AppRopio.TextAppearance.Input"
+		parent="">
+		<item
+			name="android:fontFamily">?attr/app_font_regular</item>
+		<item
+			name="android:textSize">@dimen/app_input_text_size</item>
+		<item
+			name="android:textColor">?attr/app_color_textBase</item>
+	</style>
+	<!--    -->
+</resources>

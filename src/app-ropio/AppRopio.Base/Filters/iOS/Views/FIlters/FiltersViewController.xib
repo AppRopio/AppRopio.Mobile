@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FiltersViewController">
+            <connections>
+                <outlet property="_applyBtn" destination="qyq-Ql-0Xy" id="cVY-Jb-X6M"/>
+                <outlet property="_tableView" destination="U23-nN-5rx" id="bjO-jy-38o"/>
+                <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="2">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="U23-nN-5rx">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qyq-Ql-0Xy">
+                    <rect key="frame" x="16" y="504" width="288" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="4bT-bk-3b8"/>
+                    </constraints>
+                    <state key="normal" title="Применить"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="U23-nN-5rx" secondAttribute="trailing" id="5cK-wC-2jB"/>
+                <constraint firstItem="U23-nN-5rx" firstAttribute="top" secondItem="2" secondAttribute="top" id="PXb-H8-eSc"/>
+                <constraint firstAttribute="bottom" secondItem="U23-nN-5rx" secondAttribute="bottom" id="Tiz-6L-sNs"/>
+                <constraint firstItem="U23-nN-5rx" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="XJQ-so-i8G"/>
+                <constraint firstAttribute="trailing" secondItem="qyq-Ql-0Xy" secondAttribute="trailing" constant="16" id="XNR-qU-egU"/>
+                <constraint firstItem="qyq-Ql-0Xy" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="16" id="dXx-WA-byb"/>
+                <constraint firstAttribute="bottomMargin" secondItem="qyq-Ql-0Xy" secondAttribute="bottom" constant="16" id="eva-Km-gOu"/>
+                <constraint firstItem="qyq-Ql-0Xy" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" id="xsN-Fx-HMh"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="54.5"/>
+        </view>
+    </objects>
+</document>

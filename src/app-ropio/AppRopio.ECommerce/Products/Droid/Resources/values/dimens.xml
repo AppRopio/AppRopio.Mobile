@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<!--  StepByStepCategories  -->
+	<dimen
+		name="app_products_sscategories_item_height">56dp</dimen>
+	<dimen
+		name="app_products_sscategories_item_horizontalMargin">16dp</dimen>
+	<!--    -->
+	<!--  Catalog Empty View  -->
+	<dimen
+		name="app_products_catalog_empty_title_topMargin">73dp</dimen>
+	<dimen
+		name="app_products_catalog_empty_subtitle_topMargin">14dp</dimen>
+	<!--    -->
+	<!--  Catalog  -->
+	<dimen
+		name="app_products_catalog_item_elevation">1dp</dimen>
+	<dimen
+		name="app_products_catalog_item_horizontalMargin">8dp</dimen>
+	<dimen
+		name="app_products_catalog_item_name_marginTop">14dp</dimen>
+	<dimen
+		name="app_products_catalog_item_oldPrice_marginTop">16dp</dimen>
+	<dimen
+		name="app_products_catalog_item_price_marginTop">2dp</dimen>
+	<dimen
+		name="app_products_catalog_item_price_marginBottom">12dp</dimen>
+	<dimen
+		name="app_products_catalog_item_badges_padding">2dp</dimen>
+	<dimen
+		name="app_products_catalog_item_badges_text_horizontalPadding">10dp</dimen>
+	<dimen
+		name="app_products_catalog_item_badge_cornerRadius">8dp</dimen>
+	<dimen
+		name="app_products_catalog_item_badge_height">16dp</dimen>
+	<dimen
+		name="app_products_catalog_headerHeight">56dp</dimen>
+	<dimen
+		name="app_products_catalog_sort_filters_header_margins">8dp</dimen>
+	<dimen
+		name="app_products_catalog_sort_filters_header_horizontalPadding">4dp</dimen>
+	<dimen
+		name="app_products_catalog_item_cornerRadius">2dp</dimen>
+	<!--    -->
+	<!--  ContentSearch  -->
+	<dimen
+		name="app_products_contentsearch_hints_autocompleteMinHeight">50dp</dimen>
+	<dimen
+		name="app_products_contentsearch_hints_autocomplete_horizontalPaddings">16dp</dimen>
+	<dimen
+		name="app_products_contentsearch_hints_autocomplete_item_marginRight">6dp</dimen>
+	<dimen
+		name="app_products_contentsearch_hints_autocomplete_item_marginBottom">8dp</dimen>
+	<dimen
+		name="app_products_contentsearch_hints_autocomplete_item_cornerRadius">16dp</dimen>
+	<dimen
+		name="app_products_contentsearch_hints_item_height">55dp</dimen>
+	<dimen
+		name="app_products_contentsearch_history_item_height">55dp</dimen>
+	<dimen
+		name="app_products_contentsearch_hints_autocomplete_item_text_minHeight">30dp</dimen>
+	<dimen
+		name="app_products_contentsearch_hints_item_text_leftMargin">16dp</dimen>
+	<!--    -->
+	<!--  Product Card  -->
+	<dimen
+		name="app_products_productCard_verticalMargins">6dp</dimen>
+	<dimen
+		name="app_products_productCard_horizontalMargins">16dp</dimen>
+	<dimen
+		name="app_products_productCard_title_height">56dp</dimen>
+	<dimen
+		name="app_products_productCard_horizontalCollection_height">113dp</dimen>
+	<dimen
+		name="app_products_productCard_horizontalCollection_content_height">56dp</dimen>
+	<dimen
+		name="app_products_productCard_horizontalCollection_color_size">40dp</dimen>
+	<dimen
+		name="app_products_productCard_horizontalCollection_color_radius">20dp</dimen>
+	<dimen
+		name="app_products_productCard_horizontalCollection_text_radius">4dp</dimen>
+	<dimen
+		name="app_products_productCard_horizontalCollection_text_minHeight">30dp</dimen>
+	<dimen
+		name="app_products_productCard_picker_spinner_item_titleHeight">36dp</dimen>
+	<dimen
+		name="app_products_productCard_multiSelection_item_height">56dp</dimen>
+	<dimen
+		name="app_products_productCard_multiSelection_item_text_minHeight">30dp</dimen>
+	<dimen
+		name="app_products_productCard_multiSelection_text_paddingRight">24dp</dimen>
+	<dimen
+		name="app_products_productCard_multiSelection_text_cornerRadius">4dp</dimen>
+	<dimen
+		name="app_products_productCard_multiSelection_image_paddingRight">8dp</dimen>
+	<dimen
+		name="app_products_productCard_verticalCollection_content_height">48dp</dimen>
+	<dimen
+		name="app_products_productCard_verticalCollection_horizontalMargins">8dp</dimen>
+	<dimen
+		name="app_products_productCard_minMax_content_height">48dp</dimen>
+	<dimen
+		name="app_products_productCard_minMax_content_horizontalPadding">10dp</dimen>
+	<dimen
+		name="app_products_productCard_minMax_content_input_marginLeft">5dp</dimen>
+    <dimen
+        name="app_products_productCard_shortInfo_minHeight">100dp</dimen>
+    <dimen
+        name="app_products_productCard_shortInfo_paddingHorizontal">16dp</dimen>
+    <dimen
+        name="app_products_productCard_shortInfo_paddingVertical">12dp</dimen>
+    <dimen
+        name="app_products_productCard_weight_separatorHeight">8dp</dimen>
+    <dimen
+        name="app_products_productCard_shopsHorizontalCollection_height_indicator">215dp</dimen>
+    <dimen
+        name="app_products_productCard_shopsHorizontalCollection_height_count">239dp</dimen>
+    <dimen
+        name="app_products_productCard_shopsHorizontalCollection_title_height">48dp</dimen>
+    <dimen
+        name="app_products_productCard_shopsHorizontalCollection_item_elevation">1dp</dimen>
+    <dimen
+        name="app_products_productCard_shopsHorizontalCollection_item_cornerRadius">2dp</dimen>
+    <dimen
+        name="app_products_productCard_shopsHorizontalCollection_indicatorSize">10dp</dimen>
+    <dimen
+        name="app_products_productCard_shopsHorizontalCollection_indicatorMargins">10dp</dimen>
+	<!--    -->
+	<!--  Selection  -->
+	<dimen
+		name="app_products_selection_item_height">56dp</dimen>
+	<dimen
+		name="app_products_selection_horizontalMargins">16dp</dimen>
+	<!--    -->
+<!--  Text Content  -->
+    <dimen
+        name="app_products_textContent_margins">16dp</dimen>
+<!--    -->
+    <!--  Web Content  -->
+    <dimen
+        name="app_products_webContent_margins">16dp</dimen>
+<!--    -->
+</resources>

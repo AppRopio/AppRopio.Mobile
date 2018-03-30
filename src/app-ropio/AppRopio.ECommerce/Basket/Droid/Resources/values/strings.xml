@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string
+		name="library_name">AppRopio.ECommerce.Basket.Droid</string>
+    <string
+        name="app_basket_basket_empty_title">Пока в корзине пусто</string>
+    <string
+        name="app_basket_basket_empty_subtitle">Здесь будет храниться всё,\nчто вы решите заказать.</string>
+    <string
+        name="app_basket_basket_empty_button">НАЧАТЬ ПОКУПКИ</string>
+    <string
+        name="app_basket_payment_title">Выбор оплаты</string>
+    <string
+        name="app_basket_thanks_title">Спасибо за заказ</string>
+    <string
+        name="app_basket_thanks_subtitle">Хотите продолжить покупки?</string>
+    <string
+        name="app_basket_thanks_catalogButton">ПЕРЕЙТИ В КАТАЛОГ</string>
+    <string
+        name="app_basket_delivery_on_address_button">ПРОДОЛЖИТЬ</string>
+    <string
+        name="app_basket_delivery_on_point_button">ВЫБРАТЬ</string>
+    <string
+        name="app_basket_delivery_on_point_toolbar_onSearch_input_hint">Поиск...</string>
+    <string
+        name="app_basket_productCardView_buyButton">ДОБАВИТЬ В КОРЗИНУ</string>
+</resources>

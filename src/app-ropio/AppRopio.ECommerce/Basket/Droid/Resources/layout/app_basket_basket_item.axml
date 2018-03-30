@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <appropio.base.droid.controls.ARImageView
+        style="@style/app_basket_basket_item_icon"
+        android:id="@+id/app_basket_basket_item_icon"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/app_basket_basket_item_icon_height"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:MvxBind="ImageUrl ImageUrl" />
+    <TextView
+        style="@style/app_basket_basket_item_title"
+        android:id="@+id/app_basket_basket_item_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/app_basket_basket_item_icon"
+        app:layout_constraintTop_toTopOf="@+id/app_basket_basket_item_icon"
+        app:layout_constraintRight_toLeftOf="@+id/app_basket_basket_item_moreButton"
+        app:MvxBind="Text Name" />
+    <ImageButton
+        style="@style/app_basket_basket_item_moreButton"
+        android:id="@+id/app_basket_basket_item_moreButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+    <TextView
+        style="@style/app_basket_basket_item_price"
+        android:id="@+id/app_basket_basket_item_price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/app_basket_basket_item_icon"
+        app:layout_constraintTop_toBottomOf="@+id/app_basket_basket_item_title"
+        app:layout_constraintRight_toRightOf="parent"
+        app:MvxBind="Text PriceFormat(Price)" />
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/app_basket_basket_item_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/app_basket_basket_item_icon"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintWidth_max="@dimen/app_basket_basket_item_steperHeight">
+        <ImageButton
+            style="@style/app_basket_basket_item_minusButton"
+            android:id="@+id/app_basket_basket_item_minusButton"
+            android:layout_alignParentLeft="true"
+            app:MvxBind="Click DecCommand" />
+        <TextView
+            style="@style/app_basket_basket_item_quantity"
+            android:id="@+id/app_basket_basket_item_quantity"
+            android:layout_toLeftOf="@+id/app_basket_basket_item_plusButton"
+            android:layout_toRightOf="@+id/app_basket_basket_item_minusButton"
+            app:MvxBind="Text QuantityString" />
+        <ProgressBar
+            android:layout_width="@dimen/app_loader_height"
+            android:layout_height="@dimen/app_loader_height"
+            android:layout_centerInParent="true"
+            android:indeterminateOnly="true"
+            android:indeterminateTint="?attr/app_color_accent"
+            app:MvxBind="Visibility Visibility(QuantityLoading)" />
+        <ImageButton
+            style="@style/app_basket_basket_item_plusButton"
+            android:id="@+id/app_basket_basket_item_plusButton"
+            android:layout_alignParentRight="true"
+            app:MvxBind="Click IncCommand" />
+    </RelativeLayout>
+    <View
+        style="@style/AppRopioTheme.Control.Separator"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+</android.support.constraint.ConstraintLayout>

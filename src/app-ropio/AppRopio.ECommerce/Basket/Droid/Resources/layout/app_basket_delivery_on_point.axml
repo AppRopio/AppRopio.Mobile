@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/app_drawer_layout_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include
+        layout="@layout/app_basket_delivery_on_point_toolbar_search" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <mvvmcross.droid.support.v7.recyclerview.MvxRecyclerView
+            android:id="@+id/app_basket_delivery_on_point_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/app_basket_delivery_on_point_buttonLayout"
+            app:MvxItemTemplate="@layout/app_basket_delivery_on_point_item"
+            app:MvxBind="ItemsSource DeliveryPointsItems; ItemClick DeliveryPointChangedCommand; Visibility Visibility(DeliveryPointsItems.Count)" />
+        <LinearLayout
+            android:id="@+id/app_basket_delivery_on_point_buttonLayout"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+            <Button
+                style="@style/app_basket_delivery_on_point_button"
+                android:id="@+id/app_basket_delivery_on_point_button"
+                app:MvxBind="Click NextCommand; Enabled CanGoNext; Visibility Visibility(DeliveryPointsItems.Count);" />
+        </LinearLayout>
+        <include
+            layout="@layout/app_base_loading" />
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

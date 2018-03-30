@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PDSelectionViewController">
+            <connections>
+                <outlet property="_applyBtn" destination="uXH-XE-JzD" id="0Em-ro-6sc"/>
+                <outlet property="_searchBar" destination="zpm-88-acx" id="egt-5R-Xup"/>
+                <outlet property="_tableView" destination="tZB-lD-TnB" id="9Py-bJ-YXh"/>
+                <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="2">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tZB-lD-TnB">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <searchBar key="tableHeaderView" contentMode="redraw" id="zpm-88-acx" customClass="BindableSearchBar">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </searchBar>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uXH-XE-JzD">
+                    <rect key="frame" x="156" y="540" width="288" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="288" id="702-jE-kSv"/>
+                        <constraint firstAttribute="height" constant="44" id="ReC-5q-rTa"/>
+                    </constraints>
+                    <state key="normal" title="Применить"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="uXH-XE-JzD" secondAttribute="bottom" constant="16" id="88c-M9-9pN"/>
+                <constraint firstItem="uXH-XE-JzD" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" id="QKE-ee-F38"/>
+                <constraint firstAttribute="bottom" secondItem="tZB-lD-TnB" secondAttribute="bottom" id="Uia-i0-Ddg"/>
+                <constraint firstAttribute="trailing" secondItem="tZB-lD-TnB" secondAttribute="trailing" id="gOl-mG-eEx"/>
+                <constraint firstItem="tZB-lD-TnB" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="nEu-62-bNM"/>
+                <constraint firstItem="tZB-lD-TnB" firstAttribute="top" secondItem="2" secondAttribute="top" id="wDg-Jg-JR3"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

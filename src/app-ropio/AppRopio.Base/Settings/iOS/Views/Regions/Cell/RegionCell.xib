@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="44" id="cxk-wN-pdQ" customClass="RegionCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cxk-wN-pdQ" id="YTl-1W-gDM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lds-Nv-0PO" customClass="ARLabel">
+                        <rect key="frame" x="16" y="11.5" width="250" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n9a-jO-tPr">
+                        <rect key="frame" x="276" y="-1" width="44" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="Y7h-1Q-5ch"/>
+                            <constraint firstAttribute="width" constant="44" id="aOm-aI-fJx"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="Lds-Nv-0PO" firstAttribute="centerY" secondItem="YTl-1W-gDM" secondAttribute="centerY" id="66s-NS-HW5"/>
+                    <constraint firstItem="n9a-jO-tPr" firstAttribute="centerY" secondItem="YTl-1W-gDM" secondAttribute="centerY" id="L5x-TU-AdI"/>
+                    <constraint firstItem="n9a-jO-tPr" firstAttribute="leading" secondItem="Lds-Nv-0PO" secondAttribute="trailing" constant="10" id="Odh-xq-tSy"/>
+                    <constraint firstItem="Lds-Nv-0PO" firstAttribute="leading" secondItem="YTl-1W-gDM" secondAttribute="leading" constant="16" id="TTA-HJ-duL"/>
+                    <constraint firstAttribute="trailing" secondItem="n9a-jO-tPr" secondAttribute="trailing" id="jf9-tq-lZx"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="SelectionImageView" destination="n9a-jO-tPr" id="w15-BU-z8l"/>
+                <outlet property="TitleLabel" destination="Lds-Nv-0PO" id="YdZ-BV-RGo"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

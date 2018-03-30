@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/app_products_sscategories_banners_bottom_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <appropio.base.droid.controls.ARViewPager
+        android:id="@+id/app_products_sscategories_banners_bottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintDimensionRatio="H,16:9"
+        app:MvxItemTemplate="@layout/app_products_sscategories_banners_item"
+        app:MvxBind="ItemsSource BottomBanners; ItemClick BannerSelectionChangedCommand; Visibility Visibility(BottomBanners)" />
+</android.support.constraint.ConstraintLayout>

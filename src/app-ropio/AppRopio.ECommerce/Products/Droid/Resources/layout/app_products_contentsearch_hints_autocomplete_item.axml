@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="@dimen/app_products_contentsearch_hints_autocomplete_item_marginRight"
+    android:layout_marginBottom="@dimen/app_products_contentsearch_hints_autocomplete_item_marginBottom">
+    <TextView
+        style="@style/app_products_contentsearch_hints_autocomplete_item_text"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/app_products_contentsearch_hints_autocomplete_item_text_minHeight"
+        android:background="@drawable/app_products_contentsearch_hints_autocomplete_item_text"
+        android:paddingLeft="@dimen/app_products_contentsearch_hints_autocomplete_horizontalPaddings"
+        android:paddingRight="@dimen/app_products_contentsearch_hints_autocomplete_horizontalPaddings"
+        app:MvxBind="Text AutocompleteText" />
+</LinearLayout>

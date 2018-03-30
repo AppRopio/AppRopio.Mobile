@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="201" id="cxk-wN-pdQ" customClass="PDHorizontalShopsCollectionCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="201"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cxk-wN-pdQ" id="YTl-1W-gDM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="200.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wuD-ln-WHj" customClass="ARLabel">
+                        <rect key="frame" x="16" y="18" width="288" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="qgz-rH-jaq">
+                        <rect key="frame" x="0.0" y="52" width="320" height="133"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="133" id="rbC-gB-NCO"/>
+                        </constraints>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uhM-fn-qac">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oRF-73-N1g">
+                        <rect key="frame" x="0.0" y="199.5" width="320" height="1"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="Lb7-J8-4N7"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="wuD-ln-WHj" firstAttribute="top" secondItem="YTl-1W-gDM" secondAttribute="topMargin" constant="10" id="69V-Ws-RZe"/>
+                    <constraint firstItem="wuD-ln-WHj" firstAttribute="leading" secondItem="YTl-1W-gDM" secondAttribute="leadingMargin" constant="8" id="83S-qi-XBf"/>
+                    <constraint firstAttribute="bottom" secondItem="oRF-73-N1g" secondAttribute="bottom" id="Gmu-zr-pCC"/>
+                    <constraint firstItem="oRF-73-N1g" firstAttribute="leading" secondItem="YTl-1W-gDM" secondAttribute="leading" id="RhS-By-qWt"/>
+                    <constraint firstItem="qgz-rH-jaq" firstAttribute="top" secondItem="YTl-1W-gDM" secondAttribute="topMargin" constant="44" id="oOh-nw-kJQ"/>
+                    <constraint firstAttribute="trailing" secondItem="oRF-73-N1g" secondAttribute="trailing" id="rVu-2h-muz"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="wuD-ln-WHj" secondAttribute="trailing" constant="8" id="sbK-Oa-nDi"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="qgz-rH-jaq" firstAttribute="leading" secondItem="cxk-wN-pdQ" secondAttribute="leading" id="6fL-aL-fgf"/>
+                <constraint firstAttribute="trailing" secondItem="qgz-rH-jaq" secondAttribute="trailing" id="6rk-TT-kDw"/>
+            </constraints>
+            <connections>
+                <outlet property="_bottomSeparator" destination="oRF-73-N1g" id="BWc-mf-mwE"/>
+                <outlet property="_collectionView" destination="qgz-rH-jaq" id="c4d-8e-VmC"/>
+                <outlet property="_collectionViewHeightConstraint" destination="rbC-gB-NCO" id="ALl-bX-8Dl"/>
+                <outlet property="_name" destination="wuD-ln-WHj" id="Knd-eq-J7C"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

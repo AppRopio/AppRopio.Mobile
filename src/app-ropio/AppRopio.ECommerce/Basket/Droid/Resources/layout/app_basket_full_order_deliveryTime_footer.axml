@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <View
+        style="@style/AppRopioTheme.Control.Separator"
+        android:layout_height="@dimen/app_basket_full_order_footer_height" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/app_basket_full_order_delivery_item_height"
+        app:MvxBind="Visibility Visibility(DeliveryViewModel.IsShowDeliveryTimePicker)">
+        <TextView
+            style="@style/app_basket_full_order_deliveryTime_title"
+            android:layout_marginLeft="@dimen/app_basket_full_order_deliveryLayout_horizontalMargin"
+            android:layout_toStartOf="@+id/app_basket_full_order_deliveryTime_icon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            app:MvxBind="Text DeliveryViewModel.SelectedDeliveryTimeValue" />
+        <ImageView
+            style="@style/app_basket_full_order_deliveryTime_icon"
+            android:id="@+id/app_basket_full_order_deliveryTime_icon"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
+</LinearLayout>

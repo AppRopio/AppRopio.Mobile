@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <include
+        layout="@layout/app_filters_filters_title" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_filters_filters_minMax_content_height"
+        android:paddingLeft="@dimen/app_filters_filters_horizontalMargins"
+        android:paddingRight="@dimen/app_filters_filters_horizontalMargins">
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".5">
+            <TextView
+                style="@style/app_filters_filters_minMax_content_hint"
+                android:id="@+id/app_filters_filters_minMax_content_hint_from"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/app_filters_filters_minMax_content_input_from"
+                android:text="@string/app_filters_filters_minMax_content_hint_from" />
+            <EditText
+                style="@style/app_filters_filters_minMax_content_input"
+                android:id="@+id/app_filters_filters_minMax_content_input_from"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/app_filters_filters_minMax_content_input_marginLeft"
+                android:layout_toEndOf="@+id/app_filters_filters_minMax_content_hint_from"
+                android:inputType="date" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".5"
+            android:layout_marginLeft="@dimen/app_filters_filters_minMax_content_horizontalPadding">
+            <TextView
+                style="@style/app_filters_filters_minMax_content_hint"
+                android:id="@+id/app_filters_filters_minMax_content_hint_to"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/app_filters_filters_minMax_content_input_to"
+                android:text="@string/app_filters_filters_minMax_content_hint_to" />
+            <EditText
+                style="@style/app_filters_filters_minMax_content_input"
+                android:id="@+id/app_filters_filters_minMax_content_input_to"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/app_filters_filters_minMax_content_input_marginLeft"
+                android:layout_toEndOf="@+id/app_filters_filters_minMax_content_hint_to"
+                android:inputType="date" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

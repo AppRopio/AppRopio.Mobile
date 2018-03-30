@@ -1,0 +1,738 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Build.Download.0.4.7\build\Xamarin.Build.Download.props" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Build.Download.0.4.7\build\Xamarin.Build.Download.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1BA96133-1BEF-43F7-8D07-A997F34F46EB}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>AppRopio.Test.Droid</RootNamespace>
+    <AssemblyName>AppRopio.Test.Droid</AssemblyName>
+    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
+    <AndroidApplication>True</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <AndroidSupportedAbis>arm64-v8a;armeabi;armeabi-v7a;x86;x86_64</AndroidSupportedAbis>
+    <AndroidUseSharedRuntime>true</AndroidUseSharedRuntime>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidManagedSymbols>true</AndroidManagedSymbols>
+<AndroidLinkMode>None</AndroidLinkMode>
+<AndroidSupportedAbis>armeabi-v7a;x86;armeabi</AndroidSupportedAbis>
+<JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'GooglePlay|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\GooglePlay</OutputPath>
+    <WarningLevel>4</WarningLevel>
+    <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
+    <AndroidSupportedAbis>armeabi-v7a;armeabi;x86</AndroidSupportedAbis>
+    <AndroidStoreUncompressedFileExtensions>.dll</AndroidStoreUncompressedFileExtensions>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Newtonsoft.Json.10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Android.Export" />
+    <Reference Include="System.Collections.Immutable">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\System.Collections.Immutable.1.4.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings.Abstractions">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xam.Plugins.Settings.3.1.1\lib\MonoAndroid10\Plugin.Settings.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xam.Plugins.Settings.3.1.1\lib\MonoAndroid10\Plugin.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Annotations">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.Annotations.26.1.0.1\lib\MonoAndroid80\Xamarin.Android.Support.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Arch.Core.Common">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Arch.Core.Common.1.0.0\lib\MonoAndroid80\Xamarin.Android.Arch.Core.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Arch.Lifecycle.Common">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Arch.Lifecycle.Common.1.0.1\lib\MonoAndroid80\Xamarin.Android.Arch.Lifecycle.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Arch.Lifecycle.Runtime">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Arch.Lifecycle.Runtime.1.0.0\lib\MonoAndroid80\Xamarin.Android.Arch.Lifecycle.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Compat">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.Compat.26.1.0.1\lib\MonoAndroid80\Xamarin.Android.Support.Compat.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Core.UI">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.Core.UI.26.1.0.1\lib\MonoAndroid80\Xamarin.Android.Support.Core.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Core.Utils">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.Core.Utils.26.1.0.1\lib\MonoAndroid80\Xamarin.Android.Support.Core.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Fragment">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.Fragment.26.1.0.1\lib\MonoAndroid80\Xamarin.Android.Support.Fragment.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Media.Compat">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.Media.Compat.26.1.0.1\lib\MonoAndroid80\Xamarin.Android.Support.Media.Compat.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Transition">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.Transition.26.1.0.1\lib\MonoAndroid80\Xamarin.Android.Support.Transition.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.RecyclerView">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.v7.RecyclerView.26.1.0.1\lib\MonoAndroid80\Xamarin.Android.Support.v7.RecyclerView.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Vector.Drawable">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.Vector.Drawable.26.1.0.1\lib\MonoAndroid80\Xamarin.Android.Support.Vector.Drawable.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Animated.Vector.Drawable">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.Animated.Vector.Drawable.26.1.0.1\lib\MonoAndroid80\Xamarin.Android.Support.Animated.Vector.Drawable.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.AppCompat">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.v7.AppCompat.26.1.0.1\lib\MonoAndroid80\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Design">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.Design.26.1.0.1\lib\MonoAndroid80\Xamarin.Android.Support.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Constraint.Layout.Solver">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.Constraint.Layout.Solver.1.0.2.2\lib\MonoAndroid70\Xamarin.Android.Support.Constraint.Layout.Solver.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Constraint.Layout">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.Constraint.Layout.1.0.2.2\lib\MonoAndroid70\Xamarin.Android.Support.Constraint.Layout.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Platform">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Platform.5.6.3\lib\MonoAndroid\MvvmCross.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Platform.Droid">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Platform.5.6.3\lib\MonoAndroid\MvvmCross.Platform.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Core">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Core.5.6.3\lib\MonoAndroid\MvvmCross.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Droid">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Core.5.6.3\lib\MonoAndroid\MvvmCross.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Binding">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Binding.5.6.3\lib\MonoAndroid\MvvmCross.Binding.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Binding.Droid">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Binding.5.6.3\lib\MonoAndroid\MvvmCross.Binding.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Localization">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Binding.5.6.3\lib\MonoAndroid\MvvmCross.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.File">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Plugin.File.5.6.3\lib\MonoAndroid\MvvmCross.Plugins.File.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.File.Droid">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Plugin.File.5.6.3\lib\MonoAndroid\MvvmCross.Plugins.File.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Messenger">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Plugin.Messenger.5.6.3\lib\MonoAndroid\MvvmCross.Plugins.Messenger.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Network">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Plugin.Network.5.6.3\lib\MonoAndroid\MvvmCross.Plugins.Network.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Network.Droid">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Plugin.Network.5.6.3\lib\MonoAndroid\MvvmCross.Plugins.Network.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Visibility">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Plugin.Visibility.5.6.3\lib\MonoAndroid\MvvmCross.Plugins.Visibility.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Visibility.Droid">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Plugin.Visibility.5.6.3\lib\MonoAndroid\MvvmCross.Plugins.Visibility.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Json">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Plugin.Json.5.6.3\lib\MonoAndroid\MvvmCross.Plugins.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.DownloadCache">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Plugin.DownloadCache.5.6.3\lib\MonoAndroid\MvvmCross.Plugins.DownloadCache.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.DownloadCache.Droid">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Plugin.DownloadCache.5.6.3\lib\MonoAndroid\MvvmCross.Plugins.DownloadCache.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Droid.Support.Core.UI">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Droid.Support.Core.UI.5.6.3\lib\MonoAndroid70\MvvmCross.Droid.Support.Core.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Droid.Support.Fragment">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Droid.Support.Fragment.5.6.3\lib\MonoAndroid70\MvvmCross.Droid.Support.Fragment.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Droid.Support.V7.RecyclerView">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Droid.Support.V7.RecyclerView.5.6.3\lib\MonoAndroid70\MvvmCross.Droid.Support.V7.RecyclerView.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Droid.Support.V7.AppCompat">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Droid.Support.V7.AppCompat.5.6.3\lib\MonoAndroid70\MvvmCross.Droid.Support.V7.AppCompat.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Droid.Support.Design">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Droid.Support.Design.5.6.3\lib\MonoAndroid70\MvvmCross.Droid.Support.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v4">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.v4.26.1.0.1\lib\MonoAndroid80\Xamarin.Android.Support.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="Glide">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Glide.Xamarin.4.1.1\lib\MonoAndroid10\Glide.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.CurrentActivity">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Plugin.CurrentActivity.1.0.1\lib\MonoAndroid10\Plugin.CurrentActivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Permissions.Abstractions">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Plugin.Permissions.2.1.0\lib\MonoAndroid10\Plugin.Permissions.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Permissions">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Plugin.Permissions.2.1.0\lib\MonoAndroid10\Plugin.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.GooglePlayServices.Basement">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.GooglePlayServices.Basement.60.1142.0\lib\MonoAndroid80\Xamarin.GooglePlayServices.Basement.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.GooglePlayServices.Tasks">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.GooglePlayServices.Tasks.60.1142.0\lib\MonoAndroid80\Xamarin.GooglePlayServices.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.GooglePlayServices.Base">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.GooglePlayServices.Base.60.1142.0\lib\MonoAndroid80\Xamarin.GooglePlayServices.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.GooglePlayServices.Maps">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.GooglePlayServices.Maps.60.1142.0\lib\MonoAndroid80\Xamarin.GooglePlayServices.Maps.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.ExternalMaps.Abstractions">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xam.Plugin.ExternalMaps.4.0.1\lib\MonoAndroid10\Plugin.ExternalMaps.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.ExternalMaps">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xam.Plugin.ExternalMaps.4.0.1\lib\MonoAndroid10\Plugin.ExternalMaps.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.CardView">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.v7.CardView.26.1.0.1\lib\MonoAndroid80\Xamarin.Android.Support.v7.CardView.dll</HintPath>
+    </Reference>
+    <Reference Include="Realm.DataBinding">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Realm.DataBinding.1.2.0\lib\MonoAndroid44\Realm.DataBinding.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Linq">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Remotion.Linq.2.1.2\lib\portable-net45+win+wpa81+wp80\Remotion.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\System.Runtime.CompilerServices.Unsafe.4.4.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="Realm">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Realm.Database.2.1.0\lib\netstandard1.4\Realm.dll</HintPath>
+    </Reference>
+    <Reference Include="Realm.Sync">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Realm.2.1.0\lib\netstandard1.4\Realm.Sync.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.CustomTabs">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.CustomTabs.26.1.0.1\lib\MonoAndroid80\Xamarin.Android.Support.CustomTabs.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Share.Abstractions">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Plugin.Share.7.1.1\lib\MonoAndroid10\Plugin.Share.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Share">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Plugin.Share.7.1.1\lib\MonoAndroid10\Plugin.Share.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.Android.Bindings">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Microsoft.AppCenter.1.3.0\lib\MonoAndroid403\Microsoft.AppCenter.Android.Bindings.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Microsoft.AppCenter.1.3.0\lib\MonoAndroid403\Microsoft.AppCenter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.Analytics.Android.Bindings">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Microsoft.AppCenter.Analytics.1.3.0\lib\MonoAndroid403\Microsoft.AppCenter.Analytics.Android.Bindings.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.Analytics">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Microsoft.AppCenter.Analytics.1.3.0\lib\MonoAndroid403\Microsoft.AppCenter.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.Crashes.Android.Bindings">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Microsoft.AppCenter.Crashes.1.3.0\lib\MonoAndroid403\Microsoft.AppCenter.Crashes.Android.Bindings.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.Crashes">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Microsoft.AppCenter.Crashes.1.3.0\lib\MonoAndroid403\Microsoft.AppCenter.Crashes.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Messaging.Abstractions">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xam.Plugins.Messaging.5.0.0\lib\MonoAndroid10\Plugin.Messaging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Messaging">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xam.Plugins.Messaging.5.0.0\lib\MonoAndroid10\Plugin.Messaging.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetCross.Memory.Unsafe">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\DotNetCross.Memory.Unsafe.0.2.3.4\lib\netstandard1.0\DotNetCross.Memory.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Geolocator.Abstractions">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xam.Plugin.Geolocator.4.1.3\lib\MonoAndroid10\Plugin.Geolocator.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Geolocator">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xam.Plugin.Geolocator.4.1.3\lib\MonoAndroid10\Plugin.Geolocator.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SplashActivity.cs" />
+    <Compile Include="Setup.cs" />
+    <Compile Include="Application.cs" />
+    <Compile Include="Bootstrap\AppRopio_ProductsPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_BasketPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
+    <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\NetworkPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\VisibilityPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\JsonPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\DownloadCachePluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_FiltersPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_MobileCenterBootstrap.cs" />
+    <Compile Include="LinkerPleaseInclude.cs" />
+    <Compile Include="Bootstrap\AppRopio_MarkedPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_HistoryOrdersPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_MapPluginBootstrap.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Properties\AndroidManifest.xml" />
+    <None Include="Assets\AboutAssets.txt" />
+    <None Include="packages.config" />
+    <None Include="FodyWeavers.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Strings.xml" />
+    <AndroidResource Include="Resources\values\Theme.xml" />
+    <AndroidResource Include="Resources\layout\Splash.axml" />
+    <AndroidResource Include="Resources\values\AppAttributesValues.xml" />
+    <AndroidResource Include="Resources\font\roboto_bold.ttf" />
+    <AndroidResource Include="Resources\font\roboto_italic.ttf" />
+    <AndroidResource Include="Resources\font\roboto_light.ttf" />
+    <AndroidResource Include="Resources\font\roboto_medium.ttf" />
+    <AndroidResource Include="Resources\font\roboto_regular.ttf" />
+    <AndroidResource Include="Resources\drawable-hdpi\address.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\basket.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\catalog.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\contacts.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\fav.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\history.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\info.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\news.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\address.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\basket.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\catalog.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\contacts.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\fav.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\history.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\info.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\news.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\address.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\basket.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\catalog.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\contacts.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\fav.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\history.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\info.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\news.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\address.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\basket.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\catalog.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\contacts.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\fav.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\history.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\info.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\news.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\address.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\basket.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\catalog.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\contacts.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\fav.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\history.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\info.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\news.png" />
+    <AndroidResource Include="Resources\font\roboto.xml" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\logo.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\logo.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\logo.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\logo.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\logo.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\splash.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\splash.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\splash.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\splash.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\splash.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\products_ic_toolbar_search.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\products_ic_toolbar_search.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\products_ic_toolbar_search.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\products_ic_toolbar_search.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\products_ic_toolbar_search.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\basket_ic_empty_image.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\basket_ic_empty_image.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\basket_ic_empty_image.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\basket_ic_empty_image.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\basket_ic_empty_image.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\app_basket_ic_item_minus.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\app_basket_ic_item_plus.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\app_basket_ic_item_minus.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\app_basket_ic_item_plus.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\app_basket_ic_item_minus.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\app_basket_ic_item_plus.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\app_basket_ic_item_minus.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\app_basket_ic_item_plus.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\app_basket_ic_item_minus.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\app_basket_ic_item_plus.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\app_ic_item_check.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\app_ic_item_check.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\app_ic_item_check.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\app_ic_item_check.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\app_ic_item_check.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\app_basket_ic_item_more.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\app_basket_ic_item_more.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\app_basket_ic_item_more.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\app_basket_ic_item_more.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\app_basket_ic_item_more.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\app_basket_ic_calendar.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\app_basket_ic_calendar.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\app_basket_ic_calendar.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\app_basket_ic_calendar.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\app_basket_ic_calendar.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\app_basket_thanks_ic_close.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\app_basket_thanks_ic_close.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\app_basket_thanks_ic_close.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\app_basket_thanks_ic_close.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\app_basket_thanks_ic_close.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\app_basket_delivery_on_point_ic_distance.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\app_basket_delivery_on_point_ic_distance.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\app_basket_delivery_on_point_ic_distance.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\app_basket_delivery_on_point_ic_distance.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\app_basket_delivery_on_point_ic_distance.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\app_basket_delivery_on_point_item_callButton.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\app_basket_delivery_on_point_item_infoButton.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\app_basket_delivery_on_point_item_mapButton.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\app_basket_delivery_on_point_item_routeButton.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\app_basket_delivery_on_point_item_callButton.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\app_basket_delivery_on_point_item_infoButton.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\app_basket_delivery_on_point_item_mapButton.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\app_basket_delivery_on_point_item_routeButton.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\app_basket_delivery_on_point_item_callButton.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\app_basket_delivery_on_point_item_infoButton.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\app_basket_delivery_on_point_item_mapButton.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\app_basket_delivery_on_point_item_routeButton.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\app_basket_delivery_on_point_item_callButton.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\app_basket_delivery_on_point_item_infoButton.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\app_basket_delivery_on_point_item_mapButton.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\app_basket_delivery_on_point_item_routeButton.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\app_basket_delivery_on_point_item_callButton.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\app_basket_delivery_on_point_item_infoButton.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\app_basket_delivery_on_point_item_mapButton.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\app_basket_delivery_on_point_item_routeButton.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\common_ic_selected_pin.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\common_ic_selected_pin.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\common_ic_selected_pin.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\common_ic_selected_pin.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\common_ic_selected_pin.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\app_basket_cartIndicator_ic_basket.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\app_basket_cartIndicator_ic_basket.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\app_basket_cartIndicator_ic_basket.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\app_basket_cartIndicator_ic_basket.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\app_basket_cartIndicator_ic_basket.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\app_products_ic_empty_image.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\app_products_ic_empty_image.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\app_products_ic_empty_image.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\app_products_ic_empty_image.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\app_products_ic_empty_image.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\app_products_ic_marked.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\app_products_ic_unmarked.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\app_products_ic_marked.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\app_products_ic_unmarked.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\app_products_ic_marked.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\app_products_ic_unmarked.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\app_products_ic_marked.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\app_products_ic_unmarked.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\app_products_ic_marked.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\app_products_ic_unmarked.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\app_ic_arrow.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\app_ic_arrow.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\app_ic_arrow.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\app_ic_arrow.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\app_ic_arrow.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\app_ic_item_cross.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\app_ic_item_cross.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\app_ic_item_cross.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\app_ic_item_cross.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\app_ic_item_cross.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\app_contentsearch_ic_arrow.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\app_contentsearch_ic_clock.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\app_contentsearch_ic_arrow.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\app_contentsearch_ic_clock.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\app_contentsearch_ic_arrow.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\app_contentsearch_ic_clock.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\app_contentsearch_ic_arrow.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\app_contentsearch_ic_clock.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\app_contentsearch_ic_arrow.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\app_contentsearch_ic_clock.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\app_ic_empty_image_large.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\app_ic_empty_image_large.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\app_ic_empty_image_large.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\app_ic_empty_image_large.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\app_ic_empty_image_large.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\app_products_ic_share.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\app_products_ic_share.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\app_products_ic_share.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\app_products_ic_share.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\app_products_ic_share.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\app_basket_ic_item_large_minus.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\app_basket_ic_item_large_plus.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\app_basket_ic_item_large_minus.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\app_basket_ic_item_large_plus.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\app_basket_ic_item_large_minus.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\app_basket_ic_item_large_plus.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\app_basket_ic_item_large_minus.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\app_basket_ic_item_large_plus.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\app_basket_ic_item_large_minus.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\app_basket_ic_item_large_plus.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_launcher_APP.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_launcher_APP.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_launcher_APP.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_launcher_APP.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_launcher_APP.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\app_marked_ic_empty_image.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\app_marked_ic_empty_image.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\app_marked_ic_empty_image.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\app_marked_ic_empty_image.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\app_marked_ic_empty_image.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\app_historyorders_ic_nophoto.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\app_historyorders_ic_nophoto.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\app_historyorders_ic_nophoto.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\app_historyorders_ic_nophoto.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\app_historyorders_ic_nophoto.png" />
+    <AndroidResource Include="Resources\drawable\ic_launcher_APP.xml" />
+    <AndroidResource Include="Resources\values\Colors.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\app_map_ic_map.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\app_map_ic_map.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\app_map_ic_map.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\app_map_ic_map.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\app_map_ic_map.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\common_ic_unselected_pin.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\common_ic_unselected_pin.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\common_ic_unselected_pin.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\common_ic_unselected_pin.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\common_ic_unselected_pin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\drawable-hdpi\" />
+    <Folder Include="Resources\drawable-mdpi\" />
+    <Folder Include="Resources\drawable-xhdpi\" />
+    <Folder Include="Resources\drawable-xxhdpi\" />
+    <Folder Include="Resources\drawable-xxxhdpi\" />
+    <Folder Include="Resources\drawable\" />
+    <Folder Include="Resources\layout\" />
+    <Folder Include="Resources\font\" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Settings\Configs\App.json" />
+    <AndroidAsset Include="Assets\Settings\Configs\Basket.json" />
+    <AndroidAsset Include="Assets\Settings\Configs\Filters.json" />
+    <AndroidAsset Include="Assets\Settings\Configs\Menu.json" />
+    <AndroidAsset Include="Assets\Settings\Configs\Products.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\API\AppRopio.Base.API.csproj">
+      <Project>{124841B9-39F6-44B5-8B96-50183FBFE341}</Project>
+      <Name>AppRopio.Base.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Core\AppRopio.Base.Core.csproj">
+      <Project>{EA6D5113-1E80-494B-886D-3D7FDFA04E99}</Project>
+      <Name>AppRopio.Base.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Droid\AppRopio.Base.Droid.csproj">
+      <Project>{B77BA9F1-8DFB-4EC4-9A3F-D80A3ABF0D82}</Project>
+      <Name>AppRopio.Base.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Droid\Map\AppRopio.Base.Droid.Map.csproj">
+      <Project>{2E6E9175-24F4-4069-9B15-194C4023D8E1}</Project>
+      <Name>AppRopio.Base.Droid.Map</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Filters\API\AppRopio.Base.Filters.API.csproj">
+      <Project>{7C9F9E3E-A1BE-46B1-8DAE-65E829E6B0EE}</Project>
+      <Name>AppRopio.Base.Filters.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Filters\Core\AppRopio.Base.Filters.Core.csproj">
+      <Project>{19D459DF-4188-4F2B-BC76-CE7C4A459A9D}</Project>
+      <Name>AppRopio.Base.Filters.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Filters\Droid\AppRopio.Base.Filters.Droid.csproj">
+      <Project>{4BEBDE4D-3BE8-4AA7-BB86-DC478CDE8064}</Project>
+      <Name>AppRopio.Base.Filters.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Map\API\AppRopio.Base.Map.API.csproj">
+      <Project>{8590B5CF-3921-4778-8559-4E11219CEBEE}</Project>
+      <Name>AppRopio.Base.Map.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Map\Core\AppRopio.Base.Map.Core.csproj">
+      <Project>{7E05AFCC-3D18-47D3-A5CD-06FA46130219}</Project>
+      <Name>AppRopio.Base.Map.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Map\Droid\AppRopio.Base.Map.Droid.csproj">
+      <Project>{DB63F26D-FD6A-474C-8A60-F7E7C48E2AC3}</Project>
+      <Name>AppRopio.Base.Map.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.ECommerce\Basket\API\AppRopio.ECommerce.Basket.API.csproj">
+      <Project>{F22152B2-AF3C-4BAA-8A78-B2C4C6ED2109}</Project>
+      <Name>AppRopio.ECommerce.Basket.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.ECommerce\Basket\Core\AppRopio.ECommerce.Basket.Core.csproj">
+      <Project>{B2302667-FF48-4A51-9032-84F45B8F173C}</Project>
+      <Name>AppRopio.ECommerce.Basket.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.ECommerce\Basket\Droid\AppRopio.ECommerce.Basket.Droid.csproj">
+      <Project>{19F6B174-9EF8-4DD6-A361-104218BB7172}</Project>
+      <Name>AppRopio.ECommerce.Basket.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.ECommerce\HistoryOrders\API\AppRopio.ECommerce.HistoryOrders.API.csproj">
+      <Project>{27CCC837-6EC5-40B4-8631-80C0541B08DE}</Project>
+      <Name>AppRopio.ECommerce.HistoryOrders.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.ECommerce\HistoryOrders\Core\AppRopio.ECommerce.HistoryOrders.Core.csproj">
+      <Project>{4639DABF-78CC-458B-8E9D-F1B857B3C42A}</Project>
+      <Name>AppRopio.ECommerce.HistoryOrders.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.ECommerce\HistoryOrders\Droid\AppRopio.ECommerce.HistoryOrders.Droid.csproj">
+      <Project>{6C696148-C1BD-43A7-BCBF-3E170A76AFEF}</Project>
+      <Name>AppRopio.ECommerce.HistoryOrders.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.ECommerce\Loyalty\Abstractions\AppRopio.ECommerce.Loyalty.Abstractions.csproj">
+      <Project>{B97AC2F0-C860-4F8C-BCCA-7A503A03D880}</Project>
+      <Name>AppRopio.ECommerce.Loyalty.Abstractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.ECommerce\Loyalty\API\AppRopio.ECommerce.Loyalty.API.csproj">
+      <Project>{F40BC6FE-FE5F-4D5B-9453-923434FC2FC0}</Project>
+      <Name>AppRopio.ECommerce.Loyalty.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.ECommerce\Loyalty\Core\AppRopio.ECommerce.Loyalty.Core.csproj">
+      <Project>{6CEC3D40-8650-4F19-ADE5-373021826B31}</Project>
+      <Name>AppRopio.ECommerce.Loyalty.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.ECommerce\Loyalty\Droid\AppRopio.ECommerce.Loyalty.Droid.csproj">
+      <Project>{0E7BB9A6-2094-4DEE-BBA0-4DA3FFAA0547}</Project>
+      <Name>AppRopio.ECommerce.Loyalty.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.ECommerce\Marked\API\AppRopio.ECommerce.Marked.API.csproj">
+      <Project>{1840866B-21D7-4DD1-95F3-335D62C01CC3}</Project>
+      <Name>AppRopio.ECommerce.Marked.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.ECommerce\Marked\Core\AppRopio.ECommerce.Marked.Core.csproj">
+      <Project>{D7B66AD6-DE32-493E-A746-223D23C4A403}</Project>
+      <Name>AppRopio.ECommerce.Marked.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.ECommerce\Marked\Droid\AppRopio.ECommerce.Marked.Droid.csproj">
+      <Project>{2880989C-6707-4097-93AC-36FB617ED535}</Project>
+      <Name>AppRopio.ECommerce.Marked.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.ECommerce\Products\API\AppRopio.ECommerce.Products.API.csproj">
+      <Project>{AB6F8756-ADEC-4C34-A00B-988972E44E61}</Project>
+      <Name>AppRopio.ECommerce.Products.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.ECommerce\Products\Core\AppRopio.ECommerce.Products.Core.csproj">
+      <Project>{F2ECB410-3A5A-44E0-818A-C655FEE87DEA}</Project>
+      <Name>AppRopio.ECommerce.Products.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.ECommerce\Products\Droid\AppRopio.ECommerce.Products.Droid.csproj">
+      <Project>{5D18A098-6372-4002-B5EF-256EFBE15C54}</Project>
+      <Name>AppRopio.ECommerce.Products.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Auth\AppRopio.Models.Auth.csproj">
+      <Project>{EEBE1C14-C1C6-45B0-BD83-260151D97DDD}</Project>
+      <Name>AppRopio.Models.Auth</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Base\AppRopio.Models.Base.csproj">
+      <Project>{C4F2B57C-507E-4B99-B2E4-FA4B3C99FD59}</Project>
+      <Name>AppRopio.Models.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Basket\AppRopio.Models.Basket.csproj">
+      <Project>{55D9E12B-8008-4DAD-8CB6-5A128777340C}</Project>
+      <Name>AppRopio.Models.Basket</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Filters\AppRopio.Models.Filters.csproj">
+      <Project>{F538DE02-55D4-4F2F-9144-A94F70EB652A}</Project>
+      <Name>AppRopio.Models.Filters</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.HistoryOrders\AppRopio.Models.HistoryOrders.csproj">
+      <Project>{E4E61823-2231-48DE-8644-00497FD299C8}</Project>
+      <Name>AppRopio.Models.HistoryOrders</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Loyalty\AppRopio.Models.Loyalty.csproj">
+      <Project>{4F3314CC-A2AB-4962-AF1F-0FAB3E13EFE8}</Project>
+      <Name>AppRopio.Models.Loyalty</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Map\AppRopio.Models.Map.csproj">
+      <Project>{E4676E75-669E-4E6A-96AB-D613F1FB4732}</Project>
+      <Name>AppRopio.Models.Map</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Marked\AppRopio.Models.Marked.csproj">
+      <Project>{CB63C402-A2F2-48BA-83E4-A616CC439C74}</Project>
+      <Name>AppRopio.Models.Marked</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Products\AppRopio.Models.Products.csproj">
+      <Project>{B621BAAF-BBB9-43D8-9990-7431667877AC}</Project>
+      <Name>AppRopio.Models.Products</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Navigation\Menu\Core\AppRopio.Navigation.Menu.Core.csproj">
+      <Project>{E9C4484A-135D-42D9-A9CB-E1A8884D5041}</Project>
+      <Name>AppRopio.Navigation.Menu.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Navigation\Menu\Droid\AppRopio.Navigation.Menu.Droid.csproj">
+      <Project>{6686E8AA-D868-4516-B027-67B075A1D2FF}</Project>
+      <Name>AppRopio.Navigation.Menu.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Analytics\MobileCenter\Droid\AppRopio.Analytics.MobileCenter.Droid.csproj">
+      <Project>{B5A0F613-11A3-4842-9425-7EDF2B0612A0}</Project>
+      <Name>AppRopio.Analytics.MobileCenter.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Analytics\MobileCenter\Core\AppRopio.Analytics.MobileCenter.Core.csproj">
+      <Project>{2A2E97B5-DC27-4FC7-A7A2-63E4780FF49A}</Project>
+      <Name>AppRopio.Analytics.MobileCenter.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets')" />
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.Annotations.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Annotations.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.Annotations.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Annotations.targets')" />
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Arch.Core.Common.1.0.0\build\MonoAndroid80\Xamarin.Android.Arch.Core.Common.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Arch.Core.Common.1.0.0\build\MonoAndroid80\Xamarin.Android.Arch.Core.Common.targets')" />
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Arch.Lifecycle.Common.1.0.1\build\MonoAndroid80\Xamarin.Android.Arch.Lifecycle.Common.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Arch.Lifecycle.Common.1.0.1\build\MonoAndroid80\Xamarin.Android.Arch.Lifecycle.Common.targets')" />
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Arch.Lifecycle.Runtime.1.0.0\build\MonoAndroid80\Xamarin.Android.Arch.Lifecycle.Runtime.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Arch.Lifecycle.Runtime.1.0.0\build\MonoAndroid80\Xamarin.Android.Arch.Lifecycle.Runtime.targets')" />
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.Compat.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Compat.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.Compat.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Compat.targets')" />
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.Core.UI.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Core.UI.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.Core.UI.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Core.UI.targets')" />
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.Core.Utils.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Core.Utils.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.Core.Utils.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Core.Utils.targets')" />
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.Fragment.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Fragment.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.Fragment.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Fragment.targets')" />
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.Media.Compat.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Media.Compat.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.Media.Compat.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Media.Compat.targets')" />
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.Transition.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Transition.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.Transition.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Transition.targets')" />
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.v7.RecyclerView.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.v7.RecyclerView.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.v7.RecyclerView.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.v7.RecyclerView.targets')" />
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.Vector.Drawable.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.Vector.Drawable.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Vector.Drawable.targets')" />
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.Animated.Vector.Drawable.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Animated.Vector.Drawable.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.Animated.Vector.Drawable.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Animated.Vector.Drawable.targets')" />
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.v7.AppCompat.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.v7.AppCompat.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.v7.AppCompat.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.v7.AppCompat.targets')" />
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.Design.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Design.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.Design.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Design.targets')" />
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.v4.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.v4.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.v4.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.v4.targets')" />
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Build.Download.0.4.7\build\Xamarin.Build.Download.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Build.Download.0.4.7\build\Xamarin.Build.Download.targets')" />
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.GooglePlayServices.Basement.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Basement.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.GooglePlayServices.Basement.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Basement.targets')" />
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.GooglePlayServices.Tasks.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Tasks.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.GooglePlayServices.Tasks.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Tasks.targets')" />
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.GooglePlayServices.Base.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Base.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.GooglePlayServices.Base.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Base.targets')" />
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.GooglePlayServices.Maps.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Maps.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.GooglePlayServices.Maps.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Maps.targets')" />
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.v7.CardView.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.v7.CardView.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.v7.CardView.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.v7.CardView.targets')" />
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Fody.2.2.0\build\netstandard1.2\Fody.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Fody.2.2.0\build\netstandard1.2\Fody.targets')" />
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Realm.Database.2.1.0\build\Realm.Database.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Realm.Database.2.1.0\build\Realm.Database.targets')" />
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Realm.2.1.0\build\Realm.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Realm.2.1.0\build\Realm.targets')" />
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.CustomTabs.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.CustomTabs.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.CustomTabs.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.CustomTabs.targets')" />
+</Project>

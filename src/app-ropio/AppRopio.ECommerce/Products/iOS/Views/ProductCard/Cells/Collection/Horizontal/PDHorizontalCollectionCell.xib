@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document
+	type                 ="com.apple.InterfaceBuilder3.CocoaTouch.XIB"
+	version              ="3.0"
+	toolsVersion         ="12121"
+	systemVersion        ="16F73"
+	targetRuntime        ="iOS.CocoaTouch"
+	propertyAccessControl="none"
+	useAutolayout        ="YES"
+	useTraitCollections  ="YES"
+	colorMatched         ="YES">
+	<device
+		id         ="retina4_7"
+		orientation="portrait">
+		<adaptation
+			id="fullscreen" />
+	</device>
+	<dependencies>
+		<deployment
+			identifier="iOS" />
+		<plugIn
+			identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin"
+			version   ="12089" />
+		<capability
+			name           ="Alignment constraints with different attributes"
+			minToolsVersion="5.1" />
+		<capability
+			name           ="Constraints to layout margins"
+			minToolsVersion="6.0" />
+		<capability
+			name           ="documents saved in the Xcode 8 format"
+			minToolsVersion="8.0" />
+	</dependencies>
+	<objects>
+		<placeholder
+			placeholderIdentifier="IBFilesOwner"
+			id                   ="-1"
+			userLabel            ="File's Owner" />
+		<placeholder
+			placeholderIdentifier="IBFirstResponder"
+			id                   ="-2"
+			customClass          ="UIResponder" />
+		<tableViewCell
+			contentMode     ="scaleToFill"
+			selectionStyle  ="none"
+			indentationWidth="10"
+			rowHeight       ="44"
+			id              ="cxk-wN-pdQ"
+			customClass     ="PDHorizontalCollectionCell">
+			<rect
+				key   ="frame"
+				x     ="0.0"
+				y     ="0.0"
+				width ="320"
+				height="98" />
+			<autoresizingMask
+				key         ="autoresizingMask"
+				flexibleMaxX="YES"
+				flexibleMaxY="YES" />
+			<tableViewCellContentView
+				key                 ="contentView"
+				opaque              ="NO"
+				clipsSubviews       ="YES"
+				multipleTouchEnabled="YES"
+				contentMode         ="center"
+				tableViewCell       ="cxk-wN-pdQ"
+				id                  ="YTl-1W-gDM">
+				<rect
+					key   ="frame"
+					x     ="0.0"
+					y     ="0.0"
+					width ="320"
+					height="98" />
+				<autoresizingMask
+					key="autoresizingMask" />
+				<subviews>
+					<collectionView
+						clipsSubviews                            ="YES"
+						multipleTouchEnabled                     ="YES"
+						contentMode                              ="scaleToFill"
+						showsHorizontalScrollIndicator           ="NO"
+						showsVerticalScrollIndicator             ="NO"
+						dataMode                                 ="none"
+						translatesAutoresizingMaskIntoConstraints="NO"
+						id                                       ="Jze-HD-lcR">
+						<rect
+							key   ="frame"
+							x     ="0.0"
+							y     ="44"
+							width ="320"
+							height="54" />
+						<color
+							key       ="backgroundColor"
+							white     ="0.0"
+							alpha     ="0.0"
+							colorSpace="calibratedWhite" />
+						<collectionViewFlowLayout
+							key                    ="collectionViewLayout"
+							scrollDirection        ="horizontal"
+							minimumLineSpacing     ="8"
+							minimumInteritemSpacing="8"
+							id                     ="Dfp-6P-XZw">
+							<size
+								key   ="itemSize"
+								width ="50"
+								height="50" />
+							<size
+								key   ="headerReferenceSize"
+								width ="0.0"
+								height="0.0" />
+							<size
+								key   ="footerReferenceSize"
+								width ="0.0"
+								height="0.0" />
+							<inset
+								key ="sectionInset"
+								minX="0.0"
+								minY="0.0"
+								maxX="0.0"
+								maxY="0.0" />
+						</collectionViewFlowLayout>
+					</collectionView>
+					<label
+						opaque                                   ="NO"
+						userInteractionEnabled                   ="NO"
+						contentMode                              ="left"
+						horizontalHuggingPriority                ="251"
+						verticalHuggingPriority                  ="251"
+						text                                     ="Цвет"
+						textAlignment                            ="natural"
+						lineBreakMode                            ="tailTruncation"
+						baselineAdjustment                       ="alignBaselines"
+						adjustsFontSizeToFit                     ="NO"
+						translatesAutoresizingMaskIntoConstraints="NO"
+						id                                       ="uXT-Ln-Wnd"
+						customClass="ARLabel">
+						<rect
+							key   ="frame"
+							x     ="16"
+							y     ="11.5"
+							width ="288"
+							height="21" />
+						<fontDescription
+							key      ="fontDescription"
+							type     ="system"
+							pointSize="17" />
+						<nil
+							key="textColor" />
+						<nil
+							key="highlightedColor" />
+					</label>
+					<view
+						contentMode                              ="scaleToFill"
+						translatesAutoresizingMaskIntoConstraints="NO"
+						id                                       ="Dhh-w1-o6N">
+						<rect
+							key   ="frame"
+							x     ="0.0"
+							y     ="95.5"
+							width ="320"
+							height="1" />
+						<color
+							key       ="backgroundColor"
+							white     ="1"
+							alpha     ="1"
+							colorSpace="calibratedWhite" />
+						<constraints>
+							<constraint
+								firstAttribute="height"
+								constant      ="1"
+								id            ="reg-CP-w44" />
+						</constraints>
+					</view>
+				</subviews>
+				<color
+					key       ="backgroundColor"
+					white     ="0.0"
+					alpha     ="0.0"
+					colorSpace="calibratedWhite" />
+				<constraints>
+					<constraint
+						firstItem      ="uXT-Ln-Wnd"
+						firstAttribute ="leading"
+						secondItem     ="YTl-1W-gDM"
+						secondAttribute="leadingMargin"
+						constant       ="8"
+						id             ="9h0-D5-340" />
+					<constraint
+						firstItem      ="uXT-Ln-Wnd"
+						firstAttribute ="centerY"
+						secondItem     ="YTl-1W-gDM"
+						secondAttribute="top"
+						constant       ="22"
+						id             ="Eck-av-d9s" />
+					<constraint
+						firstAttribute ="bottom"
+						secondItem     ="Dhh-w1-o6N"
+						secondAttribute="bottom"
+						constant       ="1"
+						id             ="Evs-AY-T0f" />
+					<constraint
+						firstItem      ="Dhh-w1-o6N"
+						firstAttribute ="leading"
+						secondItem     ="YTl-1W-gDM"
+						secondAttribute="leading"
+						id             ="Hkh-3N-Fpb" />
+					<constraint
+						firstAttribute ="trailingMargin"
+						secondItem     ="uXT-Ln-Wnd"
+						secondAttribute="trailing"
+						constant       ="8"
+						id             ="NKE-BK-kpQ" />
+					<constraint
+						firstAttribute ="trailing"
+						secondItem     ="Dhh-w1-o6N"
+						secondAttribute="trailing"
+						id             ="t5m-Jm-Ueg" />
+				</constraints>
+			</tableViewCellContentView>
+			<color
+				key       ="backgroundColor"
+				white     ="0.0"
+				alpha     ="0.0"
+				colorSpace="calibratedWhite" />
+			<constraints>
+				<constraint
+					firstItem      ="Jze-HD-lcR"
+					firstAttribute ="leading"
+					secondItem     ="cxk-wN-pdQ"
+					secondAttribute="leading"
+					id             ="2p5-40-iNR" />
+				<constraint
+					firstItem      ="Jze-HD-lcR"
+					firstAttribute ="top"
+					secondItem     ="cxk-wN-pdQ"
+					secondAttribute="top"
+					constant       ="44"
+					id             ="SYY-dn-J0B" />
+				<constraint
+					firstAttribute ="bottom"
+					secondItem     ="Jze-HD-lcR"
+					secondAttribute="bottom"
+					id             ="YLI-v6-g8s" />
+				<constraint
+					firstAttribute ="trailing"
+					secondItem     ="Jze-HD-lcR"
+					secondAttribute="trailing"
+					id             ="xKb-qF-dK1" />
+			</constraints>
+			<connections>
+				<outlet
+					property   ="_bottonSeparator"
+					destination="Dhh-w1-o6N"
+					id         ="xLn-gb-NDa" />
+				<outlet
+					property   ="_collectionView"
+					destination="Jze-HD-lcR"
+					id         ="ipR-Mx-fyd" />
+				<outlet
+					property   ="_name"
+					destination="uXT-Ln-Wnd"
+					id         ="YVw-ru-LgQ" />
+			</connections>
+		</tableViewCell>
+	</objects>
+</document>

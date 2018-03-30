@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/app_products_contentsearch_hints_scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:MvxBind="Visibility Visibility(HintsVisible)">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <mvvmcross.droid.support.v7.recyclerview.MvxRecyclerView
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:minHeight="@dimen/app_products_contentsearch_hints_autocompleteMinHeight"
+            android:paddingLeft="@dimen/app_products_contentsearch_hints_autocomplete_horizontalPaddings"
+            android:paddingRight="@dimen/app_products_contentsearch_hints_autocomplete_horizontalPaddings"
+            app:spanCount="@integer/app_products_contentsearch_hints_autocomplete_spanCount"
+            app:layoutManager="android.support.v7.widget.StaggeredGridLayoutManager"
+            app:MvxItemTemplate="@layout/app_products_contentsearch_hints_autocomplete_item"
+            app:MvxBind="ItemsSource AutocomleteItems; ItemClick AutocompleteSelectionCommand; Visibility Visibility(AutocomleteItems)" />
+        <View
+            style="@style/AppRopioTheme.Control.Separator" />
+        <appropio.base.droid.controls.ARLinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:MvxItemTemplate="@layout/app_products_contentsearch_hints_item"
+            app:MvxBind="ItemsSource HintsItems; ItemClick HintSelectionCommand; " />
+    </LinearLayout>
+</ScrollView>

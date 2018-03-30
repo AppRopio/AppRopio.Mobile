@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<declare-styleable
+		name="ARListView">
+		<attr
+			name  ="MvxHeaderTemplate"
+			format="string" />
+		<attr
+			name  ="MvxFooterTemplate"
+			format="string" />
+	</declare-styleable>
+	<declare-styleable
+		name="ARImageView">
+		<attr
+			name  ="downscale"
+			format="dimension" />
+		<attr
+			name  ="circle"
+			format="boolean" />
+		<attr
+			name  ="placeholder"
+			format="integer" />
+	</declare-styleable>
+	<declare-styleable
+		name="ARLinearLayout">
+		<attr
+			name  ="MvxTemplateSelector"
+			format="string" />
+		<attr
+			name  ="MvxItemTemplate"
+			format="string" />
+	</declare-styleable>
+	<declare-styleable
+		name="ARAppCompatSpinner">
+		<attr
+			name  ="MvxItemTemplate"
+			format="string" />
+		<attr
+			name  ="MvxDropDownItemTemplate"
+			format="string" />
+	</declare-styleable>
+</resources>

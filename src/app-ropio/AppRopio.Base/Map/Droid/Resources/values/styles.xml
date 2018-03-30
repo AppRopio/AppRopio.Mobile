@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <!-- List -->
+    <style
+        name  ="app_map_list_item_distance_icon">
+        <item
+            name="android:layout_width">@dimen/app_clickable_size</item>
+        <item
+            name="android:layout_height">@dimen/app_clickable_size</item>
+        <item
+            name="android:scaleType">center</item>
+        <item
+            name="android:src">?attr/app_map_list_item_ic_distance</item>
+    </style>
+    <style
+        name  ="app_map_list_item_name"
+        parent="AppRopio.TextAppearance.Header4">
+    </style>
+    <style
+        name  ="app_map_list_item_address"
+        parent="AppRopio.TextAppearance.Body2">
+    </style>
+    <style
+        name  ="app_map_list_item_distance"
+        parent="AppRopio.TextAppearance.Body2">
+    </style>
+    <style
+        name  ="app_map_list_item_workTime"
+        parent="AppRopio.TextAppearance.Body2">
+    </style>
+    <style
+        name  ="app_map_list_item_description"
+        parent="AppRopio.TextAppearance.Body2">
+    </style>
+    <style
+        name  ="app_map_list_item_callButton"
+        parent="AppRopioTheme.Control.Button.Image">
+        <item
+            name="android:src">?attr/app_map_list_item_callButton</item>
+    </style>
+    <style
+        name  ="app_map_list_item_infoButton"
+        parent="AppRopioTheme.Control.Button.Image">
+        <item
+            name="android:src">?attr/app_map_list_item_infoButton</item>
+    </style>
+    <style
+        name  ="app_map_list_item_mapButton"
+        parent="AppRopioTheme.Control.Button.Image">
+        <item
+            name="android:src">?attr/app_map_list_item_mapButton</item>
+    </style>
+    <style
+        name  ="app_map_list_item_routeButton"
+        parent="AppRopioTheme.Control.Button.Image">
+        <item
+            name="android:src">?attr/app_map_list_item_routeButton</item>
+    </style>
+    <!--    -->
+    <!--  Info  -->
+    <style
+        name  ="app_map_info_status_bar"
+        parent="AppRopioTheme.Control.StatusBar">
+    </style>
+    <style
+        name  ="app_map_info_toolbar"
+        parent="AppRopioTheme.Control.Toolbar">
+    </style>
+    <style
+        name  ="app_map_info_toolbar_theme"
+        parent="AppRopioTheme.Control.ToolbarTheme">
+    </style>
+    <style
+        name  ="app_map_info_toolbar_title"
+        parent="AppRopioTheme.Control.Toolbar.Title">
+    </style>
+    <!--    -->
+</resources>

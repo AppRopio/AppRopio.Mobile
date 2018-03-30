@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/app_button_height">
+    <Button
+        style="@style/app_basket_productCardView_buyButton"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:MvxBind="Click BuyCommand; Visibility InvertedVisibility(UnitStepVisible)" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/app_basket_productCardView_horizontalMargins"
+        android:layout_marginRight="@dimen/app_basket_productCardView_horizontalMargins"
+        android:layout_marginTop="@dimen/app_basket_productCardView_verticalMargins"
+        android:layout_marginBottom="@dimen/app_basket_productCardView_verticalMargins"
+        android:layout_toStartOf="@+id/app_basket_productCardView_minusButton"
+        android:background="@drawable/app_basket_productCardView_quantityInput"
+        app:MvxBind="Visibility Visibility(UnitStepVisible)">
+        <EditText
+            style="@style/app_basket_productCardView_editText"
+            android:id="@+id/app_basket_productCardView_editText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/app_basket_productCardView_contentMargins"
+            app:MvxBind="Text QuantityString" />
+        <TextView
+            style="@style/app_basket_productCardView_unitName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/app_basket_productCardView_quantityInput_cornerRadius"
+            app:MvxBind="Text UnitName" />
+    </LinearLayout>
+    <ImageButton
+        style="@style/app_basket_productCardView_minusButton"
+        android:id="@+id/app_basket_productCardView_minusButton"
+        android:layout_toStartOf="@+id/app_basket_productCardView_plusButton"
+        android:layout_marginRight="@dimen/app_basket_productCardView_contentMargins"
+        app:MvxBind="Click DecrementCommand; Visibility Visibility(UnitStepVisible)" />
+    <ImageButton
+        style="@style/app_basket_productCardView_plusButton"
+        android:id="@+id/app_basket_productCardView_plusButton"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/app_basket_productCardView_horizontalMargins"
+        app:MvxBind="Click IncrementCommand; Visibility Visibility(UnitStepVisible)" />
+</RelativeLayout>

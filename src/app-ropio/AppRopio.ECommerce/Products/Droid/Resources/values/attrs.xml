@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<attr
+		name  ="app_products_ic_toolbar_search"
+		format="reference" />
+	<attr
+		name  ="app_products_ic_empty_image"
+		format="reference" />
+	<attr
+		name  ="app_products_catalog_collectionType"
+		format="enum">
+		<enum
+			name ="grid"
+			value="0" />
+		<enum
+			name ="list"
+			value="1" />
+	</attr>
+	<attr
+		name  ="app_products_catalog_item_background"
+		format="color" />
+    <attr
+        name  ="app_products_ic_marked"
+        format="reference" />
+    <attr
+        name  ="app_products_ic_unmarked"
+        format="reference" />
+    <attr
+        name="app_products_contentsearch_ic_arrow"
+        format="reference"/>
+    <attr
+        name="app_products_contentsearch_ic_clock"
+        format="reference"/>
+    <attr
+        name="app_products_productCard_ic_arrow"
+        format="reference"/>
+    <attr
+        name="app_products_productCard_color_ic_checkImage"
+        format="reference"/>
+    <attr
+        name="app_products_productCard_ic_cross"
+        format="reference"/>
+    <attr
+        name="app_products_ic_empty_image_large"
+        format="reference"/>
+    <attr
+        name="app_products_ic_share"
+        format="reference"/>
+</resources>

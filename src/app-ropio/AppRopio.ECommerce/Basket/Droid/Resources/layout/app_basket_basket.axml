@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/app_color_background">
+    <mvvmcross.droid.support.v7.recyclerview.MvxRecyclerView
+        android:id="@+id/app_basket_basket_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/app_basket_basket_buttonLayout"
+        app:MvxItemTemplate="@layout/app_basket_basket_item"
+        app:MvxBind="ItemsSource Items; ItemClick SelectionChangedCommand; Visibility Visibility(Items.Count)" />
+    <LinearLayout
+        android:id="@+id/app_basket_basket_buttonLayout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+        <Button
+            style="@style/app_basket_basket_button"
+            android:id="@+id/app_basket_basket_button"
+            app:MvxBind="Click NextCommand; Enabled CanGoNext; Visibility Visibility(Items.Count); Text PriceFormatUnit(Amount, ParsePriceFormatUnitParameter('PrefixString=ЗАКАЗАТЬ ЗА ,Format=ru')); " />
+    </LinearLayout>
+    <include
+        layout="@layout/app_basket_basket_empty" />
+    <include
+        layout="@layout/app_base_loading" />
+</RelativeLayout>

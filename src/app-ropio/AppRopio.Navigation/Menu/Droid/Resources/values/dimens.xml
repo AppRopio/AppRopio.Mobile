@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<dimen
+		name="app_activity_drawer_item_height">56dp</dimen>
+	<dimen
+        name="app_activity_drawer_item_name_textSize">16sp</dimen>
+	<dimen
+        name="app_activity_drawer_item_badge_textSize">14sp</dimen>
+    <dimen
+        name="app_activity_drawer_header_height">172dp</dimen>
+</resources>

@@ -1,0 +1,5 @@
+﻿{
+  "StoreId": "your_store_id",
+  "ApiSecret": "your_api_secret",
+  "ThreeDSRedirectUrl": "http://cloudpayments.ru/"
+}

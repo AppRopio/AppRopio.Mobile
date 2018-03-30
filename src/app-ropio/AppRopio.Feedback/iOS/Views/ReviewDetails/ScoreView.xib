@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document
+	type                 ="com.apple.InterfaceBuilder3.CocoaTouch.XIB"
+	version              ="3.0"
+	toolsVersion         ="13196"
+	targetRuntime        ="iOS.CocoaTouch"
+	propertyAccessControl="none"
+	useAutolayout        ="YES"
+	useTraitCollections  ="YES"
+	colorMatched         ="YES">
+	<device
+		id         ="retina4_7"
+		orientation="portrait">
+		<adaptation
+			id="fullscreen" />
+	</device>
+	<dependencies>
+		<plugIn
+			identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin"
+			version   ="13173" />
+		<capability
+			name           ="documents saved in the Xcode 8 format"
+			minToolsVersion="8.0" />
+	</dependencies>
+	<objects>
+		<placeholder
+			placeholderIdentifier="IBFilesOwner"
+			id                   ="-1"
+			userLabel            ="File's Owner" />
+		<placeholder
+			placeholderIdentifier="IBFirstResponder"
+			id                   ="-2"
+			customClass          ="UIResponder" />
+		<tableViewCell
+			contentMode     ="scaleToFill"
+			selectionStyle  ="default"
+			indentationWidth="10"
+			rowHeight       ="44"
+			id              ="cxk-wN-pdQ"
+			customClass     ="ScoreView">
+			<rect
+				key   ="frame"
+				x     ="0.0"
+				y     ="0.0"
+				width ="320"
+				height="44" />
+			<autoresizingMask
+				key         ="autoresizingMask"
+				flexibleMaxX="YES"
+				flexibleMaxY="YES" />
+			<tableViewCellContentView
+				key                 ="contentView"
+				opaque              ="NO"
+				clipsSubviews       ="YES"
+				multipleTouchEnabled="YES"
+				contentMode         ="center"
+				tableViewCell       ="cxk-wN-pdQ"
+				id                  ="YTl-1W-gDM">
+				<rect
+					key   ="frame"
+					x     ="0.0"
+					y     ="0.0"
+					width ="320"
+					height="43.5" />
+				<autoresizingMask
+					key="autoresizingMask" />
+				<subviews>
+					<view
+						contentMode                              ="scaleToFill"
+						fixedFrame                               ="YES"
+						translatesAutoresizingMaskIntoConstraints="NO"
+						id                                       ="jSx-Xz-tAm">
+						<rect
+							key   ="frame"
+							x     ="16"
+							y     ="0.0"
+							width ="100"
+							height="20" />
+						<autoresizingMask
+							key         ="autoresizingMask"
+							flexibleMaxX="YES"
+							flexibleMaxY="YES" />
+						<color
+							key       ="backgroundColor"
+							red       ="0.8901960784313725"
+							green     ="0.92156862745098034"
+							blue      ="0.95294117647058818"
+							alpha     ="1"
+							colorSpace="calibratedRGB" />
+						<userDefinedRuntimeAttributes>
+							<userDefinedRuntimeAttribute
+								type   ="number"
+								keyPath="layer.cornerRadius">
+								<integer
+									key  ="value"
+									value="10" />
+							</userDefinedRuntimeAttribute>
+						</userDefinedRuntimeAttributes>
+					</view>
+					<view
+						contentMode                              ="scaleToFill"
+						fixedFrame                               ="YES"
+						translatesAutoresizingMaskIntoConstraints="NO"
+						id                                       ="Ecq-Ld-Ndl">
+						<rect
+							key   ="frame"
+							x     ="16"
+							y     ="0.0"
+							width ="80"
+							height="20" />
+						<autoresizingMask
+							key         ="autoresizingMask"
+							flexibleMaxX="YES"
+							flexibleMaxY="YES" />
+						<color
+							key       ="backgroundColor"
+							red       ="1"
+							green     ="0.83529411764705885"
+							blue      ="0.20784313725490194"
+							alpha     ="1"
+							colorSpace="calibratedRGB" />
+						<userDefinedRuntimeAttributes>
+							<userDefinedRuntimeAttribute
+								type   ="number"
+								keyPath="layer.cornerRadius">
+								<integer
+									key  ="value"
+									value="10" />
+							</userDefinedRuntimeAttribute>
+						</userDefinedRuntimeAttributes>
+					</view>
+					<label
+						opaque                                   ="NO"
+						userInteractionEnabled                   ="NO"
+						contentMode                              ="left"
+						horizontalHuggingPriority                ="251"
+						verticalHuggingPriority                  ="251"
+						fixedFrame                               ="YES"
+						text                                     ="5"
+						textAlignment                            ="center"
+						lineBreakMode                            ="tailTruncation"
+						baselineAdjustment                       ="alignBaselines"
+						adjustsFontSizeToFit                     ="NO"
+						translatesAutoresizingMaskIntoConstraints="NO"
+						id                                       ="6JU-K2-M46"
+						customClass="ARLabel">
+						<rect
+							key   ="frame"
+							x     ="16"
+							y     ="0.0"
+							width ="100"
+							height="20" />
+						<autoresizingMask
+							key         ="autoresizingMask"
+							flexibleMaxX="YES"
+							flexibleMaxY="YES" />
+						<fontDescription
+							key      ="fontDescription"
+							type     ="system"
+							pointSize="17" />
+						<nil
+							key="textColor" />
+						<nil
+							key="highlightedColor" />
+					</label>
+				</subviews>
+			</tableViewCellContentView>
+			<connections>
+				<outlet
+					property   ="BackgroundView"
+					destination="jSx-Xz-tAm"
+					id         ="name-outlet-jSx-Xz-tAm" />
+				<outlet
+					property   ="OverlayView"
+					destination="Ecq-Ld-Ndl"
+					id         ="name-outlet-Ecq-Ld-Ndl" />
+				<outlet
+					property   ="ScoreLabel"
+					destination="6JU-K2-M46"
+					id         ="name-outlet-6JU-K2-M46" />
+			</connections>
+		</tableViewCell>
+	</objects>
+</document>

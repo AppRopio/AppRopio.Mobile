@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageButton
+        style="@style/app_basket_cartIndicator_button"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:MvxBind="Click BasketCommand" />
+    <TextView
+        style="@style/app_basket_cartIndicator_badge"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/app_basket_cartIndicator_badge_height"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/app_basket_cartIndicator_badge_margin"
+        android:layout_marginTop="@dimen/app_basket_cartIndicator_badge_margin"
+        android:minWidth="@dimen/app_basket_cartIndicator_badge_height"
+        android:background="@drawable/app_basket_cartIndicator_badge_background"
+        app:MvxBind="Text Quantity; Visibility Visibility(Quantity)" />
+</merge>

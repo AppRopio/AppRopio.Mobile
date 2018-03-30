@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<!--  HistoryOrders  -->
+	<style
+		name="app_historyorders_items">
+		<item
+			name="android:background">?attr/app_color_background</item>
+		<item
+			name="android:divider">@null</item>
+		<item
+			name="android:scrollbars">none</item>
+	</style>
+	<style
+		name  ="app_historyorders_item_orderNumber"
+		parent="AppRopio.TextAppearance.Body2.Bold">
+		<item
+			name="android:textColor">?attr/app_color_textGray</item>
+	</style>
+	<style
+		name  ="app_historyorders_item_badge"
+		parent="AppRopio.TextAppearance.Body2.Medium">
+		<item
+			name="android:gravity">center</item>
+		<item
+			name="android:minHeight">@dimen/app_historyorders_item_badge_minHeight</item>
+	</style>
+	<style
+		name  ="app_historyorders_item_status"
+		parent="AppRopio.TextAppearance.Body2.Medium">
+		<item
+			name="android:maxLines">1</item>
+		<item
+			name="android:ellipsize">end</item>
+	</style>
+	<style
+		name  ="app_historyorders_item_price"
+		parent="AppRopio.TextAppearance.Body2.Bold">
+		<item
+			name="android:maxLines">1</item>
+		<item
+			name="android:ellipsize">end</item>
+	</style>
+	<style
+		name  ="app_historyorders_item_count"
+		parent="AppRopio.TextAppearance.Body1">
+	</style>
+	<style
+		name="app_historyorders_ic_arrow">
+		<item
+			name="android:src">?attr/app_historyorders_ic_arrow</item>
+		<item
+			name="android:layout_height">@dimen/app_clickable_size</item>
+		<item
+			name="android:layout_width">@dimen/app_clickable_size</item>
+	</style>
+	<!--    -->
+	<!--  HistoryOrders Details  -->
+	<style
+		name  ="app_historyorders_details_item"
+		parent="AppRopio.TextAppearance.Body2.Medium">
+	</style>
+	<style
+		name  ="app_historyorders_item_deliveryPoint_name"
+		parent="AppRopio.TextAppearance.Body2.Medium">
+		<item
+			name="android:maxLines">3</item>
+		<item
+			name="android:ellipsize">end</item>
+	</style>
+	<style
+		name  ="app_historyorders_item_deliveryPoint_address"
+		parent="AppRopio.TextAppearance.Body2">
+		<item
+			name="android:maxLines">3</item>
+		<item
+			name="android:ellipsize">end</item>
+	</style>
+	<style
+		name  ="app_historyorders_details_delivery"
+		parent="AppRopio.TextAppearance.Body2.Medium">
+	</style>
+	<style
+		name  ="app_historyorders_details_deliveryPrice"
+		parent="AppRopio.TextAppearance.Body2.Medium">
+	</style>
+	<style
+		name  ="app_historyorders_details_payment"
+		parent="AppRopio.TextAppearance.Body2.Medium">
+	</style>
+	<style
+		name  ="app_historyorders_details_paymentType"
+		parent="AppRopio.TextAppearance.Body2.Medium">
+	</style>
+	<style
+		name  ="app_historyorders_details_summary"
+		parent="AppRopio.TextAppearance.Body2.Medium">
+		<item
+			name="android:textAllCaps">true</item>
+	</style>
+	<style
+		name  ="app_historyorders_details_summaryPrice"
+		parent="AppRopio.TextAppearance.Body2.Medium">
+	</style>
+	<style
+		name  ="app_historyorders_details_button"
+		parent="AppRopioTheme.Control.Button.Base">
+		<item
+			name="android:text">@string/app_historyorders_details_button</item>
+	</style>
+	<!--    -->
+	<!--  HistoryOrders Products  -->
+	<style
+		name  ="app_historyorders_products_item_title"
+		parent="AppRopio.TextAppearance.Body2.Medium">
+		<item
+			name="android:maxLines">3</item>
+		<item
+			name="android:ellipsize">end</item>
+	</style>
+	<style
+		name  ="app_historyorders_products_item_amount"
+		parent="AppRopio.TextAppearance.Body2.Medium">
+		<item
+			name="android:maxLines">1</item>
+		<item
+			name="android:ellipsize">end</item>
+	</style>
+    <style
+        name="app_historyorders_products_item_price"
+        parent="AppRopio.TextAppearance.Body2.Bold">
+        <item
+            name="android:maxLines">1</item>
+        <item
+            name="android:ellipsize">end</item>
+    </style>
+    <style
+        name="app_historyorders_products_item_available"
+        parent="AppRopio.TextAppearance.Body2.Medium">
+        <item
+            name="android:maxLines">1</item>
+        <item
+            name="android:ellipsize">end</item>
+    </style>
+	<!--    -->
+</resources>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReviewPostViewController">
+            <connections>
+                <outlet property="PostButton" destination="bEu-ew-j6s" id="name-outlet-bEu-ew-j6s"/>
+                <outlet property="TableView" destination="JLr-ZZ-Rq3" id="name-outlet-JLr-ZZ-Rq3"/>
+                <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="2">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JLr-ZZ-Rq3">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bEu-ew-j6s">
+                    <rect key="frame" x="16" y="603" width="343" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="2Ko-yN-kC8"/>
+                    </constraints>
+                    <state key="normal" title="ОТПРАВИТЬ"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="bEu-ew-j6s" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="16" id="9IL-sf-iqZ"/>
+                <constraint firstAttribute="bottom" secondItem="JLr-ZZ-Rq3" secondAttribute="bottom" id="9gn-Bc-j86"/>
+                <constraint firstItem="JLr-ZZ-Rq3" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="GqE-hk-hVV"/>
+                <constraint firstAttribute="trailing" secondItem="JLr-ZZ-Rq3" secondAttribute="trailing" id="Ma5-MG-gJK"/>
+                <constraint firstAttribute="bottomMargin" secondItem="bEu-ew-j6s" secondAttribute="bottom" constant="16" id="W2k-ib-BUd"/>
+                <constraint firstItem="JLr-ZZ-Rq3" firstAttribute="top" secondItem="2" secondAttribute="top" id="qj3-g7-cT5"/>
+                <constraint firstAttribute="trailing" secondItem="bEu-ew-j6s" secondAttribute="trailing" constant="16" id="vH4-nx-al6"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

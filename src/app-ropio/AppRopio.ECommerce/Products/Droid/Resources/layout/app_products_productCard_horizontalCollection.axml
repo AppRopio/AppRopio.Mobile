@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/app_products_productCard_horizontalCollection_height">
+    <include
+        layout="@layout/app_products_productCard_title" />
+    <HorizontalScrollView
+        style="@style/app_products_productCard_horizontalCollection_scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_products_productCard_horizontalCollection_content_height">
+        <appropio.base.droid.controls.ARLinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/app_products_productCard_horizontalMargins"
+            android:paddingRight="@dimen/app_products_productCard_horizontalMargins"
+            app:MvxTemplateSelector="AppRopio.ECommerce.Products.Droid.Views.ProductCard.ProductCardHorizontalCollectionTemplateSelector,AppRopio.ECommerce.Products.Droid"
+            app:MvxBind="ItemsSource Items; ItemClick SelectionChangedCommand" />
+    </HorizontalScrollView>
+    <View
+        style="@style/AppRopioTheme.Control.Separator" />
+</LinearLayout>

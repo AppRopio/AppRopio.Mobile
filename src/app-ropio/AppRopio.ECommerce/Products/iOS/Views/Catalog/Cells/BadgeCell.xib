@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="cZE-iV-UFb" customClass="BadgeCell">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="20"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="50" height="20"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xeI-1Q-zFk">
+                        <rect key="frame" x="2" y="2" width="46" height="16"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SALE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEb-xn-Mvo" customClass="ARLabel">
+                                <rect key="frame" x="6" y="-0.5" width="34.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xEb-xn-Mvo" firstAttribute="centerX" secondItem="xeI-1Q-zFk" secondAttribute="centerX" id="fIk-JD-lUO"/>
+                            <constraint firstItem="xEb-xn-Mvo" firstAttribute="centerY" secondItem="xeI-1Q-zFk" secondAttribute="centerY" id="x6D-2V-Vzq"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="xeI-1Q-zFk" firstAttribute="top" secondItem="cZE-iV-UFb" secondAttribute="top" constant="2" id="3Hx-PR-vTf"/>
+                <constraint firstAttribute="bottom" secondItem="xeI-1Q-zFk" secondAttribute="bottom" constant="2" id="fn8-oW-lOV"/>
+                <constraint firstItem="xeI-1Q-zFk" firstAttribute="leading" secondItem="cZE-iV-UFb" secondAttribute="leading" constant="2" id="h5y-Rt-wkc"/>
+                <constraint firstAttribute="trailing" secondItem="xeI-1Q-zFk" secondAttribute="trailing" constant="2" id="wP4-yP-qgK"/>
+            </constraints>
+            <connections>
+                <outlet property="_badge" destination="xEb-xn-Mvo" id="oxL-tP-ajL"/>
+                <outlet property="_badgeView" destination="xeI-1Q-zFk" id="Jdl-cg-rOz"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>

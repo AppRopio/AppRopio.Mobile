@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/app_products_productCard_verticalCollection_text"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/app_products_productCard_verticalCollection_content_height"
+    android:layout_margin="4dp"
+    android:paddingLeft="@dimen/app_products_productCard_verticalCollection_horizontalMargins"
+    android:paddingRight="@dimen/app_products_productCard_verticalCollection_horizontalMargins"
+    app:MvxBind="Text ValueName; Background ProductsTextBackground(Selected)" />

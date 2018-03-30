@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<!--  Sort  -->
+	<style
+		name  ="app_filters_sort_title"
+		parent="AppRopio.TextAppearance.Header4">
+		<item
+			name="android:gravity">center_vertical</item>
+		<item
+			name="android:paddingLeft">@dimen/app_filters_sort_horizontalMargin</item>
+		<item
+			name="android:paddingRight">@dimen/app_filters_sort_horizontalMargin</item>
+		<item
+			name="android:text">@string/app_filters_sort_title</item>
+	</style>
+	<style
+		name  ="app_filters_sort_item_title"
+		parent="AppRopio.TextAppearance.Body1">
+	</style>
+	<style
+		name  ="app_filters_sort_item_icon"
+		parent="">
+		<item
+			name="android:layout_width">@dimen/app_filters_sort_item_height</item>
+		<item
+			name="android:layout_height">@dimen/app_filters_sort_item_height</item>
+		<item
+			name="android:scaleType">center</item>
+		<item
+			name="android:src">?attr/app_filters_sort_ic_item_check</item>
+	</style>
+	<!--    -->
+	<!--  Filters  -->
+	<style
+		name  ="app_filters_filters_button"
+		parent="AppRopioTheme.Control.Button.Base">
+		<item
+			name="android:text">@string/app_filters_filters_apply</item>
+	</style>
+	<style
+		name  ="app_filters_filters_cancelButton"
+		parent="AppRopioTheme.Control.Button.Text">
+		<item
+			name="android:text">@string/app_filters_filters_cancel</item>
+	</style>
+	<style
+		name  ="app_filters_filters_title"
+		parent="AppRopio.TextAppearance.Body1">
+		<item
+			name="android:maxLines">1</item>
+		<item
+			name="android:ellipsize">end</item>
+	</style>
+	<style
+		name  ="app_filters_filters_arrow"
+		parent="">
+		<item
+			name="android:layout_width">@dimen/app_filters_filters_title_height</item>
+		<item
+			name="android:layout_height">@dimen/app_filters_filters_title_height</item>
+		<item
+			name="android:scaleType">center</item>
+		<item
+			name="android:src">?attr/app_filters_filters_ic_arrow</item>
+	</style>
+	<style
+		name="app_filters_filters_horizontalCollection_scrollView">
+		<item
+			name="android:divider">@null</item>
+		<item
+			name="android:scrollbars">none</item>
+	</style>
+	<style
+		name="app_filters_filters_horizontalCollection_color_checkImage">
+		<item
+			name="android:layout_width">@dimen/app_filters_filters_horizontalCollection_content_height</item>
+		<item
+			name="android:layout_height">@dimen/app_filters_filters_horizontalCollection_content_height</item>
+		<item
+			name="android:scaleType">center</item>
+		<item
+			name="android:src">?attr/app_filters_filters_color_ic_checkImage</item>
+	</style>
+	<style
+		name  ="app_filters_filters_horizontalCollection_text"
+		parent="AppRopio.TextAppearance.Body1.Bold">
+		<item
+			name="android:gravity">center</item>
+	</style>
+	<style
+		name  ="app_filters_filters_picker_spinner_value"
+		parent="AppRopio.TextAppearance.Body1.Bold">
+		<item
+			name="android:textColor">?attr/app_color_textGray</item>
+		<item
+			name="android:maxLines">1</item>
+		<item
+			name="android:ellipsize">start</item>
+	</style>
+	<style
+		name  ="app_filters_filters_picker_spinner_item_title"
+		parent="app_filters_filters_title">
+	</style>
+	<style
+		name="app_filters_filters_multiSelection_scrollView">
+		<item
+			name="android:divider">@null</item>
+		<item
+			name="android:scrollbars">none</item>
+	</style>
+	<style
+		name  ="app_filters_filters_multiSelection_text"
+		parent="AppRopio.TextAppearance.Body1.Bold">
+		<item
+			name="android:gravity">center</item>
+	</style>
+	<style
+		name="app_filters_filters_cross">
+		<item
+			name="android:layout_width">wrap_content</item>
+		<item
+			name="android:layout_height">wrap_content</item>
+		<item
+			name="android:scaleType">center</item>
+		<item
+			name="android:src">?attr/app_filters_filters_ic_cross</item>
+	</style>
+	<style
+		name  ="app_filters_filters_verticalCollection_text"
+		parent="AppRopio.TextAppearance.Body2.Medium">
+		<item
+			name="android:gravity">center</item>
+	</style>
+	<style
+		name  ="app_filters_filters_minMax_content_hint"
+		parent="AppRopio.TextAppearance.Body1.Bold">
+		<item
+			name="android:textColor">?attr/app_color_textGray</item>
+	</style>
+	<style
+		name  ="app_filters_filters_minMax_content_input">
+		<item
+			name="android:inputType">number</item>
+		<item
+			name="android:maxLines">1</item>
+		<item
+			name="android:background">@null</item>
+        <item
+            name="android:fontFamily">?attr/app_font_bold</item>
+        <item
+            name="android:textSize">@dimen/app_input_text_size</item>
+        <item
+            name="android:textColor">?attr/app_color_textBase</item>
+        <item
+            name="android:textColorHint">?attr/app_color_placeholder</item>
+	</style>
+	<!--    -->
+	<!--  Selection  -->
+	<style
+		name  ="app_filters_selection_title"
+		parent="app_filters_filters_title">
+	</style>
+	<style
+		name  ="app_filters_selection_checkImage"
+		parent="app_filters_filters_horizontalCollection_color_checkImage">
+	</style>
+	<style
+		name  ="app_filters_selection_button"
+		parent="app_filters_filters_button">
+	</style>
+	<!--    -->
+</resources>

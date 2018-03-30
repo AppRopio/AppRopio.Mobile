@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document
+	type                 ="com.apple.InterfaceBuilder3.CocoaTouch.XIB"
+	version              ="3.0"
+	toolsVersion         ="13196"
+	targetRuntime        ="iOS.CocoaTouch"
+	propertyAccessControl="none"
+	useAutolayout        ="YES"
+	useTraitCollections  ="YES"
+	colorMatched         ="YES">
+	<device
+		id         ="retina4_0"
+		orientation="portrait">
+		<adaptation
+			id="fullscreen" />
+	</device>
+	<dependencies>
+		<plugIn
+			identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin"
+			version   ="13173" />
+		<capability
+			name           ="documents saved in the Xcode 8 format"
+			minToolsVersion="8.0" />
+	</dependencies>
+	<objects>
+		<placeholder
+			placeholderIdentifier="IBFilesOwner"
+			id                   ="-1"
+			userLabel            ="File's Owner" />
+		<placeholder
+			placeholderIdentifier="IBFirstResponder"
+			id                   ="-2"
+			customClass          ="UIResponder" />
+		<collectionViewCell
+			opaque              ="NO"
+			clipsSubviews       ="YES"
+			multipleTouchEnabled="YES"
+			contentMode         ="center"
+			id                  ="cZE-iV-UFb"
+			customClass         ="CCategoryCell">
+			<rect
+				key   ="frame"
+				x     ="0.0"
+				y     ="0.0"
+				width ="90"
+				height="44" />
+			<autoresizingMask
+				key         ="autoresizingMask"
+				flexibleMaxX="YES"
+				flexibleMinY="YES" />
+			<view
+				key                 ="contentView"
+				opaque              ="NO"
+				clipsSubviews       ="YES"
+				multipleTouchEnabled="YES"
+				contentMode         ="center">
+				<rect
+					key   ="frame"
+					x     ="0.0"
+					y     ="0.0"
+					width ="90"
+					height="44" />
+				<autoresizingMask
+					key="autoresizingMask" />
+				<subviews>
+					<label
+						opaque                                   ="NO"
+						userInteractionEnabled                   ="NO"
+						contentMode                              ="left"
+						horizontalHuggingPriority                ="1000"
+						verticalHuggingPriority                  ="251"
+						horizontalCompressionResistancePriority  ="1000"
+						text                                     ="Одежда"
+						textAlignment                            ="center"
+						lineBreakMode                            ="tailTruncation"
+						baselineAdjustment                       ="alignBaselines"
+						adjustsFontSizeToFit                     ="NO"
+						translatesAutoresizingMaskIntoConstraints="NO"
+						id                                       ="WLs-GS-Jdk"
+						customClass="ARLabel">
+						<rect
+							key   ="frame"
+							x     ="12"
+							y     ="13"
+							width ="66"
+							height="19.5" />
+						<fontDescription
+							key      ="fontDescription"
+							type     ="system"
+							pointSize="16" />
+						<color
+							key             ="textColor"
+							red             ="0.1176470588"
+							green           ="0.17254901959999999"
+							blue            ="0.2274509804"
+							alpha           ="1"
+							colorSpace      ="custom"
+							customColorSpace="sRGB" />
+						<nil
+							key="highlightedColor" />
+					</label>
+				</subviews>
+			</view>
+			<color
+				key       ="backgroundColor"
+				white     ="0.0"
+				alpha     ="0.0"
+				colorSpace="calibratedWhite" />
+			<constraints>
+				<constraint
+					firstAttribute ="trailing"
+					secondItem     ="WLs-GS-Jdk"
+					secondAttribute="trailing"
+					constant       ="12"
+					id             ="6Sl-5i-zKk" />
+				<constraint
+					firstItem      ="WLs-GS-Jdk"
+					firstAttribute ="centerY"
+					secondItem     ="cZE-iV-UFb"
+					secondAttribute="centerY"
+					id             ="WQz-kh-N0Z" />
+				<constraint
+					firstItem      ="WLs-GS-Jdk"
+					firstAttribute ="leading"
+					secondItem     ="cZE-iV-UFb"
+					secondAttribute="leading"
+					constant       ="12"
+					id             ="Y7r-oq-9Mo" />
+			</constraints>
+			<connections>
+				<outlet
+					property   ="_name"
+					destination="WLs-GS-Jdk"
+					id         ="mFo-U3-0TY" />
+			</connections>
+		</collectionViewCell>
+	</objects>
+</document>

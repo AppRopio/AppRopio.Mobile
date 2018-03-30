@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" id="cZE-iV-UFb" customClass="MarkedListCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="146"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="146"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tat-GP-nno">
+                        <rect key="frame" x="0.0" y="0.0" width="146" height="146"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="tat-GP-nno" secondAttribute="height" multiplier="1:1" id="m5s-9S-eeC"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npa-4t-fBe" customClass="ARLabel">
+                        <rect key="frame" x="152" y="14" width="152" height="71"/>
+                        <string key="text">Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label </string>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="40" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEM-7S-3m7" customClass="ARLabel">
+                        <rect key="frame" x="152" y="85" width="124" height="19.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="20" id="9of-PC-ncm"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opj-wC-1mh" customClass="ARLabel">
+                        <rect key="frame" x="152" y="111" width="124" height="20.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20.5" id="epc-En-3FZ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqT-A3-i8u">
+                        <rect key="frame" x="276" y="99.5" width="44" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="f7V-kR-crI"/>
+                            <constraint firstAttribute="width" constant="44" id="gJ5-9y-9uz"/>
+                        </constraints>
+                    </button>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="opj-wC-1mh" firstAttribute="leading" secondItem="tat-GP-nno" secondAttribute="trailing" constant="6" id="5lJ-nL-zsM"/>
+                <constraint firstItem="xEM-7S-3m7" firstAttribute="top" relation="greaterThanOrEqual" secondItem="npa-4t-fBe" secondAttribute="bottom" id="BTC-4q-pnT"/>
+                <constraint firstAttribute="trailing" secondItem="opj-wC-1mh" secondAttribute="trailing" constant="44" id="DFc-Sf-lBa"/>
+                <constraint firstAttribute="bottom" secondItem="tat-GP-nno" secondAttribute="bottom" id="DxY-wF-Phh"/>
+                <constraint firstAttribute="trailing" secondItem="xEM-7S-3m7" secondAttribute="trailing" constant="44" id="Fir-uq-lZy"/>
+                <constraint firstItem="npa-4t-fBe" firstAttribute="top" secondItem="cZE-iV-UFb" secondAttribute="top" constant="14" id="LFB-Pe-Y7X"/>
+                <constraint firstAttribute="trailing" secondItem="npa-4t-fBe" secondAttribute="trailing" constant="16" id="PNa-Uo-jA5"/>
+                <constraint firstItem="npa-4t-fBe" firstAttribute="leading" secondItem="tat-GP-nno" secondAttribute="trailing" constant="6" id="Zev-Cx-kio"/>
+                <constraint firstAttribute="bottom" secondItem="opj-wC-1mh" secondAttribute="bottom" constant="14" id="duw-bq-uhn"/>
+                <constraint firstItem="tat-GP-nno" firstAttribute="leading" secondItem="cZE-iV-UFb" secondAttribute="leading" id="eWL-EN-Sq5"/>
+                <constraint firstItem="xEM-7S-3m7" firstAttribute="leading" secondItem="tat-GP-nno" secondAttribute="trailing" constant="6" id="fwq-5Q-DGE"/>
+                <constraint firstItem="opj-wC-1mh" firstAttribute="top" secondItem="xEM-7S-3m7" secondAttribute="bottom" constant="7" id="mrg-pn-9RP"/>
+                <constraint firstAttribute="trailing" secondItem="cqT-A3-i8u" secondAttribute="trailing" id="onI-Jf-4a5"/>
+                <constraint firstItem="cqT-A3-i8u" firstAttribute="centerY" secondItem="opj-wC-1mh" secondAttribute="centerY" id="uLS-nr-bjf"/>
+                <constraint firstItem="tat-GP-nno" firstAttribute="top" secondItem="cZE-iV-UFb" secondAttribute="top" id="yeW-Kf-uP9"/>
+            </constraints>
+            <connections>
+                <outlet property="_image" destination="tat-GP-nno" id="mgx-1Q-Y3A"/>
+                <outlet property="_markButton" destination="cqT-A3-i8u" id="EuV-gn-W3h"/>
+                <outlet property="_name" destination="npa-4t-fBe" id="ycT-7L-ymB"/>
+                <outlet property="_oldPrice" destination="xEM-7S-3m7" id="gW0-m0-laQ"/>
+                <outlet property="_price" destination="opj-wC-1mh" id="opu-MM-Pp2"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>

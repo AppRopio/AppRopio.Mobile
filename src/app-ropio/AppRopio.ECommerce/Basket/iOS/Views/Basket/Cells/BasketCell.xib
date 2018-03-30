@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document
+	type                 ="com.apple.InterfaceBuilder3.CocoaTouch.XIB"
+	version              ="3.0"
+	toolsVersion         ="12121"
+	systemVersion        ="16F73"
+	targetRuntime        ="iOS.CocoaTouch"
+	propertyAccessControl="none"
+	useAutolayout        ="YES"
+	useTraitCollections  ="YES"
+	colorMatched         ="YES">
+	<device
+		id         ="retina4_7"
+		orientation="portrait">
+		<adaptation
+			id="fullscreen" />
+	</device>
+	<dependencies>
+		<deployment
+			identifier="iOS" />
+		<plugIn
+			identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin"
+			version   ="12089" />
+		<capability
+			name           ="Constraints to layout margins"
+			minToolsVersion="6.0" />
+		<capability
+			name           ="documents saved in the Xcode 8 format"
+			minToolsVersion="8.0" />
+	</dependencies>
+	<objects>
+		<placeholder
+			placeholderIdentifier="IBFilesOwner"
+			id                   ="-1"
+			userLabel            ="File's Owner" />
+		<placeholder
+			placeholderIdentifier="IBFirstResponder"
+			id                   ="-2"
+			customClass          ="UIResponder" />
+		<tableViewCell
+			contentMode     ="scaleToFill"
+			selectionStyle  ="none"
+			indentationWidth="10"
+			rowHeight       ="110"
+			id              ="cxk-wN-pdQ"
+			customClass     ="BasketCell">
+			<rect
+				key   ="frame"
+				x     ="0.0"
+				y     ="0.0"
+				width ="320"
+				height="120" />
+			<autoresizingMask
+				key         ="autoresizingMask"
+				flexibleMaxX="YES"
+				flexibleMaxY="YES" />
+			<tableViewCellContentView
+				key                 ="contentView"
+				opaque              ="NO"
+				clipsSubviews       ="YES"
+				multipleTouchEnabled="YES"
+				contentMode         ="center"
+				tableViewCell       ="cxk-wN-pdQ"
+				id                  ="YTl-1W-gDM">
+				<rect
+					key   ="frame"
+					x     ="0.0"
+					y     ="0.0"
+					width ="320"
+					height="120" />
+				<autoresizingMask
+					key="autoresizingMask" />
+				<subviews>
+					<imageView
+						clipsSubviews                            ="YES"
+						userInteractionEnabled                   ="NO"
+						contentMode                              ="scaleAspectFill"
+						horizontalHuggingPriority                ="251"
+						verticalHuggingPriority                  ="251"
+						translatesAutoresizingMaskIntoConstraints="NO"
+						id                                       ="ci3-UD-b5E">
+						<rect
+							key   ="frame"
+							x     ="8"
+							y     ="11.5"
+							width ="98"
+							height="98" />
+						<color
+							key       ="backgroundColor"
+							white     ="0.0"
+							alpha     ="0.0"
+							colorSpace="calibratedWhite" />
+						<constraints>
+							<constraint
+								firstAttribute="height"
+								constant      ="98"
+								id            ="VnU-Ad-Vb7" />
+							<constraint
+								firstAttribute="width"
+								constant      ="98"
+								id            ="hLu-g5-yOm" />
+						</constraints>
+					</imageView>
+					<label
+						opaque                                   ="NO"
+						clipsSubviews                            ="YES"
+						userInteractionEnabled                   ="NO"
+						contentMode                              ="TopLeft"
+						horizontalHuggingPriority                ="251"
+						textAlignment                            ="natural"
+						lineBreakMode                            ="tailTruncation"
+						numberOfLines                            ="2"
+						baselineAdjustment                       ="alignBaselines"
+						adjustsFontSizeToFit                     ="NO"
+						translatesAutoresizingMaskIntoConstraints="NO"
+						id                                       ="2iC-fD-1oL"
+						customClass="ARLabel">
+						<rect
+							key   ="frame"
+							x     ="116"
+							y     ="10"
+							width ="196"
+							height="33.5" />
+						<string
+							key="text">Тёмно-синий пиджак
+суперузкого кроя…</string>
+						<fontDescription
+							key      ="fontDescription"
+							type     ="system"
+							pointSize="14" />
+						<nil
+							key="textColor" />
+						<nil
+							key="highlightedColor" />
+					</label>
+					<label
+						opaque                                   ="NO"
+						userInteractionEnabled                   ="NO"
+						contentMode                              ="left"
+						horizontalHuggingPriority                ="251"
+						verticalHuggingPriority                  ="251"
+						text                                     ="2 000 200 ₽"
+						textAlignment                            ="natural"
+						lineBreakMode                            ="tailTruncation"
+						baselineAdjustment                       ="alignBaselines"
+						adjustsFontSizeToFit                     ="NO"
+						translatesAutoresizingMaskIntoConstraints="NO"
+						id                                       ="45Z-d8-BQh"
+						customClass="ARLabel">
+						<rect
+							key   ="frame"
+							x     ="116"
+							y     ="53.5"
+							width ="196"
+							height="17" />
+						<fontDescription
+							key      ="fontDescription"
+							type     ="system"
+							weight   ="semibold"
+							pointSize="14" />
+						<nil
+							key="textColor" />
+						<nil
+							key="highlightedColor" />
+					</label>
+					<view
+						contentMode                              ="scaleToFill"
+						translatesAutoresizingMaskIntoConstraints="NO"
+						id                                       ="M8B-Ll-SGx"
+						userLabel                                ="Quantity View">
+						<rect
+							key   ="frame"
+							x     ="106"
+							y     ="75.5"
+							width ="150"
+							height="44" />
+						<subviews>
+							<button
+								opaque                                   ="NO"
+								clipsSubviews                            ="YES"
+								contentMode                              ="center"
+								contentHorizontalAlignment               ="center"
+								contentVerticalAlignment                 ="center"
+								lineBreakMode                            ="middleTruncation"
+								translatesAutoresizingMaskIntoConstraints="NO"
+								id                                       ="DV6-75-Z9a">
+								<rect
+									key   ="frame"
+									x     ="0.0"
+									y     ="0.0"
+									width ="44"
+									height="44" />
+								<constraints>
+									<constraint
+										firstAttribute="width"
+										constant      ="44"
+										id            ="VeC-yi-YV6" />
+									<constraint
+										firstAttribute="height"
+										constant      ="44"
+										id            ="gT6-HC-YSV" />
+								</constraints>
+								<state
+									key  ="normal"
+									image="Images/Basket/plus" />
+							</button>
+							<label
+								opaque                                   ="NO"
+								userInteractionEnabled                   ="NO"
+								contentMode                              ="left"
+								text                                     ="132"
+								textAlignment                            ="center"
+								lineBreakMode                            ="tailTruncation"
+								baselineAdjustment                       ="alignBaselines"
+								adjustsFontSizeToFit                     ="NO"
+								translatesAutoresizingMaskIntoConstraints="NO"
+								id                                       ="Cfl-6y-eyB"
+								customClass="ARLabel">
+								<rect
+									key   ="frame"
+									x     ="44"
+									y     ="0.0"
+									width ="62"
+									height="44" />
+								<fontDescription
+									key      ="fontDescription"
+									type     ="boldSystem"
+									pointSize="14" />
+								<nil
+									key="textColor" />
+								<nil
+									key="highlightedColor" />
+							</label>
+							<button
+								opaque                                   ="NO"
+								clipsSubviews                            ="YES"
+								contentMode                              ="center"
+								contentHorizontalAlignment               ="center"
+								contentVerticalAlignment                 ="center"
+								lineBreakMode                            ="middleTruncation"
+								translatesAutoresizingMaskIntoConstraints="NO"
+								id                                       ="7TB-mU-NGA">
+								<rect
+									key   ="frame"
+									x     ="106"
+									y     ="0.0"
+									width ="44"
+									height="44" />
+								<constraints>
+									<constraint
+										firstAttribute="width"
+										constant      ="44"
+										id            ="8zR-bC-0lo" />
+									<constraint
+										firstAttribute="height"
+										constant      ="44"
+										id            ="RYj-Se-EkQ" />
+								</constraints>
+								<state
+									key  ="normal"
+									image="Images/Basket/minus" />
+							</button>
+							<activityIndicatorView
+								opaque                                   ="NO"
+								contentMode                              ="scaleToFill"
+								horizontalHuggingPriority                ="750"
+								verticalHuggingPriority                  ="750"
+								animating                                ="YES"
+								style                                    ="gray"
+								translatesAutoresizingMaskIntoConstraints="NO"
+								id                                       ="KfG-lS-7jV">
+								<rect
+									key   ="frame"
+									x     ="64.5"
+									y     ="12"
+									width ="20"
+									height="20" />
+							</activityIndicatorView>
+						</subviews>
+						<constraints>
+							<constraint
+								firstAttribute ="bottom"
+								secondItem     ="Cfl-6y-eyB"
+								secondAttribute="bottom"
+								id             ="1b7-Xz-Ppw" />
+							<constraint
+								firstItem      ="KfG-lS-7jV"
+								firstAttribute ="centerX"
+								secondItem     ="Cfl-6y-eyB"
+								secondAttribute="centerX"
+								id             ="1vA-7E-dNH" />
+							<constraint
+								firstAttribute="height"
+								constant      ="44"
+								id            ="2vJ-9v-RUH" />
+							<constraint
+								firstItem      ="Cfl-6y-eyB"
+								firstAttribute ="top"
+								secondItem     ="M8B-Ll-SGx"
+								secondAttribute="top"
+								id             ="DVf-J3-GQu" />
+							<constraint
+								firstAttribute ="trailing"
+								secondItem     ="7TB-mU-NGA"
+								secondAttribute="trailing"
+								id             ="HKf-sw-tQq" />
+							<constraint
+								firstItem      ="Cfl-6y-eyB"
+								firstAttribute ="leading"
+								secondItem     ="DV6-75-Z9a"
+								secondAttribute="trailing"
+								id             ="JjW-kB-ibJ" />
+							<constraint
+								firstAttribute ="bottom"
+								secondItem     ="7TB-mU-NGA"
+								secondAttribute="bottom"
+								id             ="VDM-0b-SYY" />
+							<constraint
+								firstItem      ="7TB-mU-NGA"
+								firstAttribute ="leading"
+								secondItem     ="Cfl-6y-eyB"
+								secondAttribute="trailing"
+								id             ="VTz-hh-tGB" />
+							<constraint
+								firstAttribute="width"
+								constant      ="150"
+								id            ="Z2f-Rv-yDm" />
+							<constraint
+								firstItem      ="DV6-75-Z9a"
+								firstAttribute ="top"
+								secondItem     ="M8B-Ll-SGx"
+								secondAttribute="top"
+								id             ="avc-xT-zyx" />
+							<constraint
+								firstItem      ="DV6-75-Z9a"
+								firstAttribute ="leading"
+								secondItem     ="M8B-Ll-SGx"
+								secondAttribute="leading"
+								id             ="fQK-Je-4FH" />
+							<constraint
+								firstItem      ="KfG-lS-7jV"
+								firstAttribute ="centerY"
+								secondItem     ="Cfl-6y-eyB"
+								secondAttribute="centerY"
+								id             ="oYD-1C-uAf" />
+						</constraints>
+					</view>
+				</subviews>
+				<constraints>
+					<constraint
+						firstItem      ="45Z-d8-BQh"
+						firstAttribute ="top"
+						secondItem     ="2iC-fD-1oL"
+						secondAttribute="bottom"
+						constant       ="10"
+						id             ="5YX-f9-eGa" />
+					<constraint
+						firstAttribute ="trailingMargin"
+						secondItem     ="45Z-d8-BQh"
+						secondAttribute="trailing"
+						id             ="5ed-Bx-q4e" />
+					<constraint
+						firstAttribute ="bottom"
+						secondItem     ="M8B-Ll-SGx"
+						secondAttribute="bottom"
+						id             ="Gf8-S8-Pxv" />
+					<constraint
+						firstItem      ="ci3-UD-b5E"
+						firstAttribute ="centerY"
+						secondItem     ="YTl-1W-gDM"
+						secondAttribute="centerY"
+						id             ="NFP-EZ-F1t" />
+					<constraint
+						firstItem      ="2iC-fD-1oL"
+						firstAttribute ="leading"
+						secondItem     ="ci3-UD-b5E"
+						secondAttribute="trailing"
+						constant       ="10"
+						id             ="Re3-Bl-Nh9" />
+					<constraint
+						firstItem      ="45Z-d8-BQh"
+						firstAttribute ="leading"
+						secondItem     ="ci3-UD-b5E"
+						secondAttribute="trailing"
+						constant       ="10"
+						id             ="T8U-Ij-vRA" />
+					<constraint
+						firstItem      ="ci3-UD-b5E"
+						firstAttribute ="leading"
+						secondItem     ="YTl-1W-gDM"
+						secondAttribute="leading"
+						constant       ="8"
+						id             ="WrS-VA-AqQ" />
+					<constraint
+						firstAttribute ="trailingMargin"
+						secondItem     ="2iC-fD-1oL"
+						secondAttribute="trailing"
+						id             ="bkH-Ty-857" />
+					<constraint
+						firstItem      ="2iC-fD-1oL"
+						firstAttribute ="top"
+						secondItem     ="YTl-1W-gDM"
+						secondAttribute="topMargin"
+						constant       ="2"
+						id             ="jfg-mU-2wn" />
+					<constraint
+						firstItem      ="M8B-Ll-SGx"
+						firstAttribute ="leading"
+						secondItem     ="ci3-UD-b5E"
+						secondAttribute="trailing"
+						id             ="nft-Ve-lK3" />
+				</constraints>
+			</tableViewCellContentView>
+			<color
+				key       ="backgroundColor"
+				white     ="0.0"
+				alpha     ="0.0"
+				colorSpace="calibratedWhite" />
+			<inset
+				key ="separatorInset"
+				minX="0.0"
+				minY="0.0"
+				maxX="0.0"
+				maxY="0.0" />
+			<connections>
+				<outlet
+					property   ="_decButton"
+					destination="DV6-75-Z9a"
+					id         ="B81-Fz-HOq" />
+				<outlet
+					property   ="_imageView"
+					destination="ci3-UD-b5E"
+					id         ="p1M-5x-Fts" />
+				<outlet
+					property   ="_incButton"
+					destination="7TB-mU-NGA"
+					id         ="xTx-hh-wU6" />
+				<outlet
+					property   ="_priceLabel"
+					destination="45Z-d8-BQh"
+					id         ="ZZd-Ag-Ni5" />
+				<outlet
+					property   ="_quantityActivityIndicator"
+					destination="KfG-lS-7jV"
+					id         ="DZE-I1-auY" />
+				<outlet
+					property   ="_quantityLabel"
+					destination="Cfl-6y-eyB"
+					id         ="A9z-wD-ZIe" />
+				<outlet
+					property   ="_titleLabel"
+					destination="2iC-fD-1oL"
+					id         ="gRm-WH-0s5" />
+			</connections>
+			<point
+				key="canvasLocation"
+				x  ="38"
+				y  ="-82" />
+		</tableViewCell>
+	</objects>
+	<resources>
+		<image
+			name  ="Images/Basket/minus"
+			width ="16"
+			height="16" />
+		<image
+			name  ="Images/Basket/plus"
+			width ="16"
+			height="16" />
+	</resources>
+</document>

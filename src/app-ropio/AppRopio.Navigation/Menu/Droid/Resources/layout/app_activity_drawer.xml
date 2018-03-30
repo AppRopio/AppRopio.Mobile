@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/app_drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/app_drawer_layout_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <View
+                style="@style/app_navigation_status_bar"
+                android:id="@+id/app_status_bar_background"
+                android:layout_width="match_parent"
+                android:layout_height="0dp" />
+            <android.support.v7.widget.Toolbar
+                style="@style/app_navigation_toolbar"
+                android:id="@+id/app_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/app_navigation_toolbar_theme"
+                app:titleTextAppearance="@style/app_navigation_toolbar_title" />
+        </android.support.design.widget.AppBarLayout>
+        <FrameLayout
+            android:id="@+id/content_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    </android.support.design.widget.CoordinatorLayout>
+    <FrameLayout
+        android:id="@+id/content_modals_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <appropio.base.droid.controls.ARListView
+        style="@style/app_navigation_view_items"
+        android:id="@+id/app_navigation_view_items"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:MvxBind="ItemsSource Items; ItemClick SelectionChangedCommand"
+        app:MvxItemTemplate="@layout/app_activity_drawer_item"
+        app:MvxHeaderTemplate="@layout/app_activity_drawer_header"
+        app:MvxFooterTemplate="@layout/app_activity_drawer_footer" />
+</android.support.v4.widget.DrawerLayout>

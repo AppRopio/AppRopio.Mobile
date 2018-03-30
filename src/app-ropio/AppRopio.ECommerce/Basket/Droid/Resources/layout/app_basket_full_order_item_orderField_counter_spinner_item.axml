@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/app_basket_full_order_item_horizontalMargin"
+    android:paddingRight="@dimen/app_basket_full_order_item_horizontalMargin"
+    android:paddingTop="@dimen/app_basket_full_order_item_input_verticalMargin"
+    android:paddingBottom="@dimen/app_basket_full_order_item_input_verticalMargin">
+    <TextView
+        style="@style/app_basket_full_order_item_counter_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/app_basket_full_order_item_spinner_titleHeight"
+        android:gravity="center_vertical"
+        app:MvxBind="Text ." />
+</LinearLayout>

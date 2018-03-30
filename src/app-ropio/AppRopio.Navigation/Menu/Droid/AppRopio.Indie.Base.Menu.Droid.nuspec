@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>AppRopio.Indie.Base.Menu.Droid</id>
+    <version>0.1/version>
+    <title>AppRopio.Indie.Base.Menu.Droid</title>
+    <authors>Maxim Evtukh</authors>
+    <owners>NOTISSIMUS</owners>
+    <licenseUrl></licenseUrl>
+    <projectUrl></projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Base module with flyout navigation. Supports Android only. Includes list of products with searching and also product card.</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>AppRopio.Indie.Base.Menu.Droid AppRopio Menu Droid AppRopio.Indie.Base</tags>
+	<dependencies>
+      <dependency id="Newtonsoft.Json" version="9.0.1" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin/release/AppRopio.Indie.Base.Menu.Droid.dll" target="lib/MonoAndroid" /> 
+    <file src="bin/release/AppRopio.Indie.Base.Menu.Droid.xml" target="lib/MonoAndroid" /> 
+</files>
+</package>

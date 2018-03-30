@@ -1,0 +1,477 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<style
+		name  ="app_basket_inputLayout_hintTextAppearance"
+		parent="AppRopioTheme.Control.TextInputLayout.HintTextAppearance">
+	</style>
+	<style
+		name  ="app_basket_inputLayout_errorTextAppearance"
+		parent="AppRopioTheme.Control.TextInputLayout.ErrorTextAppearance">
+	</style>
+	<style
+		name  ="app_basket_inputLayout"
+		parent="AppRopioTheme.Control.TextInputLayout">
+	</style>
+	<!--  Basket EmptyView  -->
+	<style
+		name  ="app_basket_basket_empty_title"
+		parent="AppRopio.TextAppearance.Header2">
+		<item
+			name="android:layout_marginTop">@dimen/app_basket_basket_empty_title_topMargin</item>
+		<item
+			name="android:gravity">center</item>
+		<item
+			name="android:text">@string/app_basket_basket_empty_title</item>
+	</style>
+	<style
+		name  ="app_basket_basket_empty_subtitle"
+		parent="AppRopio.TextAppearance.Body1">
+		<item
+			name="android:layout_marginTop">@dimen/app_basket_basket_empty_subtitle_topMargin</item>
+		<item
+			name="android:gravity">center</item>
+		<item
+			name="android:text">@string/app_basket_basket_empty_subtitle</item>
+		<item
+			name="android:maxLines">2</item>
+	</style>
+	<style
+		name  ="app_basket_basket_empty_button"
+		parent="AppRopioTheme.Control.Button.Base">
+		<item
+			name="android:text">@string/app_basket_basket_empty_button</item>
+	</style>
+	<!--    -->
+	<!--  Basket  -->
+	<style
+		name  ="app_basket_basket_button"
+		parent="AppRopioTheme.Control.Button.Base">
+	</style>
+	<style
+		name="app_basket_basket_item_icon">
+		<item
+			name="android:layout_margin">@dimen/app_basket_basket_item_icon_margin</item>
+		<item
+			name="android:scaleType">centerCrop</item>
+	</style>
+	<style
+		name  ="app_basket_basket_item_title"
+		parent="AppRopio.TextAppearance.Body2.Medium">
+		<item
+			name="android:layout_marginLeft">@dimen/app_basket_basket_item_title_marginLeft</item>
+		<item
+			name="android:layout_marginRight">@dimen/app_basket_basket_item_title_marginRight</item>
+		<item
+			name="android:maxLines">2</item>
+	</style>
+	<style
+		name  ="app_basket_basket_item_price"
+		parent="AppRopio.TextAppearance.Body2.Bold">
+		<item
+			name="android:layout_margin">@dimen/app_basket_basket_item_price_margin</item>
+	</style>
+	<style
+		name  ="app_basket_basket_item_quantity"
+		parent="AppRopio.TextAppearance.Body2.Medium">
+		<item
+			name="android:layout_width">match_parent</item>
+		<item
+			name="android:layout_height">@dimen/app_button_height</item>
+		<item
+			name="android:gravity">center</item>
+	</style>
+	<style
+		name  ="app_basket_basket_item_minusButton"
+		parent="AppRopioTheme.Control.Button.Image">
+		<item
+			name="android:src">?attr/app_basket_ic_item_minus</item>
+	</style>
+	<style
+		name  ="app_basket_basket_item_plusButton"
+		parent="AppRopioTheme.Control.Button.Image">
+		<item
+			name="android:src">?attr/app_basket_ic_item_plus</item>
+	</style>
+	<style
+		name  ="app_basket_basket_item_moreButton"
+		parent="AppRopioTheme.Control.Button.Image">
+		<item
+			name="android:src">?attr/app_basket_ic_item_more</item>
+	</style>
+	<!--    -->
+	<!--  Full order  -->
+	<style
+		name  ="app_basket_full_order_button"
+		parent="AppRopioTheme.Control.Button.Base">
+	</style>
+	<style
+		name  ="app_basket_full_order_deliveryLayout_title"
+		parent="AppRopio.TextAppearance.Body2.Bold">
+	</style>
+	<style
+		name  ="app_basket_full_order_deliveryLayout_price"
+		parent="AppRopio.TextAppearance.Body2.Bold">
+	</style>
+	<style
+		name  ="app_basket_full_order_header_title"
+		parent="AppRopio.TextAppearance.Body2.Medium">
+		<item
+			name="android:layout_marginLeft">@dimen/app_basket_full_order_header_horizontalMargin</item>
+		<item
+			name="android:layout_marginRight">@dimen/app_basket_full_order_header_horizontalMargin</item>
+		<item
+			name="android:gravity">left|center_vertical</item>
+	</style>
+	<style
+		name  ="app_basket_full_order_item_optional_title"
+		parent="AppRopio.TextAppearance.Body1">
+		<item
+			name="android:gravity">left|center_vertical</item>
+	</style>
+	<style
+		name="app_basket_multiline_edittext">
+		<item
+			name="android:minHeight">@dimen/app_basket_full_order_user_item_inputLayout_height</item>
+		<item
+			name="android:maxLines">999</item>
+		<item
+			name="android:singleLine">false</item>
+		<item
+			name="android:inputType">textMultiLine</item>
+		<item
+			name="android:padding">@dimen/app_basket_multiline_edittext_padding</item>
+		<item
+			name="android:background">@drawable/app_basket_multiline_edittext_background</item>
+	</style>
+	<style
+		name  ="app_basket_full_order_delivery_item_title"
+		parent="AppRopio.TextAppearance.Body1">
+	</style>
+	<style
+		name  ="app_basket_full_order_item_counter_title"
+		parent="AppRopio.TextAppearance.Body1">
+	</style>
+	<style
+		name  ="app_basket_full_order_item_counter_value"
+		parent="AppRopio.TextAppearance.Body1.Bold">
+		<item
+			name="android:textColor">?attr/app_color_textGray</item>
+		<item
+			name="android:maxLines">1</item>
+		<item
+			name="android:ellipsize">start</item>
+	</style>
+	<style
+		name  ="app_basket_full_order_item_deliveryField_icon"
+		parent="">
+		<item
+			name="android:layout_width">@dimen/app_clickable_size</item>
+		<item
+			name="android:layout_height">@dimen/app_clickable_size</item>
+		<item
+			name="android:scaleType">center</item>
+		<item
+			name="android:src">?attr/app_basket_full_order_ic_item_check</item>
+	</style>
+	<style
+		name  ="app_basket_full_order_deliveryTime_title"
+		parent="AppRopio.TextAppearance.Body1">
+	</style>
+	<style
+		name="app_basket_full_order_deliveryTime_icon">
+		<item
+			name="android:layout_width">@dimen/app_clickable_size</item>
+		<item
+			name="android:layout_height">@dimen/app_clickable_size</item>
+		<item
+			name="android:scaleType">center</item>
+		<item
+			name="android:src">?attr/app_basket_full_order_ic_deliveryTime_calendar</item>
+	</style>
+	<style
+		name  ="app_basket_full_order_item_deliveryTime_dialog_headerLayout_subtitle"
+		parent="AppRopio.TextAppearance.Header3">
+	</style>
+	<style
+		name  ="app_basket_full_order_item_deliveryTime_dialog_headerLayout_title"
+		parent="AppRopio.TextAppearance.Header1">
+		<item
+			name="android:textSize">@dimen/app_dialog_header_textSize</item>
+	</style>
+	<style
+		name="app_basket_full_order_item_deliveryTime_dialog_items">
+		<item
+			name="android:textSize">18sp</item>
+		<item
+			name="android:textColor">@drawable/app_basket_full_order_item_deliveryTime_dialog_items_textColor</item>
+		<item
+			name="android:fontFamily">?attr/app_font_regular</item>
+	</style>
+	<style
+		name  ="app_basket_full_order_item_deliveryTime_dialog_positiveButton"
+		parent="AppRopioTheme.Control.Button.Text">
+	</style>
+	<style
+		name  ="app_basket_full_order_item_deliveryTime_dialog_negativeButton"
+		parent="AppRopioTheme.Control.Button.Text">
+		<item
+			name="android:textColor">?attr/app_color_textGray</item>
+	</style>
+	<!--    -->
+	<!--  Payment  -->
+	<style
+		name  ="app_basket_payment_title"
+		parent="AppRopio.TextAppearance.Header4">
+		<item
+			name="android:gravity">center_vertical</item>
+		<item
+			name="android:paddingLeft">@dimen/app_basket_payment_horizontalMargin</item>
+		<item
+			name="android:paddingRight">@dimen/app_basket_payment_horizontalMargin</item>
+		<item
+			name="android:text">@string/app_basket_payment_title</item>
+	</style>
+	<style
+		name  ="app_basket_payment_item_title"
+		parent="AppRopio.TextAppearance.Body1">
+	</style>
+	<style
+		name  ="app_basket_payment_item_icon"
+		parent="">
+		<item
+			name="android:layout_width">@dimen/app_basket_payment_item_height</item>
+		<item
+			name="android:layout_height">@dimen/app_basket_payment_item_height</item>
+		<item
+			name="android:scaleType">center</item>
+		<item
+			name="android:src">?attr/app_basket_payment_ic_item_check</item>
+	</style>
+	<!--    -->
+	<!--  Thanks  -->
+	<style
+		name  ="app_basket_thanks_title"
+		parent="AppRopio.TextAppearance.Header2">
+		<item
+			name="android:layout_marginTop">@dimen/app_basket_basket_empty_title_topMargin</item>
+		<item
+			name="android:gravity">center</item>
+		<item
+			name="android:text">@string/app_basket_thanks_title</item>
+	</style>
+	<style
+		name  ="app_basket_thanks_orderId"
+		parent="AppRopio.TextAppearance.Body1">
+		<item
+			name="android:layout_marginTop">@dimen/app_basket_basket_empty_subtitle_topMargin</item>
+		<item
+			name="android:gravity">center</item>
+		<item
+			name="android:maxLines">1</item>
+	</style>
+	<style
+		name  ="app_basket_thanks_subtitle"
+		parent="AppRopio.TextAppearance.Body1">
+		<item
+			name="android:gravity">center</item>
+		<item
+			name="android:text">@string/app_basket_thanks_subtitle</item>
+		<item
+			name="android:maxLines">1</item>
+	</style>
+	<style
+		name  ="app_basket_thanks_catalogButton"
+		parent="AppRopioTheme.Control.Button.Base">
+		<item
+			name="android:text">@string/app_basket_thanks_catalogButton</item>
+	</style>
+	<style
+		name  ="app_basket_thanks_close"
+		parent="AppRopioTheme.Control.Button.Image">
+		<item
+			name="android:src">?attr/app_basket_thanks_ic_close</item>
+	</style>
+	<!--    -->
+	<!--  Delivery on address  -->
+	<style
+		name  ="app_basket_delivery_on_address_button"
+		parent="AppRopioTheme.Control.Button.Base">
+		<item
+			name="android:text">@string/app_basket_delivery_on_address_button</item>
+	</style>
+	<style
+		name  ="app_basket_delivery_on_address_status_bar"
+		parent="AppRopioTheme.Control.StatusBar">
+	</style>
+	<style
+		name  ="app_basket_delivery_on_address_toolbar"
+		parent="AppRopioTheme.Control.Toolbar">
+	</style>
+	<style
+		name  ="app_basket_delivery_on_address_toolbar_theme"
+		parent="AppRopioTheme.Control.ToolbarTheme">
+	</style>
+	<style
+		name  ="app_basket_delivery_on_address_toolbar_title"
+		parent="AppRopioTheme.Control.Toolbar.Title">
+	</style>
+	<!--    -->
+	<!--  Delivery on point  -->
+	<style
+		name  ="app_basket_delivery_on_point_status_bar"
+		parent="AppRopioTheme.Control.StatusBar">
+	</style>
+	<style
+		name  ="app_basket_delivery_on_point_toolbar"
+		parent="AppRopioTheme.Control.Toolbar">
+	</style>
+	<style
+		name  ="app_basket_delivery_on_point_toolbar_theme"
+		parent="AppRopioTheme.Control.ToolbarTheme">
+	</style>
+	<style
+		name  ="app_basket_delivery_on_point_toolbar_title"
+		parent="AppRopioTheme.Control.Toolbar.Title">
+	</style>
+	<style
+		name  ="app_basket_delivery_on_point_button"
+		parent="AppRopioTheme.Control.Button.Base">
+		<item
+			name="android:text">@string/app_basket_delivery_on_point_button</item>
+	</style>
+	<style
+		name  ="app_basket_delivery_on_point_item_selected_icon"
+		parent="">
+		<item
+			name="android:layout_width">@dimen/app_clickable_size</item>
+		<item
+			name="android:layout_height">@dimen/app_clickable_size</item>
+		<item
+			name="android:scaleType">center</item>
+		<item
+			name="android:src">?attr/app_basket_payment_ic_item_check</item>
+	</style>
+	<style
+		name  ="app_basket_delivery_on_point_item_distance_icon"
+		parent="">
+		<item
+			name="android:layout_width">@dimen/app_clickable_size</item>
+		<item
+			name="android:layout_height">@dimen/app_clickable_size</item>
+		<item
+			name="android:scaleType">center</item>
+		<item
+			name="android:src">?attr/app_basket_delivery_on_point_ic_distance</item>
+	</style>
+	<style
+		name  ="app_basket_delivery_on_point_item_name"
+		parent="AppRopio.TextAppearance.Header4">
+	</style>
+	<style
+		name  ="app_basket_delivery_on_point_item_address"
+		parent="AppRopio.TextAppearance.Body2">
+	</style>
+	<style
+		name  ="app_basket_delivery_on_point_item_distance"
+		parent="AppRopio.TextAppearance.Body2">
+	</style>
+	<style
+		name  ="app_basket_delivery_on_point_item_workTime"
+		parent="AppRopio.TextAppearance.Body2">
+	</style>
+	<style
+		name  ="app_basket_delivery_on_point_item_description"
+		parent="AppRopio.TextAppearance.Body2">
+	</style>
+	<style
+		name  ="app_basket_delivery_on_point_item_callButton"
+		parent="AppRopioTheme.Control.Button.Image">
+		<item
+			name="android:src">?attr/app_basket_delivery_on_point_item_callButton</item>
+	</style>
+	<style
+		name  ="app_basket_delivery_on_point_item_infoButton"
+		parent="AppRopioTheme.Control.Button.Image">
+		<item
+			name="android:src">?attr/app_basket_delivery_on_point_item_infoButton</item>
+	</style>
+	<style
+		name  ="app_basket_delivery_on_point_item_mapButton"
+		parent="AppRopioTheme.Control.Button.Image">
+		<item
+			name="android:src">?attr/app_basket_delivery_on_point_item_mapButton</item>
+	</style>
+	<style
+		name  ="app_basket_delivery_on_point_item_routeButton"
+		parent="AppRopioTheme.Control.Button.Image">
+		<item
+			name="android:src">?attr/app_basket_delivery_on_point_item_routeButton</item>
+	</style>
+	<style
+		name  ="app_basket_delivery_on_point_toolbar_onSearch_input"
+		parent="AppRopioTheme.Control.SearchEditText">
+	</style>
+	<!--    -->
+	<!--  Cart Indicator  -->
+	<style
+		name  ="app_basket_cartIndicator_button"
+		parent="AppRopioTheme.Control.Button.Image">
+		<item
+			name="android:src">?attr/app_basket_cartIndicator_ic_basket</item>
+	</style>
+	<style
+		name  ="app_basket_cartIndicator_badge"
+		parent="AppRopio.TextAppearance.Body3.Medium">
+		<item
+			name="android:gravity">center</item>
+		<item
+			name="android:textColor">?attr/app_color_textAccent</item>
+	</style>
+	<!--    -->
+	<!--  ProductCard  -->
+	<style
+		name  ="app_basket_productCardView_buyButton"
+		parent="AppRopioTheme.Control.Button.Base">
+		<item
+			name="android:text">@string/app_basket_productCardView_buyButton</item>
+	</style>
+	<style
+		name  ="app_basket_productCardView_editText"
+		parent="">
+		<item
+			name="android:fontFamily">?attr/app_font_bold</item>
+		<item
+			name="android:textSize">@dimen/app_input2_text_size</item>
+		<item
+			name="android:textColor">?attr/app_color_textBase</item>
+		<item
+			name="android:textColorHint">?attr/app_color_placeholder</item>
+		<item
+			name="android:inputType">number</item>
+		<item
+			name="android:maxLines">1</item>
+		<item
+			name="android:background">@null</item>
+        <item
+            name="android:gravity">center</item>
+	</style>
+    <style
+        name="app_basket_productCardView_unitName"
+        parent="app_basket_productCardView_editText">
+        <item
+            name="android:textColor">?attr/app_color_textGray</item>
+    </style>
+    <style
+        name="app_basket_productCardView_minusButton"
+        parent="AppRopioTheme.Control.Button.Image">
+        <item
+            name="android:src">?attr/app_basket_ic_item_large_minus</item>
+    </style>
+    <style
+        name="app_basket_productCardView_plusButton"
+        parent="AppRopioTheme.Control.Button.Image">
+        <item
+            name="android:src">?attr/app_basket_ic_item_large_plus</item>
+    </style>
+	<!--    -->
+</resources>

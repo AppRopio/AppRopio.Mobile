@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<!--  Status Bar  -->
+	<style
+		name  ="AppRopioTheme.Control.StatusBar"
+		parent="">
+		<item
+			name="android:background">?attr/app_color_background</item>
+	</style>
+	<!--    -->
+	<!--  Toolbar  -->
+	<style
+		name  ="AppRopioTheme.Control.Toolbar"
+		parent="">
+		<item
+			name="android:minHeight">?attr/actionBarSize</item>
+		<item
+			name="android:titleTextColor">?attr/app_color_textBase</item>
+		<item
+			name="android:background">?attr/app_color_background</item>
+	</style>
+	<style
+		name  ="AppRopioTheme.Control.ToolbarTheme"
+		parent="ThemeOverlay.AppCompat.ActionBar">
+		<item
+			name="colorControlNormal">?attr/app_color_textBase</item>
+	</style>
+	<style
+		name  ="AppRopioTheme.Control.Toolbar.Title"
+		parent="TextAppearance.AppCompat.Title">
+		<item
+			name="android:textSize">@dimen/app_toolbar_titleText_size</item>
+		<item
+			name="android:fontFamily">?attr/app_font_medium</item>
+	</style>
+	<!--    -->
+	<!--  Button  -->
+	<style
+		name  ="AppRopioTheme.Control.Button"
+		parent="">
+		<item
+			name="android:layout_width">match_parent</item>
+		<item
+			name="android:layout_height">@dimen/app_button_height</item>
+		<item
+			name="android:textAllCaps">false</item>
+	</style>
+	<style
+		name  ="AppRopioTheme.Control.Button.Base"
+		parent="AppRopioTheme.Control.Button">
+        <item
+            name="android:background">@drawable/app_control_button_base</item>
+        <item
+            name="android:textColor">?attr/app_color_textAccent</item>
+        <item
+            name="android:textSize">@dimen/app_buttonBase_text_size</item>
+        <item
+            name="android:fontFamily">?attr/app_font_bold</item>
+	</style>
+	<style
+		name  ="AppRopioTheme.Control.Button.Image"
+		parent="AppRopioTheme.Control.Button">
+        <item
+            name="android:layout_width">@dimen/app_button_height</item>
+        <item
+            name="android:layout_height">@dimen/app_button_height</item>
+        <item
+            name="android:background">@null</item>
+	</style>
+    <style
+        name="AppRopioTheme.Control.Button.Text"
+        parent="AppRopioTheme.Control.Button">
+        <item
+            name="android:layout_width">wrap_content</item>
+        <item
+            name="android:layout_height">@dimen/app_button_height</item>
+        <item
+            name="android:background">?attr/selectableItemBackground</item>
+        <item
+            name="android:textColor">?attr/app_color_textBase</item>
+        <item
+            name="android:textSize">@dimen/app_buttonBase_text_size</item>
+        <item
+            name="android:fontFamily">?attr/app_font_medium</item>
+    </style>
+	<!--    -->
+	<!--  Separator  -->
+	<style
+		name  ="AppRopioTheme.Control.Separator"
+		parent="">
+		<item
+			name="android:layout_width">match_parent</item>
+		<item
+			name="android:layout_height">@dimen/app_separator_height</item>
+		<item
+			name="android:background">?attr/app_color_separator</item>
+	</style>
+	<!--    -->
+	<!--  TextInputLayout  -->
+	<style
+		name  ="AppRopioTheme.Control.TextInputLayout"
+		parent="AppRopio.TextAppearance.Input">
+		<!-- Hint color and label color in FALSE state -->
+        <item
+            name="android:textColorHint">?attr/app_color_placeholder</item>
+		<item
+			name="android:textColorHighlight">?attr/app_color_accent</item>
+		<!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+		<item
+			name="colorAccent">?attr/app_color_accent</item>
+		<item
+			name="colorControlNormal">?attr/app_color_disabledControl</item>
+		<item
+			name="colorControlActivated">?attr/app_color_highlightedControl</item>
+	</style>
+	<style
+		name  ="AppRopioTheme.Control.TextInputLayout.HintTextAppearance"
+		parent="">
+		<item
+			name="android:textColor">?attr/app_color_accent</item>
+		<item
+			name="android:textSize">@dimen/app_input_hint_text_size</item>
+	</style>
+    <style
+        name="AppRopioTheme.Control.TextInputLayout.ErrorTextAppearance"
+        parent="">
+        <item
+            name="android:textColor">?attr/app_color_invalid</item>
+        <item
+            name="android:textSize">@dimen/app_input_error_text_size</item>
+    </style>
+	<!--    -->
+<!--  SearchEditText  -->
+    <style
+        name="AppRopioTheme.Control.SearchEditText"
+        parent="">
+        <item
+            name="android:fontFamily">?attr/app_font_medium</item>
+        <item
+            name="android:textSize">@dimen/app_toolbar_titleText_size</item>
+        <item
+            name="android:textColor">?attr/app_color_textBase</item>
+        <item
+            name="android:textColorHint">?attr/app_color_placeholder</item>
+    </style>
+<!--    -->
+</resources>

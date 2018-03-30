@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <dimen
+        name="app_historyorders_item_contentHeight">102dp</dimen>
+    <dimen
+        name="app_historyorders_item_separatorHeight">8dp</dimen>
+    <dimen
+        name="app_historyorders_item_image_size">70dp</dimen>
+    <dimen
+        name="app_historyorders_item_horizontalMargins">16dp</dimen>
+    <dimen
+        name="app_historyorders_item_verticalMargins">16dp</dimen>
+    <dimen
+        name="app_historyorders_item_badgeWidth">100dp</dimen>
+    <dimen
+        name="app_historyorders_item_badge_cornerRadius">12dp</dimen>
+    <dimen
+        name="app_historyorders_item_verticalPaddings">6dp</dimen>
+    <dimen
+        name="app_historyorders_item_badge_minHeight">24dp</dimen>
+    <dimen
+        name="app_historyorders_details_itemsMargins">16dp</dimen>
+    <dimen
+        name="app_historyorders_item_deliveryPoint_address_marginTop">8dp</dimen>
+    <dimen
+        name="app_historyorders_products_item_margin">10dp</dimen>
+    <dimen
+        name="app_historyorders_products_item_imageSize">120dp</dimen>
+    <dimen
+        name="app_historyorders_products_item_amount_bottomMargin">20dp</dimen>
+    <dimen
+        name="app_historyorders_products_item_available_height">24dp</dimen>
+    <dimen
+        name="app_historyorders_products_item_available_radius">12dp</dimen>
+    <dimen
+        name="app_historyorders_products_item_available_paddingsVertical">4dp</dimen>
+    <dimen
+        name="app_historyorders_products_item_available_paddingsHorizontal">12dp</dimen>
+</resources>

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{497B2A01-631F-4F0F-B93D-BF53AF209132}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>AppRopio.Base.Auth.iOS</RootNamespace>
+    <AssemblyName>AppRopio.Base.Auth.iOS</AssemblyName>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink></MtouchLink>
+    <MtouchHttpClientHandler></MtouchHttpClientHandler>
+    <MtouchTlsProvider></MtouchTlsProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <DefineConstants></DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink></MtouchLink>
+    <MtouchHttpClientHandler></MtouchHttpClientHandler>
+    <MtouchTlsProvider></MtouchTlsProvider>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="Facebook">
+      <HintPath>..\..\..\..\..\lib\iOS\Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="VKontakte.iOS">
+      <HintPath>..\..\..\..\..\lib\iOS\VKontakte.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\Newtonsoft.Json.10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Platform">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Platform.5.6.3\lib\Xamarin.iOS10\MvvmCross.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Platform.iOS">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Platform.5.6.3\lib\Xamarin.iOS10\MvvmCross.Platform.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Core">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Core.5.6.3\lib\Xamarin.iOS10\MvvmCross.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.iOS">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Core.5.6.3\lib\Xamarin.iOS10\MvvmCross.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Binding">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.6.3\lib\Xamarin.iOS10\MvvmCross.Binding.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Binding.iOS">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.6.3\lib\Xamarin.iOS10\MvvmCross.Binding.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Localization">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.6.3\lib\Xamarin.iOS10\MvvmCross.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Messenger">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Plugin.Messenger.5.6.3\lib\Xamarin.iOS10\MvvmCross.Plugins.Messenger.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Services\" />
+    <Folder Include="Services\Implementation\" />
+    <Folder Include="Views\" />
+    <Folder Include="Views\Auth\" />
+    <Folder Include="Views\SignIn\" />
+    <Folder Include="Models\" />
+    <Folder Include="Views\SignUp\" />
+    <Folder Include="Views\Password\" />
+    <Folder Include="Views\Password\Reset\" />
+    <Folder Include="Views\Password\New\" />
+    <Folder Include="Views\Password\Reset\Main\" />
+    <Folder Include="Views\Password\Reset\Sms\" />
+    <Folder Include="Views\Thanks\" />
+    <Folder Include="Views\_base\" />
+    <Folder Include="Theme\" />
+    <Folder Include="Views\SignUp\Cells\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Plugin.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Implementation\OAuthService.cs" />
+    <Compile Include="Views\Auth\AuthViewController.cs" />
+    <Compile Include="Views\Auth\AuthViewController.designer.cs">
+      <DependentUpon>AuthViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SignIn\SignInViewController.cs" />
+    <Compile Include="Views\SignIn\SignInViewController.designer.cs">
+      <DependentUpon>SignInViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AuthThemeConfig.cs" />
+    <Compile Include="Services\IAuthThemeConfigService.cs" />
+    <Compile Include="Services\Implementation\AuthThemeConfigService.cs" />
+    <Compile Include="Views\SignUp\SignUpViewController.cs" />
+    <Compile Include="Views\SignUp\SignUpViewController.designer.cs">
+      <DependentUpon>SignUpViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Password\Reset\Main\ResetPasswordViewController.cs" />
+    <Compile Include="Views\Password\Reset\Main\ResetPasswordViewController.designer.cs">
+      <DependentUpon>ResetPasswordViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Password\Reset\Sms\ResetSmsViewController.cs" />
+    <Compile Include="Views\Password\Reset\Sms\ResetSmsViewController.designer.cs">
+      <DependentUpon>ResetSmsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Password\New\PasswordNewViewController.cs" />
+    <Compile Include="Views\Password\New\PasswordNewViewController.designer.cs">
+      <DependentUpon>PasswordNewViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Thanks\ThanksViewController.cs" />
+    <Compile Include="Views\Thanks\ThanksViewController.designer.cs">
+      <DependentUpon>ThanksViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\_base\AuthBaseViewController.cs" />
+    <Compile Include="Theme\Theme_TextField.cs" />
+    <Compile Include="Views\SignUp\SignUpTableViewSource.cs" />
+    <Compile Include="Views\SignUp\Cells\SignUpItemBaseViewCell.cs" />
+    <Compile Include="Views\SignUp\Cells\SignUpItemBaseViewCell.designer.cs">
+      <DependentUpon>SignUpItemBaseViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SignUp\Cells\SignUpItemPickerViewCell.cs" />
+    <Compile Include="Views\SignUp\Cells\SignUpItemPickerViewCell.designer.cs">
+      <DependentUpon>SignUpItemPickerViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SignUp\Cells\SignUpItemDatePickerViewCell.cs" />
+    <Compile Include="Views\SignUp\Cells\SignUpItemDatePickerViewCell.designer.cs">
+      <DependentUpon>SignUpItemDatePickerViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PickerCell.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\API\AppRopio.Base.API.csproj">
+      <Project>{124841B9-39F6-44B5-8B96-50183FBFE341}</Project>
+      <Name>AppRopio.Base.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\API\AppRopio.Base.Auth.API.csproj">
+      <Project>{4A505153-08D4-4269-B753-21EEC043FDD4}</Project>
+      <Name>AppRopio.Base.Auth.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\AppRopio.Base.Auth.Core.csproj">
+      <Project>{717297CF-D3BD-498C-978A-C565C7E447D5}</Project>
+      <Name>AppRopio.Base.Auth.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\AppRopio.Base.Core.csproj">
+      <Project>{EA6D5113-1E80-494B-886D-3D7FDFA04E99}</Project>
+      <Name>AppRopio.Base.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\iOS\AppRopio.Base.iOS.csproj">
+      <Project>{2F005241-B90A-484A-A3A0-51684D5ECE54}</Project>
+      <Name>AppRopio.Base.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Auth\AppRopio.Models.Auth.csproj">
+      <Project>{EEBE1C14-C1C6-45B0-BD83-260151D97DDD}</Project>
+      <Name>AppRopio.Models.Auth</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Views\Auth\AuthViewController.xib" />
+    <InterfaceDefinition Include="Views\SignIn\SignInViewController.xib" />
+    <InterfaceDefinition Include="Views\SignUp\SignUpViewController.xib" />
+    <InterfaceDefinition Include="Views\Password\Reset\Main\ResetPasswordViewController.xib" />
+    <InterfaceDefinition Include="Views\Password\Reset\Sms\ResetSmsViewController.xib" />
+    <InterfaceDefinition Include="Views\Password\New\PasswordNewViewController.xib" />
+    <InterfaceDefinition Include="Views\Thanks\ThanksViewController.xib" />
+    <InterfaceDefinition Include="Views\SignUp\Cells\SignUpItemBaseViewCell.xib" />
+    <InterfaceDefinition Include="Views\SignUp\Cells\SignUpItemPickerViewCell.xib" />
+    <InterfaceDefinition Include="Views\SignUp\Cells\SignUpItemDatePickerViewCell.xib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\..\..\AppRopio.ECommerce\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\..\..\AppRopio.ECommerce\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets')" />
+</Project>

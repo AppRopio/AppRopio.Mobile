@@ -1,0 +1,302 @@
+﻿{
+    "navBarSearch":
+    {
+        "enabled": true,
+        "image":
+        {
+            "path": "Images/Products/Search.png"
+        }
+    },
+    "categories":
+    {
+        "categoryCell":
+        {
+            "title":
+            {
+                "font": {
+                    "ref": "@font/semibold",
+                    "size": 14
+                }
+            }
+        },
+        "collectionType": 1
+    },
+    "products":
+    {
+        "productCell":
+        {
+            "image":
+            {
+                "path": "Images/Products/no_photo.png"
+            },
+            "badge":
+            {
+                "textColor":
+                {
+                    "HEX": "FFFFFF"
+                }
+            },
+            "markButton":
+            {
+                "background":
+                {
+                    "HEX": "",
+                    "ref": ""
+                },
+                "states":
+                {
+                    "normal":
+                    {
+                        "content":
+                        {
+                            "ref": ""
+                        },
+                        "background": ""
+                    },
+                    "highlighted":
+                    {
+                        "content":
+                        {
+                            "ref": ""
+                        },
+                        "background": ""
+                    },
+                    "selected":
+                    {
+                        "content":
+                        {
+                            "ref": ""
+                        },
+                        "background": ""
+                    },
+                    "disabled":
+                    {
+                        "content":
+                        {
+                            "ref": ""
+                        },
+                        "background": ""
+                    },
+                    "invalid":
+                    {
+                        "content":
+                        {
+                            "ref": ""
+                        },
+                        "background": ""
+                    }
+                },
+                "image":
+                {
+                    "path": "Images/Products/unmarked.png",
+                    "highlightedPath": "Images/Products/marked.png"
+                }
+            },
+            "layer":
+            {
+                "cornerRadius": 0,
+                "border": {
+                    "width": 1,
+                    "color": { "ref": "@color/separator" }
+                }
+            }
+        },
+        "emptyView":
+        {
+            "image":
+            {
+                "path": "Images/Products/empty_image.png"
+            }
+        }
+    },
+    "productDetails":
+    {
+        "image":
+        {
+            "path": "Images/Products/no_photo_large.png"
+        },
+        "shareButton":
+        {
+            "background":
+            {
+                "HEX": "",
+                "ref": ""
+            },
+            "states":
+            {
+                "normal":
+                {
+                    "content":
+                    {
+                        "ref": ""
+                    },
+                    "background": ""
+                },
+                "highlighted":
+                {
+                    "content":
+                    {
+                        "ref": ""
+                    },
+                    "background": ""
+                },
+                "selected":
+                {
+                    "content":
+                    {
+                        "ref": ""
+                    },
+                    "background": ""
+                },
+                "disabled":
+                {
+                    "content":
+                    {
+                        "ref": ""
+                    },
+                    "background": ""
+                },
+                "invalid":
+                {
+                    "content":
+                    {
+                        "ref": ""
+                    },
+                    "background": ""
+                }
+            },
+            "image":
+            {
+                "path": "Images/Products/share.png"
+            }
+        },
+        "markButton":
+        {
+            "background":
+            {
+                "HEX": "",
+                "ref": ""
+            },
+            "states":
+            {
+                "normal":
+                {
+                    "content":
+                    {
+                        "ref": ""
+                    },
+                    "background": ""
+                },
+                "highlighted":
+                {
+                    "content":
+                    {
+                        "ref": ""
+                    },
+                    "background": ""
+                },
+                "selected":
+                {
+                    "content":
+                    {
+                        "ref": ""
+                    },
+                    "background": ""
+                },
+                "disabled":
+                {
+                    "content":
+                    {
+                        "ref": ""
+                    },
+                    "background": ""
+                },
+                "invalid":
+                {
+                    "content":
+                    {
+                        "ref": ""
+                    },
+                    "background": ""
+                }
+            },
+            "image":
+            {
+                "path": "Images/Products/unmarked.png",
+                "highlightedPath": "Images/Products/marked.png"
+            }
+        },
+        "closeButton": {
+            "background": {
+                "ref": "@color/background"
+            },
+            "layer": {
+                "cornerRadius": 22,
+                "shadow": {
+                    "color": { "HEX": "3C3B3C" },
+                    "x": 0,
+                    "y": 1,
+                    "blur": 6,
+                    "spread": 0,
+                    "opacity": 0.13
+                }
+            },
+            "states": {
+                "normal": {
+                    "content": {
+                        "ref": ""
+                    },
+                    "background": ""
+                },
+                "highlighted": {
+                    "content": {
+                        "ref": ""
+                    },
+                    "background": ""
+                },
+                "selected": {
+                    "content": {
+                        "ref": ""
+                    },
+                    "background": ""
+                },
+                "disabled": {
+                    "content": {
+                        "ref": ""
+                    },
+                    "background": ""
+                },
+                "invalid": {
+                    "content": {
+                        "ref": ""
+                    },
+                    "background": ""
+                }
+            },
+            "image": {
+                "path": "Images/Products/Close.png"
+            }
+        },
+        "detailsCell": {
+            "multiSelection": {
+                "multiSelectionCell": {
+                    "image": { "path": "Images/Products/cross_icon.png" }
+                }
+            }
+        }
+    },
+    "contentSearch":
+    {
+        "searchCell":
+        {
+            "historyIcon":
+            {
+                "path": "Images/Products/history_icon.png"
+            },
+            "linkIcon":
+            {
+                "path": "Images/Products/link_icon.png"
+            }
+        }
+    }
+}

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/app_drawer_layout_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include
+        layout="@layout/app_basket_delivery_on_point_toolbar" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/app_basket_delivery_point_on_map_mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/app_basket_delivery_on_point_annotation" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/app_basket_delivery_on_point_annotation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="?attr/app_color_background">
+            <TextView
+                style="@style/app_basket_delivery_on_point_item_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/app_basket_delivery_on_point_item_padding"
+                android:layout_marginTop="@dimen/app_basket_delivery_on_point_item_padding"
+                app:MvxBind="Text Item.Name" />
+            <TextView
+                style="@style/app_basket_delivery_on_point_item_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/app_basket_delivery_on_point_item_padding"
+                android:layout_marginTop="@dimen/app_basket_delivery_on_point_item_address_marginTop"
+                app:MvxBind="Text Item.Address" />
+            <TextView
+                style="@style/app_basket_delivery_on_point_item_workTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/app_basket_delivery_on_point_item_padding"
+                android:layout_marginTop="@dimen/app_basket_delivery_on_point_item_address_marginTop"
+                app:MvxBind="Text Item.WorkTime" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    style="@style/app_basket_delivery_on_point_item_distance_icon" />
+                <TextView
+                    style="@style/app_basket_delivery_on_point_item_distance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical"
+                    app:MvxBind="Text Item.Distance" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/app_basket_delivery_on_point_item_padding"
+                android:layout_marginBottom="@dimen/app_basket_delivery_on_point_item_padding">
+                <ImageButton
+                    style="@style/app_basket_delivery_on_point_item_callButton"
+                    android:layout_marginRight="@dimen/app_basket_delivery_on_point_item_padding"
+                    app:MvxBind="Click Item.CallCommand; Visibility Visibility(Item.Phone)" />
+                <ImageButton
+                    style="@style/app_basket_delivery_on_point_item_routeButton"
+                    android:layout_marginRight="@dimen/app_basket_delivery_on_point_item_padding"
+                    app:MvxBind="Click Item.RouteCommand; Visibility Visibility(Item.Coordinates)" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

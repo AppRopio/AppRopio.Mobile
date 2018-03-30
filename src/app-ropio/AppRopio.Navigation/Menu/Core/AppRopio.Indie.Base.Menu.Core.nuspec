@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<package >
+	<metadata>
+		<id>AppRopio.Indie.Base.Menu.Core</id>
+		<version>0.1/version>
+		<title>AppRopio.Indie.Base.Menu.Core</title>
+		<authors>Maxim Evtukh</authors>
+		<owners>NOTISSIMUS</owners>
+		<licenseUrl></licenseUrl>
+		<projectUrl></projectUrl>
+		<requireLicenseAcceptance>true</requireLicenseAcceptance>
+		<description>Base module with flyout navigation. PCL. Includes list of products with searching and also product card.</description>
+		<releaseNotes></releaseNotes>
+		<copyright>Copyright 2016</copyright>
+		<tags>AppRopio.Indie.Base.Menu.Core AppRopio Menu Core AppRopio.Indie.Base</tags>
+
+		<dependencies>
+		  <dependency id="Acr.UserDialogs" version="6.2.0" />
+		  <dependency id="AppRopio.Indie.Base.Menu.Core" version="0.1" />
+		  <dependency id="MvvmCross" version="4.2.3" />
+		  <dependency id="MvvmCross.Binding" version="4.2.3" />
+		  <dependency id="MvvmCross.Core" version="4.2.3" />
+		  <dependency id="MvvmCross.Platform" version="4.2.3" />
+		  <dependency id="Newtonsoft.Json" version="9.0.1" />
+		  <dependency id="Splat" version="1.6.2" />
+		</dependencies>
+
+	</metadata>
+	<files>
+		<file src="bin/release/AppRopio.Indie.Base.Menu.Core.dll" target="lib\portable-net45+win+wpa81+wp80" /> 
+		<file src="bin/release/AppRopio.Indie.Base.Menu.Core.xml" target="lib\portable-net45+win+wpa81+wp80" /> 
+	</files>
+</package>

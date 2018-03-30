@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:id="@+id/app_map_list_item_linearLayout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@+id/app_map_list_item_selected_icon"
+        android:layout_marginRight="@dimen/app_map_list_item_padding">
+        <TextView
+            style="@style/app_map_list_item_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/app_map_list_item_padding"
+            android:layout_marginTop="@dimen/app_map_list_item_padding"
+            app:MvxBind="Text Name" />
+        <TextView
+            style="@style/app_map_list_item_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/app_map_list_item_padding"
+            android:layout_marginTop="@dimen/app_map_list_item_address_marginTop"
+            app:MvxBind="Text Address" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:MvxBind="Visibility Visibility(Distance)">
+            <ImageView
+                style="@style/app_map_list_item_distance_icon" />
+            <TextView
+                style="@style/app_map_list_item_distance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_gravity="center_vertical"
+                app:MvxBind="Text Distance" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/app_map_list_item_address_marginTop"
+            android:layout_marginLeft="@dimen/app_map_list_item_padding"
+            android:layout_marginBottom="@dimen/app_map_list_item_padding">
+            <ImageButton
+                style="@style/app_map_list_item_callButton"
+                android:layout_marginRight="@dimen/app_map_list_item_padding"
+                app:MvxBind="Click CallCommand; Visibility Visibility(Phone)" />
+            <ImageButton
+                style="@style/app_map_list_item_infoButton"
+                android:layout_marginRight="@dimen/app_map_list_item_padding"
+                app:MvxBind="Click AdditionalInfoCommand; Visibility Visibility(AdditionalInfo)" />
+            <ImageButton
+                style="@style/app_map_list_item_routeButton"
+                android:layout_marginRight="@dimen/app_map_list_item_padding"
+                app:MvxBind="Click RouteCommand; Visibility Visibility(Coordinates)" />
+        </LinearLayout>
+    </LinearLayout>
+    <View
+        style="@style/AppRopioTheme.Control.Separator"
+        android:layout_alignBottom="@+id/app_map_list_item_linearLayout" />
+</RelativeLayout>

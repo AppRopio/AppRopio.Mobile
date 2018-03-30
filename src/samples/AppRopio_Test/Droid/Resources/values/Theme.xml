@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<style
+		name  ="Theme.DroidTest"
+		parent="Theme.AppRopio">
+		<item
+			name="alertDialogTheme">@style/Theme.DroidTest.AlertDialog</item>
+		<item
+			name="colorPrimary">?attr/app_color_accent</item>
+		<item
+			name="colorPrimaryDark">?attr/app_color_highlightedControl</item>
+		<item
+			name="colorAccent">?attr/app_color_accent</item>
+		<item
+			name="colorControlNormal">?attr/app_color_disabledControl</item>
+		<item
+			name="colorControlActivated">?attr/app_color_highlightedControl</item>
+		<item
+            name="colorControlHighlight">?attr/app_color_highlightedControl</item>
+		<item
+			name="windowNoTitle">true</item>
+		<item
+			name="windowActionBar">false</item>
+		<item
+			name="android:alertDialogTheme">@style/Theme.DroidTest.AlertDialog</item>
+		<!--<item
+			name="android:statusBarColor">?attr/app_color_accent</item>-->
+        <item
+            name="android:statusBarColor">@android:color/transparent</item>
+        <item
+            name="android:textAllCaps">false</item>
+		<item
+			name="android:windowAnimationStyle">@null</item>
+        <item
+            name="android:windowBackground">@drawable/splash</item>
+		<item
+            name="android:windowLightStatusBar">false</item>
+        <!--<item
+            name="android:windowDrawsSystemBarBackgrounds">true</item>-->
+	</style>
+	<style
+		name  ="Theme.DroidTest.AlertDialog"
+		parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item
+            name="colorAccent">?attr/app_color_accent</item>
+		<item
+			name="android:textColorPrimary">?attr/app_color_textBase</item>
+	</style>
+</resources>

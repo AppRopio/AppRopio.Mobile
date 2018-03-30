@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/app_drawer_layout_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <View
+            style="@style/app_basket_delivery_on_address_status_bar"
+            android:id="@+id/app_basket_delivery_on_address_status_bar_background"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" />
+        <android.support.v7.widget.Toolbar
+            style="@style/app_basket_delivery_on_address_toolbar"
+            android:id="@+id/app_basket_delivery_on_address_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/app_basket_delivery_on_address_toolbar_theme"
+            app:titleTextAppearance="@style/app_basket_delivery_on_address_toolbar_title" />
+    </android.support.design.widget.AppBarLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <mvvmcross.droid.support.v7.recyclerview.MvxRecyclerView
+            android:id="@+id/app_basket_delivery_on_address_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/app_basket_delivery_on_address_buttonLayout"
+            app:MvxBind="ItemsSource AddressFieldsItems; ItemClick SelectionChangedCommand; Visibility Visibility(AddressFieldsItems.Count)" />
+        <LinearLayout
+            android:id="@+id/app_basket_delivery_on_address_buttonLayout"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+            <Button
+                style="@style/app_basket_delivery_on_address_button"
+                android:id="@+id/app_basket_delivery_on_address_button"
+                app:MvxBind="Click NextCommand; Enabled CanGoNext; Visibility Visibility(AddressFieldsItems.Count);" />
+        </LinearLayout>
+        <include
+            layout="@layout/app_base_loading" />
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

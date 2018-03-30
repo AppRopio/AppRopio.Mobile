@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/app_products_productCard_title_height">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/app_products_productCard_arrow"
+            android:paddingLeft="@dimen/app_products_productCard_horizontalMargins">
+            <TextView
+                style="@style/app_products_productCard_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                app:MvxBind="Text Name" />
+            <TextView
+                style="@style/app_products_productCard_picker_spinner_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:MvxBind="Text ValueName; Visibility Visibility(ValueName)" />
+        </LinearLayout>
+        <ImageView
+            style="@style/app_products_productCard_arrow"
+            android:id="@+id/app_products_productCard_arrow"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <View
+        style="@style/AppRopioTheme.Control.Separator" />
+</LinearLayout>

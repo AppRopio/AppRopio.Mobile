@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <attr
+        name="app_filters_sort_ic_item_check"
+        format="reference"/>
+    <attr
+        name="app_filters_filters_ic_arrow"
+        format="reference"/>
+    <attr
+        name="app_filters_filters_color_ic_checkImage"
+        format="reference"/>
+    <attr
+        name="app_filters_filters_ic_cross"
+        format="reference"/>
+</resources>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2567456C-1009-4EA0-8444-D0B1D3344569}</ProjectGuid>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>AppRopio.Base.Settings.Core</RootNamespace>
+    <AssemblyName>AppRopio.Base.Settings.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile151</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\Settings\ISettingsViewModel.cs" />
+    <Compile Include="ViewModels\Settings\SettingsViewModel.cs" />
+    <Compile Include="ViewModels\Services\SettingsVmService.cs" />
+    <Compile Include="ViewModels\Services\ISettingsVmService.cs" />
+    <Compile Include="App.cs" />
+    <Compile Include="Services\Implementation\SettingsRouterSubscriber.cs" />
+    <Compile Include="SettingsConstants.cs" />
+    <Compile Include="PluginLoader.cs" />
+    <Compile Include="Models\SettingsConfig.cs" />
+    <Compile Include="Services\Implementation\SettingsConfigService.cs" />
+    <Compile Include="Services\ISettingsConfigService.cs" />
+    <Compile Include="Models\SettingsElement.cs" />
+    <Compile Include="Models\SettingsType.cs" />
+    <Compile Include="ViewModels\Items\Switch\ISettingsSwitchVm.cs" />
+    <Compile Include="ViewModels\Items\ISettingsItemVm.cs" />
+    <Compile Include="ViewModels\Items\Switch\SettingsSwitchVm.cs" />
+    <Compile Include="ViewModels\Items\SettingsItemVm.cs" />
+    <Compile Include="ViewModels\Items\Picker\ISettingsPickerVm.cs" />
+    <Compile Include="ViewModels\Items\Picker\SettingsPickerVm.cs" />
+    <Compile Include="ViewModels\Regions\RegionsViewModel.cs" />
+    <Compile Include="ViewModels\Regions\IRegionsViewModel.cs" />
+    <Compile Include="ViewModels\Regions\Items\RegionItemVm.cs" />
+    <Compile Include="ViewModels\Regions\Items\IRegionItemVm.cs" />
+    <Compile Include="ViewModels\Messages\SettingsReloadMessage.cs" />
+    <Compile Include="Models\Bundle\SettingsPickerBundle.cs" />
+    <Compile Include="ViewModels\Regions\Items\RegionGroupItemVm.cs" />
+    <Compile Include="ViewModels\Regions\Items\IRegionGroupItemVm.cs" />
+    <Compile Include="Services\IRegionService.cs" />
+    <Compile Include="Services\Implementation\RegionService.cs" />
+    <Compile Include="Services\ISettingsVmNavigationService.cs" />
+    <Compile Include="Services\Implementation\SettingsVmNavigationService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\Newtonsoft.Json.10.0.3\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings.Abstractions">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\Xam.Plugins.Settings.3.1.1\lib\netstandard1.0\Plugin.Settings.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\Xam.Plugins.Settings.3.1.1\lib\netstandard1.0\Plugin.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Platform">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Platform.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Core">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Core.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Binding">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Binding.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Localization">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Messenger">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Plugin.Messenger.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Plugins.Messenger.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+    <Folder Include="ViewModels\Settings\" />
+    <Folder Include="ViewModels\Services\" />
+    <Folder Include="Services\" />
+    <Folder Include="Services\Implementation\" />
+    <Folder Include="Models\" />
+    <Folder Include="ViewModels\Items\" />
+    <Folder Include="ViewModels\Items\Switch\" />
+    <Folder Include="ViewModels\Items\Picker\" />
+    <Folder Include="ViewModels\Regions\" />
+    <Folder Include="ViewModels\Regions\Items\" />
+    <Folder Include="Models\Bundle\" />
+    <Folder Include="ViewModels\Messages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\AppRopio.Base.Core.csproj">
+      <Project>{EA6D5113-1E80-494B-886D-3D7FDFA04E99}</Project>
+      <Name>AppRopio.Base.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\API\AppRopio.Base.API.csproj">
+      <Project>{124841B9-39F6-44B5-8B96-50183FBFE341}</Project>
+      <Name>AppRopio.Base.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Settings\AppRopio.Models.Settings.csproj">
+      <Project>{E26E8E61-01AB-4D1C-88A8-FE57A0287A67}</Project>
+      <Name>AppRopio.Models.Settings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\API\AppRopio.Base.Settings.API.csproj">
+      <Project>{BF38EC97-5E5F-42BE-959A-05620DC0E5F1}</Project>
+      <Name>AppRopio.Base.Settings.API</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+</Project>

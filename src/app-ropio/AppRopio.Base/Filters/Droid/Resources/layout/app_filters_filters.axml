@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <mvvmcross.droid.support.v7.recyclerview.MvxRecyclerView
+        android:id="@+id/app_filters_filters_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/app_filters_filters_button"
+        app:MvxBind="ItemsSource Items; ItemClick SelectionChangedCommand" />
+    <Button
+        style="@style/app_filters_filters_button"
+        android:id="@+id/app_filters_filters_button"
+        android:layout_alignParentBottom="true"
+        app:MvxBind="Click ApplyCommand; Visibility Visibility(Items.Count);" />
+    <include
+        layout="@layout/app_base_loading" />
+</RelativeLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/app_products_productCard_multiSelection_item_height"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp">
+    <TextView
+        style="@style/app_products_productCard_multiSelection_text"
+        android:id="@+id/app_products_productCard_multiSelection_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:minHeight="@dimen/app_products_productCard_multiSelection_item_text_minHeight"
+        android:paddingLeft="@dimen/app_products_productCard_horizontalMargins"
+        android:paddingRight="@dimen/app_products_productCard_multiSelection_text_paddingRight"
+        android:background="@drawable/app_products_productCard_multiSelection_text"
+        app:MvxBind="Text ValueName" />
+    <ImageView
+        style="@style/app_products_productCard_cross"
+        android:id="@+id/app_products_productCard_cross"
+        android:layout_marginRight="@dimen/app_products_productCard_multiSelection_image_paddingRight"
+        android:layout_alignRight="@+id/app_products_productCard_multiSelection_text"
+        android:layout_centerVertical="true" />
+</RelativeLayout>

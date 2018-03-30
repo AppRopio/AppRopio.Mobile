@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardUseCompatPadding="true"
+    app:cardElevation="@dimen/app_products_catalog_item_elevation"
+    app:cardBackgroundColor="@color/app_products_catalog_item_background"
+    app:cardCornerRadius="@dimen/app_products_catalog_item_cornerRadius">
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <appropio.base.droid.controls.ARImageView
+            style="@style/app_products_catalog_item_image"
+            android:id="@+id/app_products_catalog_item_image"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:MvxBind="ImageUrl ImageUrl" />
+        <mvvmcross.binding.droid.views.MvxLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/app_products_catalog_item_image"
+            app:layout_constraintBottom_toBottomOf="@+id/app_products_catalog_item_image"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:MvxItemTemplate="@layout/app_products_catalog_item_badges_item"
+            app:MvxBind="ItemsSource Badges" />
+        <Button
+            style="@style/app_products_catalog_item_markButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:MvxBind="Click MarkCommand; Visibility Visibility(MarkEnabled); Selected Marked" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/app_products_catalog_item_name_marginTop"
+            android:layout_marginBottom="@dimen/app_products_catalog_item_price_marginBottom"
+            app:layout_constraintTop_toBottomOf="@+id/app_products_catalog_item_image"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+            <TextView
+                style="@style/app_products_catalog_item_name"
+                android:id="@+id/app_products_catalog_item_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/app_products_catalog_item_horizontalMargin"
+                android:layout_marginRight="@dimen/app_products_catalog_item_horizontalMargin"
+                android:layout_marginBottom="@dimen/app_products_catalog_item_oldPrice_marginTop"
+                app:MvxBind="Text Name" />
+            <TextView
+                style="@style/app_products_catalog_item_oldPrice"
+                android:id="@+id/app_products_catalog_item_oldPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/app_products_catalog_item_horizontalMargin"
+                android:layout_marginRight="@dimen/app_products_catalog_item_horizontalMargin"
+                app:MvxBind="Text PriceUnit(OldPrice, UnitNameOld); Visibility Visibility(OldPrice)" />
+            <TextView
+                style="@style/app_products_catalog_item_price"
+                android:id="@+id/app_products_catalog_item_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/app_products_catalog_item_price_marginTop"
+                android:layout_marginLeft="@dimen/app_products_catalog_item_horizontalMargin"
+                android:layout_marginRight="@dimen/app_products_catalog_item_horizontalMargin"
+                app:MvxBind="Text PriceUnit(Price, UnitName)" />
+        </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>

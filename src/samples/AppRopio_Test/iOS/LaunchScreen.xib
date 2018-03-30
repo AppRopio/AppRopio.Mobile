@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LauchImage" translatesAutoresizingMaskIntoConstraints="NO" id="rQj-9w-Gfq">
+                    <rect key="frame" x="151" y="287.5" width="73" height="92"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="92" id="4wc-XB-LzD"/>
+                        <constraint firstAttribute="width" constant="73" id="7fq-0v-9JU"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="0.83529411764705885" blue="0.20784313725490194" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="rQj-9w-Gfq" firstAttribute="centerX" secondItem="1" secondAttribute="centerX" id="48t-ub-hEV"/>
+                <constraint firstItem="rQj-9w-Gfq" firstAttribute="centerY" secondItem="1" secondAttribute="centerY" id="5gp-0s-C2w"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="LauchImage" width="73" height="92"/>
+    </resources>
+</document>

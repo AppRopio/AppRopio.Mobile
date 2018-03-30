@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ThanksOrderViewController">
+            <connections>
+                <outlet property="CatalogButton" destination="r3R-2o-3YQ" id="li3-gP-qds"/>
+                <outlet property="CloseButton" destination="9rk-ui-p2w" id="X3f-AT-w2V"/>
+                <outlet property="ContinueLabel" destination="yez-by-vHk" id="4nd-eu-v68"/>
+                <outlet property="OrderNumberLabel" destination="nPm-Re-UjJ" id="f4s-nY-lME"/>
+                <outlet property="TitleLabel" destination="T2i-ZO-QF2" id="BU1-u9-8hW"/>
+                <outlet property="_image" destination="664-fU-reQ" id="1vU-Db-U5d"/>
+                <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="2">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Спасибо за заказ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2i-ZO-QF2" customClass="ARLabel">
+                    <rect key="frame" x="117.66666666666667" y="328" width="140.33333333333331" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="№12345678321" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPm-Re-UjJ" customClass="ARLabel">
+                    <rect key="frame" x="16" y="359" width="343" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Хотите продолжить покупки?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yez-by-vHk" customClass="ARLabel">
+                    <rect key="frame" x="16" y="380" width="343" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3R-2o-3YQ">
+                    <rect key="frame" x="16" y="714" width="343" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="ffg-0Z-gLi"/>
+                    </constraints>
+                    <state key="normal" title="ПЕРЕЙТИ В КАТАЛОГ"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9rk-ui-p2w">
+                    <rect key="frame" x="343" y="56" width="16" height="22"/>
+                    <state key="normal" image="Images/Thanks/close.png"/>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="664-fU-reQ">
+                    <rect key="frame" x="0.0" y="113" width="375" height="211"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="664-fU-reQ" secondAttribute="height" multiplier="16:9" id="1Nd-ed-KFT"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="9rk-ui-p2w" firstAttribute="top" secondItem="2" secondAttribute="topMargin" constant="12" id="4Nf-Ew-AH3"/>
+                <constraint firstItem="nPm-Re-UjJ" firstAttribute="leading" secondItem="2" secondAttribute="leadingMargin" id="FW3-gs-4OS"/>
+                <constraint firstAttribute="trailingMargin" secondItem="nPm-Re-UjJ" secondAttribute="trailing" id="GEU-oo-DyE"/>
+                <constraint firstAttribute="trailingMargin" secondItem="yez-by-vHk" secondAttribute="trailing" id="HLH-c3-f2f"/>
+                <constraint firstItem="664-fU-reQ" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="I27-18-0Bo"/>
+                <constraint firstItem="664-fU-reQ" firstAttribute="top" secondItem="9rk-ui-p2w" secondAttribute="bottom" constant="35" id="K0v-vr-glv"/>
+                <constraint firstAttribute="trailing" secondItem="r3R-2o-3YQ" secondAttribute="trailing" constant="16" id="Lg4-vJ-7dy"/>
+                <constraint firstItem="T2i-ZO-QF2" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" id="MsT-8x-4ul"/>
+                <constraint firstItem="yez-by-vHk" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" id="NTq-Ez-lZR"/>
+                <constraint firstItem="yez-by-vHk" firstAttribute="leading" secondItem="2" secondAttribute="leadingMargin" id="Pa2-s5-oir"/>
+                <constraint firstItem="T2i-ZO-QF2" firstAttribute="top" secondItem="664-fU-reQ" secondAttribute="bottom" constant="4" id="T0C-GD-J1L"/>
+                <constraint firstItem="nPm-Re-UjJ" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" id="TBH-XG-akg"/>
+                <constraint firstItem="r3R-2o-3YQ" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" id="Vc8-dM-m4h"/>
+                <constraint firstItem="r3R-2o-3YQ" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="16" id="ZZP-hG-7cl"/>
+                <constraint firstItem="nPm-Re-UjJ" firstAttribute="top" secondItem="T2i-ZO-QF2" secondAttribute="bottom" constant="10" id="dXC-Ya-X6O"/>
+                <constraint firstAttribute="trailing" secondItem="664-fU-reQ" secondAttribute="trailing" id="dvW-EN-Fmp"/>
+                <constraint firstAttribute="trailing" secondItem="9rk-ui-p2w" secondAttribute="trailing" constant="16" id="hWL-7z-Q4g"/>
+                <constraint firstItem="yez-by-vHk" firstAttribute="top" secondItem="nPm-Re-UjJ" secondAttribute="bottom" id="iMq-Zj-Cbp"/>
+                <constraint firstAttribute="bottomMargin" secondItem="r3R-2o-3YQ" secondAttribute="bottom" constant="16" id="jPT-CS-mQs"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Images/Thanks/close.png" width="16" height="16"/>
+    </resources>
+</document>

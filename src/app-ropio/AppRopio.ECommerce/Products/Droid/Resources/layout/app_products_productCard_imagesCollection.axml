@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <appropio.base.droid.controls.ARViewPager
+        android:id="@+id/app_products_productCard_imagesCollection_items"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:MvxItemTemplate="@layout/app_products_productcard_imagescollection_item"
+        app:MvxBind="ItemsSource ImagesUrls; Visibility Visibility(ImagesUrls)" />
+</android.support.constraint.ConstraintLayout>

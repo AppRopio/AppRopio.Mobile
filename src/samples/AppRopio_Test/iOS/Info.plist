@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleName</key>
+	<string>AppRopio</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.notissimus.appropiotest</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0.3</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>UIDeviceFamily</key>
+	<array>
+		<integer>1</integer>
+	</array>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>XSAppIconAssets</key>
+	<string>Assets.xcassets/AppIcons.appiconset</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
+	<key>NSLocationUsageDescription</key>
+	<string>Мы не передаем данные о вашей локации третьим лицам и используем их для вашего удобства</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Мы не передаем данные о вашей локации третьим лицам и используем их для вашего удобства</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Мы не передаем данные о вашей локации третьим лицам и используем их для вашего удобства</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>OPENSANS-BOLD.TTF</string>
+		<string>OPENSANS-LIGHT.TTF</string>
+		<string>OPENSANS-REGULAR.TTF</string>
+		<string>OPENSANS-SEMIBOLD.TTF</string>
+	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>MinimumOSVersion</key>
+	<string>10.0</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>vk5922486</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb194282917726995</string>
+			</array>
+		</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>194282917726995</string>
+	<key>FacebookDisplayName</key>
+	<string>AppRopio</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
+		<string>vk</string>
+		<string>vk-share</string>
+		<string>vkauthorize</string>
+	</array>
+	<key>VkAppID</key>
+	<string>5922486</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<string>No</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Мы не передаем данные о вашей локации третьим лицам и используем их для вашего удобства</string>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Необходимо для корректной работы приложения</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Дадим выбрать любой номер телефона, при оформлении заказа ;)</string>
+	<key>CFBundleVersion</key>
+	<string>0</string>
+</dict>
+</plist>

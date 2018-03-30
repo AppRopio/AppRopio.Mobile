@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{717297CF-D3BD-498C-978A-C565C7E447D5}</ProjectGuid>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>AppRopio.Base.Auth.Core</RootNamespace>
+    <AssemblyName>AppRopio.Base.Auth.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile151</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\Auth\IAuthViewModel.cs" />
+    <Compile Include="ViewModels\Auth\AuthViewModel.cs" />
+    <Compile Include="Services\IOAuthService.cs" />
+    <Compile Include="Models\OAuth\OAuthProfile.cs" />
+    <Compile Include="Models\OAuth\OAuthType.cs" />
+    <Compile Include="Models\_base\Session.cs" />
+    <Compile Include="AuthSettings.cs" />
+    <Compile Include="AuthConst.cs" />
+    <Compile Include="PluginLoader.cs" />
+    <Compile Include="App.cs" />
+    <Compile Include="Services\IAuthConfigService.cs" />
+    <Compile Include="Services\Implementation\AuthConfigService.cs" />
+    <Compile Include="Models\Config\AuthConfig.cs" />
+    <Compile Include="ViewModels\SignIn\ISignInViewModel.cs" />
+    <Compile Include="ViewModels\SignIn\SignInViewModel.cs" />
+    <Compile Include="ViewModels\SignIn\Services\ISignInVmService.cs" />
+    <Compile Include="ViewModels\SignUp\ISignUpViewModel.cs" />
+    <Compile Include="ViewModels\SignIn\Services\SignInVmService.cs" />
+    <Compile Include="ViewModels\SignUp\SignUpViewModel.cs" />
+    <Compile Include="Models\_base\SessionFinishReason.cs" />
+    <Compile Include="Models\_base\SessionInstance.cs" />
+    <Compile Include="Services\ISessionService.cs" />
+    <Compile Include="Services\Implementation\SessionService.cs" />
+    <Compile Include="Messages\Session\UserInfoChangedMessage.cs" />
+    <Compile Include="Models\UserType\UserType.cs" />
+    <Compile Include="Messages\Session\UserTypeChangedMessage.cs" />
+    <Compile Include="Formatters\PhoneNumberFormatter.cs" />
+    <Compile Include="ViewModels\Password\Reset\Main\IResetPasswordViewModel.cs" />
+    <Compile Include="ViewModels\Password\Reset\Main\ResetPasswordViewModel.cs" />
+    <Compile Include="ViewModels\Password\Reset\Sms\IResetPasswordSmsViewModel.cs" />
+    <Compile Include="ViewModels\Password\Reset\Sms\ResetPasswordSmsViewModel.cs" />
+    <Compile Include="Models\Bundle\ResetSmsBundle.cs" />
+    <Compile Include="ViewModels\Password\New\IPasswordNewViewModel.cs" />
+    <Compile Include="ViewModels\Password\New\PasswordNewViewModel.cs" />
+    <Compile Include="ViewModels\SignUp\Services\ISignUpVmService.cs" />
+    <Compile Include="ViewModels\SignUp\Services\SignUpVmService.cs" />
+    <Compile Include="ViewModels\Password\Reset\Main\Services\IResetPasswordVmService.cs" />
+    <Compile Include="ViewModels\Password\Reset\Main\Services\ResetPasswordVmService.cs" />
+    <Compile Include="Extentions\SocialTypeExtentions.cs" />
+    <Compile Include="ViewModels\Password\Reset\Sms\Services\IResetPasswordSmsVmService.cs" />
+    <Compile Include="ViewModels\Password\Reset\Sms\Services\ResetPasswordSmsVmService.cs" />
+    <Compile Include="ViewModels\Password\New\Services\IPasswordNewVmService.cs" />
+    <Compile Include="ViewModels\Password\New\Services\PasswordNewVmService.cs" />
+    <Compile Include="ViewModels\Thanks\IThanksViewModel.cs" />
+    <Compile Include="ViewModels\Thanks\ThanksViewModel.cs" />
+    <Compile Include="ViewModels\Auth\Services\IAuthVmService.cs" />
+    <Compile Include="ViewModels\Auth\Services\AuthVmService.cs" />
+    <Compile Include="ViewModels\_base\IAuthBaseViewModel.cs" />
+    <Compile Include="ViewModels\_base\AuthBaseViewModel.cs" />
+    <Compile Include="Services\IAuthNavigationVmService.cs" />
+    <Compile Include="Services\Implementation\AuthNavigationVmService.cs" />
+    <Compile Include="Models\Registration\RegistrationField.cs" />
+    <Compile Include="ViewModels\SignUp\Items\ISignUpItemBaseViewModel.cs" />
+    <Compile Include="ViewModels\SignUp\Items\SignUpItemBaseViewModel.cs" />
+    <Compile Include="Messages\Registration\RegistrationItemTextChangedMessage.cs" />
+    <Compile Include="ViewModels\SignUp\Items\SignUpItemPickerViewModel.cs" />
+    <Compile Include="ViewModels\SignUp\Items\SignUpItemDatePickerViewModel.cs" />
+    <Compile Include="ViewModels\SignUp\Services\ISignUpItemFactoryService.cs" />
+    <Compile Include="ViewModels\SignUp\Services\SignUpItemFactoryService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\API\AppRopio.Base.Auth.API.csproj">
+      <Project>{4A505153-08D4-4269-B753-21EEC043FDD4}</Project>
+      <Name>AppRopio.Base.Auth.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\AppRopio.Base.Core.csproj">
+      <Project>{EA6D5113-1E80-494B-886D-3D7FDFA04E99}</Project>
+      <Name>AppRopio.Base.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\API\AppRopio.Base.API.csproj">
+      <Project>{124841B9-39F6-44B5-8B96-50183FBFE341}</Project>
+      <Name>AppRopio.Base.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Auth\AppRopio.Models.Auth.csproj">
+      <Project>{EEBE1C14-C1C6-45B0-BD83-260151D97DDD}</Project>
+      <Name>AppRopio.Models.Auth</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+    <Folder Include="ViewModels\Auth\" />
+    <Folder Include="ViewModels\_base\" />
+    <Folder Include="Models\" />
+    <Folder Include="Services\" />
+    <Folder Include="Models\_base\" />
+    <Folder Include="Models\OAuth\" />
+    <Folder Include="Services\Implementation\" />
+    <Folder Include="Models\Config\" />
+    <Folder Include="ViewModels\SignIn\" />
+    <Folder Include="ViewModels\SignUp\" />
+    <Folder Include="ViewModels\SignIn\Services\" />
+    <Folder Include="Messages\" />
+    <Folder Include="Messages\Session\" />
+    <Folder Include="Models\UserType\" />
+    <Folder Include="ViewModels\SignUp\Services\" />
+    <Folder Include="Formatters\" />
+    <Folder Include="ViewModels\Password\" />
+    <Folder Include="ViewModels\Password\Reset\" />
+    <Folder Include="ViewModels\Password\New\" />
+    <Folder Include="ViewModels\Password\Reset\Sms\" />
+    <Folder Include="ViewModels\Password\Reset\Main\" />
+    <Folder Include="Models\Bundle\" />
+    <Folder Include="ViewModels\Password\Reset\Main\Services\" />
+    <Folder Include="Extentions\" />
+    <Folder Include="ViewModels\Password\Reset\Sms\Services\" />
+    <Folder Include="ViewModels\Password\New\Services\" />
+    <Folder Include="ViewModels\Thanks\" />
+    <Folder Include="ViewModels\Auth\Services\" />
+    <Folder Include="Models\Registration\" />
+    <Folder Include="ViewModels\SignUp\Items\" />
+    <Folder Include="Messages\Registration\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\Newtonsoft.Json.10.0.3\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings.Abstractions">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\Xam.Plugins.Settings.3.1.1\lib\netstandard1.0\Plugin.Settings.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\Xam.Plugins.Settings.3.1.1\lib\netstandard1.0\Plugin.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Platform">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Platform.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Core">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Core.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Binding">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Binding.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Localization">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Messenger">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Plugin.Messenger.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Plugins.Messenger.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Share">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Plugin.Share.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Plugins.Share.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+</Project>

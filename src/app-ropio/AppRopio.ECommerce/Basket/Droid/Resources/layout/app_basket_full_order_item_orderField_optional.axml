@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_basket_full_order_optional_item_height"
+        android:paddingLeft="@dimen/app_basket_full_order_item_horizontalMargin"
+        android:paddingRight="@dimen/app_basket_full_order_item_horizontalMargin">
+        <TextView
+            style="@style/app_basket_full_order_item_optional_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            app:MvxBind="Text Name" />
+        <android.support.v7.widget.SwitchCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            app:MvxBind="Checked Expanded" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/app_basket_full_order_user_item_height"
+        android:paddingTop="@dimen/app_basket_full_order_item_input_verticalMargin"
+        android:paddingBottom="@dimen/app_basket_full_order_item_input_verticalMargin"
+        android:paddingLeft="@dimen/app_basket_full_order_item_input_horizontalMargin"
+        android:paddingRight="@dimen/app_basket_full_order_item_input_horizontalMargin"
+        app:MvxBind="Visibility Visibility(Expanded)">
+        <EditText
+            style="@style/app_basket_multiline_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:MvxBind="Text Value" />
+    </RelativeLayout>
+</LinearLayout>

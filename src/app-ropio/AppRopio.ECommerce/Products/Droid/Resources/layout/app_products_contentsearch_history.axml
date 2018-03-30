@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:MvxBind="Visibility Visibility(HistoryVisible)">
+    <mvvmcross.binding.droid.views.MvxListView
+        style="@style/app_products_contentsearch_history_items"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/app_products_contentsearch_history_clearButton"
+        app:MvxItemTemplate="@layout/app_products_contentsearch_history_item"
+        app:MvxBind="ItemsSource HistoryItems; ItemClick HistorySelectionCommand" />
+    <Button
+        style="@style/app_products_contentsearch_history_clearButton"
+        android:id="@+id/app_products_contentsearch_history_clearButton"
+        android:layout_alignParentBottom="true"
+        app:MvxBind="Click ClearHistoryCommand; Visibility Visibility(HistoryItems)" />
+</RelativeLayout>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{19D459DF-4188-4F2B-BC76-CE7C4A459A9D}</ProjectGuid>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>AppRopio.Base.Filters.Core</RootNamespace>
+    <AssemblyName>AppRopio.Base.Filters.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile151</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FiltersConstants.cs" />
+    <Compile Include="Messages\FiltersChangedMessage.cs" />
+    <Compile Include="Messages\SortChangedMessage.cs" />
+    <Compile Include="Models\FiltersConfig.cs" />
+    <Compile Include="Models\Bundle\FiltersBundle.cs" />
+    <Compile Include="Models\Bundle\SelectionBundle.cs" />
+    <Compile Include="Models\Bundle\SortBundle.cs" />
+    <Compile Include="Services\IFiltersConfigService.cs" />
+    <Compile Include="Services\IFiltersNavigationVmService.cs" />
+    <Compile Include="PluginLoader.cs" />
+    <Compile Include="App.cs" />
+    <Compile Include="ViewModels\Filters\FiltersViewModel.cs" />
+    <Compile Include="ViewModels\Filters\IFiltersViewModel.cs" />
+    <Compile Include="ViewModels\Filters\Items\Collection\BaseCollectionFiVm.cs" />
+    <Compile Include="ViewModels\Filters\Items\Collection\Horizontal\HorizontalCollectionFiVm.cs" />
+    <Compile Include="ViewModels\Filters\Items\Collection\Horizontal\IHorizontalCollectionFiVm.cs" />
+    <Compile Include="ViewModels\Filters\Items\Collection\IBaseCollectionFiVm.cs" />
+    <Compile Include="ViewModels\Filters\Items\Collection\Items\CollectionItemVM.cs" />
+    <Compile Include="ViewModels\Filters\Items\Collection\Vertical\IVerticalCollectionFiVm.cs" />
+    <Compile Include="ViewModels\Filters\Items\Collection\Vertical\VerticalCollectionFiVm.cs" />
+    <Compile Include="ViewModels\Filters\Items\FiltersItemVm.cs" />
+    <Compile Include="ViewModels\Filters\Items\IFiltersItemVM.cs" />
+    <Compile Include="ViewModels\Filters\Items\ISelectableFilterItemVM.cs" />
+    <Compile Include="ViewModels\Filters\Items\MinMax\BaseMinMaxFiVm.cs" />
+    <Compile Include="ViewModels\Filters\Items\MinMax\Date\DateMinMaxFiVm.cs" />
+    <Compile Include="ViewModels\Filters\Items\MinMax\Date\IDateMinMaxFiVm.cs" />
+    <Compile Include="ViewModels\Filters\Items\MinMax\IBaseMinMaxFiVm.cs" />
+    <Compile Include="ViewModels\Filters\Items\MinMax\Number\INumberMinMaxFiVm.cs" />
+    <Compile Include="ViewModels\Filters\Items\MinMax\Number\NumberMinMaxFiVm.cs" />
+    <Compile Include="ViewModels\Filters\Items\Picker\IPickerFiVm.cs" />
+    <Compile Include="ViewModels\Filters\Items\Picker\Items\PickerCollectionItemVM.cs" />
+    <Compile Include="ViewModels\Filters\Items\Picker\PickerFiVm.cs" />
+    <Compile Include="ViewModels\Filters\Items\Selection\BaseSelectionFiVm.cs" />
+    <Compile Include="ViewModels\Filters\Items\Selection\IBaseSelectionFiVm.cs" />
+    <Compile Include="ViewModels\Filters\Items\Selection\MultiSelection\IMultiSelectionFiVm.cs" />
+    <Compile Include="ViewModels\Filters\Items\Selection\MultiSelection\Items\MultiCollectionItemVm.cs" />
+    <Compile Include="ViewModels\Filters\Items\Selection\MultiSelection\MultiSelectionFiVm.cs" />
+    <Compile Include="ViewModels\Filters\Items\Selection\OneSelection\IOneSelectionFiVm.cs" />
+    <Compile Include="ViewModels\Filters\Items\Selection\OneSelection\OneSelectionFiVm.cs" />
+    <Compile Include="ViewModels\Filters\Messages\FiltersReloadWhenValueChangedMessage.cs" />
+    <Compile Include="ViewModels\Filters\Messages\FiltersSelectionChangedMessage.cs" />
+    <Compile Include="ViewModels\Filters\Selection\FilterSelectionViewModel.cs" />
+    <Compile Include="ViewModels\Filters\Selection\IFilterSelectionViewModel.cs" />
+    <Compile Include="ViewModels\Filters\Selection\Services\FilterSelectionVmService.cs" />
+    <Compile Include="ViewModels\Filters\Selection\Services\IFilterSelectionVmService.cs" />
+    <Compile Include="ViewModels\Filters\Services\FiltersVmService.cs" />
+    <Compile Include="ViewModels\Filters\Services\IFiltersVmService.cs" />
+    <Compile Include="ViewModels\Sort\ISortViewModel.cs" />
+    <Compile Include="ViewModels\Sort\Items\ISortItemVM.cs" />
+    <Compile Include="ViewModels\Sort\Items\SortItemVM.cs" />
+    <Compile Include="ViewModels\Sort\Services\ISortVmService.cs" />
+    <Compile Include="ViewModels\Sort\Services\SortVmService.cs" />
+    <Compile Include="ViewModels\Sort\SortViewModel.cs" />
+    <Compile Include="Services\Implementation\FiltersNavigationVmService.cs" />
+    <Compile Include="Services\Implementation\FiltersConfigService.cs" />
+    <Compile Include="ViewModels\Filters\Items\Switch\SwitchFiVm.cs" />
+    <Compile Include="ViewModels\Filters\Items\Switch\ISwitchFiVm.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\API\AppRopio.Base.Filters.API.csproj">
+      <Project>{7C9F9E3E-A1BE-46B1-8DAE-65E829E6B0EE}</Project>
+      <Name>AppRopio.Base.Filters.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\AppRopio.Base.Core.csproj">
+      <Project>{EA6D5113-1E80-494B-886D-3D7FDFA04E99}</Project>
+      <Name>AppRopio.Base.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\API\AppRopio.Base.API.csproj">
+      <Project>{124841B9-39F6-44B5-8B96-50183FBFE341}</Project>
+      <Name>AppRopio.Base.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Filters\AppRopio.Models.Filters.csproj">
+      <Project>{F538DE02-55D4-4F2F-9144-A94F70EB652A}</Project>
+      <Name>AppRopio.Models.Filters</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Messages\" />
+    <Folder Include="Models\" />
+    <Folder Include="Models\Bundle\" />
+    <Folder Include="Services\" />
+    <Folder Include="Services\Implementation\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="ViewModels\Filters\" />
+    <Folder Include="ViewModels\Sort\" />
+    <Folder Include="ViewModels\Filters\Items\Switch\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\Newtonsoft.Json.10.0.3\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Platform">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Platform.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Core">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Core.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Binding">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Binding.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Localization">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Messenger">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Plugin.Messenger.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Plugins.Messenger.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+</Project>

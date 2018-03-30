@@ -1,0 +1,30 @@
+﻿{
+    "categoriesType": 3,
+    "basket": {
+        "addToCart": {
+            "typeName": "AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard.IBasketProductCardViewModel",
+            "assemblyName": "AppRopio.ECommerce.Basket.Core"
+        },
+        "cartIndicator": {
+            "typeName": "AppRopio.ECommerce.Basket.Core.ViewModels.CartIndicator.IBasketCartIndicatorViewModel",
+            "assemblyName": "AppRopio.ECommerce.Basket.Core"
+        }
+    },
+    "header": {
+        "typeName": "AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Header.CatalogSortFiltersHeaderVM",
+        "assemblyName": "AppRopio.ECommerce.Products.Core"
+    },
+    "markedEnabled": true,
+    "unitNameEnabled": true,
+    "productDetails": {
+        "customTypes": [
+            {
+                "name": "reviews",
+                "assembly": {
+                    "typeName": "AppRopio.Feedback.Core.ViewModels.Reviews.IReviewsViewModel",
+                    "assemblyName": "AppRopio.Feedback.Core"
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document
+	type                 ="com.apple.InterfaceBuilder3.CocoaTouch.XIB"
+	version              ="3.0"
+	toolsVersion         ="12121"
+	systemVersion        ="16G29"
+	targetRuntime        ="iOS.CocoaTouch"
+	propertyAccessControl="none"
+	useAutolayout        ="YES"
+	useTraitCollections  ="YES"
+	colorMatched         ="YES">
+	<device
+		id         ="retina4_0"
+		orientation="portrait">
+		<adaptation
+			id="fullscreen" />
+	</device>
+	<dependencies>
+		<deployment
+			identifier="iOS" />
+		<plugIn
+			identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin"
+			version   ="12089" />
+		<capability
+			name           ="documents saved in the Xcode 8 format"
+			minToolsVersion="8.0" />
+	</dependencies>
+	<objects>
+		<placeholder
+			placeholderIdentifier="IBFilesOwner"
+			id                   ="-1"
+			userLabel            ="File's Owner" />
+		<placeholder
+			placeholderIdentifier="IBFirstResponder"
+			id                   ="-2"
+			customClass          ="UIResponder" />
+		<collectionViewCell
+			opaque              ="NO"
+			clipsSubviews       ="YES"
+			multipleTouchEnabled="YES"
+			contentMode         ="center"
+			id                  ="cZE-iV-UFb"
+			customClass         ="PDHShopsCountCell">
+			<rect
+				key   ="frame"
+				x     ="0.0"
+				y     ="0.0"
+				width ="180"
+				height="163" />
+			<autoresizingMask
+				key         ="autoresizingMask"
+				flexibleMaxX="YES"
+				flexibleMinY="YES" />
+			<view
+				key                 ="contentView"
+				opaque              ="NO"
+				clipsSubviews       ="YES"
+				multipleTouchEnabled="YES"
+				contentMode         ="center">
+				<rect
+					key   ="frame"
+					x     ="0.0"
+					y     ="0.0"
+					width ="180"
+					height="163" />
+				<autoresizingMask
+					key="autoresizingMask" />
+				<subviews>
+					<label
+						opaque                                   ="NO"
+						userInteractionEnabled                   ="NO"
+						contentMode                              ="left"
+						horizontalHuggingPriority                ="251"
+						verticalHuggingPriority                  ="252"
+						verticalCompressionResistancePriority    ="751"
+						text                                     ="Магазин «Может быть какой-нибудь такой»"
+						textAlignment                            ="natural"
+						lineBreakMode                            ="tailTruncation"
+						numberOfLines                            ="3"
+						baselineAdjustment                       ="alignBaselines"
+						adjustsFontSizeToFit                     ="NO"
+						translatesAutoresizingMaskIntoConstraints="NO"
+						id                                       ="6a0-Sr-miq"
+						customClass="ARLabel">
+						<rect
+							key   ="frame"
+							x     ="16"
+							y     ="16"
+							width ="148"
+							height="50.5" />
+						<fontDescription
+							key      ="fontDescription"
+							type     ="system"
+							pointSize="14" />
+						<nil
+							key="textColor" />
+						<nil
+							key="highlightedColor" />
+					</label>
+					<label
+						opaque                                   ="NO"
+						userInteractionEnabled                   ="NO"
+						contentMode                              ="left"
+						horizontalHuggingPriority                ="251"
+						verticalCompressionResistancePriority    ="749"
+						textAlignment                            ="natural"
+						lineBreakMode                            ="tailTruncation"
+						numberOfLines                            ="3"
+						baselineAdjustment                       ="alignBaselines"
+						adjustsFontSizeToFit                     ="NO"
+						translatesAutoresizingMaskIntoConstraints="NO"
+						id                                       ="GSa-uU-Roq"
+						customClass="ARLabel">
+						<rect
+							key   ="frame"
+							x     ="16"
+							y     ="74.5"
+							width ="148"
+							height="47.5" />
+						<string
+							key="text">Санкт-Петербург,
+ул. Белградская, д. 45, лит. А</string>
+						<fontDescription
+							key      ="fontDescription"
+							type     ="system"
+							pointSize="13" />
+						<nil
+							key="textColor" />
+						<nil
+							key="highlightedColor" />
+					</label>
+					<label
+						opaque                                   ="NO"
+						userInteractionEnabled                   ="NO"
+						contentMode                              ="left"
+						horizontalHuggingPriority                ="251"
+						verticalHuggingPriority                  ="1000"
+						text                                     ="2 товара"
+						textAlignment                            ="natural"
+						lineBreakMode                            ="tailTruncation"
+						baselineAdjustment                       ="alignBaselines"
+						adjustsFontSizeToFit                     ="NO"
+						translatesAutoresizingMaskIntoConstraints="NO"
+						id                                       ="fvM-zm-zqJ"
+						customClass="ARLabel">
+						<rect
+							key   ="frame"
+							x     ="16"
+							y     ="130"
+							width ="148"
+							height="17" />
+						<fontDescription
+							key      ="fontDescription"
+							type     ="system"
+							pointSize="14" />
+						<nil
+							key="textColor" />
+						<nil
+							key="highlightedColor" />
+					</label>
+				</subviews>
+			</view>
+			<constraints>
+				<constraint
+					firstItem      ="GSa-uU-Roq"
+					firstAttribute ="leading"
+					secondItem     ="cZE-iV-UFb"
+					secondAttribute="leading"
+					constant       ="16"
+					id             ="1SR-Vj-UAL" />
+				<constraint
+					firstItem      ="GSa-uU-Roq"
+					firstAttribute ="top"
+					secondItem     ="6a0-Sr-miq"
+					secondAttribute="bottom"
+					constant       ="8"
+					id             ="4FN-kg-ZmG" />
+				<constraint
+					firstItem      ="6a0-Sr-miq"
+					firstAttribute ="leading"
+					secondItem     ="cZE-iV-UFb"
+					secondAttribute="leading"
+					constant       ="16"
+					id             ="7XC-aR-53D" />
+				<constraint
+					firstItem      ="fvM-zm-zqJ"
+					firstAttribute ="leading"
+					secondItem     ="cZE-iV-UFb"
+					secondAttribute="leading"
+					constant       ="16"
+					id             ="BIY-TU-Nxm" />
+				<constraint
+					firstItem      ="6a0-Sr-miq"
+					firstAttribute ="top"
+					secondItem     ="cZE-iV-UFb"
+					secondAttribute="top"
+					constant       ="16"
+					id             ="Dcb-6F-cwX" />
+				<constraint
+					firstAttribute ="trailing"
+					secondItem     ="GSa-uU-Roq"
+					secondAttribute="trailing"
+					constant       ="16"
+					id             ="FTB-Ha-2Hs" />
+				<constraint
+					firstAttribute ="trailing"
+					secondItem     ="fvM-zm-zqJ"
+					secondAttribute="trailing"
+					constant       ="16"
+					id             ="Wly-8a-uIN" />
+				<constraint
+					firstAttribute ="trailing"
+					secondItem     ="6a0-Sr-miq"
+					secondAttribute="trailing"
+					constant       ="16"
+					id             ="dSL-Yl-I1Z" />
+				<constraint
+					firstItem      ="fvM-zm-zqJ"
+					firstAttribute ="top"
+					secondItem     ="GSa-uU-Roq"
+					secondAttribute="bottom"
+					constant       ="8"
+					id             ="fe3-I3-8HJ" />
+				<constraint
+					firstAttribute ="bottom"
+					secondItem     ="fvM-zm-zqJ"
+					secondAttribute="bottom"
+					constant       ="16"
+					id             ="xpK-lY-ePu" />
+			</constraints>
+			<connections>
+				<outlet
+					property   ="_address"
+					destination="GSa-uU-Roq"
+					id         ="1hf-g3-grL" />
+				<outlet
+					property   ="_count"
+					destination="fvM-zm-zqJ"
+					id         ="nfh-5m-re9" />
+				<outlet
+					property   ="_name"
+					destination="6a0-Sr-miq"
+					id         ="ak9-p3-yug" />
+			</connections>
+		</collectionViewCell>
+	</objects>
+</document>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        style="@style/app_products_productCard_multilineText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/app_products_productCard_horizontalMargins"
+        android:layout_marginRight="@dimen/app_products_productCard_horizontalMargins"
+        android:layout_marginTop="@dimen/app_products_productCard_verticalMargins"
+        android:layout_marginBottom="@dimen/app_products_productCard_verticalMargins"
+        android:text="Lorem ipsum dolor sit amet consectetur adipiscing elit. Suspendisse a dui tincidunt, euismod lorem ut, condimentum eros. Nunc maximus varius risus quis lacinia. Nam cursus consequat ante at pretium. Proin neque enim, pharetra ac odio quis, maximus porta nunc. Morbi pretium tincidunt ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent condimentum tincidunt nibh, et tristique nibh dictum vitae. Ut orci enim, feugiat eu vestibulum a, egestas a tellus. Proin lorem nisi, laoreet a interdum congue, blandit quis sem. Vivamus vitae augue massa. Morbi ullamcorper congue dictum. Fusce tempor risus orci. Nam vel dignissim erat."
+        app:MvxBind="Text Text" />
+    <View
+        style="@style/AppRopioTheme.Control.Separator" />
+</LinearLayout>

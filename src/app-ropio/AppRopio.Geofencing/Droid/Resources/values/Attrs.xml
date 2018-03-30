@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+	<attr name="push_icon" format="reference">@drawable/push_icon</attr>
+	<attr name="push_icon_silhouette" format="reference">@drawable/push_icon_silhouette</attr>
+</resources>

@@ -1,0 +1,31 @@
+﻿﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <script src="https://widget.cloudpayments.ru/bundles/cloudpayments"></script>
+        <script type="text/javascript">
+
+            function pay(p) {
+                var widget = new cp.CloudPayments();
+                widget.charge({ // options
+                publicId: 'test_api_00000000000000000000001',  //id из личного кабинета
+                description: p.description, //назначение
+                amount: p.amount, //сумма
+                currency: 'RUB', //валюта
+                invoiceId: '1233432432', //номер заказа  (необязательно)
+                accountId: 'user@example.com', //идентификатор плательщика (необязательно)
+            },
+            function (options) { // success
+                //действие при успешной оплате
+                alert('paymet success'); //TODO для тестирования
+            },
+            function (reason, options) { // fail
+                //действие при неуспешной оплате
+                alert('paymet failed'); //TODO для тестирования
+            });
+            }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

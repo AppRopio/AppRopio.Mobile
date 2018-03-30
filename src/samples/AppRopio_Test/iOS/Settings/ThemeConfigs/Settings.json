@@ -1,0 +1,19 @@
+﻿{
+    "regions": {
+        "navBarSearch": {
+            "image": {
+                "path": "Images/Settings/Search.png"
+            },
+            "searchBar": {
+                "backgroundColor": {
+                    "ref": "@color/background"
+                },
+                "textField": {
+                    "background": {
+                        "ref": "@color/backgroundSearch"
+                    }
+                }
+            }
+        }
+    }
+}

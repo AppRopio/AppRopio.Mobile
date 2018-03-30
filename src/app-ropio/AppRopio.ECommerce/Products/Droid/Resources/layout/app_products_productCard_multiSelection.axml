@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_products_productCard_title_height">
+        <TextView
+            style="@style/app_products_productCard_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/app_products_productCard_horizontalMargins"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/app_products_productCard_arrow"
+            app:MvxBind="Text Name" />
+        <ImageView
+            style="@style/app_products_productCard_arrow"
+            android:id="@+id/app_products_productCard_arrow"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <HorizontalScrollView
+        style="@style/app_products_productCard_multiSelection_scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_products_productCard_multiSelection_item_height"
+        app:MvxBind="Visibility Visibility(Items.Count)">
+        <appropio.base.droid.controls.ARLinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/app_products_productCard_horizontalMargins"
+            android:paddingRight="@dimen/app_products_productCard_horizontalMargins"
+            app:MvxItemTemplate="@layout/app_products_productcard_multiselection_item"
+            app:MvxBind="ItemsSource Items; ItemClick SelectionChangedCommand" />
+    </HorizontalScrollView>
+    <View
+        style="@style/AppRopioTheme.Control.Separator" />
+</LinearLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/app_products_catalog_sort_filters_header_margins">
+    <Button
+        style="@style/app_products_catalog_sort_filters_header_button"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight=".5"
+        android:layout_marginRight="@dimen/app_products_catalog_sort_filters_header_horizontalPadding"
+        android:text="@string/app_products_catalog_sort_filters_header_filterBtn"
+        app:MvxBind="Click FiltersCommand" />
+    <Button
+        style="@style/app_products_catalog_sort_filters_header_button"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight=".5"
+        android:layout_marginLeft="@dimen/app_products_catalog_sort_filters_header_horizontalPadding"
+        android:text="@string/app_products_catalog_sort_filters_header_sortBtn"
+        app:MvxBind="Click SortCommand" />
+</LinearLayout>

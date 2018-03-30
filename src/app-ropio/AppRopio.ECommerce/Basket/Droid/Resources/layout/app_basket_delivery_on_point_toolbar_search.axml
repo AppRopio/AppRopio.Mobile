@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <View
+        style="@style/app_basket_delivery_on_point_status_bar"
+        android:id="@+id/app_basket_delivery_on_point_status_bar_background"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+    <android.support.v7.widget.Toolbar
+        style="@style/app_basket_delivery_on_point_toolbar"
+        android:id="@+id/app_basket_delivery_on_point_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/app_basket_delivery_on_point_toolbar_theme"
+        app:titleTextAppearance="@style/app_basket_delivery_on_point_toolbar_title" />
+    <android.support.v7.widget.Toolbar
+        style="@style/app_basket_delivery_on_point_toolbar"
+        android:id="@+id/app_basket_delivery_on_point_toolbar_onSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:theme="@style/app_basket_delivery_on_point_toolbar_theme"
+        app:titleTextAppearance="@style/app_basket_delivery_on_point_toolbar_title">
+        <EditText
+            style="@style/app_basket_delivery_on_point_toolbar_onSearch_input"
+            android:id="@+id/app_basket_delivery_on_point_toolbar_onSearch_input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/app_basket_delivery_on_point_toolbar_onSearch_input_hint"
+            android:inputType="text"
+            android:maxLines="1"
+            android:background="@null"
+            app:MvxBind="Text SearchText" />
+    </android.support.v7.widget.Toolbar>
+</android.support.design.widget.AppBarLayout>

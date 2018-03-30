@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/app_basket_full_order_user_item_height"
+    android:paddingLeft="@dimen/app_basket_full_order_item_input_horizontalMargin"
+    android:paddingRight="@dimen/app_basket_full_order_item_input_horizontalMargin">
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_basket_full_order_user_item_inputLayout_height"
+        android:layout_centerVertical="true"
+        android:theme="@style/app_basket_inputLayout"
+        app:errorEnabled="true"
+        app:errorTextAppearance="@style/app_basket_inputLayout_errorTextAppearance"
+        app:hintEnabled="true"
+        app:hintTextAppearance="@style/app_basket_inputLayout_hintTextAppearance"
+        app:MvxBind="Hint Name; Error ErrorFromBoolean(IsValid)">
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:maxLines="1"
+            android:inputType="number"
+            app:MvxBind="PhoneBinding Value" />
+    </android.support.design.widget.TextInputLayout>
+</RelativeLayout>

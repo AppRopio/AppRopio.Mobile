@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string
+		name="library_name">AppRopio.Indie.Products.Droid</string>
+	<string
+		name="app_products_catalog_empty_title">Ничего не найдено</string>
+	<string
+		name="app_products_catalog_empty_subtitle">Попробуйте воспользоваться \nпоиском или каталогом</string>
+	<string
+		name="app_products_catalog_empty_button">ПЕРЕЙТИ В КАТАЛОГ</string>
+    <string
+        name="app_products_catalog_sort_filters_header_filterBtn">ФИЛЬТРЫ</string>
+    <string
+        name="app_products_catalog_sort_filters_header_sortBtn">СОРТИРОВКА</string>
+    <string
+        name="app_products_contentsearch_history_clearButton">ОЧИСТИТЬ ИСТОРИЮ</string>
+    <string
+        name="app_products_contentsearch_searchInput_hint">Поиск...</string>
+    <string
+        name="app_products_selection_apply">ПРИМЕНИТЬ</string>
+    <string
+        name="app_products_selection_clear">СБРОСИТЬ</string>
+    <string
+        name="app_products_productCard_minMax_content_hint_from">От</string>
+    <string
+        name="app_products_productCard_minMax_content_hint_to">До</string>
+</resources>

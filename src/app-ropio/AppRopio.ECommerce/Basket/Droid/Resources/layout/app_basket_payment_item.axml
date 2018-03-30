@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/app_basket_payment_item_height">
+        <TextView
+            style="@style/app_basket_payment_item_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/app_basket_payment_horizontalMargin"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/app_basket_payment_item_icon"
+            app:MvxBind="Text Title" />
+        <ImageView
+            style="@style/app_basket_payment_item_icon"
+            android:id="@+id/app_basket_payment_item_icon"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            app:MvxBind="Visibility Visibility(IsSelected)" />
+    </RelativeLayout>
+    <View
+        style="@style/AppRopioTheme.Control.Separator" />
+</LinearLayout>

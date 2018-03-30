@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EA6D5113-1E80-494B-886D-3D7FDFA04E99}</ProjectGuid>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>AppRopio.Base.Core</RootNamespace>
+    <AssemblyName>AppRopio.Base.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile151</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile></DocumentationFile>
+    <ConsolePause>false</ConsolePause>
+    <NoStdLib>false</NoStdLib>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <NoStdLib>false</NoStdLib>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models\Navigation\NavigationType.cs" />
+    <Compile Include="App.cs" />
+    <Compile Include="Services\DataBase\IDataBaseService.cs" />
+    <Compile Include="Services\DataBase\DataBaseService.cs" />
+    <Compile Include="Messages\DataBase\DataBaseAddedMessage.cs" />
+    <Compile Include="Messages\DataBase\DataBaseRemovedMessage.cs" />
+    <Compile Include="Messages\DataBase\DataBaseUpdatedMessage.cs" />
+    <Compile Include="Services\ViewModelLookup\IViewModelLookupService.cs" />
+    <Compile Include="Services\ViewModelLookup\ViewModelLookupService.cs" />
+    <Compile Include="Extentions\SystemExtentionsMethods.cs" />
+    <Compile Include="Services\Settings\ISettingsService.cs" />
+    <Compile Include="ViewModels\Services\BaseVMService.cs" />
+    <Compile Include="AppSettings.cs" />
+    <Compile Include="Models\App\AppConfig.cs" />
+    <Compile Include="CoreConstants.cs" />
+    <Compile Include="Attributes\DeeplinkAttribute.cs" />
+    <Compile Include="Services\Device\IDeviceService.cs" />
+    <Compile Include="Models\Device\PlatformType.cs" />
+    <Compile Include="Services\Router\IRouterService.cs" />
+    <Compile Include="Services\Router\IRouterSubscriber.cs" />
+    <Compile Include="Services\Router\RouterService.cs" />
+    <Compile Include="Messages\Module\ModulesInteractionMessage_T.cs" />
+    <Compile Include="Services\Router\RouterSubsriber.cs" />
+    <Compile Include="Services\ViewLookup\IViewLookupService.cs" />
+    <Compile Include="Services\ViewLookup\ViewLookupService.cs" />
+    <Compile Include="ViewModels\_base\BaseViewModel.cs" />
+    <Compile Include="ViewModels\_base\IBaseViewModel.cs" />
+    <Compile Include="ViewModels\Search\ISearchViewModel.cs" />
+    <Compile Include="ViewModels\Search\SearchViewModel.cs" />
+    <Compile Include="Models\Config\AssemblyElement.cs" />
+    <Compile Include="Services\Log\ILogService.cs" />
+    <Compile Include="Services\Trace\ARTrace.cs" />
+    <Compile Include="Services\Analytics\IAnalyticsNotifyingService.cs" />
+    <Compile Include="Services\Analytics\AnalyticsNotifyingService.cs" />
+    <Compile Include="Messages\Analytics\ScreenAnalyticsMessage.cs" />
+    <Compile Include="Messages\Analytics\EventAnalyticsMessage.cs" />
+    <Compile Include="Messages\Analytics\OrderAnalyticsMessage.cs" />
+    <Compile Include="Messages\Analytics\ExceptionAnalyticsMessage.cs" />
+    <Compile Include="Services\Push\IPushNotificationsService.cs" />
+    <Compile Include="Services\Push\PushNotificationsService.cs" />
+    <Compile Include="Converters\StringFormatConverter.cs" />
+    <Compile Include="Models\Content\ContentState.cs" />
+    <Compile Include="Extentions\DeeplinkExtentions.cs" />
+    <Compile Include="ViewModels\_base\IMvxPageViewModel.cs" />
+    <Compile Include="Attributes\DeeplinkPropertyAttribute.cs" />
+    <Compile Include="Extentions\MvxBundleExtentions.cs" />
+    <Compile Include="ViewModels\Services\BaseVmNavigationService.cs" />
+    <Compile Include="ViewModels\Services\IBaseVmNavigationService.cs" />
+    <Compile Include="Extentions\StringExtentionsMethods.cs" />
+    <Compile Include="Converters\StringFormatParameter.cs" />
+    <Compile Include="Models\Bundle\BaseBundle.cs" />
+    <Compile Include="Converters\TrueFalse\TrueFalseConverter.cs" />
+    <Compile Include="Converters\TrueFalse\TrueFalseParameter.cs" />
+    <Compile Include="MvxAsyncSetup.cs" />
+    <Compile Include="ViewModels\Selection\IBaseSelectionViewModel.cs" />
+    <Compile Include="ViewModels\Selection\Items\ISelectionItemVM.cs" />
+    <Compile Include="ViewModels\Selection\Items\SelectionItemVM.cs" />
+    <Compile Include="ViewModels\Selection\BaseSelectionViewModel.cs" />
+    <Compile Include="ViewModels\Selection\Services\IBaseSelectionVmService.cs" />
+    <Compile Include="ViewModels\TextContent\IBaseTextContentViewModel.cs" />
+    <Compile Include="ViewModels\TextContent\BaseTextContentViewModel.cs" />
+    <Compile Include="Models\Bundle\BaseTextContentBundle.cs" />
+    <Compile Include="Models\Bundle\BaseWebContentBundle.cs" />
+    <Compile Include="ViewModels\WebContent\IBaseWebContentViewModel.cs" />
+    <Compile Include="ViewModels\WebContent\BaseWebContentViewModel.cs" />
+    <Compile Include="Services\UserDialogs\IUserDialogs.cs" />
+    <Compile Include="Services\Location\ILocationService.cs" />
+    <Compile Include="Services\Location\LocationService.cs" />
+    <Compile Include="Converters\PriceFormatConverter.cs" />
+    <Compile Include="Services\TasksQueue\TasksQueueService.cs" />
+    <Compile Include="Services\TasksQueue\ITasksQueueService.cs" />
+    <Compile Include="ViewModels\_base\RefreshViewModel.cs" />
+    <Compile Include="ViewModels\_base\LoadMoreViewModel.cs" />
+    <Compile Include="ViewModels\_base\ILoadMoreViewModel.cs" />
+    <Compile Include="ViewModels\_base\IRefreshViewModel.cs" />
+    <Compile Include="Models\Analytics\ScreenState.cs" />
+    <Compile Include="Messages\Analytics\AppAnalyticsMessage.cs" />
+    <Compile Include="Messages\Analytics\BaseAnalyticsMessage.cs" />
+    <Compile Include="Models\Analytics\AppState.cs" />
+    <Compile Include="Services\Launcher\ILauncherService.cs" />
+    <Compile Include="ServicesDebug\StartupTimerService.cs" />
+    <Compile Include="Converters\PriceFormatUnitConverter.cs" />
+    <Compile Include="Services\Contacts\IContactsService.cs" />
+    <Compile Include="Models\Contacts\Contact.cs" />
+    <Compile Include="Models\Contacts\Phone.cs" />
+    <Compile Include="Models\Contacts\Email.cs" />
+    <Compile Include="PresentationHints\NavigateToDefaultViewModelHint.cs" />
+    <Compile Include="Services\Permissions\IPermissionsService.cs" />
+    <Compile Include="Combiners\PriceUnitCombiner.cs" />
+    <Compile Include="Services\ViewModelNameMapping\ARPostfixAwareViewToViewModelNameMapping.cs" />
+    <Compile Include="Services\ViewFinder\ARViewFinder.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+    <Folder Include="Models\" />
+    <Folder Include="Models\Navigation\" />
+    <Folder Include="Services\" />
+    <Folder Include="Services\DataBase\" />
+    <Folder Include="Messages\" />
+    <Folder Include="Messages\DataBase\" />
+    <Folder Include="Extentions\" />
+    <Folder Include="Services\ViewModelLookup\" />
+    <Folder Include="Services\Settings\" />
+    <Folder Include="ViewModels\Services\" />
+    <Folder Include="Models\App\" />
+    <Folder Include="Attributes\" />
+    <Folder Include="Services\Device\" />
+    <Folder Include="Models\Device\" />
+    <Folder Include="Services\Router\" />
+    <Folder Include="Messages\Module\" />
+    <Folder Include="Services\ViewLookup\" />
+    <Folder Include="ViewModels\_base\" />
+    <Folder Include="ViewModels\Search\" />
+    <Folder Include="Models\Config\" />
+    <Folder Include="Services\Log\" />
+    <Folder Include="Services\Trace\" />
+    <Folder Include="Messages\Analytics\" />
+    <Folder Include="Services\Analytics\" />
+    <Folder Include="Services\Push\" />
+    <Folder Include="Converters\" />
+    <Folder Include="Models\Content\" />
+    <Folder Include="Models\Bundle\" />
+    <Folder Include="Converters\TrueFalse\" />
+    <Folder Include="ViewModels\Selection\" />
+    <Folder Include="ViewModels\Selection\Items\" />
+    <Folder Include="ViewModels\Selection\Services\" />
+    <Folder Include="ViewModels\TextContent\" />
+    <Folder Include="ViewModels\WebContent\" />
+    <Folder Include="Services\UserDialogs\" />
+    <Folder Include="Services\Location\" />
+    <Folder Include="Services\TasksQueue\" />
+    <Folder Include="Models\Analytics\" />
+    <Folder Include="Services\Launcher\" />
+    <Folder Include="ServicesDebug\" />
+    <Folder Include="Services\Contacts\" />
+    <Folder Include="Models\Contacts\" />
+    <Folder Include="PresentationHints\" />
+    <Folder Include="Services\Permissions\" />
+    <Folder Include="Combiners\" />
+    <Folder Include="Services\ViewModelNameMapping\" />
+    <Folder Include="Services\ViewFinder\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="DotNetCross.Memory.Unsafe">
+      <HintPath>..\..\AppRopio.ECommerce\packages\DotNetCross.Memory.Unsafe.0.2.3.4\lib\netstandard1.0\DotNetCross.Memory.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\AppRopio.ECommerce\packages\Newtonsoft.Json.10.0.3\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Linq">
+      <HintPath>..\..\AppRopio.ECommerce\packages\Remotion.Linq.2.1.2\lib\portable-net45+win+wpa81+wp80\Remotion.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings.Abstractions">
+      <HintPath>..\..\AppRopio.ECommerce\packages\Xam.Plugins.Settings.3.1.1\lib\netstandard1.0\Plugin.Settings.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings">
+      <HintPath>..\..\AppRopio.ECommerce\packages\Xam.Plugins.Settings.3.1.1\lib\netstandard1.0\Plugin.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Geolocator.Abstractions">
+      <HintPath>..\..\AppRopio.ECommerce\packages\Xam.Plugin.Geolocator.4.1.3\lib\netstandard1.0\Plugin.Geolocator.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Geolocator">
+      <HintPath>..\..\AppRopio.ECommerce\packages\Xam.Plugin.Geolocator.4.1.3\lib\netstandard1.0\Plugin.Geolocator.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Platform">
+      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Platform.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Core">
+      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Core.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Binding">
+      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Binding.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Localization">
+      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.File">
+      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Plugin.File.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Plugins.File.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Messenger">
+      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Plugin.Messenger.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Plugins.Messenger.dll</HintPath>
+    </Reference>
+    <Reference Include="Realm.DataBinding">
+      <HintPath>..\..\AppRopio.ECommerce\packages\Realm.DataBinding.1.2.0\lib\netstandard1.0\Realm.DataBinding.dll</HintPath>
+    </Reference>
+    <Reference Include="Realm">
+      <HintPath>..\..\AppRopio.ECommerce\packages\Realm.Database.2.1.0\lib\portable-net45+sl5+wp8+wpa81+win8+monoandroid+Xamarin.iOS10+monotouch+Xamarin.Mac\Realm.dll</HintPath>
+    </Reference>
+    <Reference Include="Realm.Sync">
+      <HintPath>..\..\AppRopio.ECommerce\packages\Realm.2.1.0\lib\portable-net45+sl5+wp8+wpa81+win8+monoandroid+Xamarin.iOS10+monotouch+Xamarin.Mac\Realm.Sync.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Permissions.Abstractions">
+      <HintPath>..\..\AppRopio.ECommerce\packages\Plugin.Permissions.2.1.0\lib\netstandard1.0\Plugin.Permissions.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Permissions">
+      <HintPath>..\..\AppRopio.ECommerce\packages\Plugin.Permissions.2.1.0\lib\netstandard1.0\Plugin.Permissions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="FodyWeavers.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\API\AppRopio.Base.API.csproj">
+      <Project>{124841B9-39F6-44B5-8B96-50183FBFE341}</Project>
+      <Name>AppRopio.Base.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Base\AppRopio.Models.Base.csproj">
+      <Project>{C4F2B57C-507E-4B99-B2E4-FA4B3C99FD59}</Project>
+      <Name>AppRopio.Models.Base</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="..\..\AppRopio.ECommerce\packages\Fody.2.2.0\build\portable-net+sl+win+wpa+wp\Fody.targets" Condition="Exists('..\..\AppRopio.ECommerce\packages\Fody.2.2.0\build\portable-net+sl+win+wpa+wp\Fody.targets')" />
+  <Import Project="..\..\AppRopio.ECommerce\packages\Realm.Database.2.1.0\build\Realm.Database.targets" Condition="Exists('..\..\AppRopio.ECommerce\packages\Realm.Database.2.1.0\build\Realm.Database.targets')" />
+  <Import Project="..\..\AppRopio.ECommerce\packages\Realm.2.1.0\build\Realm.targets" Condition="Exists('..\..\AppRopio.ECommerce\packages\Realm.2.1.0\build\Realm.targets')" />
+</Project>

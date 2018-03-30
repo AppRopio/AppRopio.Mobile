@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserViewController">
+            <connections>
+                <outlet property="_nextButton" destination="SlQ-77-98E" id="oLi-Xp-y5p"/>
+                <outlet property="_tableView" destination="LS4-lh-rgM" id="48g-Yd-LaW"/>
+                <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="2">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="50" sectionHeaderHeight="48" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="LS4-lh-rgM">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="585"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x0c-BW-w5t" userLabel="Bottom">
+                    <rect key="frame" x="0.0" y="585" width="375" height="82"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SlQ-77-98E">
+                            <rect key="frame" x="16" y="14" width="343" height="48"/>
+                            <color key="backgroundColor" red="0.054901960780000002" green="0.1019607843" blue="0.1529411765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="dhq-Dq-Scx"/>
+                            </constraints>
+                            <state key="normal">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="SlQ-77-98E" secondAttribute="bottom" constant="20" id="354-mq-oBI"/>
+                        <constraint firstItem="SlQ-77-98E" firstAttribute="top" secondItem="x0c-BW-w5t" secondAttribute="top" constant="14" id="LT7-LM-FxO"/>
+                        <constraint firstItem="SlQ-77-98E" firstAttribute="leading" secondItem="x0c-BW-w5t" secondAttribute="leading" constant="16" id="bd4-tc-pUa"/>
+                        <constraint firstAttribute="trailing" secondItem="SlQ-77-98E" secondAttribute="trailing" constant="16" id="xss-R2-5Ha"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="LS4-lh-rgM" secondAttribute="trailing" id="2yI-XW-t1f"/>
+                <constraint firstAttribute="trailing" secondItem="x0c-BW-w5t" secondAttribute="trailing" id="3QQ-FT-anp"/>
+                <constraint firstItem="LS4-lh-rgM" firstAttribute="top" secondItem="2" secondAttribute="top" id="FO1-uR-Qea"/>
+                <constraint firstItem="x0c-BW-w5t" firstAttribute="top" secondItem="LS4-lh-rgM" secondAttribute="bottom" id="RDz-cI-fa9"/>
+                <constraint firstItem="x0c-BW-w5t" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="dT9-gr-zl4"/>
+                <constraint firstItem="LS4-lh-rgM" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="leu-0h-Dzj"/>
+                <constraint firstAttribute="bottom" secondItem="x0c-BW-w5t" secondAttribute="bottom" id="psU-q8-gWW"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

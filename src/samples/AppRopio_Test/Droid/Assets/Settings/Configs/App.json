@@ -1,0 +1,11 @@
+﻿{
+    "apiKey": "your_api_key",
+    "appID": "your_app_id",
+    "appLabel": "contacts",
+    "companyID": "your_company_id",
+    "defaultRegionID": "1",
+    "errorWhenConnectionFailed": "",
+    "errorWhenRequestCancelled": "",
+    "host": "http://api.appropio.com/v2/",
+    "requestTimeoutInSeconds": 30
+}

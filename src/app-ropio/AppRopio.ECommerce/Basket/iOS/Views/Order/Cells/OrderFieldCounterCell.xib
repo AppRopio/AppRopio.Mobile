@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="193" id="cxk-wN-pdQ" customClass="OrderFieldCounterCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="193"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cxk-wN-pdQ" id="YTl-1W-gDM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="192.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NPp-ta-VaL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="52"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сортировать по" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNx-mO-68k" customClass="ARLabel">
+                                <rect key="frame" x="16" y="16.5" width="144" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="новизне" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTC-Vo-guh" customClass="ARLabel">
+                                <rect key="frame" x="160" y="16.5" width="144" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="52" id="BZI-ph-557"/>
+                            <constraint firstItem="mNx-mO-68k" firstAttribute="centerY" secondItem="NPp-ta-VaL" secondAttribute="centerY" id="OK8-Du-Y9N"/>
+                            <constraint firstItem="sTC-Vo-guh" firstAttribute="width" secondItem="NPp-ta-VaL" secondAttribute="width" multiplier="1:2" constant="-16" id="OYA-Gy-0Ls"/>
+                            <constraint firstItem="mNx-mO-68k" firstAttribute="leading" secondItem="NPp-ta-VaL" secondAttribute="leading" constant="16" id="SDB-xH-t1U"/>
+                            <constraint firstItem="mNx-mO-68k" firstAttribute="width" secondItem="NPp-ta-VaL" secondAttribute="width" multiplier="1:2" constant="-16" id="V5T-Au-C5G"/>
+                            <constraint firstItem="sTC-Vo-guh" firstAttribute="centerY" secondItem="NPp-ta-VaL" secondAttribute="centerY" id="VvZ-eX-3C0"/>
+                            <constraint firstAttribute="trailing" secondItem="sTC-Vo-guh" secondAttribute="trailing" constant="16" id="jCz-cY-zl4"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pRk-D4-Ea6">
+                        <rect key="frame" x="0.0" y="51" width="320" height="1"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="NP5-Xb-EOk"/>
+                        </constraints>
+                    </view>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1w2-Kp-sQh">
+                        <rect key="frame" x="0.0" y="52" width="320" height="141"/>
+                        <subviews>
+                            <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xDI-HN-BKQ">
+                                <rect key="frame" x="0.0" y="-52" width="320" height="0.0"/>
+                            </pickerView>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="NPp-ta-VaL" firstAttribute="leading" secondItem="YTl-1W-gDM" secondAttribute="leading" id="0tr-kg-yTm"/>
+                    <constraint firstItem="NPp-ta-VaL" firstAttribute="top" secondItem="YTl-1W-gDM" secondAttribute="top" id="3Vh-eH-XqA"/>
+                    <constraint firstItem="1w2-Kp-sQh" firstAttribute="top" secondItem="pRk-D4-Ea6" secondAttribute="bottom" id="BFc-yR-nKt"/>
+                    <constraint firstAttribute="bottom" secondItem="1w2-Kp-sQh" secondAttribute="bottom" id="EF8-1n-Zja"/>
+                    <constraint firstAttribute="trailing" secondItem="1w2-Kp-sQh" secondAttribute="trailing" id="EmP-Je-wpg"/>
+                    <constraint firstItem="pRk-D4-Ea6" firstAttribute="bottom" secondItem="NPp-ta-VaL" secondAttribute="bottom" id="ZZs-4r-Pko"/>
+                    <constraint firstItem="1w2-Kp-sQh" firstAttribute="leading" secondItem="YTl-1W-gDM" secondAttribute="leading" id="gN5-lI-i8X"/>
+                    <constraint firstAttribute="trailing" secondItem="pRk-D4-Ea6" secondAttribute="trailing" id="hxd-3b-6sW"/>
+                    <constraint firstItem="pRk-D4-Ea6" firstAttribute="leading" secondItem="YTl-1W-gDM" secondAttribute="leading" id="lVT-KV-pA6"/>
+                    <constraint firstAttribute="trailing" secondItem="NPp-ta-VaL" secondAttribute="trailing" id="vl1-Bl-AHc"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="xDI-HN-BKQ" firstAttribute="width" secondItem="cxk-wN-pdQ" secondAttribute="width" id="eZN-E9-2U0"/>
+            </constraints>
+            <connections>
+                <outlet property="_bottomSeparator" destination="pRk-D4-Ea6" id="oYL-Gf-WFY"/>
+                <outlet property="_name" destination="mNx-mO-68k" id="fL9-lM-9ck"/>
+                <outlet property="_topViewHeightConstraint" destination="BZI-ph-557" id="0ZN-04-2bI"/>
+                <outlet property="_valueName" destination="sTC-Vo-guh" id="3CS-S5-vDQ"/>
+                <outlet property="_valuePicker" destination="xDI-HN-BKQ" id="A51-gY-yPS"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="124.5"/>
+        </tableViewCell>
+    </objects>
+</document>
