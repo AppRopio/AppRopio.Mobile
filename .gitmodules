@@ -1,0 +1,3 @@
+[submodule "src/appropio.models"]
+	path = src/appropio.models
+	url = https://github.com/AppRopio/AppRopio.Models.git
