@@ -59,6 +59,10 @@
     <Compile Include="Services\Implementation\RegionService.cs" />
     <Compile Include="Services\ISettingsVmNavigationService.cs" />
     <Compile Include="Services\Implementation\SettingsVmNavigationService.cs" />
+    <Compile Include="ViewModels\Languages\ILanguagesViewModel.cs" />
+    <Compile Include="ViewModels\Languages\Items\ILangItemVM.cs" />
+    <Compile Include="ViewModels\Languages\Items\LangItemVM.cs" />
+    <Compile Include="ViewModels\Languages\LanguagesViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">
@@ -103,6 +107,8 @@
     <Folder Include="ViewModels\Regions\Items\" />
     <Folder Include="Models\Bundle\" />
     <Folder Include="ViewModels\Messages\" />
+    <Folder Include="ViewModels\Languages\" />
+    <Folder Include="ViewModels\Languages\Items\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Core\AppRopio.Base.Core.csproj">

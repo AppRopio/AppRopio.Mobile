@@ -1,6 +1,8 @@
 ﻿using System;
 using AppRopio.Base.Core.Services.Settings;
 using System.IO;
+using MvvmCross.Platform;
+using MvvmCross.Core.Views;
 
 namespace AppRopio.Base.iOS.Services.Settings
 {
@@ -18,7 +20,7 @@ namespace AppRopio.Base.iOS.Services.Settings
         {
             if (File.Exists(path))
                 return File.ReadAllText(path, System.Text.Encoding.UTF8);
-
+            
             throw new FileNotFoundException($"Не найден файл по пути {path}");
         }
     }

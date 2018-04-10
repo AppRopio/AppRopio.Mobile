@@ -90,6 +90,8 @@
     <Folder Include="Views\Settings\" />
     <Folder Include="Views\Regions\" />
     <Folder Include="Views\Regions\Cell\" />
+    <Folder Include="Views\Languages\" />
+    <Folder Include="Views\Languages\Cells\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -123,6 +125,14 @@
     <Compile Include="Views\Regions\Cell\RegionSectionHeader.designer.cs">
       <DependentUpon>RegionSectionHeader.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Languages\LanguagesViewController.cs" />
+    <Compile Include="Views\Languages\LanguagesViewController.designer.cs">
+      <DependentUpon>LanguagesViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Languages\Cells\LanguageCell.cs" />
+    <Compile Include="Views\Languages\Cells\LanguageCell.designer.cs">
+      <DependentUpon>LanguageCell.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -152,6 +162,8 @@
     <InterfaceDefinition Include="Views\Regions\RegionsViewController.xib" />
     <InterfaceDefinition Include="Views\Regions\Cell\RegionCell.xib" />
     <InterfaceDefinition Include="Views\Regions\Cell\RegionSectionHeader.xib" />
+    <InterfaceDefinition Include="Views\Languages\LanguagesViewController.xib" />
+    <InterfaceDefinition Include="Views\Languages\Cells\LanguageCell.xib" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\..\..\AppRopio.ECommerce\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\..\..\AppRopio.ECommerce\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets')" />

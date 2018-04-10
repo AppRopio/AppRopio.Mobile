@@ -1,18 +1,23 @@
 ﻿{
-  "elements": [
-    {
-      "type": "Region",
-      "title": "Регион"
-    },
-    {
-      "type": "Geolocation",
-      "title": "Геолокация",
-      "isEnabled": true
-    },
-    {
-      "type": "Notifications",
-      "title": "Уведомления",
-      "isEnabled": true
-    }
-  ]
+    "elements": [
+        {
+            "type": "Region",
+            "title": "Регион"
+        },
+        {
+            "type": "Geolocation",
+            "title": "Геолокация",
+            "isEnabled": true
+        },
+        {
+            "type": "Notifications",
+            "title": "Уведомления",
+            "isEnabled": true
+        },
+        {
+            "type": "Language",
+            "title": "Язык приложения"
+        }
+    ],
+    "languages": [ "ru-RU", "en-US" ]
 }

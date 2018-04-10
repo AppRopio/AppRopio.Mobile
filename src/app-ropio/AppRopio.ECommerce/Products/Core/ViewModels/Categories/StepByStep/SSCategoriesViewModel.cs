@@ -13,6 +13,7 @@ using AppRopio.ECommerce.Products.Core.ViewModels.Categories.Services.Banners;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using System.Linq;
+using AppRopio.Base.Core.Services.Localization;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.Categories
 {
@@ -174,6 +175,11 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Categories
 
             var categoryBundle = parameters.ReadAs<CategoryBundle>();
             this.InitFromBundle(categoryBundle);
+
+#if DEBUG
+            var tmp = Mvx.Resolve<ILocalizationService>().GetLocalizableString("Products", "HelloWorld");
+            UserDialogs.Alert(tmp);
+#endif
         }
 
         protected virtual async void InitFromBundle(CategoryBundle parameters)

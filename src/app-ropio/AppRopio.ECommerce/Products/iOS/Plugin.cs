@@ -25,6 +25,7 @@ using AppRopio.ECommerce.Products.iOS.Views.ProductTextContent;
 using AppRopio.ECommerce.Products.iOS.Views.ProductWebContent;
 using MvvmCross.Platform;
 using MvvmCross.Platform.Plugins;
+using AppRopio.Base.Core.Services.Localization;
 
 namespace AppRopio.ECommerce.Products.iOS
 {

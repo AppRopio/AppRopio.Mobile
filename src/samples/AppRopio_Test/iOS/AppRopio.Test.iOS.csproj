@@ -356,6 +356,7 @@
     <Folder Include="Images\Feedback\" />
     <Folder Include="Views\" />
     <Folder Include="Assets.xcassets\DemoImage.imageset\" />
+    <Folder Include="LocalizationResx\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -401,6 +402,12 @@
     <Compile Include="Bootstrap\VisibilityPluginBootstrap.cs" />
     <Compile Include="Bootstrap\DownloadCachePluginBootstrap.cs" />
     <Compile Include="Bootstrap\JsonPluginBootstrap.cs" />
+    <Compile Include="LocalizationResx\Products.Designer.cs">
+      <DependentUpon>Products.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Products.ru.Designer.cs">
+      <DependentUpon>Products.ru.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Settings\Configs\Menu.json" />
@@ -961,6 +968,16 @@
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork" />
     <ITunesArtwork Include="iTunesArtwork%402x" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="LocalizationResx\Products.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Products.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Products.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Products.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />

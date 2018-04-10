@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using AppRopio.Base.Core.Messages.Localization;
 using AppRopio.Base.Core.Models.Bundle;
 using AppRopio.Base.Core.Models.Navigation;
 using AppRopio.Base.Core.Services.Router;
@@ -11,11 +12,18 @@ using AppRopio.Navigation.Menu.Core.ViewModels.Items;
 using AppRopio.Navigation.Menu.Core.ViewModels.Services;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
+using MvvmCross.Plugins.Messenger;
 
 namespace AppRopio.Navigation.Menu.Core.ViewModels
 {
     public class MenuViewModel : BaseViewModel, IMenuViewModel
     {
+        #region Fields
+
+        private MvxSubscriptionToken _languageToken;
+
+        #endregion
+
         #region Commands
 
         private ICommand _selectionChangedCommand;
@@ -192,13 +200,37 @@ namespace AppRopio.Navigation.Menu.Core.ViewModels
                 MvxTrace.Trace(MvvmCross.Platform.Platform.MvxTraceLevel.Error, "Menu", $"Can't navigate to ViewModel of type {item.Type}");
         }
 
+        protected void OnLanguageChanged(LanguageChangedMessage obj)
+        {
+            Task.Run(() => LoadContent());
+        }
+
         #endregion
 
         #region Public
 
+        public override void Prepare()
+        {
+            base.Prepare();
+
+            _languageToken = Messenger.Subscribe<LanguageChangedMessage>(OnLanguageChanged);
+        }
+
         public override Task Initialize()
         {
             return Task.Run(() => LoadContent());
+        }
+
+        public override void Unbind()
+        {
+            base.Unbind();
+
+            if (_languageToken != null)
+            {
+                Messenger.Unsubscribe<LanguageChangedMessage>(_languageToken);
+                _languageToken.Dispose();
+                _languageToken = null;
+            }
         }
 
         #endregion
