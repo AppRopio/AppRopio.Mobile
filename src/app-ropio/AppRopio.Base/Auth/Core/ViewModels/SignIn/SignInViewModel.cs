@@ -106,11 +106,16 @@ namespace AppRopio.Base.Auth.Core.ViewModels.SignIn
 			VmNavigationType = Base.Core.Models.Navigation.NavigationType.Push;
 		}
 
-		#endregion
+        #endregion
 
-		#region Protected
+        #region Protected
 
-		protected override bool IsViewModelPropertiesValid()
+        public override void Prepare(IMvxBundle parameters)
+        {
+            base.Prepare(parameters);
+        }
+
+        protected override bool IsViewModelPropertiesValid()
 		{
 			return !Password.IsNullOrEmtpy()
 							&&

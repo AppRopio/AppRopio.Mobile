@@ -5,6 +5,9 @@ using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.UIExtentions;
 using MvvmCross.Binding.BindingContext;
 using UIKit;
+using MvvmCross.Platform;
+using AppRopio.Base.Core.Services.Localization;
+using AppRopio.Base.Auth.Core;
 
 namespace AppRopio.Base.Auth.iOS.Views.Password.Reset.Main
 {
@@ -26,16 +29,17 @@ namespace AppRopio.Base.Auth.iOS.Views.Password.Reset.Main
             }
         }
 
-        private string _accessoryButtonTitle = "ПОЛУЧИТЬ ПАРОЛЬ";
         protected override string AccessoryButtonTitle
         {
             get
             {
-                return _accessoryButtonTitle;
+                return LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "Password_Reset_GetCode");
             }
         }
 
         #endregion
+
+        protected ILocalizationService LocalizationService => Mvx.Resolve<ILocalizationService>();
 
         #region Constructor
 
@@ -160,7 +164,7 @@ namespace AppRopio.Base.Auth.iOS.Views.Password.Reset.Main
         protected virtual void SetupTitleLabel(UILabel label)
         {
             label.SetupStyle(ThemeConfig.Title);
-            label.Text = "Забыли пароль?";
+            label.Text = LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "Password_Reset_Forgot");
         }
 
         protected virtual void SetupDescriptionLabel(UILabel label, bool identifyUserByEmail)
@@ -168,9 +172,9 @@ namespace AppRopio.Base.Auth.iOS.Views.Password.Reset.Main
             label.SetupStyle(ThemeConfig.Description);
 
             if (identifyUserByEmail)
-                label.Text = "Введите свой email\nи мы отправим вам инструкции\nдля восстановления пароля.";
+                label.Text = LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "Password_Reset_MotivationEmail");
             else
-                label.Text = "Введите свой телефон\nи мы отправим вам код\nдля восстановления пароля.";
+                label.Text = LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "Password_Reset_MotivationPhone");
         }
 
         protected virtual void SetupIdentityField(UITextField field, bool identifyUserByEmail)
@@ -179,12 +183,12 @@ namespace AppRopio.Base.Auth.iOS.Views.Password.Reset.Main
 
             if (identifyUserByEmail)
             {
-                field.Placeholder = "Email";
+                field.Placeholder = LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "Password_Reset_EmailPlaceholder");
                 field.KeyboardType = UIKeyboardType.EmailAddress;
             }
             else
             {
-                field.Placeholder = "Телефон";
+                field.Placeholder = LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "Password_Reset_PhonePlaceholder");
                 field.KeyboardType = UIKeyboardType.NumberPad;
                 field.AutocorrectionType = UITextAutocorrectionType.No;
             }
@@ -210,30 +214,27 @@ namespace AppRopio.Base.Auth.iOS.Views.Password.Reset.Main
             button.SetupStyle(ThemeConfig.Button);
             button.TouchUpInside += OnNextButtonClick;
             if (!identifyUserByEmail)
-            {
-                _accessoryButtonTitle = "Получить код".ToUpper();
-                button = button.WithTitleForAllStates(_accessoryButtonTitle);
-            }
+                button = button.WithTitleForAllStates(LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "Password_Reset_GetCode"));
             else
-                button = button.WithTitleForAllStates("Получить пароль".ToUpper());
+                button = button.WithTitleForAllStates(LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "Password_Reset_GetPassword"));
         }
 
         protected virtual void SetupEmailTitleLabel(UILabel label)
         {
             label.SetupStyle(ThemeConfig.Title);
-            label.Text = "Пароль отправлен.";
+            label.Text = LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "Password_Reset_PasswordSent");
         }
 
         protected virtual void SetupEmailDescriptionLabel(UILabel label)
         {
             label.SetupStyle(ThemeConfig.Description);
-            label.Text = "Проверьте свою почту,\nмы отправили вам инструкции\nдля восстановления пароля.";
+            label.Text = LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "Password_Reset_EmailInsctruction");
         }
 
         protected virtual void SetupEmailDoneBtn(UIButton button)
         {
             button.SetupStyle(ThemeConfig.Button);
-            button.WithTitleForAllStates("Закрыть".ToUpper());
+            button.WithTitleForAllStates(LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "Password_Reset_Close"));
         }
 
         protected virtual void SetupEmailSendedView(UIView view)
@@ -292,7 +293,7 @@ namespace AppRopio.Base.Auth.iOS.Views.Password.Reset.Main
         {
             base.InitializeControls();
 
-            Title = "Восстановление пароля";
+            Title = LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "Password_Reset_Title");
 
             SetupImage(_iconImage);
             SetupEmailImage(_emailIconImage);

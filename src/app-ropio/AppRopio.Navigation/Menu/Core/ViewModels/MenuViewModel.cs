@@ -53,8 +53,8 @@ namespace AppRopio.Navigation.Menu.Core.ViewModels
             }
         }
 
-        private ObservableCollection<IMenuItemVM> _items;
-        public ObservableCollection<IMenuItemVM> Items
+        private MvxObservableCollection<IMenuItemVM> _items;
+        public MvxObservableCollection<IMenuItemVM> Items
         {
             get
             {
@@ -108,7 +108,7 @@ namespace AppRopio.Navigation.Menu.Core.ViewModels
         {
             VmNavigationType = Base.Core.Models.Navigation.NavigationType.None;
 
-            Items = new ObservableCollection<IMenuItemVM>();
+            Items = new MvxObservableCollection<IMenuItemVM>();
         }
 
         #endregion
@@ -150,7 +150,8 @@ namespace AppRopio.Navigation.Menu.Core.ViewModels
         {
             try
             {
-                Items = new ObservableCollection<IMenuItemVM>(MenuService.LoadItemsFromConfigJSON());
+                Items.Clear();
+                Items.AddRange(MenuService.LoadItemsFromConfigJSON());
             }
             catch (UnauthorizedAccessException ex)
             {
@@ -202,7 +203,7 @@ namespace AppRopio.Navigation.Menu.Core.ViewModels
 
         protected void OnLanguageChanged(LanguageChangedMessage obj)
         {
-            Task.Run(() => LoadContent());
+            LoadMenuItems();
         }
 
         #endregion

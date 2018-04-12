@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -79,7 +80,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="48" id="431-mS-NJX"/>
                             </constraints>
-                            <state key="normal" title="SignIn">
+                            <state key="normal">
                                 <color key="titleColor" red="0.1176470588" green="0.17254901959999999" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                         </button>
@@ -88,7 +89,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="48" id="UgA-sy-yKj"/>
                             </constraints>
-                            <state key="normal" title="SignUp">
+                            <state key="normal">
                                 <color key="titleColor" red="0.1176470588" green="0.17254901959999999" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                         </button>
@@ -105,7 +106,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="48" id="fzL-aW-L15"/>
                     </constraints>
-                    <state key="normal" title="Skip">
+                    <state key="normal">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>

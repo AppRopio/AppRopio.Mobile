@@ -1,24 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using AppRopio.Base.Core.ViewModels;
+using System.Reflection;
+using AppRopio.Base.Core.Services.ViewModelLookup;
 using AppRopio.Base.Core.ViewModels.Services;
 using AppRopio.Navigation.Menu.Core.Services;
 using AppRopio.Navigation.Menu.Core.ViewModels.Items;
-using MvvmCross.Platform;
-using AppRopio.Base.Core.Services.ViewModelLookup;
 using MvvmCross.Core.ViewModels;
-using System.Reflection;
+using MvvmCross.Platform;
+using AppRopio.Base.Core.Services.Localization;
 
 namespace AppRopio.Navigation.Menu.Core.ViewModels.Services
 {
     public class MenuVmService : BaseVmService, IMenuVmService
     {
+        #region Fields
+
+        readonly ILocalizationService _localizationService;
+
+        #endregion
+
         #region Protected
 
         protected virtual IMenuItemVM SetupItem(string icon, string title, string navigationModelType, bool badge, bool hideBadgeOnNull)
         {
             return new MenuItemVM(icon, title, navigationModelType, badge, hideBadgeOnNull);
+        }
+
+        #endregion
+
+        #region Constructor
+
+        public MenuVmService(ILocalizationService localizationService)
+        {
+            this._localizationService = localizationService;
         }
 
         #endregion
@@ -64,7 +79,7 @@ namespace AppRopio.Navigation.Menu.Core.ViewModels.Services
 
             var items = config.Sections.SelectMany(section => section.Items);
 
-            return items.Select(x => SetupItem(x.Icon, x.Name, x.Type, x.Badge, x.HideBadgeOnNull)).ToList();
+            return items.Select(x => SetupItem(x.Icon, _localizationService.GetLocalizableString(MenuConstants.RESX_NAME, x.Type), x.Type, x.Badge, x.HideBadgeOnNull)).ToList();
         }
 
         public IMvxViewModel LoadFooterVmIfExist()

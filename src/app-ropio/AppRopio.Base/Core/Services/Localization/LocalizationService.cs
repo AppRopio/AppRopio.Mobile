@@ -51,9 +51,11 @@ namespace AppRopio.Base.Core.Services.Localization
             var resource = Resources.FirstOrDefault(x => x.Name.StartsWith(resourceName, StringComparison.OrdinalIgnoreCase));
             if (resource != null)
             {
-                result = resource.GetTypeInfo()
-                                 .GetDeclaredProperty(propertyName)
-                                 ?.GetValue(resource) as string;
+                var resourceManager = resource.GetTypeInfo()
+                                 .GetDeclaredProperty("ResourceManager")
+                                 .GetValue(resource) as System.Resources.ResourceManager;
+
+                result = resourceManager.GetString(propertyName, AppSettings.SettingsCulture);
             }
 
             return result;

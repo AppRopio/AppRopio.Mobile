@@ -1,10 +1,14 @@
 using System;
 using AppRopio.Base.Auth.Core.ViewModels.Password.New;
 using AppRopio.Base.Auth.iOS.Views._base;
+using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.UIExtentions;
 using MvvmCross.Binding.BindingContext;
+using MvvmCross.Platform;
 using UIKit;
+using AppRopio.Base.Auth.Core.Models.Config;
+using AppRopio.Base.Auth.Core;
 
 namespace AppRopio.Base.Auth.iOS.Views.Password.New
 {
@@ -16,11 +20,13 @@ namespace AppRopio.Base.Auth.iOS.Views.Password.New
 		{
 			get
 			{
-				return "Готово".ToUpper();
+                return LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "Password_New_Done");
 			}
 		}
 
 		#endregion
+
+        protected ILocalizationService LocalizationService => Mvx.Resolve<ILocalizationService>();
 
 		#region Constructor
 
@@ -55,27 +61,27 @@ namespace AppRopio.Base.Auth.iOS.Views.Password.New
 		protected virtual void SetupDoneBtn(UIButton button)
 		{
 			button.SetupStyle(ThemeConfig.Button);
-			button.WithTitleForAllStates("Готово".ToUpper());
+            button.WithTitleForAllStates(LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "Password_New_Done"));
 			button.TouchUpInside += OnNextButtonClick;
 		}
 
 		protected virtual void SetupTitleLabel(UILabel label)
 		{
 			label.SetupStyle(ThemeConfig.Title);
-			label.Text = "Новый пароль.";
+            label.Text = LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "Password_New_NewPassword");
 		}
 
 		protected virtual void SetupDescriptionLabel(UILabel label)
 		{
 			label.SetupStyle(ThemeConfig.Description);
-			label.Text = "Придумайте и введите\nновый пароль.";
+            label.Text = LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "Password_New_Motivation");
 		}
 
 		protected virtual void SetupPasswordField(UITextField field, UITextField nextField = null)
 		{
 			field.SetupStyle(ThemeConfig.TextField);
 
-			field.Placeholder = "Новый пароль";
+            field.Placeholder = LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "Password_New_NewPasswordPlaceholder");
 
 			field.InputAccessoryView = _accessoryButton;
 
@@ -92,7 +98,7 @@ namespace AppRopio.Base.Auth.iOS.Views.Password.New
 		{
 			field.SetupStyle(ThemeConfig.TextField);
 
-			field.Placeholder = "Подтвердите пароль";
+            field.Placeholder = LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "Password_New_ConfirmPasswordPlaceholder");
 
 			field.InputAccessoryView = _accessoryButton;
 
@@ -152,7 +158,7 @@ namespace AppRopio.Base.Auth.iOS.Views.Password.New
 		{
 			base.InitializeControls();
 
-			Title = "Восстановление пароля";
+            Title = LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "Password_New_Title");
 
 			SetupImage(_iconImage);
 			SetupDoneBtn(_doneButton);

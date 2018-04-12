@@ -27,6 +27,11 @@ namespace System
             return $"{char.ToUpperInvariant(self[0])}{self.Substring(1)}";
         }
 
+        public static string ToFirstCharLowercase(this string self)
+        {
+            return $"{char.ToLowerInvariant(self[0])}{self.Substring(1)}";
+        }
+
         public static string StringPrice(object obj)
         {
             var str = obj.ToString().Replace(" ", "");

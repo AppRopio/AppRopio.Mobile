@@ -10,6 +10,8 @@ using MvvmCross.Binding.BindingContext;
 using MvvmCross.Binding.iOS.Views;
 using MvvmCross.Platform;
 using UIKit;
+using AppRopio.Base.iOS.ValueConverters;
+using System.Globalization;
 
 namespace AppRopio.Navigation.Menu.iOS.Views
 {
@@ -78,7 +80,12 @@ namespace AppRopio.Navigation.Menu.iOS.Views
 
         protected virtual void BindIcon(UIImageView icon, NSLayoutConstraint stackViewLeftConstraint, MvxFluentBindingDescriptionSet<MenuCell, MenuItemVM> set)
         {
-            set.Bind(icon).For(i => i.Image).To(vm => vm.Icon).WithConversion("ColorMask", ThemeConfig.Name.TextColor.ToUIColor());
+            var imageLoader = new MvxImageViewLoader(() => icon, () =>
+            {
+                icon.Image = (UIKit.UIImage)new ColorMaskValueConverter().Convert(icon, typeof(UIImageView), ThemeConfig.Name.TextColor.ToUIColor(), CultureInfo.CurrentUICulture);
+            });
+
+            set.Bind(imageLoader).For(i => i.ImageUrl).To(vm => vm.Icon);
             set.Bind(icon).For("Visibility").To(vm => vm.Icon).WithConversion("Visibility");
             set.Bind(stackViewLeftConstraint).For(c => c.Constant).To(vm => vm.HasIcon).WithConversion("TrueFalse", new TrueFalseParameter { True = (nfloat)0.0f, False = (nfloat)16.0f });
         }

@@ -9,55 +9,46 @@
             "items": [
                 {
                     "icon": "res:Images/Menu/catalog.png",
-                    "name": "Каталог",
                     "type": "AppRopio.ECommerce.Products.Core.ViewModels.IProductsViewModel",
                     "default": true
                 },
                 {
                     "icon": "res:Images/Menu/basket.png",
-                    "name": "Корзина",
                     "type": "AppRopio.ECommerce.Basket.Core.ViewModels.IBasketViewModel",
                     "badge": true,
                     "hideBadgeOnNull": true
                 },
                 {
                     "icon": "res:Images/Menu/history.png",
-                    "name": "История заказов",
                     "type": "AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrders.IHistoryOrdersViewModel"
                 },
-              {
-                "icon": "res:Images/Menu/fav.png",
-                "name": "Избранное",
-                "type": "AppRopio.ECommerce.Marked.Core.ViewModels.Marked.IMarkedViewModel",
-                "badge": true,
-                "hideBadgeOnNull": true
-              }
-              //{
-              //  "name": "Мои отзывы",
-              //  "type": "AppRopio.Feedback.Core.ViewModels.MyReviews.IMyReviewsViewModel"
-              //}
+                {
+                    "icon": "res:Images/Menu/fav.png",
+                    "type": "AppRopio.ECommerce.Marked.Core.ViewModels.Marked.IMarkedViewModel",
+                    "badge": true,
+                    "hideBadgeOnNull": true
+                }
+                //{
+                //  "type": "AppRopio.Feedback.Core.ViewModels.MyReviews.IMyReviewsViewModel"
+                //}
             ]
         },
         {
             "items": [
                 {
                     "icon": "res:Images/Menu/contacts.png",
-                    "name": "Контакты",
                     "type": "AppRopio.Base.Contacts.Core.ViewModels.Contacts.IContactsViewModel"
                 },
                 {
                     "icon": "res:Images/Menu/address.png",
-                    "name": "Адреса магазинов",
                     "type": "AppRopio.Base.Map.Core.ViewModels.Points.List.IPointsListViewModel"
                 },
                 {
                     "icon": "res:Images/Menu/info.png",
-                    "name": "Информация",
                     "type": "AppRopio.Base.Information.Core.ViewModels.Information.IInformationViewModel"
                 },
                 {
                     "icon": "res:Images/Menu/setting.png",
-                    "name": "Настройки",
                     "type": "AppRopio.Base.Settings.Core.ViewModels.Settings.ISettingsViewModel"
                 }
             ]

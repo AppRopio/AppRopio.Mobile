@@ -408,6 +408,24 @@
     <Compile Include="LocalizationResx\Products.ru.Designer.cs">
       <DependentUpon>Products.ru.resx</DependentUpon>
     </Compile>
+    <Compile Include="LocalizationResx\Menu.Designer.cs">
+      <DependentUpon>Menu.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Menu.ru.Designer.cs">
+      <DependentUpon>Menu.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Profile.Designer.cs">
+      <DependentUpon>Profile.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Profile.ru.Designer.cs">
+      <DependentUpon>Profile.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Auth.Designer.cs">
+      <DependentUpon>Auth.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Auth.ru.Designer.cs">
+      <DependentUpon>Auth.ru.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Settings\Configs\Menu.json" />
@@ -977,6 +995,30 @@
     <EmbeddedResource Include="LocalizationResx\Products.ru.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Products.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Menu.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Menu.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Menu.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Menu.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Profile.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Profile.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Profile.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Profile.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Auth.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Auth.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Auth.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Auth.ru.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <resheader
+        name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader
+        name="version">
+        <value>2.0</value>
+    </resheader>
+    <resheader
+        name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader
+        name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data
+        name="TermsText">
+        <value>Continuing you agree to [the terms] 
+and agree to the processing 
+of your personal data.</value>
+    </data>
+    <data
+        name="email1_placeholder">
+        <value>E-mail</value>
+    </data>
+    <data
+        name="textField2_placeholder">
+        <value>Name</value>
+    </data>
+    <data
+        name="textField21_placeholder">
+        <value>Surname</value>
+    </data>
+    <data
+        name="picker3_placeholder">
+        <value>Gender</value>
+    </data>
+    <data
+        name="picker3_values">
+        <value>Male,Female,Other</value>
+    </data>
+    <data
+        name="picker4_placeholder">
+        <value>Where did you hear about us?</value>
+    </data>
+    <data
+        name="picker4_values">
+        <value>Interner,TV,Papers,Friends</value>
+    </data>
+    <data
+        name="date5_placeholder">
+        <value>Birthdate</value>
+    </data>
+    <data
+        name="password6_placeholder">
+        <value>Password</value>
+    </data>
+    <data
+        name="ConfirmPassword">
+        <value>Confirm password</value>
+    </data>
+    <data
+        name="SocialAuthCancel">
+        <value>You canceled authorization with</value>
+    </data>
+    <data
+        name="SocialAuthError">
+        <value>We can't authorize you with</value>
+    </data>
+    <data
+        name="Auth_SignIn">
+        <value>SIGN IN</value>
+    </data>
+    <data
+        name="Auth_SignUp">
+        <value>SIGN UP</value>
+    </data>
+    <data
+        name="Auth_Skip">
+        <value>Skip</value>
+    </data>
+    <data
+        name="SignUp_Title">
+        <value>Sign up</value>
+    </data>
+    <data
+        name="SignUp_Join">
+        <value>Join us!</value>
+    </data>
+    <data
+        name="SignUp_Next">
+        <value>NEXT</value>
+    </data>
+    <data
+        name="Thanks_Thanks">
+        <value>Thanks!</value>
+    </data>
+    <data
+        name="Thanks_Motivation">
+        <value>We are glad that you are with us.
+Start shopping!</value>
+    </data>
+    <data
+        name="Thanks_Start">
+        <value>START</value>
+    </data>
+    <data
+        name="SignIn_Title">
+        <value>Sign in</value>
+    </data>
+    <data
+        name="SignIn_Join">
+        <value>Join us!</value>
+    </data>
+    <data
+        name="SignIn_PhonePlaceholder">
+        <value>Phone</value>
+    </data>
+    <data
+        name="SignIn_EmailPlaceholder">
+        <value>Е-mail</value>
+    </data>
+    <data
+        name="SignIn_PasswordPlaceholder">
+        <value>Password</value>
+    </data>
+    <data
+        name="SignIn_SignIn">
+        <value>SIGN IN</value>
+    </data>
+    <data
+        name="SignIn_RestorePassword">
+        <value>Remember password</value>
+    </data>
+    <data
+        name="SignIn_Motivation">
+        <value>Sign in to get
+access to your account.</value>
+    </data>
+    <data
+        name="Password_Reset_Title">
+        <value>Restore password</value>
+    </data>
+    <data
+        name="Password_Reset_PhonePlaceholder">
+        <value>Phone</value>
+    </data>
+    <data
+        name="Password_Reset_EmailPlaceholder">
+        <value>E-mail</value>
+    </data>
+    <data
+        name="Password_Reset_Forgot">
+        <value>Forgot password?</value>
+    </data>
+    <data
+        name="Password_Reset_MotivationPhone">
+        <value>Enter your phone
+and we'll send you the code
+for password recovery</value>
+    </data>
+    <data
+        name="Password_Reset_MotivationEmail">
+        <value>Enter your email address
+and we will send you instructions
+to recover the password.</value>
+    </data>
+    <data
+        name="Password_Reset_GetCode">
+        <value>GET CODE</value>
+    </data>
+    <data
+        name="Password_Reset_GetPassword">
+        <value>GET PASSWORD</value>
+    </data>
+    <data
+        name="Password_Reset_Close">
+        <value>CLOSE</value>
+    </data>
+    <data
+        name="Password_Reset_EmailInstruction">
+        <value>Check your email,
+we sent you instructions
+to recover the password.</value>
+    </data>
+    <data
+        name="Password_Reset_PasswordSent">
+        <value>Password sent</value>
+    </data>
+    <data
+        name="Password_Sms_Title">
+        <value>Restore password</value>
+    </data>
+    <data
+        name="Password_Sms_SentAgain">
+        <value>Send code
+again</value>
+    </data>
+    <data
+        name="Password_Sms_ConfirmCode">
+        <value>CONFIRM CODE</value>
+    </data>
+    <data
+        name="Password_Sms_CodePlaceholder">
+        <value>Code</value>
+    </data>
+    <data
+        name="Password_Sms_CodeText">
+        <value>SMS code</value>
+    </data>
+    <data
+        name="Password_New_Title">
+        <value>Restore password</value>
+    </data>
+    <data
+        name="Password_New_ConfirmPasswordPlaceholder">
+        <value>Confirm password</value>
+    </data>
+    <data
+        name="Password_New_NewPasswordPlaceholder">
+        <value>New password</value>
+    </data>
+    <data
+        name="Password_New_NewPassword">
+        <value>New password</value>
+    </data>
+    <data
+        name="Password_New_Motivation">
+        <value>Invent and enter 
+a new password.</value>
+    </data>
+    <data
+        name="Password_New_Done">
+        <value>DONE</value>
+    </data>
+</root>

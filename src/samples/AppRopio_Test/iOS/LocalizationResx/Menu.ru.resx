@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <resheader
+        name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader
+        name="version">
+        <value>2.0</value>
+    </resheader>
+    <resheader
+        name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader
+        name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data
+        name="AppRopio.ECommerce.Basket.Core.ViewModels.IBasketViewModel">
+        <value>Корзина</value>
+    </data>
+    <data
+        name="AppRopio.ECommerce.Products.Core.ViewModels.IProductsViewModel">
+        <value>Каталог</value>
+    </data>
+    <data
+        name="AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrders.IHistoryOrdersViewModel">
+        <value>История заказов</value>
+    </data>
+    <data
+        name="AppRopio.ECommerce.Marked.Core.ViewModels.Marked.IMarkedViewModel">
+        <value>Избранное</value>
+    </data>
+    <data
+        name="AppRopio.Base.Contacts.Core.ViewModels.Contacts.IContactsViewModel">
+        <value>Контакты</value>
+    </data>
+    <data
+        name="AppRopio.Base.Map.Core.ViewModels.Points.List.IPointsListViewModel">
+        <value>Магазины</value>
+    </data>
+    <data
+        name="AppRopio.Base.Information.Core.ViewModels.Information.IInformationViewModel">
+        <value>Информация</value>
+    </data>
+    <data
+        name="AppRopio.Base.Settings.Core.ViewModels.Settings.ISettingsViewModel">
+        <value>Настройки</value>
+    </data>
+</root>
