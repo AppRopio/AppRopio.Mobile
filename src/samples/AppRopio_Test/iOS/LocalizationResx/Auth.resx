@@ -212,6 +212,14 @@ again</value>
         <value>SMS code</value>
     </data>
     <data
+        name="Password_Sms_CodeFromSms">
+        <value>Enter code from sms</value>
+    </data>
+    <data
+        name="Password_Sms_SentToPhone">
+        <value>Sent to phone</value>
+    </data>
+    <data
         name="Password_New_Title">
         <value>Restore password</value>
     </data>

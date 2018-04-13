@@ -6,11 +6,11 @@ namespace AppRopio.Base.Core.Converters
 {
     public class PriceFormatConverter : IMvxValueConverter
     {
-        private NumberFormatInfo _defaultFormat = (NumberFormatInfo)new CultureInfo("ru").NumberFormat.Clone();
+        private NumberFormatInfo _defaultFormat = (NumberFormatInfo)AppSettings.SettingsCulture.NumberFormat.Clone();
 
         public string CurrencyFormat { get; set; } = "C0";
 
-		public string CurrencySymbol { get; set; }
+		public string CurrencySymbol { get; set; } = AppSettings.SettingsCulture.NumberFormat.CurrencySymbol;
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

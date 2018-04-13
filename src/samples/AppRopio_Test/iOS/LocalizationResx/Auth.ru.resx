@@ -213,6 +213,14 @@
         <value>Код подтверждения</value>
     </data>
     <data
+        name="Password_Sms_CodeFromSms">
+        <value>Введите код из СМС.</value>
+    </data>
+    <data
+        name="Password_Sms_SentToPhone">
+        <value>Отправлено на номер</value>
+    </data>
+    <data
         name="Password_New_Title">
         <value>Восстановление пароля</value>
     </data>

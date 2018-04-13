@@ -12,6 +12,9 @@ using MvvmCross.Binding.BindingContext;
 using MvvmCross.Binding.iOS.Views;
 using MvvmCross.Platform;
 using UIKit;
+using AppRopio.Base.Core.Services.Location;
+using AppRopio.Base.Core.Services.Localization;
+using AppRopio.Base.Filters.Core;
 
 namespace AppRopio.Base.Filters.iOS.Views.Sort
 {
@@ -159,7 +162,7 @@ namespace AppRopio.Base.Filters.iOS.Views.Sort
 
         protected virtual void SetupTitle(UILabel title)
         {
-            title.Text = "Сортировка";
+            title.Text = LocalizationService.GetLocalizableString(FiltersConstants.RESX_NAME, "Sort_Title");
             title.SetupStyle(ThemeConfig.SortTypes.Title);
         }
 

@@ -28,6 +28,8 @@ namespace AppRopio.Base.Filters.Core.ViewModels.Filters.Selection
 
         protected CancellationTokenSource CTS { get; private set; }
 
+        public override string ApplyTitle => LocalizationService.GetLocalizableString(FiltersConstants.RESX_NAME, "Selection_Apply");
+
         #endregion
 
         #region Services

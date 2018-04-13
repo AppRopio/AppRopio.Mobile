@@ -16,21 +16,21 @@ namespace AppRopio_Test.LocalizationResx {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Products_ru {
+    internal class Filters {
         
         private static System.Resources.ResourceManager resourceMan;
         
         private static System.Globalization.CultureInfo resourceCulture;
         
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Products_ru() {
+        internal Filters() {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         internal static System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.Equals(null, resourceMan)) {
-                    System.Resources.ResourceManager temp = new System.Resources.ResourceManager("AppRopio_Test.LocalizationResx.Products.ru", typeof(Products_ru).Assembly);
+                    System.Resources.ResourceManager temp = new System.Resources.ResourceManager("AppRopio_Test.LocalizationResx.Filters", typeof(Filters).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -47,75 +47,27 @@ namespace AppRopio_Test.LocalizationResx {
             }
         }
         
-        internal static string CategoriesEmptyTitle {
+        internal static string Filters_Title {
             get {
-                return ResourceManager.GetString("CategoriesEmptyTitle", resourceCulture);
+                return ResourceManager.GetString("Filters_Title", resourceCulture);
             }
         }
         
-        internal static string OneProduct {
+        internal static string Filters_Apply {
             get {
-                return ResourceManager.GetString("OneProduct", resourceCulture);
+                return ResourceManager.GetString("Filters_Apply", resourceCulture);
             }
         }
         
-        internal static string TwoProducts {
+        internal static string Filters_Clear {
             get {
-                return ResourceManager.GetString("TwoProducts", resourceCulture);
+                return ResourceManager.GetString("Filters_Clear", resourceCulture);
             }
         }
         
-        internal static string FiveProducts {
+        internal static string Sort_Title {
             get {
-                return ResourceManager.GetString("FiveProducts", resourceCulture);
-            }
-        }
-        
-        internal static string OutOfStock {
-            get {
-                return ResourceManager.GetString("OutOfStock", resourceCulture);
-            }
-        }
-        
-        internal static string ContentSearch_Title {
-            get {
-                return ResourceManager.GetString("ContentSearch_Title", resourceCulture);
-            }
-        }
-        
-        internal static string ContentSearch_ClearHistory {
-            get {
-                return ResourceManager.GetString("ContentSearch_ClearHistory", resourceCulture);
-            }
-        }
-        
-        internal static string ContentSearch_NoResultsTitle {
-            get {
-                return ResourceManager.GetString("ContentSearch_NoResultsTitle", resourceCulture);
-            }
-        }
-        
-        internal static string ContentSearch_NoResultsText {
-            get {
-                return ResourceManager.GetString("ContentSearch_NoResultsText", resourceCulture);
-            }
-        }
-        
-        internal static string ContentSearch_NoResultsCatalog {
-            get {
-                return ResourceManager.GetString("ContentSearch_NoResultsCatalog", resourceCulture);
-            }
-        }
-        
-        internal static string Catalog_Filters {
-            get {
-                return ResourceManager.GetString("Catalog_Filters", resourceCulture);
-            }
-        }
-        
-        internal static string Catalog_Sort {
-            get {
-                return ResourceManager.GetString("Catalog_Sort", resourceCulture);
+                return ResourceManager.GetString("Sort_Title", resourceCulture);
             }
         }
         

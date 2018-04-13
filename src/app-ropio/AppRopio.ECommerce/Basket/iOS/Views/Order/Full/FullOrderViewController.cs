@@ -14,6 +14,8 @@ using MvvmCross.Binding.BindingContext;
 using MvvmCross.Binding.iOS.Views;
 using MvvmCross.Platform;
 using UIKit;
+using AppRopio.ECommerce.Basket.Core;
+using AppRopio.Base.Core;
 
 namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Full
 {
@@ -89,7 +91,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Full
         protected virtual void SetupDeliveryTimeLabel(UILabel deliveryTimeLabel)
         {
             deliveryTimeLabel.SetupStyle(OrderTheme.DeliveryInfo.TimeView.TimeLabel);
-            deliveryTimeLabel.Text = "Время и дата доставки";
+            deliveryTimeLabel.Text = LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Order_DeliveryTimeAndDay");
         }
 
         protected virtual void SetupDeliveryTimePickerView(UIView deliveryPickerView, UIPickerView pickerView)
@@ -146,7 +148,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Full
 
         protected virtual void SetupDeliveryPriceTitle(UILabel deliveryPriceTitle)
         {
-            deliveryPriceTitle.Text = "Доставка";
+            deliveryPriceTitle.Text = LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Order_DeliveryPrice");
             deliveryPriceTitle.SetupStyle(OrderTheme.DeliveryPriceLabel);
         }
 
@@ -162,7 +164,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Full
 
         protected virtual void SetupAccessoryButton(UIButton accessoryNextButton)
         {
-            accessoryNextButton.SetTitle("Готово", UIControlState.Normal);
+            accessoryNextButton.SetTitle(LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Order_Done"), UIControlState.Normal);
             accessoryNextButton.ChangeFrame(w: DeviceInfo.ScreenWidth, h: 44);
             accessoryNextButton.SetupStyle(OrderTheme.AccessoryNextButton);
         }
@@ -232,7 +234,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Full
             {
                 StringFormat = (arg) =>
                 {
-                    return arg == null ? (Mvx.Resolve<IBasketConfigService>().Config.DeliveryEmptyText ?? "от 0 \u20BD") : ((decimal)arg).ToString("# ### ##0.## \u20BD;;бесплатно").Trim();
+                    return arg == null ? (LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Order_DeliveryEmptyText") ?? $"{LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Order_DeliveryPriceFrom")} 0 {AppSettings.SettingsCulture.NumberFormat.CurrencySymbol}") : ((decimal)arg).ToString($"# ### ##0.## {AppSettings.SettingsCulture.NumberFormat.CurrencySymbol};;{LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Order_Free")}").Trim();
                 }
             });
         }
@@ -248,7 +250,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Full
                    {
                        StringFormat = (arg) =>
                        {
-                           var str = string.Format("Заказать за {0}", ((decimal)arg).ToString("# ### ##0.## ₽").Trim());
+                    var str = string.Format($"{LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Order_OrderBy")} за {{0}}", ((decimal)arg).ToString("# ### ##0.##").Trim());
                            return OrderTheme.NextButton.UppercaseTitle ? str.ToUpperInvariant() : str;
                        }
                    });
@@ -268,7 +270,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Full
 
         protected override void InitializeControls()
         {
-            Title = "Оформление заказа";
+            Title = LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Order_Title");
 
             RegisterKeyboardActions = true;
 

@@ -323,6 +323,18 @@ namespace AppRopio_Test.LocalizationResx {
             }
         }
         
+        internal static string Password_Sms_CodeFromSms {
+            get {
+                return ResourceManager.GetString("Password_Sms_CodeFromSms", resourceCulture);
+            }
+        }
+        
+        internal static string Password_Sms_SentToPhone {
+            get {
+                return ResourceManager.GetString("Password_Sms_SentToPhone", resourceCulture);
+            }
+        }
+        
         internal static string Password_New_Title {
             get {
                 return ResourceManager.GetString("Password_New_Title", resourceCulture);

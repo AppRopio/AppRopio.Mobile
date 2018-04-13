@@ -1,22 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using AppRopio.Base.API.Services;
 using AppRopio.Models.Base.Responses;
 using AppRopio.Models.Filters.Responses;
 using AppRopio.Models.Products.Responses;
+using MvvmCross.Platform;
 
 namespace AppRopio.ECommerce.Products.API.Services.Fakes
 {
     public class ProductFakeService : IProductService
     {
-        List<Product> _products = new List<Product>
+        public bool IsRussianCulture => Mvx.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
+
+        List<Product> _products;
+
+        public ProductFakeService()
+        {
+            _products = _products = new List<Product>
             {
                 new Product
                 {
                     Id = "1",
-                    Name = "Угловой диван Камелот",
+                    Name = IsRussianCulture ? "Угловой диван Камелот" : "Corner sofa Camelot",
                     ImageUrls = new List<Image>
                     {
                         new Image { SmallUrl = "https://image.shutterstock.com/z/stock-photo-tasty-macaroni-cookies-on-a-wooden-base-541322413.jpg", LargeUrl = "https://image.shutterstock.com/z/stock-photo-tasty-macaroni-cookies-on-a-wooden-base-541322413.jpg" },
@@ -41,14 +47,14 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                             Color = "#FC224B"
                         }
                     },
-                    State = new ProductState { Name = "В наличии", Type = ProductStateType.InStock },
-                    UnitName = "шт",
+                    State = new ProductState { Name = IsRussianCulture ? "В наличии" : "In stock", Type = ProductStateType.InStock },
+                    UnitName = IsRussianCulture ? "шт" : "PC",
                     UnitStep = 1.0f
                 },
                 new Product
                 {
                     Id = "2",
-                    Name = "Тар-тар из телятины с теплыми лисичками",
+                    Name = IsRussianCulture ? "Тар-тар из телятины с теплыми лисичками" : "Veal tartar with warm chanterelles",
                     ImageUrls = new List<Image>
                     {
                         new Image { SmallUrl = "https://image.shutterstock.com/z/stock-photo-fresh-salad-with-chicken-tomatoes-and-mixed-greens-arugula-mesclun-mache-on-wooden-background-390942682.jpg", LargeUrl = "https://image.shutterstock.com/z/stock-photo-fresh-salad-with-chicken-tomatoes-and-mixed-greens-arugula-mesclun-mache-on-wooden-background-390942682.jpg" },
@@ -65,7 +71,7 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                             Color = "#FC224B"
                         }
                     },
-                    UnitName = "кг",
+                    UnitName = IsRussianCulture ? "кг" : "kg",
                     UnitStep = 1.0f,
                     ExtraPrice = new Price
                     {
@@ -75,7 +81,7 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                 new Product
                 {
                     Id = "1",
-                    Name = "Угловой диван Камелот",
+                    Name = IsRussianCulture ? "Угловой диван Камелот" : "Corner sofa Camelot",
                     ImageUrls = new List<Image>
                     {
                         new Image { SmallUrl = "https://image.shutterstock.com/z/stock-photo-fresh-salad-with-chicken-tomatoes-and-mixed-greens-arugula-mesclun-mache-on-wooden-background-390942682.jpg", LargeUrl = "https://image.shutterstock.com/z/stock-photo-fresh-salad-with-chicken-tomatoes-and-mixed-greens-arugula-mesclun-mache-on-wooden-background-390942682.jpg" },
@@ -83,26 +89,26 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                     },
                     Price = 2000100,
                     OldPrice = null,
-                    UnitName = "мл",
+                    UnitName = IsRussianCulture ? "мл" : "ml",
                     UnitStep = 1.0f
                 },
                 new Product
                 {
                     Id = "2",
-                    Name = "Угловой диван Бруклин",
+                    Name = IsRussianCulture ? "Угловой диван Бруклин" : "Corner sofa Brooklyn",
                     ImageUrls = new List<Image>
                     {
                         new Image { SmallUrl = "https://image.shutterstock.com/z/stock-photo-fresh-salad-with-chicken-tomatoes-and-mixed-greens-arugula-mesclun-mache-on-wooden-background-390942682.jpg", LargeUrl = "https://image.shutterstock.com/z/stock-photo-fresh-salad-with-chicken-tomatoes-and-mixed-greens-arugula-mesclun-mache-on-wooden-background-390942682.jpg" }
                     },
                     Price = 2000100,
                     OldPrice = 2000200,
-                    UnitName = "шт",
+                    UnitName = IsRussianCulture ? "шт" : "PC",
                     UnitStep = 1.0f
                 },
                 new Product
                 {
                     Id = "1",
-                    Name = "Угловой диван Камелот",
+                    Name = IsRussianCulture ? "Угловой диван Камелот" : "Corner sofa Camelot",
                     ImageUrls = new List<Image>
                     {
                         new Image { SmallUrl = "https://image.shutterstock.com/z/stock-photo-fresh-salad-with-chicken-tomatoes-and-mixed-greens-arugula-mesclun-mache-on-wooden-background-390942682.jpg", LargeUrl = "nophoto" },
@@ -111,13 +117,13 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                     },
                     Price = 2000100,
                     OldPrice = null,
-                    UnitName = "кг",
+                    UnitName = IsRussianCulture ? "кг" : "kg",
                     UnitStep = 1.0f
                 },
                 new Product
                 {
                     Id = "2",
-                    Name = "Угловой диван Бруклин",
+                    Name = IsRussianCulture ? "Угловой диван Бруклин" : "Corner sofa Brooklyn",
                     ImageUrls = new List<Image>
                     {
                         new Image { SmallUrl = "https://image.shutterstock.com/z/stock-photo-fresh-salad-with-chicken-tomatoes-and-mixed-greens-arugula-mesclun-mache-on-wooden-background-390942682.jpg", LargeUrl = "https://image.shutterstock.com/z/stock-photo-fresh-salad-with-chicken-tomatoes-and-mixed-greens-arugula-mesclun-mache-on-wooden-background-390942682.jpg" },
@@ -126,13 +132,13 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                     },
                     Price = 2000100,
                     OldPrice = 2000200,
-                    UnitName = "мл",
+                    UnitName = IsRussianCulture ? "мл" : "ml",
                     UnitStep = 1.0f
                 },
                 new Product
                 {
                     Id = "1",
-                    Name = "Угловой диван Камелот",
+                    Name = IsRussianCulture ? "Угловой диван Камелот" : "Corner sofa Camelot",
                     ImageUrls = new List<Image>
                     {
                         new Image { SmallUrl = "https://image.shutterstock.com/z/stock-photo-fresh-salad-with-chicken-tomatoes-and-mixed-greens-arugula-mesclun-mache-on-wooden-background-390942682.jpg", LargeUrl = "https://image.shutterstock.com/z/stock-photo-fresh-salad-with-chicken-tomatoes-and-mixed-greens-arugula-mesclun-mache-on-wooden-background-390942682.jpg" },
@@ -149,13 +155,13 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                             Color = "#39C3FF"
                         }
                     },
-                    UnitName = "шт",
+                    UnitName = IsRussianCulture ? "шт" : "PC",
                     UnitStep = 1.0f
                 },
                 new Product
                 {
                     Id = "2",
-                    Name = "Угловой диван Бруклин",
+                    Name = IsRussianCulture ? "Угловой диван Бруклин" : "Corner sofa Brooklyn",
                     ImageUrls = new List<Image>
                     {
                         new Image { SmallUrl = "https://image.shutterstock.com/z/stock-photo-fresh-salad-with-chicken-tomatoes-and-mixed-greens-arugula-mesclun-mache-on-wooden-background-390942682.jpg", LargeUrl = "https://image.shutterstock.com/z/stock-photo-mixed-salad-with-bacon-and-tomato-sauce-on-a-wooden-background-top-view-614268470.jpg" },
@@ -172,13 +178,13 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                             Color = "#FC224B"
                         }
                     },
-                    UnitName = "кг",
+                    UnitName = IsRussianCulture ? "кг" : "kg",
                     UnitStep = 1.0f
                 },
                 new Product
                 {
                     Id = "1",
-                    Name = "Угловой диван Камелот",
+                    Name = IsRussianCulture ? "Угловой диван Камелот" : "Corner sofa Camelot",
                     ImageUrls = new List<Image>
                     {
                         new Image { SmallUrl = "https://image.shutterstock.com/z/stock-photo-fresh-salad-with-chicken-tomatoes-and-mixed-greens-arugula-mesclun-mache-on-wooden-background-390942682.jpg", LargeUrl = "https://image.shutterstock.com/z/stock-photo-fresh-salad-with-chicken-tomatoes-and-mixed-greens-arugula-mesclun-mache-on-wooden-background-390942682.jpg" },
@@ -195,13 +201,13 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                             Color = "#39C3FF"
                         }
                     },
-                    UnitName = "мл",
+                    UnitName = IsRussianCulture ? "мл" : "ml",
                     UnitStep = 1.0f
                 },
                 new Product
                 {
                     Id = "2",
-                    Name = "Угловой диван Бруклин",
+                    Name = IsRussianCulture ? "Угловой диван Бруклин" : "Corner sofa Brooklyn",
                     ImageUrls = new List<Image>
                     {
                         new Image { SmallUrl = "https://image.shutterstock.com/z/stock-photo-fresh-salad-with-chicken-tomatoes-and-mixed-greens-arugula-mesclun-mache-on-wooden-background-390942682.jpg", LargeUrl = "https://image.shutterstock.com/z/stock-photo-mixed-salad-with-bacon-and-tomato-sauce-on-a-wooden-background-top-view-614268470.jpg" },
@@ -218,18 +224,19 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                             Color = "#FC224B"
                         }
                     },
-                    UnitName = "шт",
+                    UnitName = IsRussianCulture ? "шт" : "PC",
                     UnitStep = 1.0f
                 }
             };
+        }
 
         public async Task<ProductShare> GetProductForShare(string groupId, string productId)
         {
             await Task.Delay(500);
             return new ProductShare
             {
-                Title = "Угловой диван Бруклин",
-                Text = "Здесь продают угловой диван Бруклин по выгодной цене!",
+                Title = IsRussianCulture ? "Угловой диван Бруклин" : "Corner sofa Brooklyn",
+                Text = IsRussianCulture ? "Здесь продают угловой диван Бруклин по выгодной цене!" : "Special price only for you!",
                 Url = "https://hoff.ru/catalog/gostinaya/divany/uglovye_kozhanye/divan_bruklin_id14210/"
             };
         }
@@ -249,22 +256,22 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                             Id = "1",
                             WidgetType = ProductWidgetType.MultilineText,
                             DataType = ProductDataType.Text,
-                            Name = "Состав",
-                            Content = "Грудка индейки горячего копчения, телятина запеченая с дымком, сырокопченая говядина, сыровяленая баранина"
+                            Name = IsRussianCulture ? "Состав" : "Composition",
+                            Content = IsRussianCulture ? "Грудка индейки горячего копчения, телятина запеченая с дымком, сырокопченая говядина, сыровяленая баранина" : "Hot smoked turkey breast, veal baked with haze, raw smoked beef, raw lamb"
                         },
                         new ProductParameter
                         {
                             Id = "2",
                             WidgetType = ProductWidgetType.HorizontalCollection,
                             DataType = ProductDataType.Products,
-                            Name = "Недавно смотрели"
+                            Name = IsRussianCulture ? "Недавно смотрели" : "Recently viewed"
                         },
                         new ProductParameter
                         {
                             Id = "3",
                             WidgetType = ProductWidgetType.HorizontalCollection,
                             DataType = ProductDataType.Products,
-                            Name = "Мы рекомендуем"
+                            Name = IsRussianCulture ? "Мы рекомендуем" : "Recommended"
                         }
                     }
                 };
@@ -279,7 +286,7 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                         Id = "1",
                         WidgetType = ProductWidgetType.HorizontalCollection,
                         DataType = ProductDataType.Color,
-                        Name = "Цвет",
+                        Name = IsRussianCulture ? "Цвет" : "Color",
                         Values = new List<ProductParameterValue>
                         {
                             new ProductParameterValue { Id = "1", Value = "#F86C50", ValueName = "Оранжевый" },
@@ -298,7 +305,7 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                         Id = "2",
                         WidgetType = ProductWidgetType.HorizontalCollection,
                         DataType = ProductDataType.Text,
-                        Name = "Бренд",
+                        Name = IsRussianCulture ? "Бренд" : "Brand",
                         Values = new List<ProductParameterValue>
                         {
                             new ProductParameterValue { Id = "1", Value = "oodji", ValueName = "oodji" },
@@ -316,7 +323,7 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                         Id = "3",
                         WidgetType = ProductWidgetType.MinMax,
                         DataType = ProductDataType.Number,
-                        Name = "Цена",
+                        Name = IsRussianCulture ? "Цена" : "Price",
                         MinValue = "399.0",
                         MaxValue = "10000.0"
                     },
@@ -325,7 +332,7 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                         Id = "4",
                         WidgetType = ProductWidgetType.MinMax,
                         DataType = ProductDataType.Date,
-                        Name = "Дата доставки",
+                        Name = IsRussianCulture ? "Дата доставки" : "Delivery date",
                         MinValue = "2017-03-27",
                         MaxValue = "2017-04-02"
                     },
@@ -334,7 +341,7 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                         Id = "5",
                         WidgetType = ProductWidgetType.VerticalCollection,
                         DataType = ProductDataType.Text,
-                        Name = "Размер",
+                        Name = IsRussianCulture ? "Размер" : "Size",
                         Values = new List<ProductParameterValue>
                         {
                             new ProductParameterValue { Id = "1", Value = "42", ValueName = "XXS" },
@@ -352,7 +359,7 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                         WidgetType = ProductWidgetType.Transition,
                         DataType = ProductDataType.Custom,
                         CustomType = "reviews",
-                        Name = "Отзывы",
+                        Name = IsRussianCulture ? "Отзывы" : "Reviews",
                         Content = "4.5"
                     },
                     new ProductParameter
@@ -360,16 +367,16 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                         Id = "6",
                         WidgetType = ProductWidgetType.Picker,
                         DataType = ProductDataType.Text,
-                        Name = "Сортировка по",
+                        Name = IsRussianCulture ? "Сортировка по" : "Sort by",
                         Values = new List<ProductParameterValue>
                         {
-                            new ProductParameterValue { Id = "1", Value = "1", ValueName = "Определенный" },
-                            new ProductParameterValue { Id = "2", Value = "2", ValueName = "Какой-то цвет" },
-                            new ProductParameterValue { Id = "3", Value = "3", ValueName = "Один цвет" },
-                            new ProductParameterValue { Id = "4", Value = "4", ValueName = "Выбранный цвет" },
-                            new ProductParameterValue { Id = "5", Value = "5", ValueName = "Цвет другой" },
-                            new ProductParameterValue { Id = "6", Value = "6", ValueName = "Третий цвет" },
-                            new ProductParameterValue { Id = "7", Value = "7", ValueName = "Еще один цвет" }
+                            new ProductParameterValue { Id = "1", Value = "1", ValueName = IsRussianCulture ? "Определенный" : "Type 1" },
+                            new ProductParameterValue { Id = "2", Value = "2", ValueName = IsRussianCulture ? "Какой-то цвет" : "Type 2" },
+                            new ProductParameterValue { Id = "3", Value = "3", ValueName = IsRussianCulture ? "Один цвет" : "Type 3" },
+                            new ProductParameterValue { Id = "4", Value = "4", ValueName = IsRussianCulture ? "Выбранный цвет" : "Type 4" },
+                            new ProductParameterValue { Id = "5", Value = "5", ValueName = IsRussianCulture ? "Цвет другой" : "Type 5" },
+                            new ProductParameterValue { Id = "6", Value = "6", ValueName = IsRussianCulture ? "Третий цвет" : "Type 6" },
+                            new ProductParameterValue { Id = "7", Value = "7", ValueName = IsRussianCulture ? "Еще один цвет" : "Type 7" }
                         }
                     },
 
@@ -378,7 +385,7 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                         Id = "7",
                         WidgetType = ProductWidgetType.MultiSelection,
                         DataType = ProductDataType.Text,
-                        Name = "Бренд",
+                        Name = IsRussianCulture ? "Бренд" : "Brand",
                         Values = new List<ProductParameterValue>
                         {
                             new ProductParameterValue { Id = "1", Value = "Adidas", ValueName = "Adidas" },
@@ -396,12 +403,12 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                         Id = "8",
                         WidgetType = ProductWidgetType.OneSelection,
                         DataType = ProductDataType.Text,
-                        Name = "Наличие в магазинах",
+                        Name = IsRussianCulture ? "Наличие в магазинах" : "Availability in shops",
                         Values = new List<ProductParameterValue>
                         {
-                            new ProductParameterValue { Id = "1", Value = "1", ValueName = "Да" },
-                            new ProductParameterValue { Id = "2", Value = "0", ValueName = "Нет" },
-                            new ProductParameterValue { Id = "3", Value = "2", ValueName = "Не важно" }
+                            new ProductParameterValue { Id = "1", Value = "1", ValueName = IsRussianCulture ? "Да" : "Yes" },
+                            new ProductParameterValue { Id = "2", Value = "0", ValueName = IsRussianCulture ? "Нет" : "No" },
+                            new ProductParameterValue { Id = "3", Value = "2", ValueName = IsRussianCulture ? "Не важно" : "It does not matter" }
                         }
                     },
                     new ProductParameter
@@ -409,22 +416,25 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                         Id = "9",
                         WidgetType = ProductWidgetType.Switch,
                         DataType = ProductDataType.Boolean,
-                        Name = "Быстрая доставка"
+                        Name = IsRussianCulture ? "Быстрая доставка" : "Fast delivery"
                     },
                     new ProductParameter
                     {
                         Id = "10",
                         WidgetType = ProductWidgetType.Transition,
                         DataType = ProductDataType.Text,
-                        Name = "Описание товара",
-                        Content = "Наполовину полон или наполовину пуст? Известная шутка со стаканом измеряет оптимизм, ну а бутылка от Monbento им наполняет, даря заряд позитива и хорошего настроения. Прозрачная половинка плюс цветная крышка из приятного прорезиненного пластика – получается идеальная бутылка небольшого размера, но отличной вместимости. \nМногоразовая бутылка вместимостью 330 мл пригодится в спортзале, на прогулке, дома, на даче – в общем, везде! Забудьте про одноразовые пластиковые ёмкости – они не красивые, да и засоряют окружающую среду. А такая красота в руках точно привлечет взгляды окружающих. \nГерметично закрывается. Изготовлена из безопасного пищевого пластика (BPA free). \nМожно мыть в посудомоечной машине."
+                        Name = IsRussianCulture ? "Описание товара" : "Description",
+                        Content = IsRussianCulture ?
+                            "Наполовину полон или наполовину пуст? Известная шутка со стаканом измеряет оптимизм, ну а бутылка от Monbento им наполняет, даря заряд позитива и хорошего настроения. Прозрачная половинка плюс цветная крышка из приятного прорезиненного пластика – получается идеальная бутылка небольшого размера, но отличной вместимости. \nМногоразовая бутылка вместимостью 330 мл пригодится в спортзале, на прогулке, дома, на даче – в общем, везде! Забудьте про одноразовые пластиковые ёмкости – они не красивые, да и засоряют окружающую среду. А такая красота в руках точно привлечет взгляды окружающих. \nГерметично закрывается. Изготовлена из безопасного пищевого пластика (BPA free). \nМожно мыть в посудомоечной машине."
+                            :
+                            "Half full or half empty? A well-known joke with a glass measures optimism, but the bottle from Monbento fills them, giving a charge of positive and good mood. Transparent half plus a colored lid made of pleasant rubberized plastic - it turns out an ideal bottle of small size, but of excellent capacity. \nA multi-purpose bottle with a capacity of 330 ml is useful in the gym, on a walk, at home, at the dacha - in general, everywhere! Forget about disposable plastic containers - they are not beautiful, and clog the environment. And such beauty in the hands will definitely attract the views of others. \nMeasily closes. It is made of safe food plastic (BPA free). \nYou can wash in the dishwasher."
                     },
                     new ProductParameter
                     {
                         Id = "11",
                         WidgetType = ProductWidgetType.Transition,
                         DataType = ProductDataType.Html,
-                        Name = "Характеристики товара",
+                        Name = IsRussianCulture ? "Характеристики товара" : "Product features",
                         Content = @"<html><body><h1>Замечательный товар</h1>
 <p>
 <li>
@@ -444,29 +454,32 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                         Id = "12",
                         WidgetType = ProductWidgetType.MultilineText,
                         DataType = ProductDataType.Text,
-                        Name = "Описание товара",
-                        Content = "Наполовину полон или наполовину пуст? Известная шутка со стаканом измеряет оптимизм, ну а бутылка от Monbento им наполняет, даря заряд позитива и хорошего настроения. Прозрачная половинка плюс цветная крышка из приятного прорезиненного пластика – получается идеальная бутылка небольшого размера, но отличной вместимости. \nМногоразовая бутылка вместимостью 330 мл пригодится в спортзале, на прогулке, дома, на даче – в общем, везде! Забудьте про одноразовые пластиковые ёмкости – они не красивые, да и засоряют окружающую среду. А такая красота в руках точно привлечет взгляды окружающих. \nГерметично закрывается. Изготовлена из безопасного пищевого пластика (BPA free). \nМожно мыть в посудомоечной машине."
+                        Name = IsRussianCulture ? "Описание товара" : "Description",
+                        Content = IsRussianCulture ?
+                            "Наполовину полон или наполовину пуст? Известная шутка со стаканом измеряет оптимизм, ну а бутылка от Monbento им наполняет, даря заряд позитива и хорошего настроения. Прозрачная половинка плюс цветная крышка из приятного прорезиненного пластика – получается идеальная бутылка небольшого размера, но отличной вместимости. \nМногоразовая бутылка вместимостью 330 мл пригодится в спортзале, на прогулке, дома, на даче – в общем, везде! Забудьте про одноразовые пластиковые ёмкости – они не красивые, да и засоряют окружающую среду. А такая красота в руках точно привлечет взгляды окружающих. \nГерметично закрывается. Изготовлена из безопасного пищевого пластика (BPA free). \nМожно мыть в посудомоечной машине."
+                            :
+                            "Half full or half empty? A well-known joke with a glass measures optimism, but the bottle from Monbento fills them, giving a charge of positive and good mood. Transparent half plus a colored lid made of pleasant rubberized plastic - it turns out an ideal bottle of small size, but of excellent capacity. \nA multi-purpose bottle with a capacity of 330 ml is useful in the gym, on a walk, at home, at the dacha - in general, everywhere! Forget about disposable plastic containers - they are not beautiful, and clog the environment. And such beauty in the hands will definitely attract the views of others. \nMeasily closes. It is made of safe food plastic (BPA free). \nYou can wash in the dishwasher."
                     },
                     new ProductParameter()
                     {
                         Id = "14",
                         WidgetType = ProductWidgetType.HorizontalCollection,
                         DataType = ProductDataType.ShopsAvailability_Indicator,
-                        Name = "Индикация наличия в магазинах"
+                        Name = IsRussianCulture ? "Индикация наличия в магазинах" : "Availability indication in stores"
                     },
                     new ProductParameter()
                     {
                         Id = "15",
                         WidgetType = ProductWidgetType.HorizontalCollection,
                         DataType = ProductDataType.ShopsAvailability_Count,
-                        Name = "Остатки в магазинах"
+                        Name = IsRussianCulture ? "Остатки в магазинах" : "Remains in stores"
                     },
                     new ProductParameter
                     {
                         Id = "16",
                         WidgetType = ProductWidgetType.HorizontalCollection,
                         DataType = ProductDataType.Products,
-                        Name = "Аксессуары",
+                        Name = IsRussianCulture ? "Аксессуары" : "Accessories",
                     }
                 }
             };
@@ -506,28 +519,28 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
             if (parameterId == "15")
                 return new List<Shop>
             {
-                new Shop { Id = "1", Name = "Магазин «Может быть какой-нибудь такой»", Address = "Санкт-Петербург, ул. Белградская, д. 45, лит. А", IsProductAvailable = true, Count = 1 },
-                new Shop { Id = "2", Name = "Магазин «Может быть какой-нибудь такой»", Address = "Санкт-Петербург, ул. Белградская, д. 45, лит. А", IsProductAvailable = true, Count = 2 },
-                new Shop { Id = "3", Name = "Магазин «Может быть какой-нибудь такой»", Address = "Санкт-Петербург, ул. Белградская, д. 45, лит. А", IsProductAvailable = true, Count = 5 },
-                new Shop { Id = "4", Name = "Магазин «Может быть какой-нибудь такой»", Address = "Санкт-Петербург, ул. Белградская, д. 45, лит. А", IsProductAvailable = false, Count = 0 },
-                new Shop { Id = "5", Name = "Магазин «Может быть какой-нибудь такой»", Address = "Санкт-Петербург, ул. Белградская, д. 45, лит. А", IsProductAvailable = true, Count = 25 },
-                new Shop { Id = "6", Name = "Магазин «Может быть какой-нибудь такой»", Address = "Санкт-Петербург, ул. Белградская, д. 45, лит. А", IsProductAvailable = true, Count = 250 },
-                new Shop { Id = "7", Name = "Магазин «Может быть какой-нибудь такой»", Address = "Санкт-Петербург, ул. Белградская, д. 45, лит. А", IsProductAvailable = false, Count = 0 },
-                new Shop { Id = "8", Name = "Магазин «Может быть какой-нибудь такой»", Address = "Санкт-Петербург, ул. Белградская, д. 45, лит. А", IsProductAvailable = false, Count = 0 },
-                new Shop { Id = "9", Name = "Магазин «Может быть какой-нибудь такой»", Address = "Санкт-Петербург, ул. Белградская, д. 45, лит. А", IsProductAvailable = true, Count = 1 },
+                new Shop { Id = "1", Name = IsRussianCulture ? "Магазин «Может быть какой-нибудь такой»" : "Shop name", Address = IsRussianCulture ? "Санкт-Петербург, ул. Белградская, д. 45, лит. А" : "Shop address", IsProductAvailable = true, Count = 1 },
+                new Shop { Id = "2", Name = IsRussianCulture ? "Магазин «Может быть какой-нибудь такой»" : "Shop name", Address = IsRussianCulture  ?"Санкт-Петербург, ул. Белградская, д. 45, лит. А" : "Shop address", IsProductAvailable = true, Count = 2 },
+                new Shop { Id = "3", Name = IsRussianCulture ? "Магазин «Может быть какой-нибудь такой»" : "Shop name", Address = IsRussianCulture ? "Санкт-Петербург, ул. Белградская, д. 45, лит. А" : "Shop address", IsProductAvailable = true, Count = 5 },
+                new Shop { Id = "4", Name = IsRussianCulture ? "Магазин «Может быть какой-нибудь такой»" : "Shop name", Address = IsRussianCulture ? "Санкт-Петербург, ул. Белградская, д. 45, лит. А" : "Shop address", IsProductAvailable = false, Count = 0 },
+                new Shop { Id = "5", Name = IsRussianCulture ? "Магазин «Может быть какой-нибудь такой»" : "Shop name", Address = IsRussianCulture ? "Санкт-Петербург, ул. Белградская, д. 45, лит. А" : "Shop address", IsProductAvailable = true, Count = 25 },
+                new Shop { Id = "6", Name = IsRussianCulture ? "Магазин «Может быть какой-нибудь такой»" : "Shop name", Address = IsRussianCulture ? "Санкт-Петербург, ул. Белградская, д. 45, лит. А" : "Shop address", IsProductAvailable = true, Count = 250 },
+                new Shop { Id = "7", Name = IsRussianCulture ? "Магазин «Может быть какой-нибудь такой»" : "Shop name", Address = IsRussianCulture ? "Санкт-Петербург, ул. Белградская, д. 45, лит. А" : "Shop address", IsProductAvailable = false, Count = 0 },
+                new Shop { Id = "8", Name = IsRussianCulture ? "Магазин «Может быть какой-нибудь такой»" : "Shop name", Address = IsRussianCulture ? "Санкт-Петербург, ул. Белградская, д. 45, лит. А" : "Shop address", IsProductAvailable = false, Count = 0 },
+                new Shop { Id = "9", Name = IsRussianCulture ? "Магазин «Может быть какой-нибудь такой»" : "Shop name", Address = IsRussianCulture ? "Санкт-Петербург, ул. Белградская, д. 45, лит. А" : "Shop address", IsProductAvailable = true, Count = 1 },
             };
             else
                 return new List<Shop>
             {
-                new Shop { Id = "1", Name = "Магазин «Может быть какой-нибудь такой»", Address = "Санкт-Петербург, ул. Белградская, д. 45, лит. А", IsProductAvailable = true },
-                new Shop { Id = "2", Name = "Магазин «Может быть какой-нибудь такой»", Address = "Санкт-Петербург, ул. Белградская, д. 45, лит. А", IsProductAvailable = true },
-                new Shop { Id = "3", Name = "Магазин «Может быть какой-нибудь такой»", Address = "Санкт-Петербург, ул. Белградская, д. 45, лит. А", IsProductAvailable = true  },
-                new Shop { Id = "4", Name = "Магазин «Может быть какой-нибудь такой»", Address = "Санкт-Петербург, ул. Белградская, д. 45, лит. А", IsProductAvailable = false },
-                new Shop { Id = "5", Name = "Магазин «Может быть какой-нибудь такой»", Address = "Санкт-Петербург, ул. Белградская, д. 45, лит. А", IsProductAvailable = true  },
-                new Shop { Id = "6", Name = "Магазин «Может быть какой-нибудь такой»", Address = "Санкт-Петербург, ул. Белградская, д. 45, лит. А", IsProductAvailable = true },
-                new Shop { Id = "7", Name = "Магазин «Может быть какой-нибудь такой»", Address = "Санкт-Петербург, ул. Белградская, д. 45, лит. А", IsProductAvailable = false },
-                new Shop { Id = "8", Name = "Магазин «Может быть какой-нибудь такой»", Address = "Санкт-Петербург, ул. Белградская, д. 45, лит. А", IsProductAvailable = false },
-                new Shop { Id = "9", Name = "Магазин «Может быть какой-нибудь такой»", Address = "Санкт-Петербург, ул. Белградская, д. 45, лит. А", IsProductAvailable = true },
+                new Shop { Id = "1", Name = IsRussianCulture ? "Магазин «Может быть какой-нибудь такой»" : "Shop name", Address = IsRussianCulture ? "Санкт-Петербург, ул. Белградская, д. 45, лит. А" : "Shop address", IsProductAvailable = true },
+                new Shop { Id = "2", Name = IsRussianCulture ? "Магазин «Может быть какой-нибудь такой»" : "Shop name", Address = IsRussianCulture ? "Санкт-Петербург, ул. Белградская, д. 45, лит. А" : "Shop address", IsProductAvailable = true },
+                new Shop { Id = "3", Name = IsRussianCulture ? "Магазин «Может быть какой-нибудь такой»" : "Shop name", Address = IsRussianCulture ? "Санкт-Петербург, ул. Белградская, д. 45, лит. А" : "Shop address", IsProductAvailable = true  },
+                new Shop { Id = "4", Name = IsRussianCulture ? "Магазин «Может быть какой-нибудь такой»" : "Shop name", Address = IsRussianCulture ? "Санкт-Петербург, ул. Белградская, д. 45, лит. А" : "Shop address", IsProductAvailable = false },
+                new Shop { Id = "5", Name = IsRussianCulture ? "Магазин «Может быть какой-нибудь такой»" : "Shop name", Address = IsRussianCulture ? "Санкт-Петербург, ул. Белградская, д. 45, лит. А" : "Shop address", IsProductAvailable = true  },
+                new Shop { Id = "6", Name = IsRussianCulture ? "Магазин «Может быть какой-нибудь такой»" : "Shop name", Address = IsRussianCulture ? "Санкт-Петербург, ул. Белградская, д. 45, лит. А" : "Shop address", IsProductAvailable = true },
+                new Shop { Id = "7", Name = IsRussianCulture ? "Магазин «Может быть какой-нибудь такой»" : "Shop name", Address = IsRussianCulture ? "Санкт-Петербург, ул. Белградская, д. 45, лит. А" : "Shop address", IsProductAvailable = false },
+                new Shop { Id = "8", Name = IsRussianCulture ? "Магазин «Может быть какой-нибудь такой»" : "Shop name", Address = IsRussianCulture ? "Санкт-Петербург, ул. Белградская, д. 45, лит. А" : "Shop address", IsProductAvailable = false },
+                new Shop { Id = "9", Name = IsRussianCulture ? "Магазин «Может быть какой-нибудь такой»" : "Shop name", Address = IsRussianCulture ? "Санкт-Петербург, ул. Белградская, д. 45, лит. А" : "Shop address", IsProductAvailable = true },
             };
         }
 
@@ -544,10 +557,10 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
 
             firstProduct.GroupId = "111";
             firstProduct.Id = "222";
-            firstProduct.Name = "Замечательный пиджак";
+            firstProduct.Name = IsRussianCulture ? "Замечательный пиджак" : "Wonderful jacket";
             firstProduct.Price = 10000;
             firstProduct.OldPrice = 12000;
-            firstProduct.State = new ProductState { Name = "Нет в наличии", Type = ProductStateType.NotAvailable };
+            firstProduct.State = new ProductState { Name = IsRussianCulture ? "Нет в наличии" : "Out of stock", Type = ProductStateType.NotAvailable };
             firstProduct.ImageUrls = new List<Image>
             {
                 new Image { LargeUrl = "https://image.shutterstock.com/z/stock-photo-tan-skin-asian-black-hair-muscle-good-looking-man-in-black-vest-military-green-pant-jean-grey-573163942.jpg" },

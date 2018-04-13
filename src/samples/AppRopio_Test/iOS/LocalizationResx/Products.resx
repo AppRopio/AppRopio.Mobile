@@ -17,8 +17,65 @@
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
     <data
-        name     ="HelloWorld"
+        name     ="CategoriesEmptyTitle"
         xml:space="preserve">
-        <value>Hello, World!</value>
+        <value>Catalog</value>
+    </data>
+    <data
+        name     ="OneProduct"
+        xml:space="preserve">
+        <value>PRODUCT</value>
+    </data>
+    <data
+        name     ="TwoProducts"
+        xml:space="preserve">
+        <value>PRODUCTS</value>
+    </data>
+    <data
+        name     ="FiveProducts"
+        xml:space="preserve">
+        <value>PRODUCTS</value>
+    </data>
+    <data
+        name     ="OutOfStock"
+        xml:space="preserve">
+        <value>OUT OF STOCK</value>
+    </data>
+    <data
+        name="ContentSearch_Title">
+        <value>Search</value>
+    </data>
+    <data
+        name="ContentSearch_ClearHistory">
+        <value>CLEAR HISTORY</value>
+    </data>
+    <data
+        name="ContentSearch_NoResultsTitle">
+        <value>Nothing found</value>
+    </data>
+    <data
+        name="ContentSearch_NoResultsText">
+        <value>Try to use catalog 
+or change your search request</value>
+    </data>
+    <data
+        name="ContentSearch_NoResultsCatalog">
+        <value>GO TO CATALOG</value>
+    </data>
+    <data
+        name="Catalog_Filters">
+        <value>FILTERS</value>
+    </data>
+    <data
+        name="Catalog_Sort">
+        <value>SORT</value>
+    </data>
+    <data
+        name="Selection_Clear">
+        <value>Clear</value>
+    </data>
+    <data
+        name="Selection_Apply">
+        <value>APPLY</value>
     </data>
 </root>

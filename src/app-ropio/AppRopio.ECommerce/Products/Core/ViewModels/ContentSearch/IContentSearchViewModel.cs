@@ -30,5 +30,7 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ContentSearch
         ObservableCollection<IHintItemVM> HintsItems { get; }
 
         ObservableCollection<IAutocompleteItemVM> AutocomleteItems { get; }
+
+        string ClearHistoryTitle { get; }
     }
 }

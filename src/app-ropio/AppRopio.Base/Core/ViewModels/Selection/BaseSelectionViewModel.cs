@@ -68,6 +68,8 @@ namespace AppRopio.Base.Core.ViewModels.Selection
             set => SetProperty(ref _items, value, nameof(Items));
         }
 
+        public abstract string ApplyTitle { get; }
+
         #endregion
 
         #region Services

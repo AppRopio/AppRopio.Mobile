@@ -154,9 +154,6 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog
             emptyText.SetupStyle(ThemeConfig.Products.EmptyView.Text);
 
             goToButton.SetupStyle(ThemeConfig.Products.EmptyView.CatalogButton);
-
-            emptyTitle.Text = "Ничего не найдено";
-            emptyText.Text = "Попробуйте воспользоваться\nпоиском или каталогом";
         }
 
         protected override void SetupRightBarButtonItems()
@@ -221,10 +218,15 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog
             return dataSource;
         }
 
-        protected virtual void BindEmptyView(UIView emptyView, UIButton goToButton, MvxFluentBindingDescriptionSet<CatalogViewController<T>, T> set)
+        protected virtual void BindEmptyView(UIView emptyView, UIImageView emptyImage, UILabel emptyTitle, UILabel emptyText, UIButton goToButton, MvxFluentBindingDescriptionSet<CatalogViewController<T>, T> set)
         {
             set.Bind(emptyView).For("Visibility").To(vm => vm.Empty).WithConversion("Visibility");
+
             set.Bind(goToButton).To(vm => vm.CatalogCommand);
+            set.Bind(goToButton).For("Title").To(vm => vm.CatalogTitle);
+
+            set.Bind(emptyTitle).To(vm => vm.NoResultsTitle);
+            set.Bind(emptyText).To(vm => vm.NoResultsText);
         }
 
         #endregion
@@ -242,7 +244,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog
             var set = this.CreateBindingSet<CatalogViewController<T>, T>();
 
             BindCollectionView(CollectionView, set);
-            BindEmptyView(EmptyView, GoToButton, set);
+            BindEmptyView(EmptyView, EmptyImage, EmptyTitle, EmptyText, GoToButton, set);
 
             set.Apply();
         }

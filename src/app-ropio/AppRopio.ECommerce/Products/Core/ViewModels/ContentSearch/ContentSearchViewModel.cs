@@ -124,6 +124,8 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ContentSearch
             }
         }
 
+        public string ClearHistoryTitle => LocalizationService.GetLocalizableString(ProductsConstants.RESX_NAME, "ContentSearch_ClearHistory");
+
         #endregion
 
         #region Hints

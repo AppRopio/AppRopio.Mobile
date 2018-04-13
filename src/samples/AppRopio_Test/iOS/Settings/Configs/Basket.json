@@ -8,6 +8,5 @@
             "typeName": "AppRopio.Payments.CloudPayments.Core.ViewModels.CloudPayments.Services.ICloudPaymentsVmService",
             "assemblyName": "AppRopio.Payments.CloudPayments.Core"
         }
-    },
-    "deliveryEmptyText": "уточнит оператор"
+    }
 }

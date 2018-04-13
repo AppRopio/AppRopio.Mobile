@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using AppRopio.Base.Core.Attributes;
@@ -12,8 +13,6 @@ using AppRopio.ECommerce.Products.Core.ViewModels.Categories.Services;
 using AppRopio.ECommerce.Products.Core.ViewModels.Categories.Services.Banners;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
-using System.Linq;
-using AppRopio.Base.Core.Services.Localization;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.Categories
 {
@@ -175,16 +174,11 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Categories
 
             var categoryBundle = parameters.ReadAs<CategoryBundle>();
             this.InitFromBundle(categoryBundle);
-
-#if DEBUG
-            var tmp = Mvx.Resolve<ILocalizationService>().GetLocalizableString("Products", "HelloWorld");
-            UserDialogs.Alert(tmp);
-#endif
         }
 
         protected virtual async void InitFromBundle(CategoryBundle parameters)
         {
-            Title = parameters.CategoryName ?? "Каталог";
+            Title = parameters.CategoryName ?? LocalizationService.GetLocalizableString(ProductsConstants.RESX_NAME, "CategoriesEmptyTitle");
             ParentCategoryId = parameters.CategoryId;
             VmNavigationType = parameters.NavigationType == Base.Core.Models.Navigation.NavigationType.None ? Base.Core.Models.Navigation.NavigationType.ClearAndPush : parameters.NavigationType;
 

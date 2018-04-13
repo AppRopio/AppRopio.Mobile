@@ -14,6 +14,7 @@ using MvvmCross.Binding.BindingContext;
 using MvvmCross.Binding.iOS.Views;
 using MvvmCross.Platform;
 using UIKit;
+using AppRopio.ECommerce.Basket.Core;
 
 namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Delivery
 {
@@ -34,7 +35,8 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Delivery
 
         protected override void InitializeControls()
         {
-            Title = "Адрес";
+            Title = LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "DeliveryAddress_Title");
+
             RegisterKeyboardActions = true;
             NavigationController.NavigationBarHidden = false;
 
@@ -98,7 +100,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Delivery
 
         protected virtual void SetupDeliveryPriceTitle(UILabel deliveryPriceTitle)
         {
-            deliveryPriceTitle.Text = "ДОСТАВКА";
+            deliveryPriceTitle.Text = LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "DeliveryAddress_DeliveryPrice");
             deliveryPriceTitle.SetupStyle(DeliveryOnAddressTheme.DeliveryPriceLabel);
         }
 
@@ -111,8 +113,8 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Delivery
         {
             if (OrderViewType == OrderViewType.Full)
             {
-                nextButton.WithTitleForAllStates("ПОДТВЕРДИТЬ");
-                accessoryNextButton.WithTitleForAllStates("ПОДТВЕРДИТЬ");
+                nextButton.WithTitleForAllStates(LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "DeliveryAddress_Confirm"));
+                accessoryNextButton.WithTitleForAllStates(LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "DeliveryAddress_Confirm"));
             }
 
             nextButton.SetupStyle(DeliveryOnAddressTheme.NextButton);
@@ -151,7 +153,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Delivery
 
         protected virtual void BindDeliveryPriceLabel(UILabel deliveryPriceLabel, MvxFluentBindingDescriptionSet<DeliveryOnAddressVC, IDeliveryOnAddressVM> set)
         {
-            set.Bind(deliveryPriceLabel).To(vm => vm.DeliveryPrice).WithConversion("StringFormat", "{0:# ### ##0.## \u20BD;;бесплатно}");
+            set.Bind(deliveryPriceLabel).To(vm => vm.DeliveryPrice).WithConversion("StringFormat", "{0:# ### ##0.## \u20BD;;" + LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "DeliveryAddress_DeliveryFree") +"}");
         }
 
         protected virtual void BindNextButton(UIButton nextButton, UIButton accessoryNextButton, MvxFluentBindingDescriptionSet<DeliveryOnAddressVC, IDeliveryOnAddressVM> set)

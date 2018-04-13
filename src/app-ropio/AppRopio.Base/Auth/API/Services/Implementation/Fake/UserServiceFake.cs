@@ -1,13 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using AppRopio.Base.Auth.API.Services;
+using AppRopio.Base.API.Services;
 using AppRopio.Models.Auth.Responses;
+using MvvmCross.Platform;
 
 namespace AppRopio.Base.Auth.API.Services.Implementation.Fake
 {
     public class UserServiceFake : IUserService
     {
+        public bool IsRussianCulture => Mvx.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
+
         public async Task ChangeUserData(Dictionary<string, object> fields)
         {
             await Task.Delay(300);
@@ -23,7 +25,7 @@ namespace AppRopio.Base.Auth.API.Services.Implementation.Fake
             await Task.Delay(300);
             return new User
             { 
-                Name = "Константин",
+                Name = IsRussianCulture ? "Константин" : "John",
                 PhotoUrl = @"https://thumbs.dreamstime.com/z/vector-boy-avatar-man-face-expression-icon-linear-avatars-75578693.jpg"
             };
         }

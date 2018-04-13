@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <resheader
+        name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader
+        name="version">
+        <value>2.0</value>
+    </resheader>
+    <resheader
+        name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader
+        name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data
+        name="Basket_Title">
+        <value>Basket</value>
+    </data>
+    <data
+        name="Basket_OrderBy">
+        <value>ORDER FOR</value>
+    </data>
+    <data
+        name="Basket_AddedToBasketTitle">
+        <value>Added to basket</value>
+    </data>
+    <data
+        name="Basket_AddedToBasketButton">
+        <value>GO</value>
+    </data>
+    <data
+        name="Basket_ProductsCount">
+        <value>Number of items in the cart:</value>
+    </data>
+    <data
+        name="Basket_Delete">
+        <value>Delete</value>
+    </data>
+    <data
+        name="Basket_DeleteYes">
+        <value>Yes</value>
+    </data>
+    
+    <data
+        name="Order_Title">
+        <value>Ordering</value>
+    </data>
+    <data
+        name="Order_Postcard">
+        <value>Postcard</value>
+    </data>
+    <data
+        name="Order_DeliveryTypeHeader">
+        <value>Delivery type</value>
+    </data>
+    <data
+        name="Order_DeliveryPrice">
+        <value>Delivery</value>
+    </data>
+    <data
+        name="Order_DeliveryPriceAlert">
+        <value>Delivery price</value>
+    </data>
+    <data
+        name="Order_OrderBy">
+        <value>ORDER FOR</value>
+    </data>
+    <data
+        name="Order_DeliveryTimeAndDay">
+        <value>Delivery day and time</value>
+    </data>
+    <data
+        name="Order_Done">
+        <value>Done</value>
+    </data>
+    <data
+        name="Order_Free">
+        <value>free</value>
+    </data>
+    <data
+        name="Order_DeliveryEmptyText">
+        <value>will clarify the operator</value>
+    </data>
+    <data
+        name="Order_DeliveryPriceFrom">
+        <value>from</value>
+    </data>
+    <data
+        name="DeliveryPoint_Title">
+        <value>Select an address</value>
+    </data>
+    <data
+        name="DeliveryPoint_Confirm">
+        <value>CONFIRM</value>
+    </data>
+    <data
+        name="DeliveryPoint_Details">
+        <value>Details</value>
+    </data>
+    <data
+        name="DeliveryPoint_MakeCallText">
+        <value>Call</value>
+    </data>
+    <data
+        name="DeliveryPoint_MakeCall">
+        <value>CALL</value>
+    </data>
+    <data
+        name="DeliveryPoint_CallError">
+        <value>Your device does not support the call feature</value>
+    </data>
+    <data
+        name="DeliveryPoint_RouteError">
+        <value>The route could not be built</value>
+    </data>
+    <data
+        name="DeliveryPoint_OnMap">
+        <value>Map</value>
+    </data>
+    <data
+        name="DeliveryAddress_Title">
+        <value>Address</value>
+    </data>
+    <data
+        name="DeliveryAddress_DeliveryPrice">
+        <value>DELIVERY</value>
+    </data>
+    <data
+        name="DeliveryAddress_DeliveryFree">
+        <value>free</value>
+    </data>
+    <data
+        name="DeliveryAddress_Confirm">
+        <value>CONFIRM</value>
+    </data>
+    <data
+        name="Payment_Title">
+        <value>Select a payment type</value>
+    </data>
+    <data
+        name="Thanks_Title">
+        <value>Thanks for your order!</value>
+    </data>
+    <data
+        name="Thanks_Text">
+        <value>Do you want to continue shopping?</value>
+    </data>
+    <data
+        name="Thanks_Catalog">
+        <value>GO TO CATALOG</value>
+    </data>
+</root>

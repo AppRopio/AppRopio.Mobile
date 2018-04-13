@@ -426,6 +426,24 @@
     <Compile Include="LocalizationResx\Auth.ru.Designer.cs">
       <DependentUpon>Auth.ru.resx</DependentUpon>
     </Compile>
+    <Compile Include="LocalizationResx\Base.Designer.cs">
+      <DependentUpon>Base.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Base.ru.Designer.cs">
+      <DependentUpon>Base.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Filters.Designer.cs">
+      <DependentUpon>Filters.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Filters.ru.Designer.cs">
+      <DependentUpon>Filters.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Basket.Designer.cs">
+      <DependentUpon>Basket.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Basket.ru.Designer.cs">
+      <DependentUpon>Basket.ru.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Settings\Configs\Menu.json" />
@@ -1019,6 +1037,30 @@
     <EmbeddedResource Include="LocalizationResx\Auth.ru.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Auth.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Base.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Base.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Base.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Base.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Filters.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Filters.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Filters.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Filters.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Basket.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Basket.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Basket.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Basket.ru.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

@@ -17,5 +17,7 @@ namespace AppRopio.Base.Core.ViewModels.Selection
         ICommand ClearCommand { get; }
 
         ObservableCollection<ISelectionItemVM> Items { get; }
+
+        string ApplyTitle { get; }
     }
 }

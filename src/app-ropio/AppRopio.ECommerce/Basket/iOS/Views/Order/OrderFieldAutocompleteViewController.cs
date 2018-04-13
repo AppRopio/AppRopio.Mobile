@@ -13,6 +13,7 @@ using AppRopio.Base.iOS.Controls;
 using AppRopio.Base.Core.Converters;
 using AppRopio.Base.iOS.Helpers;
 using System.Linq;
+using AppRopio.ECommerce.Basket.Core;
 
 namespace AppRopio.ECommerce.Basket.iOS.Views.Order
 {
@@ -50,7 +51,8 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order
 
         protected override void InitializeControls()
         {
-            Title = "Адрес";
+            Title = LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "DeliveryAddress_Title");
+
             RegisterKeyboardActions = true;
             NavigationController.NavigationBarHidden = false;
             //ModalPresentationStyle = UIModalPresentationStyle.Custom;

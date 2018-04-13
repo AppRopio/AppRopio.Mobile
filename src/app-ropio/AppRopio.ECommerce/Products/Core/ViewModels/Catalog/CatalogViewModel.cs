@@ -197,6 +197,12 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Catalog
             set => SetProperty(ref _cartIndicatorVM, value, nameof(CartIndicatorVM));
         }
 
+        public string CatalogTitle => LocalizationService.GetLocalizableString(ProductsConstants.RESX_NAME, "ContentSearch_NoResultsCatalog");
+
+        public string NoResultsTitle => LocalizationService.GetLocalizableString(ProductsConstants.RESX_NAME, "ContentSearch_NoResultsTitle");
+
+        public string NoResultsText => LocalizationService.GetLocalizableString(ProductsConstants.RESX_NAME, "ContentSearch_NoResultsText");
+
         #endregion
 
         #region Services
@@ -512,7 +518,7 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Catalog
 
         protected virtual async void InitFromBundle(ProductsBundle parameters)
         {
-            Title = parameters.CategoryName ?? "Товары";
+            Title = parameters.CategoryName;
             CategoryId = parameters.CategoryId;
             SearchText = parameters.SearchText;
             VmNavigationType = parameters.NavigationType;

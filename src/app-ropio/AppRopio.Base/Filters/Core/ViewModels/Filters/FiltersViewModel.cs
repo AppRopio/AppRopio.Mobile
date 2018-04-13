@@ -77,6 +77,8 @@ namespace AppRopio.Base.Filters.Core.ViewModels.Filters
             }
         }
 
+        public string ApplyTitle => LocalizationService.GetLocalizableString(FiltersConstants.RESX_NAME, "Filters_Apply");
+
         #endregion
 
         #region Services

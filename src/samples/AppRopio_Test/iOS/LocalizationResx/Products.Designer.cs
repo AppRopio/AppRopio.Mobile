@@ -47,9 +47,87 @@ namespace AppRopio_Test.LocalizationResx {
             }
         }
         
-        internal static string HelloWorld {
+        internal static string CategoriesEmptyTitle {
             get {
-                return ResourceManager.GetString("HelloWorld", resourceCulture);
+                return ResourceManager.GetString("CategoriesEmptyTitle", resourceCulture);
+            }
+        }
+        
+        internal static string OneProduct {
+            get {
+                return ResourceManager.GetString("OneProduct", resourceCulture);
+            }
+        }
+        
+        internal static string TwoProducts {
+            get {
+                return ResourceManager.GetString("TwoProducts", resourceCulture);
+            }
+        }
+        
+        internal static string FiveProducts {
+            get {
+                return ResourceManager.GetString("FiveProducts", resourceCulture);
+            }
+        }
+        
+        internal static string OutOfStock {
+            get {
+                return ResourceManager.GetString("OutOfStock", resourceCulture);
+            }
+        }
+        
+        internal static string ContentSearch_Title {
+            get {
+                return ResourceManager.GetString("ContentSearch_Title", resourceCulture);
+            }
+        }
+        
+        internal static string ContentSearch_ClearHistory {
+            get {
+                return ResourceManager.GetString("ContentSearch_ClearHistory", resourceCulture);
+            }
+        }
+        
+        internal static string ContentSearch_NoResultsTitle {
+            get {
+                return ResourceManager.GetString("ContentSearch_NoResultsTitle", resourceCulture);
+            }
+        }
+        
+        internal static string ContentSearch_NoResultsText {
+            get {
+                return ResourceManager.GetString("ContentSearch_NoResultsText", resourceCulture);
+            }
+        }
+        
+        internal static string ContentSearch_NoResultsCatalog {
+            get {
+                return ResourceManager.GetString("ContentSearch_NoResultsCatalog", resourceCulture);
+            }
+        }
+        
+        internal static string Catalog_Filters {
+            get {
+                return ResourceManager.GetString("Catalog_Filters", resourceCulture);
+            }
+        }
+        
+        internal static string Catalog_Sort {
+            get {
+                return ResourceManager.GetString("Catalog_Sort", resourceCulture);
+            }
+        }
+        
+        internal static string Selection_Clear {
+            get {
+                return ResourceManager.GetString("Selection_Clear", resourceCulture);
+            }
+        }
+        
+        internal static string Selection_Apply {
+            get {
+                return ResourceManager.GetString("Selection_Apply", resourceCulture);
             }
         }
     }

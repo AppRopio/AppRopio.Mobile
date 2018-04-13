@@ -14,6 +14,8 @@ using MvvmCross.iOS.Views;
 using MvvmCross.Platform;
 using MvvmCross.Platform.Logging;
 using UIKit;
+using AppRopio.Base.Core.Services.Localization;
+using AppRopio.ECommerce.Products.Core;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Header
 {
@@ -105,7 +107,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Header
             SetupFiltersButton(
                 _filtersButton = new UIButton(UIButtonType.Custom)
                 .WithFrame(8, 8, (Frame.Width - 16 / 2) - 4, Frame.Height - 16)
-                .WithTitleForAllStates("ФИЛЬТРЫ")
+                .WithTitleForAllStates(Mvx.Resolve<ILocalizationService>().GetLocalizableString(ProductsConstants.RESX_NAME, "Catalog_Filters"))
             );
 
             _filtersButton.TranslatesAutoresizingMaskIntoConstraints = false;
@@ -114,7 +116,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Header
             SetupSortButton(
                 _sortButton = new UIButton(UIButtonType.Custom)
                 .WithFrame((Frame.Width / 2) + 4, 8, (Frame.Width - 16 / 2) - 4, Frame.Height - 16)
-                .WithTitleForAllStates("СОРТИРОВКА")
+                .WithTitleForAllStates(Mvx.Resolve<ILocalizationService>().GetLocalizableString(ProductsConstants.RESX_NAME, "Catalog_Sort"))
             );
 
             _sortButton.TranslatesAutoresizingMaskIntoConstraints = false;
@@ -136,12 +138,8 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Header
 
         private void OnBindContent()
         {
-            Mvx.Resolve<IMvxLog>().Trace("CatalogSortFiltersHeader binding started");
-
             if (IsBinded)
                 return;
-
-            Mvx.Resolve<IMvxLog>().Trace("CatalogSortFiltersHeader binding in process");
 
             IsBinded = true;
 
@@ -151,8 +149,6 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Header
             BindFiltersButton(_filtersButton, set);
 
             set.Apply();
-
-            Mvx.Resolve<IMvxLog>().Trace("CatalogSortFiltersHeader binding ended");
         }
 
         #endregion

@@ -44,11 +44,11 @@ namespace AppRopio.Base.Core.Converters
 
     public class PriceFormatUnitParameter
     {
-        public NumberFormatInfo Format { get; set; } = (NumberFormatInfo)new CultureInfo("ru").NumberFormat.Clone();
+        public NumberFormatInfo Format { get; set; } = (NumberFormatInfo)AppSettings.SettingsCulture.NumberFormat.Clone();
 
-        public string CurrencyFormat { get; set; } = "C0";
+        public string CurrencyFormat { get; set; }
 
-        public string CurrencySymbol { get; set; }
+        public string CurrencySymbol { get; set; } = AppSettings.SettingsCulture.NumberFormat.CurrencySymbol;
 
         public string PrefixString { get; set; }
 
