@@ -1,38 +1,134 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
+<document
+    type                 ="com.apple.InterfaceBuilder3.CocoaTouch.XIB"
+    version              ="3.0"
+    toolsVersion         ="13529"
+    targetRuntime        ="iOS.CocoaTouch"
+    propertyAccessControl="none"
+    useAutolayout        ="YES"
+    useTraitCollections  ="YES"
+    colorMatched         ="YES">
+    <device
+        id         ="retina4_7"
+        orientation="portrait">
+        <adaptation
+            id="fullscreen" />
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <deployment
+            identifier="iOS" />
+        <plugIn
+            identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin"
+            version   ="13527" />
+        <capability
+            name           ="documents saved in the Xcode 8 format"
+            minToolsVersion="8.0" />
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HistoryOrderItemsViewController">
+        <placeholder
+            placeholderIdentifier="IBFilesOwner"
+            id                   ="-1"
+            userLabel            ="File's Owner"
+            customClass          ="HistoryOrderItemsViewController">
             <connections>
-                <outlet property="TableView" destination="Oax-5A-NYY" id="gIW-Qh-Dk2"/>
-                <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
+                <outlet
+                    property   ="TableView"
+                    destination="Oax-5A-NYY"
+                    id         ="gIW-Qh-Dk2" />
+                <outlet
+                    property   ="view"
+                    destination="2"
+                    id         ="RRd-Eg-VrN" />
             </connections>
         </placeholder>
-        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="2">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+        <placeholder
+            placeholderIdentifier="IBFirstResponder"
+            id                   ="-2"
+            customClass          ="UIResponder" />
+        <view
+            contentMode="scaleToFill"
+            id         ="2">
+            <rect
+                key   ="frame"
+                x     ="0.0"
+                y     ="0.0"
+                width ="375"
+                height="667" />
+            <autoresizingMask
+                key         ="autoresizingMask"
+                flexibleMaxX="YES"
+                flexibleMaxY="YES" />
             <subviews>
-                <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Oax-5A-NYY">
-                    <rect key="frame" x="0.0" y="2" width="375" height="665"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <color key="separatorColor" red="0.95294117647058818" green="0.95686274509803915" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
-                    <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                <tableView
+                    opaque                                   ="NO"
+                    clipsSubviews                            ="YES"
+                    contentMode                              ="scaleToFill"
+                    alwaysBounceVertical                     ="YES"
+                    style                                    ="plain"
+                    separatorStyle                           ="default"
+                    rowHeight                                ="44"
+                    sectionHeaderHeight                      ="28"
+                    sectionFooterHeight                      ="28"
+                    translatesAutoresizingMaskIntoConstraints="NO"
+                    id                                       ="Oax-5A-NYY">
+                    <rect
+                        key   ="frame"
+                        x     ="0.0"
+                        y     ="2"
+                        width ="375"
+                        height="665" />
+                    <color
+                        key       ="backgroundColor"
+                        white     ="0.0"
+                        alpha     ="0.0"
+                        colorSpace="calibratedWhite" />
+                    <color
+                        key       ="separatorColor"
+                        red       ="0.95294117647058818"
+                        green     ="0.95686274509803915"
+                        blue      ="0.97647058823529409"
+                        alpha     ="1"
+                        colorSpace="calibratedRGB" />
+                    <inset
+                        key ="separatorInset"
+                        minX="0.0"
+                        minY="0.0"
+                        maxX="0.0"
+                        maxY="0.0" />
                 </tableView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color
+                key             ="backgroundColor"
+                red             ="1"
+                green           ="1"
+                blue            ="1"
+                alpha           ="1"
+                colorSpace      ="custom"
+                customColorSpace="sRGB" />
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="Oax-5A-NYY" secondAttribute="bottom" id="5wh-iN-Q8E"/>
-                <constraint firstAttribute="trailing" secondItem="Oax-5A-NYY" secondAttribute="trailing" id="RVm-MW-VsG"/>
-                <constraint firstItem="Oax-5A-NYY" firstAttribute="top" secondItem="2" secondAttribute="top" constant="2" id="V9Z-H6-ic8"/>
-                <constraint firstItem="Oax-5A-NYY" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="b1j-8u-We1"/>
+                <constraint
+                    firstAttribute ="bottom"
+                    secondItem     ="Oax-5A-NYY"
+                    secondAttribute="bottom"
+                    id             ="5wh-iN-Q8E" />
+                <constraint
+                    firstAttribute ="trailing"
+                    secondItem     ="Oax-5A-NYY"
+                    secondAttribute="trailing"
+                    id             ="RVm-MW-VsG" />
+                <constraint
+                    firstItem      ="Oax-5A-NYY"
+                    firstAttribute ="top"
+                    secondItem     ="2"
+                    secondAttribute="top"
+                    constant       ="2"
+                    id             ="V9Z-H6-ic8" />
+                <constraint
+                    firstItem      ="Oax-5A-NYY"
+                    firstAttribute ="leading"
+                    secondItem     ="2"
+                    secondAttribute="leading"
+                    id             ="b1j-8u-We1" />
             </constraints>
         </view>
     </objects>

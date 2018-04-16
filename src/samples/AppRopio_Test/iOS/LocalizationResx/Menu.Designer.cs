@@ -95,5 +95,11 @@ namespace AppRopio_Test.LocalizationResx {
                 return ResourceManager.GetString("AppRopio.Base.Settings.Core.ViewModels.Settings.ISettingsViewModel", resourceCulture);
             }
         }
+        
+        internal static string AppRopio_Feedback_Core_ViewModels_MyReviews_IMyReviewsViewModel {
+            get {
+                return ResourceManager.GetString("AppRopio.Feedback.Core.ViewModels.MyReviews.IMyReviewsViewModel", resourceCulture);
+            }
+        }
     }
 }

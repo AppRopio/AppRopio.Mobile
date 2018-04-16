@@ -153,4 +153,12 @@
         name="Thanks_Catalog">
         <value>GO TO CATALOG</value>
     </data>
+    <data
+        name="BasketProductCard_AddToBasket">
+        <value>ADD TO CART</value>
+    </data>
+    <data
+        name="BasketProductCard_Done">
+        <value>Done</value>
+    </data>
 </root>

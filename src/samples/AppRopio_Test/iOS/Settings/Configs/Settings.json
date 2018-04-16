@@ -1,22 +1,18 @@
 ﻿{
     "elements": [
         {
-            "type": "Region",
-            "title": "Регион"
+            "type": "Region"
         },
         {
             "type": "Geolocation",
-            "title": "Геолокация",
             "isEnabled": true
         },
         {
             "type": "Notifications",
-            "title": "Уведомления",
             "isEnabled": true
         },
         {
-            "type": "Language",
-            "title": "Язык приложения"
+            "type": "Language"
         }
     ],
     "languages": [ "ru-RU", "en-US" ]

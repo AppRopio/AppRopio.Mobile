@@ -27,10 +27,10 @@
                     "type": "AppRopio.ECommerce.Marked.Core.ViewModels.Marked.IMarkedViewModel",
                     "badge": true,
                     "hideBadgeOnNull": true
+                },
+                {
+                    "type": "AppRopio.Feedback.Core.ViewModels.MyReviews.IMyReviewsViewModel"
                 }
-                //{
-                //  "type": "AppRopio.Feedback.Core.ViewModels.MyReviews.IMyReviewsViewModel"
-                //}
             ]
         },
         {

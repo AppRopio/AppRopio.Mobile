@@ -3,6 +3,7 @@
     {
         "basePointInfo":
         {
+            "background": { "ref": "@color/background" },
             "distanceImage": { "path": "Images/Basket/distance.png" },
             "callButton":
             {

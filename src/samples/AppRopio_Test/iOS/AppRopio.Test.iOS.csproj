@@ -444,6 +444,54 @@
     <Compile Include="LocalizationResx\Basket.ru.Designer.cs">
       <DependentUpon>Basket.ru.resx</DependentUpon>
     </Compile>
+    <Compile Include="LocalizationResx\HistoryOrders.Designer.cs">
+      <DependentUpon>HistoryOrders.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\HistoryOrders.ru.Designer.cs">
+      <DependentUpon>HistoryOrders.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Marked.Designer.cs">
+      <DependentUpon>Marked.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Marked.ru.Designer.cs">
+      <DependentUpon>Marked.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Contacts.Designer.cs">
+      <DependentUpon>Contacts.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Contacts.ru.Designer.cs">
+      <DependentUpon>Contacts.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Map.Designer.cs">
+      <DependentUpon>Map.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Map.ru.Designer.cs">
+      <DependentUpon>Map.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Information.Designer.cs">
+      <DependentUpon>Information.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Information.ru.Designer.cs">
+      <DependentUpon>Information.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Settings.Designer.cs">
+      <DependentUpon>Settings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Settings.ru.Designer.cs">
+      <DependentUpon>Settings.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Loyalty.Designer.cs">
+      <DependentUpon>Loyalty.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Loyalty.ru.Designer.cs">
+      <DependentUpon>Loyalty.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Feedback.Designer.cs">
+      <DependentUpon>Feedback.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Feedback.ru.Designer.cs">
+      <DependentUpon>Feedback.ru.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Settings\Configs\Menu.json" />
@@ -1061,6 +1109,70 @@
     <EmbeddedResource Include="LocalizationResx\Basket.ru.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Basket.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\HistoryOrders.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>HistoryOrders.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\HistoryOrders.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>HistoryOrders.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Marked.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Marked.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Marked.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Marked.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Contacts.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Contacts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Contacts.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Contacts.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Map.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Map.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Map.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Map.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Information.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Information.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Information.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Information.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Settings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Settings.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Settings.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Loyalty.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Loyalty.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Loyalty.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Loyalty.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Feedback.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Feedback.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Feedback.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Feedback.ru.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

@@ -10,6 +10,7 @@ using CoreGraphics;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Platform;
 using UIKit;
+using AppRopio.Base.Map.Core;
 
 namespace AppRopio.Base.Map.iOS.Views.Points.Map
 {
@@ -34,7 +35,7 @@ namespace AppRopio.Base.Map.iOS.Views.Points.Map
 
         protected override void InitializeControls()
         {
-            Title = "На карте";
+            Title = LocalizationService.GetLocalizableString(MapConstants.RESX_NAME, "Map_Title");
 
             SetupMapView(_mapView);
             SetupInfoBlockView(_infoBlockView);

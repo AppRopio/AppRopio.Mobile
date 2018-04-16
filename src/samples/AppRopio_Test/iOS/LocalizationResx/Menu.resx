@@ -48,4 +48,8 @@
         name="AppRopio.Base.Settings.Core.ViewModels.Settings.ISettingsViewModel">
         <value>Settings</value>
     </data>
+    <data
+        name="AppRopio.Feedback.Core.ViewModels.MyReviews.IMyReviewsViewModel">
+        <value>My reviews</value>
+    </data>
 </root>

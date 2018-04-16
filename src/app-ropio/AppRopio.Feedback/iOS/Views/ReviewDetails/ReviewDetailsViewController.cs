@@ -11,6 +11,8 @@ using MvvmCross.Binding.iOS.Views;
 using MvvmCross.iOS.Views;
 using MvvmCross.Platform;
 using UIKit;
+using AppRopio.Feedback.Core;
+using AppRopio.Base.Core;
 
 namespace AppRopio.Feedback.iOS.Views.ReviewDetails
 {
@@ -46,11 +48,13 @@ namespace AppRopio.Feedback.iOS.Views.ReviewDetails
 		protected virtual void SetupEditButton(UIButton editButton)
 		{
 			editButton.SetupStyle(ThemeConfig.ReviewDetails.EditButton);
+            editButton.WithTitleForAllStates(LocalizationService.GetLocalizableString(FeedbackConstants.RESX_NAME, "ReviewDetails_Edit"));
 		}
 
 		protected virtual void SetupDeleteButton(UIButton deleteButton)
 		{
 			deleteButton.SetupStyle(ThemeConfig.ReviewDetails.DeleteButton);
+            deleteButton.WithTitleForAllStates(LocalizationService.GetLocalizableString(FeedbackConstants.RESX_NAME, "ReviewDetails_Delete"));
 		}
 
 		protected virtual void SetupScoreView(UIView containerView)
@@ -70,7 +74,8 @@ namespace AppRopio.Feedback.iOS.Views.ReviewDetails
 		protected virtual void BindDate(UILabel date, MvxFluentBindingDescriptionSet<ReviewDetailsViewController, IReviewDetailsViewModel> set)
 		{
 			var converter = new DateToStringConverter();
-			converter.Culture = new CultureInfo("ru");
+            converter.Culture = AppSettings.SettingsCulture;
+
 			set.Bind(date).To(vm => vm.Date).WithConversion(converter, "dd MMMM yyyy");
 		}
 
@@ -120,7 +125,7 @@ namespace AppRopio.Feedback.iOS.Views.ReviewDetails
 
 		protected override void InitializeControls()
 		{
-			Title = "Отзыв";
+            Title = LocalizationService.GetLocalizableString(FeedbackConstants.RESX_NAME, "ReviewDetails_Title");
 
 			SetupProductTitle(ProductTitleLabel);
 			SetupDate(DateLabel);

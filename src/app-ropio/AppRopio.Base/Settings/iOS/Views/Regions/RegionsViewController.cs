@@ -2,6 +2,7 @@
 using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.UIExtentions;
 using AppRopio.Base.iOS.Views;
+using AppRopio.Base.Settings.Core;
 using AppRopio.Base.Settings.Core.ViewModels.Regions;
 using AppRopio.Base.Settings.iOS.Models;
 using AppRopio.Base.Settings.iOS.Services;
@@ -40,7 +41,7 @@ namespace AppRopio.Base.Settings.iOS.Views.Regions
 
         protected override void InitializeControls()
 		{
-			Title = "Регион";
+            Title = LocalizationService.GetLocalizableString(SettingsConstants.RESX_NAME, "Regions_Title");;
 
             DefinesPresentationContext = true;
 

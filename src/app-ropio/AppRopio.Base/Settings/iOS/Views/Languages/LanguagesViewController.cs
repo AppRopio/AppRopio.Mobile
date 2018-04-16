@@ -26,6 +26,7 @@ using AppRopio.Base.iOS.UIExtentions;
 using MvvmCross.Binding.BindingContext;
 using AppRopio.Base.Settings.iOS.Views.Languages.Cells;
 using MvvmCross.Binding.iOS.Views;
+using AppRopio.Base.Settings.Core;
 
 namespace AppRopio.Base.Settings.iOS.Views.Languages
 {
@@ -55,7 +56,7 @@ namespace AppRopio.Base.Settings.iOS.Views.Languages
 
         protected override void InitializeControls()
         {
-            Title = "Регион";
+            Title = LocalizationService.GetLocalizableString(SettingsConstants.RESX_NAME, "Languages_Title");;
 
             DefinesPresentationContext = true;
 

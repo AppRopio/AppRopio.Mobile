@@ -105,19 +105,20 @@ namespace AppRopio.Base.Settings.Core.ViewModels.Settings
 
 			Items = elements.Select(e =>
 			{
+                var title = LocalizationService.GetLocalizableString(SettingsConstants.RESX_NAME, Enum.GetName(typeof(SettingsElementType), e.Type));
 				switch (e.Type)
 				{
                     case SettingsElementType.Region:
-                        return (ISettingsItemVm)new SettingsPickerVm(e.Title, e.Type) { SelectedValueId = region.Id, SelectedValueTitle = region.Title, OnValueChanged = OnSettingsValueChanged };
+                        return (ISettingsItemVm)new SettingsPickerVm(title, e.Type) { SelectedValueId = region.Id, SelectedValueTitle = region.Title, OnValueChanged = OnSettingsValueChanged };
 
                     case SettingsElementType.Geolocation:
-                        return (ISettingsItemVm)new SettingsSwitchVm(e.Title, e.Type) { Enabled = AppSettings.IsGeolocationEnabled ?? e.IsEnabled, OnValueChanged = OnSettingsValueChanged };
+                        return (ISettingsItemVm)new SettingsSwitchVm(title, e.Type) { Enabled = AppSettings.IsGeolocationEnabled ?? e.IsEnabled, OnValueChanged = OnSettingsValueChanged };
 
                     case SettingsElementType.Notifications:
-                        return (ISettingsItemVm)new SettingsSwitchVm(e.Title, e.Type) { Enabled = AppSettings.IsNotificationsEnabled ?? e.IsEnabled, OnValueChanged = OnSettingsValueChanged };
+                        return (ISettingsItemVm)new SettingsSwitchVm(title, e.Type) { Enabled = AppSettings.IsNotificationsEnabled ?? e.IsEnabled, OnValueChanged = OnSettingsValueChanged };
 
                     case SettingsElementType.Language:
-                        return (ISettingsItemVm)new SettingsPickerVm(e.Title, e.Type) { SelectedValueId = AppSettings.SettingsCulture.Name, SelectedValueTitle = AppSettings.SettingsCulture.NativeName.ToFirstCharUppercase() };
+                        return (ISettingsItemVm)new SettingsPickerVm(title, e.Type) { SelectedValueId = AppSettings.SettingsCulture.Name, SelectedValueTitle = AppSettings.SettingsCulture.NativeName.ToFirstCharUppercase() };
 
                     default:
                         throw new Exception("Unknown element type");

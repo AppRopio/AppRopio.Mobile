@@ -92,6 +92,6 @@
 	<key>NSContactsUsageDescription</key>
 	<string>Дадим выбрать любой номер телефона, при оформлении заказа ;)</string>
 	<key>CFBundleVersion</key>
-	<string>0</string>
+	<string>1</string>
 </dict>
 </plist>

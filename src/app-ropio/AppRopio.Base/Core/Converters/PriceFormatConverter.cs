@@ -10,7 +10,7 @@ namespace AppRopio.Base.Core.Converters
 
         public string CurrencyFormat { get; set; } = "C0";
 
-		public string CurrencySymbol { get; set; } = AppSettings.SettingsCulture.NumberFormat.CurrencySymbol;
+		public string CurrencySymbol => AppSettings.SettingsCulture.NumberFormat.CurrencySymbol;
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
