@@ -53,9 +53,33 @@ namespace AppRopio_Test.LocalizationResx {
             }
         }
         
+        internal static string Basket_DeleteItem {
+            get {
+                return ResourceManager.GetString("Basket_DeleteItem", resourceCulture);
+            }
+        }
+        
         internal static string Basket_OrderBy {
             get {
                 return ResourceManager.GetString("Basket_OrderBy", resourceCulture);
+            }
+        }
+        
+        internal static string Basket_EmptyTitle {
+            get {
+                return ResourceManager.GetString("Basket_EmptyTitle", resourceCulture);
+            }
+        }
+        
+        internal static string Basket_EmptyText {
+            get {
+                return ResourceManager.GetString("Basket_EmptyText", resourceCulture);
+            }
+        }
+        
+        internal static string Basket_EmptyButton {
+            get {
+                return ResourceManager.GetString("Basket_EmptyButton", resourceCulture);
             }
         }
         

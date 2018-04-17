@@ -21,6 +21,10 @@
         <value>Корзина</value>
     </data>
     <data
+        name="Basket_DeleteItem">
+        <value>Удалить</value>
+    </data>
+    <data
         name="Basket_OrderBy">
         <value>ЗАКАЗАТЬ ЗА</value>
     </data>

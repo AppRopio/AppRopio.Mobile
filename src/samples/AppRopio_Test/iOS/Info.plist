@@ -8,6 +8,13 @@
 	<string>com.notissimus.appropiotest</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0.4</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>ru</string>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>en</string>
+		<string>ru</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIDeviceFamily</key>
@@ -92,6 +99,6 @@
 	<key>NSContactsUsageDescription</key>
 	<string>Дадим выбрать любой номер телефона, при оформлении заказа ;)</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 </dict>
 </plist>

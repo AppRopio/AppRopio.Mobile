@@ -21,8 +21,25 @@
         <value>Basket</value>
     </data>
     <data
+        name="Basket_DeleteItem">
+        <value>Delete</value>
+    </data>
+    <data
         name="Basket_OrderBy">
         <value>ORDER FOR</value>
+    </data>
+    <data
+        name="Basket_EmptyTitle">
+        <value>While in the basket is empty</value>
+    </data>
+    <data
+        name="Basket_EmptyText">
+        <value>Here everything that you decide to order
+will be stored.</value>
+    </data>
+    <data
+        name="Basket_EmptyButton">
+        <value>START SHOPPING</value>
     </data>
     <data
         name="Basket_AddedToBasketTitle">

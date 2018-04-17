@@ -1,0 +1,6 @@
+﻿"NSLocationUsageDescription" = "Мы не передаем данные о вашей локации третьим лицам и используем их для вашего удобства.";
+"NSLocationAlwaysUsageDescription" = "Мы не передаем данные о вашей локации третьим лицам и используем их для вашего удобства.";
+"NSLocationWhenInUseUsageDescription" = "Мы не передаем данные о вашей локации третьим лицам и используем их для вашего удобства.";
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "Мы не передаем данные о вашей локации третьим лицам и используем их для вашего удобства.";
+"NSCalendarsUsageDescription"="Необходимо для корректной работы приложения";
+"NSContactsUsageDescription"="Дадим выбрать любой номер телефона, при оформлении заказа";

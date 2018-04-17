@@ -357,6 +357,8 @@
     <Folder Include="Views\" />
     <Folder Include="Assets.xcassets\DemoImage.imageset\" />
     <Folder Include="LocalizationResx\" />
+    <Folder Include="ru.lproj\" />
+    <Folder Include="Base.lproj\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -682,6 +684,8 @@
     <BundleResource Include="Images\Products\empty_icon%403x.png" />
     <BundleResource Include="Images\Basket\contacts%402x.png" />
     <BundleResource Include="Images\Basket\contacts%403x.png" />
+    <BundleResource Include="Base.lproj\InfoPlist.strings" />
+    <BundleResource Include="ru.lproj\InfoPlist.strings" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\API\AppRopio.Base.API.csproj">
