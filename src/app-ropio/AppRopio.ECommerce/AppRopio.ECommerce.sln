@@ -2034,4 +2034,23 @@ Global
 		{6A0E8A43-7E69-464B-9FBD-F0570B34DFE2} = {2FE568ED-EFC3-4DD3-834A-15A49C79412D}
 		{D3083AF1-F971-468D-8EB7-1F59A340C543} = {5ED6FE94-B3D5-48E7-8E20-68F60C961F70}
 	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+		$1.DirectoryNamespaceAssociation = PrefixedHierarchical
+		$0.TextStylePolicy = $2
+		$2.TabsToSpaces = True
+		$2.NoTabsAfterNonTabs = True
+		$2.scope = text/x-json
+		$0.JSONFormattingPolicy = $3
+		$3.AutoStructureCompletion = True
+		$3.BracePositions = SemiExpanded
+		$3.FormatOnPaste = True
+		$3.scope = text/x-json
+		$0.StandardHeader = $4
+		$4.Text = @\n Copyright ${Year}  ${CopyrightHolder}\n\n   Licensed under the Apache License, Version 2.0 (the "License");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an "AS IS" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.
+		$0.VersionControlPolicy = $5
+		$5.CommitMessageStyle = $6
+		$6.IncludeDirectoryPaths = True
+	EndGlobalSection
 EndGlobal

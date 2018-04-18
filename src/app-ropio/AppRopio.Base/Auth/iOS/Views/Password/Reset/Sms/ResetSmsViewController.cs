@@ -1,11 +1,14 @@
 ﻿using System;
 using AppRopio.Base.Auth.Core.ViewModels.Password.Reset.Sms;
 using AppRopio.Base.Auth.iOS.Views._base;
+using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.UIExtentions;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
+using MvvmCross.Platform;
 using UIKit;
+using AppRopio.Base.Auth.Core;
 
 namespace AppRopio.Base.Auth.iOS.Views.Password.Reset.Sms
 {
@@ -15,11 +18,14 @@ namespace AppRopio.Base.Auth.iOS.Views.Password.Reset.Sms
         {
             get
             {
-                return "Подтвердить код".ToUpper();
+                return LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "Password_Sms_ConfirmCode");
             }
         }
 
-        public ResetSmsViewController() : base("ResetSmsViewController", null)
+        protected ILocalizationService LocalizationService => Mvx.Resolve<ILocalizationService>();
+
+        public ResetSmsViewController() 
+            : base("ResetSmsViewController", null)
         {
         }
 
@@ -76,7 +82,7 @@ namespace AppRopio.Base.Auth.iOS.Views.Password.Reset.Sms
         protected virtual void SetupTitleLabel(UILabel label)
         {
             label.SetupStyle(ThemeConfig.Title);
-            label.Text = "Код подтверждения.";
+            label.Text = LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "Password_Sms_CodeText");
         }
 
         protected virtual void SetupDescriptionLabel(UILabel label)
@@ -88,7 +94,7 @@ namespace AppRopio.Base.Auth.iOS.Views.Password.Reset.Sms
         {
             field.SetupStyle(ThemeConfig.TextField);
 
-            field.Placeholder = "Код";
+            field.Placeholder = LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "Password_Sms_CodePlaceholder");
 
             field.InputAccessoryView = _accessoryButton;
 
@@ -113,7 +119,7 @@ namespace AppRopio.Base.Auth.iOS.Views.Password.Reset.Sms
             var paragraphStyle = new NSMutableParagraphStyle();
             paragraphStyle.Alignment = UITextAlignment.Center;
 
-            var resendTitle = new NSAttributedString("Запросить код\nповторно",
+            var resendTitle = new NSAttributedString(LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "Password_Sms_SentAgain"),
                                                      font: (UIFont)ThemeConfig.TextButton.Font,
                                                      foregroundColor: button.TitleLabel.TextColor,
                                                      paragraphStyle: paragraphStyle);
@@ -168,7 +174,7 @@ namespace AppRopio.Base.Auth.iOS.Views.Password.Reset.Sms
         {
             base.InitializeControls();
 
-            Title = "Восстановление пароля";
+            Title = LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "Password_Sms_Title");
 
             SetupImage(_iconImage);
 

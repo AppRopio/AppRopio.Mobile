@@ -14,9 +14,25 @@ namespace AppRopio_Test.Views
 	{
 		[Outlet]
 		UIKit.UIButton _agreementButton { get; set; }
+
+		[Outlet]
+		UIKit.UILabel _agreementText { get; set; }
+
+		[Outlet]
+		UIKit.UILabel _agreementTitle { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (_agreementTitle != null) {
+				_agreementTitle.Dispose ();
+				_agreementTitle = null;
+			}
+
+			if (_agreementText != null) {
+				_agreementText.Dispose ();
+				_agreementText = null;
+			}
+
 			if (_agreementButton != null) {
 				_agreementButton.Dispose ();
 				_agreementButton = null;

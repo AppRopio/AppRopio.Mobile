@@ -7,5 +7,7 @@ namespace AppRopio.Base.Settings.Core.Services
     public interface ISettingsVmNavigationService : IBaseVmNavigationService
     {
         void NavigateToRegions(SettingsPickerBundle bundle);
+
+        void NavigateToLanguages(SettingsPickerBundle bundle);
     }
 }

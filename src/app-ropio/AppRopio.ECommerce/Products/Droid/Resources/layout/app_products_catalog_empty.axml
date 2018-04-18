@@ -23,17 +23,19 @@
                 style="@style/app_products_catalog_empty_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal" />
+                android:layout_gravity="center_horizontal"
+                app:MvxBind="Text Resx('ContentSearch_NoResultsTitle','Products')" />
             <TextView
                 style="@style/app_products_catalog_empty_subtitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal" />
+                android:layout_gravity="center_horizontal"
+                app:MvxBind="Text Resx('ContentSearch_NoResultsText','Products')" />
         </LinearLayout>
     </RelativeLayout>
     <Button
         style="@style/app_products_catalog_empty_button"
         android:id="@+id/app_products_catalog_empty_button"
         android:layout_alignParentBottom="true"
-        app:MvxBind="Click CatalogCommand" />
+        app:MvxBind="Click CatalogCommand; Text Resx('ContentSearch_NoResultsCatalog', 'Products')" />
 </RelativeLayout>

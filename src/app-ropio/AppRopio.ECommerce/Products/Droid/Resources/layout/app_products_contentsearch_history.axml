@@ -15,5 +15,5 @@
         style="@style/app_products_contentsearch_history_clearButton"
         android:id="@+id/app_products_contentsearch_history_clearButton"
         android:layout_alignParentBottom="true"
-        app:MvxBind="Click ClearHistoryCommand; Visibility Visibility(HistoryItems)" />
+        app:MvxBind="Click ClearHistoryCommand; Visibility Visibility(HistoryItems); Text Resx('ContentSearch_ClearHistory', 'Products')" />
 </RelativeLayout>

@@ -10,6 +10,9 @@ using MvvmCross.Core.Views;
 using MvvmCross.iOS.Views;
 using ObjCRuntime;
 using UIKit;
+using MvvmCross.Platform;
+using AppRopio.Base.Core.Services.Localization;
+using AppRopio.Base.Profile.Core;
 
 namespace AppRopio.Base.Profile.iOS.View.MenuHeader
 {
@@ -157,11 +160,13 @@ namespace AppRopio.Base.Profile.iOS.View.MenuHeader
         protected virtual void BindHelpLabel(UILabel label, MvxFluentBindingDescriptionSet<ProfileMenuHeaderView, ProfileMenuHeaderViewModel> set)
         {
             set.Bind(label).For("Visibility").To(vm => vm.UserSignedIn).WithConversion("Visibility");
+            set.Bind(label).To(vm => vm.Help);
         }
 
         protected virtual void BindSignInLabel(UILabel label, MvxFluentBindingDescriptionSet<ProfileMenuHeaderView, ProfileMenuHeaderViewModel> set)
         {
             set.Bind(label).For("Visibility").To(vm => vm.UserSignedIn).WithConversion("InvertedVisibility");
+            set.Bind(label).To(vm => vm.SignIn);
         }
 
         #endregion

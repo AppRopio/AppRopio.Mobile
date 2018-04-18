@@ -6,6 +6,7 @@ using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using System.Threading.Tasks;
+using MvvmCross.Platform.Platform;
 
 namespace AppRopio.Base.Core.ViewModels.Services
 {
@@ -37,19 +38,40 @@ namespace AppRopio.Base.Core.ViewModels.Services
             where TViewModel : class, IMvxViewModel
         {
             if (LookupService.IsRegistered<TViewModel>())
-                await Navigate(LookupService.Resolve<TViewModel>(), bundle);
+                try
+                {
+                    await Navigate(LookupService.Resolve<TViewModel>(), bundle);
+                }
+                catch (Exception ex)
+                {
+                    MvxTrace.Error(ex.BuildAllMessagesAndStackTrace());
+                }
         }
 
         protected async Task NavigateTo(Type vmType, IMvxBundle bundle = null)
         {
             if (LookupService.IsRegistered(vmType))
-                await Navigate(LookupService.Resolve(vmType), bundle);
+                try
+                {
+                    await Navigate(LookupService.Resolve(vmType), bundle);
+                }
+                catch (Exception ex)
+                {
+                    MvxTrace.Error(ex.BuildAllMessagesAndStackTrace());
+                }
         }
 
         protected async Task NavigateTo(string vmType, IMvxBundle bundle = null)
         {
             if (LookupService.IsRegistered(vmType))
-                await Navigate(LookupService.Resolve(vmType), bundle);
+                try
+                {
+                    await Navigate(LookupService.Resolve(vmType), bundle);
+                }
+                catch (Exception ex)
+                {
+                    MvxTrace.Error(ex.BuildAllMessagesAndStackTrace());
+                }
         }
 
         #endregion

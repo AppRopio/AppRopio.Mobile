@@ -2,14 +2,16 @@
 using AppRopio.Base.Droid.Views;
 using AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrders;
 using MvvmCross.Droid.Support.V7.RecyclerView;
+using AppRopio.ECommerce.HistoryOrders.Core;
 
 namespace AppRopio.ECommerce.HistoryOrders.Droid.Views.HistoryOrders
 {
     public class HistoryOrdersFragment : CommonFragment<IHistoryOrdersViewModel>
     {
         public HistoryOrdersFragment()
-            : base (Resource.Layout.app_historyorders, "История заказов")
+            : base (Resource.Layout.app_historyorders)
         {
+            Title = LocalizationService.GetLocalizableString(HistoryOrdersConstants.RESX_NAME, "History_Title");
         }
 
         protected virtual void SetupRecyclerView(MvxRecyclerView recyclerView)

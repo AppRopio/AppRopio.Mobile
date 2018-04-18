@@ -9,19 +9,10 @@ namespace AppRopio.Base.Auth.Core.Models.Registration
 
 		public RegistrationFieldType Type { get; set; }
 
-		public string Placeholder { get; set; }
-
 		public bool Required { get; set; } = true;
-
-		public List<string> Values { get; set; }
 
 		public DateTime? MinDate { get; set; }
 
-		public DateTime? MaxDate { get; set; }
-		
-		public RegistrationField()
-		{
-		}
-
+		public DateTime? MaxDate { get; set; }		
 	}
 }

@@ -1,8 +1,10 @@
 ﻿using AppRopio.Base.Core.Services.ViewLookup;
+using AppRopio.Base.Settings.Core.ViewModels.Languages;
 using AppRopio.Base.Settings.Core.ViewModels.Regions;
 using AppRopio.Base.Settings.Core.ViewModels.Settings;
 using AppRopio.Base.Settings.iOS.Services;
 using AppRopio.Base.Settings.iOS.Services.Implementation;
+using AppRopio.Base.Settings.iOS.Views.Languages;
 using AppRopio.Base.Settings.iOS.Views.Regions;
 using AppRopio.Base.Settings.iOS.Views.Settings;
 using MvvmCross.Platform;
@@ -20,6 +22,7 @@ namespace AppRopio.Base.Settings.iOS
 
 			viewLookupService.Register<ISettingsViewModel, SettingsViewController>();
             viewLookupService.Register<IRegionsViewModel, RegionsViewController>();
+            viewLookupService.Register<ILanguagesViewModel, LanguagesViewController>();
 		}
 	}
 }

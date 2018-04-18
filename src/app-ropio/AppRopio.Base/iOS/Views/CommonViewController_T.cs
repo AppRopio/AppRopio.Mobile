@@ -9,6 +9,8 @@ using MvvmCross.Binding.BindingContext;
 using AppRopio.Base.Core.ViewModels;
 using AppRopio.Base.iOS.UIExtentions;
 using AppRopio.Base.iOS.Models.ThemeConfigs;
+using AppRopio.Base.Core.Services.Localization;
+using MvvmCross.Platform;
 
 namespace AppRopio.Base.iOS.Views
 {
@@ -50,6 +52,8 @@ namespace AppRopio.Base.iOS.Views
                 }
             }
         }
+
+        protected ILocalizationService LocalizationService => Mvx.Resolve<ILocalizationService>();
 
         protected CommonViewController()
         {

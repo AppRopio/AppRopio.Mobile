@@ -5,8 +5,6 @@ namespace AppRopio.Base.Settings.Core.Models
     {
         public SettingsElementType Type { get; set; }
 
-        public string Title { get; set; }
-
         public bool IsEnabled { get; set; }
     }
 }

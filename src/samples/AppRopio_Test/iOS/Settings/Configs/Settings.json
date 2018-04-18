@@ -1,18 +1,19 @@
 ﻿{
-  "elements": [
-    {
-      "type": "Region",
-      "title": "Регион"
-    },
-    {
-      "type": "Geolocation",
-      "title": "Геолокация",
-      "isEnabled": true
-    },
-    {
-      "type": "Notifications",
-      "title": "Уведомления",
-      "isEnabled": true
-    }
-  ]
+    "elements": [
+        {
+            "type": "Region"
+        },
+        {
+            "type": "Geolocation",
+            "isEnabled": true
+        },
+        {
+            "type": "Notifications",
+            "isEnabled": true
+        },
+        {
+            "type": "Language"
+        }
+    ],
+    "languages": [ "ru-RU", "en-US" ]
 }

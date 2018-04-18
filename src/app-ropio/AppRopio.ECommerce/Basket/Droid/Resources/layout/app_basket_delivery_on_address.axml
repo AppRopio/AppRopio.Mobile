@@ -39,7 +39,7 @@
             <Button
                 style="@style/app_basket_delivery_on_address_button"
                 android:id="@+id/app_basket_delivery_on_address_button"
-                app:MvxBind="Click NextCommand; Enabled CanGoNext; Visibility Visibility(AddressFieldsItems.Count);" />
+                app:MvxBind="Click NextCommand; Enabled CanGoNext; Visibility Visibility(AddressFieldsItems.Count); Text Resx('DeliveryAddress_Confirm','Basket')" />
         </LinearLayout>
         <include
             layout="@layout/app_base_loading" />

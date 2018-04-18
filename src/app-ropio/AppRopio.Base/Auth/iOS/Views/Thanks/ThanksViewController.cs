@@ -1,6 +1,8 @@
-﻿using AppRopio.Base.Auth.Core.ViewModels.Thanks;
+﻿using AppRopio.Base.Auth.Core;
+using AppRopio.Base.Auth.Core.ViewModels.Thanks;
 using AppRopio.Base.Auth.iOS.Models;
 using AppRopio.Base.Auth.iOS.Services;
+using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.UIExtentions;
 using AppRopio.Base.iOS.Views;
@@ -10,7 +12,7 @@ using UIKit;
 
 namespace AppRopio.Base.Auth.iOS.Views.Thanks
 {
-	public partial class ThanksViewController : CommonViewController<IThanksViewModel>
+    public partial class ThanksViewController : CommonViewController<IThanksViewModel>
 	{
 		protected AuthThemeConfig ThemeConfig { get { return Mvx.Resolve<IAuthThemeConfigService>().ThemeConfig; } }
 
@@ -33,19 +35,19 @@ namespace AppRopio.Base.Auth.iOS.Views.Thanks
 		protected virtual void SetupTitleLabel(UILabel label)
 		{
 			label.SetupStyle(ThemeConfig.Title);
-			label.Text = "Спасибо!";
+            label.Text = Mvx.Resolve<ILocalizationService>().GetLocalizableString(AuthConst.RESX_NAME, "Thanks_Thanks");
 		}
 
 		protected virtual void SetupDesriptionLabel(UILabel label)
 		{
 			label.SetupStyle(ThemeConfig.Description);
-			label.Text = "Мы рады, что вы с нами.\nНачинайте совершать покупки.";
+            label.Text = Mvx.Resolve<ILocalizationService>().GetLocalizableString(AuthConst.RESX_NAME, "Thanks_Motivation");
 		}
 
 		protected virtual void SetupDoneButton(UIButton button)
 		{
 			button.SetupStyle(ThemeConfig.Button);
-			button.WithTitleForAllStates("Начать".ToUpper());
+            button.WithTitleForAllStates(Mvx.Resolve<ILocalizationService>().GetLocalizableString(AuthConst.RESX_NAME, "Thanks_Start"));
 		}
 
 		#endregion

@@ -10,14 +10,12 @@
         android:layout_height="match_parent"
         android:layout_weight=".5"
         android:layout_marginRight="@dimen/app_products_catalog_sort_filters_header_horizontalPadding"
-        android:text="@string/app_products_catalog_sort_filters_header_filterBtn"
-        app:MvxBind="Click FiltersCommand" />
+        app:MvxBind="Click FiltersCommand; Text Resx('Catalog_Filters', 'Products')" />
     <Button
         style="@style/app_products_catalog_sort_filters_header_button"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight=".5"
         android:layout_marginLeft="@dimen/app_products_catalog_sort_filters_header_horizontalPadding"
-        android:text="@string/app_products_catalog_sort_filters_header_sortBtn"
-        app:MvxBind="Click SortCommand" />
+        app:MvxBind="Click SortCommand; Text Resx('Catalog_Sort', 'Products')" />
 </LinearLayout>

@@ -9,6 +9,7 @@ using MvvmCross.Core.ViewModels;
 using MvvmCross.Droid.Support.V4;
 using MvvmCross.Droid.Views;
 using MvvmCross.Platform;
+using AppRopio.Base.Core.Services.Localization;
 
 namespace AppRopio.Base.Droid.Views
 {
@@ -37,6 +38,12 @@ namespace AppRopio.Base.Droid.Views
                 SetToolbarTitle(value);
             }
         }
+
+        #endregion
+
+        #region Services
+
+        protected ILocalizationService LocalizationService => Mvx.Resolve<ILocalizationService>();
 
         #endregion
 

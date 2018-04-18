@@ -1,13 +1,14 @@
 ﻿using System;
 using AppRopio.Base.Droid.Views;
 using AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrders;
+using AppRopio.ECommerce.HistoryOrders.Core;
 
 namespace AppRopio.ECommerce.HistoryOrders.Droid.Views.HistoryOrderDetails
 {
     public class HistoryOrderDetailsFragment : CommonFragment<IHistoryOrderDetailsViewModel>
     {
         public HistoryOrderDetailsFragment()
-            : base (Resource.Layout.app_historyorders_details, "")
+            : base (Resource.Layout.app_historyorders_details)
         {
         }
 
@@ -15,7 +16,7 @@ namespace AppRopio.ECommerce.HistoryOrders.Droid.Views.HistoryOrderDetails
         {
             base.OnViewCreated(view, savedInstanceState);
 
-            Title = $"Заказ {ViewModel?.OrderNumber}";
+            Title = $"{LocalizationService.GetLocalizableString(HistoryOrdersConstants.RESX_NAME, "HistoryOrderDetails_Title")} {ViewModel?.OrderNumber}";
         }
     }
 }

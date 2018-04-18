@@ -9,6 +9,9 @@ using MvvmCross.Binding.iOS.Views;
 using MvvmCross.Platform;
 using UIKit;
 using AppRopio.Base.iOS;
+using AppRopio.Base.Core.Services.Localization;
+using AppRopio.ECommerce.HistoryOrders.Core;
+using AppRopio.Base.iOS.UIExtentions;
 
 namespace AppRopio.ECommerce.HistoryOrders.iOS.Views.HistoryOrders
 {
@@ -35,7 +38,7 @@ namespace AppRopio.ECommerce.HistoryOrders.iOS.Views.HistoryOrders
 
 		protected override void InitializeControls()
 		{
-			Title = "Заказ";
+            Title = LocalizationService.GetLocalizableString(HistoryOrdersConstants.RESX_NAME, "HistoryOrderDetails_Title");
 
             SetupItemsLabel(ItemsLabel);
 
@@ -43,12 +46,15 @@ namespace AppRopio.ECommerce.HistoryOrders.iOS.Views.HistoryOrders
             SetupInfoLabel(DeliveryPriceLabel);
 
             SetupDeliveryPointLabel(DeliveryPointNameLabel);
+            PaymentHintLabel.Text = LocalizationService.GetLocalizableString(HistoryOrdersConstants.RESX_NAME, "HistoryOrderDetails_Delivery");
             SetupDeliveryAddressLabel(DeliveryPointAddressLabel);
 
             SetupInfoLabel(PaymentHintLabel);
+            PaymentHintLabel.Text = LocalizationService.GetLocalizableString(HistoryOrdersConstants.RESX_NAME, "HistoryOrderDetails_PaymentType");
             SetupInfoLabel(PaymentNameLabel);
 
             SetupInfoLabel(AmountHintLabel);
+            AmountHintLabel.Text = LocalizationService.GetLocalizableString(HistoryOrdersConstants.RESX_NAME, "HistoryOrderDetails_Amount");
             SetupInfoLabel(AmountLabel);
 
             SetupOrderStatusTableView(OrderStatusTableView);
@@ -78,6 +84,7 @@ namespace AppRopio.ECommerce.HistoryOrders.iOS.Views.HistoryOrders
         protected virtual void SetupRepeatButton(UIButton repeatButton)
         {
             repeatButton.SetupStyle(ThemeConfig.RepeatButton);
+            repeatButton.WithTitleForAllStates(LocalizationService.GetLocalizableString(HistoryOrdersConstants.RESX_NAME, "HistoryOrderDetails_RepeatOrder"));
         }
 
         protected virtual void SetupOrderStatusTableView(UITableView tableView)
@@ -111,7 +118,7 @@ namespace AppRopio.ECommerce.HistoryOrders.iOS.Views.HistoryOrders
 
         protected virtual void BindTitle(MvxFluentBindingDescriptionSet<HistoryOrderDetailsViewController, IHistoryOrderDetailsViewModel> set)
 		{
-            set.Bind(this).To(vm => vm.OrderNumber).For(v => v.Title).WithConversion("StringFormat", "Заказ {0}");
+            set.Bind(this).To(vm => vm.OrderNumber).For(v => v.Title).WithConversion("StringFormat", $"{LocalizationService.GetLocalizableString(HistoryOrdersConstants.RESX_NAME, "HistoryOrderDetails_Title")} {{0}}");
         }
 
 		protected virtual void BindContent(UIView content, MvxFluentBindingDescriptionSet<HistoryOrderDetailsViewController, IHistoryOrderDetailsViewModel> set)
@@ -126,7 +133,7 @@ namespace AppRopio.ECommerce.HistoryOrders.iOS.Views.HistoryOrders
 
 		protected virtual void BindItemsCount(UILabel items, MvxFluentBindingDescriptionSet<HistoryOrderDetailsViewController, IHistoryOrderDetailsViewModel> set)
 		{
-            set.Bind(items).To(vm => vm.ItemsCount).WithConversion("StringFormat", "Состав заказа ({0})");
+            set.Bind(items).To(vm => vm.ItemsCount).WithConversion("StringFormat", $"{LocalizationService.GetLocalizableString(HistoryOrdersConstants.RESX_NAME, "HistoryOrderDetails_OrderList")} ({{0}})");
             set.Bind(items).To(vm => vm.GoToItemsCommand).For("Tap");
 		}
 

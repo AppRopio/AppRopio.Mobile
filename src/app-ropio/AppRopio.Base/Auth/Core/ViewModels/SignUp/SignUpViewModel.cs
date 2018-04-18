@@ -52,6 +52,8 @@ namespace AppRopio.Base.Auth.Core.ViewModels.SignUp
 			}
 		}
 
+        public string SignUpText => LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "SignUp_Next");
+
 		#endregion
 
 		#region Services

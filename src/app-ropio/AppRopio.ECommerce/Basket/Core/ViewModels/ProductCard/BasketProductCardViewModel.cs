@@ -295,7 +295,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard
                 {
                     Messenger.Publish(new ProductAddToBasketMessage(this, Model.Id));
 
-                    var confirmed = await UserDialogs.Confirm("Добавлено в корзину", "ПЕРЕЙТИ");
+                    var confirmed = await UserDialogs.Confirm(LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Basket_AddedToBasketTitle"), LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Basket_AddedToBasketButton"));
                     if (confirmed)
                     {
                         AnalyticsNotifyingService.NotifyEventIsHandled("catalog", "catalog_product_card_notify_basket_button", Model.Id);
@@ -358,7 +358,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard
 
                 SetQuantityString();
 
-                var confirmed = await UserDialogs.Confirm($"Количество товара в корзине: {QuantityString} {UnitName}", "ПЕРЕЙТИ", true);
+                var confirmed = await UserDialogs.Confirm($"{LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Basket_ProductsCount")} {QuantityString} {UnitName}", LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Basket_AddedToBasketButton"), true);
                 if (confirmed)
                     NavigationVmService.NavigateToBasket(new BaseBundle(Base.Core.Models.Navigation.NavigationType.ClearAndPush));
             }

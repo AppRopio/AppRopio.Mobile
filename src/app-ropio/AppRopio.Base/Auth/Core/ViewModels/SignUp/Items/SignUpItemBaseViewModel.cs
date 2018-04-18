@@ -4,6 +4,8 @@ using AppRopio.Models.Auth.Enums;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using MvvmCross.Plugins.Messenger;
+using AppRopio.Base.Core.Services.Localization;
+using System;
 
 namespace AppRopio.Base.Auth.Core.ViewModels.SignUp.Items
 {
@@ -110,8 +112,8 @@ namespace AppRopio.Base.Auth.Core.ViewModels.SignUp.Items
 		public SignUpItemBaseViewModel(RegistrationField field)
 		{
 			RegistrationField = field;
-			Type = field.Type;
-			Placeholder = field.Placeholder;
+            Type = field.Type;
+            Placeholder = Mvx.Resolve<ILocalizationService>().GetLocalizableString(AuthConst.RESX_NAME, $"{field.Type.ToString().ToFirstCharLowercase()}{field.Id}_placeholder");
 		}
 
 		#endregion

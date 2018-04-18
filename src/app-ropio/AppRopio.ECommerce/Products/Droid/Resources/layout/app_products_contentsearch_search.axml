@@ -11,5 +11,5 @@
         android:id="@+id/app_products_contentsearch_searchInput"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:MvxBind="Text SearchText" />
+        app:MvxBind="Text SearchText; Hint Resx('ContentSearch_Placeholder', 'Products')" />
 </RelativeLayout>

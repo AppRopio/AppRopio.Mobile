@@ -9,6 +9,8 @@ using AppRopio.Base.Contacts.iOS.Services;
 using MvvmCross.Platform;
 using AppRopio.Base.Core;
 using AppRopio.Base.iOS;
+using AppRopio.Base.Core.Services.Localization;
+using AppRopio.Base.Contacts.Core;
 
 namespace AppRopio.Base.Contacts.iOS.Views.Contacts
 {
@@ -72,7 +74,7 @@ namespace AppRopio.Base.Contacts.iOS.Views.Contacts
 
         protected override void InitializeControls()
         {
-            Title = "Контакты";
+            Title = LocalizationService.GetLocalizableString(ContactsConstants.RESX_NAME, "Title");
 
             SetupTableView(contactsTableView);
 

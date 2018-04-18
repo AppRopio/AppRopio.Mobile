@@ -13,6 +13,7 @@ using AppRopio.Base.Filters.Core.ViewModels.Filters.Items.MinMax.Number;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Droid.Support.V7.RecyclerView;
 using Android.App;
+using AppRopio.Base.Filters.Core;
 
 namespace AppRopio.Base.Filters.Droid.Views.Filters
 {
@@ -21,9 +22,10 @@ namespace AppRopio.Base.Filters.Droid.Views.Filters
         protected const int CLEAR_ID = 1;
 
         public FiltersFragment()
-            : base(Resource.Layout.app_filters_filters, "Фильтры")
+            : base(Resource.Layout.app_filters_filters)
         {
             HasOptionsMenu = true;
+            Title = LocalizationService.GetLocalizableString(FiltersConstants.RESX_NAME, "Title");
         }
 
         protected virtual void SetupRecyclerView(MvxRecyclerView recyclerView)
@@ -130,7 +132,7 @@ namespace AppRopio.Base.Filters.Droid.Views.Filters
 
         public override void OnCreateOptionsMenu(Android.Views.IMenu menu, Android.Views.MenuInflater inflater)
         {
-            var menuItem = menu.Add(0, CLEAR_ID, 0, Resource.String.app_filters_filters_cancel);
+            var menuItem = menu.Add(0, CLEAR_ID, 0, new Java.Lang.String(LocalizationService.GetLocalizableString(FiltersConstants.RESX_NAME, "Filters_Clear")));
             menuItem.SetShowAsAction(Android.Views.ShowAsAction.Always);
             menuItem.SetActionView(Resource.Layout.app_filters_filters_clearButton);
             menuItem.ActionView.Click += (sender, e) =>

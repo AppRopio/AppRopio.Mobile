@@ -6,6 +6,7 @@ using Android.Util;
 using Android.Views;
 using AppRopio.Base.Droid.Adapters;
 using AppRopio.Base.Droid.Views;
+using AppRopio.ECommerce.Basket.Core;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items;
 using MvvmCross.Droid.Support.V7.AppCompat.Widget;
@@ -19,8 +20,9 @@ namespace AppRopio.ECommerce.Basket.Droid.Views.Order.Delivery
         private View _statusBar;
 
         public DeliveryOnAddressFragment()
-            : base (Resource.Layout.app_basket_delivery_on_address, "Адрес")
+            : base (Resource.Layout.app_basket_delivery_on_address)
         {
+            Title = LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "DeliveryAddress_Title");
         }
 
         private int GetStatusBarHeight()

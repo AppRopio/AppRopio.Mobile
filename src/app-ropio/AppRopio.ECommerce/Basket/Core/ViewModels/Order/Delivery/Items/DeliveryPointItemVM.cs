@@ -11,6 +11,7 @@ using MvvmCross.Platform;
 using Plugin.ExternalMaps;
 using Plugin.Messaging;
 using AppRopio.Base.Core.Services.Analytics;
+using AppRopio.Base.Core.Services.Localization;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery.Items
 {
@@ -149,14 +150,14 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery.Items
             if (Mvx.CanResolve<IAnalyticsNotifyingService>())
                 Mvx.Resolve<IAnalyticsNotifyingService>().NotifyEventIsHandled("order", "order_delivery_pickup_item_button");
 
-            if (await Mvx.Resolve<IUserDialogs>().Confirm($"Набрать {Phone}?", "Набрать")
+            if (await Mvx.Resolve<IUserDialogs>().Confirm($"{Mvx.Resolve<ILocalizationService>().GetLocalizableString(BasketConstants.RESX_NAME, "DeliveryPoint_MakeCallText")} {Phone}?", Mvx.Resolve<ILocalizationService>().GetLocalizableString(BasketConstants.RESX_NAME, "DeliveryPoint_MakeCall"))
                         && CrossMessaging.Current.PhoneDialer.CanMakePhoneCall)
             {
                 CrossMessaging.Current.PhoneDialer.MakePhoneCall(Phone, Name); 
             }
             else
             {
-                await Mvx.Resolve<IUserDialogs>().Alert("Ваше устройство не поддерживает функцию звонка");
+                await Mvx.Resolve<IUserDialogs>().Alert(Mvx.Resolve<ILocalizationService>().GetLocalizableString(BasketConstants.RESX_NAME, "DeliveryPoint_CallError"));
             }
         }
 
@@ -179,7 +180,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery.Items
             {
                 var success = await CrossExternalMaps.Current.NavigateTo(Name, Coordinates.Latitude, Coordinates.Longitude);
                 if (!success)
-                    await Mvx.Resolve<IUserDialogs>().Alert("Не удалось построить маршрут.");
+                    await Mvx.Resolve<IUserDialogs>().Alert(Mvx.Resolve<ILocalizationService>().GetLocalizableString(BasketConstants.RESX_NAME, "DeliveryPoint_RouteError"));
             });
         }
 

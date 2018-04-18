@@ -11,5 +11,6 @@ namespace AppRopio.Base.Auth.Core.ViewModels.SignUp
 
 		List<ISignUpItemBaseViewModel> Items { get; }
 
+        string SignUpText { get; }
 	}
 }

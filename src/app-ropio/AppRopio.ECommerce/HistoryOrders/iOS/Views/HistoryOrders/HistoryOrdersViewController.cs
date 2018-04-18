@@ -8,6 +8,7 @@ using MvvmCross.Binding.iOS.Views;
 using MvvmCross.iOS.Views;
 using MvvmCross.Platform;
 using UIKit;
+using AppRopio.ECommerce.HistoryOrders.Core;
 
 namespace AppRopio.ECommerce.HistoryOrders.iOS.Views.HistoryOrders
 {
@@ -26,7 +27,7 @@ namespace AppRopio.ECommerce.HistoryOrders.iOS.Views.HistoryOrders
 
         protected override void InitializeControls()
         {
-            Title = "История";
+            Title = LocalizationService.GetLocalizableString(HistoryOrdersConstants.RESX_NAME, "History_Title");
 
 			_refreshControl = new MvxUIRefreshControl();
 

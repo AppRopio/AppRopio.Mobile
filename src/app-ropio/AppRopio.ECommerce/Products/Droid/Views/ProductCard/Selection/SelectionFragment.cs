@@ -1,6 +1,7 @@
 ﻿using System;
 using AppRopio.Base.Droid.Views;
 using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Selection;
+using AppRopio.ECommerce.Products.Core;
 
 namespace AppRopio.ECommerce.Products.Droid.Views.ProductCard.Selection
 {
@@ -23,7 +24,7 @@ namespace AppRopio.ECommerce.Products.Droid.Views.ProductCard.Selection
 
         public override void OnCreateOptionsMenu(Android.Views.IMenu menu, Android.Views.MenuInflater inflater)
         {
-            var menuItem = menu.Add(0, CLEAR_ID, 0, Resource.String.app_products_selection_clear);
+            var menuItem = menu.Add(0, CLEAR_ID, 0, new Java.Lang.String(LocalizationService.GetLocalizableString(ProductsConstants.RESX_NAME, "Selection_Clear")));
             menuItem.SetShowAsAction(Android.Views.ShowAsAction.Always);
             menuItem.SetActionView(Resource.Layout.app_products_selection_clearButton);
             menuItem.ActionView.Click += (sender, e) =>

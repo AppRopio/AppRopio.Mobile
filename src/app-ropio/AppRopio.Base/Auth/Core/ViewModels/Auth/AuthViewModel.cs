@@ -8,6 +8,7 @@ using AppRopio.Base.Core.Models.Navigation;
 using AppRopio.Base.Core.ViewModels;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
+using System;
 
 namespace AppRopio.Base.Auth.Core.ViewModels.Auth
 {
@@ -73,11 +74,17 @@ namespace AppRopio.Base.Auth.Core.ViewModels.Auth
 
 		protected IAuthVmService SocialService { get { return Mvx.Resolve<IAuthVmService>(); } }
 
-		#endregion
+        public string SignInText => LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "Auth_SignIn");
 
-		#region Constructor
+        public string SignUpText => LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "Auth_SignUp");
 
-		public AuthViewModel()
+        public string SkipText => LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "Auth_Skip");
+
+        #endregion
+
+        #region Constructor
+
+        public AuthViewModel()
 		{
 			VmNavigationType = NavigationType.ClearAndPush;
 		}
@@ -90,7 +97,7 @@ namespace AppRopio.Base.Auth.Core.ViewModels.Auth
 		{
 			Loading = true;
 
-			await SocialService.SignInTo(OAuthType.VK, "Вы отменили процедуру авторизации с помощью VK", "Не удалось авторизоваться с помощью VK", OnUnbindCTS);
+            await SocialService.SignInTo(OAuthType.VK, $"{LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "SocialAuthCancel")} VK", $"{LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "SocialAuthError")} VK", OnUnbindCTS);
 
 			Loading = false;
 		}
@@ -99,7 +106,7 @@ namespace AppRopio.Base.Auth.Core.ViewModels.Auth
 		{
 			Loading = true;
 
-			await SocialService.SignInTo(OAuthType.Facebook, "Вы отменили процедуру авторизации с помощью Facebook", "Не удалось авторизоваться с помощью Facebook", OnUnbindCTS);
+            await SocialService.SignInTo(OAuthType.Facebook, $"{LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "SocialAuthCancel")} Facebook", $"{LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "SocialAuthError")} Facebook", OnUnbindCTS);
 
 			Loading = false;
 		}

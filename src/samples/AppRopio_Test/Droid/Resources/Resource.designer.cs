@@ -5215,11 +5215,6 @@ namespace AppRopio.Test.Droid
 			global::AppRopio.Base.Filters.Droid.Resource.String.abc_shareactionprovider_share_with = global::AppRopio.Test.Droid.Resource.String.abc_shareactionprovider_share_with;
 			global::AppRopio.Base.Filters.Droid.Resource.String.abc_shareactionprovider_share_with_application = global::AppRopio.Test.Droid.Resource.String.abc_shareactionprovider_share_with_application;
 			global::AppRopio.Base.Filters.Droid.Resource.String.abc_toolbar_collapse_description = global::AppRopio.Test.Droid.Resource.String.abc_toolbar_collapse_description;
-			global::AppRopio.Base.Filters.Droid.Resource.String.app_filters_filters_apply = global::AppRopio.Test.Droid.Resource.String.app_filters_filters_apply;
-			global::AppRopio.Base.Filters.Droid.Resource.String.app_filters_filters_cancel = global::AppRopio.Test.Droid.Resource.String.app_filters_filters_cancel;
-			global::AppRopio.Base.Filters.Droid.Resource.String.app_filters_filters_minMax_content_hint_from = global::AppRopio.Test.Droid.Resource.String.app_filters_filters_minMax_content_hint_from;
-			global::AppRopio.Base.Filters.Droid.Resource.String.app_filters_filters_minMax_content_hint_to = global::AppRopio.Test.Droid.Resource.String.app_filters_filters_minMax_content_hint_to;
-			global::AppRopio.Base.Filters.Droid.Resource.String.app_filters_sort_title = global::AppRopio.Test.Droid.Resource.String.app_filters_sort_title;
 			global::AppRopio.Base.Filters.Droid.Resource.String.library_name = global::AppRopio.Test.Droid.Resource.String.library_name;
 			global::AppRopio.Base.Filters.Droid.Resource.String.search_menu_title = global::AppRopio.Test.Droid.Resource.String.search_menu_title;
 			global::AppRopio.Base.Filters.Droid.Resource.String.status_bar_notification_info_overflow = global::AppRopio.Test.Droid.Resource.String.status_bar_notification_info_overflow;
@@ -9252,17 +9247,6 @@ namespace AppRopio.Test.Droid
 			global::AppRopio.ECommerce.Basket.Droid.Resource.String.abc_shareactionprovider_share_with = global::AppRopio.Test.Droid.Resource.String.abc_shareactionprovider_share_with;
 			global::AppRopio.ECommerce.Basket.Droid.Resource.String.abc_shareactionprovider_share_with_application = global::AppRopio.Test.Droid.Resource.String.abc_shareactionprovider_share_with_application;
 			global::AppRopio.ECommerce.Basket.Droid.Resource.String.abc_toolbar_collapse_description = global::AppRopio.Test.Droid.Resource.String.abc_toolbar_collapse_description;
-			global::AppRopio.ECommerce.Basket.Droid.Resource.String.app_basket_basket_empty_button = global::AppRopio.Test.Droid.Resource.String.app_basket_basket_empty_button;
-			global::AppRopio.ECommerce.Basket.Droid.Resource.String.app_basket_basket_empty_subtitle = global::AppRopio.Test.Droid.Resource.String.app_basket_basket_empty_subtitle;
-			global::AppRopio.ECommerce.Basket.Droid.Resource.String.app_basket_basket_empty_title = global::AppRopio.Test.Droid.Resource.String.app_basket_basket_empty_title;
-			global::AppRopio.ECommerce.Basket.Droid.Resource.String.app_basket_delivery_on_address_button = global::AppRopio.Test.Droid.Resource.String.app_basket_delivery_on_address_button;
-			global::AppRopio.ECommerce.Basket.Droid.Resource.String.app_basket_delivery_on_point_button = global::AppRopio.Test.Droid.Resource.String.app_basket_delivery_on_point_button;
-			global::AppRopio.ECommerce.Basket.Droid.Resource.String.app_basket_delivery_on_point_toolbar_onSearch_input_hint = global::AppRopio.Test.Droid.Resource.String.app_basket_delivery_on_point_toolbar_onSearch_input_hint;
-			global::AppRopio.ECommerce.Basket.Droid.Resource.String.app_basket_payment_title = global::AppRopio.Test.Droid.Resource.String.app_basket_payment_title;
-			global::AppRopio.ECommerce.Basket.Droid.Resource.String.app_basket_productCardView_buyButton = global::AppRopio.Test.Droid.Resource.String.app_basket_productCardView_buyButton;
-			global::AppRopio.ECommerce.Basket.Droid.Resource.String.app_basket_thanks_catalogButton = global::AppRopio.Test.Droid.Resource.String.app_basket_thanks_catalogButton;
-			global::AppRopio.ECommerce.Basket.Droid.Resource.String.app_basket_thanks_subtitle = global::AppRopio.Test.Droid.Resource.String.app_basket_thanks_subtitle;
-			global::AppRopio.ECommerce.Basket.Droid.Resource.String.app_basket_thanks_title = global::AppRopio.Test.Droid.Resource.String.app_basket_thanks_title;
 			global::AppRopio.ECommerce.Basket.Droid.Resource.String.appbar_scrolling_view_behavior = global::AppRopio.Test.Droid.Resource.String.appbar_scrolling_view_behavior;
 			global::AppRopio.ECommerce.Basket.Droid.Resource.String.bottom_sheet_behavior = global::AppRopio.Test.Droid.Resource.String.bottom_sheet_behavior;
 			global::AppRopio.ECommerce.Basket.Droid.Resource.String.character_counter_pattern = global::AppRopio.Test.Droid.Resource.String.character_counter_pattern;
@@ -11309,11 +11293,6 @@ namespace AppRopio.Test.Droid
 			global::AppRopio.ECommerce.HistoryOrders.Droid.Resource.String.abc_shareactionprovider_share_with = global::AppRopio.Test.Droid.Resource.String.abc_shareactionprovider_share_with;
 			global::AppRopio.ECommerce.HistoryOrders.Droid.Resource.String.abc_shareactionprovider_share_with_application = global::AppRopio.Test.Droid.Resource.String.abc_shareactionprovider_share_with_application;
 			global::AppRopio.ECommerce.HistoryOrders.Droid.Resource.String.abc_toolbar_collapse_description = global::AppRopio.Test.Droid.Resource.String.abc_toolbar_collapse_description;
-			global::AppRopio.ECommerce.HistoryOrders.Droid.Resource.String.app_historyorders_details_button = global::AppRopio.Test.Droid.Resource.String.app_historyorders_details_button;
-			global::AppRopio.ECommerce.HistoryOrders.Droid.Resource.String.app_historyorders_details_delivery = global::AppRopio.Test.Droid.Resource.String.app_historyorders_details_delivery;
-			global::AppRopio.ECommerce.HistoryOrders.Droid.Resource.String.app_historyorders_details_payment = global::AppRopio.Test.Droid.Resource.String.app_historyorders_details_payment;
-			global::AppRopio.ECommerce.HistoryOrders.Droid.Resource.String.app_historyorders_details_summary = global::AppRopio.Test.Droid.Resource.String.app_historyorders_details_summary;
-			global::AppRopio.ECommerce.HistoryOrders.Droid.Resource.String.app_historyorders_products_item_available = global::AppRopio.Test.Droid.Resource.String.app_historyorders_products_item_available;
 			global::AppRopio.ECommerce.HistoryOrders.Droid.Resource.String.library_name = global::AppRopio.Test.Droid.Resource.String.library_name;
 			global::AppRopio.ECommerce.HistoryOrders.Droid.Resource.String.search_menu_title = global::AppRopio.Test.Droid.Resource.String.search_menu_title;
 			global::AppRopio.ECommerce.HistoryOrders.Droid.Resource.String.status_bar_notification_info_overflow = global::AppRopio.Test.Droid.Resource.String.status_bar_notification_info_overflow;
@@ -13432,19 +13411,6 @@ namespace AppRopio.Test.Droid
 			global::AppRopio.ECommerce.Marked.Droid.Resource.String.abc_shareactionprovider_share_with = global::AppRopio.Test.Droid.Resource.String.abc_shareactionprovider_share_with;
 			global::AppRopio.ECommerce.Marked.Droid.Resource.String.abc_shareactionprovider_share_with_application = global::AppRopio.Test.Droid.Resource.String.abc_shareactionprovider_share_with_application;
 			global::AppRopio.ECommerce.Marked.Droid.Resource.String.abc_toolbar_collapse_description = global::AppRopio.Test.Droid.Resource.String.abc_toolbar_collapse_description;
-			global::AppRopio.ECommerce.Marked.Droid.Resource.String.app_marked_empty_subtitle = global::AppRopio.Test.Droid.Resource.String.app_marked_empty_subtitle;
-			global::AppRopio.ECommerce.Marked.Droid.Resource.String.app_marked_empty_title = global::AppRopio.Test.Droid.Resource.String.app_marked_empty_title;
-			global::AppRopio.ECommerce.Marked.Droid.Resource.String.app_products_catalog_empty_button = global::AppRopio.Test.Droid.Resource.String.app_products_catalog_empty_button;
-			global::AppRopio.ECommerce.Marked.Droid.Resource.String.app_products_catalog_empty_subtitle = global::AppRopio.Test.Droid.Resource.String.app_products_catalog_empty_subtitle;
-			global::AppRopio.ECommerce.Marked.Droid.Resource.String.app_products_catalog_empty_title = global::AppRopio.Test.Droid.Resource.String.app_products_catalog_empty_title;
-			global::AppRopio.ECommerce.Marked.Droid.Resource.String.app_products_catalog_sort_filters_header_filterBtn = global::AppRopio.Test.Droid.Resource.String.app_products_catalog_sort_filters_header_filterBtn;
-			global::AppRopio.ECommerce.Marked.Droid.Resource.String.app_products_catalog_sort_filters_header_sortBtn = global::AppRopio.Test.Droid.Resource.String.app_products_catalog_sort_filters_header_sortBtn;
-			global::AppRopio.ECommerce.Marked.Droid.Resource.String.app_products_contentsearch_history_clearButton = global::AppRopio.Test.Droid.Resource.String.app_products_contentsearch_history_clearButton;
-			global::AppRopio.ECommerce.Marked.Droid.Resource.String.app_products_contentsearch_searchInput_hint = global::AppRopio.Test.Droid.Resource.String.app_products_contentsearch_searchInput_hint;
-			global::AppRopio.ECommerce.Marked.Droid.Resource.String.app_products_productCard_minMax_content_hint_from = global::AppRopio.Test.Droid.Resource.String.app_products_productCard_minMax_content_hint_from;
-			global::AppRopio.ECommerce.Marked.Droid.Resource.String.app_products_productCard_minMax_content_hint_to = global::AppRopio.Test.Droid.Resource.String.app_products_productCard_minMax_content_hint_to;
-			global::AppRopio.ECommerce.Marked.Droid.Resource.String.app_products_selection_apply = global::AppRopio.Test.Droid.Resource.String.app_products_selection_apply;
-			global::AppRopio.ECommerce.Marked.Droid.Resource.String.app_products_selection_clear = global::AppRopio.Test.Droid.Resource.String.app_products_selection_clear;
 			global::AppRopio.ECommerce.Marked.Droid.Resource.String.appbar_scrolling_view_behavior = global::AppRopio.Test.Droid.Resource.String.appbar_scrolling_view_behavior;
 			global::AppRopio.ECommerce.Marked.Droid.Resource.String.bottom_sheet_behavior = global::AppRopio.Test.Droid.Resource.String.bottom_sheet_behavior;
 			global::AppRopio.ECommerce.Marked.Droid.Resource.String.character_counter_pattern = global::AppRopio.Test.Droid.Resource.String.character_counter_pattern;
@@ -15962,17 +15928,6 @@ namespace AppRopio.Test.Droid
 			global::AppRopio.ECommerce.Products.Droid.Resource.String.abc_shareactionprovider_share_with = global::AppRopio.Test.Droid.Resource.String.abc_shareactionprovider_share_with;
 			global::AppRopio.ECommerce.Products.Droid.Resource.String.abc_shareactionprovider_share_with_application = global::AppRopio.Test.Droid.Resource.String.abc_shareactionprovider_share_with_application;
 			global::AppRopio.ECommerce.Products.Droid.Resource.String.abc_toolbar_collapse_description = global::AppRopio.Test.Droid.Resource.String.abc_toolbar_collapse_description;
-			global::AppRopio.ECommerce.Products.Droid.Resource.String.app_products_catalog_empty_button = global::AppRopio.Test.Droid.Resource.String.app_products_catalog_empty_button;
-			global::AppRopio.ECommerce.Products.Droid.Resource.String.app_products_catalog_empty_subtitle = global::AppRopio.Test.Droid.Resource.String.app_products_catalog_empty_subtitle;
-			global::AppRopio.ECommerce.Products.Droid.Resource.String.app_products_catalog_empty_title = global::AppRopio.Test.Droid.Resource.String.app_products_catalog_empty_title;
-			global::AppRopio.ECommerce.Products.Droid.Resource.String.app_products_catalog_sort_filters_header_filterBtn = global::AppRopio.Test.Droid.Resource.String.app_products_catalog_sort_filters_header_filterBtn;
-			global::AppRopio.ECommerce.Products.Droid.Resource.String.app_products_catalog_sort_filters_header_sortBtn = global::AppRopio.Test.Droid.Resource.String.app_products_catalog_sort_filters_header_sortBtn;
-			global::AppRopio.ECommerce.Products.Droid.Resource.String.app_products_contentsearch_history_clearButton = global::AppRopio.Test.Droid.Resource.String.app_products_contentsearch_history_clearButton;
-			global::AppRopio.ECommerce.Products.Droid.Resource.String.app_products_contentsearch_searchInput_hint = global::AppRopio.Test.Droid.Resource.String.app_products_contentsearch_searchInput_hint;
-			global::AppRopio.ECommerce.Products.Droid.Resource.String.app_products_productCard_minMax_content_hint_from = global::AppRopio.Test.Droid.Resource.String.app_products_productCard_minMax_content_hint_from;
-			global::AppRopio.ECommerce.Products.Droid.Resource.String.app_products_productCard_minMax_content_hint_to = global::AppRopio.Test.Droid.Resource.String.app_products_productCard_minMax_content_hint_to;
-			global::AppRopio.ECommerce.Products.Droid.Resource.String.app_products_selection_apply = global::AppRopio.Test.Droid.Resource.String.app_products_selection_apply;
-			global::AppRopio.ECommerce.Products.Droid.Resource.String.app_products_selection_clear = global::AppRopio.Test.Droid.Resource.String.app_products_selection_clear;
 			global::AppRopio.ECommerce.Products.Droid.Resource.String.appbar_scrolling_view_behavior = global::AppRopio.Test.Droid.Resource.String.appbar_scrolling_view_behavior;
 			global::AppRopio.ECommerce.Products.Droid.Resource.String.bottom_sheet_behavior = global::AppRopio.Test.Droid.Resource.String.bottom_sheet_behavior;
 			global::AppRopio.ECommerce.Products.Droid.Resource.String.character_counter_pattern = global::AppRopio.Test.Droid.Resource.String.character_counter_pattern;
@@ -28492,113 +28447,11 @@ namespace AppRopio.Test.Droid
 			// aapt resource value: 0x7f090023
 			public const int abc_toolbar_collapse_description = 2131296291;
 			
-			// aapt resource value: 0x7f090054
-			public const int app_basket_basket_empty_button = 2131296340;
-			
-			// aapt resource value: 0x7f090053
-			public const int app_basket_basket_empty_subtitle = 2131296339;
-			
-			// aapt resource value: 0x7f090052
-			public const int app_basket_basket_empty_title = 2131296338;
-			
-			// aapt resource value: 0x7f090059
-			public const int app_basket_delivery_on_address_button = 2131296345;
-			
-			// aapt resource value: 0x7f09005a
-			public const int app_basket_delivery_on_point_button = 2131296346;
-			
-			// aapt resource value: 0x7f09005b
-			public const int app_basket_delivery_on_point_toolbar_onSearch_input_hint = 2131296347;
-			
-			// aapt resource value: 0x7f090055
-			public const int app_basket_payment_title = 2131296341;
-			
-			// aapt resource value: 0x7f09005c
-			public const int app_basket_productCardView_buyButton = 2131296348;
-			
-			// aapt resource value: 0x7f090058
-			public const int app_basket_thanks_catalogButton = 2131296344;
-			
-			// aapt resource value: 0x7f090057
-			public const int app_basket_thanks_subtitle = 2131296343;
-			
-			// aapt resource value: 0x7f090056
-			public const int app_basket_thanks_title = 2131296342;
-			
-			// aapt resource value: 0x7f090062
-			public const int app_color_name = 2131296354;
-			
-			// aapt resource value: 0x7f09005e
-			public const int app_filters_filters_apply = 2131296350;
-			
-			// aapt resource value: 0x7f09005f
-			public const int app_filters_filters_cancel = 2131296351;
-			
-			// aapt resource value: 0x7f090060
-			public const int app_filters_filters_minMax_content_hint_from = 2131296352;
-			
-			// aapt resource value: 0x7f090061
-			public const int app_filters_filters_minMax_content_hint_to = 2131296353;
-			
-			// aapt resource value: 0x7f09005d
-			public const int app_filters_sort_title = 2131296349;
-			
-			// aapt resource value: 0x7f090050
-			public const int app_historyorders_details_button = 2131296336;
-			
-			// aapt resource value: 0x7f09004d
-			public const int app_historyorders_details_delivery = 2131296333;
-			
-			// aapt resource value: 0x7f09004e
-			public const int app_historyorders_details_payment = 2131296334;
-			
-			// aapt resource value: 0x7f09004f
-			public const int app_historyorders_details_summary = 2131296335;
-			
-			// aapt resource value: 0x7f090051
-			public const int app_historyorders_products_item_available = 2131296337;
-			
-			// aapt resource value: 0x7f09004c
-			public const int app_marked_empty_subtitle = 2131296332;
-			
-			// aapt resource value: 0x7f09004b
-			public const int app_marked_empty_title = 2131296331;
+			// aapt resource value: 0x7f090040
+			public const int app_color_name = 2131296320;
 			
 			// aapt resource value: 0x7f09003f
 			public const int app_name = 2131296319;
-			
-			// aapt resource value: 0x7f090042
-			public const int app_products_catalog_empty_button = 2131296322;
-			
-			// aapt resource value: 0x7f090041
-			public const int app_products_catalog_empty_subtitle = 2131296321;
-			
-			// aapt resource value: 0x7f090040
-			public const int app_products_catalog_empty_title = 2131296320;
-			
-			// aapt resource value: 0x7f090043
-			public const int app_products_catalog_sort_filters_header_filterBtn = 2131296323;
-			
-			// aapt resource value: 0x7f090044
-			public const int app_products_catalog_sort_filters_header_sortBtn = 2131296324;
-			
-			// aapt resource value: 0x7f090045
-			public const int app_products_contentsearch_history_clearButton = 2131296325;
-			
-			// aapt resource value: 0x7f090046
-			public const int app_products_contentsearch_searchInput_hint = 2131296326;
-			
-			// aapt resource value: 0x7f090049
-			public const int app_products_productCard_minMax_content_hint_from = 2131296329;
-			
-			// aapt resource value: 0x7f09004a
-			public const int app_products_productCard_minMax_content_hint_to = 2131296330;
-			
-			// aapt resource value: 0x7f090047
-			public const int app_products_selection_apply = 2131296327;
-			
-			// aapt resource value: 0x7f090048
-			public const int app_products_selection_clear = 2131296328;
 			
 			// aapt resource value: 0x7f090032
 			public const int appbar_scrolling_view_behavior = 2131296306;

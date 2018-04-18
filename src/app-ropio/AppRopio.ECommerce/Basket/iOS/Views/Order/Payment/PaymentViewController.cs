@@ -11,6 +11,7 @@ using CoreGraphics;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Binding.iOS.Views;
 using System;
+using AppRopio.ECommerce.Basket.Core;
 
 namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Payment
 {
@@ -195,7 +196,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Payment
 
         protected virtual void SetupTitleLabel(UILabel titleLabel)
         {
-            titleLabel.Text = "Выбор оплаты";
+            titleLabel.Text = LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Payment_Title");
             titleLabel.SetupStyle(PaymentsTheme.Title);
         }
 

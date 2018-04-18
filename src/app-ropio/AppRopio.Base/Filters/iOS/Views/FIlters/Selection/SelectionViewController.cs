@@ -8,6 +8,7 @@ using MvvmCross.Binding.BindingContext;
 using MvvmCross.Binding.iOS.Views;
 using MvvmCross.Platform;
 using UIKit;
+using AppRopio.Base.Filters.Core;
 
 namespace AppRopio.Base.Filters.iOS.Views.Filters.Selection
 {
@@ -44,7 +45,7 @@ namespace AppRopio.Base.Filters.iOS.Views.Filters.Selection
 
         protected virtual UIBarButtonItem SetupClearButton()
         {
-            var clearBarBtn = new UIBarButtonItem("Сбросить", UIBarButtonItemStyle.Plain, null);
+            var clearBarBtn = new UIBarButtonItem(LocalizationService.GetLocalizableString(FiltersConstants.RESX_NAME, "Selection_Clear"), UIBarButtonItemStyle.Plain, null);
             clearBarBtn.SetupStyle(ThemeConfig.Filters.ClearButton);
             return clearBarBtn;
         }
@@ -80,6 +81,7 @@ namespace AppRopio.Base.Filters.iOS.Views.Filters.Selection
         protected virtual void BindApplyButton(UIButton applyBtn, MvxFluentBindingDescriptionSet<SelectionViewController, IFilterSelectionViewModel> set)
         {
             set.Bind(applyBtn).To(vm => vm.ApplyCommand);
+            set.Bind(applyBtn).For("Title").To(vm => vm.ApplyTitle);
         }
 
         protected virtual void BindClearButton(UIBarButtonItem clearBtn, MvxFluentBindingDescriptionSet<SelectionViewController, IFilterSelectionViewModel> set)

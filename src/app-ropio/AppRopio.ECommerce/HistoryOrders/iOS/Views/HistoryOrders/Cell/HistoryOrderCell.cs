@@ -10,6 +10,8 @@ using MvvmCross.Binding.BindingContext;
 using MvvmCross.Binding.iOS.Views;
 using MvvmCross.Platform;
 using UIKit;
+using AppRopio.Base.Core.Services.Localization;
+using AppRopio.ECommerce.HistoryOrders.Core;
 
 namespace AppRopio.ECommerce.HistoryOrders.iOS.Views.HistoryOrders
 {
@@ -122,7 +124,7 @@ namespace AppRopio.ECommerce.HistoryOrders.iOS.Views.HistoryOrders
 
 		protected virtual void BindItemsCount(UILabel itemsCount, MvxFluentBindingDescriptionSet<HistoryOrderCell, IHistoryOrderItemVM> set)
 		{
-            set.Bind(itemsCount).To(vm => vm.ItemsCount).WithConversion("StringFormat", "Состав заказа ({0})");
+            set.Bind(itemsCount).To(vm => vm.ItemsCount).WithConversion("StringFormat", $"{Mvx.Resolve<ILocalizationService>().GetLocalizableString(HistoryOrdersConstants.RESX_NAME, "History_OrderList")} ({{0}})");
 		}
 
         protected virtual void BindOrderImage(UIImageView image, MvxFluentBindingDescriptionSet<HistoryOrderCell, IHistoryOrderItemVM> set)

@@ -21,7 +21,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBaseline="@+id/app_products_productCard_minMax_content_input_from"
-                android:text="@string/app_products_productCard_minMax_content_hint_from" />
+                app:MvxBind="Text Resx('ProductCard_From','Products')" />
             <EditText
                 style="@style/app_products_productCard_minMax_content_input"
                 android:id="@+id/app_products_productCard_minMax_content_input_from"
@@ -43,7 +43,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBaseline="@+id/app_products_productCard_minMax_content_input_to"
-                android:text="@string/app_products_productCard_minMax_content_hint_to" />
+                app:MvxBind="Text Resx('ProductCard_To','Products')" />
             <EditText
                 style="@style/app_products_productCard_minMax_content_input"
                 android:id="@+id/app_products_productCard_minMax_content_input_to"

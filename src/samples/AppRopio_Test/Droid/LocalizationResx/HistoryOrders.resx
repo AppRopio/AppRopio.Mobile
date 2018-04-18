@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <resheader
+        name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader
+        name="version">
+        <value>2.0</value>
+    </resheader>
+    <resheader
+        name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader
+        name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data
+        name="History_Title">
+        <value>History</value>
+    </data>
+    <data
+        name="History_OrderList">
+        <value>Order list</value>
+    </data>
+    <data
+        name="Status_Paid">
+        <value>Paid</value>
+    </data>
+    <data
+        name="Status_NotPaid">
+        <value>Not paid</value>
+    </data>
+    <data
+        name="HistoryOrderProducts_Title">
+        <value>Order list</value>
+    </data>
+    <data
+        name="HistoryOrderProducts_Pieces">
+        <value>PC</value>
+    </data>
+    <data
+        name="HistoryOrderProducts_OutOfStock">
+        <value>Out of stock</value>
+    </data>
+    <data
+        name="HistoryOrderDetails_ToBasket">
+        <value>Go</value>
+    </data>
+    <data
+        name="HistoryOrderDetails_Title">
+        <value>Order</value>
+    </data>
+    <data
+        name="HistoryOrderDetails_OrderList">
+        <value>Order list</value>
+    </data>
+    <data
+        name="HistoryOrderDetails_Delivery">
+        <value>Delivery</value>
+    </data>
+    <data
+        name="HistoryOrderDetails_PaymentType">
+        <value>Payment type</value>
+    </data>
+    <data
+        name="HistoryOrderDetails_Amount">
+        <value>AMOUNT</value>
+    </data>
+    <data
+        name="HistoryOrderDetails_RepeatOrder">
+        <value>REPEAT ORDER</value>
+    </data> 
+</root>

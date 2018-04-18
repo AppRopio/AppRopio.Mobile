@@ -5,6 +5,9 @@ using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.UIExtentions;
 using MvvmCross.Binding.BindingContext;
 using UIKit;
+using AppRopio.Base.Core.Services.Localization;
+using MvvmCross.Platform;
+using AppRopio.Base.Auth.Core;
 
 namespace AppRopio.Base.Auth.iOS.Views.SignIn
 {
@@ -16,11 +19,13 @@ namespace AppRopio.Base.Auth.iOS.Views.SignIn
         {
             get
             {
-                return "Войти".ToUpper();
+                return LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "SignIn_SignIn");
             }
         }
 
         #endregion
+
+        protected ILocalizationService LocalizationService => Mvx.Resolve<ILocalizationService>();
 
         #region Constructor
 
@@ -41,7 +46,7 @@ namespace AppRopio.Base.Auth.iOS.Views.SignIn
             SetViewsState(false);
         }
 
-        #endregion
+        #endregion 
 
         #region Protected
 
@@ -95,13 +100,13 @@ namespace AppRopio.Base.Auth.iOS.Views.SignIn
         protected virtual void SetupTitleLabel(UILabel label)
         {
             label.SetupStyle(ThemeConfig.Title);
-            label.Text = "Будьте с нами!";
+            label.Text = LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "SignIn_Join");
         }
 
         protected virtual void SetupDescriptionLabel(UILabel label)
         {
             label.SetupStyle(ThemeConfig.Description);
-            label.Text = "Авторизуйтесь, чтобы получить\nдоступ в личный кабинет.";
+            label.Text = LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "SignIn_Motivation");
         }
 
         protected virtual void SetupIdentityField(UITextField field, UITextField nextField, bool identifyUserByEmail)
@@ -110,12 +115,12 @@ namespace AppRopio.Base.Auth.iOS.Views.SignIn
 
             if (identifyUserByEmail)
             {
-                field.Placeholder = "Email";
+                field.Placeholder = LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "SignIn_EmailPlaceholder");;
                 field.KeyboardType = UIKeyboardType.EmailAddress;
             }
             else
             {
-                field.Placeholder = "Телефон";
+                field.Placeholder = LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "SignIn_PhonePlaceholder");;
                 field.KeyboardType = UIKeyboardType.NumberPad;
                 field.AutocorrectionType = UITextAutocorrectionType.No;
             }
@@ -144,7 +149,7 @@ namespace AppRopio.Base.Auth.iOS.Views.SignIn
         {
             field.SetupStyle(ThemeConfig.TextField);
 
-            field.Placeholder = "Пароль";
+            field.Placeholder = LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "SignIn_PasswordPlaceholder");
 
             field.ShouldReturn += (textField) =>
             {
@@ -168,13 +173,13 @@ namespace AppRopio.Base.Auth.iOS.Views.SignIn
         {
             button.SetupStyle(ThemeConfig.Button);
             button.TouchUpInside += OnNextButtonClick;
-            button.WithTitleForAllStates("Войти".ToUpper());
+            button.WithTitleForAllStates(LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "SignIn_SignIn"));
         }
 
         protected virtual void SetupResetBtn(UIButton button)
         {
             button.SetupStyle(ThemeConfig.TextButton);
-            button.WithTitleForAllStates("Вспомнить пароль");
+            button.WithTitleForAllStates(LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "SignIn_RestorePassword"));
             button.TouchUpInside += (sender, e) => DismissKeyboard();
         }
 
@@ -220,7 +225,7 @@ namespace AppRopio.Base.Auth.iOS.Views.SignIn
         {
             base.InitializeControls();
 
-            Title = "Авторизация";
+            Title = LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "SignIn_Title");
             SetupImage(_iconImage);
             SetupTitleLabel(_titleLabel);
             SetupDescriptionLabel(_descriptionLabel);

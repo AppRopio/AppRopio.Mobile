@@ -13,5 +13,5 @@
         style="@style/app_products_selection_button"
         android:id="@+id/app_products_selection_button"
         android:layout_alignParentBottom="true"
-        app:MvxBind="Click ApplyCommand; Visibility Visibility(Items.Count);" />
+        app:MvxBind="Click ApplyCommand; Visibility Visibility(Items.Count); Text Resx('Selection_Apply', 'Products')" />
 </RelativeLayout>

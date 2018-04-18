@@ -26,7 +26,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight=".5"
                 android:gravity="center_vertical"
-                android:text="ДОСТАВКА" />
+                app:MvxBind="Text Resx('DeliveryAddress_DeliveryPrice','Basket')" />
             <TextView
                 style="@style/app_basket_full_order_deliveryLayout_price"
                 android:id="@+id/app_basket_full_order_deliveryLayout_price"
@@ -38,7 +38,7 @@
         <Button
             style="@style/app_basket_full_order_button"
             android:id="@+id/app_basket_full_order_button"
-            app:MvxBind="Click NextCommand; Enabled CanGoNext; Visibility Visibility(Items.Count); Text PriceFormatUnit(DeliveryViewModel.Amount, ParsePriceFormatUnitParameter('PrefixString=ЗАКАЗАТЬ ЗА ,Format=ru')); " />
+            app:MvxBind="Click NextCommand; Enabled CanGoNext; Visibility Visibility(Items.Count); Text PriceFormatUnit(DeliveryViewModel.Amount, ParsePriceFormatUnitParameter('StringName=Order_OrderBy,ResxName=Basket')); " />
     </LinearLayout>
     <include
         layout="@layout/app_base_loading" />

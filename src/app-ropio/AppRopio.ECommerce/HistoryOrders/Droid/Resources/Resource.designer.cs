@@ -2586,21 +2586,6 @@ namespace AppRopio.ECommerce.HistoryOrders.Droid
 			// aapt resource value: 0x7f080012
 			public static int abc_toolbar_collapse_description = 2131230738;
 			
-			// aapt resource value: 0x7f080025
-			public static int app_historyorders_details_button = 2131230757;
-			
-			// aapt resource value: 0x7f080022
-			public static int app_historyorders_details_delivery = 2131230754;
-			
-			// aapt resource value: 0x7f080023
-			public static int app_historyorders_details_payment = 2131230755;
-			
-			// aapt resource value: 0x7f080024
-			public static int app_historyorders_details_summary = 2131230756;
-			
-			// aapt resource value: 0x7f080026
-			public static int app_historyorders_products_item_available = 2131230758;
-			
 			// aapt resource value: 0x7f080021
 			public static int library_name = 2131230753;
 			

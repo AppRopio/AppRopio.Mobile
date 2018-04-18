@@ -10,6 +10,7 @@ using Plugin.Messaging;
 using AppRopio.Base.Core.Services.UserDialogs;
 using Plugin.ExternalMaps;
 using AppRopio.Base.Map.Core.Services;
+using AppRopio.Base.Core.Services.Localization;
 
 namespace AppRopio.Base.Map.Core.ViewModels.Points.List.Items
 {
@@ -86,6 +87,12 @@ namespace AppRopio.Base.Map.Core.ViewModels.Points.List.Items
 
         #endregion
 
+        #region Services
+
+        protected ILocalizationService LocalizationService => Mvx.Resolve<ILocalizationService>();
+
+        #endregion
+
         #region Constructor
 
         public PointItemVM(Point model)
@@ -140,11 +147,11 @@ namespace AppRopio.Base.Map.Core.ViewModels.Points.List.Items
 
             if (!CrossMessaging.Current.PhoneDialer.CanMakePhoneCall)
             {
-                await Mvx.Resolve<IUserDialogs>().Alert("Ваше устройство не поддерживает функцию звонка");
+                await Mvx.Resolve<IUserDialogs>().Alert(LocalizationService.GetLocalizableString(MapConstants.RESX_NAME, "List_CallError"));
                 return;
             }
 
-            if (await Mvx.Resolve<IUserDialogs>().Confirm($"Набрать {Phone}?", "Набрать"))
+            if (await Mvx.Resolve<IUserDialogs>().Confirm($"{LocalizationService.GetLocalizableString(MapConstants.RESX_NAME, "List_CallTo")} {Phone}?", LocalizationService.GetLocalizableString(MapConstants.RESX_NAME, "List_Call")))
                 CrossMessaging.Current.PhoneDialer.MakePhoneCall(Phone, Name);
         }
 
@@ -162,7 +169,7 @@ namespace AppRopio.Base.Map.Core.ViewModels.Points.List.Items
             {
                 var success = await CrossExternalMaps.Current.NavigateTo(Name, Coordinates.Latitude, Coordinates.Longitude);
                 if (!success)
-                    await Mvx.Resolve<IUserDialogs>().Alert("Не удалось построить маршрут.");
+                    await Mvx.Resolve<IUserDialogs>().Alert(LocalizationService.GetLocalizableString(MapConstants.RESX_NAME, "List_RouteError"));
             });
         }
 
