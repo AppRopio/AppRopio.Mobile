@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Button xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/app_filters_filters_cancelButton"
     android:layout_width="wrap_content"
-    android:layout_height="?android:attr/actionBarSize" />
+    android:layout_height="?android:attr/actionBarSize"
+    app:MvxBind="Text Resx('Filters_Clear','Filters')" />

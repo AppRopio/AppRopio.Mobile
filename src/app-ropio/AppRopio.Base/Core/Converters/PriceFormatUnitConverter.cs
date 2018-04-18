@@ -2,6 +2,8 @@
 using System.Globalization;
 using System.Linq;
 using MvvmCross.Platform.Converters;
+using AppRopio.Base.Core.Services.Localization;
+using MvvmCross.Platform;
 
 namespace AppRopio.Base.Core.Converters
 {
@@ -83,6 +85,9 @@ namespace AppRopio.Base.Core.Converters
 
                 if (paramsDictionary.ContainsKey("UnitName"))
                     priceParameter.UnitName = paramsDictionary["UnitName"];
+
+                if (paramsDictionary.ContainsKey("ResxName") && paramsDictionary.ContainsKey("StringName"))
+                    priceParameter.PrefixString = Mvx.Resolve<ILocalizationService>().GetLocalizableString(paramsDictionary["ResxName"], paramsDictionary["StringName"]);
             }
 
             return priceParameter;

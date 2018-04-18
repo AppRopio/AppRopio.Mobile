@@ -1,6 +1,7 @@
 ﻿using System;
 using AppRopio.Base.Droid.Views;
 using AppRopio.Base.Filters.Core.ViewModels.Filters.Selection;
+using AppRopio.Base.Filters.Core;
 
 namespace AppRopio.Base.Filters.Droid.Views.Filters.Selection
 {
@@ -23,7 +24,7 @@ namespace AppRopio.Base.Filters.Droid.Views.Filters.Selection
 
         public override void OnCreateOptionsMenu(Android.Views.IMenu menu, Android.Views.MenuInflater inflater)
         {
-            var menuItem = menu.Add(0, CLEAR_ID, 0, Resource.String.app_filters_filters_cancel);
+            var menuItem = menu.Add(0, CLEAR_ID, 0, new Java.Lang.String(LocalizationService.GetLocalizableString(FiltersConstants.RESX_NAME, "Selection_Clear")));
             menuItem.SetShowAsAction(Android.Views.ShowAsAction.Always);
             menuItem.SetActionView(Resource.Layout.app_filters_filters_clearButton);
             menuItem.ActionView.Click += (sender, e) =>

@@ -161,9 +161,9 @@ namespace AppRopio.Navigation.Menu.Core.ViewModels
             {
                 MvxTrace.Trace(MvvmCross.Platform.Platform.MvxTraceLevel.Error, "MenuViewModel: ", ex.Message);
             }
-            catch
+            catch (Exception ex)
             {
-                MvxTrace.Trace(MvvmCross.Platform.Platform.MvxTraceLevel.Error, "MenuViewModel: ", "Can't load menu items");
+                MvxTrace.Trace(MvvmCross.Platform.Platform.MvxTraceLevel.Error, "MenuViewModel: ", $"Can't load menu items\n{ex.BuildAllMessagesAndStackTrace()}");
             }
         }
 

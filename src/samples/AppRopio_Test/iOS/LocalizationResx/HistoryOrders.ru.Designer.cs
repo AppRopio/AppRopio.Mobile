@@ -83,6 +83,12 @@ namespace AppRopio_Test.LocalizationResx {
             }
         }
         
+        internal static string HistoryOrderProducts_OutOfStock {
+            get {
+                return ResourceManager.GetString("HistoryOrderProducts_OutOfStock", resourceCulture);
+            }
+        }
+        
         internal static string HistoryOrderDetails_ToBasket {
             get {
                 return ResourceManager.GetString("HistoryOrderDetails_ToBasket", resourceCulture);

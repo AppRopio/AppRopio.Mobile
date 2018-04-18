@@ -5,6 +5,7 @@ using Android.Support.V7.Widget;
 using Android.Util;
 using Android.Views;
 using AppRopio.Base.Droid.Views;
+using AppRopio.ECommerce.Basket.Core;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery;
 
 namespace AppRopio.ECommerce.Basket.Droid.Views.Order.Delivery
@@ -20,8 +21,9 @@ namespace AppRopio.ECommerce.Basket.Droid.Views.Order.Delivery
         private Android.Widget.EditText _searchEditText;
 
         public DeliveryOnPointFragment()
-            : base (Resource.Layout.app_basket_delivery_on_point, "Выбор адреса")
+            : base (Resource.Layout.app_basket_delivery_on_point)
         {
+            Title = LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "DeliveryPoint_Title");
         }
 
         private int GetStatusBarHeight()
@@ -98,7 +100,7 @@ namespace AppRopio.ECommerce.Basket.Droid.Views.Order.Delivery
             _toolbar.NavigationClick += OnBackClick;
             _toolbar.MenuItemClick += OnSearchMenuItemClick;
 
-            var searchMenuItem = _toolbar.Menu.Add(0, MENU_SEARCH_ID, 0, "Поиск");
+            var searchMenuItem = _toolbar.Menu.Add(0, MENU_SEARCH_ID, 0, "");
 
             var typedValue = new TypedValue();
             Activity.Theme.ResolveAttribute(Resource.Attribute.app_basket_delivery_on_point_ic_toolbar_search, typedValue, true);
@@ -112,7 +114,7 @@ namespace AppRopio.ECommerce.Basket.Droid.Views.Order.Delivery
             _toolbarInSearchState.NavigationClick += OnBackToToolbarClick;
             _toolbarInSearchState.MenuItemClick += OnClearSearchClick;
 
-            var clearMenuItem = _toolbarInSearchState.Menu.Add(0, MENU_CLEAR_ID, 0, "Поиск");
+            var clearMenuItem = _toolbarInSearchState.Menu.Add(0, MENU_CLEAR_ID, 0, "");
             clearMenuItem.SetIcon(Resource.Drawable.abc_ic_clear_material);
             clearMenuItem.SetShowAsAction(ShowAsAction.Always);
 

@@ -4126,45 +4126,6 @@ namespace AppRopio.ECommerce.Marked.Droid
 			// aapt resource value: 0x7f0b001a
 			public static int abc_toolbar_collapse_description = 2131427354;
 			
-			// aapt resource value: 0x7f0b0036
-			public static int app_marked_empty_subtitle = 2131427382;
-			
-			// aapt resource value: 0x7f0b0035
-			public static int app_marked_empty_title = 2131427381;
-			
-			// aapt resource value: 0x7f0b002c
-			public static int app_products_catalog_empty_button = 2131427372;
-			
-			// aapt resource value: 0x7f0b002b
-			public static int app_products_catalog_empty_subtitle = 2131427371;
-			
-			// aapt resource value: 0x7f0b002a
-			public static int app_products_catalog_empty_title = 2131427370;
-			
-			// aapt resource value: 0x7f0b002d
-			public static int app_products_catalog_sort_filters_header_filterBtn = 2131427373;
-			
-			// aapt resource value: 0x7f0b002e
-			public static int app_products_catalog_sort_filters_header_sortBtn = 2131427374;
-			
-			// aapt resource value: 0x7f0b002f
-			public static int app_products_contentsearch_history_clearButton = 2131427375;
-			
-			// aapt resource value: 0x7f0b0030
-			public static int app_products_contentsearch_searchInput_hint = 2131427376;
-			
-			// aapt resource value: 0x7f0b0033
-			public static int app_products_productCard_minMax_content_hint_from = 2131427379;
-			
-			// aapt resource value: 0x7f0b0034
-			public static int app_products_productCard_minMax_content_hint_to = 2131427380;
-			
-			// aapt resource value: 0x7f0b0031
-			public static int app_products_selection_apply = 2131427377;
-			
-			// aapt resource value: 0x7f0b0032
-			public static int app_products_selection_clear = 2131427378;
-			
 			// aapt resource value: 0x7f0b0000
 			public static int appbar_scrolling_view_behavior = 2131427328;
 			

@@ -4,25 +4,21 @@
             "items": [
                 {
                     "icon": "res:catalog",
-                    "name": "Каталог",
                     "type": "AppRopio.ECommerce.Products.Core.ViewModels.IProductsViewModel",
                     "default": true
                 },
                 {
                     "icon": "res:basket",
-                    "name": "Корзина",
                     "type": "AppRopio.ECommerce.Basket.Core.ViewModels.IBasketViewModel",
                     "badge": true,
                     "hideBadgeOnNull": true
                 },
                 {
                     "icon": "res:history",
-                    "name": "История заказов",
                     "type": "AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrders.IHistoryOrdersViewModel"
                 },
                 {
                     "icon": "res:fav",
-                    "name": "Избранное",
                     "type": "AppRopio.ECommerce.Marked.Core.ViewModels.Marked.IMarkedViewModel",
                     "badge": true,
                     "hideBadgeOnNull": true
@@ -33,22 +29,18 @@
             "items": [
                 {
                     "icon": "res:contacts",
-                    "name": "Контакты",
                     "type": "AppRopio.Base.Contacts.Core.ViewModels.Contacts.IContactsViewModel"
                 },
                 {
                     "icon": "res:address",
-                    "name": "Адреса магазинов",
                     "type": "AppRopio.Base.Map.Core.ViewModels.Points.List.IPointsListViewModel"
                 },
                 {
                     "icon": "res:info",
-                    "name": "Информация",
                     "type": "AppRopio.Base.Information.Core.ViewModels.Information.IInformationViewModel"
                 },
                 {
                     //"icon": "res:setting",
-                    "name": "Настройки",
                     "type": "AppRopio.Base.Settings.Core.ViewModels.Settings.ISettingsViewModel"
                 }
             ]

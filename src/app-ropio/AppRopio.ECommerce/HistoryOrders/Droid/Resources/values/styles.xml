@@ -104,8 +104,6 @@
 	<style
 		name  ="app_historyorders_details_button"
 		parent="AppRopioTheme.Control.Button.Base">
-		<item
-			name="android:text">@string/app_historyorders_details_button</item>
 	</style>
 	<!--    -->
 	<!--  HistoryOrders Products  -->

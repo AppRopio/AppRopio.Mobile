@@ -26,7 +26,7 @@
             <Button
                 style="@style/app_basket_delivery_on_point_button"
                 android:id="@+id/app_basket_delivery_on_point_button"
-                app:MvxBind="Click NextCommand; Enabled CanGoNext; Visibility Visibility(DeliveryPointsItems.Count);" />
+                app:MvxBind="Click NextCommand; Enabled CanGoNext; Visibility Visibility(DeliveryPointsItems.Count); Tex Resx('DeliveryPoint_Confirm','Basket')" />
         </LinearLayout>
         <include
             layout="@layout/app_base_loading" />

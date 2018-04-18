@@ -23,17 +23,19 @@
                 style="@style/app_marked_empty_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal" />
+                android:layout_gravity="center_horizontal"
+                app:MvxBind="Text Resx('EmptyTitle','Marked')" />
             <TextView
                 style="@style/app_marked_empty_subtitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal" />
+                android:layout_gravity="center_horizontal"
+                app:MvxBind="Text Resx('EmptyText','Marked')" />
         </LinearLayout>
     </RelativeLayout>
     <Button
         style="@style/app_marked_empty_button"
         android:id="@+id/app_marked_empty_button"
         android:layout_alignParentBottom="true"
-        app:MvxBind="Click CatalogCommand" />
+        app:MvxBind="Click CatalogCommand; Text Resx('GoToCatalog','Marked')" />
 </RelativeLayout>

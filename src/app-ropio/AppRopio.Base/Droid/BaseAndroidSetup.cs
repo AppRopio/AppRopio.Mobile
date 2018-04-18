@@ -8,6 +8,7 @@ using Android.Widget;
 using AppRopio.Base.API.Services;
 using AppRopio.Base.Core;
 using AppRopio.Base.Core.Services.Device;
+using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.Core.Services.Log;
 using AppRopio.Base.Core.Services.Permissions;
 using AppRopio.Base.Core.Services.Settings;
@@ -101,6 +102,7 @@ namespace AppRopio.Base.Droid
             instance.Headers.Add("DeviceToken", Mvx.Resolve<IDeviceService>().Token);
             instance.Headers.Add("Company", AppSettings.CompanyID);
             instance.Headers.Add("Region", AppSettings.RegionID ?? AppSettings.DefaultRegionID);
+            instance.Headers.Add("Accept-Language", AppSettings.SettingsCulture.Name);
 #if DEBUG
             instance.Headers.Add("Debug", "true");
 #endif
@@ -133,7 +135,17 @@ namespace AppRopio.Base.Droid
             var connectionService = SetupConnectionService();
             Mvx.RegisterSingleton<IConnectionService>(connectionService);
 
+            var localizationService = SetupLocalizationService();
+            Mvx.RegisterSingleton<ILocalizationService>(localizationService);
+
             App.Initialize();
+        }
+
+        private ILocalizationService SetupLocalizationService()
+        {
+            var localizationService = new LocalizationService(AppDomain.CurrentDomain.GetAssemblies());
+            localizationService.SetCurrentUICulture(AppSettings.SettingsCulture);
+            return localizationService;
         }
 
         protected override void InitializeViewLookup()
@@ -193,6 +205,7 @@ namespace AppRopio.Base.Droid
         protected override void FillValueConverters(MvvmCross.Platform.Converters.IMvxValueConverterRegistry registry)
         {
             registry.AddOrOverwrite("ErrorFromBoolean", new ErrorFromBooleanValueConverter());
+            registry.AddOrOverwrite("Resx", new ResxValueConverter());
 
             registry.Fill(ValueConverterAssemblies);
             registry.Fill(ValueConverterHolders);

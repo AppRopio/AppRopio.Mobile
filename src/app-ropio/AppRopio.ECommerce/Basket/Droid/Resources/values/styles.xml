@@ -20,8 +20,6 @@
 			name="android:layout_marginTop">@dimen/app_basket_basket_empty_title_topMargin</item>
 		<item
 			name="android:gravity">center</item>
-		<item
-			name="android:text">@string/app_basket_basket_empty_title</item>
 	</style>
 	<style
 		name  ="app_basket_basket_empty_subtitle"
@@ -31,15 +29,11 @@
 		<item
 			name="android:gravity">center</item>
 		<item
-			name="android:text">@string/app_basket_basket_empty_subtitle</item>
-		<item
 			name="android:maxLines">2</item>
 	</style>
 	<style
 		name  ="app_basket_basket_empty_button"
 		parent="AppRopioTheme.Control.Button.Base">
-		<item
-			name="android:text">@string/app_basket_basket_empty_button</item>
 	</style>
 	<!--    -->
 	<!--  Basket  -->
@@ -228,8 +222,6 @@
 			name="android:paddingLeft">@dimen/app_basket_payment_horizontalMargin</item>
 		<item
 			name="android:paddingRight">@dimen/app_basket_payment_horizontalMargin</item>
-		<item
-			name="android:text">@string/app_basket_payment_title</item>
 	</style>
 	<style
 		name  ="app_basket_payment_item_title"
@@ -256,8 +248,6 @@
 			name="android:layout_marginTop">@dimen/app_basket_basket_empty_title_topMargin</item>
 		<item
 			name="android:gravity">center</item>
-		<item
-			name="android:text">@string/app_basket_thanks_title</item>
 	</style>
 	<style
 		name  ="app_basket_thanks_orderId"
@@ -275,15 +265,11 @@
 		<item
 			name="android:gravity">center</item>
 		<item
-			name="android:text">@string/app_basket_thanks_subtitle</item>
-		<item
 			name="android:maxLines">1</item>
 	</style>
 	<style
 		name  ="app_basket_thanks_catalogButton"
 		parent="AppRopioTheme.Control.Button.Base">
-		<item
-			name="android:text">@string/app_basket_thanks_catalogButton</item>
 	</style>
 	<style
 		name  ="app_basket_thanks_close"
@@ -296,8 +282,6 @@
 	<style
 		name  ="app_basket_delivery_on_address_button"
 		parent="AppRopioTheme.Control.Button.Base">
-		<item
-			name="android:text">@string/app_basket_delivery_on_address_button</item>
 	</style>
 	<style
 		name  ="app_basket_delivery_on_address_status_bar"
@@ -336,8 +320,6 @@
 	<style
 		name  ="app_basket_delivery_on_point_button"
 		parent="AppRopioTheme.Control.Button.Base">
-		<item
-			name="android:text">@string/app_basket_delivery_on_point_button</item>
 	</style>
 	<style
 		name  ="app_basket_delivery_on_point_item_selected_icon"
@@ -432,8 +414,6 @@
 	<style
 		name  ="app_basket_productCardView_buyButton"
 		parent="AppRopioTheme.Control.Button.Base">
-		<item
-			name="android:text">@string/app_basket_productCardView_buyButton</item>
 	</style>
 	<style
 		name  ="app_basket_productCardView_editText"

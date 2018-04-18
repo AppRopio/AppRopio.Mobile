@@ -43,8 +43,7 @@
             android:paddingBottom="@dimen/app_historyorders_products_item_available_paddingsVertical"
             android:paddingLeft="@dimen/app_historyorders_products_item_available_paddingsHorizontal"
             android:paddingRight="@dimen/app_historyorders_products_item_available_paddingsHorizontal"
-            android:text="@string/app_historyorders_products_item_available"
             android:visibility="gone"
-            app:MvxBind="Visibility InvertedVisibility(IsAvailable)" />
+            app:MvxBind="Visibility InvertedVisibility(IsAvailable); Text Resx('HistoryOrderProducts_OutOfStock','HistoryOrders')" />
     </LinearLayout>
 </RelativeLayout>

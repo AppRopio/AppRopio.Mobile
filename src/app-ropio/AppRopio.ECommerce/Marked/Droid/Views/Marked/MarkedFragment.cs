@@ -7,7 +7,7 @@ namespace AppRopio.ECommerce.Marked.Droid.Views.Marked
     public class MarkedFragment : CatalogFragment<IMarkedViewModel>
     {
         public MarkedFragment()
-            : base (Resource.Layout.app_marked, "Избранное")
+            : base (Resource.Layout.app_marked)
         {
         }
 

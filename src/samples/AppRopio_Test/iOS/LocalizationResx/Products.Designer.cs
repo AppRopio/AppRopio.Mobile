@@ -130,5 +130,23 @@ namespace AppRopio_Test.LocalizationResx {
                 return ResourceManager.GetString("Selection_Apply", resourceCulture);
             }
         }
+        
+        internal static string ProductCard_From {
+            get {
+                return ResourceManager.GetString("ProductCard_From", resourceCulture);
+            }
+        }
+        
+        internal static string ProductCard_To {
+            get {
+                return ResourceManager.GetString("ProductCard_To", resourceCulture);
+            }
+        }
+        
+        internal static string ProductCard_Done {
+            get {
+                return ResourceManager.GetString("ProductCard_Done", resourceCulture);
+            }
+        }
     }
 }

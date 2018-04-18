@@ -244,6 +244,7 @@
     <Compile Include="AttributeHelpers\ARLinearLayoutAttributeExtensions.cs" />
     <Compile Include="Listeners\AROnEnterKeyListener.cs" />
     <Compile Include="Controls\ARWebView.cs" />
+    <Compile Include="Converters\ResxValueConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

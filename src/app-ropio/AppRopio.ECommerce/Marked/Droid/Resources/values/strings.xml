@@ -2,8 +2,4 @@
 <resources>
 	<string
 		name="library_name">AppRopio.ECommerce.Marked.Droid</string>
-	<string
-		name="app_marked_empty_title">Пока в избранном пусто</string>
-	<string
-		name="app_marked_empty_subtitle">Вернитесь в каталог,\nчтобы добавить товары</string>
 </resources>

@@ -137,7 +137,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
 
                 var deliveryDay = DaysItems?.FirstOrDefault(x => x.Times.Contains(value));
                 if (value == null || deliveryDay == null)
-                    SelectedDeliveryTimeValue = "Время и дата доставки";
+                    SelectedDeliveryTimeValue = LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Order_DeliveryTimeAndDay");
                 else
                     SelectedDeliveryTimeValue = $"{deliveryDay.Name}, {value.Name}";
             }
