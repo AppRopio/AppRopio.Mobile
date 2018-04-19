@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <appropio.base.droid.controls.ARImageView
+        style="@style/app_contacts_item_icon"
+        app:MvxBind="Base64 ImageBASE64" />
+    <TextView
+        style="@style/app_contacts_item_title"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/app_contacts_item_title_horizontalMargin"
+        app:MvxBind="Text DisplayValue" />
+</LinearLayout>
