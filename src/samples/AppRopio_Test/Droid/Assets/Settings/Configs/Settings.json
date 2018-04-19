@@ -1,0 +1,19 @@
+﻿{
+    "elements": [
+        {
+            "type": "Region"
+        },
+        {
+            "type": "Geolocation",
+            "isEnabled": true
+        },
+        {
+            "type": "Notifications",
+            "isEnabled": true
+        },
+        {
+            "type": "Language"
+        }
+    ],
+    "languages": [ "ru-RU", "en-US" ]
+}

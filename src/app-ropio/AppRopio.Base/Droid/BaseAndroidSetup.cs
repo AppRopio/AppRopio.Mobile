@@ -38,6 +38,8 @@ using MvvmCross.Plugins.DownloadCache;
 using MvvmCross.Plugins.DownloadCache.Droid;
 using MvvmCross.Plugins.Network.Reachability;
 using Xamarin.Android.Net;
+using AppRopio.Base.Core.Services.Launcher;
+using AppRopio.Base.Droid.Services.Launcher;
 
 namespace AppRopio.Base.Droid
 {
@@ -131,6 +133,8 @@ namespace AppRopio.Base.Droid
             Mvx.RegisterSingleton<IUserDialogs>(() => new UserDialogs());
 
             Mvx.RegisterSingleton<IPermissionsService>(() => new PermissionsService());
+
+            Mvx.RegisterSingleton<ILauncherService>(() => new LauncherService());
 
             var connectionService = SetupConnectionService();
             Mvx.RegisterSingleton<IConnectionService>(connectionService);

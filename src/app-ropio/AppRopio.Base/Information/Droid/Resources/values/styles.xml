@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+<!--  Info  -->
+    <style
+        name="app_information_info_title"
+        parent="AppRopio.TextAppearance.Body1">
+        <item
+            name="android:singleLine">true</item>
+    </style>
+    <style
+        name="app_information_info_arrow">
+        <item
+            name="android:layout_width">@dimen/app_clickable_size</item>
+        <item
+            name="android:layout_height">@dimen/app_clickable_size</item>
+        <item
+            name="android:scaleType">center</item>
+        <item
+            name="android:src">?attr/app_information_info_ic_arrow</item>
+    </style>
+<!--    -->
+<!--  TextContent  -->
+    <style
+        name="app_information_textContent_text"
+        parent="AppRopio.TextAppearance.Body1">
+        <item
+            name="android:maxLines">999</item>
+        <item
+            name="android:singleLine">false</item>
+    </style>
+<!--    '-->
+</resources>
