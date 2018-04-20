@@ -20,4 +20,20 @@
         name="Title">
         <value>Контакты</value>
     </data>
+    <data
+        name="CallTo">
+        <value>Набрать</value>
+    </data>
+    <data
+        name="MakeCall">
+        <value>Набрать</value>
+    </data>
+    <data
+        name="OpenInMap">
+        <value>Перейти в карты?</value>
+    </data>
+    <data
+        name="GoToMap">
+        <value>Перейти</value>
+    </data>
 </root>

@@ -52,5 +52,29 @@ namespace AppRopio.Test.Droid.LocalizationResx {
                 return ResourceManager.GetString("Title", resourceCulture);
             }
         }
+        
+        internal static string CallTo {
+            get {
+                return ResourceManager.GetString("CallTo", resourceCulture);
+            }
+        }
+        
+        internal static string MakeCall {
+            get {
+                return ResourceManager.GetString("MakeCall", resourceCulture);
+            }
+        }
+        
+        internal static string OpenInMap {
+            get {
+                return ResourceManager.GetString("OpenInMap", resourceCulture);
+            }
+        }
+        
+        internal static string GoToMap {
+            get {
+                return ResourceManager.GetString("GoToMap", resourceCulture);
+            }
+        }
     }
 }

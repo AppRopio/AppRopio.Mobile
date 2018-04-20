@@ -397,6 +397,7 @@
     </Compile>
     <Compile Include="Bootstrap\AppRopio_InformationPluginBootstrap.cs" />
     <Compile Include="Bootstrap\AppRopio_ContactsPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_SettingsPluginBootstrap.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -832,6 +833,22 @@
     <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Contacts\AppRopio.Models.Contacts.csproj">
       <Project>{747299BF-FAF3-4C47-BF4C-B1A949BB5F56}</Project>
       <Name>AppRopio.Models.Contacts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Settings\API\AppRopio.Base.Settings.API.csproj">
+      <Project>{BF38EC97-5E5F-42BE-959A-05620DC0E5F1}</Project>
+      <Name>AppRopio.Base.Settings.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Settings\Core\AppRopio.Base.Settings.Core.csproj">
+      <Project>{2567456C-1009-4EA0-8444-D0B1D3344569}</Project>
+      <Name>AppRopio.Base.Settings.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Settings\Droid\AppRopio.Base.Settings.Droid.csproj">
+      <Project>{90CA3749-B1AE-47D7-85A9-CD446EA0711A}</Project>
+      <Name>AppRopio.Base.Settings.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Settings\AppRopio.Models.Settings.csproj">
+      <Project>{E26E8E61-01AB-4D1C-88A8-FE57A0287A67}</Project>
+      <Name>AppRopio.Models.Settings</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

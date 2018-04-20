@@ -173,5 +173,9 @@
         <item
             name="attr/app_information_info_ic_arrow">@drawable/app_ic_arrow</item>
 <!--        -->
+<!--    Settings    -->
+        <item
+            name="attr/app_settings_ic_check">@drawable/app_ic_item_check</item>
+<!--        -->
 	</style>
 </resources>

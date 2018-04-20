@@ -1,12 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="1.0.1" package="com.notissimus.AppRopio" android:versionCode="2">
-	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="26" />
-	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-	<uses-permission android:name="android.permission.INTERNET" />
-	<application android:allowBackup="true" android:label="@string/app_color_name" android:theme="@style/Theme.DroidTest" android:icon="@drawable/ic_launcher_APP">
-		<meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyD69ICSDljFC6HgagkKQJiphay9lVjbDc0" />
-	</application>
+<manifest
+    xmlns:android      ="http://schemas.android.com/apk/res/android"
+    android:versionName="1.0.1"
+    package            ="com.notissimus.AppRopio"
+    android:versionCode="2">
+    <uses-sdk
+        android:minSdkVersion   ="21"
+        android:targetSdkVersion="26" />
+    <uses-permission
+        android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission
+        android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission
+        android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission
+        android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission
+        android:name="android.permission.INTERNET" />
+    <application
+        android:allowBackup="true"
+        android:label      ="@string/app_color_name"
+        android:theme      ="@style/Theme.DroidTest"
+        android:icon       ="@drawable/ic_launcher_APP">
+        <meta-data
+            android:name ="com.google.android.geo.API_KEY"
+            android:value="AIzaSyD69ICSDljFC6HgagkKQJiphay9lVjbDc0" />
+    </application>
 </manifest>

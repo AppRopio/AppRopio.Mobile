@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <attr
+        name="app_settings_ic_check"
+        format="reference"/>
+</resources>

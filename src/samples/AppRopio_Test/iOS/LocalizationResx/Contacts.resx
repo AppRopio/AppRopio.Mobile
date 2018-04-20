@@ -20,4 +20,20 @@
         name="Title">
         <value>Contacts</value>
     </data>
+    <data
+        name="CallTo">
+        <value>Call to</value>
+    </data>
+    <data
+        name="MakeCall">
+        <value>Call</value>
+    </data>
+    <data
+        name="OpenInMap">
+        <value>Open in map?</value>
+    </data>
+    <data
+        name="GoToMap">
+        <value>Open</value>
+    </data>
 </root>
