@@ -2889,21 +2889,6 @@ namespace AppRopio.Base.Filters.Droid
 			// aapt resource value: 0x7f080012
 			public static int abc_toolbar_collapse_description = 2131230738;
 			
-			// aapt resource value: 0x7f080023
-			public static int app_filters_filters_apply = 2131230755;
-			
-			// aapt resource value: 0x7f080024
-			public static int app_filters_filters_cancel = 2131230756;
-			
-			// aapt resource value: 0x7f080025
-			public static int app_filters_filters_minMax_content_hint_from = 2131230757;
-			
-			// aapt resource value: 0x7f080026
-			public static int app_filters_filters_minMax_content_hint_to = 2131230758;
-			
-			// aapt resource value: 0x7f080022
-			public static int app_filters_sort_title = 2131230754;
-			
 			// aapt resource value: 0x7f080021
 			public static int library_name = 2131230753;
 			

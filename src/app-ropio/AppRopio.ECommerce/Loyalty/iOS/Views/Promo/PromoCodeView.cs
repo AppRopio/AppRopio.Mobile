@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Linq;
+using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.iOS;
+using AppRopio.Base.iOS.Controls;
+using AppRopio.Base.iOS.UIExtentions;
+using AppRopio.ECommerce.Loyalty.Core;
 using AppRopio.ECommerce.Loyalty.Core.ViewModels.Promo;
 using AppRopio.ECommerce.Loyalty.iOS.Services;
 using CoreGraphics;
@@ -11,10 +15,8 @@ using MvvmCross.Core.ViewModels;
 using MvvmCross.Core.Views;
 using MvvmCross.iOS.Views;
 using MvvmCross.Platform;
-using UIKit;
-using AppRopio.Base.iOS.UIExtentions;
 using ObjCRuntime;
-using AppRopio.Base.iOS.Controls;
+using UIKit;
 
 namespace AppRopio.ECommerce.Loyalty.iOS.Views.Promo
 {
@@ -51,6 +53,8 @@ namespace AppRopio.ECommerce.Loyalty.iOS.Views.Promo
 
         #endregion
 
+        protected ILocalizationService LocalizationService => Mvx.Resolve<ILocalizationService>();
+
         #region Constructor
 
         public PromoCodeView()
@@ -79,9 +83,10 @@ namespace AppRopio.ECommerce.Loyalty.iOS.Views.Promo
             if (viewFromNib != null)
             {
                 _textField = viewFromNib._textField;
+                _textField.Placeholder = LocalizationService.GetLocalizableString(LoyaltyConstants.RESX_NAME, "Promocode_Placeholder");
 
                 if (_textField != null)
-                    SetupCodeField(_textField, _accessoryTextField = new ARTextField() { Frame = _textField.Frame, Placeholder = "Промокод" });
+                    SetupCodeField(_textField, _accessoryTextField = new ARTextField() { Frame = _textField.Frame, Placeholder = LocalizationService.GetLocalizableString(LoyaltyConstants.RESX_NAME, "Promocode_Placeholder") });
 
                 viewFromNib.Frame = Bounds;
                 viewFromNib.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
@@ -107,11 +112,6 @@ namespace AppRopio.ECommerce.Loyalty.iOS.Views.Promo
         {
             textField.SetupStyle(PromoTheme.CodeField);
             textField.ClearButtonMode = UITextFieldViewMode.WhileEditing;
-            //TODO пока не работает, обдумать еще варианты
-            //textField.EditingDidBegin += (sender, e) => 
-            //{
-            //    accessoryTextField.BecomeFirstResponder();
-            //};
 
             textField.ReturnKeyType = UIReturnKeyType.Done;
             textField.ShouldReturn = (sender) => 

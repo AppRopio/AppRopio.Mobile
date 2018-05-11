@@ -14,6 +14,7 @@ using MvvmCross.Binding.iOS.Views;
 using AppRopio.Base.iOS.UIExtentions;
 using CoreGraphics;
 using Foundation;
+using AppRopio.ECommerce.Basket.Core;
 
 namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Delivery
 {
@@ -32,7 +33,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Delivery
 
         protected override void InitializeControls()
         {
-            Title = "Выбор адреса";
+            Title = LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "DeliveryPoint_Title");
             NavigationController.NavigationBarHidden = false;
 
             _navBarBack = new UIView(new CGRect(0, -64, DeviceInfo.ScreenWidth, 64))
@@ -102,7 +103,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Delivery
         protected virtual void SetupNextButton(UIButton nextButton)
         {
             if (OrderViewType == OrderViewType.Full)
-                nextButton.SetTitle("Подтвердить", UIControlState.Normal);
+                nextButton.SetTitle(LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "DeliveryPoint_Confirm"), UIControlState.Normal);
             nextButton.SetupStyle(DeliveryOnPointListTheme.NextButton);
         }
 
@@ -142,6 +143,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Delivery
         {
             if (OrderViewType == OrderViewType.Partial)
                 set.Bind(nextButton).For("Title").To(vm => vm.Amount).WithConversion("StringFormat", "Заказать{0: за # ### ##0.## ₽;;}");
+            
             set.Bind(nextButton).To(vm => vm.NextCommand);
             set.Bind(nextButton).For(s => s.Enabled).To(vm => vm.CanGoNext);
         }

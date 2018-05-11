@@ -68,7 +68,7 @@
             android:layout_weight="1"
             android:layout_marginLeft="@dimen/app_historyorders_item_horizontalMargins"
             android:layout_gravity="center_vertical"
-            app:MvxBind="Text Format('Состав заказа ({0})', ItemsCount)" />
+            app:MvxBind="Text Format('{1} ({0})', ItemsCount, Resx('History_OrderList','HistoryOrders'))" />
         <ImageView
             style="@style/app_historyorders_ic_arrow" />
     </LinearLayout>

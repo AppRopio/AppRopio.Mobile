@@ -10,6 +10,8 @@ using MvvmCross.Binding.BindingContext;
 using MvvmCross.Binding.iOS.Views;
 using MvvmCross.Platform;
 using UIKit;
+using AppRopio.Base.Core.Services.Localization;
+using AppRopio.ECommerce.HistoryOrders.Core;
 
 namespace AppRopio.ECommerce.HistoryOrders.iOS.Views.HistoryOrders
 {
@@ -99,7 +101,7 @@ namespace AppRopio.ECommerce.HistoryOrders.iOS.Views.HistoryOrders
 
 		protected virtual void BindAmount(UILabel amount, MvxFluentBindingDescriptionSet<HistoryOrderProductCell, IHistoryOrderProductItemVM> set)
 		{
-            set.Bind(amount).To(vm => vm.Amount).WithConversion("StringFormat", "{0} шт.");
+            set.Bind(amount).To(vm => vm.Amount).WithConversion("StringFormat", $"{{0}} {Mvx.Resolve<ILocalizationService>().GetLocalizableString(HistoryOrdersConstants.RESX_NAME, "HistoryOrderProducts_Pieces")}");
 		}
 
 		protected virtual void BindPrice(UILabel price, MvxFluentBindingDescriptionSet<HistoryOrderProductCell, IHistoryOrderProductItemVM> set)

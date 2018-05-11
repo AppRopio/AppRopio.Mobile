@@ -10,14 +10,10 @@
 	<style
 		name  ="app_marked_empty_title"
 		parent="app_products_catalog_empty_title">
-		<item
-			name="android:text">@string/app_marked_empty_title</item>
 	</style>
 	<style
 		name  ="app_marked_empty_subtitle"
 		parent="app_products_catalog_empty_subtitle">
-		<item
-			name="android:text">@string/app_marked_empty_subtitle</item>
 	</style>
 	<style
 		name  ="app_marked_empty_button"

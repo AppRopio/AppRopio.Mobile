@@ -2,6 +2,8 @@
 using AppRopio.Base.Auth.Core.Models.Registration;
 using AppRopio.Base.Auth.Core.ViewModels.SignUp.Items;
 using AppRopio.Base.Core.ViewModels.Services;
+using AppRopio.Base.Core.Services.Localization;
+using MvvmCross.Platform;
 
 namespace AppRopio.Base.Auth.Core.ViewModels.SignUp.Services
 {
@@ -36,7 +38,7 @@ namespace AppRopio.Base.Auth.Core.ViewModels.SignUp.Services
 							var confirmPassword = new SignUpItemBaseViewModel(item)
 							{
 								Internal = true,
-								Placeholder = $"Повторите пароль"
+                                Placeholder = Mvx.Resolve<ILocalizationService>().GetLocalizableString(AuthConst.RESX_NAME, "ConfirmPassword")
 							};
 							result.Add(confirmPassword);
 						}

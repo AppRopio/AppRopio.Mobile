@@ -15,6 +15,7 @@ using CoreGraphics;
 using AppRopio.Base.Core.Converters;
 using System.Linq;
 using System;
+using AppRopio.ECommerce.Basket.Core;
 
 namespace AppRopio.ECommerce.Basket.iOS.Views.Basket
 {
@@ -31,7 +32,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Basket
 
         protected override void InitializeControls()
         {
-            Title = "Корзина";
+            Title = LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Basket_Title");
 
             RegisterKeyboardActions = true;
 
@@ -97,8 +98,9 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Basket
 
             goToButton.SetupStyle(BasketTheme.EmptyView.CatalogButton);
 
-            emptyTitle.Text = "Пока в корзине пусто";
-            emptyText.Text = "Здесь будет храниться всё,\nчто вы решите заказать.";
+            emptyTitle.Text = LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Basket_EmptyTitle");
+            emptyText.Text = LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Basket_EmptyText");
+            goToButton.WithTitleForAllStates(LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Basket_EmptyButton"));
 		}
 
         protected virtual void ResolveAndSetupLoyalty(UIView loyaltyWrapper)
@@ -148,7 +150,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Basket
                    "StringFormat", 
                    new StringFormatParameter { StringFormat = (arg) => 
                 {
-                    var str = string.Format("Заказать за {0}", ((decimal)arg).ToString("# ### ##0.## ₽").Trim());
+                    var str = string.Format($"{LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Basket_OrderBy")} {{0}}", ((decimal)arg).ToString("# ### ##0.##").Trim());
                     return BasketTheme.NextButton.UppercaseTitle ? str.ToUpperInvariant() : str;
                 } 
             });

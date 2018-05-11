@@ -5,6 +5,7 @@ namespace AppRopio.Base.Settings.Core.Models
     {
         Region,
         Geolocation,
-        Notifications
+        Notifications,
+        Language
     }
 }

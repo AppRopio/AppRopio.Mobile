@@ -4,6 +4,7 @@ using Android.Util;
 using Android.Views;
 using AppRopio.Base.Droid.Views;
 using AppRopio.Base.Map.Core.ViewModels.Points;
+using AppRopio.Base.Map.Core;
 namespace AppRopio.Base.Map.Droid.Views.Points
 {
     public class PointAdditionalInfoFragment : CommonFragment<IPointAdditionalInfoVM>
@@ -12,8 +13,9 @@ namespace AppRopio.Base.Map.Droid.Views.Points
         private View _statusBar;
 
         public PointAdditionalInfoFragment()
-            : base(Resource.Layout.app_map_info, "Подробнее")
+            : base(Resource.Layout.app_map_info)
         {
+            Title = LocalizationService.GetLocalizableString(MapConstants.RESX_NAME, "Details_Title");
         }
 
         private int GetStatusBarHeight()

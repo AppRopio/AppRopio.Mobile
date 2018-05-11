@@ -8,6 +8,7 @@ using AppRopio.Feedback.iOS.Services;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Platform;
 using UIKit;
+using AppRopio.Feedback.Core;
 
 namespace AppRopio.Feedback.iOS.Views.MyReviews
 {
@@ -64,7 +65,7 @@ namespace AppRopio.Feedback.iOS.Views.MyReviews
 
 		protected override void InitializeControls()
 		{
-			Title = "Мои отзывы";
+            Title = LocalizationService.GetLocalizableString(FeedbackConstants.RESX_NAME, "MyReviews_Title");
 
 			SetupTableView(TableView);
 		}

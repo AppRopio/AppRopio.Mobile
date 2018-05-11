@@ -7,6 +7,7 @@ using MvvmCross.Binding.BindingContext;
 using MvvmCross.Binding.iOS.Views;
 using MvvmCross.Platform;
 using UIKit;
+using AppRopio.ECommerce.HistoryOrders.Core;
 
 namespace AppRopio.ECommerce.HistoryOrders.iOS.Views.HistoryOrders
 {
@@ -23,7 +24,7 @@ namespace AppRopio.ECommerce.HistoryOrders.iOS.Views.HistoryOrders
 
         protected override void InitializeControls()
         {
-            Title = "Состав заказа";
+            Title = LocalizationService.GetLocalizableString(HistoryOrdersConstants.RESX_NAME, "HistoryOrderProducts_Title");
 
             SetupTableView(TableView);
         }

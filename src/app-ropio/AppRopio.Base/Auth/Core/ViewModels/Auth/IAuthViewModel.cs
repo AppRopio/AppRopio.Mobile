@@ -3,7 +3,7 @@ using MvvmCross.Core.ViewModels;
 
 namespace AppRopio.Base.Auth.Core.ViewModels.Auth
 {
-	public interface IAuthViewModel : IMvxViewModel
+    public interface IAuthViewModel : IMvxViewModel
     {
         ICommand NavigateToSignInCommand { get; }
 
@@ -11,9 +11,14 @@ namespace AppRopio.Base.Auth.Core.ViewModels.Auth
 
         ICommand SkipAuthCommand { get; }
 
-		ICommand VkCommand { get; }
+        ICommand VkCommand { get; }
 
-		ICommand FacebookCommand { get; }
+        ICommand FacebookCommand { get; }
 
+        string SignInText { get; }
+
+        string SignUpText { get; }
+
+        string SkipText { get; }
     }
 }

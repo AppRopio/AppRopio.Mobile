@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using AppRopio.Base.API.Exceptions;
+using AppRopio.Base.Core.Messages.Localization;
 using AppRopio.Base.Core.Services.TasksQueue;
 using AppRopio.Base.Core.ViewModels.Services;
 using AppRopio.ECommerce.Basket.API.Services;
@@ -42,8 +43,18 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Services
         private IProductDeleteVmService _deleteVmService;
         public IProductDeleteVmService DeleteVmService => _deleteVmService ?? (_deleteVmService = Mvx.Resolve<IProductDeleteVmService>());
 
-        private IBasketService _apiService;
-        public IBasketService ApiService => _apiService ?? (_apiService = Mvx.Resolve<IBasketService>());
+        public IBasketService ApiService => Mvx.Resolve<IBasketService>();
+
+        #endregion
+
+        #region Protected
+
+        protected override void OnLanguageChanged(LanguageChangedMessage msg)
+        {
+            base.OnLanguageChanged(msg);
+
+            LoadedBasket = null;
+        }
 
         #endregion
 

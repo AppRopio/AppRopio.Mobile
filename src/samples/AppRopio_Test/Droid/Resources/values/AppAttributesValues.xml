@@ -169,5 +169,13 @@
         <item
             name="attr/app_map_points_ic_pin_deselected">@drawable/common_ic_unselected_pin</item>
 		<!--        -->
+<!--   Info     -->
+        <item
+            name="attr/app_information_info_ic_arrow">@drawable/app_ic_arrow</item>
+<!--        -->
+<!--    Settings    -->
+        <item
+            name="attr/app_settings_ic_check">@drawable/app_ic_item_check</item>
+<!--        -->
 	</style>
 </resources>

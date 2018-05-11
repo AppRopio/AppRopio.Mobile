@@ -21,7 +21,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBaseline="@+id/app_filters_filters_minMax_content_input_from"
-                android:text="@string/app_filters_filters_minMax_content_hint_from" />
+                app:MvxBind="Text Resx('Filters_From','Filters')" />
             <EditText
                 style="@style/app_filters_filters_minMax_content_input"
                 android:id="@+id/app_filters_filters_minMax_content_input_from"
@@ -41,7 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBaseline="@+id/app_filters_filters_minMax_content_input_to"
-                android:text="@string/app_filters_filters_minMax_content_hint_to" />
+                app:MvxBind="Text Resx('Filters_To','Filters')" />
             <EditText
                 style="@style/app_filters_filters_minMax_content_input"
                 android:id="@+id/app_filters_filters_minMax_content_input_to"

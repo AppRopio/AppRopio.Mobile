@@ -7,12 +7,22 @@ using AppRopio.Base.Core.Services.UserDialogs;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using MvvmCross.Platform.Platform;
+using MvvmCross.Plugins.Messenger;
+using AppRopio.Base.Core.Messages.Localization;
 
 namespace AppRopio.Base.Core.ViewModels.Services
 {
-    public class BaseVmService : MvxNavigatingObject
+    public class BaseVmService : MvxNavigatingObject, IDisposable
     {
+        #region Fields
+
+        private bool _disposed;
+
+        #endregion
+
         #region Properties
+
+        private MvxSubscriptionToken _languageToken;
 
         protected Dictionary<string, IEnumerable> CachedObjects { get; set; }
 
@@ -34,11 +44,26 @@ namespace AppRopio.Base.Core.ViewModels.Services
                 throw new ArgumentNullException(nameof(AppSettings.ApiKey));
 
             CachedObjects = new Dictionary<string, IEnumerable>();
+
+            Mvx.CallbackWhenRegistered<IMvxMessenger>(service =>
+            {
+                _languageToken = service.Subscribe<LanguageChangedMessage>(OnLanguageChanged);
+            });
+        }
+
+        ~BaseVmService()
+        {
+            Dispose(false);
         }
 
         #endregion
 
         #region Protected
+
+        protected virtual void OnLanguageChanged(LanguageChangedMessage msg)
+        {
+            CachedObjects = new Dictionary<string, IEnumerable>();
+        }
 
         protected virtual void OnException(Exception ex, string message = null)
         {
@@ -68,6 +93,23 @@ namespace AppRopio.Base.Core.ViewModels.Services
 
             if (ex != null)
                 MvxTrace.TaggedTrace(MvxTraceLevel.Warning, this.GetType().FullName, ex.BuildAllMessagesAndStackTrace());
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (_disposed)
+                return;
+
+            _languageToken?.Dispose();
+
+            _disposed = true;
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+
+            GC.SuppressFinalize(this);
         }
 
         #endregion

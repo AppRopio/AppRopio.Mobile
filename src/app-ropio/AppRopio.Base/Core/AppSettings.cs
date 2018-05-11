@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using System;
+using System.Globalization;
+using System.IO;
 using AppRopio.Base.Core.Models.App;
 using AppRopio.Base.Core.Services.Settings;
 using MvvmCross.Platform;
@@ -79,6 +81,16 @@ namespace AppRopio.Base.Core
                 if (value != null)
                     CrossSettings.Current.AddOrUpdateValue(nameof(IsNotificationsEnabled), value.Value);
             }
+        }
+
+        public static CultureInfo SettingsCulture
+        {
+            get
+            {
+                var cultureName = CrossSettings.Current.GetValueOrDefault(nameof(SettingsCulture), string.Empty);
+                return cultureName.IsNullOrEmpty() ? CultureInfo.CurrentUICulture : new CultureInfo(cultureName);
+            }
+            set { CrossSettings.Current.AddOrUpdateValue(nameof(SettingsCulture), value.Name); }
         }
 
         static AppSettings()

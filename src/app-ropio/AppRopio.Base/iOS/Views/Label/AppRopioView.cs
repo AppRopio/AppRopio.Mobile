@@ -88,7 +88,7 @@ namespace AppRopio.Base.iOS
                 if (location.X > Frame.Width || location.X < 0 || location.Y > Frame.Height || location.Y < 0)
                     return;
 
-                UIApplication.SharedApplication.OpenUrl(NSUrl.FromString("http://appropio.com"), new UIApplicationOpenUrlOptions(), (obj) => { });
+                UIApplication.SharedApplication.OpenUrl(NSUrl.FromString($"http://appropio.com?utm_source={NSBundle.MainBundle.InfoDictionary["CFBundleIdentifier"]?.ToString()}"), new UIApplicationOpenUrlOptions(), (obj) => { });
             }
 
             Animate(0.2f, () => Alpha = 1);

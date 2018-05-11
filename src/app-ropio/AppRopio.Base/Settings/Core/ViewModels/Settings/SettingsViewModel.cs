@@ -15,7 +15,6 @@ using AppRopio.Base.Settings.Core.ViewModels.Items;
 using AppRopio.Base.Settings.Core.ViewModels.Items.Picker;
 using AppRopio.Base.Settings.Core.ViewModels.Items.Switch;
 using AppRopio.Base.Settings.Core.ViewModels.Messages;
-using AppRopio.Base.Settings.Core.ViewModels.Regions;
 using AppRopio.Base.Settings.Core.ViewModels.Services;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
@@ -106,16 +105,20 @@ namespace AppRopio.Base.Settings.Core.ViewModels.Settings
 
 			Items = elements.Select(e =>
 			{
+                var title = LocalizationService.GetLocalizableString(SettingsConstants.RESX_NAME, Enum.GetName(typeof(SettingsElementType), e.Type));
 				switch (e.Type)
 				{
                     case SettingsElementType.Region:
-                        return (ISettingsItemVm)new SettingsPickerVm(e.Title, e.Type) { SelectedValueId = region.Id, SelectedValueTitle = region.Title, OnValueChanged = OnSettingsValueChanged };
+                        return (ISettingsItemVm)new SettingsPickerVm(title, e.Type) { SelectedValueId = region.Id, SelectedValueTitle = region.Title, OnValueChanged = OnSettingsValueChanged };
 
                     case SettingsElementType.Geolocation:
-                        return (ISettingsItemVm)new SettingsSwitchVm(e.Title, e.Type) { Enabled = AppSettings.IsGeolocationEnabled ?? e.IsEnabled, OnValueChanged = OnSettingsValueChanged };
+                        return (ISettingsItemVm)new SettingsSwitchVm(title, e.Type) { Enabled = AppSettings.IsGeolocationEnabled ?? e.IsEnabled, OnValueChanged = OnSettingsValueChanged };
 
                     case SettingsElementType.Notifications:
-                        return (ISettingsItemVm)new SettingsSwitchVm(e.Title, e.Type) { Enabled = AppSettings.IsNotificationsEnabled ?? e.IsEnabled, OnValueChanged = OnSettingsValueChanged };
+                        return (ISettingsItemVm)new SettingsSwitchVm(title, e.Type) { Enabled = AppSettings.IsNotificationsEnabled ?? e.IsEnabled, OnValueChanged = OnSettingsValueChanged };
+
+                    case SettingsElementType.Language:
+                        return (ISettingsItemVm)new SettingsPickerVm(title, e.Type) { SelectedValueId = AppSettings.SettingsCulture.Name, SelectedValueTitle = AppSettings.SettingsCulture.NativeName.ToFirstCharUppercase() };
 
                     default:
                         throw new Exception("Unknown element type");
@@ -137,22 +140,31 @@ namespace AppRopio.Base.Settings.Core.ViewModels.Settings
             switch (item.ElementType)
             {
                 case SettingsElementType.Region:
-                    var pickerItem = (ISettingsPickerVm)item;
-                    NavigationService.NavigateToRegions(new SettingsPickerBundle(NavigationType.Push, pickerItem.SelectedValueId, pickerItem.SelectedValueTitle));
+                    var regionPickerItem = (ISettingsPickerVm)item;
+                    NavigationService.NavigateToRegions(new SettingsPickerBundle(NavigationType.Push, regionPickerItem.SelectedValueId, regionPickerItem.SelectedValueTitle));
+                    break;
+                case SettingsElementType.Language:
+                    var languagePickerItem = (ISettingsPickerVm)item;
+                    NavigationService.NavigateToLanguages(new SettingsPickerBundle(NavigationType.Push, languagePickerItem.SelectedValueId, languagePickerItem.SelectedValueTitle));
                     break;
             }
         }
 
-		protected virtual void OnSettingsReloadMessageReceived(SettingsReloadMessage msg)
+		protected virtual async void OnSettingsReloadMessageReceived(SettingsReloadMessage msg)
         {
             if (Items.IsNullOrEmpty())
                 return;
-            
-            var item = Items.FirstOrDefault(i => i.ElementType == msg.ElementType && i is ISettingsPickerVm) as ISettingsPickerVm;
-            if (item != null)
+
+            if (msg.ElementType == SettingsElementType.Language)
+                await SetupItems();
+            else
             {
-                item.SelectedValueId = msg.Id;
-                item.SelectedValueTitle = msg.ValueTitle;
+                var item = Items.FirstOrDefault(i => i.ElementType == msg.ElementType && i is ISettingsPickerVm) as ISettingsPickerVm;
+                if (item != null)
+                {
+                    item.SelectedValueId = msg.Id;
+                    item.SelectedValueTitle = msg.ValueTitle;
+                }
             }
         }
 

@@ -2,14 +2,4 @@
 <resources>
     <string
         name="library_name">AppRopio.Base.Filters.Droid</string>
-    <string
-        name="app_filters_sort_title">Сортировка</string>
-    <string
-        name="app_filters_filters_apply">ПРИМЕНИТЬ</string>
-    <string
-        name="app_filters_filters_cancel">СБРОСИТЬ</string>
-    <string
-        name="app_filters_filters_minMax_content_hint_from">От</string>
-    <string
-        name="app_filters_filters_minMax_content_hint_to">До</string>
 </resources>

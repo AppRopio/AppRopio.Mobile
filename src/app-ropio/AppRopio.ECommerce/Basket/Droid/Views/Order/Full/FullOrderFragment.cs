@@ -7,7 +7,9 @@ using Android.Widget;
 using AppRopio.Base.Core.Converters;
 using AppRopio.Base.Droid.Adapters;
 using AppRopio.Base.Droid.Controls;
+using AppRopio.Base.Droid.Listeners;
 using AppRopio.Base.Droid.Views;
+using AppRopio.ECommerce.Basket.Core;
 using AppRopio.ECommerce.Basket.Core.Services;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Full;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items;
@@ -18,7 +20,7 @@ using MvvmCross.Core.ViewModels;
 using MvvmCross.Droid.Support.V7.AppCompat.Widget;
 using MvvmCross.Droid.Support.V7.RecyclerView;
 using MvvmCross.Platform;
-using AppRopio.Base.Droid.Listeners;
+using AppRopio.Base.Core;
 
 namespace AppRopio.ECommerce.Basket.Droid.Views.Order.Full
 {
@@ -27,9 +29,9 @@ namespace AppRopio.ECommerce.Basket.Droid.Views.Order.Full
         private MvxRecyclerView _recyclerView;
 
         public FullOrderFragment()
-            : base(Resource.Layout.app_basket_full_order, "Оформление заказа")
+            : base(Resource.Layout.app_basket_full_order)
         {
-            
+            Title = LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Order_Title");
         }
 
         private void ViewModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -117,7 +119,7 @@ namespace AppRopio.ECommerce.Basket.Droid.Views.Order.Full
                     if (dataContext is IOrderFieldsGroupVM orderGroup)
                         title.Text = orderGroup.Name;
                     else if (dataContext is IDeliveryTypeItemVM)
-                        title.Text = "Тип доставки";
+                        title.Text = LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Order_DeliveryTypeHeader");
                 }
             }
         }
@@ -168,14 +170,14 @@ namespace AppRopio.ECommerce.Basket.Droid.Views.Order.Full
                                         .SetView(dialogView)
                                         .Show();
 
-            positiveButton.Text = "ГОТОВО";
+            positiveButton.Text = LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Order_TimeDone");
             positiveButton.Click += (s, args) =>
             {
                 ViewModel.DeliveryViewModel.ApplyDeliveryTimeCommand.Execute(timeListView.SelectedItem);
                 dialog.Dismiss();
             };
 
-            negativeButton.Text = "ОТМЕНИТЬ";
+            negativeButton.Text = LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Order_TimeCancel");
             negativeButton.Click += (s, args) => dialog.Cancel();
         }
 
@@ -206,7 +208,7 @@ namespace AppRopio.ECommerce.Basket.Droid.Views.Order.Full
             {
                 StringFormat = (arg) =>
                 {
-                    return arg == null ? (Mvx.Resolve<IBasketConfigService>().Config.DeliveryEmptyText ?? "от 0 \u20BD") : ((decimal)arg).ToString("# ### ##0.## \u20BD;;бесплатно").Trim();
+                    return arg == null ? ($"{LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Order_DeliveryPriceFrom")} 0 {AppSettings.SettingsCulture.NumberFormat.CurrencySymbol}") : ((decimal)arg).ToString($"# ### ##0.## {AppSettings.SettingsCulture.NumberFormat.CurrencySymbol};;{LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Order_Free")}").Trim();
                 }
             });
         }

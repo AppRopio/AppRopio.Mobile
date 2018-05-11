@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <dimen
+        name="app_contacts_item_title_horizontalMargin">16dp</dimen>
+</resources>

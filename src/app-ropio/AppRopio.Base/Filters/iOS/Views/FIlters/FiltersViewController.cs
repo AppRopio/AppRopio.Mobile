@@ -19,6 +19,8 @@ using MvvmCross.Platform;
 using MvvmCross.Plugins.Messenger;
 using UIKit;
 using AppRopio.Base.Filters.iOS.Views.FIlters.Cells.Switch;
+using AppRopio.Base.Core.Services.Localization;
+using AppRopio.Base.Filters.Core;
 
 namespace AppRopio.Base.Filters.iOS.Views.Filters
 {
@@ -79,7 +81,7 @@ namespace AppRopio.Base.Filters.iOS.Views.Filters
 
         protected virtual UIBarButtonItem SetupClearButton()
         {
-            var clearBarBtn = new UIBarButtonItem("Сбросить", UIBarButtonItemStyle.Plain, null);
+            var clearBarBtn = new UIBarButtonItem(LocalizationService.GetLocalizableString(FiltersConstants.RESX_NAME, "Filters_Clear"), UIBarButtonItemStyle.Plain, null);
             clearBarBtn.SetupStyle(ThemeConfig.Filters.ClearButton);
             return clearBarBtn;
         }
@@ -118,6 +120,7 @@ namespace AppRopio.Base.Filters.iOS.Views.Filters
         protected virtual void BindApplyButton(UIButton applyBtn, MvxFluentBindingDescriptionSet<FiltersViewController, IFiltersViewModel> set)
         {
             set.Bind(applyBtn).To(vm => vm.ApplyCommand);
+            set.Bind(applyBtn).For("Title").To(vm => vm.ApplyTitle);
         }
 
         #endregion
@@ -126,7 +129,7 @@ namespace AppRopio.Base.Filters.iOS.Views.Filters
 
         protected override void InitializeControls()
         {
-            Title = "Фильтры";
+            Title = LocalizationService.GetLocalizableString(FiltersConstants.RESX_NAME, "Filters_Title");
 
             SetupTableView(_tableView);
             _clearBarButton = SetupClearButton();

@@ -9,6 +9,7 @@ using MvvmCross.Binding.BindingContext;
 using MvvmCross.Binding.iOS.Views;
 using MvvmCross.Platform;
 using UIKit;
+using AppRopio.Base.Settings.Core;
 
 namespace AppRopio.Base.Settings.iOS.Views.Settings
 {
@@ -24,7 +25,7 @@ namespace AppRopio.Base.Settings.iOS.Views.Settings
 
         protected override void InitializeControls()
         {
-            Title = "Настройки";
+            Title = LocalizationService.GetLocalizableString(SettingsConstants.RESX_NAME, "Settings_Title");
 
             SetupTableView(TableView);
         }

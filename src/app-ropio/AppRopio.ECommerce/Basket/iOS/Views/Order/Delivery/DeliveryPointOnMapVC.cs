@@ -14,6 +14,7 @@ using MapKit;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Platform;
 using UIKit;
+using AppRopio.ECommerce.Basket.Core;
 
 namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Delivery
 {
@@ -37,7 +38,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Delivery
 
         protected override void InitializeControls()
         {
-            Title = "На карте";
+            Title = LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "DeliveryPoint_OnMap");
 
             if (ViewModel.VmNavigationType == NavigationType.PresentModal)
             {

@@ -2,26 +2,36 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AppRopio.Base.API.Services;
 using AppRopio.Models.Basket.Responses.Enums;
 using AppRopio.Models.Basket.Responses.Order;
 using AppRopio.Models.Payments.Responses;
+using MvvmCross.Platform;
 
 namespace AppRopio.ECommerce.Basket.API.Services.Fake
 {
     public class OrderFakeService : IOrderService
     {
-        private List<OrderFieldsGroup> _userFieldsGroups = new List<OrderFieldsGroup>
+        public bool IsRussianCulture => Mvx.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
+
+        private List<OrderFieldsGroup> _userFieldsGroups;
+
+        private List<Payment> _payments;
+
+        public OrderFakeService()
+        {
+            _userFieldsGroups = new List<OrderFieldsGroup>
         {
             new OrderFieldsGroup
             {
                 Id = "0",
-                Name = "Личные данные",
-                Items = new List<OrderField> 
+                    Name = IsRussianCulture ? "Личные данные" : "Personal data",
+                Items = new List<OrderField>
                 {
                     new OrderField
                     {
                         Id = "00",
-                        Name = "Имя",
+                            Name = IsRussianCulture ? "Имя" : "Name",
                         Type = OrderFieldType.Text,
                         Editable = true,
                         IsRequired = true
@@ -29,7 +39,7 @@ namespace AppRopio.ECommerce.Basket.API.Services.Fake
                     new OrderField
                     {
                         Id = "01",
-                        Name = "Фамилия",
+                            Name = IsRussianCulture ? "Фамилия" : "Surname",
                         Type = OrderFieldType.Text,
                         Editable = true,
                         IsRequired = true
@@ -37,7 +47,7 @@ namespace AppRopio.ECommerce.Basket.API.Services.Fake
                     new OrderField
                     {
                         Id = "02",
-                        Name = "Email",
+                            Name = "Email",
                         Type = OrderFieldType.Email,
                         Editable = true,
                         IsRequired = true
@@ -45,23 +55,23 @@ namespace AppRopio.ECommerce.Basket.API.Services.Fake
                     new OrderField
                     {
                         Id = "03",
-                        Name = "Телефон",
+                            Name = IsRussianCulture ? "Телефон" : "Phone",
                         Type = OrderFieldType.Phone,
                         Editable = true,
                         IsRequired = false
                     }
                 }
             },
-            new OrderFieldsGroup 
+            new OrderFieldsGroup
             {
                 Id = "1",
-                Name = "Данные получателя",
-                Items = new List<OrderField> 
+                    Name = IsRussianCulture ? "Данные получателя" : "Recipient Information",
+                Items = new List<OrderField>
                 {
                     new OrderField
                     {
                         Id = "10",
-                        Name = "Имя",
+                            Name = IsRussianCulture ? "Имя" : "Name",
                         Type = OrderFieldType.Text,
                         Editable = true,
                         IsRequired = false
@@ -69,7 +79,7 @@ namespace AppRopio.ECommerce.Basket.API.Services.Fake
                     new OrderField
                     {
                         Id = "11",
-                        Name = "Фамилия",
+                            Name = IsRussianCulture ? "Фамилия" : "Surname",
                         Type = OrderFieldType.Text,
                         Editable = true,
                         IsRequired = false
@@ -85,7 +95,7 @@ namespace AppRopio.ECommerce.Basket.API.Services.Fake
                     new OrderField
                     {
                         Id = "13",
-                        Name = "Телефон",
+                            Name = IsRussianCulture ? "Телефон" : "Phone",
                         Type = OrderFieldType.Phone,
                         Editable = true,
                         IsRequired = false
@@ -93,7 +103,7 @@ namespace AppRopio.ECommerce.Basket.API.Services.Fake
                     new OrderField
                     {
                         Id = "14",
-                        Name = "Открытка",
+                            Name = IsRussianCulture ? "Открытка" : "Postcard",
                         Type = OrderFieldType.Text,
                         Editable = true,
                         IsRequired = false,
@@ -110,13 +120,13 @@ namespace AppRopio.ECommerce.Basket.API.Services.Fake
                     new OrderField
                     {
                         Id = "21",
-                        Name = "Количество персон",
+                            Name = IsRussianCulture ? "Количество персон" : "Number of persons",
                         Type = OrderFieldType.Counter,
                         Editable = true,
                         IsRequired = true,
                         Values = new List<string>
                         {
-                            "1", "2", "3", "4", "5", "более 5" 
+                                "1", "2", "3", "4", "5",  IsRussianCulture ? "более 5" : "more 5"
                         }
                     }
                 }
@@ -130,7 +140,7 @@ namespace AppRopio.ECommerce.Basket.API.Services.Fake
                     new OrderField
                     {
                         Id = "31",
-                        Name = "Комментарий к заказу",
+                            Name = IsRussianCulture ? "Комментарий к заказу" : "Comment",
                         Type = OrderFieldType.Text,
                         Editable = true,
                         IsRequired = false
@@ -139,38 +149,39 @@ namespace AppRopio.ECommerce.Basket.API.Services.Fake
             }
         };
 
-        private List<Payment> _payments = new List<Payment>
-        {
-            new Payment
+            _payments = new List<Payment>
             {
-                Id = "0",
-                Name = "Наличными",
-                Type = PaymentType.Cash
-            },
-            new Payment
-            {
-                Id = "1",
-                Name = "Банковской картой при получении",
-                Type = PaymentType.CreditCard,
-                InAppPurchase = true
-            }
-            #if DEBUG
-            ,new Payment
-            {
-                Id = "2",
-                Name = "Банковской картой в приложении",
-                Type = PaymentType.CreditCard,
-                InAppPurchase = true
-            },
-            new Payment
-            {
-                Id = "3",
-                Name = "Apple Pay",
-                Type = PaymentType.Native,
-                InAppPurchase = true
-            }
-            #endif
-        };
+                new Payment
+                {
+                    Id = "0",
+                    Name = IsRussianCulture ? "Наличными" : "Cash",
+                    Type = PaymentType.Cash
+                },
+                new Payment
+                {
+                    Id = "1",
+                    Name = IsRussianCulture ? "Банковской картой при получении" : "Credit card",
+                    Type = PaymentType.CreditCard,
+                    InAppPurchase = true
+                }
+                #if DEBUG
+                ,new Payment
+                {
+                    Id = "2",
+                    Name = IsRussianCulture ? "Банковской картой в приложении" : "Credit card in app",
+                    Type = PaymentType.CreditCard,
+                    InAppPurchase = true
+                },
+                new Payment
+                {
+                    Id = "3",
+                    Name = "Apple Pay",
+                    Type = PaymentType.Native,
+                    InAppPurchase = true
+                }
+                #endif
+            };
+        }
 
         public async Task<List<OrderFieldsGroup>> GetUserFieldsGroups()
         {
@@ -195,7 +206,7 @@ namespace AppRopio.ECommerce.Basket.API.Services.Fake
                     result.NotValidFields.Add(new Field { Id = field.Key });
 
                     if (string.IsNullOrWhiteSpace(result.Error))
-                        result.Error = "Не заполнены следующие обязательные поля:";
+                        result.Error = IsRussianCulture ? "Не заполнены следующие обязательные поля:" : "The following required fields are missing:";
                     result.Error += $" {dbField.Name.ToLower()},";
                 }
             }

@@ -2,21 +2,24 @@
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
+using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.Droid.Adapters;
 using AppRopio.Base.Droid.Views;
+using AppRopio.ECommerce.Basket.Core;
 using AppRopio.ECommerce.Basket.Core.ViewModels;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Items;
 using MvvmCross.Binding.Droid.BindingContext;
 using MvvmCross.Droid.Support.V7.RecyclerView;
+using MvvmCross.Platform;
 
 namespace AppRopio.ECommerce.Basket.Droid.Views.Basket
 {
     public class BasketFragment : CommonFragment<IBasketViewModel>
     {
         public BasketFragment()
-            : base (Resource.Layout.app_basket_basket, "Корзина")
+            : base (Resource.Layout.app_basket_basket)
         {
-            
+            Title = LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Basket_Title");
         }
 
         protected virtual void SetupRecyclerView(View view, MvxRecyclerView recyclerView) => recyclerView.Adapter = SetupAdapter(recyclerView);
@@ -57,7 +60,7 @@ namespace AppRopio.ECommerce.Basket.Droid.Views.Basket
             public void OnClick(View v)
             {
                 var popupMenu = new Android.Support.V7.Widget.PopupMenu(_context, v);
-                popupMenu.Menu.Add(0, 0, 0, new Java.Lang.String("Удалить"));
+                popupMenu.Menu.Add(0, 0, 0, new Java.Lang.String(Mvx.Resolve<ILocalizationService>().GetLocalizableString(BasketConstants.RESX_NAME, "Basket_DeleteItem")));
                 popupMenu.SetOnMenuItemClickListener(this);
                 popupMenu.Show();
             }

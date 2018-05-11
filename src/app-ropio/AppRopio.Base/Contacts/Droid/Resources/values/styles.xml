@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <style
+        name  ="app_contacts_item_title"
+        parent="AppRopio.TextAppearance.Body1">
+        <item
+            name="android:singleLine">true</item>
+    </style>
+    <style
+        name="app_contacts_item_icon">
+        <item
+            name="android:layout_width">@dimen/app_clickable_size</item>
+        <item
+            name="android:layout_height">@dimen/app_clickable_size</item>
+        <item
+            name="android:scaleType">fitXY</item>
+    </style>
+</resources>

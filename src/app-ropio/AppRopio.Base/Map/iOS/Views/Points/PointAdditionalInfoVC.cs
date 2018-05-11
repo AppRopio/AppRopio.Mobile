@@ -6,6 +6,7 @@ using AppRopio.Base.Map.iOS.Services;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Platform;
 using UIKit;
+using AppRopio.Base.Map.Core;
 
 namespace AppRopio.Base.Map.iOS.Views.Points
 {
@@ -16,7 +17,8 @@ namespace AppRopio.Base.Map.iOS.Views.Points
         protected Models.AdditionalInfo AdditionalInfoTheme { get { return Mvx.Resolve<IMapThemeConfigService>().ThemeConfig.Points.AdditionalInfo; } }
         protected Models.PointInfo InfoTheme { get { return AdditionalInfoTheme.Info ?? Mvx.Resolve<IMapThemeConfigService>().ThemeConfig.Points.BasePointInfo; } }
 
-        public PointAdditionalInfoVC() : base("PointAdditionalInfoVC", null)
+        public PointAdditionalInfoVC() 
+            : base("PointAdditionalInfoVC", null)
         {
         }
 
@@ -24,7 +26,8 @@ namespace AppRopio.Base.Map.iOS.Views.Points
 
         protected override void InitializeControls()
         {
-            Title = "Подробнее";
+            Title = LocalizationService.GetLocalizableString(MapConstants.RESX_NAME, "Details_Title");
+
             NavigationController.NavigationBarHidden = false;
 
             if (ViewModel.VmNavigationType == NavigationType.PresentModal)

@@ -165,7 +165,7 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Categories
 
         protected virtual async void InitFromBundle(CategoryBundle parameters)
         {
-            Title = parameters.CategoryName ?? "Каталог";
+            Title = parameters.CategoryName ?? LocalizationService.GetLocalizableString(ProductsConstants.RESX_NAME, "CategoriesEmptyTitle");
             _currentCategoryId = parameters.CategoryId;
             VmNavigationType = parameters.NavigationType == Base.Core.Models.Navigation.NavigationType.None ? Base.Core.Models.Navigation.NavigationType.ClearAndPush : parameters.NavigationType;
 

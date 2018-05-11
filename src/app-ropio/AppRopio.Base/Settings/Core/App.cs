@@ -1,8 +1,8 @@
-﻿using System;
-using AppRopio.Base.Core.Services.Router;
+﻿using AppRopio.Base.Core.Services.Router;
 using AppRopio.Base.Core.Services.ViewModelLookup;
 using AppRopio.Base.Settings.Core.Services;
 using AppRopio.Base.Settings.Core.Services.Implementation;
+using AppRopio.Base.Settings.Core.ViewModels.Languages;
 using AppRopio.Base.Settings.Core.ViewModels.Regions;
 using AppRopio.Base.Settings.Core.ViewModels.Services;
 using AppRopio.Base.Settings.Core.ViewModels.Settings;
@@ -26,6 +26,7 @@ namespace AppRopio.Base.Settings.Core
 
 			vmLookupService.Register<ISettingsViewModel, SettingsViewModel>();
 			vmLookupService.Register<IRegionsViewModel, RegionsViewModel>();
+            vmLookupService.Register<ILanguagesViewModel, LanguagesViewModel>();
 
 			#endregion
 

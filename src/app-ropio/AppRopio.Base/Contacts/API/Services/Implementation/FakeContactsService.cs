@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Threading.Tasks;
+using AppRopio.Base.API.Services;
 using AppRopio.Models.Base.Responses;
 using AppRopio.Models.Contacts.Enums;
 using AppRopio.Models.Contacts.Responses;
+using MvvmCross.Platform;
 
 namespace AppRopio.Base.Contacts.API.Services.Implementation
 {
     public class FakeContactsService : IContactsService
     {
+        public bool IsRussianCulture => Mvx.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
+
         public async Task<ListResponse> LoadContacts(Coordinates location)
         {
             return new ListResponse()
@@ -38,13 +42,13 @@ namespace AppRopio.Base.Contacts.API.Services.Implementation
                         ImageBASE64 = "iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAABGdBTUEAALGPC/xhBQAAAytJREFUWAntWEtoE1EUPdM0bUlsq/1YW1pRwboVrS787HTlQkQRBAXdiaA760J0o+5culEEwZ0rPyAqCO5cqKg7P6jF1lo1Ym1t0k/SxnN6O9SmISkvYyAwFyZv3mfuO3PeufdO62VpqCCrqiCss1BDwP/7xEKGQ4ZzGAglkUNI4N2Q4cApzXEYMpxDSODd6sA8Jp8Do4+B1EsgnQA8flNVxYDYZmD5XiC+JZCtvJK/1qYGgKFLQJJAC1l8E9B+FqjpKrSq6FxpGk69AvqOGdhIHGjlfU27bVpVB9TvAFoOAZrTC2lt6nVRUIUWuDMsZgVgehRY1kP2zgOJq8Dv+0C0BVhzjW2n7Z3+Bny9QNCUjcCvvenMtDvDkoHAeh4w+ydAChh5xH4UWH1lHqwgR1cBbadsbjoJDJ4pRGLBObegE1M64giDyuOVfAF8JNvZDNC4G6hdN7/pVD8wfBv4dcvmvQgw/sHYdghEN8DKBrLmIwS4h0F3ERh7ZmOjTwhoH1+mntniJ5DhJfN4mM2HmTmo7cR1yyhlA6zUJavfacctCbzdbgxqfGpQv2YC3rALWLEfqOsGJt8bYN+Hv26JrRvDyrOy6EprMz+AmTT7bcD6O2T2O/X9h30GX6TZ1vi/1Y125/vwx5fYOgZdxtx/YV7NEugCo0ajHWRzw2KwMwzM/t651XM+FjxbvOMGONpqnscYfEptmWFqs5YtmV/0AnMglLM/UfPjb2zAP53iGBescAMc22pOdLwT1GTfUfbJbHaGwfeU99O8yGCaWh55QFZPAp+PU9sDJhPOIuZWqt00rCBSqlIaa2IwDd+lhnncsoHTlhGUnP/9H42yQ9MBFhY+J5MPB3NjWOlI3wYqApP9QDdZbDtBWdCdCgnkllzUdLIKbgM6ztmaiXf2jJ51SGl6v2BKszYXqCWV5gaW5hvOpdkdsF5XgSQJqETrG6HpIDX7kFodsgIR72HV66Jk7hmzEYLtukz9btTTTlYaYG1Z5s/L0gH7PFXMB7wPuEytW5YoE7h824SA87ES5FjIcJBs5vMVMpyPlSDHQoaDZDOfr5DhfKwEOVZxDP8FErcE1cBGSAIAAAAASUVORK5CYII="
                     },
                     new ListResponseItem {
-                        DisplayValue = "AppRopio в Facebook",
+                        DisplayValue = IsRussianCulture ? "AppRopio в Facebook" : "Facebook",
                         Value = "https://www.facebook.com/appropio",
                         Type = ContactTypes.Url,
                         ImageBASE64 = "iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAABGdBTUEAALGPC/xhBQAAAytJREFUWAntWEtoE1EUPdM0bUlsq/1YW1pRwboVrS787HTlQkQRBAXdiaA760J0o+5culEEwZ0rPyAqCO5cqKg7P6jF1lo1Ym1t0k/SxnN6O9SmISkvYyAwFyZv3mfuO3PeufdO62VpqCCrqiCss1BDwP/7xEKGQ4ZzGAglkUNI4N2Q4cApzXEYMpxDSODd6sA8Jp8Do4+B1EsgnQA8flNVxYDYZmD5XiC+JZCtvJK/1qYGgKFLQJJAC1l8E9B+FqjpKrSq6FxpGk69AvqOGdhIHGjlfU27bVpVB9TvAFoOAZrTC2lt6nVRUIUWuDMsZgVgehRY1kP2zgOJq8Dv+0C0BVhzjW2n7Z3+Bny9QNCUjcCvvenMtDvDkoHAeh4w+ydAChh5xH4UWH1lHqwgR1cBbadsbjoJDJ4pRGLBObegE1M64giDyuOVfAF8JNvZDNC4G6hdN7/pVD8wfBv4dcvmvQgw/sHYdghEN8DKBrLmIwS4h0F3ERh7ZmOjTwhoH1+mntniJ5DhJfN4mM2HmTmo7cR1yyhlA6zUJavfacctCbzdbgxqfGpQv2YC3rALWLEfqOsGJt8bYN+Hv26JrRvDyrOy6EprMz+AmTT7bcD6O2T2O/X9h30GX6TZ1vi/1Y125/vwx5fYOgZdxtx/YV7NEugCo0ajHWRzw2KwMwzM/t651XM+FjxbvOMGONpqnscYfEptmWFqs5YtmV/0AnMglLM/UfPjb2zAP53iGBescAMc22pOdLwT1GTfUfbJbHaGwfeU99O8yGCaWh55QFZPAp+PU9sDJhPOIuZWqt00rCBSqlIaa2IwDd+lhnncsoHTlhGUnP/9H42yQ9MBFhY+J5MPB3NjWOlI3wYqApP9QDdZbDtBWdCdCgnkllzUdLIKbgM6ztmaiXf2jJ51SGl6v2BKszYXqCWV5gaW5hvOpdkdsF5XgSQJqETrG6HpIDX7kFodsgIR72HV66Jk7hmzEYLtukz9btTTTlYaYG1Z5s/L0gH7PFXMB7wPuEytW5YoE7h824SA87ES5FjIcJBs5vMVMpyPlSDHQoaDZDOfr5DhfKwEOVZxDP8FErcE1cBGSAIAAAAASUVORK5CYII="
                     },
                     new ListResponseItem {
-                        DisplayValue = "AppRopio в Вк",
+                        DisplayValue = IsRussianCulture ? "AppRopio в Вк" : "VK",
                         Value = "https://vk.com/appropio",
                         Type = ContactTypes.Url,
                         ImageBASE64 = "iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAABGdBTUEAALGPC/xhBQAAAytJREFUWAntWEtoE1EUPdM0bUlsq/1YW1pRwboVrS787HTlQkQRBAXdiaA760J0o+5culEEwZ0rPyAqCO5cqKg7P6jF1lo1Ym1t0k/SxnN6O9SmISkvYyAwFyZv3mfuO3PeufdO62VpqCCrqiCss1BDwP/7xEKGQ4ZzGAglkUNI4N2Q4cApzXEYMpxDSODd6sA8Jp8Do4+B1EsgnQA8flNVxYDYZmD5XiC+JZCtvJK/1qYGgKFLQJJAC1l8E9B+FqjpKrSq6FxpGk69AvqOGdhIHGjlfU27bVpVB9TvAFoOAZrTC2lt6nVRUIUWuDMsZgVgehRY1kP2zgOJq8Dv+0C0BVhzjW2n7Z3+Bny9QNCUjcCvvenMtDvDkoHAeh4w+ydAChh5xH4UWH1lHqwgR1cBbadsbjoJDJ4pRGLBObegE1M64giDyuOVfAF8JNvZDNC4G6hdN7/pVD8wfBv4dcvmvQgw/sHYdghEN8DKBrLmIwS4h0F3ERh7ZmOjTwhoH1+mntniJ5DhJfN4mM2HmTmo7cR1yyhlA6zUJavfacctCbzdbgxqfGpQv2YC3rALWLEfqOsGJt8bYN+Hv26JrRvDyrOy6EprMz+AmTT7bcD6O2T2O/X9h30GX6TZ1vi/1Y125/vwx5fYOgZdxtx/YV7NEugCo0ajHWRzw2KwMwzM/t651XM+FjxbvOMGONpqnscYfEptmWFqs5YtmV/0AnMglLM/UfPjb2zAP53iGBescAMc22pOdLwT1GTfUfbJbHaGwfeU99O8yGCaWh55QFZPAp+PU9sDJhPOIuZWqt00rCBSqlIaa2IwDd+lhnncsoHTlhGUnP/9H42yQ9MBFhY+J5MPB3NjWOlI3wYqApP9QDdZbDtBWdCdCgnkllzUdLIKbgM6ztmaiXf2jJ51SGl6v2BKszYXqCWV5gaW5hvOpdkdsF5XgSQJqETrG6HpIDX7kFodsgIR72HV66Jk7hmzEYLtukz9btTTTlYaYG1Z5s/L0gH7PFXMB7wPuEytW5YoE7h824SA87ES5FjIcJBs5vMVMpyPlSDHQoaDZDOfr5DhfKwEOVZxDP8FErcE1cBGSAIAAAAASUVORK5CYII="
@@ -55,7 +59,7 @@ namespace AppRopio.Base.Contacts.API.Services.Implementation
                     //    Type = ContactTypes.Text
                     //},
                     new ListResponseItem {
-                        DisplayValue = "Офис AppRopio",
+                        DisplayValue = IsRussianCulture ? "Офис AppRopio" : "AppRopio office",
                         Value = "СПб. ул. Заозерная, д. 8",
                         Type = ContactTypes.Address
                     }

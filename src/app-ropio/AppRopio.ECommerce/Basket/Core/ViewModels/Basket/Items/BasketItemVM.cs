@@ -11,6 +11,7 @@ using AppRopio.Models.Products.Responses;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using MvvmCross.Plugins.Messenger;
+using AppRopio.Base.Core.Services.Localization;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Items
 {
@@ -247,7 +248,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Items
         {
             if ((Quantity - UnitStep <= 0))
             {
-                if (await Mvx.Resolve<IUserDialogs>().Confirm($"Удалить \"{Name}\"?", "Да"))
+                if (await Mvx.Resolve<IUserDialogs>().Confirm($"{Mvx.Resolve<ILocalizationService>().GetLocalizableString(BasketConstants.RESX_NAME, "Basket_Delete")} \"{Name}\"?", Mvx.Resolve<ILocalizationService>().GetLocalizableString(BasketConstants.RESX_NAME, "Basket_DeleteYes")))
                     OnDeleteExecute();
                 return;
             }

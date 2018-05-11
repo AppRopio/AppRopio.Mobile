@@ -102,9 +102,9 @@ namespace AppRopio.Base.Auth.Core.ViewModels.Password.Reset.Sms
 					phone = _phoneNumber;
 			}
 			if (phone != null)
-				return $"Введите код из СМС.\nОтправлено на номер {phone}";
+                return $"{LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "Password_Sms_CodeFromSms")}\n{LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "Password_Sms_SentToPhone")} {phone}";
 			else
-				return $"Введите код из СМС.";
+                return LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "Password_Sms_CodeFromSms");
 		}
 
 		#endregion

@@ -2,14 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AppRopio.Base.API.Services;
 using AppRopio.Models.Base.Responses;
 using AppRopio.Models.Marked.Responses;
 using AppRopio.Models.Products.Responses;
+using MvvmCross.Platform;
 
 namespace AppRopio.ECommerce.Marked.API.Services.Fakes
 {
     public class FakeMarkedSerivce : IMarkedService
     {
+        public bool IsRussianCulture => Mvx.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
+
         public async Task<List<MarkedProduct>> GetMarkedProducts(int count, int offset = 0)
         {
             await Task.Delay(500);
@@ -19,7 +23,7 @@ namespace AppRopio.ECommerce.Marked.API.Services.Fakes
                 new MarkedProduct()
                 {
                     Id = "1",
-                    Name = "Рубашка «Камелот»",
+                    Name = IsRussianCulture ? "Рубашка «Камелот»" : "Product name",
                     Badges = new List<ProductBadge>
                     {
                         new ProductBadge() { Name = "sale", Color = "#45D1FF" },
@@ -41,7 +45,7 @@ namespace AppRopio.ECommerce.Marked.API.Services.Fakes
                 new MarkedProduct()
                 {
                     Id = "2",
-                    Name = "Рубашка «Камелот»",
+                    Name = IsRussianCulture ? "Рубашка «Камелот»" : "Product name",
                     Badges = new List<ProductBadge>
                     {
                         new ProductBadge() { Name = "sale", Color = "#45D1FF" }
@@ -61,7 +65,7 @@ namespace AppRopio.ECommerce.Marked.API.Services.Fakes
                 new MarkedProduct()
 				{
 					Id = "3",
-					Name = "Рубашка «Камелот»",
+                    Name = IsRussianCulture ? "Рубашка «Камелот»" : "Product name",
 					Badges = new List<ProductBadge>
 					{
 						new ProductBadge() { Name = "sale", Color = "#45D1FF" },
@@ -83,7 +87,7 @@ namespace AppRopio.ECommerce.Marked.API.Services.Fakes
 				new MarkedProduct()
 				{
 					Id = "4",
-					Name = "Платье «Камел»",
+                    Name = IsRussianCulture ? "Платье «Камелот»" : "Product name",
 					Badges = new List<ProductBadge>
 					{
 						new ProductBadge() { Name = "sale", Color = "#FC224B" }
@@ -104,7 +108,7 @@ namespace AppRopio.ECommerce.Marked.API.Services.Fakes
 				new MarkedProduct()
 				{
 					Id = "5",
-					Name = "Рубашка «Камелот»",
+                    Name = IsRussianCulture ? "Рубашка «Камелот»" : "Product name",
 					Badges = new List<ProductBadge>
 					{
 						new ProductBadge() { Name = "sale", Color = "#45D1FF" },
@@ -126,7 +130,7 @@ namespace AppRopio.ECommerce.Marked.API.Services.Fakes
 				new MarkedProduct()
 				{
 					Id = "6",
-					Name = "Платье «Камел»",
+                    Name = IsRussianCulture ? "Платье «Камелот»" : "Product name",
 					Badges = new List<ProductBadge>
 					{
 						new ProductBadge() { Name = "sale", Color = "#FC224B" }
@@ -146,7 +150,7 @@ namespace AppRopio.ECommerce.Marked.API.Services.Fakes
 				new MarkedProduct()
 				{
 					Id = "7",
-					Name = "Рубашка «Камелот»",
+                    Name = IsRussianCulture ? "Рубашка «Камелот»" : "Product name",
 					Badges = new List<ProductBadge>
 					{
 						new ProductBadge() { Name = "sale", Color = "#45D1FF" },
@@ -168,7 +172,7 @@ namespace AppRopio.ECommerce.Marked.API.Services.Fakes
 				new MarkedProduct()
 				{
 					Id = "8",
-					Name = "Платье «Камел»",
+                    Name = IsRussianCulture ? "Платье «Камелот»" : "Product name",
 					Badges = new List<ProductBadge>
 					{
 						new ProductBadge() { Name = "sale", Color = "#FC224B" }
@@ -188,7 +192,7 @@ namespace AppRopio.ECommerce.Marked.API.Services.Fakes
 				new MarkedProduct()
 				{
 					Id = "9",
-					Name = "Рубашка «Камелот»",
+                    Name = IsRussianCulture ? "Рубашка «Камелот»" : "Product name",
 					Badges = new List<ProductBadge>
 					{
 						new ProductBadge() { Name = "sale", Color = "#45D1FF" },
@@ -210,7 +214,7 @@ namespace AppRopio.ECommerce.Marked.API.Services.Fakes
 				new MarkedProduct()
 				{
 					Id = "10",
-					Name = "Платье «Камел»",
+                    Name = IsRussianCulture ? "Платье «Камелот»" : "Product name",
 					Badges = new List<ProductBadge>
 					{
 						new ProductBadge() { Name = "sale", Color = "#FC224B" }
@@ -230,7 +234,7 @@ namespace AppRopio.ECommerce.Marked.API.Services.Fakes
 				new MarkedProduct()
 				{
 					Id = "11",
-					Name = "Рубашка «Камелот»",
+                    Name = IsRussianCulture ? "Рубашка «Камелот»" : "Product name",
 					Badges = new List<ProductBadge>
 					{
 						new ProductBadge() { Name = "sale", Color = "#45D1FF" },
@@ -252,7 +256,7 @@ namespace AppRopio.ECommerce.Marked.API.Services.Fakes
 				new MarkedProduct()
 				{
 					Id = "12",
-					Name = "Платье «Камел»",
+                    Name = IsRussianCulture ? "Платье «Камелот»" : "Product name",
 					Badges = new List<ProductBadge>
 					{
 						new ProductBadge() { Name = "sale", Color = "#FC224B" }

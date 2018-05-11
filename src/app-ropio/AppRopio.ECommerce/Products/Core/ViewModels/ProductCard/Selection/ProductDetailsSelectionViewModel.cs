@@ -28,6 +28,8 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Selection
 
         protected CancellationTokenSource CTS { get; private set; }
 
+        public override string ApplyTitle => LocalizationService.GetLocalizableString(ProductsConstants.RESX_NAME, "Selection_Apply");
+
         #endregion
 
         #region Services

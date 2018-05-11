@@ -1,8 +1,10 @@
 ﻿using System.Windows.Input;
 using AppRopio.Base.Auth.Core.Messages.Session;
 using AppRopio.Base.Auth.Core.Services;
+using AppRopio.Base.Core.Messages.Localization;
 using AppRopio.Base.Core.Models.Bundle;
 using AppRopio.Base.Core.Models.Navigation;
+using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.Core.ViewModels;
 using AppRopio.Base.Profile.Core.Services;
 using AppRopio.Base.Profile.Core.ViewModels.Profile;
@@ -20,6 +22,8 @@ namespace AppRopio.Base.Profile.Core.ViewModels.MenuHeader
         private MvxSubscriptionToken _userTypeChangedSubscriptionToken;
 
         private MvxSubscriptionToken _userInfoChangedSubscriptionToken;
+
+        private MvxSubscriptionToken _languageToken;
 
         protected IProfileVmNavigationService NavigationVmService { get { return Mvx.Resolve<IProfileVmNavigationService>(); } }
 
@@ -82,6 +86,10 @@ namespace AppRopio.Base.Profile.Core.ViewModels.MenuHeader
             }
         }
 
+        public string SignIn => Mvx.Resolve<ILocalizationService>().GetLocalizableString(ProfileConstants.RESX_NAME, "SignIn");
+
+        public string Help => Mvx.Resolve<ILocalizationService>().GetLocalizableString(ProfileConstants.RESX_NAME, "Help");
+
         #endregion
 
         #region Services
@@ -92,10 +100,11 @@ namespace AppRopio.Base.Profile.Core.ViewModels.MenuHeader
 
         public ProfileMenuHeaderViewModel()
         {
-            Mvx.CallbackWhenRegistered<IMvxMessenger>(() =>
+            Mvx.CallbackWhenRegistered<IMvxMessenger>(service =>
             {
-                _userTypeChangedSubscriptionToken = Mvx.Resolve<IMvxMessenger>().Subscribe<UserTypeChangedMessage>(OnUserTypeChanged);
-                _userInfoChangedSubscriptionToken = Mvx.Resolve<IMvxMessenger>().Subscribe<UserInfoChangedMessage>(OnUserInfoChanged);
+                _userTypeChangedSubscriptionToken = service.Subscribe<UserTypeChangedMessage>(OnUserTypeChanged);
+                _userInfoChangedSubscriptionToken = service.Subscribe<UserInfoChangedMessage>(OnUserInfoChanged);
+                _languageToken = service.Subscribe<LanguageChangedMessage>(OnLanguageChanged);
             });
 
             Mvx.CallbackWhenRegistered<ISessionService>(() =>
@@ -120,6 +129,12 @@ namespace AppRopio.Base.Profile.Core.ViewModels.MenuHeader
         private void OnUserInfoChanged(UserInfoChangedMessage obj)
         {
             OnCurrentProfileChanged(obj.User);
+        }
+
+        private void OnLanguageChanged(LanguageChangedMessage obj)
+        {
+            RaisePropertyChanged(() => SignIn);
+            RaisePropertyChanged(() => Help);
         }
 
         #endregion
@@ -157,6 +172,11 @@ namespace AppRopio.Base.Profile.Core.ViewModels.MenuHeader
             {
                 _userTypeChangedSubscriptionToken.Dispose();
                 _userTypeChangedSubscriptionToken = null;
+            }
+            if (_languageToken != null)
+            {
+                _languageToken.Dispose();
+                _languageToken = null;
             }
         }
 

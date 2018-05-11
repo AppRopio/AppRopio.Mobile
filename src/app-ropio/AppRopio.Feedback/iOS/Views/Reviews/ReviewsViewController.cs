@@ -2,13 +2,14 @@
 using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.Views;
 using AppRopio.Base.iOS.ViewSources;
+using AppRopio.Feedback.Core;
 using AppRopio.Feedback.Core.ViewModels.Reviews;
 using AppRopio.Feedback.iOS.Models;
 using AppRopio.Feedback.iOS.Services;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
 using MvvmCross.Platform;
 using UIKit;
+using AppRopio.Base.iOS.UIExtentions;
 
 namespace AppRopio.Feedback.iOS.Views.Reviews
 {
@@ -35,6 +36,7 @@ namespace AppRopio.Feedback.iOS.Views.Reviews
 		protected virtual void SetupReviewButton(UIButton reviewButton)
 		{
 			reviewButton.SetupStyle(ThemeConfig.ReviewButton);
+            reviewButton.WithTitleForAllStates(LocalizationService.GetLocalizableString(FeedbackConstants.RESX_NAME, "Reviews_New"));
 		}
 
 		#endregion
@@ -74,7 +76,7 @@ namespace AppRopio.Feedback.iOS.Views.Reviews
 
 		protected override void InitializeControls()
 		{
-			Title = "Отзывы";
+            Title = LocalizationService.GetLocalizableString(FeedbackConstants.RESX_NAME, "Reviews_Title");
 
 			SetupTableView(TableView);
 			SetupReviewButton(ReviewButton);

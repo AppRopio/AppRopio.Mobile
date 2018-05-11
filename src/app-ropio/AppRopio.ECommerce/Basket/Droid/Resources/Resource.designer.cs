@@ -4180,39 +4180,6 @@ namespace AppRopio.ECommerce.Basket.Droid
 			// aapt resource value: 0x7f080023
 			public static int abc_toolbar_collapse_description = 2131230755;
 			
-			// aapt resource value: 0x7f08003f
-			public static int app_basket_basket_empty_button = 2131230783;
-			
-			// aapt resource value: 0x7f08003e
-			public static int app_basket_basket_empty_subtitle = 2131230782;
-			
-			// aapt resource value: 0x7f08003d
-			public static int app_basket_basket_empty_title = 2131230781;
-			
-			// aapt resource value: 0x7f080044
-			public static int app_basket_delivery_on_address_button = 2131230788;
-			
-			// aapt resource value: 0x7f080045
-			public static int app_basket_delivery_on_point_button = 2131230789;
-			
-			// aapt resource value: 0x7f080046
-			public static int app_basket_delivery_on_point_toolbar_onSearch_input_hint = 2131230790;
-			
-			// aapt resource value: 0x7f080040
-			public static int app_basket_payment_title = 2131230784;
-			
-			// aapt resource value: 0x7f080047
-			public static int app_basket_productCardView_buyButton = 2131230791;
-			
-			// aapt resource value: 0x7f080043
-			public static int app_basket_thanks_catalogButton = 2131230787;
-			
-			// aapt resource value: 0x7f080042
-			public static int app_basket_thanks_subtitle = 2131230786;
-			
-			// aapt resource value: 0x7f080041
-			public static int app_basket_thanks_title = 2131230785;
-			
 			// aapt resource value: 0x7f080032
 			public static int appbar_scrolling_view_behavior = 2131230770;
 			

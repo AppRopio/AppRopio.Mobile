@@ -1,458 +1,444 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <resources>
-	<!--  StepByStepCategories  -->
-	<style
-		name="app_products_sscategories_items">
-		<item
-			name="android:background">?attr/app_color_background</item>
-		<item
-			name="android:divider">@null</item>
-		<item
-			name="android:scrollbars">none</item>
-	</style>
-	<style
-		name  ="app_products_sscategories_item_title"
-		parent="AppRopio.TextAppearance.Body1">
-		<item
-			name="android:ellipsize">end</item>
-		<item
-			name="android:maxLines">1</item>
-		<item
-			name="android:gravity">center_vertical</item>
-	</style>
-	<!--    -->
-	<!--  Cataloged Categories  -->
-	<style
-		name  ="app_products_ccategories_tabs_text"
-		parent="AppRopio.TextAppearance.Header5">
-		<item
-			name="android:textAllCaps">true</item>
-	</style>
-	<style
-		name  ="app_products_ccategories_tabs"
-		parent="AppRopioTheme.Control.Toolbar">
+    <!--  StepByStepCategories  -->
+    <style
+        name="app_products_sscategories_items">
+        <item
+            name="android:background">?attr/app_color_background</item>
+        <item
+            name="android:divider">@null</item>
+        <item
+            name="android:scrollbars">none</item>
+    </style>
+    <style
+        name  ="app_products_sscategories_item_title"
+        parent="AppRopio.TextAppearance.Body1">
+        <item
+            name="android:ellipsize">end</item>
+        <item
+            name="android:maxLines">1</item>
+        <item
+            name="android:gravity">center_vertical</item>
+    </style>
+    <!--    -->
+    <!--  Cataloged Categories  -->
+    <style
+        name  ="app_products_ccategories_tabs_text"
+        parent="AppRopio.TextAppearance.Header5">
+        <item
+            name="android:textAllCaps">true</item>
+    </style>
+    <style
+        name  ="app_products_ccategories_tabs"
+        parent="AppRopioTheme.Control.Toolbar">
         <item
             name="android:layout_width">match_parent</item>
         <item
             name="android:layout_height">wrap_content</item>
-	</style>
-	<!--    -->
-	<!--  Catalog  -->
-	<style
-		name="app_products_catalog_items">
-		<item
-			name="android:background">?attr/app_color_background</item>
-		<item
-			name="android:divider">@null</item>
-		<item
-			name="android:scrollbars">none</item>
-	</style>
-	<style
-		name="app_products_catalog_item_image">
-		<item
-			name="android:scaleType">centerCrop</item>
-	</style>
-	<style
-		name  ="app_products_catalog_item_name"
-		parent="AppRopio.TextAppearance.Body2.Medium">
-		<item
-			name="android:maxLines">3</item>
-		<item
-			name="android:ellipsize">end</item>
-	</style>
-	<style
-		name  ="app_products_catalog_item_oldPrice"
-		parent="AppRopio.TextAppearance.Body2.Bold">
-		<item
-			name="android:maxLines">1</item>
-		<item
-			name="android:ellipsize">end</item>
-		<item
-			name="android:textColor">?attr/app_color_textGray</item>
-	</style>
-	<style
-		name  ="app_products_catalog_item_price"
-		parent="AppRopio.TextAppearance.Body2.Bold">
-		<item
-			name="android:maxLines">1</item>
-		<item
-			name="android:ellipsize">end</item>
-	</style>
-	<style
-		name  ="app_products_catalog_item_markButton"
-		parent="AppRopioTheme.Control.Button.Image">
-		<item
-			name="android:background">@drawable/app_products_catalog_item_markButton</item>
-	</style>
-	<style
-		name  ="app_products_catalog_item_badges_item_name"
-		parent="AppRopio.TextAppearance.Body2.Bold">
-		<item
-			name="android:paddingLeft">@dimen/app_products_catalog_item_badges_text_horizontalPadding</item>
-		<item
-			name="android:paddingRight">@dimen/app_products_catalog_item_badges_text_horizontalPadding</item>
-		<item
-			name="android:gravity">center</item>
-		<item
-			name="android:textColor">@color/app_products_catalog_item_badges_item_name_textColor</item>
-	</style>
-	<style
-		name  ="app_products_catalog_sort_filters_header_button"
-		parent="AppRopio.TextAppearance.Body2.Medium">
-		<item
-			name="android:background">@drawable/app_products_catalog_sort_filters_header_button</item>
-		<item
-			name="android:textAllCaps">true</item>&gt;
     </style>
-	<!--    -->
-	<!--  Catalog EmptyView  -->
-	<style
-		name  ="app_products_catalog_empty_title"
-		parent="AppRopio.TextAppearance.Header2">
-		<item
-			name="android:layout_marginTop">@dimen/app_products_catalog_empty_title_topMargin</item>
-		<item
-			name="android:gravity">center</item>
-		<item
-			name="android:text">@string/app_products_catalog_empty_title</item>
-	</style>
-	<style
-		name  ="app_products_catalog_empty_subtitle"
-		parent="AppRopio.TextAppearance.Body1">
-		<item
-			name="android:layout_marginTop">@dimen/app_products_catalog_empty_subtitle_topMargin</item>
-		<item
-			name="android:gravity">center</item>
-		<item
-			name="android:text">@string/app_products_catalog_empty_subtitle</item>
-		<item
-			name="android:maxLines">2</item>
-	</style>
-	<style
-		name  ="app_products_catalog_empty_button"
-		parent="AppRopioTheme.Control.Button.Base">
-		<item
-			name="android:text">@string/app_products_catalog_empty_button</item>
-	</style>
-	<!--    -->
-	<!--  ContentSearch  -->
-	<style
-		name="app_products_contentsearch_hints_scrollView">
-		<item
-			name="android:background">?attr/app_color_background</item>
-		<item
-			name="android:divider">@null</item>
-		<item
-			name="android:scrollbars">none</item>
-	</style>
-	<style
-		name  ="app_products_contentsearch_hints_autocomplete_item_text"
-		parent="AppRopio.TextAppearance.Body2.Medium">
-		<item
-			name="android:maxLines">1</item>
-		<item
-			name="android:ellipsize">end</item>
-		<item
-			name="android:gravity">center_vertical</item>
-	</style>
-	<style
-		name  ="app_products_contentsearch_hints_item_text"
-		parent="AppRopio.TextAppearance.Body1">
-		<item
-			name="android:maxLines">1</item>
-		<item
-			name="android:ellipsize">end</item>
-		<item
-			name="android:gravity">center_vertical</item>
-	</style>
-	<style
-		name="app_products_contentsearch_hints_item_icon">
-		<item
-			name="android:layout_width">@dimen/app_products_contentsearch_hints_item_height</item>
-		<item
-			name="android:layout_height">@dimen/app_products_contentsearch_hints_item_height</item>
-		<item
-			name="android:scaleType">center</item>
-		<item
-			name="android:src">?attr/app_products_contentsearch_ic_arrow</item>
-	</style>
-	<style
-		name="app_products_contentsearch_history_item_icon_clock">
-		<item
-			name="android:layout_width">@dimen/app_products_contentsearch_history_item_height</item>
-		<item
-			name="android:layout_height">@dimen/app_products_contentsearch_history_item_height</item>
-		<item
-			name="android:scaleType">center</item>
-		<item
-			name="android:src">?attr/app_products_contentsearch_ic_clock</item>
-	</style>
-	<style
-		name="app_products_contentsearch_history_item_icon">
-		<item
-			name="android:layout_width">@dimen/app_products_contentsearch_history_item_height</item>
-		<item
-			name="android:layout_height">@dimen/app_products_contentsearch_history_item_height</item>
-		<item
-			name="android:scaleType">center</item>
-		<item
-			name="android:src">?attr/app_products_contentsearch_ic_arrow</item>
-	</style>
-	<style
-		name  ="app_products_contentsearch_history_item_text"
-		parent="app_products_contentsearch_hints_item_text">
-	</style>
-	<style
-		name  ="app_products_contentsearch_history_items"
-		parent="app_products_contentsearch_hints_scrollView">
-	</style>
-	<style
-		name  ="app_products_contentsearch_history_clearButton"
-		parent="AppRopioTheme.Control.Button.Base">
-		<item
-			name="android:text">@string/app_products_contentsearch_history_clearButton</item>
-	</style>
-	<style
-		name  ="app_products_contentsearch_searchInput"
-		parent="AppRopioTheme.Control.SearchEditText">
-		<item
-			name="android:hint">@string/app_products_contentsearch_searchInput_hint</item>
-		<item
-			name="android:inputType">text</item>
-		<item
-			name="android:maxLines">1</item>
-		<item
-			name="android:background">@null</item>
-	</style>
-	<!--    -->
-	<!--  Product Card  -->
-	<style
-		name  ="app_products_productCard_shortInfo_status"
-		parent="AppRopio.TextAppearance.Body2.Bold">
-		<item
-			name="android:textColor">?attr/app_color_textGray</item>
-		<item
-			name="android:maxLines">1</item>
-		<item
-			name="android:ellipsize">end</item>
-	</style>
-	<style
-		name  ="app_products_productCard_shortInfo_name"
-		parent="AppRopio.TextAppearance.Body1">
-		<item
-			name="android:maxLines">2</item>
-		<item
-			name="android:ellipsize">end</item>
-	</style>
-	<style
-		name  ="app_products_productCard_shortInfo_price"
-		parent="AppRopio.TextAppearance.Body2.Bold">
-	</style>
-	<style
-		name  ="app_products_productCard_shortInfo_oldPrice"
-		parent="AppRopio.TextAppearance.Body2.Bold">
-		<item
-			name="android:textColor">?attr/app_color_textGray</item>
-	</style>
-	<style
-		name  ="app_products_productCard_shortInfo_extraPrice"
-		parent="AppRopio.TextAppearance.Body2">
-	</style>
-	<style
-		name  ="app_products_productCard_title"
-		parent="AppRopio.TextAppearance.Body1">
-		<item
-			name="android:maxLines">1</item>
-		<item
-			name="android:ellipsize">end</item>
-	</style>
-	<style
-		name  ="app_products_productCard_arrow"
-		parent="">
-		<item
-			name="android:layout_width">@dimen/app_products_productCard_title_height</item>
-		<item
-			name="android:layout_height">@dimen/app_products_productCard_title_height</item>
-		<item
-			name="android:scaleType">center</item>
-		<item
-			name="android:src">?attr/app_products_productCard_ic_arrow</item>
-	</style>
-	<style
-		name="app_products_productCard_horizontalCollection_scrollView">
-		<item
-			name="android:divider">@null</item>
-		<item
-			name="android:scrollbars">none</item>
-	</style>
-	<style
-		name="app_products_productCard_horizontalCollection_color_checkImage">
-		<item
-			name="android:layout_width">@dimen/app_products_productCard_horizontalCollection_content_height</item>
-		<item
-			name="android:layout_height">@dimen/app_products_productCard_horizontalCollection_content_height</item>
-		<item
-			name="android:scaleType">center</item>
-		<item
-			name="android:src">?attr/app_products_productCard_color_ic_checkImage</item>
-	</style>
-	<style
-		name  ="app_products_productCard_horizontalCollection_text"
-		parent="AppRopio.TextAppearance.Body1.Bold">
-		<item
-			name="android:gravity">center</item>
-	</style>
-	<style
-		name  ="app_products_productCard_picker_spinner_value"
-		parent="AppRopio.TextAppearance.Body1.Bold">
-		<item
-			name="android:textColor">?attr/app_color_textGray</item>
-		<item
-			name="android:maxLines">1</item>
-		<item
-			name="android:ellipsize">start</item>
-	</style>
-	<style
-		name  ="app_products_productCard_picker_spinner_item_title"
-		parent="app_products_productCard_title">
-	</style>
-	<style
-		name="app_products_productCard_multiSelection_scrollView">
-		<item
-			name="android:divider">@null</item>
-		<item
-			name="android:scrollbars">none</item>
-	</style>
-	<style
-		name  ="app_products_productCard_multiSelection_text"
-		parent="AppRopio.TextAppearance.Body1.Bold">
-		<item
-			name="android:gravity">center</item>
-	</style>
-	<style
-		name="app_products_productCard_cross">
-		<item
-			name="android:layout_width">wrap_content</item>
-		<item
-			name="android:layout_height">wrap_content</item>
-		<item
-			name="android:scaleType">center</item>
-		<item
-			name="android:src">?attr/app_products_productCard_ic_cross</item>
-	</style>
-	<style
-		name  ="app_products_productCard_verticalCollection_text"
-		parent="AppRopio.TextAppearance.Body2.Medium">
-		<item
-			name="android:gravity">center</item>
-	</style>
-	<style
-		name  ="app_products_productCard_minMax_content_hint"
-		parent="AppRopio.TextAppearance.Body1.Bold">
-		<item
-			name="android:textColor">?attr/app_color_textGray</item>
-	</style>
-	<style
-		name="app_products_productCard_minMax_content_input">
-		<item
-			name="android:inputType">number</item>
-		<item
-			name="android:maxLines">1</item>
-		<item
-			name="android:background">@null</item>
-		<item
-			name="android:fontFamily">?attr/app_font_bold</item>
-		<item
-			name="android:textSize">@dimen/app_input_text_size</item>
-		<item
-			name="android:textColor">?attr/app_color_textBase</item>
-		<item
-			name="android:textColorHint">?attr/app_color_placeholder</item>
-		<item
-			name="android:editable">false</item>
-		<item
-			name="android:focusable">false</item>
-		<item
-			name="android:clickable">false</item>
-		<item
-			name="android:focusableInTouchMode">false</item>
-	</style>
-	<style
-		name  ="app_products_productCard_multilineText"
-		parent="AppRopio.TextAppearance.Body2">
-		<item
-			name="android:maxLines">@integer/app_products_productCard_multilineText_maxLines</item>
-		<item
-			name="android:singleLine">false</item>
-		<item
-			name="android:ellipsize">end</item>
-	</style>
-	<style
-		name  ="app_products_productCard_transition_value"
-		parent="app_products_productCard_title">
-	</style>
-	<style
-		name  ="app_products_productCard_shopsHorizontalCollection_title"
-		parent="AppRopio.TextAppearance.Body2.Medium">
-		<item
-			name="android:maxLines">1</item>
-		<item
-			name="android:ellipsize">end</item>
-	</style>
-	<style
-		name  ="app_products_productCard_shopsHorizontalCollection_item_name"
-		parent="AppRopio.TextAppearance.Body2.Medium">
-		<item
-			name="android:maxLines">3</item>
-		<item
-			name="android:ellipsize">end</item>
-	</style>
-	<style
-		name  ="app_products_productCard_shopsHorizontalCollection_item_address"
-		parent="AppRopio.TextAppearance.Body2">
-		<item
-			name="android:maxLines">3</item>
-		<item
-			name="android:ellipsize">end</item>
-	</style>
-	<style
-		name  ="app_products_productCard_shopsHorizontalCollection_item_quantity"
-		parent="AppRopio.TextAppearance.Body2.Bold">
-		<item
-			name="android:maxLines">1</item>
-		<item
-			name="android:ellipsize">end</item>
-	</style>
-	<!--    -->
-	<!--  Selection  -->
-	<style
-		name  ="app_products_selection_title"
-		parent="app_products_productCard_title">
-	</style>
-	<style
-		name  ="app_products_selection_checkImage"
-		parent="app_products_productCard_horizontalCollection_color_checkImage">
-	</style>
-	<style
-		name  ="app_products_selection_button"
-		parent="AppRopioTheme.Control.Button.Base">
-		<item
-			name="android:text">@string/app_products_selection_apply</item>
-	</style>
-	<style
-		name  ="app_products_selection_button_clear"
-		parent="AppRopioTheme.Control.Button.Text">
-		<item
-			name="android:text">@string/app_products_selection_clear</item>
-	</style>
-	<!--    -->
-	<!--  TextContent  -->
-	<style
-		name  ="app_products_textContent"
-		parent="AppRopio.TextAppearance.Body1">
-		<item
-			name="android:maxLines">@integer/app_products_textContent_maxLines</item>
-		<item
-			name="android:scrollbars">vertical</item>
-	</style>
+    <!--    -->
+    <!--  Catalog  -->
+    <style
+        name="app_products_catalog_items">
+        <item
+            name="android:background">?attr/app_color_background</item>
+        <item
+            name="android:divider">@null</item>
+        <item
+            name="android:scrollbars">none</item>
+    </style>
+    <style
+        name="app_products_catalog_item_image">
+        <item
+            name="android:scaleType">centerCrop</item>
+    </style>
+    <style
+        name  ="app_products_catalog_item_name"
+        parent="AppRopio.TextAppearance.Body2.Medium">
+        <item
+            name="android:maxLines">3</item>
+        <item
+            name="android:ellipsize">end</item>
+    </style>
+    <style
+        name  ="app_products_catalog_item_oldPrice"
+        parent="AppRopio.TextAppearance.Body2.Bold">
+        <item
+            name="android:maxLines">1</item>
+        <item
+            name="android:ellipsize">end</item>
+        <item
+            name="android:textColor">?attr/app_color_textGray</item>
+    </style>
+    <style
+        name  ="app_products_catalog_item_price"
+        parent="AppRopio.TextAppearance.Body2.Bold">
+        <item
+            name="android:maxLines">1</item>
+        <item
+            name="android:ellipsize">end</item>
+    </style>
+    <style
+        name  ="app_products_catalog_item_markButton"
+        parent="AppRopioTheme.Control.Button.Image">
+        <item
+            name="android:background">@drawable/app_products_catalog_item_markButton</item>
+    </style>
+    <style
+        name  ="app_products_catalog_item_badges_item_name"
+        parent="AppRopio.TextAppearance.Body2.Bold">
+        <item
+            name="android:paddingLeft">@dimen/app_products_catalog_item_badges_text_horizontalPadding</item>
+        <item
+            name="android:paddingRight">@dimen/app_products_catalog_item_badges_text_horizontalPadding</item>
+        <item
+            name="android:gravity">center</item>
+        <item
+            name="android:textColor">@color/app_products_catalog_item_badges_item_name_textColor</item>
+    </style>
+    <style
+        name  ="app_products_catalog_sort_filters_header_button"
+        parent="AppRopio.TextAppearance.Body2.Medium">
+        <item
+            name="android:background">@drawable/app_products_catalog_sort_filters_header_button</item>
+        <item
+            name="android:textAllCaps">true</item>&gt;
+    </style>
+    <!--    -->
+    <!--  Catalog EmptyView  -->
+    <style
+        name  ="app_products_catalog_empty_title"
+        parent="AppRopio.TextAppearance.Header2">
+        <item
+            name="android:layout_marginTop">@dimen/app_products_catalog_empty_title_topMargin</item>
+        <item
+            name="android:gravity">center</item>
+    </style>
+    <style
+        name  ="app_products_catalog_empty_subtitle"
+        parent="AppRopio.TextAppearance.Body1">
+        <item
+            name="android:layout_marginTop">@dimen/app_products_catalog_empty_subtitle_topMargin</item>
+        <item
+            name="android:gravity">center</item>
+        <item
+            name="android:maxLines">2</item>
+    </style>
+    <style
+        name  ="app_products_catalog_empty_button"
+        parent="AppRopioTheme.Control.Button.Base">
+    </style>
+    <!--    -->
+    <!--  ContentSearch  -->
+    <style
+        name="app_products_contentsearch_hints_scrollView">
+        <item
+            name="android:background">?attr/app_color_background</item>
+        <item
+            name="android:divider">@null</item>
+        <item
+            name="android:scrollbars">none</item>
+    </style>
+    <style
+        name  ="app_products_contentsearch_hints_autocomplete_item_text"
+        parent="AppRopio.TextAppearance.Body2.Medium">
+        <item
+            name="android:maxLines">1</item>
+        <item
+            name="android:ellipsize">end</item>
+        <item
+            name="android:gravity">center_vertical</item>
+    </style>
+    <style
+        name  ="app_products_contentsearch_hints_item_text"
+        parent="AppRopio.TextAppearance.Body1">
+        <item
+            name="android:maxLines">1</item>
+        <item
+            name="android:ellipsize">end</item>
+        <item
+            name="android:gravity">center_vertical</item>
+    </style>
+    <style
+        name="app_products_contentsearch_hints_item_icon">
+        <item
+            name="android:layout_width">@dimen/app_products_contentsearch_hints_item_height</item>
+        <item
+            name="android:layout_height">@dimen/app_products_contentsearch_hints_item_height</item>
+        <item
+            name="android:scaleType">center</item>
+        <item
+            name="android:src">?attr/app_products_contentsearch_ic_arrow</item>
+    </style>
+    <style
+        name="app_products_contentsearch_history_item_icon_clock">
+        <item
+            name="android:layout_width">@dimen/app_products_contentsearch_history_item_height</item>
+        <item
+            name="android:layout_height">@dimen/app_products_contentsearch_history_item_height</item>
+        <item
+            name="android:scaleType">center</item>
+        <item
+            name="android:src">?attr/app_products_contentsearch_ic_clock</item>
+    </style>
+    <style
+        name="app_products_contentsearch_history_item_icon">
+        <item
+            name="android:layout_width">@dimen/app_products_contentsearch_history_item_height</item>
+        <item
+            name="android:layout_height">@dimen/app_products_contentsearch_history_item_height</item>
+        <item
+            name="android:scaleType">center</item>
+        <item
+            name="android:src">?attr/app_products_contentsearch_ic_arrow</item>
+    </style>
+    <style
+        name  ="app_products_contentsearch_history_item_text"
+        parent="app_products_contentsearch_hints_item_text">
+    </style>
+    <style
+        name  ="app_products_contentsearch_history_items"
+        parent="app_products_contentsearch_hints_scrollView">
+    </style>
+    <style
+        name  ="app_products_contentsearch_history_clearButton"
+        parent="AppRopioTheme.Control.Button.Base">
+    </style>
+    <style
+        name  ="app_products_contentsearch_searchInput"
+        parent="AppRopioTheme.Control.SearchEditText">
+        <item
+            name="android:inputType">text</item>
+        <item
+            name="android:maxLines">1</item>
+        <item
+            name="android:background">@null</item>
+    </style>
+    <!--    -->
+    <!--  Product Card  -->
+    <style
+        name  ="app_products_productCard_shortInfo_status"
+        parent="AppRopio.TextAppearance.Body2.Bold">
+        <item
+            name="android:textColor">?attr/app_color_textGray</item>
+        <item
+            name="android:maxLines">1</item>
+        <item
+            name="android:ellipsize">end</item>
+    </style>
+    <style
+        name  ="app_products_productCard_shortInfo_name"
+        parent="AppRopio.TextAppearance.Body1">
+        <item
+            name="android:maxLines">2</item>
+        <item
+            name="android:ellipsize">end</item>
+    </style>
+    <style
+        name  ="app_products_productCard_shortInfo_price"
+        parent="AppRopio.TextAppearance.Body2.Bold">
+    </style>
+    <style
+        name  ="app_products_productCard_shortInfo_oldPrice"
+        parent="AppRopio.TextAppearance.Body2.Bold">
+        <item
+            name="android:textColor">?attr/app_color_textGray</item>
+    </style>
+    <style
+        name  ="app_products_productCard_shortInfo_extraPrice"
+        parent="AppRopio.TextAppearance.Body2">
+    </style>
+    <style
+        name  ="app_products_productCard_title"
+        parent="AppRopio.TextAppearance.Body1">
+        <item
+            name="android:maxLines">1</item>
+        <item
+            name="android:ellipsize">end</item>
+    </style>
+    <style
+        name  ="app_products_productCard_arrow"
+        parent="">
+        <item
+            name="android:layout_width">@dimen/app_products_productCard_title_height</item>
+        <item
+            name="android:layout_height">@dimen/app_products_productCard_title_height</item>
+        <item
+            name="android:scaleType">center</item>
+        <item
+            name="android:src">?attr/app_products_productCard_ic_arrow</item>
+    </style>
+    <style
+        name="app_products_productCard_horizontalCollection_scrollView">
+        <item
+            name="android:divider">@null</item>
+        <item
+            name="android:scrollbars">none</item>
+    </style>
+    <style
+        name="app_products_productCard_horizontalCollection_color_checkImage">
+        <item
+            name="android:layout_width">@dimen/app_products_productCard_horizontalCollection_content_height</item>
+        <item
+            name="android:layout_height">@dimen/app_products_productCard_horizontalCollection_content_height</item>
+        <item
+            name="android:scaleType">center</item>
+        <item
+            name="android:src">?attr/app_products_productCard_color_ic_checkImage</item>
+    </style>
+    <style
+        name  ="app_products_productCard_horizontalCollection_text"
+        parent="AppRopio.TextAppearance.Body1.Bold">
+        <item
+            name="android:gravity">center</item>
+    </style>
+    <style
+        name  ="app_products_productCard_picker_spinner_value"
+        parent="AppRopio.TextAppearance.Body1.Bold">
+        <item
+            name="android:textColor">?attr/app_color_textGray</item>
+        <item
+            name="android:maxLines">1</item>
+        <item
+            name="android:ellipsize">start</item>
+    </style>
+    <style
+        name  ="app_products_productCard_picker_spinner_item_title"
+        parent="app_products_productCard_title">
+    </style>
+    <style
+        name="app_products_productCard_multiSelection_scrollView">
+        <item
+            name="android:divider">@null</item>
+        <item
+            name="android:scrollbars">none</item>
+    </style>
+    <style
+        name  ="app_products_productCard_multiSelection_text"
+        parent="AppRopio.TextAppearance.Body1.Bold">
+        <item
+            name="android:gravity">center</item>
+    </style>
+    <style
+        name="app_products_productCard_cross">
+        <item
+            name="android:layout_width">wrap_content</item>
+        <item
+            name="android:layout_height">wrap_content</item>
+        <item
+            name="android:scaleType">center</item>
+        <item
+            name="android:src">?attr/app_products_productCard_ic_cross</item>
+    </style>
+    <style
+        name  ="app_products_productCard_verticalCollection_text"
+        parent="AppRopio.TextAppearance.Body2.Medium">
+        <item
+            name="android:gravity">center</item>
+    </style>
+    <style
+        name  ="app_products_productCard_minMax_content_hint"
+        parent="AppRopio.TextAppearance.Body1.Bold">
+        <item
+            name="android:textColor">?attr/app_color_textGray</item>
+    </style>
+    <style
+        name="app_products_productCard_minMax_content_input">
+        <item
+            name="android:inputType">number</item>
+        <item
+            name="android:maxLines">1</item>
+        <item
+            name="android:background">@null</item>
+        <item
+            name="android:fontFamily">?attr/app_font_bold</item>
+        <item
+            name="android:textSize">@dimen/app_input_text_size</item>
+        <item
+            name="android:textColor">?attr/app_color_textBase</item>
+        <item
+            name="android:textColorHint">?attr/app_color_placeholder</item>
+        <item
+            name="android:editable">false</item>
+        <item
+            name="android:focusable">false</item>
+        <item
+            name="android:clickable">false</item>
+        <item
+            name="android:focusableInTouchMode">false</item>
+    </style>
+    <style
+        name  ="app_products_productCard_multilineText"
+        parent="AppRopio.TextAppearance.Body2">
+        <item
+            name="android:maxLines">@integer/app_products_productCard_multilineText_maxLines</item>
+        <item
+            name="android:singleLine">false</item>
+        <item
+            name="android:ellipsize">end</item>
+    </style>
+    <style
+        name  ="app_products_productCard_transition_value"
+        parent="app_products_productCard_title">
+    </style>
+    <style
+        name  ="app_products_productCard_shopsHorizontalCollection_title"
+        parent="AppRopio.TextAppearance.Body2.Medium">
+        <item
+            name="android:maxLines">1</item>
+        <item
+            name="android:ellipsize">end</item>
+    </style>
+    <style
+        name  ="app_products_productCard_shopsHorizontalCollection_item_name"
+        parent="AppRopio.TextAppearance.Body2.Medium">
+        <item
+            name="android:maxLines">3</item>
+        <item
+            name="android:ellipsize">end</item>
+    </style>
+    <style
+        name  ="app_products_productCard_shopsHorizontalCollection_item_address"
+        parent="AppRopio.TextAppearance.Body2">
+        <item
+            name="android:maxLines">3</item>
+        <item
+            name="android:ellipsize">end</item>
+    </style>
+    <style
+        name  ="app_products_productCard_shopsHorizontalCollection_item_quantity"
+        parent="AppRopio.TextAppearance.Body2.Bold">
+        <item
+            name="android:maxLines">1</item>
+        <item
+            name="android:ellipsize">end</item>
+    </style>
+    <!--    -->
+    <!--  Selection  -->
+    <style
+        name  ="app_products_selection_title"
+        parent="app_products_productCard_title">
+    </style>
+    <style
+        name  ="app_products_selection_checkImage"
+        parent="app_products_productCard_horizontalCollection_color_checkImage">
+    </style>
+    <style
+        name  ="app_products_selection_button"
+        parent="AppRopioTheme.Control.Button.Base">
+    </style>
+    <style
+        name  ="app_products_selection_button_clear"
+        parent="AppRopioTheme.Control.Button.Text">
+    </style>
+    <!--    -->
+    <!--  TextContent  -->
+    <style
+        name  ="app_products_textContent"
+        parent="AppRopio.TextAppearance.Body1">
+        <item
+            name="android:maxLines">@integer/app_products_textContent_maxLines</item>
+        <item
+            name="android:scrollbars">vertical</item>
+    </style>
 </resources>

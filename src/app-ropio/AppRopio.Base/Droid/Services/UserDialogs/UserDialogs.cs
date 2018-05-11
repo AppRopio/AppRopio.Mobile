@@ -21,13 +21,20 @@ namespace AppRopio.Base.Droid.Services.UserDialogs
             {
                 var view = (activity as ICommonActivity)?.View ?? activity.Window.DecorView.RootView.FindViewById(Android.Resource.Id.Content);
 
-                var snackBar = Snackbar.Make(
-                    view,
-                    msg,
-                    autoHide ? Snackbar.LengthShort : Snackbar.LengthLong
-                );
+                try
+                {
+                    var snackBar = Snackbar.Make(
+                        view,
+                        msg,
+                        autoHide ? Snackbar.LengthShort : Snackbar.LengthLong
+                    );
 
-                tcs.TrySetResult(snackBar);
+                    tcs.TrySetResult(snackBar);
+                }
+                catch
+                {
+                    tcs.TrySetResult(null);
+                }
             });
 
             return tcs.Task;
@@ -41,7 +48,8 @@ namespace AppRopio.Base.Droid.Services.UserDialogs
                 return;
 
             var snackBar = await CreateSnackbar(compat, message);
-            compat.RunOnUiThread(snackBar.Show);
+            if (snackBar != null)
+                compat.RunOnUiThread(snackBar.Show);
         }
 
         public Task<bool> Confirm(string message, string button, bool autoHide = false)
@@ -57,21 +65,22 @@ namespace AppRopio.Base.Droid.Services.UserDialogs
             {
                 var snackBar = await CreateSnackbar(compat, message);
 
-                compat.RunOnUiThread(() =>
-                {
-                    if (!string.IsNullOrEmpty(button))
+                if (snackBar != null)
+                    compat.RunOnUiThread(() =>
                     {
-                        snackBar.SetAction(button.ToUpperInvariant(), x =>
+                        if (!string.IsNullOrEmpty(button))
                         {
-                            tcs.TrySetResult(true);
-                            snackBar.Dismiss();
-                        });
+                            snackBar.SetAction(button.ToUpperInvariant(), x =>
+                            {
+                                tcs.TrySetResult(true);
+                                snackBar.Dismiss();
+                            });
 
                         //snackBar.SetActionTextColor(color.Value.ToNative());
                     }
 
-                    snackBar.Show();
-                });
+                        snackBar.Show();
+                    });
             });
 
             return tcs.Task;
@@ -85,7 +94,8 @@ namespace AppRopio.Base.Droid.Services.UserDialogs
                 return;
 
             var snackBar = await CreateSnackbar(compat, message);
-            compat.RunOnUiThread(snackBar.Show);
+            if (snackBar != null)
+                compat.RunOnUiThread(snackBar.Show);
         }
     }
 }

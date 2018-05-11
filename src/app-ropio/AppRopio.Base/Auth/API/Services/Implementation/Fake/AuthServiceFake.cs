@@ -1,18 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using AppRopio.Base.Auth.API.Services;
+using AppRopio.Base.API.Services;
 using AppRopio.Models.Auth.Enums;
-using AppRopio.Models.Auth.Responses;
-using System.Linq;
 using AppRopio.Models.Auth.Requests;
-using Newtonsoft.Json;
+using AppRopio.Models.Auth.Responses;
+using MvvmCross.Platform;
 
 namespace AppRopio.Base.Auth.API.Services.Implementation.Fake
 {
-	public class AuthServiceFake : IAuthService
+    public class AuthServiceFake : IAuthService
 	{
+        public bool IsRussianCulture => Mvx.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
+        
 		private const string TOKEN = "auth_token_from_fake_service";
 
 		public async Task ForgotPassword(string identifier, CancellationTokenSource cancellationTokenSource)
@@ -46,7 +48,6 @@ namespace AppRopio.Base.Auth.API.Services.Implementation.Fake
 				Successful = true,
 				Error = "",
 				InvalidFieldsIds = new List<string>(),
-				//InvalidFields = new List<RegistrationFieldType>() {  RegistrationFieldType.Email, RegistrationFieldType.Password},
 				Token = TOKEN
 			};
 			var email = fields.FirstOrDefault(p => p.Id == "1");
@@ -54,7 +55,7 @@ namespace AppRopio.Base.Auth.API.Services.Implementation.Fake
 			{
 				resp.Successful = false;
 				resp.InvalidFieldsIds.Add("1");
-				resp.Error += $"Поле с ID == 1 должно начинаться на \"a\"\n";
+                resp.Error += IsRussianCulture ? $"Поле с ID == 1 должно начинаться на \"a\"\n" : "E-mail should starts with \"a\" letter\n";
 			}
 
 			var password = fields.FirstOrDefault(p => p.Type == RegistrationFieldType.Password);
@@ -62,32 +63,17 @@ namespace AppRopio.Base.Auth.API.Services.Implementation.Fake
 			{
 				resp.Successful = false;
 				resp.InvalidFieldsIds.Add(password.Id);
-				resp.Error += $"Пароль должен быть не менее 6 символов\n";
+                resp.Error += IsRussianCulture ? $"Пароль должен быть не менее 6 символов\n" : "Password length couldn't be less than 6";
 			}
 			resp.Error = resp.Error?.Trim();
-			//if (password.Length <= 6)
-			//{
-			//	resp.Successful = false;
-			//	resp.Error += "|Пароль| <= 6 ";
-			//	resp.PasswordValid = false;
-			//}
-			//if (identifier.Length<3 || identifier[5]!='2')
-			//{
-			//	if ((resp.Error?.Length ?? 0) >0)
-			//	{
-			//		resp.Error += "\n";
-			//	}
-			//	resp.Successful = false;
-			//	resp.Error += "ID[7]!=2 ";
-			//	resp.IdentifierValid = false;
-			//}
+
 			return resp;
 		}
 
 		public async Task<string> SocialSignIn(string socialToken, SocialType socialType, CancellationTokenSource cancellationTokenSource)
 		{
 			await Task.Delay(1000);
-			System.Diagnostics.Debug.WriteLine($"Выполнен вход в социальную сеть {socialType.ToString()}; Token :<{socialToken}>");
+            System.Diagnostics.Debug.WriteLine(IsRussianCulture ? $"Выполнен вход в социальную сеть {socialType.ToString()}; Token :<{socialToken}>" : $"You successfully authorized with {Enum.GetName(typeof(SocialType), socialType)}");
 			return TOKEN;
 		}
 

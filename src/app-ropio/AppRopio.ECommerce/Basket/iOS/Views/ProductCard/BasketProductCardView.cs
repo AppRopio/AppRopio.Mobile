@@ -14,6 +14,8 @@ using MvvmCross.iOS.Views;
 using MvvmCross.Platform;
 using ObjCRuntime;
 using UIKit;
+using AppRopio.Base.Core.Services.Localization;
+using AppRopio.ECommerce.Basket.Core;
 
 namespace AppRopio.ECommerce.Basket.iOS.Views.ProductCard
 {
@@ -64,6 +66,8 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.ProductCard
         }
 
         public IBasketProductCardViewModel ViewModel { get; set; }
+
+        protected ILocalizationService LocalizationService => Mvx.Resolve<ILocalizationService>();
 
         #endregion
 
@@ -129,6 +133,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.ProductCard
         protected virtual void SetupBuyButton(UIButton buyButton)
         {
             buyButton.SetupStyle(ThemeConfig.ProductCard.BuyButton);
+            buyButton.WithTitleForAllStates(LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "BasketProductCard_AddToBasket"));
         }
 
         protected virtual void SetupStepperView(UIView stepperView, UITextField quantityTextField, UILabel unitName, UIButton decrementBtn, UIButton incrementBtn)
@@ -159,7 +164,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.ProductCard
 
             quantityTextField.UserInteractionEnabled = false;
 
-            quantityChangedBtn.SetTitle("Готово", UIControlState.Normal);
+            quantityChangedBtn.SetTitle(LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "BasketProductCard_Done"), UIControlState.Normal);
             quantityChangedBtn.SetupStyle(ThemeConfig.ProductCard.QuantityButton);
 
             textField.InputAccessoryView = stepperView;

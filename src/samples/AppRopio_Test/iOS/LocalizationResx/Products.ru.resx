@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <resheader
+        name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader
+        name="version">
+        <value>2.0</value>
+    </resheader>
+    <resheader
+        name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader
+        name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data
+        name     ="CategoriesEmptyTitle"
+        xml:space="preserve">
+        <value>Каталог</value>
+    </data>
+    <data
+        name     ="OneProduct"
+        xml:space="preserve">
+        <value>ТОВАР</value>
+    </data>
+    <data
+        name     ="TwoProducts"
+        xml:space="preserve">
+        <value>ТОВАРА</value>
+    </data>
+    <data
+        name     ="FiveProducts"
+        xml:space="preserve">
+        <value>ТОВАРОВ</value>
+    </data>
+    <data
+        name     ="OutOfStock"
+        xml:space="preserve">
+        <value>ОТСУТСТВУЕТ</value>
+    </data>
+    <data
+        name="ContentSearch_Title">
+        <value>Поиск</value>
+    </data>
+    <data
+        name="ContentSearch_ClearHistory">
+        <value>ОЧИСТИТЬ ИСТОРИЮ</value>
+    </data>
+    <data
+        name="ContentSearch_NoResultsTitle">
+        <value>Ничего не найдено</value>
+    </data>
+    <data
+        name="ContentSearch_NoResultsText">
+        <value>Попробуйте воспользоваться каталогом
+или изменить параметры запроса</value>
+    </data>
+    <data
+        name="ContentSearch_NoResultsCatalog">
+        <value>ПЕРЕЙТИ В КАТАЛОГ</value>
+    </data>
+    <data
+        name="Catalog_Filters">
+        <value>ФИЛЬТРЫ</value>
+    </data>
+    <data
+        name="Catalog_Sort">
+        <value>СОРТИРОВКА</value>
+    </data>
+    <data
+        name="Selection_Clear">
+        <value>Сбросить</value>
+    </data>
+    <data
+        name="Selection_Apply">
+        <value>ПРИМЕНИТЬ</value>
+    </data>
+    <data
+        name="ProductCard_From">
+        <value>От</value>
+    </data>
+    <data
+        name="ProductCard_To">
+        <value>До</value>
+    </data>
+    <data
+        name="ProductCard_Done">
+        <value>Готово</value>
+    </data>
+</root>

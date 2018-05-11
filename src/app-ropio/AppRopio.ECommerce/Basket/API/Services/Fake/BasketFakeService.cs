@@ -3,24 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using AppRopio.Base.API.Services;
 using AppRopio.Models.Base.Responses;
 using AppRopio.Models.Basket.Responses.Basket;
 using AppRopio.Models.Products.Responses;
+using MvvmCross.Platform;
 
 namespace AppRopio.ECommerce.Basket.API.Services.Fake
 {
     public class BasketFakeService : IBasketService
     {
-        private BasketModel _basket = new BasketModel
+        public bool IsRussianCulture => Mvx.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
+
+        private BasketModel _basket;
+
+        public BasketFakeService()
         {
-            Items = new List<BasketItem>
+            _basket = new BasketModel
+            {
+                Items = new List<BasketItem>
             {
 
                 new BasketItem
                 {
                     Id = "1",
-                    Name = "Угловой диван Камелот",
-                    ImageUrls = new List<Image> 
+                    Name = IsRussianCulture ? "Угловой диван Камелот" : "Corner sofa Camelot",
+                    ImageUrls = new List<Image>
                     {
                         new Image { SmallUrl = "https://image.shutterstock.com/z/stock-photo-tasty-macaroni-cookies-on-a-wooden-base-541322413.jpg", LargeUrl = "https://image.shutterstock.com/z/stock-photo-tasty-macaroni-cookies-on-a-wooden-base-541322413.jpg" },
                     },
@@ -39,15 +47,15 @@ namespace AppRopio.ECommerce.Basket.API.Services.Fake
                             Color = "#FC224B"
                         }
                     },
-                    State = new ProductState { Name = "В наличии", Type = ProductStateType.InStock },
+                        State = new ProductState { Name = IsRussianCulture ? "В наличии" : "In stock", Type = ProductStateType.InStock },
                     Quantity = 2,
-                    UnitName = "шт",
+                    UnitName = IsRussianCulture ? "шт" : "PC",
                     UnitStep = 1.0f
                 },
                 new BasketItem
                 {
                     Id = "2",
-                    Name = "Угловой диван Бруклин",
+                    Name = IsRussianCulture ? "Угловой диван Бруклин" : "Corner sofa Brooklyn",
                     ImageUrls = new List<Image>
                     {
                         new Image { SmallUrl = "https://image.shutterstock.com/z/stock-photo-fresh-salad-with-chicken-tomatoes-and-mixed-greens-arugula-mesclun-mache-on-wooden-background-390942682.jpg", LargeUrl = "https://image.shutterstock.com/z/stock-photo-fresh-salad-with-chicken-tomatoes-and-mixed-greens-arugula-mesclun-mache-on-wooden-background-390942682.jpg" },
@@ -63,14 +71,14 @@ namespace AppRopio.ECommerce.Basket.API.Services.Fake
                         }
                     },
                     Quantity = 1,
-                    UnitName = "шт",
+                    UnitName = IsRussianCulture ? "шт" : "PC",
                     UnitStep = 1.0f
                 },
                 new BasketItem
                 {
                     Id = "3",
-                    Name = "Угловой диван Камелот",
-                    ImageUrls = new List<Image> 
+                        Name = IsRussianCulture ? "Угловой диван Камелот" : "Corner sofa Camelot",
+                    ImageUrls = new List<Image>
                     {
                         new Image { SmallUrl = "https://image.shutterstock.com/z/stock-photo-tasty-macaroni-cookies-on-a-wooden-base-541322413.jpg", LargeUrl = "https://image.shutterstock.com/z/stock-photo-tasty-macaroni-cookies-on-a-wooden-base-541322413.jpg" },
                     },
@@ -89,15 +97,15 @@ namespace AppRopio.ECommerce.Basket.API.Services.Fake
                             Color = "#FC224B"
                         }
                     },
-                    State = new ProductState { Name = "В наличии", Type = ProductStateType.InStock },
+                        State = new ProductState { Name = IsRussianCulture ? "В наличии" : "In stock", Type = ProductStateType.InStock },
                     Quantity = 2,
-                    UnitName = "шт",
+                    UnitName = IsRussianCulture ? "шт" : "PC",
                     UnitStep = 1.0f
                 },
                 new BasketItem
                 {
                     Id = "4",
-                    Name = "Угловой диван Бруклин",
+                        Name = IsRussianCulture ? "Угловой диван Бруклин" : "Corner sofa Brooklyn",
                     ImageUrls = new List<Image>
                     {
                         new Image { SmallUrl = "https://image.shutterstock.com/z/stock-photo-fresh-salad-with-chicken-tomatoes-and-mixed-greens-arugula-mesclun-mache-on-wooden-background-390942682.jpg", LargeUrl = "https://image.shutterstock.com/z/stock-photo-fresh-salad-with-chicken-tomatoes-and-mixed-greens-arugula-mesclun-mache-on-wooden-background-390942682.jpg" },
@@ -113,14 +121,15 @@ namespace AppRopio.ECommerce.Basket.API.Services.Fake
                         }
                     },
                     Quantity = 1,
-                    UnitName = "шт",
+                    UnitName = IsRussianCulture ? "шт" : "PC",
                     UnitStep = 1.0f
                 }
             },
-            Amount = 6000300,
-            Discount = 100,
-            VersionId = "42"
-        };
+                Amount = 6000300,
+                Discount = 100,
+                VersionId = "42"
+            };
+        }
 
         public async Task<bool> IsNeedToLoad(string versionId, CancellationToken cancellationToken)
         {
@@ -168,7 +177,7 @@ namespace AppRopio.ECommerce.Basket.API.Services.Fake
                 new BasketItem
                 {
                     Id = productId,
-                    Name = "Угловой диван Бруклин",
+                    Name = IsRussianCulture ? "Угловой диван Бруклин" : "Corner sofa Brooklyn",
                     ImageUrls = new List<Image>
                     {
                         new Image { SmallUrl = "https://image.shutterstock.com/z/stock-photo-fresh-salad-with-chicken-tomatoes-and-mixed-greens-arugula-mesclun-mache-on-wooden-background-390942682.jpg", LargeUrl = "https://image.shutterstock.com/z/stock-photo-fresh-salad-with-chicken-tomatoes-and-mixed-greens-arugula-mesclun-mache-on-wooden-background-390942682.jpg" },
@@ -184,9 +193,8 @@ namespace AppRopio.ECommerce.Basket.API.Services.Fake
                         }
                     },
                     Quantity = 1,
-                    UnitName = "шт",
-                    UnitStep = 1.0f,
-                GroupId = groupId
+                    UnitName = IsRussianCulture ? "шт" : "PC",
+                    UnitStep = 1.0f
                 }
             );
         }
@@ -203,7 +211,7 @@ namespace AppRopio.ECommerce.Basket.API.Services.Fake
             await Task.Delay(500, token);
 
             if (quantity > 10)
-                return new ProductQuantity { Quantity = 10, Error = "Больше 10 шт. не положено!" };
+                return new ProductQuantity { Quantity = 10, Error = IsRussianCulture ? "Больше 10 шт. не положено!" : "A maximum of ten pieces" };
 
             var p = _basket.Items.FirstOrDefault(x => x.Id.Equals(id));
             if (p != null)
@@ -221,7 +229,7 @@ namespace AppRopio.ECommerce.Basket.API.Services.Fake
             var p = _basket.Items.FirstOrDefault(x => x.Id.Equals(productId));
             if (p != null)
             {
-                _basket.Amount -= p.Price * (decimal)p.Quantity; 
+                _basket.Amount -= p.Price * (decimal)p.Quantity;
                 _basket.Items.Remove(p);
             }
 
