@@ -1,0 +1,45 @@
+{
+  "project_info": {
+    "project_number": "162063598201",
+    "firebase_url": "https://comnotissimusoodji.firebaseio.com",
+    "project_id": "comnotissimusoodji"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:162063598201:android:d7230aef511ad5d0",
+        "android_client_info": {
+          "package_name": "com.notissimus.AppRopio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "162063598201-kvutrali3qdn3sae122np9m9josriuh0.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "162063598201-1jl3p48f53ckvmb5tta2v1nkntqieskr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYHIei0uGXSJmFoElz3pUoQ9rTBKJ4cps"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
