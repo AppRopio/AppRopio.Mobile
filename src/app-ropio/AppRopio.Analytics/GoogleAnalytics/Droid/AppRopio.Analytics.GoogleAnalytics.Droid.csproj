@@ -124,6 +124,9 @@
     <Reference Include="Xamarin.GooglePlayServices.Analytics">
       <HintPath>..\..\..\AppRopio.ECommerce\packages\Xamarin.GooglePlayServices.Analytics.60.1142.0\lib\MonoAndroid80\Xamarin.GooglePlayServices.Analytics.dll</HintPath>
     </Reference>
+    <Reference Include="Xamarin.GooglePlayServices.Analytics">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\Xamarin.GooglePlayServices.Analytics.60.1142.0\lib\MonoAndroid80\Xamarin.GooglePlayServices.Analytics.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />

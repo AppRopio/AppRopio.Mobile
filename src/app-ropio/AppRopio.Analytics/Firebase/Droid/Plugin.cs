@@ -1,4 +1,7 @@
 ﻿using System;
+using AppRopio.Analytics.Firebase.Core.Services;
+using AppRopio.Analytics.Firebase.Droid.Services;
+using MvvmCross.Platform;
 using MvvmCross.Platform.Plugins;
 
 namespace AppRopio.Analytics.Firebase.Droid
@@ -7,7 +10,14 @@ namespace AppRopio.Analytics.Firebase.Droid
     {
         public void Load()
         {
-            throw new NotImplementedException();
+            try
+            {
+                //string plistPath = Path.Combine(NSBundle.MainBundle.BundlePath, "GoogleService-Info.plist");
+                //global::Firebase.Core.App.Configure(new global::Firebase.Core.Options(plistPath));
+            }
+            catch { }
+
+            Mvx.RegisterSingleton<IFirebaseService>(() => new FirebaseService());
         }
     }
 }

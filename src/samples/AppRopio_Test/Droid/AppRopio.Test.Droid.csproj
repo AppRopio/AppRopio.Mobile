@@ -30,6 +30,8 @@
     <AndroidLinkMode>None</AndroidLinkMode>
     <AndroidSupportedAbis>arm64-v8a;armeabi;armeabi-v7a;x86;x86_64</AndroidSupportedAbis>
     <AndroidUseSharedRuntime>true</AndroidUseSharedRuntime>
+    <AndroidStoreUncompressedFileExtensions>.dll</AndroidStoreUncompressedFileExtensions>
+    <AndroidEnableMultiDex>true</AndroidEnableMultiDex>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -398,6 +400,9 @@
     <Compile Include="Bootstrap\AppRopio_InformationPluginBootstrap.cs" />
     <Compile Include="Bootstrap\AppRopio_ContactsPluginBootstrap.cs" />
     <Compile Include="Bootstrap\AppRopio_SettingsPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_AppsFlyerPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_FirebaseAnalyticsPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_GoogleAnalyticsPluginBootstrap.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -644,6 +649,8 @@
     <AndroidAsset Include="Assets\Settings\Configs\Products.json" />
     <AndroidAsset Include="Assets\Settings\Configs\Information.json" />
     <AndroidAsset Include="Assets\Settings\Configs\Settings.json" />
+    <AndroidAsset Include="Assets\Settings\Configs\AppsFlyer.json" />
+    <AndroidAsset Include="Assets\Settings\Configs\GoogleAnalytics.json" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\API\AppRopio.Base.API.csproj">
@@ -850,6 +857,30 @@
       <Project>{E26E8E61-01AB-4D1C-88A8-FE57A0287A67}</Project>
       <Name>AppRopio.Models.Settings</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Analytics\AppsFlyer\Core\AppRopio.Analytics.AppsFlyer.Core.csproj">
+      <Project>{FF262391-8114-4461-B2BD-4110535579A9}</Project>
+      <Name>AppRopio.Analytics.AppsFlyer.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Analytics\AppsFlyer\Droid\AppRopio.Analytics.AppsFlyer.Droid.csproj">
+      <Project>{309DF747-479C-4ADF-A81C-89159E7768BB}</Project>
+      <Name>AppRopio.Analytics.AppsFlyer.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Analytics\Firebase\Core\AppRopio.Analytics.Firebase.Core.csproj">
+      <Project>{4DF16D5C-5EF7-44B9-AD83-C737EA2BF38D}</Project>
+      <Name>AppRopio.Analytics.Firebase.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Analytics\Firebase\Droid\AppRopio.Analytics.Firebase.Droid.csproj">
+      <Project>{1E064034-55C2-4D9A-9BA0-1C1551D88B11}</Project>
+      <Name>AppRopio.Analytics.Firebase.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Analytics\GoogleAnalytics\Core\AppRopio.Analytics.GoogleAnalytics.Core.csproj">
+      <Project>{2A27A987-3DCD-4474-961C-06000D14CF40}</Project>
+      <Name>AppRopio.Analytics.GoogleAnalytics.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Analytics\GoogleAnalytics\Droid\AppRopio.Analytics.GoogleAnalytics.Droid.csproj">
+      <Project>{52DA34D5-DD5C-487B-B5DE-08C9AF04B61A}</Project>
+      <Name>AppRopio.Analytics.GoogleAnalytics.Droid</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="LocalizationResx\Auth.resx">
@@ -972,6 +1003,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Settings.ru.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <GoogleServicesJson Include="google-services.json" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets')" />
