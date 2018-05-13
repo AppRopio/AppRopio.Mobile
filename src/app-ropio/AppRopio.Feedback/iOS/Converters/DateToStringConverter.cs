@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Globalization;
 using MvvmCross.Platform.Converters;
+using AppRopio.Base.Core;
 
 namespace AppRopio.Feedback.iOS.Converters
 {
     public class DateToStringConverter : MvxValueConverter<DateTime, string>
 	{
-        public CultureInfo Culture { get; set; } = CultureInfo.InvariantCulture;
+        public CultureInfo Culture { get; set; } = AppSettings.SettingsCulture;
 
         protected override string Convert(DateTime value, Type targetType, object parameter, CultureInfo culture)
 		{

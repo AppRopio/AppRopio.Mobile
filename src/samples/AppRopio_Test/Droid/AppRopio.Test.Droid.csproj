@@ -404,6 +404,7 @@
     <Compile Include="Bootstrap\AppRopio_FirebaseAnalyticsPluginBootstrap.cs" />
     <Compile Include="Bootstrap\AppRopio_GoogleAnalyticsPluginBootstrap.cs" />
     <Compile Include="Bootstrap\AppRopio_LoyaltyPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_FeedbackPluginBootstrap.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -882,6 +883,22 @@
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Analytics\GoogleAnalytics\Droid\AppRopio.Analytics.GoogleAnalytics.Droid.csproj">
       <Project>{52DA34D5-DD5C-487B-B5DE-08C9AF04B61A}</Project>
       <Name>AppRopio.Analytics.GoogleAnalytics.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Feedback\API\AppRopio.Feedback.API.csproj">
+      <Project>{D3083AF1-F971-468D-8EB7-1F59A340C543}</Project>
+      <Name>AppRopio.Feedback.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Feedback\Core\AppRopio.Feedback.Core.csproj">
+      <Project>{BFB67EFA-1590-4E89-98B9-CB65C5D974BB}</Project>
+      <Name>AppRopio.Feedback.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Feedback\Droid\AppRopio.Feedback.Droid.csproj">
+      <Project>{AACFF13E-25CE-4264-9BE8-7873B6E403C5}</Project>
+      <Name>AppRopio.Feedback.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Feedback\AppRopio.Models.Feedback.csproj">
+      <Project>{1FA26338-9826-4DC9-B214-BE9159256E6D}</Project>
+      <Name>AppRopio.Models.Feedback</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
