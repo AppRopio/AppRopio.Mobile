@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <dimen
+        name="app_loyalty_promocode_height">72dp</dimen>
+    <dimen
+        name="app_loyalty_promocode_textinput_height">56dp</dimen>
+    <dimen
+        name="app_loyalty_promocode_inputLayout_horizontalMargin">16dp</dimen>
+    <dimen
+        name="app_loyalty_promocode_inputLayout_verticalMargin">4dp</dimen>
+</resources>

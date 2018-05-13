@@ -403,6 +403,7 @@
     <Compile Include="Bootstrap\AppRopio_AppsFlyerPluginBootstrap.cs" />
     <Compile Include="Bootstrap\AppRopio_FirebaseAnalyticsPluginBootstrap.cs" />
     <Compile Include="Bootstrap\AppRopio_GoogleAnalyticsPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_LoyaltyPluginBootstrap.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -651,6 +652,7 @@
     <AndroidAsset Include="Assets\Settings\Configs\Settings.json" />
     <AndroidAsset Include="Assets\Settings\Configs\AppsFlyer.json" />
     <AndroidAsset Include="Assets\Settings\Configs\GoogleAnalytics.json" />
+    <AndroidAsset Include="Assets\Settings\Configs\Loyalty.json" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\API\AppRopio.Base.API.csproj">
