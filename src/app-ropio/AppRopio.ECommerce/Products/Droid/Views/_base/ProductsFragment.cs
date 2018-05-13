@@ -8,6 +8,7 @@ using MvvmCross.Binding.Droid.BindingContext;
 using MvvmCross.Droid.Views;
 using MvvmCross.Platform;
 using MvvmCross.Platform.Platform;
+using MvvmCross.Binding.BindingContext;
 
 namespace AppRopio.ECommerce.Products.Droid.Views
 {
@@ -41,9 +42,13 @@ namespace AppRopio.ECommerce.Products.Droid.Views
 
         #region Protected
 
-        protected virtual void SetupTitle()
+        protected virtual void BindTitle()
         {
             Title = ViewModel?.Title;
+
+            var set = this.CreateBindingSet<ProductsFragment<T>, T>();
+            set.Bind().For("Title").To(vm => vm.Title);
+            set.Apply();
         }
 
         #endregion
@@ -65,7 +70,7 @@ namespace AppRopio.ECommerce.Products.Droid.Views
                     {
                         cartIndicatorView.BindingContext = new MvxAndroidBindingContext(Context, new MvxSimpleLayoutInflaterHolder(LayoutInflater), ViewModel.CartIndicatorVM);
 
-                        var menuItem = menu.Add(0, MENU_CARD_INDICATOR_ID, 0, new Java.Lang.String("Корзина"));
+                        var menuItem = menu.Add(0, MENU_CARD_INDICATOR_ID, 0, new Java.Lang.String(""));
 
                         menuItem.SetShowAsAction(Android.Views.ShowAsAction.Always);
                         menuItem.SetActionView(cartIndicatorView as Android.Views.View);
@@ -75,7 +80,7 @@ namespace AppRopio.ECommerce.Products.Droid.Views
 
             if (ViewModel?.SearchEnabled ?? false)
             {
-                var menuItem = menu.Add(0, MENU_SEARCH_ID, 0, new Java.Lang.String("Поиск"));
+                var menuItem = menu.Add(0, MENU_SEARCH_ID, 0, new Java.Lang.String(""));
 
                 var typedValue = new TypedValue();
                 Activity.Theme.ResolveAttribute(Resource.Attribute.app_products_ic_toolbar_search, typedValue, true);
@@ -110,7 +115,7 @@ namespace AppRopio.ECommerce.Products.Droid.Views
         {
             base.OnViewCreated(view, savedInstanceState);
 
-            SetupTitle();
+            BindTitle();
 
             HasOptionsMenu = true;
         }

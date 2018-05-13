@@ -2,6 +2,7 @@
 using AppRopio.Base.Core.Models.Navigation;
 using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.Views;
+using AppRopio.ECommerce.Basket.Core;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery;
 using AppRopio.ECommerce.Basket.iOS.Services;
 using MvvmCross.Binding.BindingContext;
@@ -25,7 +26,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Delivery
 
         protected override void InitializeControls()
         {
-            Title = "Подробнее";
+            Title = LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "DeliveryPoint_Details");
             NavigationController.NavigationBarHidden = false;
 
             if (ViewModel.VmNavigationType == NavigationType.PresentModal)

@@ -19,6 +19,7 @@ using MvvmCross.Binding.iOS.Views;
 using MvvmCross.iOS.Views;
 using MvvmCross.Platform;
 using UIKit;
+using AppRopio.ECommerce.Products.Core;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.ContentSearch
 {
@@ -179,6 +180,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ContentSearch
         protected virtual void BindClearHistoryBtn(UIButton clearHistoryBtn, MvxFluentBindingDescriptionSet<ContentSearchViewController, IContentSearchViewModel> set)
         {
             set.Bind(clearHistoryBtn).To(vm => vm.ClearHistoryCommand);
+            set.Bind(clearHistoryBtn).For("Title").To(vm => vm.ClearHistoryTitle);
             set.Bind(clearHistoryBtn).For("Visibility").To(vm => vm.HistoryItems.Count).WithConversion("Visibility");
         }
 
@@ -243,7 +245,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ContentSearch
                 _searchController = new BindableSearchController(searchResultsController: null);
 
                 NavigationItem.LargeTitleDisplayMode = UINavigationItemLargeTitleDisplayMode.Always;
-                NavigationItem.Title = "Поиск";
+                NavigationItem.Title = LocalizationService.GetLocalizableString(ProductsConstants.RESX_NAME, "ContentSearch_Title");
                 NavigationItem.HidesSearchBarWhenScrolling = false;
                 NavigationItem.SearchController = _searchController;
 

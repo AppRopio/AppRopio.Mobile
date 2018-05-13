@@ -8,6 +8,7 @@ using MvvmCross.Binding.BindingContext;
 using MvvmCross.Binding.iOS.Views;
 using MvvmCross.Platform;
 using UIKit;
+using AppRopio.ECommerce.Products.Core;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Selection
 {
@@ -44,7 +45,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Selection
 
         protected virtual UIBarButtonItem SetupClearButton()
         {
-            var clearBarBtn = new UIBarButtonItem("Сбросить", UIBarButtonItemStyle.Plain, null);
+            var clearBarBtn = new UIBarButtonItem(LocalizationService.GetLocalizableString(ProductsConstants.RESX_NAME, "Selection_Clear"), UIBarButtonItemStyle.Plain, null);
             clearBarBtn.SetupStyle(ThemeConfig.ProductDetails.Selection.ClearButton);
             return clearBarBtn;
         }
@@ -80,6 +81,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Selection
         protected virtual void BindApplyButton(UIButton applyBtn, MvxFluentBindingDescriptionSet<PDSelectionViewController, IProductDetailsSelectionViewModel> set)
         {
             set.Bind(applyBtn).To(vm => vm.ApplyCommand);
+            set.Bind(applyBtn).For("Title").To(vm => vm.ApplyTitle);
         }
 
         protected virtual void BindClearButton(UIBarButtonItem clearBtn, MvxFluentBindingDescriptionSet<PDSelectionViewController, IProductDetailsSelectionViewModel> set)

@@ -147,7 +147,7 @@ namespace AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrders
             {
                 Messenger.Publish(new ProductAddToBasketMessage(this));
                 
-                if (await UserDialogs.Confirm(response.Message, "Перейти"))
+                if (await UserDialogs.Confirm(response.Message, LocalizationService.GetLocalizableString(HistoryOrdersConstants.RESX_NAME, "HistoryOrderDetails_ToBasket")))
                 {
                     var historyOrdersNavigationVmService = Mvx.Resolve<IHistoryOrdersNavigationVmService>();
                     historyOrdersNavigationVmService.NavigateToBasket(new BaseBundle(NavigationType.Push));

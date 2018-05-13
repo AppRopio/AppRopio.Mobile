@@ -12,11 +12,6 @@ namespace AppRopio.Navigation.Menu.Core.Models
         public string Icon { get; set; }
 
         /// <summary>
-        /// Название пункта меню
-        /// </summary>
-        public string Name { get; set; }
-
-        /// <summary>
         /// Полная информация (включая неймспейс) о типе VM, отображаемой при выборе пункта меню
         /// </summary>
         public string Type { get; set; }

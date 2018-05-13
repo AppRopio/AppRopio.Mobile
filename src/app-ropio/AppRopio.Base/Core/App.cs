@@ -10,6 +10,7 @@ using AppRopio.Base.Core.Services.ViewModelLookup;
 using MvvmCross.Platform;
 using MvvmCross.Platform.Platform;
 using MvvmCross.Plugins.Messenger;
+using AppRopio.Base.Core.Services.Localization;
 
 namespace AppRopio.Base.Core
 {

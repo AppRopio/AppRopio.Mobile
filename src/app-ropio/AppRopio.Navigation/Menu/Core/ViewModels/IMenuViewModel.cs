@@ -19,7 +19,7 @@ namespace AppRopio.Navigation.Menu.Core.ViewModels
         /// <summary>
         /// Список ячеек в меню
         /// </summary>
-        ObservableCollection<IMenuItemVM> Items { get; set; }
+        MvxObservableCollection<IMenuItemVM> Items { get; set; }
 
         /// <summary>
         /// Футер списка

@@ -15,5 +15,7 @@ namespace AppRopio.Base.Filters.Core.ViewModels.Filters
         ICommand ClearCommand { get; }
 
         ObservableCollection<IFiltersItemVM> Items { get; }
+
+        string ApplyTitle { get; }
     }
 }

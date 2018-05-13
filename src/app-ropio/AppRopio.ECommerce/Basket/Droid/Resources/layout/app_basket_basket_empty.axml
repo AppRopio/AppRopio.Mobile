@@ -24,17 +24,19 @@
                 style="@style/app_basket_basket_empty_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal" />
+                android:layout_gravity="center_horizontal"
+                app:MvxBind="Text Resx('Basket_EmptyTitle','Basket')" />
             <TextView
                 style="@style/app_basket_basket_empty_subtitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal" />
+                android:layout_gravity="center_horizontal"
+                app:MvxBind="Text Resx('Basket_EmptyText','Basket')" />
         </LinearLayout>
     </RelativeLayout>
     <Button
         style="@style/app_basket_basket_empty_button"
         android:id="@+id/app_basket_basket_empty_button"
         android:layout_alignParentBottom="true"
-        app:MvxBind="Click CatalogCommand" />
+        app:MvxBind="Click CatalogCommand; Text Resx('Basket_EmptyButton','Basket')" />
 </RelativeLayout>

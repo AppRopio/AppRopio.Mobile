@@ -12,6 +12,7 @@ using MvvmCross.Binding.BindingContext;
 using MvvmCross.Binding.iOS.Views;
 using MvvmCross.Platform;
 using UIKit;
+using AppRopio.Feedback.Core;
 
 namespace AppRopio.Feedback.iOS.Views.ReviewPost
 {
@@ -51,12 +52,13 @@ namespace AppRopio.Feedback.iOS.Views.ReviewPost
 
 		protected virtual void SetupPostButton(UIButton postButton)
 		{
-			postButton.SetupStyle(ThemeConfig.ReviewPost.PostButton);
+            postButton.SetupStyle(ThemeConfig.ReviewPost.PostButton);
+            postButton.WithTitleForAllStates(LocalizationService.GetLocalizableString(FeedbackConstants.RESX_NAME, "Review_Send"));
 		}
 
 		protected virtual void SetupAccessoryButton(UIButton accessoryNextButton)
 		{
-			accessoryNextButton.SetTitle("Готово", UIControlState.Normal);
+            accessoryNextButton.SetTitle(LocalizationService.GetLocalizableString(FeedbackConstants.RESX_NAME, "Review_Done"), UIControlState.Normal);
 			accessoryNextButton.ChangeFrame(w: DeviceInfo.ScreenWidth, h: 44);
 			accessoryNextButton.SetupStyle(ThemeConfig.ReviewPost.AccessoryNextButton);
 		}
@@ -100,7 +102,7 @@ namespace AppRopio.Feedback.iOS.Views.ReviewPost
 
 		protected override void InitializeControls()
 		{
-			Title = "Отзыв";
+            Title = LocalizationService.GetLocalizableString(FeedbackConstants.RESX_NAME, "Review_Title");
 
 			RegisterKeyboardActions = true;
 

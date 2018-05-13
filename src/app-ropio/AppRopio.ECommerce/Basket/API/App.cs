@@ -12,15 +12,15 @@ namespace AppRopio.ECommerce.Basket.API
         {
             if (ApiSettings.DebugServiceEnabled)
             {
-                Mvx.RegisterSingleton<IBasketService>(() => new BasketFakeService());
-                Mvx.RegisterSingleton<IOrderService>(() => new OrderFakeService());
-                Mvx.RegisterSingleton<IDeliveryService>(() => new DeliveryFakeService());
+                Mvx.RegisterType<IBasketService>(() => new BasketFakeService());
+                Mvx.RegisterType<IOrderService>(() => new OrderFakeService());
+                Mvx.RegisterType<IDeliveryService>(() => new DeliveryFakeService());
             }
             else
             {
-                Mvx.RegisterSingleton<IBasketService>(() => new BasketService());
-                Mvx.RegisterSingleton<IOrderService>(() => new OrderService());
-                Mvx.RegisterSingleton<IDeliveryService>(() => new DeliveryService());
+                Mvx.RegisterType<IBasketService>(() => new BasketService());
+                Mvx.RegisterType<IOrderService>(() => new OrderService());
+                Mvx.RegisterType<IDeliveryService>(() => new DeliveryService());
             }
         }
     }

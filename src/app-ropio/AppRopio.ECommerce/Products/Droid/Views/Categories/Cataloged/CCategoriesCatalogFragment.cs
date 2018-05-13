@@ -20,9 +20,11 @@ namespace AppRopio.ECommerce.Products.Droid.Views.Categories.Cataloged
             return view;
         }
 
-        protected override void SetupTitle()
+        protected override void BindTitle()
         {
-            
+            if (ViewModel?.VmNavigationType != Base.Core.Models.Navigation.NavigationType.InsideScreen &&
+                ViewModel?.VmNavigationType != Base.Core.Models.Navigation.NavigationType.None)
+                base.BindTitle();
         }
     }
 }

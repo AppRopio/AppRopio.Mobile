@@ -8,6 +8,12 @@ namespace AppRopio.Base.Core.Combiners
 {
     public class PriceUnitCombiner : MvxValueCombiner
     {
+        private NumberFormatInfo _defaultFormat = (NumberFormatInfo)AppSettings.SettingsCulture.NumberFormat.Clone();
+
+        public string CurrencyFormat { get; set; } = "C0";
+
+        public string CurrencySymbol { get; set; } = AppSettings.SettingsCulture.NumberFormat.CurrencySymbol;
+
         public override bool TryGetValue(System.Collections.Generic.IEnumerable<MvvmCross.Binding.Bindings.SourceSteps.IMvxSourceStep> steps, out object value)
         {
             var priceString = string.Empty;
@@ -20,13 +26,13 @@ namespace AppRopio.Base.Core.Combiners
                 if (priceValue.SourceType == typeof(Decimal))
                 {
                     var price = Convert.ToDecimal(priceValue.GetValue());
-                    priceString += price.ToString("C0", (NumberFormatInfo)new CultureInfo("ru").NumberFormat.Clone());
+                    priceString += price.ToString(CurrencyFormat, _defaultFormat);
                 }
                 else if (priceValue.SourceType == typeof(Decimal?))
                 {
                     var price = (decimal?)priceValue.GetValue();
                     if (price.HasValue)
-                        priceString += price.Value.ToString("C0", (NumberFormatInfo)new CultureInfo("ru").NumberFormat.Clone());
+                        priceString += price.Value.ToString(CurrencyFormat, _defaultFormat);
                 }
             }
 

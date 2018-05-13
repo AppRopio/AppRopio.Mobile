@@ -6,6 +6,8 @@ using AppRopio.ECommerce.Basket.iOS.Services;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Platform;
 using UIKit;
+using AppRopio.ECommerce.Basket.Core;
+using AppRopio.Base.iOS.UIExtentions;
 
 namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Thanks
 {
@@ -36,6 +38,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Thanks
         protected virtual void SetupTitle(UILabel title)
 		{
             title.SetupStyle(Theme.Thanks.Title);
+            title.Text = LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Thanks_Title");
 		}
 
 		protected virtual void SetupOrderNumber(UILabel orderNumber)
@@ -46,11 +49,13 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Thanks
 		protected virtual void SetupContinueTitle(UILabel continueTitle)
 		{
             continueTitle.SetupStyle(Theme.Thanks.OrderNumber);
+            continueTitle.Text = LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Thanks_Text");
 		}
 
         protected virtual void SetupCatalogButton(UIButton catalogButton)
 		{
             catalogButton.SetupStyle(Theme.Thanks.CatalogButton);
+            catalogButton.WithTitleForAllStates(LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Thanks_Catalog"));
 		}
 
 		protected override void BindControls()

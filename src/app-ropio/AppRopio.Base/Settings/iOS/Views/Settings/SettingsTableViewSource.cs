@@ -26,6 +26,7 @@ namespace AppRopio.Base.Settings.iOS.Views.Settings
             switch (itemVm.ElementType)
 			{
                 case SettingsElementType.Region:
+                case SettingsElementType.Language:
 					return tableView.DequeueReusableCell(SettingsPickerCell.Key, indexPath);
 
                 case SettingsElementType.Geolocation:

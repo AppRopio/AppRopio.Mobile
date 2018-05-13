@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+<!--  Settings  -->
+    <style
+        name  ="app_settings_settings_item_title"
+        parent="AppRopio.TextAppearance.Body1">
+        <item
+            name="android:maxLines">1</item>
+        <item
+            name="android:ellipsize">end</item>
+    </style>
+    <style
+        name  ="app_settings_settings_item_subtitle"
+        parent="AppRopio.TextAppearance.Body1">
+        <item
+            name="android:maxLines">1</item>
+        <item
+            name="android:ellipsize">end</item>
+        <item
+            name="android:textColor">?attr/app_color_textGray</item>
+        <item
+            name="android:gravity">right</item>
+    </style>
+    <style
+        name="app_settings_settings_item_check">
+        <item
+            name="android:layout_width">@dimen/app_clickable_size</item>
+        <item
+            name="android:layout_height">@dimen/app_clickable_size</item>
+        <item
+            name="android:scaleType">center</item>
+        <item
+            name="android:src">?attr/app_settings_ic_check</item>
+    </style>
+    <style
+        name="app_settings_settings_item_header"
+        parent="AppRopio.TextAppearance.Body1.Bold">
+        <item
+            name="android:maxLines">1</item>
+        <item
+            name="android:ellipsize">end</item>
+    </style>
+</resources>

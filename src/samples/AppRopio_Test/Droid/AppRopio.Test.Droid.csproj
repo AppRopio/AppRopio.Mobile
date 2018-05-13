@@ -305,6 +305,99 @@
     <Compile Include="Bootstrap\AppRopio_MarkedPluginBootstrap.cs" />
     <Compile Include="Bootstrap\AppRopio_HistoryOrdersPluginBootstrap.cs" />
     <Compile Include="Bootstrap\AppRopio_MapPluginBootstrap.cs" />
+    <Compile Include="LocalizationResx\Auth.Designer.cs">
+      <DependentUpon>Auth.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Auth.ru.Designer.cs">
+      <DependentUpon>Auth.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Base.Designer.cs">
+      <DependentUpon>Base.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Base.ru.Designer.cs">
+      <DependentUpon>Base.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Basket.Designer.cs">
+      <DependentUpon>Basket.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Basket.ru.Designer.cs">
+      <DependentUpon>Basket.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Contacts.Designer.cs">
+      <DependentUpon>Contacts.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Contacts.ru.Designer.cs">
+      <DependentUpon>Contacts.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Feedback.Designer.cs">
+      <DependentUpon>Feedback.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Feedback.ru.Designer.cs">
+      <DependentUpon>Feedback.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Filters.Designer.cs">
+      <DependentUpon>Filters.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Filters.ru.Designer.cs">
+      <DependentUpon>Filters.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\HistoryOrders.Designer.cs">
+      <DependentUpon>HistoryOrders.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\HistoryOrders.ru.Designer.cs">
+      <DependentUpon>HistoryOrders.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Information.Designer.cs">
+      <DependentUpon>Information.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Information.ru.Designer.cs">
+      <DependentUpon>Information.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Loyalty.Designer.cs">
+      <DependentUpon>Loyalty.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Loyalty.ru.Designer.cs">
+      <DependentUpon>Loyalty.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Map.Designer.cs">
+      <DependentUpon>Map.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Map.ru.Designer.cs">
+      <DependentUpon>Map.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Marked.Designer.cs">
+      <DependentUpon>Marked.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Marked.ru.Designer.cs">
+      <DependentUpon>Marked.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Menu.Designer.cs">
+      <DependentUpon>Menu.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Menu.ru.Designer.cs">
+      <DependentUpon>Menu.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Products.Designer.cs">
+      <DependentUpon>Products.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Products.ru.Designer.cs">
+      <DependentUpon>Products.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Profile.Designer.cs">
+      <DependentUpon>Profile.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Profile.ru.Designer.cs">
+      <DependentUpon>Profile.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Settings.Designer.cs">
+      <DependentUpon>Settings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Settings.ru.Designer.cs">
+      <DependentUpon>Settings.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\AppRopio_InformationPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_ContactsPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_SettingsPluginBootstrap.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -541,6 +634,7 @@
     <Folder Include="Resources\drawable\" />
     <Folder Include="Resources\layout\" />
     <Folder Include="Resources\font\" />
+    <Folder Include="LocalizationResx\" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Settings\Configs\App.json" />
@@ -548,6 +642,8 @@
     <AndroidAsset Include="Assets\Settings\Configs\Filters.json" />
     <AndroidAsset Include="Assets\Settings\Configs\Menu.json" />
     <AndroidAsset Include="Assets\Settings\Configs\Products.json" />
+    <AndroidAsset Include="Assets\Settings\Configs\Information.json" />
+    <AndroidAsset Include="Assets\Settings\Configs\Settings.json" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\API\AppRopio.Base.API.csproj">
@@ -706,6 +802,176 @@
       <Project>{2A2E97B5-DC27-4FC7-A7A2-63E4780FF49A}</Project>
       <Name>AppRopio.Analytics.MobileCenter.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Information\API\AppRopio.Base.Information.API.csproj">
+      <Project>{BA05AB1F-8F86-415E-9EDB-0FECEF2E211B}</Project>
+      <Name>AppRopio.Base.Information.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Information\Core\AppRopio.Base.Information.Core.csproj">
+      <Project>{84265D8D-033F-4A4F-852A-96C93E8573A2}</Project>
+      <Name>AppRopio.Base.Information.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Information\Droid\AppRopio.Base.Information.Droid.csproj">
+      <Project>{31CEE808-7057-4D2E-A1EF-ED7128938D5A}</Project>
+      <Name>AppRopio.Base.Information.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Information\AppRopio.Models.Information.csproj">
+      <Project>{18FC63AF-DFAC-4AD8-80C3-D48C7C266853}</Project>
+      <Name>AppRopio.Models.Information</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Contacts\API\AppRopio.Base.Contacts.API.csproj">
+      <Project>{B972BFB8-3481-4411-83DE-50CF6780D028}</Project>
+      <Name>AppRopio.Base.Contacts.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Contacts\Core\AppRopio.Base.Contacts.Core.csproj">
+      <Project>{2BD59760-4635-4B39-835F-CFD29A45BC96}</Project>
+      <Name>AppRopio.Base.Contacts.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Contacts\Droid\AppRopio.Base.Contacts.Droid.csproj">
+      <Project>{3F33DEA8-81B2-473B-AA60-C9720D0863F4}</Project>
+      <Name>AppRopio.Base.Contacts.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Contacts\AppRopio.Models.Contacts.csproj">
+      <Project>{747299BF-FAF3-4C47-BF4C-B1A949BB5F56}</Project>
+      <Name>AppRopio.Models.Contacts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Settings\API\AppRopio.Base.Settings.API.csproj">
+      <Project>{BF38EC97-5E5F-42BE-959A-05620DC0E5F1}</Project>
+      <Name>AppRopio.Base.Settings.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Settings\Core\AppRopio.Base.Settings.Core.csproj">
+      <Project>{2567456C-1009-4EA0-8444-D0B1D3344569}</Project>
+      <Name>AppRopio.Base.Settings.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Settings\Droid\AppRopio.Base.Settings.Droid.csproj">
+      <Project>{90CA3749-B1AE-47D7-85A9-CD446EA0711A}</Project>
+      <Name>AppRopio.Base.Settings.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Settings\AppRopio.Models.Settings.csproj">
+      <Project>{E26E8E61-01AB-4D1C-88A8-FE57A0287A67}</Project>
+      <Name>AppRopio.Models.Settings</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="LocalizationResx\Auth.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Auth.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Auth.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Auth.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Base.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Base.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Base.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Base.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Basket.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Basket.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Basket.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Basket.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Contacts.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Contacts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Contacts.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Contacts.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Feedback.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Feedback.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Feedback.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Feedback.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Filters.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Filters.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Filters.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Filters.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\HistoryOrders.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>HistoryOrders.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\HistoryOrders.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>HistoryOrders.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Information.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Information.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Information.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Information.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Loyalty.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Loyalty.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Loyalty.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Loyalty.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Map.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Map.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Map.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Map.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Marked.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Marked.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Marked.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Marked.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Menu.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Menu.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Menu.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Menu.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Products.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Products.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Products.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Products.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Profile.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Profile.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Profile.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Profile.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Settings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Settings.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Settings.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets')" />

@@ -2,7 +2,6 @@
 using AppRopio.Base.Auth.iOS.Models;
 using AppRopio.Base.Auth.iOS.Services;
 using AppRopio.Base.iOS;
-using AppRopio.Base.iOS.UIExtentions;
 using AppRopio.Base.iOS.Views;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Platform;
@@ -10,7 +9,7 @@ using UIKit;
 
 namespace AppRopio.Base.Auth.iOS.Views.Auth
 {
-	public partial class AuthViewController : CommonViewController<IAuthViewModel>
+    public partial class AuthViewController : CommonViewController<IAuthViewModel>
 	{
 		public AuthViewController()
 			: base("AuthViewController", null)
@@ -28,19 +27,16 @@ namespace AppRopio.Base.Auth.iOS.Views.Auth
 		{
 			var theme = ThemeConfig;
 			button.SetupStyle(ThemeConfig.Button);
-			button.WithTitleForAllStates("ВОЙТИ");
 		}
 
 		protected virtual void SetupSignUpBtn(UIButton button)
 		{
 			button.SetupStyle(ThemeConfig.Button);
-			button.WithTitleForAllStates("Создать аккаунт".ToUpper());
 		}
 
 		protected virtual void SetupSkipBtn(UIButton button)
 		{
 			button.SetupStyle(ThemeConfig.TextButton);
-			button.WithTitleForAllStates("Пропустить");
 		}
 
 		protected virtual void SetupVkBtn(UIButton button)
@@ -67,16 +63,19 @@ namespace AppRopio.Base.Auth.iOS.Views.Auth
 		protected virtual void BindSignInBtn(UIButton button, MvxFluentBindingDescriptionSet<AuthViewController, IAuthViewModel> set)
 		{
 			set.Bind(button).To(vm => vm.NavigateToSignInCommand);
+            set.Bind(button).For("Title").To(vm => vm.SignInText);
 		}
 
 		protected virtual void BindSignUpBtn(UIButton button, MvxFluentBindingDescriptionSet<AuthViewController, IAuthViewModel> set)
 		{
 			set.Bind(button).To(vm => vm.NavigateToSignUpCommand);
+            set.Bind(button).For("Title").To(vm => vm.SignUpText);
 		}
 
 		protected virtual void BindSkipBtn(UIButton button, MvxFluentBindingDescriptionSet<AuthViewController, IAuthViewModel> set)
 		{
 			set.Bind(button).To(vm => vm.SkipAuthCommand);
+            set.Bind(button).For("Title").To(vm => vm.SkipText);
 		}
 
 		protected virtual void BindVkBtn(UIButton button, MvxFluentBindingDescriptionSet<AuthViewController, IAuthViewModel> set)

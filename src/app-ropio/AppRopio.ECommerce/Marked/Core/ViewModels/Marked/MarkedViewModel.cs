@@ -16,6 +16,16 @@ namespace AppRopio.ECommerce.Marked.Core.ViewModels.Marked
     [Deeplink("marked")]
     public class MarkedViewModel : CatalogViewModel, IMarkedViewModel
     {
+        #region Properties
+
+        public override string NoResultsTitle => LocalizationService.GetLocalizableString(MarkedConstants.RESX_NAME, "EmptyTitle");
+
+        public override string NoResultsText => LocalizationService.GetLocalizableString(MarkedConstants.RESX_NAME, "EmptyText");
+
+        public override string CatalogTitle => LocalizationService.GetLocalizableString(MarkedConstants.RESX_NAME, "GoToCatalog");
+
+        #endregion
+
         #region Services
 
         protected new IMarkedVmService VmService { get { return Mvx.Resolve<IMarkedVmService>(); } }
@@ -129,7 +139,8 @@ namespace AppRopio.ECommerce.Marked.Core.ViewModels.Marked
             VmNavigationType = parameters.NavigationType == NavigationType.None ?
                                                             NavigationType.ClearAndPush :
                                                             parameters.NavigationType;
-            Title = "Избранное";
+
+            Title = LocalizationService.GetLocalizableString(MarkedConstants.RESX_NAME, "Title");
         }
 
         #endregion

@@ -5,6 +5,7 @@ using Android.Views;
 using AppRopio.Base.Droid.Views;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery;
 using Android.Gms.Maps.Model;
+using AppRopio.ECommerce.Basket.Core;
 
 namespace AppRopio.ECommerce.Basket.Droid.Views.Order.Delivery
 {
@@ -16,8 +17,9 @@ namespace AppRopio.ECommerce.Basket.Droid.Views.Order.Delivery
         private MapView _mapView;
 
         public DeliveryPointOnMapFragment()
-            : base(Resource.Layout.app_basket_delivery_point_on_map, "На карте")
+            : base(Resource.Layout.app_basket_delivery_point_on_map)
         {
+            Title = LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "DeliveryPoint_OnMap");
         }
 
         private int GetStatusBarHeight()

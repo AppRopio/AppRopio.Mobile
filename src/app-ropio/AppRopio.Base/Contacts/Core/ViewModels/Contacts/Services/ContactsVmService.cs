@@ -11,6 +11,7 @@ using AppRopio.Models.Contacts.Enums;
 using AppRopio.Models.Contacts.Responses;
 using MvvmCross.Platform;
 using Plugin.Messaging;
+using AppRopio.Base.Core.Services.Localization;
 
 namespace AppRopio.Base.Contacts.Core.ViewModels.Contacts.Services
 {
@@ -21,6 +22,8 @@ namespace AppRopio.Base.Contacts.Core.ViewModels.Contacts.Services
         protected IContactsService ApiService => Mvx.Resolve<IContactsService>();
 
         protected ILocationService LocationService => Mvx.Resolve<ILocationService>();
+
+        protected ILocalizationService LocalizationService => Mvx.Resolve<ILocalizationService>();
 
         #endregion
 
@@ -61,7 +64,7 @@ namespace AppRopio.Base.Contacts.Core.ViewModels.Contacts.Services
                     break;
 
                 case ContactTypes.Phone:
-                    if (await userDialogs.Confirm($"Набрать {contact.DisplayValue}?", "Набрать")
+                    if (await userDialogs.Confirm($"{LocalizationService.GetLocalizableString(ContactsConstants.RESX_NAME, "CallTo")} {contact.DisplayValue}?", LocalizationService.GetLocalizableString(ContactsConstants.RESX_NAME, "MakeCall"))
                         && CrossMessaging.Current.PhoneDialer.CanMakePhoneCall)
                     {
                         CrossMessaging.Current.PhoneDialer.MakePhoneCall(contact.DisplayValue);
@@ -73,7 +76,7 @@ namespace AppRopio.Base.Contacts.Core.ViewModels.Contacts.Services
                     break;
 
                 case ContactTypes.Address:
-                    if (await userDialogs.Confirm($"Перейти в Карты?", "Перейти"))
+                    if (await userDialogs.Confirm(LocalizationService.GetLocalizableString(ContactsConstants.RESX_NAME, "OpenInMap"), LocalizationService.GetLocalizableString(ContactsConstants.RESX_NAME, "GoToMap")))
                         await launcher.LaunchAddress(contact.Value);
                     break;
             }

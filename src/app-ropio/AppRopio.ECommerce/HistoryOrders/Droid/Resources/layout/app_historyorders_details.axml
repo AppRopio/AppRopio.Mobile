@@ -25,7 +25,7 @@
                     android:layout_weight="1"
                     android:layout_marginLeft="@dimen/app_historyorders_item_horizontalMargins"
                     android:layout_gravity="center_vertical"
-                    app:MvxBind="Text Format('Состав заказа ({0})', ItemsCount)" />
+                    app:MvxBind="Text Format('{1} ({0})', ItemsCount, Resx('HistoryOrderDetails_OrderList','HistoryOrders'))" />
                 <ImageView
                     style="@style/app_historyorders_ic_arrow" />
             </LinearLayout>
@@ -67,7 +67,7 @@
                     style="@style/app_historyorders_details_delivery"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/app_historyorders_details_delivery" />
+                    app:MvxBind="Text Resx('HistoryOrderDetails_Delivery','HistoryOrders')" />
                 <TextView
                     style="@style/app_historyorders_details_deliveryPrice"
                     android:layout_width="0dp"
@@ -87,7 +87,7 @@
                     style="@style/app_historyorders_details_payment"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/app_historyorders_details_payment" />
+                    app:MvxBind="Text Resx('HistoryOrderDetails_PaymentType','HistoryOrders')" />
                 <TextView
                     style="@style/app_historyorders_details_paymentType"
                     android:layout_width="0dp"
@@ -113,7 +113,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
-            android:text="@string/app_historyorders_details_summary" />
+            app:MvxBind="Text Resx('HistoryOrderDetails_Amount','HistoryOrders')" />
         <TextView
             style="@style/app_historyorders_details_summaryPrice"
             android:layout_width="0dp"
@@ -126,7 +126,7 @@
         style="@style/app_historyorders_details_button"
         android:id="@+id/app_historyorders_details_button"
         android:layout_alignParentBottom="true"
-        app:MvxBind="Click RepeatOrderCommand; Visibility InvertedVisibility(Loading)" />
+        app:MvxBind="Click RepeatOrderCommand; Visibility InvertedVisibility(Loading); Text Resx('HistoryOrderDetails_RepeatOrder','HistoryOrders')" />
     <include
         layout="@layout/app_base_loading" />
 </RelativeLayout>

@@ -10,5 +10,7 @@ namespace AppRopio.Base.Auth.Core
 		public const string CONFIG_NAME = "Auth.json";
 
 		public const string user_phone_number_bundle = "phonenumberBundle";
+
+        public const string RESX_NAME = "Auth";
     }
 }

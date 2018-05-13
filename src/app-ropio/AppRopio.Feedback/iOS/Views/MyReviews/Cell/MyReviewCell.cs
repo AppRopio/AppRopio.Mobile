@@ -11,6 +11,7 @@ using MvvmCross.Binding.BindingContext;
 using MvvmCross.Binding.iOS.Views;
 using MvvmCross.Platform;
 using UIKit;
+using AppRopio.Base.Core;
 
 namespace AppRopio.Feedback.iOS.Views.MyReviews.Cell
 {
@@ -94,7 +95,7 @@ namespace AppRopio.Feedback.iOS.Views.MyReviews.Cell
 		protected virtual void BindDate(UILabel date, MvxFluentBindingDescriptionSet<MyReviewCell, IReviewItemVm> set)
 		{
 			var converter = new DateToStringConverter();
-			converter.Culture = new CultureInfo("ru");
+            converter.Culture = AppSettings.SettingsCulture;
 			set.Bind(date).To(vm => vm.Date).WithConversion(converter, "dd MMMM yyyy");
 		}
 

@@ -15,6 +15,8 @@ using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using MvvmCross.Platform.WeakSubscription;
 using UIKit;
+using AppRopio.Base.Core.Services.Localization;
+using AppRopio.ECommerce.Basket.Core;
 
 namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Full
 {
@@ -179,7 +181,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Full
         {
             var headerView = tableView.DequeueReusableHeaderFooterView(SectionHeader.Key) as SectionHeader;
 
-            headerView.Title = (section == (Sections - 1) ? "Тип доставки" : (ItemsSource.ElementAt((int)section) as IOrderFieldsGroupVM).Name);
+            headerView.Title = (section == (Sections - 1) ? Mvx.Resolve<ILocalizationService>().GetLocalizableString(BasketConstants.RESX_NAME, "Order_DeliveryTypeHeader") : (ItemsSource.ElementAt((int)section) as IOrderFieldsGroupVM).Name);
 
             return headerView;
         }

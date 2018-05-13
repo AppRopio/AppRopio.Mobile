@@ -13,7 +13,8 @@
         <TextView
             style="@style/app_basket_payment_title"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/app_basket_payment_title_height" />
+            android:layout_height="@dimen/app_basket_payment_title_height"
+            app:MvxBind="Text Resx('Payment_Title','Basket')" />
         <View
             style="@style/AppRopioTheme.Control.Separator"
             android:layout_alignParentBottom="true" />

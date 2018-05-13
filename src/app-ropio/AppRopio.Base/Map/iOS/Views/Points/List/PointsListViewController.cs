@@ -10,6 +10,7 @@ using CoreGraphics;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Platform;
 using UIKit;
+using AppRopio.Base.Map.Core;
 
 namespace AppRopio.Base.Map.iOS.Views.Points.List
 {
@@ -32,7 +33,7 @@ namespace AppRopio.Base.Map.iOS.Views.Points.List
 
         protected override void InitializeControls()
         {
-            Title = "Адреса";
+            Title = LocalizationService.GetLocalizableString(MapConstants.RESX_NAME, "List_Title");
 
             _searchController = new BindableSearchController(searchResultsController: null);
 

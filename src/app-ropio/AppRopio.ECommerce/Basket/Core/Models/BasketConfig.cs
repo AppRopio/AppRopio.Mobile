@@ -30,8 +30,6 @@ namespace AppRopio.ECommerce.Basket.Core.Models
         /// </summary>
         [Obsolete("Рефакторинг", true)]
         public bool CanDeliveryWithPostcard { get; set; }
-
-        public string DeliveryEmptyText { get; set; }
     }
 
     [JsonConverter(typeof(StringEnumConverter))]

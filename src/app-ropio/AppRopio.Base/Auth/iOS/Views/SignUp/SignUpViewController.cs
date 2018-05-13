@@ -12,6 +12,8 @@ using MvvmCross.Binding.BindingContext;
 using MvvmCross.Binding.iOS.Views;
 using MvvmCross.Platform;
 using UIKit;
+using AppRopio.Base.Core.Services.Localization;
+using AppRopio.Base.Auth.Core;
 
 namespace AppRopio.Base.Auth.iOS.Views.SignUp
 {
@@ -23,7 +25,7 @@ namespace AppRopio.Base.Auth.iOS.Views.SignUp
 		{
 			get
 			{
-				return "Продолжить".ToUpper();
+                return ViewModel.SignUpText;
 			}
 		}
 
@@ -31,7 +33,8 @@ namespace AppRopio.Base.Auth.iOS.Views.SignUp
 
 		#region Constructor
 
-		public SignUpViewController() : base("SignUpViewController", null)
+		public SignUpViewController() 
+            : base("SignUpViewController", null)
 		{
 			RegisterKeyboardActions = true;
 		}
@@ -105,7 +108,7 @@ namespace AppRopio.Base.Auth.iOS.Views.SignUp
 
 		protected virtual void SetLegalText(UITextView textView)
 		{
-			var legalText = Config.LegalText;
+            var legalText = Mvx.Resolve<ILocalizationService>().GetLocalizableString(AuthConst.RESX_NAME, "TermsText");
 
 			string pattern = @"(\[.*\])";
 			Regex regex = new Regex(pattern);
@@ -171,7 +174,7 @@ namespace AppRopio.Base.Auth.iOS.Views.SignUp
 		protected virtual void SetupTitleLabel(UILabel label)
 		{
 			label.SetupStyle(ThemeConfig.Title);
-			label.Text = "Будьте с нами!";
+            label.Text = Mvx.Resolve<ILocalizationService>().GetLocalizableString(AuthConst.RESX_NAME, "SignUp_Join");
 		}
 
 		protected virtual void RegisterTableCells(UITableView tableView)
@@ -191,7 +194,6 @@ namespace AppRopio.Base.Auth.iOS.Views.SignUp
 		{
 			button.TouchUpInside += OnNextButtonClick;
 			button.SetupStyle(ThemeConfig.Button);
-			button.WithTitleForAllStates("Продолжить".ToUpper());
 		}
 
 		#endregion
@@ -218,13 +220,15 @@ namespace AppRopio.Base.Auth.iOS.Views.SignUp
 
 		protected virtual void BindAccessoryBtn(UIButton button, MvxFluentBindingDescriptionSet<SignUpViewController, ISignUpViewModel> set)
 		{
-			set.Bind(button).To(vm => vm.SignUpCommand);
+            set.Bind(button).To(vm => vm.SignUpCommand);
+            set.Bind(button).For("Title").To(vm => vm.SignUpText);
 			set.Bind(button).For(p => p.Enabled).To(vm => vm.PropertiesValid);
 		}
 
 		protected virtual void BindNextBtn(UIButton button, MvxFluentBindingDescriptionSet<SignUpViewController, ISignUpViewModel> set)
 		{
 			set.Bind(button).To(vm => vm.SignUpCommand);
+            set.Bind(button).For("Title").To(vm => vm.SignUpText);
 			set.Bind(button).For(p => p.Enabled).To(vm => vm.PropertiesValid);
 		}
 
@@ -236,7 +240,7 @@ namespace AppRopio.Base.Auth.iOS.Views.SignUp
 		{
 			base.InitializeControls();
 
-			Title = "Регистрация";
+            Title = Mvx.Resolve<ILocalizationService>().GetLocalizableString(AuthConst.RESX_NAME, "SignUp_Title");
 
 			SetupImage(_iconImage);
 

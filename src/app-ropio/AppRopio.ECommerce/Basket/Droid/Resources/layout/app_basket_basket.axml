@@ -20,7 +20,7 @@
         <Button
             style="@style/app_basket_basket_button"
             android:id="@+id/app_basket_basket_button"
-            app:MvxBind="Click NextCommand; Enabled CanGoNext; Visibility Visibility(Items.Count); Text PriceFormatUnit(Amount, ParsePriceFormatUnitParameter('PrefixString=ЗАКАЗАТЬ ЗА ,Format=ru')); " />
+            app:MvxBind="Click NextCommand; Enabled CanGoNext; Visibility Visibility(Items.Count); Text PriceFormatUnit(Amount, ParsePriceFormatUnitParameter('StringName=Basket_OrderBy,ResxName=Basket')); " />
     </LinearLayout>
     <include
         layout="@layout/app_basket_basket_empty" />

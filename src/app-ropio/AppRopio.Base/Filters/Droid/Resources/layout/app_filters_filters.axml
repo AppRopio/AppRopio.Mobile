@@ -13,7 +13,7 @@
         style="@style/app_filters_filters_button"
         android:id="@+id/app_filters_filters_button"
         android:layout_alignParentBottom="true"
-        app:MvxBind="Click ApplyCommand; Visibility Visibility(Items.Count);" />
+        app:MvxBind="Click ApplyCommand; Visibility Visibility(Items.Count); Text Resx('Filters_Apply','Filters')" />
     <include
         layout="@layout/app_base_loading" />
 </RelativeLayout>

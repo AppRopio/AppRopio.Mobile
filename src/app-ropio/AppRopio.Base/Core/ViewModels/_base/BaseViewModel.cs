@@ -11,6 +11,7 @@ using MvvmCross.Platform;
 using MvvmCross.Platform.Platform;
 using MvvmCross.Plugins.Messenger;
 using System.Threading.Tasks;
+using AppRopio.Base.Core.Services.Localization;
 
 namespace AppRopio.Base.Core.ViewModels
 {
@@ -104,6 +105,8 @@ namespace AppRopio.Base.Core.ViewModels
         protected IDeviceService DeviceService => Mvx.Resolve<IDeviceService>();
 
         protected IMvxMessenger Messenger => Mvx.Resolve<IMvxMessenger>();
+
+        protected ILocalizationService LocalizationService => Mvx.Resolve<ILocalizationService>();
 
         #endregion
 

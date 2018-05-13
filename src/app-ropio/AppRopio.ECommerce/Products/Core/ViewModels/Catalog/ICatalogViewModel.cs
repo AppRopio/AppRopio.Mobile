@@ -19,6 +19,12 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Catalog
         ICommand ShowSortCommand { get; }
 
         ICommand ShowFiltersCommand { get; }
+
+        string CatalogTitle { get; }
+
+        string NoResultsTitle { get; }
+
+        string NoResultsText { get; }
     }
 }
 

@@ -7,7 +7,7 @@
         style="@style/app_basket_productCardView_buyButton"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:MvxBind="Click BuyCommand; Visibility InvertedVisibility(UnitStepVisible)" />
+        app:MvxBind="Click BuyCommand; Visibility InvertedVisibility(UnitStepVisible); Text Resx('BasketProductCard_AddToBasket','Basket')" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

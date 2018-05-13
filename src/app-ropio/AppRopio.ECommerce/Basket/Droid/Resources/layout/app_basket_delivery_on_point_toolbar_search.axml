@@ -28,10 +28,9 @@
             android:id="@+id/app_basket_delivery_on_point_toolbar_onSearch_input"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="@string/app_basket_delivery_on_point_toolbar_onSearch_input_hint"
             android:inputType="text"
             android:maxLines="1"
             android:background="@null"
-            app:MvxBind="Text SearchText" />
+            app:MvxBind="Text SearchText; Hint Resx('DeliveryPoint_SearchHint','Basket')" />
     </android.support.v7.widget.Toolbar>
 </android.support.design.widget.AppBarLayout>

@@ -10,6 +10,7 @@ using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Services;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using MvvmCross.Plugins.Messenger;
+using AppRopio.Base.Core;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery
 {
@@ -151,9 +152,9 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery
                 if (DeliveryPrice.HasValue && oldDeliveyPrice != DeliveryPrice)
                 {
                     if (VmNavigationType == NavigationType.PresentModal)
-                        UserDialogs.Alert($"Стоимость доставки {DeliveryPrice.Value.ToString("# ### ##0.## \u20BD").Trim()}");
+                        await UserDialogs.Alert($"{LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Order_DeliveryPriceAlert")} {DeliveryPrice.Value.ToString($"# ### ##0.## {AppSettings.SettingsCulture.NumberFormat.CurrencySymbol}").Trim()}");
                     else
-                        await UserDialogs.Confirm($"Стоимость доставки {DeliveryPrice.Value.ToString("# ### ##0.## \u20BD").Trim()}", "Ок");
+                        await UserDialogs.Confirm($"{LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Order_DeliveryPriceAlert")} {DeliveryPrice.Value.ToString($"# ### ##0.## {AppSettings.SettingsCulture.NumberFormat.CurrencySymbol}").Trim()}", "Ок");
                 }
 
                 if (VmNavigationType == NavigationType.PresentModal)

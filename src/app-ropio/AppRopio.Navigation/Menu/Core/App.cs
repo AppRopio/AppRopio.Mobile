@@ -13,7 +13,7 @@ namespace AppRopio.Navigation.Menu.Core
         public override void Initialize()
         {
             Mvx.RegisterSingleton<IMenuConfigService>(() => new MenuConfigService());
-            Mvx.RegisterSingleton<IMenuVmService>(() => new MenuVmService());
+            Mvx.LazyConstructAndRegisterSingleton<IMenuVmService, MenuVmService>();
 
             #region VMs registration
 

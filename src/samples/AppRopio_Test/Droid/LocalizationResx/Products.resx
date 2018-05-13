@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <resheader
+        name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader
+        name="version">
+        <value>2.0</value>
+    </resheader>
+    <resheader
+        name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader
+        name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data
+        name     ="CategoriesEmptyTitle"
+        xml:space="preserve">
+        <value>Catalog</value>
+    </data>
+    <data
+        name     ="OneProduct"
+        xml:space="preserve">
+        <value>PRODUCT</value>
+    </data>
+    <data
+        name     ="TwoProducts"
+        xml:space="preserve">
+        <value>PRODUCTS</value>
+    </data>
+    <data
+        name     ="FiveProducts"
+        xml:space="preserve">
+        <value>PRODUCTS</value>
+    </data>
+    <data
+        name     ="OutOfStock"
+        xml:space="preserve">
+        <value>OUT OF STOCK</value>
+    </data>
+    <data
+        name="ContentSearch_Title">
+        <value>Search</value>
+    </data>
+    <data
+        name="ContentSearch_Placeholder">
+        <value>Search...</value>
+    </data>
+    <data
+        name="ContentSearch_ClearHistory">
+        <value>CLEAR HISTORY</value>
+    </data>
+    <data
+        name="ContentSearch_NoResultsTitle">
+        <value>Nothing found</value>
+    </data>
+    <data
+        name="ContentSearch_NoResultsText">
+        <value>Try to use catalog 
+or change your search request</value>
+    </data>
+    <data
+        name="ContentSearch_NoResultsCatalog">
+        <value>GO TO CATALOG</value>
+    </data>
+    <data
+        name="Catalog_Filters">
+        <value>FILTERS</value>
+    </data>
+    <data
+        name="Catalog_Sort">
+        <value>SORT</value>
+    </data>
+    <data
+        name="Selection_Clear">
+        <value>Clear</value>
+    </data>
+    <data
+        name="Selection_Apply">
+        <value>APPLY</value>
+    </data>
+    <data
+        name="ProductCard_From">
+        <value>From</value>
+    </data>
+    <data
+        name="ProductCard_To">
+        <value>To</value>
+    </data>
+</root>

@@ -168,7 +168,6 @@ namespace AppRopio.Base.Droid.Navigation
             }
             else
             {
-
                 fragmentAttribute.EnterAnimation = Resource.Animation.abc_fade_in;
                 fragmentAttribute.ExitAnimation = Resource.Animation.abc_fade_out;
                 fragmentAttribute.PopEnterAnimation = Resource.Animation.abc_fade_out;

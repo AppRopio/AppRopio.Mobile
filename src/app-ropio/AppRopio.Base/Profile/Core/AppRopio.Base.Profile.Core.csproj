@@ -34,6 +34,7 @@
     <Compile Include="PluginLoader.cs" />
     <Compile Include="Services\IProfileVmNavigationService.cs" />
     <Compile Include="Services\Implementation\ProfileVmNavigationService.cs" />
+    <Compile Include="ProfileConstants.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />

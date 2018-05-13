@@ -8,6 +8,9 @@ using AppRopio.ECommerce.Products.iOS.Views.Catalog;
 using CoreGraphics;
 using MvvmCross.Platform;
 using UIKit;
+using AppRopio.Base.iOS.UIExtentions;
+using AppRopio.ECommerce.Marked.Core;
+using MvvmCross.Binding.BindingContext;
 
 namespace AppRopio.ECommerce.Marked.iOS.Views.Marked
 {
@@ -47,14 +50,6 @@ namespace AppRopio.ECommerce.Marked.iOS.Views.Marked
                 collectionView.RegisterNibForCell(MarkedListCell.Nib, MarkedListCell.Key);
         }
 
-        protected override void SetupEmptyView(UIView emptyView, UIImageView emptyImage, UILabel emptyTitle, UILabel emptyText, UIButton goToButton)
-        {
-            base.SetupEmptyView(emptyView, emptyImage, emptyTitle, emptyText, goToButton);
-
-            emptyTitle.Text = "Пока в избранном пусто";
-            emptyText.Text = "Вернитесь в каталог,\nчтобы добавить товары";
-        }
-
         protected virtual void SetupBasketButton(UIButton button)
         {
             button.SetupStyle((ThemeConfig as MarkedThemeConfig).BasketButton);
@@ -77,7 +72,7 @@ namespace AppRopio.ECommerce.Marked.iOS.Views.Marked
         {
             base.InitializeControls();
 
-            Title = "Избранное";
+            Title = LocalizationService.GetLocalizableString(MarkedConstants.RESX_NAME, "Title");
 
             SetupBasketButton(_basketButton);
         }

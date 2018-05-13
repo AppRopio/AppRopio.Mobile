@@ -2,6 +2,8 @@
 using System.Globalization;
 using System.Linq;
 using MvvmCross.Platform.Converters;
+using AppRopio.Base.Core.Services.Localization;
+using MvvmCross.Platform;
 
 namespace AppRopio.Base.Core.Converters
 {
@@ -44,11 +46,11 @@ namespace AppRopio.Base.Core.Converters
 
     public class PriceFormatUnitParameter
     {
-        public NumberFormatInfo Format { get; set; } = (NumberFormatInfo)new CultureInfo("ru").NumberFormat.Clone();
+        public NumberFormatInfo Format { get; set; } = (NumberFormatInfo)AppSettings.SettingsCulture.NumberFormat.Clone();
 
-        public string CurrencyFormat { get; set; } = "C0";
+        public string CurrencyFormat { get; set; }
 
-        public string CurrencySymbol { get; set; }
+        public string CurrencySymbol { get; set; } = AppSettings.SettingsCulture.NumberFormat.CurrencySymbol;
 
         public string PrefixString { get; set; }
 
@@ -83,6 +85,9 @@ namespace AppRopio.Base.Core.Converters
 
                 if (paramsDictionary.ContainsKey("UnitName"))
                     priceParameter.UnitName = paramsDictionary["UnitName"];
+
+                if (paramsDictionary.ContainsKey("ResxName") && paramsDictionary.ContainsKey("StringName"))
+                    priceParameter.PrefixString = Mvx.Resolve<ILocalizationService>().GetLocalizableString(paramsDictionary["ResxName"], paramsDictionary["StringName"]);
             }
 
             return priceParameter;

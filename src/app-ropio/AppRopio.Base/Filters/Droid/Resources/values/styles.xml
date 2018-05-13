@@ -10,8 +10,6 @@
 			name="android:paddingLeft">@dimen/app_filters_sort_horizontalMargin</item>
 		<item
 			name="android:paddingRight">@dimen/app_filters_sort_horizontalMargin</item>
-		<item
-			name="android:text">@string/app_filters_sort_title</item>
 	</style>
 	<style
 		name  ="app_filters_sort_item_title"
@@ -34,14 +32,10 @@
 	<style
 		name  ="app_filters_filters_button"
 		parent="AppRopioTheme.Control.Button.Base">
-		<item
-			name="android:text">@string/app_filters_filters_apply</item>
 	</style>
 	<style
 		name  ="app_filters_filters_cancelButton"
 		parent="AppRopioTheme.Control.Button.Text">
-		<item
-			name="android:text">@string/app_filters_filters_cancel</item>
 	</style>
 	<style
 		name  ="app_filters_filters_title"

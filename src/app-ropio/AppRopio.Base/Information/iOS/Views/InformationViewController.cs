@@ -10,6 +10,7 @@ using MvvmCross.Binding.BindingContext;
 using MvvmCross.Binding.iOS.Views;
 using MvvmCross.Platform;
 using UIKit;
+using AppRopio.Base.Information.Core;
 
 namespace AppRopio.Base.Information.iOS.Views
 {
@@ -26,7 +27,7 @@ namespace AppRopio.Base.Information.iOS.Views
 
         protected override void InitializeControls()
         {
-            Title = "Информация";
+            Title = LocalizationService.GetLocalizableString(InformationConstants.RESX_NAME, "Title");
 
             SetupTableView(TableView);
 
