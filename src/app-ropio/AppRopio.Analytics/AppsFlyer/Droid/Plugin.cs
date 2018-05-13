@@ -7,6 +7,7 @@ using Com.Appsflyer;
 using System.Collections.Generic;
 using Android.App;
 using MvvmCross.Platform.Droid.Platform;
+using MvvmCross.Platform.Core;
 
 namespace AppRopio.Analytics.AppsFlyer.Droid
 {
@@ -21,15 +22,21 @@ namespace AppRopio.Analytics.AppsFlyer.Droid
 
         public void Load()
         {
-            var config = Mvx.Resolve<IAFConfigService>().Config;
+            Mvx.CallbackWhenRegistered<IMvxMainThreadDispatcher>(service =>
+            {
+                service.RequestMainThreadAction(() =>
+                {
+                    var config = Mvx.Resolve<IAFConfigService>().Config;
 
-            AppsFlyerLib.Instance.StartTracking(CurrentActivity.Application, config.DevKey);
+                    AppsFlyerLib.Instance.StartTracking(CurrentActivity.Application, config.DevKey);
 
-            _trackerDelegate = new CustomAppsFlyerConversionDelegate();
+                    _trackerDelegate = new CustomAppsFlyerConversionDelegate();
 
-            AppsFlyerLib.Instance.RegisterConversionListener(Application.Context, _trackerDelegate);
+                    AppsFlyerLib.Instance.RegisterConversionListener(Application.Context, _trackerDelegate);
 
-            Mvx.RegisterSingleton<IAppsFlyerService>(() => new AppsFlyerService());
+                    Mvx.RegisterSingleton<IAppsFlyerService>(() => new AppsFlyerService());
+                });
+            });
         }
 
         #region Delegate
