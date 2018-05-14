@@ -5,6 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <TextView
+        style="@style/app_products_productCard_multilineTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/app_products_productCard_horizontalMargins"
+        android:layout_marginRight="@dimen/app_products_productCard_horizontalMargins"
+        android:layout_marginTop="@dimen/app_products_productCard_verticalMargins"
+        android:layout_marginBottom="@dimen/app_products_productCard_verticalMargins"
+        android:text="Lorem ipsum"
+        app:MvxBind="Text Name" />
+    <TextView
         style="@style/app_products_productCard_multilineText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
