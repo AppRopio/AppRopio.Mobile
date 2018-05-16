@@ -14,6 +14,7 @@
 //    limitations under the License.
 using System;
 using AppRopio.Base.Droid.Views;
+using AppRopio.Feedback.Core;
 using AppRopio.Feedback.Core.ViewModels.Reviews;
 namespace AppRopio.Feedback.Droid.Views.Reviews
 {
@@ -22,6 +23,7 @@ namespace AppRopio.Feedback.Droid.Views.Reviews
         public ReviewsFragment()
             : base(Resource.Layout.app_feedback_reviews)
         {
+            Title = LocalizationService.GetLocalizableString(FeedbackConstants.RESX_NAME, "Reviews_Title");
         }
     }
 }

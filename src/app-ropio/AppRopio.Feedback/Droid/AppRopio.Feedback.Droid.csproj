@@ -92,6 +92,12 @@
     <Reference Include="MvvmCross.Droid.Support.Fragment">
       <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Droid.Support.Fragment.5.6.3\lib\MonoAndroid70\MvvmCross.Droid.Support.Fragment.dll</HintPath>
     </Reference>
+    <Reference Include="MvvmCross.Plugins.Visibility">
+      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Plugin.Visibility.5.6.3\lib\MonoAndroid\MvvmCross.Plugins.Visibility.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Visibility.Droid">
+      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Plugin.Visibility.5.6.3\lib\MonoAndroid\MvvmCross.Plugins.Visibility.Droid.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
@@ -116,6 +122,10 @@
     <AndroidResource Include="Resources\layout\app_feedback_scoreview.axml" />
     <AndroidResource Include="Resources\values\styles.xml" />
     <AndroidResource Include="Resources\values\dimens.xml" />
+    <AndroidResource Include="Resources\layout\app_feedback_myreviews_empty.axml" />
+    <AndroidResource Include="Resources\layout\app_feedback_myreviews_item.axml" />
+    <AndroidResource Include="Resources\drawable\app_feedback_myreviews_item_ratingBackground.xml" />
+    <AndroidResource Include="Resources\layout\app_feedback_reviews_item.axml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\API\AppRopio.Feedback.API.csproj">

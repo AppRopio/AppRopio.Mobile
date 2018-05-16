@@ -405,6 +405,7 @@
     <Compile Include="Bootstrap\AppRopio_GoogleAnalyticsPluginBootstrap.cs" />
     <Compile Include="Bootstrap\AppRopio_LoyaltyPluginBootstrap.cs" />
     <Compile Include="Bootstrap\AppRopio_FeedbackPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_AuthPluginBootstrap.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

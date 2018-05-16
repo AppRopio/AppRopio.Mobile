@@ -1,4 +1,15 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <resources>
-    
+    <dimen
+        name="app_feedback_myreviews_item_margins">16dp</dimen>
+    <dimen
+        name="app_feedback_myreviews_item_paddings">8dp</dimen>
+    <dimen
+        name="app_feedback_myreviews_item_imageSize">112dp</dimen>
+    <dimen
+        name="app_feedback_myreviews_item_ratingBackground_cornerRadius">8dp</dimen>
+    <dimen
+        name="app_feedback_myreviews_item_rating_minWidth">32dp</dimen>
+    <dimen
+        name="app_feedback_myreviews_item_rating_minHeight">16dp</dimen>
 </resources>

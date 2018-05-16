@@ -1,4 +1,64 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <resources>
-    
+    <!--  MyReviews  -->
+    <style
+        name="app_feedback_myreviews_item_image">
+        <item
+            name="android:layout_width">@dimen/app_feedback_myreviews_item_imageSize</item>
+        <item
+            name="android:layout_height">@dimen/app_feedback_myreviews_item_imageSize</item>
+        <item
+            name="android:scaleType">centerCrop</item>
+    </style>
+    <style
+        name  ="app_feedback_myreviews_item_rating"
+        parent="AppRopio.TextAppearance.Body2.Bold">
+        <item
+            name="android:background">@drawable/app_feedback_myreviews_item_ratingBackground</item>
+        <item
+            name="android:paddingLeft">@dimen/app_feedback_myreviews_item_paddings</item>
+        <item
+            name="android:paddingRight">@dimen/app_feedback_myreviews_item_paddings</item>
+        <item
+            name="android:layout_marginBottom">@dimen/app_feedback_myreviews_item_paddings</item>
+        <item
+            name="android:gravity">center</item>
+        <item
+            name="android:minWidth">@dimen/app_feedback_myreviews_item_rating_minWidth</item>
+        <item
+            name="android:minHeight">@dimen/app_feedback_myreviews_item_rating_minHeight</item>
+    </style>
+    <style
+        name="app_feedback_myreviews_item_date"
+        parent="AppRopio.TextAppearance.Body2.Bold">
+        <item
+            name="android:textColor">?attr/app_color_textGray</item>
+    </style>
+    <style
+        name="app_feedback_myreviews_item_title"
+        parent="AppRopio.TextAppearance.Body2.Medium">
+        <item
+            name="android:maxLines">2</item>
+        <item
+            name="android:singleLine">false</item>
+        <item
+            name="android:ellipsize">end</item>
+    </style>
+    <style
+        name="app_feedback_myreviews_item_text"
+        parent="AppRopio.TextAppearance.Body2">
+        <item
+            name="android:maxLines">2</item>
+        <item
+            name="android:singleLine">false</item>
+        <item
+            name="android:ellipsize">end</item>
+    </style>
+    <!--    -->
+<!--  Reviews  -->
+    <style
+        name="app_feedback_reviews_button"
+        parent="AppRopioTheme.Control.Button.Base">
+    </style>
+<!--    -->
 </resources>

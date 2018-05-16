@@ -82,8 +82,7 @@ namespace AppRopio.Feedback.Core.ViewModels.Reviews
 
             Loading = false;
 
-            var sessionService = Mvx.Resolve<ISessionService>();
-            CanPostReview = sessionService.Alive;
+            CanPostReview = Mvx.CanResolve<ISessionService>() ? Mvx.Resolve<ISessionService>().Alive : false;
 #if DEBUG
             CanPostReview = true;
 #endif

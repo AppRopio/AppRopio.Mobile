@@ -1,7 +1,23 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android        ="http://schemas.android.com/apk/res/android"
-    android:orientation  ="vertical"
-    android:layout_width ="match_parent"
-    android:layout_height="match_parent">
-</LinearLayout>
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/app_color_background">
+    <mvvmcross.droid.support.v7.recyclerview.MvxRecyclerView
+        android:id="@+id/app_feedback_reviews_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/app_feedback_reviews_button"
+        app:MvxItemTemplate="@layout/app_feedback_reviews_item"
+        app:MvxBind="ItemsSource Reviews; ItemClick SelectionChangedCommand; Visibility Visibility(Reviews.Count)" />
+    <Button
+        style="@style/app_feedback_reviews_button"
+        android:id="@+id/app_feedback_reviews_button"
+        android:layout_alignParentBottom="true"
+        app:MvxBind="Click ReviewCommand; Enabled CanPostReview; Visibility Visibility(Reviews.Count); Text Resx('Reviews_New', 'Feedback')" />
+<!--<include
+        layout="@layout/app_feedback_reviews_empty" />-->
+    <include
+        layout="@layout/app_base_loading" />
+</RelativeLayout>
