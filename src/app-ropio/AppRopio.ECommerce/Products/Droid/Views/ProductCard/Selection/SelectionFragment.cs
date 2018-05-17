@@ -2,6 +2,7 @@
 using AppRopio.Base.Droid.Views;
 using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Selection;
 using AppRopio.ECommerce.Products.Core;
+using Android.Widget;
 
 namespace AppRopio.ECommerce.Products.Droid.Views.ProductCard.Selection
 {
@@ -31,6 +32,7 @@ namespace AppRopio.ECommerce.Products.Droid.Views.ProductCard.Selection
             {
                 ViewModel?.ClearCommand.Execute(null);
             };
+            (menuItem.ActionView as Button).Text = LocalizationService.GetLocalizableString(ProductsConstants.RESX_NAME, "Selection_Clear");
         }
     }
 }

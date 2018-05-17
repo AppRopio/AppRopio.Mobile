@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<shape
+    android:shape="oval"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid
+        android:color="?attr/app_color_disabledControl" />
+    <corners
+        android:radius   ="@dimen/app_feedback_reviewpost_item_score_item_button_radius" />
+</shape>

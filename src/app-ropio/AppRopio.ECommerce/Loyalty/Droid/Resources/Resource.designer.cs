@@ -1865,6 +1865,12 @@ namespace AppRopio.ECommerce.Loyalty.Droid
 			// aapt resource value: 0x7f0800ad
 			public static int app_loyalty_promocode_height = 2131230893;
 			
+			// aapt resource value: 0x7f0800af
+			public static int app_loyalty_promocode_inputLayout_horizontalMargin = 2131230895;
+			
+			// aapt resource value: 0x7f0800b0
+			public static int app_loyalty_promocode_inputLayout_verticalMargin = 2131230896;
+			
 			// aapt resource value: 0x7f0800ae
 			public static int app_loyalty_promocode_textinput_height = 2131230894;
 			

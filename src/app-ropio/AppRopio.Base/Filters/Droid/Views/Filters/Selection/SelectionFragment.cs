@@ -2,6 +2,7 @@
 using AppRopio.Base.Droid.Views;
 using AppRopio.Base.Filters.Core.ViewModels.Filters.Selection;
 using AppRopio.Base.Filters.Core;
+using Android.Widget;
 
 namespace AppRopio.Base.Filters.Droid.Views.Filters.Selection
 {
@@ -31,6 +32,7 @@ namespace AppRopio.Base.Filters.Droid.Views.Filters.Selection
             {
                 ViewModel?.ClearCommand.Execute(null);
             };
+            (menuItem.ActionView as Button).Text = LocalizationService.GetLocalizableString(FiltersConstants.RESX_NAME, "Selection_Clear");
         }
     }
 }

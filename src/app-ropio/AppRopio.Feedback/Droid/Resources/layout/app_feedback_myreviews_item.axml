@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/app_feedback_myreviews_item_margins">
+            <appropio.base.droid.controls.ARImageView
+                android:id="@+id/app_feedback_myreviews_item_image"
+                style="@style/app_feedback_myreviews_item_image"
+                app:MvxBind="ImageUrl ProductImageUrl" />
+            <TextView
+                style="@style/app_feedback_myreviews_item_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/app_feedback_myreviews_item_image"
+                android:layout_alignLeft="@+id/app_feedback_myreviews_item_image"
+                app:MvxBind="Text Score; Visibility Visibility(Score)" />
+        </RelativeLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/app_feedback_myreviews_item_margins"
+            android:layout_marginBottom="@dimen/app_feedback_myreviews_item_margins"
+            android:layout_marginRight="@dimen/app_feedback_myreviews_item_margins">
+            <TextView
+                style="@style/app_feedback_myreviews_item_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:MvxBind="Text DateToString(Date, 'dd MMMM yyyy')" />
+            <TextView
+                style="@style/app_feedback_myreviews_item_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/app_feedback_myreviews_item_paddings"
+                app:MvxBind="Text ProductTitle" />
+            <TextView
+                style="@style/app_feedback_myreviews_item_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/app_feedback_myreviews_item_paddings"
+                app:MvxBind="Text Text" />
+        </LinearLayout>
+    </LinearLayout>
+    <View
+        style="@style/AppRopioTheme.Control.Separator" />
+</LinearLayout>

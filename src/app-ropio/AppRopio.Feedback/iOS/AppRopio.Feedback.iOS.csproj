@@ -80,7 +80,6 @@
     <Folder Include="Models\" />
     <Folder Include="Services\" />
     <Folder Include="Services\Implementation\" />
-    <Folder Include="Converters\" />
     <Folder Include="Views\ReviewDetails\" />
     <Folder Include="Views\MyReviews\" />
     <Folder Include="Views\MyReviews\Cell\" />
@@ -104,7 +103,6 @@
     <Compile Include="Models\FeedbackThemeConfig.cs" />
     <Compile Include="Services\IFeedbackThemeConfig.cs" />
     <Compile Include="Services\Implementation\FeedbackThemeConfigService.cs" />
-    <Compile Include="Converters\DateToStringConverter.cs" />
     <Compile Include="Views\ReviewDetails\ReviewDetailsViewController.cs" />
     <Compile Include="Views\ReviewDetails\ReviewDetailsViewController.designer.cs">
       <DependentUpon>ReviewDetailsViewController.cs</DependentUpon>
