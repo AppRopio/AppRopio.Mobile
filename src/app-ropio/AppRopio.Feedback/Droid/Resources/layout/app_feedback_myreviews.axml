@@ -12,7 +12,6 @@
         app:MvxBind="ItemsSource Reviews; ItemClick SelectionChangedCommand; Visibility Visibility(Reviews.Count)" />
 <!--<include
         layout="@layout/app_feedback_myreviews_empty" />-->
-    <Button />
     <include
         layout="@layout/app_base_loading" />
 </RelativeLayout>

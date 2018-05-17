@@ -108,6 +108,7 @@
     <Compile Include="Views\ReviewDetails\ReviewDetailsFragment.cs" />
     <Compile Include="Views\Score\ScoreView.cs" />
     <Compile Include="Views\ReviewPost\ReviewPostFragment.cs" />
+    <Compile Include="Views\ReviewPost\ReviewPostItemTemplateSelector.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -126,6 +127,13 @@
     <AndroidResource Include="Resources\layout\app_feedback_myreviews_item.axml" />
     <AndroidResource Include="Resources\drawable\app_feedback_myreviews_item_ratingBackground.xml" />
     <AndroidResource Include="Resources\layout\app_feedback_reviews_item.axml" />
+    <AndroidResource Include="Resources\layout\app_feedback_reviewdetails_delete.axml" />
+    <AndroidResource Include="Resources\layout\app_feedback_reviewpost_item_score.axml" />
+    <AndroidResource Include="Resources\layout\app_feedback_reviewpost_item_text.axml" />
+    <AndroidResource Include="Resources\layout\app_feedback_reviewpost_item_score_item.axml" />
+    <AndroidResource Include="Resources\drawable\app_feedback_reviewpost_item_score_item_button_background.xml" />
+    <AndroidResource Include="Resources\drawable\app_feedback_reviewpost_item_score_item_button_background_selected.xml" />
+    <AndroidResource Include="Resources\drawable\app_feedback_reviewpost_item_score_item_button_background_normal.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\API\AppRopio.Feedback.API.csproj">

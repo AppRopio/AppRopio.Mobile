@@ -39,7 +39,7 @@
                 style="@style/app_feedback_myreviews_item_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="app_feedback_myreviews_item_paddings"
+                android:layout_marginTop="@dimen/app_feedback_myreviews_item_paddings"
                 app:MvxBind="Text ProductTitle" />
             <TextView
                 style="@style/app_feedback_myreviews_item_text"

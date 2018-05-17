@@ -139,6 +139,7 @@ namespace AppRopio.Base.Filters.Droid.Views.Filters
             {
                 ViewModel?.ClearCommand.Execute(null);
             };
+            (menuItem.ActionView as Button).Text = LocalizationService.GetLocalizableString(FiltersConstants.RESX_NAME, "Filters_Clear");
         }
     }
 }

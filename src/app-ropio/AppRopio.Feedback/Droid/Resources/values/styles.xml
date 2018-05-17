@@ -61,4 +61,64 @@
         parent="AppRopioTheme.Control.Button.Base">
     </style>
 <!--    -->
+<!--  ReviewDetails  -->
+    <style
+        name="app_feedback_reviewdetails_delete"
+        parent="AppRopioTheme.Control.Button.Text">
+    </style>
+    <style
+        name="app_feedback_reviewdetails_button"
+        parent="AppRopioTheme.Control.Button.Base">
+    </style>
+    <style
+        name="app_feedback_reviewdetails_text"
+        parent="AppRopio.TextAppearance.Body2">
+        <item
+            name="android:maxLines">999</item>
+        <item
+            name="android:singleLine">false</item>
+        <item
+            name="android:ellipsize">end</item>
+    </style>
+<!--    -->
+<!--  ScoreView  -->
+    <style
+        name="app_feedback_scoreview_text"
+        parent="AppRopio.TextAppearance.Body2.Bold">
+        <item
+            name="android:gravity">center</item>
+    </style>
+<!--    -->
+<!--  ReviewPost  -->
+    <style
+        name="app_feedback_reviewpost_button"
+        parent="AppRopioTheme.Control.Button.Base">
+    </style>
+    <style
+        name="app_feedback_reviewpost_item_text"
+        parent="AppRopio.TextAppearance.Body2">
+        <item
+            name="android:maxLines">999</item>
+        <item
+            name="android:singleLine">false</item>
+        <item
+            name="android:ellipsize">end</item>
+    </style>
+    <style
+        name="app_feedback_reviewpost_item_score_item_button"
+        parent="AppRopioTheme.Control.Button.Text">
+        <item
+            name="android:gravity">center</item>
+        <item
+            name="android:background">@drawable/app_feedback_reviewpost_item_score_item_button_background</item>
+        <item
+            name="android:layout_width">@dimen/app_feedback_reviewpost_item_score_item_button_size</item>
+        <item
+            name="android:layout_height">@dimen/app_feedback_reviewpost_item_score_item_button_size</item>
+    </style>
+    <style
+        name="app_feedback_reviewpost_item_score_title"
+        parent="AppRopio.TextAppearance.Body2.Medium">
+    </style>
+<!--    -->
 </resources>

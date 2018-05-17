@@ -12,4 +12,12 @@
         name="app_feedback_myreviews_item_rating_minWidth">32dp</dimen>
     <dimen
         name="app_feedback_myreviews_item_rating_minHeight">16dp</dimen>
+    <dimen
+        name="app_feedback_reviewdetails_scoreWidth">100dp</dimen>
+    <dimen
+        name="app_feedback_reviewdetails_scoreHeight">20dp</dimen>
+    <dimen
+        name="app_feedback_reviewpost_item_score_item_button_size">40dp</dimen>
+    <dimen
+        name="app_feedback_reviewpost_item_score_item_button_radius">20dp</dimen>
 </resources>

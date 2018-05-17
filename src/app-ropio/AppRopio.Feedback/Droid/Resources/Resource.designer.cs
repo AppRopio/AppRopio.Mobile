@@ -1802,6 +1802,18 @@ namespace AppRopio.Feedback.Droid
 			// aapt resource value: 0x7f07009a
 			public static int app_feedback_myreviews_item_rating_minWidth = 2131165338;
 			
+			// aapt resource value: 0x7f07009d
+			public static int app_feedback_reviewdetails_scoreHeight = 2131165341;
+			
+			// aapt resource value: 0x7f07009c
+			public static int app_feedback_reviewdetails_scoreWidth = 2131165340;
+			
+			// aapt resource value: 0x7f07009f
+			public static int app_feedback_reviewpost_item_score_item_button_radius = 2131165343;
+			
+			// aapt resource value: 0x7f07009e
+			public static int app_feedback_reviewpost_item_score_item_button_size = 2131165342;
+			
 			// aapt resource value: 0x7f07008e
 			public static int app_h1_text_size = 2131165326;
 			
@@ -2290,55 +2302,64 @@ namespace AppRopio.Feedback.Droid
 			public static int app_feedback_myreviews_item_ratingBackground = 2130837591;
 			
 			// aapt resource value: 0x7f020058
-			public static int avd_hide_password = 2130837592;
-			
-			// aapt resource value: 0x7f020063
-			public static int avd_hide_password_1 = 2130837603;
-			
-			// aapt resource value: 0x7f020064
-			public static int avd_hide_password_2 = 2130837604;
-			
-			// aapt resource value: 0x7f020065
-			public static int avd_hide_password_3 = 2130837605;
+			public static int app_feedback_reviewpost_item_score_item_button_background = 2130837592;
 			
 			// aapt resource value: 0x7f020059
-			public static int avd_show_password = 2130837593;
-			
-			// aapt resource value: 0x7f020066
-			public static int avd_show_password_1 = 2130837606;
-			
-			// aapt resource value: 0x7f020067
-			public static int avd_show_password_2 = 2130837607;
-			
-			// aapt resource value: 0x7f020068
-			public static int avd_show_password_3 = 2130837608;
+			public static int app_feedback_reviewpost_item_score_item_button_background_normal = 2130837593;
 			
 			// aapt resource value: 0x7f02005a
-			public static int design_bottom_navigation_item_background = 2130837594;
+			public static int app_feedback_reviewpost_item_score_item_button_background_selected = 2130837594;
 			
 			// aapt resource value: 0x7f02005b
-			public static int design_fab_background = 2130837595;
+			public static int avd_hide_password = 2130837595;
+			
+			// aapt resource value: 0x7f020066
+			public static int avd_hide_password_1 = 2130837606;
+			
+			// aapt resource value: 0x7f020067
+			public static int avd_hide_password_2 = 2130837607;
+			
+			// aapt resource value: 0x7f020068
+			public static int avd_hide_password_3 = 2130837608;
 			
 			// aapt resource value: 0x7f02005c
-			public static int design_ic_visibility = 2130837596;
+			public static int avd_show_password = 2130837596;
+			
+			// aapt resource value: 0x7f020069
+			public static int avd_show_password_1 = 2130837609;
+			
+			// aapt resource value: 0x7f02006a
+			public static int avd_show_password_2 = 2130837610;
+			
+			// aapt resource value: 0x7f02006b
+			public static int avd_show_password_3 = 2130837611;
 			
 			// aapt resource value: 0x7f02005d
-			public static int design_ic_visibility_off = 2130837597;
+			public static int design_bottom_navigation_item_background = 2130837597;
 			
 			// aapt resource value: 0x7f02005e
-			public static int design_password_eye = 2130837598;
+			public static int design_fab_background = 2130837598;
 			
 			// aapt resource value: 0x7f02005f
-			public static int design_snackbar_background = 2130837599;
+			public static int design_ic_visibility = 2130837599;
 			
 			// aapt resource value: 0x7f020060
-			public static int navigation_empty_icon = 2130837600;
+			public static int design_ic_visibility_off = 2130837600;
 			
 			// aapt resource value: 0x7f020061
-			public static int tooltip_frame_dark = 2130837601;
+			public static int design_password_eye = 2130837601;
 			
 			// aapt resource value: 0x7f020062
-			public static int tooltip_frame_light = 2130837602;
+			public static int design_snackbar_background = 2130837602;
+			
+			// aapt resource value: 0x7f020063
+			public static int navigation_empty_icon = 2130837603;
+			
+			// aapt resource value: 0x7f020064
+			public static int tooltip_frame_dark = 2130837604;
+			
+			// aapt resource value: 0x7f020065
+			public static int tooltip_frame_light = 2130837605;
 			
 			static Drawable()
 			{
@@ -2437,11 +2458,38 @@ namespace AppRopio.Feedback.Droid
 			// aapt resource value: 0x7f0a007d
 			public static int app_feedback_myreviews_recyclerView = 2131361917;
 			
+			// aapt resource value: 0x7f0a0081
+			public static int app_feedback_myreviews_score = 2131361921;
+			
 			// aapt resource value: 0x7f0a0080
-			public static int app_feedback_reviews_button = 2131361920;
+			public static int app_feedback_reviewdetails_button = 2131361920;
+			
+			// aapt resource value: 0x7f0a0083
+			public static int app_feedback_reviewpost_button = 2131361923;
+			
+			// aapt resource value: 0x7f0a0085
+			public static int app_feedback_reviewpost_item_score_item_button = 2131361925;
+			
+			// aapt resource value: 0x7f0a0084
+			public static int app_feedback_reviewpost_item_score_layout = 2131361924;
+			
+			// aapt resource value: 0x7f0a0082
+			public static int app_feedback_reviewpost_recyclerView = 2131361922;
+			
+			// aapt resource value: 0x7f0a0086
+			public static int app_feedback_reviews_button = 2131361926;
 			
 			// aapt resource value: 0x7f0a007f
 			public static int app_feedback_reviews_recyclerView = 2131361919;
+			
+			// aapt resource value: 0x7f0a0088
+			public static int app_feedback_scoreview_accentBackground = 2131361928;
+			
+			// aapt resource value: 0x7f0a0087
+			public static int app_feedback_scoreview_grayBackground = 2131361927;
+			
+			// aapt resource value: 0x7f0a0089
+			public static int app_feedback_scoreview_textView = 2131361929;
 			
 			// aapt resource value: 0x7f0a0010
 			public static int app_status_bar_background = 2131361808;
@@ -2482,14 +2530,14 @@ namespace AppRopio.Feedback.Droid
 			// aapt resource value: 0x7f0a0046
 			public static int collapseActionView = 2131361862;
 			
-			// aapt resource value: 0x7f0a0083
-			public static int container = 2131361923;
+			// aapt resource value: 0x7f0a008c
+			public static int container = 2131361932;
 			
 			// aapt resource value: 0x7f0a0057
 			public static int contentPanel = 2131361879;
 			
-			// aapt resource value: 0x7f0a0084
-			public static int coordinator = 2131361924;
+			// aapt resource value: 0x7f0a008d
+			public static int coordinator = 2131361933;
 			
 			// aapt resource value: 0x7f0a005e
 			public static int custom = 2131361886;
@@ -2503,20 +2551,20 @@ namespace AppRopio.Feedback.Droid
 			// aapt resource value: 0x7f0a0050
 			public static int default_activity_button = 2131361872;
 			
-			// aapt resource value: 0x7f0a0086
-			public static int design_bottom_sheet = 2131361926;
+			// aapt resource value: 0x7f0a008f
+			public static int design_bottom_sheet = 2131361935;
 			
-			// aapt resource value: 0x7f0a008d
-			public static int design_menu_item_action_area = 2131361933;
+			// aapt resource value: 0x7f0a0096
+			public static int design_menu_item_action_area = 2131361942;
 			
-			// aapt resource value: 0x7f0a008c
-			public static int design_menu_item_action_area_stub = 2131361932;
+			// aapt resource value: 0x7f0a0095
+			public static int design_menu_item_action_area_stub = 2131361941;
 			
-			// aapt resource value: 0x7f0a008b
-			public static int design_menu_item_text = 2131361931;
+			// aapt resource value: 0x7f0a0094
+			public static int design_menu_item_text = 2131361940;
 			
-			// aapt resource value: 0x7f0a008a
-			public static int design_navigation_view = 2131361930;
+			// aapt resource value: 0x7f0a0093
+			public static int design_navigation_view = 2131361939;
 			
 			// aapt resource value: 0x7f0a0034
 			public static int disableHome = 2131361844;
@@ -2572,8 +2620,8 @@ namespace AppRopio.Feedback.Droid
 			// aapt resource value: 0x7f0a000c
 			public static int item_touch_helper_previous_elevation = 2131361804;
 			
-			// aapt resource value: 0x7f0a0082
-			public static int largeLabel = 2131361922;
+			// aapt resource value: 0x7f0a008b
+			public static int largeLabel = 2131361931;
 			
 			// aapt resource value: 0x7f0a001d
 			public static int left = 2131361821;
@@ -2584,11 +2632,11 @@ namespace AppRopio.Feedback.Droid
 			// aapt resource value: 0x7f0a0051
 			public static int list_item = 2131361873;
 			
-			// aapt resource value: 0x7f0a0091
-			public static int masked = 2131361937;
+			// aapt resource value: 0x7f0a009a
+			public static int masked = 2131361946;
 			
-			// aapt resource value: 0x7f0a008f
-			public static int message = 2131361935;
+			// aapt resource value: 0x7f0a0098
+			public static int message = 2131361944;
 			
 			// aapt resource value: 0x7f0a003e
 			public static int middle = 2131361854;
@@ -2599,8 +2647,8 @@ namespace AppRopio.Feedback.Droid
 			// aapt resource value: 0x7f0a002d
 			public static int multiply = 2131361837;
 			
-			// aapt resource value: 0x7f0a0089
-			public static int navigation_header_container = 2131361929;
+			// aapt resource value: 0x7f0a0092
+			public static int navigation_header_container = 2131361938;
 			
 			// aapt resource value: 0x7f0a0048
 			public static int never = 2131361864;
@@ -2698,14 +2746,14 @@ namespace AppRopio.Feedback.Droid
 			// aapt resource value: 0x7f0a0038
 			public static int showTitle = 2131361848;
 			
-			// aapt resource value: 0x7f0a0081
-			public static int smallLabel = 2131361921;
+			// aapt resource value: 0x7f0a008a
+			public static int smallLabel = 2131361930;
 			
-			// aapt resource value: 0x7f0a0088
-			public static int snackbar_action = 2131361928;
+			// aapt resource value: 0x7f0a0091
+			public static int snackbar_action = 2131361937;
 			
-			// aapt resource value: 0x7f0a0087
-			public static int snackbar_text = 2131361927;
+			// aapt resource value: 0x7f0a0090
+			public static int snackbar_text = 2131361936;
 			
 			// aapt resource value: 0x7f0a0015
 			public static int snap = 2131361813;
@@ -2743,8 +2791,8 @@ namespace AppRopio.Feedback.Droid
 			// aapt resource value: 0x7f0a005a
 			public static int textSpacerNoTitle = 2131361882;
 			
-			// aapt resource value: 0x7f0a008e
-			public static int text_input_password_toggle = 2131361934;
+			// aapt resource value: 0x7f0a0097
+			public static int text_input_password_toggle = 2131361943;
 			
 			// aapt resource value: 0x7f0a0000
 			public static int textinput_counter = 2131361792;
@@ -2767,8 +2815,8 @@ namespace AppRopio.Feedback.Droid
 			// aapt resource value: 0x7f0a005f
 			public static int topPanel = 2131361887;
 			
-			// aapt resource value: 0x7f0a0085
-			public static int touch_outside = 2131361925;
+			// aapt resource value: 0x7f0a008e
+			public static int touch_outside = 2131361934;
 			
 			// aapt resource value: 0x7f0a003b
 			public static int uniform = 2131361851;
@@ -2782,8 +2830,8 @@ namespace AppRopio.Feedback.Droid
 			// aapt resource value: 0x7f0a0002
 			public static int view_offset_helper = 2131361794;
 			
-			// aapt resource value: 0x7f0a0090
-			public static int visible = 2131361936;
+			// aapt resource value: 0x7f0a0099
+			public static int visible = 2131361945;
 			
 			// aapt resource value: 0x7f0a0049
 			public static int withText = 2131361865;
@@ -2938,73 +2986,85 @@ namespace AppRopio.Feedback.Droid
 			public static int app_feedback_reviewdetails = 2130903070;
 			
 			// aapt resource value: 0x7f03001f
-			public static int app_feedback_reviewpost = 2130903071;
+			public static int app_feedback_reviewdetails_delete = 2130903071;
 			
 			// aapt resource value: 0x7f030020
-			public static int app_feedback_reviews = 2130903072;
+			public static int app_feedback_reviewpost = 2130903072;
 			
 			// aapt resource value: 0x7f030021
-			public static int app_feedback_reviews_item = 2130903073;
+			public static int app_feedback_reviewpost_item_score = 2130903073;
 			
 			// aapt resource value: 0x7f030022
-			public static int app_feedback_scoreview = 2130903074;
+			public static int app_feedback_reviewpost_item_score_item = 2130903074;
 			
 			// aapt resource value: 0x7f030023
-			public static int design_bottom_navigation_item = 2130903075;
+			public static int app_feedback_reviewpost_item_text = 2130903075;
 			
 			// aapt resource value: 0x7f030024
-			public static int design_bottom_sheet_dialog = 2130903076;
+			public static int app_feedback_reviews = 2130903076;
 			
 			// aapt resource value: 0x7f030025
-			public static int design_layout_snackbar = 2130903077;
+			public static int app_feedback_reviews_item = 2130903077;
 			
 			// aapt resource value: 0x7f030026
-			public static int design_layout_snackbar_include = 2130903078;
+			public static int app_feedback_scoreview = 2130903078;
 			
 			// aapt resource value: 0x7f030027
-			public static int design_layout_tab_icon = 2130903079;
+			public static int design_bottom_navigation_item = 2130903079;
 			
 			// aapt resource value: 0x7f030028
-			public static int design_layout_tab_text = 2130903080;
+			public static int design_bottom_sheet_dialog = 2130903080;
 			
 			// aapt resource value: 0x7f030029
-			public static int design_menu_item_action_area = 2130903081;
+			public static int design_layout_snackbar = 2130903081;
 			
 			// aapt resource value: 0x7f03002a
-			public static int design_navigation_item = 2130903082;
+			public static int design_layout_snackbar_include = 2130903082;
 			
 			// aapt resource value: 0x7f03002b
-			public static int design_navigation_item_header = 2130903083;
+			public static int design_layout_tab_icon = 2130903083;
 			
 			// aapt resource value: 0x7f03002c
-			public static int design_navigation_item_separator = 2130903084;
+			public static int design_layout_tab_text = 2130903084;
 			
 			// aapt resource value: 0x7f03002d
-			public static int design_navigation_item_subheader = 2130903085;
+			public static int design_menu_item_action_area = 2130903085;
 			
 			// aapt resource value: 0x7f03002e
-			public static int design_navigation_menu = 2130903086;
+			public static int design_navigation_item = 2130903086;
 			
 			// aapt resource value: 0x7f03002f
-			public static int design_navigation_menu_item = 2130903087;
+			public static int design_navigation_item_header = 2130903087;
 			
 			// aapt resource value: 0x7f030030
-			public static int design_text_input_password_icon = 2130903088;
+			public static int design_navigation_item_separator = 2130903088;
 			
 			// aapt resource value: 0x7f030031
-			public static int select_dialog_item_material = 2130903089;
+			public static int design_navigation_item_subheader = 2130903089;
 			
 			// aapt resource value: 0x7f030032
-			public static int select_dialog_multichoice_material = 2130903090;
+			public static int design_navigation_menu = 2130903090;
 			
 			// aapt resource value: 0x7f030033
-			public static int select_dialog_singlechoice_material = 2130903091;
+			public static int design_navigation_menu_item = 2130903091;
 			
 			// aapt resource value: 0x7f030034
-			public static int support_simple_spinner_dropdown_item = 2130903092;
+			public static int design_text_input_password_icon = 2130903092;
 			
 			// aapt resource value: 0x7f030035
-			public static int tooltip = 2130903093;
+			public static int select_dialog_item_material = 2130903093;
+			
+			// aapt resource value: 0x7f030036
+			public static int select_dialog_multichoice_material = 2130903094;
+			
+			// aapt resource value: 0x7f030037
+			public static int select_dialog_singlechoice_material = 2130903095;
+			
+			// aapt resource value: 0x7f030038
+			public static int support_simple_spinner_dropdown_item = 2130903096;
+			
+			// aapt resource value: 0x7f030039
+			public static int tooltip = 2130903097;
 			
 			static Layout()
 			{
@@ -4364,8 +4424,32 @@ namespace AppRopio.Feedback.Droid
 			// aapt resource value: 0x7f060193
 			public static int app_feedback_myreviews_item_title = 2131100051;
 			
+			// aapt resource value: 0x7f060197
+			public static int app_feedback_reviewdetails_button = 2131100055;
+			
+			// aapt resource value: 0x7f060196
+			public static int app_feedback_reviewdetails_delete = 2131100054;
+			
+			// aapt resource value: 0x7f060198
+			public static int app_feedback_reviewdetails_text = 2131100056;
+			
+			// aapt resource value: 0x7f06019a
+			public static int app_feedback_reviewpost_button = 2131100058;
+			
+			// aapt resource value: 0x7f06019c
+			public static int app_feedback_reviewpost_item_score_item_button = 2131100060;
+			
+			// aapt resource value: 0x7f06019d
+			public static int app_feedback_reviewpost_item_score_title = 2131100061;
+			
+			// aapt resource value: 0x7f06019b
+			public static int app_feedback_reviewpost_item_text = 2131100059;
+			
 			// aapt resource value: 0x7f060195
 			public static int app_feedback_reviews_button = 2131100053;
+			
+			// aapt resource value: 0x7f060199
+			public static int app_feedback_scoreview_text = 2131100057;
 			
 			static Style()
 			{
