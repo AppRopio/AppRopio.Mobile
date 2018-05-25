@@ -178,7 +178,6 @@
     <Compile Include="Views\ProductWebContent\ProductWebContentFragment.cs" />
     <Compile Include="Views\Categories\Cataloged\CCategoriesPagerFragment.cs" />
     <Compile Include="Views\Categories\Cataloged\CCategoriesCatalogFragment.cs" />
-    <Compile Include="Bootstrap\JsonPluginBootstrap.cs" />
     <Compile Include="Views\Categories\Disabled\DCategoriesFragment.cs" />
     <Compile Include="Views\Categories\Disabled\DCatalogTemplateSelector.cs" />
     <Compile Include="Views\ModalProductCard\ModalProductCardFragment.cs" />

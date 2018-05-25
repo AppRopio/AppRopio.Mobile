@@ -149,7 +149,6 @@
     <Compile Include="Views\Points\List\PointsListFragment.cs" />
     <Compile Include="Views\Points\Map\PointsMapFragment.cs" />
     <Compile Include="Views\Points\PointAdditionalInfoFragment.cs" />
-    <Compile Include="Bootstrap\JsonPluginBootstrap.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

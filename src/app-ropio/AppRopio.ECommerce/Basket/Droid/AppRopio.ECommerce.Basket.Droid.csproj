@@ -192,8 +192,6 @@
     <Compile Include="Plugin.cs" />
     <Compile Include="Views\Order\Full\FullOrderFragment.cs" />
     <Compile Include="Views\Order\Full\FullOrderTemplateSelector.cs" />
-    <Compile Include="Bootstrap\VisibilityPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\JsonPluginBootstrap.cs" />
     <Compile Include="Views\Order\Payment\PaymentFragment.cs" />
     <Compile Include="Views\Order\Thanks\ThanksFragment.cs" />
     <Compile Include="Views\Order\Delivery\DeliveryOnAddressFragment.cs" />
