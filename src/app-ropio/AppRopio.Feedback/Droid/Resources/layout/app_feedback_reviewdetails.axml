@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/app_color_background">
+    <ScrollView
+        android:id="@+id/app_feedback_reviews_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/app_feedback_reviewdetails_button">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <appropio.base.droid.controls.ARImageView
+                        android:id="@+id/app_feedback_myreviews_item_image"
+                        style="@style/app_feedback_myreviews_item_image"
+                        android:layout_margin="@dimen/app_feedback_myreviews_item_margins"
+                        app:MvxBind="ImageUrl ProductImageUrl" />
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/app_feedback_myreviews_item_margins"
+                        android:layout_marginBottom="@dimen/app_feedback_myreviews_item_margins"
+                        android:layout_marginRight="@dimen/app_feedback_myreviews_item_margins"
+                        app:MvxBind="Click ProductDetailsCommand">
+                        <TextView
+                            style="@style/app_feedback_myreviews_item_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:MvxBind="Text DateToString(Date, 'dd MMMM yyyy')" />
+                        <TextView
+                            style="@style/app_feedback_myreviews_item_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/app_feedback_myreviews_item_paddings"
+                            app:MvxBind="Text ProductTitle" />
+                    </LinearLayout>
+                </LinearLayout>
+                <View
+                    style="@style/AppRopioTheme.Control.Separator" />
+                <appropio.feedback.droid.views.score.ScoreView
+                    android:id="@+id/app_feedback_myreviews_score"
+                    android:layout_width="@dimen/app_feedback_reviewdetails_scoreWidth"
+                    android:layout_height="@dimen/app_feedback_reviewdetails_scoreHeight"
+                    android:layout_marginTop="@dimen/app_feedback_myreviews_item_paddings"
+                    android:layout_marginLeft="@dimen/app_feedback_myreviews_item_margins" />
+                <TextView
+                    style="@style/app_feedback_reviewdetails_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/app_feedback_myreviews_item_paddings"
+                    android:layout_marginBottom="@dimen/app_feedback_myreviews_item_margins"
+                    android:layout_marginLeft="@dimen/app_feedback_myreviews_item_margins"
+                    android:layout_marginRight="@dimen/app_feedback_myreviews_item_margins"
+                    app:MvxBind="Text Text" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <Button
+        style="@style/app_feedback_reviewdetails_button"
+        android:id="@+id/app_feedback_reviewdetails_button"
+        android:layout_alignParentBottom="true"
+        app:MvxBind="Click EditReviewCommand; Visibility Visibility(CanEdit); Text Resx('ReviewDetails_Edit', 'Feedback')" />
+    <include
+        layout="@layout/app_base_loading" />
+</RelativeLayout>

@@ -1,8 +1,10 @@
-﻿using Android.Content;
+﻿using System;
+using Android.Content;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
 using AppRopio.Base.Core.Services.Localization;
+using AppRopio.Base.Core.Services.ViewLookup;
 using AppRopio.Base.Droid.Adapters;
 using AppRopio.Base.Droid.Views;
 using AppRopio.ECommerce.Basket.Core;
@@ -11,6 +13,8 @@ using AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Items;
 using MvvmCross.Binding.Droid.BindingContext;
 using MvvmCross.Droid.Support.V7.RecyclerView;
 using MvvmCross.Platform;
+using AppRopio.ECommerce.Basket.Core.Services;
+using MvvmCross.Droid.Views;
 
 namespace AppRopio.ECommerce.Basket.Droid.Views.Basket
 {
@@ -38,12 +42,34 @@ namespace AppRopio.ECommerce.Basket.Droid.Views.Basket
             }
         }
 
+        protected virtual void SetupLoyaltyViewIfExist(LinearLayout basketButtonLayout)
+        {
+            var viewLookupService = Mvx.Resolve<IViewLookupService>();
+            var productConfigService = Mvx.Resolve<IBasketConfigService>();
+
+            var config = productConfigService.Config;
+
+            if (config.Loyalty != null && viewLookupService.IsRegistered(config.Loyalty.TypeName))
+            {
+                var loyaltyView = ViewModel.LoyaltyVm == null ? null : Activator.CreateInstance(viewLookupService.Resolve(config.Loyalty.TypeName), Context) as IMvxAndroidView;
+                if (loyaltyView != null)
+                {
+                    loyaltyView.BindingContext = new MvxAndroidBindingContext(Context, new MvxSimpleLayoutInflaterHolder(LayoutInflater), ViewModel.LoyaltyVm);
+
+                    basketButtonLayout.AddView((View)loyaltyView, 0);
+                }
+            }
+        }
+
         public override void OnViewCreated(Android.Views.View view, Android.OS.Bundle savedInstanceState)
         {
             base.OnViewCreated(view, savedInstanceState);
 
             var recyclerView = view.FindViewById<MvxRecyclerView>(Resource.Id.app_basket_basket_recyclerView);
             SetupRecyclerView(view, recyclerView);
+
+            var basketButtonLayout = view.FindViewById<LinearLayout>(Resource.Id.app_basket_basket_buttonLayout);
+            SetupLoyaltyViewIfExist(basketButtonLayout);
         }
 
         private class OnMoreClickListener : Java.Lang.Object, View.IOnClickListener, Android.Support.V7.Widget.PopupMenu.IOnMenuItemClickListener

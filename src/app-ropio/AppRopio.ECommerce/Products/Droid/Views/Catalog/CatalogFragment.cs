@@ -3,6 +3,7 @@ using Android.Support.V7.Widget;
 using Android.Util;
 using Android.Views;
 using AppRopio.Base.Core.Services.ViewLookup;
+using AppRopio.Base.Core.ViewModels;
 using AppRopio.Base.Droid.Adapters;
 using AppRopio.ECommerce.Products.Core.Services;
 using AppRopio.ECommerce.Products.Core.ViewModels.Catalog;
@@ -73,11 +74,6 @@ namespace AppRopio.ECommerce.Products.Droid.Views.Catalog
 
         protected virtual void TuneSectionHeaderOnBind(bool first, bool last, RecyclerView.ViewHolder viewHolder)
         {
-            var layoutParams = new StaggeredGridLayoutManager.LayoutParams(viewHolder.ItemView.LayoutParameters);
-            layoutParams.FullSpan = true;
-
-            viewHolder.ItemView.LayoutParameters = layoutParams;
-
             if (!_headerInitialized)
             {
                 var config = Mvx.Resolve<IProductConfigService>().Config;
@@ -100,8 +96,10 @@ namespace AppRopio.ECommerce.Products.Droid.Views.Catalog
         {
             if (CollectionType == CatalogCollectionType.Grid)
             {
-                var layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.Vertical);
-                recyclerView.SetLayoutManager(layoutManager);
+                var gridLayoutManager = new GridLayoutManager(Context, 2, GridLayoutManager.Vertical, false);
+                gridLayoutManager.SetSpanSizeLookup(new CatalogSpanSizeLookup(gridLayoutManager, ViewModel));
+
+                recyclerView.SetLayoutManager(gridLayoutManager);
             }
             else
                 recyclerView.SetLayoutManager(new LinearLayoutManager(Context, LinearLayoutManager.Vertical, false));
@@ -124,6 +122,23 @@ namespace AppRopio.ECommerce.Products.Droid.Views.Catalog
             SetupRecyclerView(RecyclerView);
 
             HasOptionsMenu = ViewModel?.VmNavigationType != Base.Core.Models.Navigation.NavigationType.None && ViewModel?.VmNavigationType != Base.Core.Models.Navigation.NavigationType.InsideScreen;
+        }
+    }
+
+    public class CatalogSpanSizeLookup : GridLayoutManager.SpanSizeLookup
+    {
+        private GridLayoutManager _layoutManager;
+        private ICatalogViewModel _viewModel;
+
+        public CatalogSpanSizeLookup(GridLayoutManager layoutManager, ICatalogViewModel viewModel)
+        {
+            _layoutManager = layoutManager;
+            _viewModel = viewModel;
+        }
+
+        public override int GetSpanSize(int position)
+        {
+            return (position == 0 && _viewModel.HeaderVm != null) ? _layoutManager.SpanCount : 1;
         }
     }
 }

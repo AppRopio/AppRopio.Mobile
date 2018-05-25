@@ -368,6 +368,14 @@
             name="android:focusableInTouchMode">false</item>
     </style>
     <style
+        name  ="app_products_productCard_multilineTitle"
+        parent="AppRopio.TextAppearance.Body2.Medium">
+        <item
+            name="android:maxLines">1</item>
+        <item
+            name="android:ellipsize">end</item>
+    </style>
+    <style
         name  ="app_products_productCard_multilineText"
         parent="AppRopio.TextAppearance.Body2">
         <item

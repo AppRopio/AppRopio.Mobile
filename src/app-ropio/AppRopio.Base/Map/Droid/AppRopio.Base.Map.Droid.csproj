@@ -123,6 +123,24 @@
     <Reference Include="Xamarin.GooglePlayServices.Maps">
       <HintPath>..\..\..\AppRopio.ECommerce\packages\Xamarin.GooglePlayServices.Maps.60.1142.0\lib\MonoAndroid80\Xamarin.GooglePlayServices.Maps.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\Newtonsoft.Json.10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Json">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Plugin.Json.5.6.3\lib\MonoAndroid\MvvmCross.Plugins.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Transition">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\Xamarin.Android.Support.Transition.26.0.2\lib\MonoAndroid80\Xamarin.Android.Support.Transition.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Design">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\Xamarin.Android.Support.Design.26.0.2\lib\MonoAndroid80\Xamarin.Android.Support.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Droid.Support.Design">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Droid.Support.Design.5.6.3\lib\MonoAndroid70\MvvmCross.Droid.Support.Design.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
@@ -204,4 +222,6 @@
   <Import Project="..\..\..\AppRopio.ECommerce\packages\Xamarin.GooglePlayServices.Tasks.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Tasks.targets" Condition="Exists('..\..\..\AppRopio.ECommerce\packages\Xamarin.GooglePlayServices.Tasks.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Tasks.targets')" />
   <Import Project="..\..\..\AppRopio.ECommerce\packages\Xamarin.GooglePlayServices.Base.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Base.targets" Condition="Exists('..\..\..\AppRopio.ECommerce\packages\Xamarin.GooglePlayServices.Base.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Base.targets')" />
   <Import Project="..\..\..\AppRopio.ECommerce\packages\Xamarin.GooglePlayServices.Maps.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Maps.targets" Condition="Exists('..\..\..\AppRopio.ECommerce\packages\Xamarin.GooglePlayServices.Maps.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Maps.targets')" />
+  <Import Project="..\..\..\AppRopio.ECommerce\packages\Xamarin.Android.Support.Transition.26.0.2\build\MonoAndroid80\Xamarin.Android.Support.Transition.targets" Condition="Exists('..\..\..\AppRopio.ECommerce\packages\Xamarin.Android.Support.Transition.26.0.2\build\MonoAndroid80\Xamarin.Android.Support.Transition.targets')" />
+  <Import Project="..\..\..\AppRopio.ECommerce\packages\Xamarin.Android.Support.Design.26.0.2\build\MonoAndroid80\Xamarin.Android.Support.Design.targets" Condition="Exists('..\..\..\AppRopio.ECommerce\packages\Xamarin.Android.Support.Design.26.0.2\build\MonoAndroid80\Xamarin.Android.Support.Design.targets')" />
 </Project>
