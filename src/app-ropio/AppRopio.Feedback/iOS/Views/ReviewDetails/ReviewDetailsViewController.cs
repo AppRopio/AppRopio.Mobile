@@ -1,9 +1,7 @@
-﻿using System.Globalization;
-using AppRopio.Base.iOS;
+﻿using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.UIExtentions;
 using AppRopio.Base.iOS.Views;
 using AppRopio.Feedback.Core.ViewModels.ReviewDetails;
-using AppRopio.Feedback.iOS.Converters;
 using AppRopio.Feedback.iOS.Models;
 using AppRopio.Feedback.iOS.Services;
 using MvvmCross.Binding.BindingContext;
@@ -13,6 +11,7 @@ using MvvmCross.Platform;
 using UIKit;
 using AppRopio.Feedback.Core;
 using AppRopio.Base.Core;
+using AppRopio.Base.Core.Converters;
 
 namespace AppRopio.Feedback.iOS.Views.ReviewDetails
 {
