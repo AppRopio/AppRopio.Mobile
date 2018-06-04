@@ -5,6 +5,7 @@ using AppRopio.Base.API.Exceptions;
 using AppRopio.Base.Core.ViewModels.Services;
 using AppRopio.Models.Payments.Responses;
 using AppRopio.Payments.API.Services;
+using AppRopio.Payments.CloudPayments.API.Responses;
 using AppRopio.Payments.CloudPayments.API.Services;
 using AppRopio.Payments.CloudPayments.Core.Models;
 using AppRopio.Payments.CloudPayments.Core.Services;
@@ -61,7 +62,13 @@ namespace AppRopio.Payments.CloudPayments.Core.ViewModels.CloudPayments.Services
         {
 			try
 			{
-                var chargeResult = await Service.Charge(cryptogram, amount, currency, cardHolderName, Config.StoreId, Config.ApiSecret, orderId);
+                Response<ChargeResponse> chargeResult = null;
+
+                if (Config.MessageScheme == MessageSchemeType.Single)
+                    chargeResult = await Service.Charge(cryptogram, amount, currency, cardHolderName, Config.StoreId, Config.ApiSecret, orderId);
+                else if (Config.MessageScheme == MessageSchemeType.Dual)
+                    chargeResult = await Service.Auth(cryptogram, amount, currency, cardHolderName, Config.StoreId, Config.ApiSecret, orderId);
+                
                 if (chargeResult.Success)
                     return new PaymentResult { Succeeded = true };
 

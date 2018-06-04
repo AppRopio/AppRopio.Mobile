@@ -39,6 +39,7 @@
     <Compile Include="Services\ICloudPaymentsConfigService.cs" />
     <Compile Include="Services\Implementation\CloudPaymentsConfigService.cs" />
     <Compile Include="ViewModels\CloudPayments\Services\ICloudPaymentsVmService.cs" />
+    <Compile Include="Models\MessageSchemeType.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />
