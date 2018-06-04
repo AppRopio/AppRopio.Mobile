@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/app_color_background">
+    <mvvmcross.droid.support.v7.recyclerview.MvxRecyclerView
+        android:id="@+id/app_feedback_myreviews_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:MvxItemTemplate="@layout/app_feedback_myreviews_item"
+        app:MvxBind="ItemsSource Reviews; ItemClick SelectionChangedCommand; Visibility Visibility(Reviews.Count)" />
+<!--<include
+        layout="@layout/app_feedback_myreviews_empty" />-->
+    <include
+        layout="@layout/app_base_loading" />
+</RelativeLayout>

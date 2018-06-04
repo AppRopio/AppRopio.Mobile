@@ -9,7 +9,8 @@
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="none">
+        android:scrollbars="none"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
         <LinearLayout
             android:id="@+id/app_map_list_item_linearLayout"
             android:orientation="vertical"
