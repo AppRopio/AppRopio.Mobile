@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        style="@style/app_feedback_reviewpost_item_score_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/app_feedback_myreviews_item_margins"
+        android:layout_marginRight="@dimen/app_feedback_myreviews_item_margins"
+        android:layout_marginTop="@dimen/app_feedback_myreviews_item_margins"
+        app:MvxBind="Text Title" />
+    <LinearLayout
+        android:id="@+id/app_feedback_reviewpost_item_score_layout"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/app_feedback_myreviews_item_margins"
+        android:layout_marginRight="@dimen/app_feedback_myreviews_item_margins"
+        android:layout_marginTop="@dimen/app_feedback_myreviews_item_paddings"
+        android:layout_marginBottom="@dimen/app_feedback_myreviews_item_margins" />
+</LinearLayout>

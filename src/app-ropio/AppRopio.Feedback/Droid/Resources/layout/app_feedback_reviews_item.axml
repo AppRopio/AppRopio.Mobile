@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        style="@style/app_feedback_myreviews_item_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/app_feedback_myreviews_item_paddings"
+        app:MvxBind="Text Score; Visibility Visibility(Score)" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/app_feedback_myreviews_item_paddings"
+        android:layout_marginLeft="@dimen/app_feedback_myreviews_item_margins"
+        android:layout_marginRight="@dimen/app_feedback_myreviews_item_margins"
+        android:layout_marginBottom="@dimen/app_feedback_myreviews_item_margins">
+        <TextView
+            style="@style/app_feedback_myreviews_item_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:MvxBind="Text Author" />
+        <TextView
+            style="@style/app_feedback_myreviews_item_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/app_feedback_myreviews_item_paddings"
+            app:MvxBind="Text DateToString(Date, 'dd MMMM yyyy')" />
+        <TextView
+            style="@style/app_feedback_myreviews_item_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/app_feedback_myreviews_item_paddings"
+            app:MvxBind="Text Text" />
+    </LinearLayout>
+    <View
+        style="@style/AppRopioTheme.Control.Separator" />
+</LinearLayout>

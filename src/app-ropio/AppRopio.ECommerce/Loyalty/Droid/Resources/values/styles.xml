@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <style
+        name="app_loyalty_promocode_inputLayout"
+        parent="AppRopioTheme.Control.TextInputLayout">
+    </style>
+    <style
+        name="app_loyalty_promocode_inputLayout_hintTextAppearance"
+        parent="AppRopioTheme.Control.TextInputLayout.HintTextAppearance">
+    </style>
+</resources>

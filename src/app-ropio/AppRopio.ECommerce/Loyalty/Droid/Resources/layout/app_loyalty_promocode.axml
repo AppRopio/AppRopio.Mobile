@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_loyalty_promocode_textinput_height"
+        android:theme="@style/app_loyalty_promocode_inputLayout"
+        android:layout_marginLeft="@dimen/app_loyalty_promocode_inputLayout_horizontalMargin"
+        android:layout_marginRight="@dimen/app_loyalty_promocode_inputLayout_horizontalMargin"
+        android:layout_marginTop="@dimen/app_loyalty_promocode_inputLayout_verticalMargin"
+        app:hintEnabled="true"
+        app:hintTextAppearance="@style/app_loyalty_promocode_inputLayout_hintTextAppearance"
+        app:MvxBind="Hint Resx('Promocode_Placeholder', 'Loyalty')">
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/app_loyalty_promocode_editText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:maxLines="1"
+            android:inputType="text"
+            app:MvxBind="Text Code" />
+    </android.support.design.widget.TextInputLayout>
+</merge>

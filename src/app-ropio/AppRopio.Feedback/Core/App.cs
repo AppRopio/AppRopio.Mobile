@@ -2,7 +2,6 @@
 using AppRopio.Base.Core.Services.ViewModelLookup;
 using AppRopio.Feedback.Core.Services;
 using AppRopio.Feedback.Core.Services.Implementation;
-using AppRopio.Feedback.Core.ViewModels.Items;
 using AppRopio.Feedback.Core.ViewModels.Items.Score;
 using AppRopio.Feedback.Core.ViewModels.Items.Text;
 using AppRopio.Feedback.Core.ViewModels.Items.TotalScore;
