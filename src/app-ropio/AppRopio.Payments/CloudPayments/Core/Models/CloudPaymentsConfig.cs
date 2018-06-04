@@ -17,5 +17,7 @@ namespace AppRopio.Payments.CloudPayments.Core.Models
         /// Url для завершения оплаты через 3DS
         /// </summary>
         public string ThreeDSRedirectUrl { get; set; }
+
+        public MessageSchemeType MessageScheme { get; set; }
     }
 }

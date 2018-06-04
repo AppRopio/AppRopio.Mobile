@@ -15,6 +15,7 @@ namespace AppRopio.Payments.CloudPayments.API.Services.Implementation
     {
         protected const string BASE_URL = "https://api.cloudpayments.ru/payments/";
 		protected const string CHARGE = "cards/charge";
+        protected const string AUTH = "cards/auth";
 		protected const string POST_3DS = "mobile/cards/post3ds";
 
         public async Task<Response<ChargeResponse>> Charge(string cardCryptogram, decimal amount, string currency, string name, string publicId, string apiSecret, string orderId)
@@ -31,6 +32,22 @@ namespace AppRopio.Payments.CloudPayments.API.Services.Implementation
             };
 
             return await Post<Response<ChargeResponse>>(CHARGE, ToStringContent(request), publicId, apiSecret);
+        }
+
+        public async Task<Response<ChargeResponse>> Auth(string cardCryptogram, decimal amount, string currency, string name, string publicId, string apiSecret, string orderId)
+        {
+            var httpClient = new HttpClient();
+
+            var request = new ChargeRequest()
+            {
+                CardCryptogramPacket = cardCryptogram,
+                Amount = amount,
+                Currency = currency,
+                Name = name,
+                InvoceId = orderId
+            };
+
+            return await Post<Response<ChargeResponse>>(AUTH, ToStringContent(request), publicId, apiSecret);
         }
 
         public async Task<Response<Complete3DSResponse>> Completed3DSPayment(string paRes, string transactionId, string publicId, string apiSecret)
