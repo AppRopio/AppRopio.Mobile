@@ -120,6 +120,8 @@
     <Compile Include="Models\Bundle\OrderFieldAutocompleteBundle.cs" />
     <Compile Include="Messages\Autocomplete\AutocompleteStartMessage.cs" />
     <Compile Include="Messages\Autocomplete\AutocompleteApplyMessage.cs" />
+    <Compile Include="ViewModels\CatalogCard\BasketCatalogItemVM.cs" />
+    <Compile Include="ViewModels\CatalogCard\IBasketCatalogItemVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Plugin.ExternalMaps.Abstractions">
@@ -195,6 +197,7 @@
     <Folder Include="ViewModels\Order\Thanks\" />
     <Folder Include="ViewModels\CartIndicator\" />
     <Folder Include="Messages\Autocomplete\" />
+    <Folder Include="ViewModels\CatalogCard\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\AppRopio.Base\API\AppRopio.Base.API.csproj">

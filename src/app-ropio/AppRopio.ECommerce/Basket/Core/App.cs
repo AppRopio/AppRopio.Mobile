@@ -19,6 +19,7 @@ using AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard.Services;
 using AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Thanks;
 using AppRopio.ECommerce.Basket.Core.ViewModels.CartIndicator;
+using AppRopio.ECommerce.Basket.Core.ViewModels.CatalogCard;
 
 namespace AppRopio.ECommerce.Basket.Core
 {
@@ -52,6 +53,7 @@ namespace AppRopio.ECommerce.Basket.Core
             vmLookupService.Register<IUserViewModel, UserViewModel>();
             vmLookupService.Register<IPaymentViewModel, PaymentViewModel>();
             vmLookupService.Register<IBasketProductCardViewModel, BasketProductCardViewModel>();
+            vmLookupService.Register<IBasketCatalogItemVM, BasketCatalogItemVM>();
             vmLookupService.Register<IBasketCartIndicatorViewModel, BasketCartIndicatorViewModel>();
             vmLookupService.Register<IThanksViewModel, ThanksViewModel>();
             vmLookupService.Register<IOrderFieldAutocompleteVM, OrderFieldAutocompleteVM>();

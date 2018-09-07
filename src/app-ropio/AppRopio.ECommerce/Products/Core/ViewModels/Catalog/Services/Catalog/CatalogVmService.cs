@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using AppRopio.Base.API.Exceptions;
+using AppRopio.Base.Core.Services.ViewModelLookup;
 using AppRopio.Base.Core.ViewModels.Services;
 using AppRopio.ECommerce.Products.API.Services;
 using AppRopio.ECommerce.Products.Core.Services;
@@ -89,6 +90,39 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Services
             }
 
             Mvx.Resolve<IMvxLog>().Warn("CatalogVmService LoadHeaderVm return null");
+
+            return null;
+        }
+
+        public IMvxViewModel LoadItemBasketVm()
+        {
+            var config = Mvx.Resolve<IProductConfigService>().Config;
+
+            try
+            {
+                if (config.Basket?.ItemAddToCart != null)
+                {
+                    var assembly = Assembly.Load(new AssemblyName(config.Basket.ItemAddToCart.AssemblyName));
+
+                    var basketType = assembly.GetType(config.Basket.ItemAddToCart.TypeName);
+
+                    object basketInstance = null;
+
+                    if (basketType.GetTypeInfo().IsInterface)
+                    {
+                        var viewModelType = Mvx.Resolve<IViewModelLookupService>().Resolve(basketType);
+                        basketInstance = Activator.CreateInstance(viewModelType);
+                    }
+                    else
+                        basketInstance = Activator.CreateInstance(basketType);
+
+                    return basketInstance as IMvxViewModel;
+                }
+            }
+            catch (Exception ex)
+            {
+                OnException(ex);
+            }
 
             return null;
         }
