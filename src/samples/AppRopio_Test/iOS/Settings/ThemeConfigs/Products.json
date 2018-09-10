@@ -1,99 +1,100 @@
 ﻿{
-    "navBarSearch":
-    {
+    "navBarSearch": {
         "enabled": true,
-        "image":
-        {
+        "image": {
             "path": "Images/Products/Search.png"
         }
     },
-    "categories":
-    {
-        "categoryCell":
-        {
-            "title":
-            {
+    "categories": {
+        "collectionType": 0,
+        "categoryCell": {
+            "icon": {
+                "path": "Images/Products/empty_icon.png",
+                "background": { "HEX": "FFFFFF" }
+            },
+            "title": {
                 "font": {
-                    "ref": "@font/semibold",
-                    "size": 14
-                }
-            }
-        },
-        "collectionType": 1
+                    "ref": "@font/medium",
+                    "size": 12
+                },
+                "textTransform": 1,
+                "textAlignment": 1,
+                "textColor": { "HEX": "000000" },
+                "highlightedTextColor": { "HEX": "FFFFFF" }
+            },
+            "separatorVisibility": false,
+            "gradientVisibility": true
+        }
     },
-    "products":
-    {
-        "productCell":
-        {
-            "image":
-            {
+    "products": {
+        "productCell": {
+            "image": {
                 "path": "Images/Products/no_photo.png"
             },
-            "badge":
-            {
-                "textColor":
-                {
+            "badge": {
+                "textColor": {
                     "HEX": "FFFFFF"
                 }
             },
-            "markButton":
-            {
-                "background":
-                {
+            "markButton": {
+                "background": {
                     "HEX": "",
                     "ref": ""
                 },
-                "states":
-                {
-                    "normal":
-                    {
-                        "content":
-                        {
+                "states": {
+                    "normal": {
+                        "content": {
                             "ref": ""
                         },
                         "background": ""
                     },
-                    "highlighted":
-                    {
-                        "content":
-                        {
+                    "highlighted": {
+                        "content": {
                             "ref": ""
                         },
                         "background": ""
                     },
-                    "selected":
-                    {
-                        "content":
-                        {
+                    "selected": {
+                        "content": {
                             "ref": ""
                         },
                         "background": ""
                     },
-                    "disabled":
-                    {
-                        "content":
-                        {
+                    "disabled": {
+                        "content": {
                             "ref": ""
                         },
                         "background": ""
                     },
-                    "invalid":
-                    {
-                        "content":
-                        {
+                    "invalid": {
+                        "content": {
                             "ref": ""
                         },
                         "background": ""
                     }
                 },
-                "image":
-                {
+                "image": {
                     "path": "Images/Products/unmarked.png",
                     "highlightedPath": "Images/Products/marked.png"
                 }
             },
-            "layer":
-            {
+            "oldPrice": {
+                "font": {
+                    "ref": "@font/regular",
+                    "size": 14
+                },
+                "textColor": { "HEX": "9C9C9C" },
+                "textTransform": 1
+            },
+            "price": {
+                "font": {
+                    "ref": "@font/regular",
+                    "size": 14
+                },
+                "textColor": { "HEX": "000000" },
+                "textTransform": 1
+            },
+            "layer": {
                 "cornerRadius": 0,
                 "border": {
                     "width": 1,
@@ -101,130 +102,114 @@
                 }
             }
         },
-        "emptyView":
-        {
-            "image":
-            {
+        "emptyView": {
+            "image": {
                 "path": "Images/Products/empty_image.png"
             }
         }
     },
-    "productDetails":
-    {
-        "image":
-        {
+    "productDetails": {
+        "image": {
             "path": "Images/Products/no_photo_large.png"
         },
-        "shareButton":
-        {
-            "background":
-            {
+        "shareButton": {
+            "background": {
                 "HEX": "",
                 "ref": ""
             },
-            "states":
-            {
-                "normal":
-                {
-                    "content":
-                    {
+            "states": {
+                "normal": {
+                    "content": {
                         "ref": ""
                     },
                     "background": ""
                 },
-                "highlighted":
-                {
-                    "content":
-                    {
+                "highlighted": {
+                    "content": {
                         "ref": ""
                     },
                     "background": ""
                 },
-                "selected":
-                {
-                    "content":
-                    {
+                "selected": {
+                    "content": {
                         "ref": ""
                     },
                     "background": ""
                 },
-                "disabled":
-                {
-                    "content":
-                    {
+                "disabled": {
+                    "content": {
                         "ref": ""
                     },
                     "background": ""
                 },
-                "invalid":
-                {
-                    "content":
-                    {
+                "invalid": {
+                    "content": {
                         "ref": ""
                     },
                     "background": ""
                 }
             },
-            "image":
-            {
+            "image": {
                 "path": "Images/Products/share.png"
             }
         },
-        "markButton":
-        {
-            "background":
-            {
+        "markButton": {
+            "background": {
                 "HEX": "",
                 "ref": ""
             },
-            "states":
-            {
-                "normal":
-                {
-                    "content":
-                    {
+            "states": {
+                "normal": {
+                    "content": {
                         "ref": ""
                     },
                     "background": ""
                 },
-                "highlighted":
-                {
-                    "content":
-                    {
+                "highlighted": {
+                    "content": {
                         "ref": ""
                     },
                     "background": ""
                 },
-                "selected":
-                {
-                    "content":
-                    {
+                "selected": {
+                    "content": {
                         "ref": ""
                     },
                     "background": ""
                 },
-                "disabled":
-                {
-                    "content":
-                    {
+                "disabled": {
+                    "content": {
                         "ref": ""
                     },
                     "background": ""
                 },
-                "invalid":
-                {
-                    "content":
-                    {
+                "invalid": {
+                    "content": {
                         "ref": ""
                     },
                     "background": ""
                 }
             },
-            "image":
-            {
+            "image": {
                 "path": "Images/Products/unmarked.png",
                 "highlightedPath": "Images/Products/marked.png"
             }
+        },
+        "oldPrice": {
+            "font": {
+                "ref": "@font/regular",
+                "size": 14
+            },
+            "textColor": { "HEX": "9C9C9C" },
+            "textTransform": 1
+        },
+        "price": {
+            "font": {
+                "ref": "@font/regular",
+                "size": 14
+            },
+            "textColor": { "HEX": "000000" },
+            "textTransform": 1
         },
         "closeButton": {
             "background": {
@@ -285,16 +270,12 @@
             }
         }
     },
-    "contentSearch":
-    {
-        "searchCell":
-        {
-            "historyIcon":
-            {
+    "contentSearch": {
+        "searchCell": {
+            "historyIcon": {
                 "path": "Images/Products/history_icon.png"
             },
-            "linkIcon":
-            {
+            "linkIcon": {
                 "path": "Images/Products/link_icon.png"
             }
         }
