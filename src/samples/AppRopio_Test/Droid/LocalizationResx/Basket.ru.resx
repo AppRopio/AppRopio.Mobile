@@ -192,4 +192,8 @@
         name="BasketProductCard_Done">
         <value>Готово</value>
     </data>
+    <data
+        name="BasketCatalogCard_AddToBasket">
+        <value>В КОРЗИНУ</value>
+    </data>
 </root>

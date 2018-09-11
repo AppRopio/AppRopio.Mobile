@@ -92,8 +92,11 @@
     <Reference Include="MvvmCross.Plugins.Json">
       <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Plugin.Json.5.6.3\lib\Xamarin.iOS10\MvvmCross.Plugins.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Plugin.Permissions.Abstractions">
+      <HintPath>..\..\AppRopio.ECommerce\packages\Plugin.Permissions.2.1.0\lib\Xamarin.iOS10\Plugin.Permissions.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="Plugin.Permissions">
-      <HintPath>..\..\AppRopio.ECommerce\packages\Plugin.Permissions.3.0.0.12\lib\xamarinios10\Plugin.Permissions.dll</HintPath>
+      <HintPath>..\..\AppRopio.ECommerce\packages\Plugin.Permissions.2.1.0\lib\Xamarin.iOS10\Plugin.Permissions.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

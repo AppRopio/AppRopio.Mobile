@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>AppRopio.Navigation.Menu.Droid</RootNamespace>
     <AssemblyName>AppRopio.Navigation.Menu.Droid</AssemblyName>
-    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
@@ -116,9 +116,6 @@
       <HintPath>..\..\..\AppRopio.ECommerce\packages\Plugin.CurrentActivity.2.1.0.4\lib\monoandroid44\Plugin.CurrentActivity.dll</HintPath>
     </Reference>
     <Reference Include="Java.Interop" />
-    <Reference Include="Plugin.Permissions">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\Plugin.Permissions.3.0.0.12\lib\monoandroid71\Plugin.Permissions.dll</HintPath>
-    </Reference>
     <Reference Include="Xamarin.Android.Support.Annotations">
       <HintPath>..\..\..\AppRopio.ECommerce\packages\Xamarin.Android.Support.Annotations.27.0.2\lib\MonoAndroid81\Xamarin.Android.Support.Annotations.dll</HintPath>
     </Reference>
@@ -166,6 +163,12 @@
     </Reference>
     <Reference Include="Xamarin.Android.Support.Constraint.Layout">
       <HintPath>..\..\..\AppRopio.ECommerce\packages\Xamarin.Android.Support.Constraint.Layout.1.1.0\lib\MonoAndroid70\Xamarin.Android.Support.Constraint.Layout.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Permissions.Abstractions">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\Plugin.Permissions.2.1.0\lib\MonoAndroid10\Plugin.Permissions.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Permissions">
+      <HintPath>..\..\..\AppRopio.ECommerce\packages\Plugin.Permissions.2.1.0\lib\MonoAndroid10\Plugin.Permissions.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
