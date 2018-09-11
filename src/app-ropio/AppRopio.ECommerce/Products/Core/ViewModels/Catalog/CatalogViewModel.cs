@@ -7,6 +7,7 @@ using AppRopio.Base.Core.Attributes;
 using AppRopio.Base.Core.Extentions;
 using AppRopio.Base.Core.Models.Bundle;
 using AppRopio.Base.Core.Models.Navigation;
+using AppRopio.Base.Core.ViewModels;
 using AppRopio.Base.Core.ViewModels.Search;
 using AppRopio.Base.Filters.Core.Messages;
 using AppRopio.Base.Filters.Core.Models.Bundle;
@@ -579,6 +580,12 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Catalog
         public override void Unbind()
         {
             base.Unbind();
+
+            if (!Items.IsNullOrEmpty()) {
+                foreach (var item in Items) {
+                    (item as BaseViewModel)?.Unbind();
+                }
+            }
 
             ReleaseSubscriptionTokens();
         }
