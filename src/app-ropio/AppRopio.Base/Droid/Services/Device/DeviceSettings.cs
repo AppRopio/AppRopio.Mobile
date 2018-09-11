@@ -17,7 +17,7 @@ namespace AppRopio.Base.Droid.Services.Device
         #region Setting Constants
 
         private const string Key = "device_token";
-        private static readonly string Default = new Guid().ToString();
+        private static readonly string Default = Guid.NewGuid().ToString();
 
         #endregion
 

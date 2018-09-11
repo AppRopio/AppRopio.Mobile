@@ -26,6 +26,8 @@ namespace AppRopio.ECommerce.Products.Core.Models
     {
         public AssemblyElement AddToCart { get; set; }
 
+        public AssemblyElement ItemAddToCart { get; set; }
+
         public AssemblyElement CartIndicator { get; set; }
     }
 
