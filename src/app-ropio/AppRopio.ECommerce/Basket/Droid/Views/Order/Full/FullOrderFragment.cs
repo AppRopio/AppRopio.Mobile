@@ -208,7 +208,21 @@ namespace AppRopio.ECommerce.Basket.Droid.Views.Order.Full
             {
                 StringFormat = (arg) =>
                 {
-                    return arg == null ? ($"{LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Order_DeliveryPriceFrom")} 0 {AppSettings.SettingsCulture.NumberFormat.CurrencySymbol}") : ((decimal)arg).ToString($"# ### ##0.## {AppSettings.SettingsCulture.NumberFormat.CurrencySymbol};;{LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Order_Free")}").Trim();
+                    if (arg == null) {
+                        string deliveryEmptyText = LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Order_DeliveryEmptyText");
+                        if (!string.IsNullOrEmpty(deliveryEmptyText)) {
+                            return deliveryEmptyText;
+                        }
+                        return $"{LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Order_DeliveryPriceFrom")} {0.0m.ToString(AppSettings.CurrencyFormat, AppSettings.SettingsCulture.NumberFormat)}";
+                    }
+                    var d = (decimal)arg;
+                    if (d == 0.0m) {
+                        return LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Order_Free");
+                    } else if (d > 0.0m) {
+                        return d.ToString(AppSettings.CurrencyFormat, AppSettings.SettingsCulture.NumberFormat);
+                    } else {
+                        return string.Empty;
+                    }
                 }
             });
         }

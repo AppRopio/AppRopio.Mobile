@@ -8,7 +8,7 @@ namespace AppRopio.Base.Core.Converters
     {
         private NumberFormatInfo _defaultFormat = (NumberFormatInfo)AppSettings.SettingsCulture.NumberFormat.Clone();
 
-        public string CurrencyFormat { get; set; } = "C0";
+        public string CurrencyFormat { get; set; } = AppSettings.CurrencyFormat;
 
 		public string CurrencySymbol => AppSettings.SettingsCulture.NumberFormat.CurrencySymbol;
 

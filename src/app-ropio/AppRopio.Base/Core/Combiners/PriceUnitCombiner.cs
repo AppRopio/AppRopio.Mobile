@@ -1,20 +1,20 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using MvvmCross.Binding.Combiners;
-using System.Collections.Generic;
 
 namespace AppRopio.Base.Core.Combiners
 {
     public class PriceUnitCombiner : MvxValueCombiner
     {
-        private NumberFormatInfo _defaultFormat = (NumberFormatInfo)AppSettings.SettingsCulture.NumberFormat.Clone();
+        private readonly NumberFormatInfo _defaultFormat = (NumberFormatInfo)AppSettings.SettingsCulture.NumberFormat.Clone();
 
-        public string CurrencyFormat { get; set; } = "C0";
+        public string CurrencyFormat { get; set; } = AppSettings.CurrencyFormat;
 
         public string CurrencySymbol { get; set; } = AppSettings.SettingsCulture.NumberFormat.CurrencySymbol;
 
-        public override bool TryGetValue(System.Collections.Generic.IEnumerable<MvvmCross.Binding.Bindings.SourceSteps.IMvxSourceStep> steps, out object value)
+        public override bool TryGetValue(IEnumerable<MvvmCross.Binding.Bindings.SourceSteps.IMvxSourceStep> steps, out object value)
         {
             var priceString = string.Empty;
 
