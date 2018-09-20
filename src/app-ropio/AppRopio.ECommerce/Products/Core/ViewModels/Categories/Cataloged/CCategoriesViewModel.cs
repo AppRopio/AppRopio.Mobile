@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using AppRopio.Base.Core.Attributes;
 using AppRopio.Base.Core.Extentions;
+using AppRopio.ECommerce.Products.Core.Models;
 using AppRopio.ECommerce.Products.Core.Models.Bundle;
 using AppRopio.ECommerce.Products.Core.Services;
 using AppRopio.ECommerce.Products.Core.ViewModels.Catalog;
@@ -47,6 +48,10 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Categories
         #endregion
 
         #region Properties
+
+        public override bool SearchBar => ConfigService.Config.SearchType == SearchType.Bar
+                                      || (ConfigService.Config.SearchType == SearchType.BarStart
+                                          && string.IsNullOrEmpty(_currentCategoryId));
 
         private int _currentPage;
         public int CurrentPage

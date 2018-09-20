@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>AppRopio.ECommerce.Products.Droid</RootNamespace>
     <AssemblyName>AppRopio.ECommerce.Products.Droid</AssemblyName>
-    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
@@ -256,6 +256,7 @@
     <AndroidResource Include="Resources\layout\app_products_ccategories_tabs.axml" />
     <AndroidResource Include="Resources\layout\app_products_dcategories.axml" />
     <AndroidResource Include="Resources\layout\app_products_modalProductCard.axml" />
+    <AndroidResource Include="Resources\layout\app_products_catalog_search_bar.axml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\AppRopio.Base\Core\AppRopio.Base.Core.csproj">

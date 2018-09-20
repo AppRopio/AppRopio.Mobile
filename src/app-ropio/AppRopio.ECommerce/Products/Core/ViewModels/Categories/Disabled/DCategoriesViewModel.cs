@@ -1,6 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using AppRopio.Base.Core.Attributes;
+using AppRopio.ECommerce.Products.Core.Models;
 using AppRopio.ECommerce.Products.Core.ViewModels.Catalog;
 using AppRopio.ECommerce.Products.Core.ViewModels.Categories.Items.Banners;
 using AppRopio.ECommerce.Products.Core.ViewModels.Categories.Services.Banners;
@@ -54,6 +55,9 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Categories.Disabled
                 RaisePropertyChanged(() => BottomBanners);
             }
         }
+
+        public override bool SearchBar => ConfigService.Config.SearchType == SearchType.Bar
+                                          || ConfigService.Config.SearchType == SearchType.BarStart;
 
         #endregion
 

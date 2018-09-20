@@ -159,6 +159,7 @@
     <Compile Include="ViewModels\Categories\Disabled\IDCategoriesViewModel.cs" />
     <Compile Include="ViewModels\ModalProductCard\ModalProductCardViewModel.cs" />
     <Compile Include="ViewModels\ModalProductCard\IModalProductCardViewModel.cs" />
+    <Compile Include="Models\SearchType.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">
