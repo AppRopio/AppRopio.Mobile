@@ -57,7 +57,7 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Categories.Disabled
         }
 
         public override bool SearchBar => ConfigService.Config.SearchType == SearchType.Bar
-                                          || ConfigService.Config.SearchType == SearchType.BarStart;
+                                          || ConfigService.Config.SearchType == SearchType.BarOnFirstScreen;
 
         #endregion
 

@@ -24,7 +24,7 @@ namespace AppRopio.ECommerce.Products.Core.Models
         public ProductDetailsConfig ProductDetails { get; set; }
 
         public ProductsConfig() {
-            SearchType = SearchType.Menu;
+            SearchType = SearchType.Screen;
         }
     }
 

@@ -11,7 +11,7 @@ namespace AppRopio.ECommerce.Products.Core.Models
         /// <summary>
         /// Поиск включён и отображается как меню в тулбаре
         /// </summary>
-        Menu = 1,
+        Screen = 1,
 
         /// <summary>
         /// Поиск включён и отображается как панель под тулбаром
@@ -21,6 +21,6 @@ namespace AppRopio.ECommerce.Products.Core.Models
         /// <summary>
         /// Поиск включён и отображается как панель под тулбаром только для первой страницы, для остальных - в меню
         /// </summary>
-        BarStart = 3,
+        BarOnFirstScreen = 3,
     }
 }

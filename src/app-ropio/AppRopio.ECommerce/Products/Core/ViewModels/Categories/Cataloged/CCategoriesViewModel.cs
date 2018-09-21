@@ -50,7 +50,7 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Categories
         #region Properties
 
         public override bool SearchBar => ConfigService.Config.SearchType == SearchType.Bar
-                                      || (ConfigService.Config.SearchType == SearchType.BarStart
+                                      || (ConfigService.Config.SearchType == SearchType.BarOnFirstScreen
                                           && string.IsNullOrEmpty(_currentCategoryId));
 
         private int _currentPage;

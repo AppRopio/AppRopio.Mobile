@@ -47,7 +47,7 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Categories
         protected string ParentCategoryId { get; set; }
 
         public override bool SearchBar => ConfigService.Config.SearchType == SearchType.Bar
-                                      || (ConfigService.Config.SearchType == SearchType.BarStart
+                                      || (ConfigService.Config.SearchType == SearchType.BarOnFirstScreen
                                           && string.IsNullOrEmpty(ParentCategoryId));
 
         private ObservableCollection<ICategoriesItemVM> _items;
