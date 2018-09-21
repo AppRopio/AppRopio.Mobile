@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Globalization;
 using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.UIExtentions;
 using AppRopio.Feedback.Core.ViewModels.Reviews.Items;
-using AppRopio.Feedback.iOS.Converters;
 using AppRopio.Feedback.iOS.Models;
 using AppRopio.Feedback.iOS.Services;
 using Foundation;
@@ -12,6 +10,7 @@ using MvvmCross.Binding.iOS.Views;
 using MvvmCross.Platform;
 using UIKit;
 using AppRopio.Base.Core;
+using AppRopio.Base.Core.Converters;
 
 namespace AppRopio.Feedback.iOS.Views.MyReviews.Cell
 {

@@ -1,4 +1,6 @@
-﻿using Android.App;
+﻿using System;
+using System.Threading.Tasks;
+using Android.App;
 using Android.Content;
 using Android.Graphics;
 using Android.OS;
@@ -12,6 +14,9 @@ using MvvmCross.Core.ViewModels;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Droid.Views;
 using MvvmCross.Platform;
+using MvvmCross.Platform.Platform;
+using Plugin.Permissions;
+using Plugin.Permissions.Abstractions;
 
 namespace AppRopio.Base.Droid.Views
 {
@@ -234,10 +239,29 @@ namespace AppRopio.Base.Droid.Views
 
         #region Public
 
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [Android.Runtime.GeneratedEnum] Android.Content.PM.Permission[] grantResults)
+        async Task CheckLocationPermission()
         {
-            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-            Plugin.Permissions.PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            try
+            {
+                var statusLocation = await CrossPermissions.Current.CheckPermissionStatusAsync(Plugin.Permissions.Abstractions.Permission.Location);
+                if (statusLocation != PermissionStatus.Granted)
+                {
+                    var result = await CrossPermissions.Current.RequestPermissionsAsync(new[] { Plugin.Permissions.Abstractions.Permission.Location });
+                    if (result.ContainsKey(Plugin.Permissions.Abstractions.Permission.Location))
+                    {
+
+                        statusLocation = result[Plugin.Permissions.Abstractions.Permission.Location];
+                    }
+                    else
+                    {
+                        statusLocation = PermissionStatus.Unknown;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MvxTrace.Trace(MvxTraceLevel.Diagnostic, "MainActivity: Request permission exception: " + ex);
+            }
         }
 
         public void ShowToast(string message, ToastLength length = ToastLength.Short)
