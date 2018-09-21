@@ -4,8 +4,6 @@
     <color
         name="app_products_catalog_item_badges_item_name_textColor">#FFFFFF</color>
     <color
-        name="app_products_catalog_search_background">#EDF3F7</color>
-    <color
         name="app_products_catalog_search_icon_tintColor">#C4C4C4</color>
     <color
         name="app_products_productCard_shopsHorizontalCollection_item_background">#FFFFFF</color>
