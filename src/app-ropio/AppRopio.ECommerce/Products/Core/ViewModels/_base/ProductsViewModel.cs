@@ -1,7 +1,7 @@
-using System;
 using System.Windows.Input;
 using AppRopio.Base.Core.Models.Bundle;
 using AppRopio.Base.Core.ViewModels;
+using AppRopio.ECommerce.Products.Core.Models;
 using AppRopio.ECommerce.Products.Core.Services;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
@@ -29,6 +29,8 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels
 
         public virtual bool SearchEnabled { get { return true; } }
 
+        public virtual bool SearchBar { get { return ConfigService.Config.SearchType == SearchType.Bar; } }
+
         private IMvxViewModel _cartIndicatorVM;
         public IMvxViewModel CartIndicatorVM
         {
@@ -41,6 +43,8 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels
         #region Services
 
         protected IProductsNavigationVmService NavigationVmService { get { return Mvx.Resolve<IProductsNavigationVmService>(); } }
+
+        protected IProductConfigService ConfigService { get { return Mvx.Resolve<IProductConfigService>(); } }
 
         #endregion
 
