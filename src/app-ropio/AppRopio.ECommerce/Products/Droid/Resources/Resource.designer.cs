@@ -110,14 +110,14 @@ namespace AppRopio.ECommerce.Products.Droid
 			// aapt resource value: 0x7f0101a3
 			public static int MvxDropDownItemTemplate = 2130772387;
 			
-			// aapt resource value: 0x7f0101be
-			public static int MvxFooterTemplate = 2130772414;
+			// aapt resource value: 0x7f0101c0
+			public static int MvxFooterTemplate = 2130772416;
 			
 			// aapt resource value: 0x7f0101a4
 			public static int MvxGroupItemTemplate = 2130772388;
 			
-			// aapt resource value: 0x7f0101bd
-			public static int MvxHeaderTemplate = 2130772413;
+			// aapt resource value: 0x7f0101bf
+			public static int MvxHeaderTemplate = 2130772415;
 			
 			// aapt resource value: 0x7f0101a2
 			public static int MvxItemTemplate = 2130772386;
@@ -275,6 +275,12 @@ namespace AppRopio.ECommerce.Products.Droid
 			// aapt resource value: 0x7f0101b5
 			public static int app_color_disabledControl = 2130772405;
 			
+			// aapt resource value: 0x7f0101b8
+			public static int app_color_filter_activeColor = 2130772408;
+			
+			// aapt resource value: 0x7f0101b7
+			public static int app_color_filter_unactiveColor = 2130772407;
+			
 			// aapt resource value: 0x7f0101b4
 			public static int app_color_highlightedControl = 2130772404;
 			
@@ -308,62 +314,62 @@ namespace AppRopio.ECommerce.Products.Droid
 			// aapt resource value: 0x7f0101ac
 			public static int app_color_textNotification = 2130772396;
 			
-			// aapt resource value: 0x7f0101bb
-			public static int app_font_bold = 2130772411;
+			// aapt resource value: 0x7f0101bd
+			public static int app_font_bold = 2130772413;
 			
-			// aapt resource value: 0x7f0101bc
-			public static int app_font_italic = 2130772412;
-			
-			// aapt resource value: 0x7f0101b8
-			public static int app_font_light = 2130772408;
-			
-			// aapt resource value: 0x7f0101b9
-			public static int app_font_medium = 2130772409;
-			
-			// aapt resource value: 0x7f0101b7
-			public static int app_font_regular = 2130772407;
+			// aapt resource value: 0x7f0101be
+			public static int app_font_italic = 2130772414;
 			
 			// aapt resource value: 0x7f0101ba
-			public static int app_font_semibold = 2130772410;
+			public static int app_font_light = 2130772410;
 			
-			// aapt resource value: 0x7f0101c4
-			public static int app_products_catalog_collectionType = 2130772420;
+			// aapt resource value: 0x7f0101bb
+			public static int app_font_medium = 2130772411;
 			
-			// aapt resource value: 0x7f0101c5
-			public static int app_products_catalog_item_background = 2130772421;
+			// aapt resource value: 0x7f0101b9
+			public static int app_font_regular = 2130772409;
 			
-			// aapt resource value: 0x7f0101c8
-			public static int app_products_contentsearch_ic_arrow = 2130772424;
-			
-			// aapt resource value: 0x7f0101c9
-			public static int app_products_contentsearch_ic_clock = 2130772425;
-			
-			// aapt resource value: 0x7f0101c3
-			public static int app_products_ic_empty_image = 2130772419;
-			
-			// aapt resource value: 0x7f0101cd
-			public static int app_products_ic_empty_image_large = 2130772429;
+			// aapt resource value: 0x7f0101bc
+			public static int app_font_semibold = 2130772412;
 			
 			// aapt resource value: 0x7f0101c6
-			public static int app_products_ic_marked = 2130772422;
-			
-			// aapt resource value: 0x7f0101ce
-			public static int app_products_ic_share = 2130772430;
-			
-			// aapt resource value: 0x7f0101c2
-			public static int app_products_ic_toolbar_search = 2130772418;
+			public static int app_products_catalog_collectionType = 2130772422;
 			
 			// aapt resource value: 0x7f0101c7
-			public static int app_products_ic_unmarked = 2130772423;
-			
-			// aapt resource value: 0x7f0101cb
-			public static int app_products_productCard_color_ic_checkImage = 2130772427;
+			public static int app_products_catalog_item_background = 2130772423;
 			
 			// aapt resource value: 0x7f0101ca
-			public static int app_products_productCard_ic_arrow = 2130772426;
+			public static int app_products_contentsearch_ic_arrow = 2130772426;
+			
+			// aapt resource value: 0x7f0101cb
+			public static int app_products_contentsearch_ic_clock = 2130772427;
+			
+			// aapt resource value: 0x7f0101c5
+			public static int app_products_ic_empty_image = 2130772421;
+			
+			// aapt resource value: 0x7f0101cf
+			public static int app_products_ic_empty_image_large = 2130772431;
+			
+			// aapt resource value: 0x7f0101c8
+			public static int app_products_ic_marked = 2130772424;
+			
+			// aapt resource value: 0x7f0101d0
+			public static int app_products_ic_share = 2130772432;
+			
+			// aapt resource value: 0x7f0101c4
+			public static int app_products_ic_toolbar_search = 2130772420;
+			
+			// aapt resource value: 0x7f0101c9
+			public static int app_products_ic_unmarked = 2130772425;
+			
+			// aapt resource value: 0x7f0101cd
+			public static int app_products_productCard_color_ic_checkImage = 2130772429;
 			
 			// aapt resource value: 0x7f0101cc
-			public static int app_products_productCard_ic_cross = 2130772428;
+			public static int app_products_productCard_ic_arrow = 2130772428;
+			
+			// aapt resource value: 0x7f0101ce
+			public static int app_products_productCard_ic_cross = 2130772430;
 			
 			// aapt resource value: 0x7f0100c5
 			public static int arrowHeadLength = 2130772165;
@@ -500,8 +506,8 @@ namespace AppRopio.ECommerce.Products.Droid
 			// aapt resource value: 0x7f0100b0
 			public static int checkedTextViewStyle = 2130772144;
 			
-			// aapt resource value: 0x7f0101c0
-			public static int circle = 2130772416;
+			// aapt resource value: 0x7f0101c2
+			public static int circle = 2130772418;
 			
 			// aapt resource value: 0x7f0100e0
 			public static int closeIcon = 2130772192;
@@ -647,8 +653,8 @@ namespace AppRopio.ECommerce.Products.Droid
 			// aapt resource value: 0x7f01007e
 			public static int dividerVertical = 2130772094;
 			
-			// aapt resource value: 0x7f0101bf
-			public static int downscale = 2130772415;
+			// aapt resource value: 0x7f0101c1
+			public static int downscale = 2130772417;
 			
 			// aapt resource value: 0x7f0100c3
 			public static int drawableSize = 2130772163;
@@ -1127,8 +1133,8 @@ namespace AppRopio.ECommerce.Products.Droid
 			// aapt resource value: 0x7f01015b
 			public static int passwordToggleTintMode = 2130772315;
 			
-			// aapt resource value: 0x7f0101c1
-			public static int placeholder = 2130772417;
+			// aapt resource value: 0x7f0101c3
+			public static int placeholder = 2130772419;
 			
 			// aapt resource value: 0x7f010083
 			public static int popupMenuStyle = 2130772099;
@@ -5697,9 +5703,9 @@ namespace AppRopio.ECommerce.Products.Droid
 			public static int ARAppCompatSpinner_MvxItemTemplate = 0;
 			
 			public static int[] ARImageView = new int[] {
-					2130772415,
-					2130772416,
-					2130772417};
+					2130772417,
+					2130772418,
+					2130772419};
 			
 			// aapt resource value: 1
 			public static int ARImageView_circle = 1;
@@ -5721,8 +5727,8 @@ namespace AppRopio.ECommerce.Products.Droid
 			public static int ARLinearLayout_MvxTemplateSelector = 0;
 			
 			public static int[] ARListView = new int[] {
-					2130772413,
-					2130772414};
+					2130772415,
+					2130772416};
 			
 			// aapt resource value: 1
 			public static int ARListView_MvxFooterTemplate = 1;

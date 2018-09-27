@@ -110,14 +110,14 @@ namespace AppRopio.ECommerce.Marked.Droid
 			// aapt resource value: 0x7f0101a3
 			public static int MvxDropDownItemTemplate = 2130772387;
 			
-			// aapt resource value: 0x7f0101cb
-			public static int MvxFooterTemplate = 2130772427;
+			// aapt resource value: 0x7f0101cd
+			public static int MvxFooterTemplate = 2130772429;
 			
 			// aapt resource value: 0x7f0101a4
 			public static int MvxGroupItemTemplate = 2130772388;
 			
-			// aapt resource value: 0x7f0101ca
-			public static int MvxHeaderTemplate = 2130772426;
+			// aapt resource value: 0x7f0101cc
+			public static int MvxHeaderTemplate = 2130772428;
 			
 			// aapt resource value: 0x7f0101a2
 			public static int MvxItemTemplate = 2130772386;
@@ -275,6 +275,12 @@ namespace AppRopio.ECommerce.Marked.Droid
 			// aapt resource value: 0x7f0101c2
 			public static int app_color_disabledControl = 2130772418;
 			
+			// aapt resource value: 0x7f0101c5
+			public static int app_color_filter_activeColor = 2130772421;
+			
+			// aapt resource value: 0x7f0101c4
+			public static int app_color_filter_unactiveColor = 2130772420;
+			
 			// aapt resource value: 0x7f0101c1
 			public static int app_color_highlightedControl = 2130772417;
 			
@@ -308,26 +314,26 @@ namespace AppRopio.ECommerce.Marked.Droid
 			// aapt resource value: 0x7f0101b9
 			public static int app_color_textNotification = 2130772409;
 			
-			// aapt resource value: 0x7f0101c8
-			public static int app_font_bold = 2130772424;
+			// aapt resource value: 0x7f0101ca
+			public static int app_font_bold = 2130772426;
 			
-			// aapt resource value: 0x7f0101c9
-			public static int app_font_italic = 2130772425;
-			
-			// aapt resource value: 0x7f0101c5
-			public static int app_font_light = 2130772421;
-			
-			// aapt resource value: 0x7f0101c6
-			public static int app_font_medium = 2130772422;
-			
-			// aapt resource value: 0x7f0101c4
-			public static int app_font_regular = 2130772420;
+			// aapt resource value: 0x7f0101cb
+			public static int app_font_italic = 2130772427;
 			
 			// aapt resource value: 0x7f0101c7
-			public static int app_font_semibold = 2130772423;
+			public static int app_font_light = 2130772423;
 			
-			// aapt resource value: 0x7f0101cf
-			public static int app_marked_ic_empty_image = 2130772431;
+			// aapt resource value: 0x7f0101c8
+			public static int app_font_medium = 2130772424;
+			
+			// aapt resource value: 0x7f0101c6
+			public static int app_font_regular = 2130772422;
+			
+			// aapt resource value: 0x7f0101c9
+			public static int app_font_semibold = 2130772425;
+			
+			// aapt resource value: 0x7f0101d1
+			public static int app_marked_ic_empty_image = 2130772433;
 			
 			// aapt resource value: 0x7f0101a8
 			public static int app_products_catalog_collectionType = 2130772392;
@@ -503,8 +509,8 @@ namespace AppRopio.ECommerce.Marked.Droid
 			// aapt resource value: 0x7f0100ee
 			public static int checkedTextViewStyle = 2130772206;
 			
-			// aapt resource value: 0x7f0101cd
-			public static int circle = 2130772429;
+			// aapt resource value: 0x7f0101cf
+			public static int circle = 2130772431;
 			
 			// aapt resource value: 0x7f01011e
 			public static int closeIcon = 2130772254;
@@ -650,8 +656,8 @@ namespace AppRopio.ECommerce.Marked.Droid
 			// aapt resource value: 0x7f0100bc
 			public static int dividerVertical = 2130772156;
 			
-			// aapt resource value: 0x7f0101cc
-			public static int downscale = 2130772428;
+			// aapt resource value: 0x7f0101ce
+			public static int downscale = 2130772430;
 			
 			// aapt resource value: 0x7f010101
 			public static int drawableSize = 2130772225;
@@ -1130,8 +1136,8 @@ namespace AppRopio.ECommerce.Marked.Droid
 			// aapt resource value: 0x7f010051
 			public static int passwordToggleTintMode = 2130772049;
 			
-			// aapt resource value: 0x7f0101ce
-			public static int placeholder = 2130772430;
+			// aapt resource value: 0x7f0101d0
+			public static int placeholder = 2130772432;
 			
 			// aapt resource value: 0x7f0100c1
 			public static int popupMenuStyle = 2130772161;
@@ -5672,9 +5678,9 @@ namespace AppRopio.ECommerce.Marked.Droid
 			public static int ARAppCompatSpinner_MvxItemTemplate = 0;
 			
 			public static int[] ARImageView = new int[] {
-					2130772428,
-					2130772429,
-					2130772430};
+					2130772430,
+					2130772431,
+					2130772432};
 			
 			// aapt resource value: 1
 			public static int ARImageView_circle = 1;
@@ -5696,8 +5702,8 @@ namespace AppRopio.ECommerce.Marked.Droid
 			public static int ARLinearLayout_MvxTemplateSelector = 0;
 			
 			public static int[] ARListView = new int[] {
-					2130772426,
-					2130772427};
+					2130772428,
+					2130772429};
 			
 			// aapt resource value: 1
 			public static int ARListView_MvxFooterTemplate = 1;

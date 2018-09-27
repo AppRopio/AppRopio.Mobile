@@ -110,14 +110,14 @@ namespace AppRopio.Navigation.Menu.Droid
 			// aapt resource value: 0x7f010198
 			public static int MvxDropDownItemTemplate = 2130772376;
 			
-			// aapt resource value: 0x7f0101b3
-			public static int MvxFooterTemplate = 2130772403;
+			// aapt resource value: 0x7f0101b5
+			public static int MvxFooterTemplate = 2130772405;
 			
 			// aapt resource value: 0x7f010199
 			public static int MvxGroupItemTemplate = 2130772377;
 			
-			// aapt resource value: 0x7f0101b2
-			public static int MvxHeaderTemplate = 2130772402;
+			// aapt resource value: 0x7f0101b4
+			public static int MvxHeaderTemplate = 2130772404;
 			
 			// aapt resource value: 0x7f010197
 			public static int MvxItemTemplate = 2130772375;
@@ -275,6 +275,12 @@ namespace AppRopio.Navigation.Menu.Droid
 			// aapt resource value: 0x7f0101aa
 			public static int app_color_disabledControl = 2130772394;
 			
+			// aapt resource value: 0x7f0101ad
+			public static int app_color_filter_activeColor = 2130772397;
+			
+			// aapt resource value: 0x7f0101ac
+			public static int app_color_filter_unactiveColor = 2130772396;
+			
 			// aapt resource value: 0x7f0101a9
 			public static int app_color_highlightedControl = 2130772393;
 			
@@ -308,26 +314,26 @@ namespace AppRopio.Navigation.Menu.Droid
 			// aapt resource value: 0x7f0101a1
 			public static int app_color_textNotification = 2130772385;
 			
-			// aapt resource value: 0x7f0101b7
-			public static int app_drawer_header_logo = 2130772407;
+			// aapt resource value: 0x7f0101b9
+			public static int app_drawer_header_logo = 2130772409;
 			
-			// aapt resource value: 0x7f0101b0
-			public static int app_font_bold = 2130772400;
+			// aapt resource value: 0x7f0101b2
+			public static int app_font_bold = 2130772402;
 			
-			// aapt resource value: 0x7f0101b1
-			public static int app_font_italic = 2130772401;
-			
-			// aapt resource value: 0x7f0101ad
-			public static int app_font_light = 2130772397;
-			
-			// aapt resource value: 0x7f0101ae
-			public static int app_font_medium = 2130772398;
-			
-			// aapt resource value: 0x7f0101ac
-			public static int app_font_regular = 2130772396;
+			// aapt resource value: 0x7f0101b3
+			public static int app_font_italic = 2130772403;
 			
 			// aapt resource value: 0x7f0101af
-			public static int app_font_semibold = 2130772399;
+			public static int app_font_light = 2130772399;
+			
+			// aapt resource value: 0x7f0101b0
+			public static int app_font_medium = 2130772400;
+			
+			// aapt resource value: 0x7f0101ae
+			public static int app_font_regular = 2130772398;
+			
+			// aapt resource value: 0x7f0101b1
+			public static int app_font_semibold = 2130772401;
 			
 			// aapt resource value: 0x7f0100bb
 			public static int arrowHeadLength = 2130772155;
@@ -446,8 +452,8 @@ namespace AppRopio.Navigation.Menu.Droid
 			// aapt resource value: 0x7f0100a6
 			public static int checkedTextViewStyle = 2130772134;
 			
-			// aapt resource value: 0x7f0101b5
-			public static int circle = 2130772405;
+			// aapt resource value: 0x7f0101b7
+			public static int circle = 2130772407;
 			
 			// aapt resource value: 0x7f0100d6
 			public static int closeIcon = 2130772182;
@@ -578,8 +584,8 @@ namespace AppRopio.Navigation.Menu.Droid
 			// aapt resource value: 0x7f010074
 			public static int dividerVertical = 2130772084;
 			
-			// aapt resource value: 0x7f0101b4
-			public static int downscale = 2130772404;
+			// aapt resource value: 0x7f0101b6
+			public static int downscale = 2130772406;
 			
 			// aapt resource value: 0x7f0100b9
 			public static int drawableSize = 2130772153;
@@ -1058,8 +1064,8 @@ namespace AppRopio.Navigation.Menu.Droid
 			// aapt resource value: 0x7f010151
 			public static int passwordToggleTintMode = 2130772305;
 			
-			// aapt resource value: 0x7f0101b6
-			public static int placeholder = 2130772406;
+			// aapt resource value: 0x7f0101b8
+			public static int placeholder = 2130772408;
 			
 			// aapt resource value: 0x7f010079
 			public static int popupMenuStyle = 2130772089;
@@ -4977,9 +4983,9 @@ namespace AppRopio.Navigation.Menu.Droid
 			public static int ARAppCompatSpinner_MvxItemTemplate = 0;
 			
 			public static int[] ARImageView = new int[] {
-					2130772404,
-					2130772405,
-					2130772406};
+					2130772406,
+					2130772407,
+					2130772408};
 			
 			// aapt resource value: 1
 			public static int ARImageView_circle = 1;
@@ -5001,8 +5007,8 @@ namespace AppRopio.Navigation.Menu.Droid
 			public static int ARLinearLayout_MvxTemplateSelector = 0;
 			
 			public static int[] ARListView = new int[] {
-					2130772402,
-					2130772403};
+					2130772404,
+					2130772405};
 			
 			// aapt resource value: 1
 			public static int ARListView_MvxFooterTemplate = 1;
