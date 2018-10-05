@@ -304,5 +304,11 @@ namespace AppRopio.Test.Droid.LocalizationResx {
                 return ResourceManager.GetString("BasketProductCard_Done", resourceCulture);
             }
         }
+        
+        internal static string BasketCatalogCard_AddToBasket {
+            get {
+                return ResourceManager.GetString("BasketCatalogCard_AddToBasket", resourceCulture);
+            }
+        }
     }
 }
