@@ -13,6 +13,7 @@ using AppRopio.Base.Filters.Core.Messages;
 using AppRopio.Base.Filters.Core.Models.Bundle;
 using AppRopio.Base.Filters.Core.ViewModels.Sort;
 using AppRopio.ECommerce.Products.Core.Messages;
+using AppRopio.ECommerce.Products.Core.Models;
 using AppRopio.ECommerce.Products.Core.Models.Bundle;
 using AppRopio.ECommerce.Products.Core.Services;
 using AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Header;
@@ -104,6 +105,8 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Catalog
         #endregion
 
         #region Properties
+
+        public virtual bool SearchBar => ConfigService.Config.SearchType == SearchType.Bar;
 
         protected string CategoryId { get; private set; }
 
@@ -217,13 +220,15 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Catalog
         private IProductsVmService _productsVmService;
         public IProductsVmService ProductsVmService => _productsVmService ?? (_productsVmService = Mvx.Resolve<IProductsVmService>());
 
+        protected IProductConfigService ConfigService { get { return Mvx.Resolve<IProductConfigService>(); } }
+
         #endregion
 
         #region Constructor
 
         public CatalogViewModel()
         {
-            VmNavigationType = Mvx.Resolve<IProductConfigService>().Config.CategoriesType == Models.CategoriesType.Disabled ?
+            VmNavigationType = ConfigService.Config.CategoriesType == Models.CategoriesType.Disabled ?
                                   Base.Core.Models.Navigation.NavigationType.ClearAndPush :
                                   Base.Core.Models.Navigation.NavigationType.Push;
 
