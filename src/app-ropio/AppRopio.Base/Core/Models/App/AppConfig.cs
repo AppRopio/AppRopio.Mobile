@@ -20,6 +20,8 @@ namespace AppRopio.Base.Core.Models.App
         public string ErrorWhenRequestCancelled { get; set; }
 
         public string Host { get; set; }
+
+        public bool PreciseCurrency { get; set; }
     }
 }
 

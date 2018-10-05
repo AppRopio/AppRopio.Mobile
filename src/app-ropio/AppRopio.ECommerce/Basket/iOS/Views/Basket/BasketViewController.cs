@@ -150,7 +150,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Basket
                    "StringFormat", 
                    new StringFormatParameter { StringFormat = (arg) => 
                 {
-                    var str = string.Format($"{LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Basket_OrderBy")} {{0}}", ((decimal)arg).ToString("# ### ##0.##").Trim());
+                    var str = $"{LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Basket_OrderBy")} {((decimal)arg).ToString(AppSettings.CurrencyFormat, AppSettings.SettingsCulture.NumberFormat)}";
                     return BasketTheme.NextButton.UppercaseTitle ? str.ToUpperInvariant() : str;
                 } 
             });
