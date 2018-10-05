@@ -48,7 +48,7 @@ namespace AppRopio.Base.Core.Converters
     {
         public NumberFormatInfo Format { get; set; } = (NumberFormatInfo)AppSettings.SettingsCulture.NumberFormat.Clone();
 
-        public string CurrencyFormat { get; set; }
+        public string CurrencyFormat { get; set; } = AppSettings.CurrencyFormat;
 
         public string CurrencySymbol { get; set; } = AppSettings.SettingsCulture.NumberFormat.CurrencySymbol;
 

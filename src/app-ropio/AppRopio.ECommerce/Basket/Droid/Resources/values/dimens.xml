@@ -88,7 +88,7 @@
     <dimen
         name="app_basket_cartIndicator_badge_margin">10dp</dimen>
 	<!--    -->
-<!--  ProductCard  -->
+    <!--  ProductCard  -->
     <dimen
         name="app_basket_productCardView_horizontalMargins">16dp</dimen>
     <dimen
@@ -99,5 +99,17 @@
         name="app_basket_productCardView_quantityInput_cornerRadius">22dp</dimen>
     <dimen
         name="app_basket_productCardView_quantityInput_strokeWidth">2dp</dimen>
-<!--    -->
+    <!--    -->
+    <!--  CatalogCard  -->
+    <dimen
+        name="app_basket_catalogCardView_buyButton_cornerRadius">5dp</dimen>
+    <dimen
+        name="app_basket_catalogCardView_buyButton_height">32dp</dimen>
+    <dimen
+        name="app_basket_catalogCardView_buyButton_horizontalMargins">8dp</dimen>
+    <dimen
+        name="app_basket_catalogCardView_buyButton_marginTop">8dp</dimen>
+    <dimen
+        name="app_basket_catalogCardView_buyButton_marginBottom">0dp</dimen>
+    <!--    -->
 </resources>

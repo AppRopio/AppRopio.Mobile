@@ -198,6 +198,7 @@
     <Compile Include="Views\Order\Delivery\DeliveryPointOnMapFragment.cs" />
     <Compile Include="Views\CartIndicator\BasketCartIndicatorView.cs" />
     <Compile Include="Views\ProductCard\BasketProductCardView.cs" />
+    <Compile Include="Views\CatalogCard\BasketCatalogItemView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -240,6 +241,11 @@
     <AndroidResource Include="Resources\drawable\app_basket_cartIndicator_badge_background.xml" />
     <AndroidResource Include="Resources\layout\app_basket_productCardView.axml" />
     <AndroidResource Include="Resources\drawable\app_basket_productCardView_quantityInput.xml" />
+    <AndroidResource Include="Resources\layout\app_basket_catalogCardView.axml" />
+    <AndroidResource Include="Resources\drawable\app_basket_catalogCardView_buyButton_normal.xml" />
+    <AndroidResource Include="Resources\drawable\app_basket_catalogCardView_buyButton_disabled.xml" />
+    <AndroidResource Include="Resources\drawable\app_basket_catalogCardView_buyButton_focused.xml" />
+    <AndroidResource Include="Resources\drawable\app_basket_catalogCardView_buyButton.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />
@@ -253,6 +259,7 @@
     <Folder Include="Views\Order\Delivery\" />
     <Folder Include="Views\CartIndicator\" />
     <Folder Include="Views\ProductCard\" />
+    <Folder Include="Views\CatalogCard\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\AppRopio.Base\Core\AppRopio.Base.Core.csproj">
