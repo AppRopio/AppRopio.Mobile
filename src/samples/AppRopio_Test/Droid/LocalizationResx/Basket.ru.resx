@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
     <resheader
         name="resmimetype">
@@ -191,5 +191,17 @@
     <data
         name="BasketProductCard_Done">
         <value>Готово</value>
+    </data>
+    <data
+        name="BasketCatalogCard_AddToBasket">
+        <value>В КОРЗИНУ</value>
+    </data>
+    <data
+        name="Error_Delivery_Text">
+        <value>Не выбран способ доставки</value>
+    </data>
+    <data
+        name="Error_Delivery_Time_Text">
+        <value>Не выбрано время доставки</value>
     </data>
 </root>

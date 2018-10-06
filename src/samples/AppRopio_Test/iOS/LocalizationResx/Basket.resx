@@ -178,4 +178,12 @@ will be stored.</value>
         name="BasketProductCard_Done">
         <value>Done</value>
     </data>
+     <data
+        name="Error_Delivery_Text">
+        <value>Hello world</value>
+    </data>
+    <data
+        name="Error_Delivery_Time_Text">
+        <value>Не выбрано время доставки</value>
+    </data>
 </root>

@@ -2,13 +2,14 @@
 using Android.Util;
 using AppRopio.Base.Core.Services.ViewLookup;
 using AppRopio.Base.Droid.Views;
+using AppRopio.ECommerce.Products.Core.Models;
 using AppRopio.ECommerce.Products.Core.Services;
 using AppRopio.ECommerce.Products.Core.ViewModels;
+using MvvmCross.Binding.BindingContext;
 using MvvmCross.Binding.Droid.BindingContext;
 using MvvmCross.Droid.Views;
 using MvvmCross.Platform;
 using MvvmCross.Platform.Platform;
-using MvvmCross.Binding.BindingContext;
 
 namespace AppRopio.ECommerce.Products.Droid.Views
 {
@@ -57,9 +58,10 @@ namespace AppRopio.ECommerce.Products.Droid.Views
 
         public override void OnCreateOptionsMenu(Android.Views.IMenu menu, Android.Views.MenuInflater inflater)
         {
+            var config = Mvx.Resolve<IProductConfigService>().Config;
+
             if (ViewModel?.CartIndicatorVM != null)
             {
-                var config = Mvx.Resolve<IProductConfigService>().Config;
                 var cartIndicatorType = config.Basket.CartIndicator.TypeName;
 
                 var viewLookupService = Mvx.Resolve<IViewLookupService>();
@@ -78,7 +80,7 @@ namespace AppRopio.ECommerce.Products.Droid.Views
                 }
             }
 
-            if (ViewModel?.SearchEnabled ?? false)
+            if (ViewModel != null && ViewModel.SearchEnabled && !ViewModel.SearchBar && config.SearchType != SearchType.Disabled)
             {
                 var menuItem = menu.Add(0, MENU_SEARCH_ID, 0, new Java.Lang.String(""));
 

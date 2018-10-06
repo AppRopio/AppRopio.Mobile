@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using AppRopio.Base.Core.Attributes;
 using AppRopio.Base.Core.Extentions;
+using AppRopio.ECommerce.Products.Core.Models;
 using AppRopio.ECommerce.Products.Core.Models.Bundle;
 using AppRopio.ECommerce.Products.Core.Services;
 using AppRopio.ECommerce.Products.Core.ViewModels.Categories.Items;
@@ -44,6 +45,10 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Categories
         #region Properties
 
         protected string ParentCategoryId { get; set; }
+
+        public override bool SearchBar => ConfigService.Config.SearchType == SearchType.Bar
+                                      || (ConfigService.Config.SearchType == SearchType.BarOnFirstScreen
+                                          && string.IsNullOrEmpty(ParentCategoryId));
 
         private ObservableCollection<ICategoriesItemVM> _items;
         public ObservableCollection<ICategoriesItemVM> Items
@@ -115,8 +120,8 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Categories
 
         private async void OnItemSelected(ICategoriesItemVM item)
         {
-            var categoriesType = Mvx.Resolve<IProductConfigService>().Config.CategoriesType;
-            if (categoriesType == Models.CategoriesType.Mixed && item.IsFolder)
+            var categoriesType = ConfigService.Config.CategoriesType;
+            if (categoriesType == CategoriesType.Mixed && item.IsFolder)
             {
                 Loading = true;
 

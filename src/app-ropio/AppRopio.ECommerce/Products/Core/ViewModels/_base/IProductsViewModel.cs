@@ -11,6 +11,8 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels
 
         bool SearchEnabled { get; }
 
+        bool SearchBar { get; }
+
         ICommand ShowSearchCommand { get; }
 
         IMvxViewModel CartIndicatorVM { get; }
