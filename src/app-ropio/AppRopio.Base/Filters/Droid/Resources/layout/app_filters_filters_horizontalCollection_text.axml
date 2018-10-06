@@ -13,5 +13,5 @@
         android:minHeight="@dimen/app_filters_filters_horizontalCollection_text_minHeight"
         android:paddingLeft="@dimen/app_filters_filters_horizontalMargins"
         android:paddingRight="@dimen/app_filters_filters_horizontalMargins"
-        app:MvxBind="Text ValueName; Background FiltersTextBackground(Selected)" />
+        app:MvxBind="Text ValueName; Background FiltersTextBackground(Selected); TextColor FiltersLabelColor(Selected)" />
 </RelativeLayout>

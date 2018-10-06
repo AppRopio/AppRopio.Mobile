@@ -286,6 +286,12 @@
     <Reference Include="Plugin.CurrentActivity">
       <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Plugin.CurrentActivity.2.1.0.4\lib\monoandroid44\Plugin.CurrentActivity.dll</HintPath>
     </Reference>
+    <Reference Include="MvvmCross.Plugins.Color">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Plugin.Color.5.6.3\lib\MonoAndroid\MvvmCross.Plugins.Color.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Color.Droid">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Plugin.Color.5.6.3\lib\MonoAndroid\MvvmCross.Plugins.Color.Droid.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
@@ -406,6 +412,7 @@
     <Compile Include="Bootstrap\AppRopio_LoyaltyPluginBootstrap.cs" />
     <Compile Include="Bootstrap\AppRopio_FeedbackPluginBootstrap.cs" />
     <Compile Include="Bootstrap\AppRopio_AuthPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\ColorPluginBootstrap.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

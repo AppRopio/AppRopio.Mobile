@@ -82,14 +82,14 @@ namespace AppRopio.Base.Filters.Droid
 			// aapt resource value: 0x7f01010d
 			public static int MvxDropDownItemTemplate = 2130772237;
 			
-			// aapt resource value: 0x7f010128
-			public static int MvxFooterTemplate = 2130772264;
+			// aapt resource value: 0x7f01012a
+			public static int MvxFooterTemplate = 2130772266;
 			
 			// aapt resource value: 0x7f01010e
 			public static int MvxGroupItemTemplate = 2130772238;
 			
-			// aapt resource value: 0x7f010127
-			public static int MvxHeaderTemplate = 2130772263;
+			// aapt resource value: 0x7f010129
+			public static int MvxHeaderTemplate = 2130772265;
 			
 			// aapt resource value: 0x7f01010c
 			public static int MvxItemTemplate = 2130772236;
@@ -247,6 +247,12 @@ namespace AppRopio.Base.Filters.Droid
 			// aapt resource value: 0x7f01011f
 			public static int app_color_disabledControl = 2130772255;
 			
+			// aapt resource value: 0x7f010122
+			public static int app_color_filter_activeColor = 2130772258;
+			
+			// aapt resource value: 0x7f010121
+			public static int app_color_filter_unactiveColor = 2130772257;
+			
 			// aapt resource value: 0x7f01011e
 			public static int app_color_highlightedControl = 2130772254;
 			
@@ -280,35 +286,35 @@ namespace AppRopio.Base.Filters.Droid
 			// aapt resource value: 0x7f010116
 			public static int app_color_textNotification = 2130772246;
 			
-			// aapt resource value: 0x7f01012e
-			public static int app_filters_filters_color_ic_checkImage = 2130772270;
-			
-			// aapt resource value: 0x7f01012d
-			public static int app_filters_filters_ic_arrow = 2130772269;
+			// aapt resource value: 0x7f010130
+			public static int app_filters_filters_color_ic_checkImage = 2130772272;
 			
 			// aapt resource value: 0x7f01012f
-			public static int app_filters_filters_ic_cross = 2130772271;
+			public static int app_filters_filters_ic_arrow = 2130772271;
 			
-			// aapt resource value: 0x7f01012c
-			public static int app_filters_sort_ic_item_check = 2130772268;
+			// aapt resource value: 0x7f010131
+			public static int app_filters_filters_ic_cross = 2130772273;
 			
-			// aapt resource value: 0x7f010125
-			public static int app_font_bold = 2130772261;
+			// aapt resource value: 0x7f01012e
+			public static int app_filters_sort_ic_item_check = 2130772270;
 			
-			// aapt resource value: 0x7f010126
-			public static int app_font_italic = 2130772262;
+			// aapt resource value: 0x7f010127
+			public static int app_font_bold = 2130772263;
 			
-			// aapt resource value: 0x7f010122
-			public static int app_font_light = 2130772258;
-			
-			// aapt resource value: 0x7f010123
-			public static int app_font_medium = 2130772259;
-			
-			// aapt resource value: 0x7f010121
-			public static int app_font_regular = 2130772257;
+			// aapt resource value: 0x7f010128
+			public static int app_font_italic = 2130772264;
 			
 			// aapt resource value: 0x7f010124
-			public static int app_font_semibold = 2130772260;
+			public static int app_font_light = 2130772260;
+			
+			// aapt resource value: 0x7f010125
+			public static int app_font_medium = 2130772261;
+			
+			// aapt resource value: 0x7f010123
+			public static int app_font_regular = 2130772259;
+			
+			// aapt resource value: 0x7f010126
+			public static int app_font_semibold = 2130772262;
 			
 			// aapt resource value: 0x7f0100ba
 			public static int arrowHeadLength = 2130772154;
@@ -394,8 +400,8 @@ namespace AppRopio.Base.Filters.Droid
 			// aapt resource value: 0x7f0100a5
 			public static int checkedTextViewStyle = 2130772133;
 			
-			// aapt resource value: 0x7f01012a
-			public static int circle = 2130772266;
+			// aapt resource value: 0x7f01012c
+			public static int circle = 2130772268;
 			
 			// aapt resource value: 0x7f0100d5
 			public static int closeIcon = 2130772181;
@@ -496,8 +502,8 @@ namespace AppRopio.Base.Filters.Droid
 			// aapt resource value: 0x7f010073
 			public static int dividerVertical = 2130772083;
 			
-			// aapt resource value: 0x7f010129
-			public static int downscale = 2130772265;
+			// aapt resource value: 0x7f01012b
+			public static int downscale = 2130772267;
 			
 			// aapt resource value: 0x7f0100b8
 			public static int drawableSize = 2130772152;
@@ -706,8 +712,8 @@ namespace AppRopio.Base.Filters.Droid
 			// aapt resource value: 0x7f01008c
 			public static int panelMenuListWidth = 2130772108;
 			
-			// aapt resource value: 0x7f01012b
-			public static int placeholder = 2130772267;
+			// aapt resource value: 0x7f01012d
+			public static int placeholder = 2130772269;
 			
 			// aapt resource value: 0x7f010078
 			public static int popupMenuStyle = 2130772088;
@@ -4154,9 +4160,9 @@ namespace AppRopio.Base.Filters.Droid
 			public static int ARAppCompatSpinner_MvxItemTemplate = 0;
 			
 			public static int[] ARImageView = new int[] {
-					2130772265,
-					2130772266,
-					2130772267};
+					2130772267,
+					2130772268,
+					2130772269};
 			
 			// aapt resource value: 1
 			public static int ARImageView_circle = 1;
@@ -4178,8 +4184,8 @@ namespace AppRopio.Base.Filters.Droid
 			public static int ARLinearLayout_MvxTemplateSelector = 0;
 			
 			public static int[] ARListView = new int[] {
-					2130772263,
-					2130772264};
+					2130772265,
+					2130772266};
 			
 			// aapt resource value: 1
 			public static int ARListView_MvxFooterTemplate = 1;

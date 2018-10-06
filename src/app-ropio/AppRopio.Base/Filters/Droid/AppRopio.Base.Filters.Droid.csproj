@@ -127,6 +127,7 @@
     <Compile Include="Views\Filters\FiltersHorizontalCollectionTemplateSelector.cs" />
     <Compile Include="ValueConverters\FiltersColorBackgroundValueConverter.cs" />
     <Compile Include="ValueConverters\FiltersTextBackgroundValueConverter.cs" />
+    <Compile Include="ValueConverters\FiltersLabelColorValueConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

@@ -35,6 +35,9 @@ namespace AppRopio.Base.iOS.Models.ThemeConfigs
         [JsonProperty("background")]
         public Color Background { get; set; }
 
+        [JsonProperty("searchBackground")]
+        public Color SearchBackground { get; set; }
+
         [JsonProperty("backgroundMenu")]
         public Color BackgroundMenu { get; set; }
 

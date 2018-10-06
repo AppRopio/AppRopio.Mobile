@@ -110,14 +110,14 @@ namespace AppRopio.Base.Droid
 			// aapt resource value: 0x7f0101a8
 			public static int MvxDropDownItemTemplate = 2130772392;
 			
-			// aapt resource value: 0x7f0101c3
-			public static int MvxFooterTemplate = 2130772419;
+			// aapt resource value: 0x7f0101c5
+			public static int MvxFooterTemplate = 2130772421;
 			
 			// aapt resource value: 0x7f0101a9
 			public static int MvxGroupItemTemplate = 2130772393;
 			
-			// aapt resource value: 0x7f0101c2
-			public static int MvxHeaderTemplate = 2130772418;
+			// aapt resource value: 0x7f0101c4
+			public static int MvxHeaderTemplate = 2130772420;
 			
 			// aapt resource value: 0x7f0101a7
 			public static int MvxItemTemplate = 2130772391;
@@ -278,6 +278,12 @@ namespace AppRopio.Base.Droid
 			// aapt resource value: 0x7f0101ba
 			public static int app_color_disabledControl = 2130772410;
 			
+			// aapt resource value: 0x7f0101bd
+			public static int app_color_filter_activeColor = 2130772413;
+			
+			// aapt resource value: 0x7f0101bc
+			public static int app_color_filter_unactiveColor = 2130772412;
+			
 			// aapt resource value: 0x7f0101b9
 			public static int app_color_highlightedControl = 2130772409;
 			
@@ -311,23 +317,23 @@ namespace AppRopio.Base.Droid
 			// aapt resource value: 0x7f0101b1
 			public static int app_color_textNotification = 2130772401;
 			
-			// aapt resource value: 0x7f0101c0
-			public static int app_font_bold = 2130772416;
+			// aapt resource value: 0x7f0101c2
+			public static int app_font_bold = 2130772418;
 			
-			// aapt resource value: 0x7f0101c1
-			public static int app_font_italic = 2130772417;
-			
-			// aapt resource value: 0x7f0101bd
-			public static int app_font_light = 2130772413;
-			
-			// aapt resource value: 0x7f0101be
-			public static int app_font_medium = 2130772414;
-			
-			// aapt resource value: 0x7f0101bc
-			public static int app_font_regular = 2130772412;
+			// aapt resource value: 0x7f0101c3
+			public static int app_font_italic = 2130772419;
 			
 			// aapt resource value: 0x7f0101bf
-			public static int app_font_semibold = 2130772415;
+			public static int app_font_light = 2130772415;
+			
+			// aapt resource value: 0x7f0101c0
+			public static int app_font_medium = 2130772416;
+			
+			// aapt resource value: 0x7f0101be
+			public static int app_font_regular = 2130772414;
+			
+			// aapt resource value: 0x7f0101c1
+			public static int app_font_semibold = 2130772417;
 			
 			// aapt resource value: 0x7f0100d7
 			public static int arrowHeadLength = 2130772183;
@@ -461,8 +467,8 @@ namespace AppRopio.Base.Droid
 			// aapt resource value: 0x7f0100c2
 			public static int checkedTextViewStyle = 2130772162;
 			
-			// aapt resource value: 0x7f0101c5
-			public static int circle = 2130772421;
+			// aapt resource value: 0x7f0101c7
+			public static int circle = 2130772423;
 			
 			// aapt resource value: 0x7f010019
 			public static int circleCrop = 2130771993;
@@ -593,8 +599,8 @@ namespace AppRopio.Base.Droid
 			// aapt resource value: 0x7f010090
 			public static int dividerVertical = 2130772112;
 			
-			// aapt resource value: 0x7f0101c4
-			public static int downscale = 2130772420;
+			// aapt resource value: 0x7f0101c6
+			public static int downscale = 2130772422;
 			
 			// aapt resource value: 0x7f0100d5
 			public static int drawableSize = 2130772181;
@@ -1073,8 +1079,8 @@ namespace AppRopio.Base.Droid
 			// aapt resource value: 0x7f01016d
 			public static int passwordToggleTintMode = 2130772333;
 			
-			// aapt resource value: 0x7f0101c6
-			public static int placeholder = 2130772422;
+			// aapt resource value: 0x7f0101c8
+			public static int placeholder = 2130772424;
 			
 			// aapt resource value: 0x7f010095
 			public static int popupMenuStyle = 2130772117;
@@ -5121,9 +5127,9 @@ namespace AppRopio.Base.Droid
 			public static int ARAppCompatSpinner_MvxItemTemplate = 0;
 			
 			public static int[] ARImageView = new int[] {
-					2130772420,
-					2130772421,
-					2130772422};
+					2130772422,
+					2130772423,
+					2130772424};
 			
 			// aapt resource value: 1
 			public static int ARImageView_circle = 1;
@@ -5145,8 +5151,8 @@ namespace AppRopio.Base.Droid
 			public static int ARLinearLayout_MvxTemplateSelector = 0;
 			
 			public static int[] ARListView = new int[] {
-					2130772418,
-					2130772419};
+					2130772420,
+					2130772421};
 			
 			// aapt resource value: 1
 			public static int ARListView_MvxFooterTemplate = 1;

@@ -38,6 +38,11 @@
 			name="attr/app_color_disabledControl">#E3EBF3</item>
 		<item
 			name="attr/app_color_invalid">#EA0048</item>
+
+        <item
+            name="attr/app_color_filter_unactiveColor">#FF0000</item>
+        <item
+            name="attr/app_color_filter_activeColor">#00FF00</item>
 		<!--		-->
 		<!--  Fonts Palette  -->
 		<item
