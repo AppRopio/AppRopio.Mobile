@@ -110,14 +110,14 @@ namespace AppRopio.Base.Map.Droid
 			// aapt resource value: 0x7f01017c
 			public static int MvxDropDownItemTemplate = 2130772348;
 			
-			// aapt resource value: 0x7f010197
-			public static int MvxFooterTemplate = 2130772375;
+			// aapt resource value: 0x7f010199
+			public static int MvxFooterTemplate = 2130772377;
 			
 			// aapt resource value: 0x7f01017d
 			public static int MvxGroupItemTemplate = 2130772349;
 			
-			// aapt resource value: 0x7f010196
-			public static int MvxHeaderTemplate = 2130772374;
+			// aapt resource value: 0x7f010198
+			public static int MvxHeaderTemplate = 2130772376;
 			
 			// aapt resource value: 0x7f01017b
 			public static int MvxItemTemplate = 2130772347;
@@ -278,6 +278,12 @@ namespace AppRopio.Base.Map.Droid
 			// aapt resource value: 0x7f01018e
 			public static int app_color_disabledControl = 2130772366;
 			
+			// aapt resource value: 0x7f010191
+			public static int app_color_filter_activeColor = 2130772369;
+			
+			// aapt resource value: 0x7f010190
+			public static int app_color_filter_unactiveColor = 2130772368;
+			
 			// aapt resource value: 0x7f01018d
 			public static int app_color_highlightedControl = 2130772365;
 			
@@ -311,47 +317,47 @@ namespace AppRopio.Base.Map.Droid
 			// aapt resource value: 0x7f010185
 			public static int app_color_textNotification = 2130772357;
 			
-			// aapt resource value: 0x7f010194
-			public static int app_font_bold = 2130772372;
+			// aapt resource value: 0x7f010196
+			public static int app_font_bold = 2130772374;
 			
-			// aapt resource value: 0x7f010195
-			public static int app_font_italic = 2130772373;
-			
-			// aapt resource value: 0x7f010191
-			public static int app_font_light = 2130772369;
-			
-			// aapt resource value: 0x7f010192
-			public static int app_font_medium = 2130772370;
-			
-			// aapt resource value: 0x7f010190
-			public static int app_font_regular = 2130772368;
+			// aapt resource value: 0x7f010197
+			public static int app_font_italic = 2130772375;
 			
 			// aapt resource value: 0x7f010193
-			public static int app_font_semibold = 2130772371;
+			public static int app_font_light = 2130772371;
 			
-			// aapt resource value: 0x7f01019b
-			public static int app_map_ic_map = 2130772379;
+			// aapt resource value: 0x7f010194
+			public static int app_font_medium = 2130772372;
+			
+			// aapt resource value: 0x7f010192
+			public static int app_font_regular = 2130772370;
+			
+			// aapt resource value: 0x7f010195
+			public static int app_font_semibold = 2130772373;
 			
 			// aapt resource value: 0x7f01019d
-			public static int app_map_list_item_callButton = 2130772381;
-			
-			// aapt resource value: 0x7f01019c
-			public static int app_map_list_item_ic_distance = 2130772380;
-			
-			// aapt resource value: 0x7f01019e
-			public static int app_map_list_item_infoButton = 2130772382;
+			public static int app_map_ic_map = 2130772381;
 			
 			// aapt resource value: 0x7f01019f
-			public static int app_map_list_item_mapButton = 2130772383;
+			public static int app_map_list_item_callButton = 2130772383;
+			
+			// aapt resource value: 0x7f01019e
+			public static int app_map_list_item_ic_distance = 2130772382;
 			
 			// aapt resource value: 0x7f0101a0
-			public static int app_map_list_item_routeButton = 2130772384;
+			public static int app_map_list_item_infoButton = 2130772384;
 			
 			// aapt resource value: 0x7f0101a1
-			public static int app_map_points_ic_pin = 2130772385;
+			public static int app_map_list_item_mapButton = 2130772385;
 			
 			// aapt resource value: 0x7f0101a2
-			public static int app_map_points_ic_pin_deselected = 2130772386;
+			public static int app_map_list_item_routeButton = 2130772386;
+			
+			// aapt resource value: 0x7f0101a3
+			public static int app_map_points_ic_pin = 2130772387;
+			
+			// aapt resource value: 0x7f0101a4
+			public static int app_map_points_ic_pin_deselected = 2130772388;
 			
 			// aapt resource value: 0x7f0100d7
 			public static int arrowHeadLength = 2130772183;
@@ -485,8 +491,8 @@ namespace AppRopio.Base.Map.Droid
 			// aapt resource value: 0x7f0100c2
 			public static int checkedTextViewStyle = 2130772162;
 			
-			// aapt resource value: 0x7f010199
-			public static int circle = 2130772377;
+			// aapt resource value: 0x7f01019b
+			public static int circle = 2130772379;
 			
 			// aapt resource value: 0x7f010019
 			public static int circleCrop = 2130771993;
@@ -614,8 +620,8 @@ namespace AppRopio.Base.Map.Droid
 			// aapt resource value: 0x7f010090
 			public static int dividerVertical = 2130772112;
 			
-			// aapt resource value: 0x7f010198
-			public static int downscale = 2130772376;
+			// aapt resource value: 0x7f01019a
+			public static int downscale = 2130772378;
 			
 			// aapt resource value: 0x7f0100d5
 			public static int drawableSize = 2130772181;
@@ -965,8 +971,8 @@ namespace AppRopio.Base.Map.Droid
 			// aapt resource value: 0x7f01016d
 			public static int passwordToggleTintMode = 2130772333;
 			
-			// aapt resource value: 0x7f01019a
-			public static int placeholder = 2130772378;
+			// aapt resource value: 0x7f01019c
+			public static int placeholder = 2130772380;
 			
 			// aapt resource value: 0x7f010095
 			public static int popupMenuStyle = 2130772117;
@@ -5076,9 +5082,9 @@ namespace AppRopio.Base.Map.Droid
 			public static int ARAppCompatSpinner_MvxItemTemplate = 0;
 			
 			public static int[] ARImageView = new int[] {
-					2130772376,
-					2130772377,
-					2130772378};
+					2130772378,
+					2130772379,
+					2130772380};
 			
 			// aapt resource value: 1
 			public static int ARImageView_circle = 1;
@@ -5100,8 +5106,8 @@ namespace AppRopio.Base.Map.Droid
 			public static int ARLinearLayout_MvxTemplateSelector = 0;
 			
 			public static int[] ARListView = new int[] {
-					2130772374,
-					2130772375};
+					2130772376,
+					2130772377};
 			
 			// aapt resource value: 1
 			public static int ARListView_MvxFooterTemplate = 1;

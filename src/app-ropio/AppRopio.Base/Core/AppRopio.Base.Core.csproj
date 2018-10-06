@@ -185,9 +185,6 @@
     <Reference Include="DotNetCross.Memory.Unsafe">
       <HintPath>..\..\AppRopio.ECommerce\packages\DotNetCross.Memory.Unsafe.0.2.3.4\lib\netstandard1.0\DotNetCross.Memory.Unsafe.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\AppRopio.ECommerce\packages\Newtonsoft.Json.10.0.3\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="Remotion.Linq">
       <HintPath>..\..\AppRopio.ECommerce\packages\Remotion.Linq.2.1.2\lib\portable-net45+win+wpa81+wp80\Remotion.Linq.dll</HintPath>
     </Reference>
@@ -197,32 +194,8 @@
     <Reference Include="Plugin.Settings">
       <HintPath>..\..\AppRopio.ECommerce\packages\Xam.Plugins.Settings.3.1.1\lib\netstandard1.0\Plugin.Settings.dll</HintPath>
     </Reference>
-    <Reference Include="MvvmCross.Platform">
-      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Platform.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Platform.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Core">
-      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Core.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Binding">
-      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Binding.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Localization">
-      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Localization.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Plugins.File">
-      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Plugin.File.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Plugins.File.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Plugins.Messenger">
-      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Plugin.Messenger.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Plugins.Messenger.dll</HintPath>
-    </Reference>
     <Reference Include="Realm.DataBinding">
       <HintPath>..\..\AppRopio.ECommerce\packages\Realm.DataBinding.1.2.0\lib\netstandard1.0\Realm.DataBinding.dll</HintPath>
-    </Reference>
-    <Reference Include="Realm">
-      <HintPath>..\..\AppRopio.ECommerce\packages\Realm.Database.2.1.0\lib\portable-net45+sl5+wp8+wpa81+win8+monoandroid+Xamarin.iOS10+monotouch+Xamarin.Mac\Realm.dll</HintPath>
-    </Reference>
-    <Reference Include="Realm.Sync">
-      <HintPath>..\..\AppRopio.ECommerce\packages\Realm.2.1.0\lib\portable-net45+sl5+wp8+wpa81+win8+monoandroid+Xamarin.iOS10+monotouch+Xamarin.Mac\Realm.Sync.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.InteropServices.RuntimeInformation">
       <HintPath>..\..\AppRopio.ECommerce\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\netstandard1.1\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
@@ -239,23 +212,44 @@
     <Reference Include="Plugin.Share">
       <HintPath>..\..\AppRopio.ECommerce\packages\Plugin.Share.7.1.1\lib\netstandard1.0\Plugin.Share.dll</HintPath>
     </Reference>
-    <Reference Include="Plugin.Permissions.Abstractions">
-      <HintPath>..\..\AppRopio.ECommerce\packages\Plugin.Permissions.2.1.0\lib\netstandard1.0\Plugin.Permissions.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Plugin.Permissions">
-      <HintPath>..\..\AppRopio.ECommerce\packages\Plugin.Permissions.2.1.0\lib\netstandard1.0\Plugin.Permissions.dll</HintPath>
-    </Reference>
-    <Reference Include="Plugin.Geolocator.Abstractions">
-      <HintPath>..\..\AppRopio.ECommerce\packages\Xam.Plugin.Geolocator.4.1.3\lib\netstandard1.0\Plugin.Geolocator.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Plugin.Geolocator">
-      <HintPath>..\..\AppRopio.ECommerce\packages\Xam.Plugin.Geolocator.4.1.3\lib\netstandard1.0\Plugin.Geolocator.dll</HintPath>
-    </Reference>
     <Reference Include="Plugin.Messaging.Abstractions">
       <HintPath>..\..\AppRopio.ECommerce\packages\Xam.Plugins.Messaging.5.2.0\lib\netstandard1.0\Plugin.Messaging.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Plugin.Messaging">
       <HintPath>..\..\AppRopio.ECommerce\packages\Xam.Plugins.Messaging.5.2.0\lib\netstandard1.0\Plugin.Messaging.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\AppRopio.ECommerce\packages\Newtonsoft.Json.11.0.2\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Permissions">
+      <HintPath>..\..\AppRopio.ECommerce\packages\Plugin.Permissions.3.0.0.12\lib\netstandard1.0\Plugin.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="Realm">
+      <HintPath>..\..\AppRopio.ECommerce\packages\Realm.Database.3.2.1\lib\portable-net45+sl5+wp8+wpa81+win8+monoandroid+Xamarin.iOS10+monotouch+Xamarin.Mac\Realm.dll</HintPath>
+    </Reference>
+    <Reference Include="Realm.Sync">
+      <HintPath>..\..\AppRopio.ECommerce\packages\Realm.3.2.1\lib\portable-net45+sl5+wp8+wpa81+win8+monoandroid+Xamarin.iOS10+monotouch+Xamarin.Mac\Realm.Sync.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Geolocator">
+      <HintPath>..\..\AppRopio.ECommerce\packages\Xam.Plugin.Geolocator.4.5.0.6\lib\netstandard1.0\Plugin.Geolocator.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Platform">
+      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Platform.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Core">
+      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Core.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Binding">
+      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Binding.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Localization">
+      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.File">
+      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Plugin.File.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Plugins.File.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Messenger">
+      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Plugin.Messenger.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Plugins.Messenger.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -273,7 +267,7 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
-  <Import Project="..\..\AppRopio.ECommerce\packages\Fody.2.2.0\build\portable-net+sl+win+wpa+wp\Fody.targets" Condition="Exists('..\..\AppRopio.ECommerce\packages\Fody.2.2.0\build\portable-net+sl+win+wpa+wp\Fody.targets')" />
-  <Import Project="..\..\AppRopio.ECommerce\packages\Realm.Database.2.1.0\build\Realm.Database.targets" Condition="Exists('..\..\AppRopio.ECommerce\packages\Realm.Database.2.1.0\build\Realm.Database.targets')" />
-  <Import Project="..\..\AppRopio.ECommerce\packages\Realm.2.1.0\build\Realm.targets" Condition="Exists('..\..\AppRopio.ECommerce\packages\Realm.2.1.0\build\Realm.targets')" />
+  <Import Project="..\..\AppRopio.ECommerce\packages\Fody.3.0.3\build\Fody.targets" Condition="Exists('..\..\AppRopio.ECommerce\packages\Fody.3.0.3\build\Fody.targets')" />
+  <Import Project="..\..\AppRopio.ECommerce\packages\Realm.Database.3.2.1\build\Realm.Database.targets" Condition="Exists('..\..\AppRopio.ECommerce\packages\Realm.Database.3.2.1\build\Realm.Database.targets')" />
+  <Import Project="..\..\AppRopio.ECommerce\packages\Realm.3.2.1\build\Realm.targets" Condition="Exists('..\..\AppRopio.ECommerce\packages\Realm.3.2.1\build\Realm.targets')" />
 </Project>

@@ -378,14 +378,14 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
             if (!Items.IsNullOrEmpty() && !Items.Any(x => x is IDeliveryTypeItemVM deliveryItem && deliveryItem.IsSelected))
             {
                 CanGoNext = true;
-                UserDialogs.Error("Не выбран способ доставки");
+                UserDialogs.Error(LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Error_Delivery_Text").ToString());
                 return;
             }
 
             if (IsShowDeliveryTimePicker && !DaysItems.IsNullOrEmpty() && SelectedDeliveryTime == null)
             {
                 CanGoNext = true;
-                UserDialogs.Error("Не выбрано время доставки");
+                UserDialogs.Error(LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Error_Delivery_Time_Text").ToString());
                 return;
             }
 
@@ -482,14 +482,15 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
             if (!deliveries.IsNullOrEmpty() && !deliveries.Any(x => x.IsSelected))
             {
                 CanGoNext = true;
-                UserDialogs.Error("Не выбран способ доставки");
+                UserDialogs.Error(LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Error_Delivery_Text").ToString());
+
                 return Task.FromResult(false);
             }
 
             if (IsShowDeliveryTimePicker && !DaysItems.IsNullOrEmpty() && SelectedDeliveryTime == null)
             {
                 CanGoNext = true;
-                UserDialogs.Error("Не выбрано время доставки");
+                UserDialogs.Error(LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Error_Delivery_Time_Text").ToString());
                 return Task.FromResult(false);
             }
 
@@ -523,7 +524,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
                 var confirmed = await OrderVmService.ConfirmPayment(msg.Payment.Id);
 
                 if (!confirmed)
-                    UserDialogs.Error("К сожалению выбранный способ оплаты недоступен, пожалуйста выберите другой");
+                    UserDialogs.Error("К сожалению выбранный способ оплаты недоступен, пожалуйста, выберите другой");
                 else
                     CreateOrder(msg.Payment);
             });

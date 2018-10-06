@@ -104,35 +104,35 @@ namespace AppRopio.Base.Droid
 		public partial class Attribute
 		{
 			
-			// aapt resource value: 0x7f0101a4
-			public static int MvxBind = 2130772388;
+			// aapt resource value: 0x7f0101b1
+			public static int MvxBind = 2130772401;
 			
-			// aapt resource value: 0x7f0101a8
-			public static int MvxDropDownItemTemplate = 2130772392;
+			// aapt resource value: 0x7f0101b5
+			public static int MvxDropDownItemTemplate = 2130772405;
 			
-			// aapt resource value: 0x7f0101c3
-			public static int MvxFooterTemplate = 2130772419;
+			// aapt resource value: 0x7f0101d2
+			public static int MvxFooterTemplate = 2130772434;
 			
-			// aapt resource value: 0x7f0101a9
-			public static int MvxGroupItemTemplate = 2130772393;
+			// aapt resource value: 0x7f0101b6
+			public static int MvxGroupItemTemplate = 2130772406;
 			
-			// aapt resource value: 0x7f0101c2
-			public static int MvxHeaderTemplate = 2130772418;
+			// aapt resource value: 0x7f0101d1
+			public static int MvxHeaderTemplate = 2130772433;
 			
-			// aapt resource value: 0x7f0101a7
-			public static int MvxItemTemplate = 2130772391;
+			// aapt resource value: 0x7f0101b4
+			public static int MvxItemTemplate = 2130772404;
 			
-			// aapt resource value: 0x7f0101a5
-			public static int MvxLang = 2130772389;
+			// aapt resource value: 0x7f0101b2
+			public static int MvxLang = 2130772402;
 			
-			// aapt resource value: 0x7f0101aa
-			public static int MvxSource = 2130772394;
+			// aapt resource value: 0x7f0101b7
+			public static int MvxSource = 2130772407;
 			
-			// aapt resource value: 0x7f0101a6
-			public static int MvxTemplate = 2130772390;
+			// aapt resource value: 0x7f0101b3
+			public static int MvxTemplate = 2130772403;
 			
-			// aapt resource value: 0x7f0101a3
-			public static int MvxTemplateSelector = 2130772387;
+			// aapt resource value: 0x7f0101b0
+			public static int MvxTemplateSelector = 2130772400;
 			
 			// aapt resource value: 0x7f01006f
 			public static int actionBarDivider = 2130772079;
@@ -260,74 +260,80 @@ namespace AppRopio.Base.Droid
 			// aapt resource value: 0x7f010010
 			public static int ambientEnabled = 2130771984;
 			
-			// aapt resource value: 0x7f0101b8
-			public static int app_color_accent = 2130772408;
-			
-			// aapt resource value: 0x7f0101b2
-			public static int app_color_background = 2130772402;
-			
-			// aapt resource value: 0x7f0101b3
-			public static int app_color_backgroundMenu = 2130772403;
-			
-			// aapt resource value: 0x7f0101b5
-			public static int app_color_backgroundNotification = 2130772405;
-			
-			// aapt resource value: 0x7f0101b4
-			public static int app_color_backgroundSearch = 2130772404;
-			
-			// aapt resource value: 0x7f0101ba
-			public static int app_color_disabledControl = 2130772410;
-			
-			// aapt resource value: 0x7f0101b9
-			public static int app_color_highlightedControl = 2130772409;
-			
-			// aapt resource value: 0x7f0101bb
-			public static int app_color_invalid = 2130772411;
-			
-			// aapt resource value: 0x7f0101b6
-			public static int app_color_placeholder = 2130772406;
-			
-			// aapt resource value: 0x7f0101b7
-			public static int app_color_separator = 2130772407;
-			
-			// aapt resource value: 0x7f0101ad
-			public static int app_color_textAccent = 2130772397;
-			
-			// aapt resource value: 0x7f0101af
-			public static int app_color_textAccentDisabled = 2130772399;
-			
-			// aapt resource value: 0x7f0101ae
-			public static int app_color_textAccentHighlighted = 2130772398;
-			
-			// aapt resource value: 0x7f0101ab
-			public static int app_color_textBase = 2130772395;
-			
-			// aapt resource value: 0x7f0101b0
-			public static int app_color_textGray = 2130772400;
-			
-			// aapt resource value: 0x7f0101ac
-			public static int app_color_textMenu = 2130772396;
-			
-			// aapt resource value: 0x7f0101b1
-			public static int app_color_textNotification = 2130772401;
-			
-			// aapt resource value: 0x7f0101c0
-			public static int app_font_bold = 2130772416;
-			
-			// aapt resource value: 0x7f0101c1
-			public static int app_font_italic = 2130772417;
-			
-			// aapt resource value: 0x7f0101bd
-			public static int app_font_light = 2130772413;
-			
-			// aapt resource value: 0x7f0101be
-			public static int app_font_medium = 2130772414;
-			
-			// aapt resource value: 0x7f0101bc
-			public static int app_font_regular = 2130772412;
+			// aapt resource value: 0x7f0101c5
+			public static int app_color_accent = 2130772421;
 			
 			// aapt resource value: 0x7f0101bf
-			public static int app_font_semibold = 2130772415;
+			public static int app_color_background = 2130772415;
+			
+			// aapt resource value: 0x7f0101c0
+			public static int app_color_backgroundMenu = 2130772416;
+			
+			// aapt resource value: 0x7f0101c2
+			public static int app_color_backgroundNotification = 2130772418;
+			
+			// aapt resource value: 0x7f0101c1
+			public static int app_color_backgroundSearch = 2130772417;
+			
+			// aapt resource value: 0x7f0101c7
+			public static int app_color_disabledControl = 2130772423;
+			
+			// aapt resource value: 0x7f0101ca
+			public static int app_color_filter_activeColor = 2130772426;
+			
+			// aapt resource value: 0x7f0101c9
+			public static int app_color_filter_unactiveColor = 2130772425;
+			
+			// aapt resource value: 0x7f0101c6
+			public static int app_color_highlightedControl = 2130772422;
+			
+			// aapt resource value: 0x7f0101c8
+			public static int app_color_invalid = 2130772424;
+			
+			// aapt resource value: 0x7f0101c3
+			public static int app_color_placeholder = 2130772419;
+			
+			// aapt resource value: 0x7f0101c4
+			public static int app_color_separator = 2130772420;
+			
+			// aapt resource value: 0x7f0101ba
+			public static int app_color_textAccent = 2130772410;
+			
+			// aapt resource value: 0x7f0101bc
+			public static int app_color_textAccentDisabled = 2130772412;
+			
+			// aapt resource value: 0x7f0101bb
+			public static int app_color_textAccentHighlighted = 2130772411;
+			
+			// aapt resource value: 0x7f0101b8
+			public static int app_color_textBase = 2130772408;
+			
+			// aapt resource value: 0x7f0101bd
+			public static int app_color_textGray = 2130772413;
+			
+			// aapt resource value: 0x7f0101b9
+			public static int app_color_textMenu = 2130772409;
+			
+			// aapt resource value: 0x7f0101be
+			public static int app_color_textNotification = 2130772414;
+			
+			// aapt resource value: 0x7f0101cf
+			public static int app_font_bold = 2130772431;
+			
+			// aapt resource value: 0x7f0101d0
+			public static int app_font_italic = 2130772432;
+			
+			// aapt resource value: 0x7f0101cc
+			public static int app_font_light = 2130772428;
+			
+			// aapt resource value: 0x7f0101cd
+			public static int app_font_medium = 2130772429;
+			
+			// aapt resource value: 0x7f0101cb
+			public static int app_font_regular = 2130772427;
+			
+			// aapt resource value: 0x7f0101ce
+			public static int app_font_semibold = 2130772430;
 			
 			// aapt resource value: 0x7f0100d7
 			public static int arrowHeadLength = 2130772183;
@@ -370,6 +376,12 @@ namespace AppRopio.Base.Droid
 			
 			// aapt resource value: 0x7f0100d9
 			public static int barLength = 2130772185;
+			
+			// aapt resource value: 0x7f01016e
+			public static int barrierAllowsGoneWidgets = 2130772334;
+			
+			// aapt resource value: 0x7f01016f
+			public static int barrierDirection = 2130772335;
 			
 			// aapt resource value: 0x7f010145
 			public static int behavior_autoHide = 2130772293;
@@ -455,14 +467,17 @@ namespace AppRopio.Base.Droid
 			// aapt resource value: 0x7f010005
 			public static int cameraZoom = 2130771973;
 			
+			// aapt resource value: 0x7f010170
+			public static int chainUseRtl = 2130772336;
+			
 			// aapt resource value: 0x7f0100c1
 			public static int checkboxStyle = 2130772161;
 			
 			// aapt resource value: 0x7f0100c2
 			public static int checkedTextViewStyle = 2130772162;
 			
-			// aapt resource value: 0x7f0101c5
-			public static int circle = 2130772421;
+			// aapt resource value: 0x7f0101d4
+			public static int circle = 2130772436;
 			
 			// aapt resource value: 0x7f010019
 			public static int circleCrop = 2130771993;
@@ -524,8 +539,14 @@ namespace AppRopio.Base.Droid
 			// aapt resource value: 0x7f0100f7
 			public static int commitIcon = 2130772215;
 			
-			// aapt resource value: 0x7f01016e
-			public static int constraintSet = 2130772334;
+			// aapt resource value: 0x7f010171
+			public static int constraintSet = 2130772337;
+			
+			// aapt resource value: 0x7f010172
+			public static int constraint_referenced_ids = 2130772338;
+			
+			// aapt resource value: 0x7f010173
+			public static int content = 2130772339;
 			
 			// aapt resource value: 0x7f0100e4
 			public static int contentDescription = 2130772196;
@@ -593,8 +614,8 @@ namespace AppRopio.Base.Droid
 			// aapt resource value: 0x7f010090
 			public static int dividerVertical = 2130772112;
 			
-			// aapt resource value: 0x7f0101c4
-			public static int downscale = 2130772420;
+			// aapt resource value: 0x7f0101d3
+			public static int downscale = 2130772435;
 			
 			// aapt resource value: 0x7f0100d5
 			public static int drawableSize = 2130772181;
@@ -619,6 +640,9 @@ namespace AppRopio.Base.Droid
 			
 			// aapt resource value: 0x7f010042
 			public static int elevation = 2130772034;
+			
+			// aapt resource value: 0x7f010174
+			public static int emptyVisibility = 2130772340;
 			
 			// aapt resource value: 0x7f010162
 			public static int errorEnabled = 2130772322;
@@ -671,35 +695,35 @@ namespace AppRopio.Base.Droid
 			// aapt resource value: 0x7f010023
 			public static int fastScrollVerticalTrackDrawable = 2130772003;
 			
-			// aapt resource value: 0x7f0101a1
-			public static int font = 2130772385;
+			// aapt resource value: 0x7f0101ae
+			public static int font = 2130772398;
 			
 			// aapt resource value: 0x7f010059
 			public static int fontFamily = 2130772057;
 			
-			// aapt resource value: 0x7f01019a
-			public static int fontProviderAuthority = 2130772378;
+			// aapt resource value: 0x7f0101a7
+			public static int fontProviderAuthority = 2130772391;
 			
-			// aapt resource value: 0x7f01019d
-			public static int fontProviderCerts = 2130772381;
+			// aapt resource value: 0x7f0101aa
+			public static int fontProviderCerts = 2130772394;
 			
-			// aapt resource value: 0x7f01019e
-			public static int fontProviderFetchStrategy = 2130772382;
+			// aapt resource value: 0x7f0101ab
+			public static int fontProviderFetchStrategy = 2130772395;
 			
-			// aapt resource value: 0x7f01019f
-			public static int fontProviderFetchTimeout = 2130772383;
+			// aapt resource value: 0x7f0101ac
+			public static int fontProviderFetchTimeout = 2130772396;
 			
-			// aapt resource value: 0x7f01019b
-			public static int fontProviderPackage = 2130772379;
+			// aapt resource value: 0x7f0101a8
+			public static int fontProviderPackage = 2130772392;
 			
-			// aapt resource value: 0x7f01019c
-			public static int fontProviderQuery = 2130772380;
+			// aapt resource value: 0x7f0101a9
+			public static int fontProviderQuery = 2130772393;
 			
-			// aapt resource value: 0x7f0101a0
-			public static int fontStyle = 2130772384;
+			// aapt resource value: 0x7f0101ad
+			public static int fontStyle = 2130772397;
 			
-			// aapt resource value: 0x7f0101a2
-			public static int fontWeight = 2130772386;
+			// aapt resource value: 0x7f0101af
+			public static int fontWeight = 2130772399;
 			
 			// aapt resource value: 0x7f010146
 			public static int foregroundInsidePadding = 2130772294;
@@ -818,134 +842,155 @@ namespace AppRopio.Base.Droid
 			// aapt resource value: 0x7f010134
 			public static int layout_collapseParallaxMultiplier = 2130772276;
 			
-			// aapt resource value: 0x7f01016f
-			public static int layout_constraintBaseline_creator = 2130772335;
-			
-			// aapt resource value: 0x7f010170
-			public static int layout_constraintBaseline_toBaselineOf = 2130772336;
-			
-			// aapt resource value: 0x7f010171
-			public static int layout_constraintBottom_creator = 2130772337;
-			
-			// aapt resource value: 0x7f010172
-			public static int layout_constraintBottom_toBottomOf = 2130772338;
-			
-			// aapt resource value: 0x7f010173
-			public static int layout_constraintBottom_toTopOf = 2130772339;
-			
-			// aapt resource value: 0x7f010174
-			public static int layout_constraintDimensionRatio = 2130772340;
-			
 			// aapt resource value: 0x7f010175
-			public static int layout_constraintEnd_toEndOf = 2130772341;
+			public static int layout_constrainedHeight = 2130772341;
 			
 			// aapt resource value: 0x7f010176
-			public static int layout_constraintEnd_toStartOf = 2130772342;
+			public static int layout_constrainedWidth = 2130772342;
 			
 			// aapt resource value: 0x7f010177
-			public static int layout_constraintGuide_begin = 2130772343;
+			public static int layout_constraintBaseline_creator = 2130772343;
 			
 			// aapt resource value: 0x7f010178
-			public static int layout_constraintGuide_end = 2130772344;
+			public static int layout_constraintBaseline_toBaselineOf = 2130772344;
 			
 			// aapt resource value: 0x7f010179
-			public static int layout_constraintGuide_percent = 2130772345;
+			public static int layout_constraintBottom_creator = 2130772345;
 			
 			// aapt resource value: 0x7f01017a
-			public static int layout_constraintHeight_default = 2130772346;
+			public static int layout_constraintBottom_toBottomOf = 2130772346;
 			
 			// aapt resource value: 0x7f01017b
-			public static int layout_constraintHeight_max = 2130772347;
+			public static int layout_constraintBottom_toTopOf = 2130772347;
 			
 			// aapt resource value: 0x7f01017c
-			public static int layout_constraintHeight_min = 2130772348;
+			public static int layout_constraintCircle = 2130772348;
 			
 			// aapt resource value: 0x7f01017d
-			public static int layout_constraintHorizontal_bias = 2130772349;
+			public static int layout_constraintCircleAngle = 2130772349;
 			
 			// aapt resource value: 0x7f01017e
-			public static int layout_constraintHorizontal_chainStyle = 2130772350;
+			public static int layout_constraintCircleRadius = 2130772350;
 			
 			// aapt resource value: 0x7f01017f
-			public static int layout_constraintHorizontal_weight = 2130772351;
+			public static int layout_constraintDimensionRatio = 2130772351;
 			
 			// aapt resource value: 0x7f010180
-			public static int layout_constraintLeft_creator = 2130772352;
+			public static int layout_constraintEnd_toEndOf = 2130772352;
 			
 			// aapt resource value: 0x7f010181
-			public static int layout_constraintLeft_toLeftOf = 2130772353;
+			public static int layout_constraintEnd_toStartOf = 2130772353;
 			
 			// aapt resource value: 0x7f010182
-			public static int layout_constraintLeft_toRightOf = 2130772354;
+			public static int layout_constraintGuide_begin = 2130772354;
 			
 			// aapt resource value: 0x7f010183
-			public static int layout_constraintRight_creator = 2130772355;
+			public static int layout_constraintGuide_end = 2130772355;
 			
 			// aapt resource value: 0x7f010184
-			public static int layout_constraintRight_toLeftOf = 2130772356;
+			public static int layout_constraintGuide_percent = 2130772356;
 			
 			// aapt resource value: 0x7f010185
-			public static int layout_constraintRight_toRightOf = 2130772357;
+			public static int layout_constraintHeight_default = 2130772357;
 			
 			// aapt resource value: 0x7f010186
-			public static int layout_constraintStart_toEndOf = 2130772358;
+			public static int layout_constraintHeight_max = 2130772358;
 			
 			// aapt resource value: 0x7f010187
-			public static int layout_constraintStart_toStartOf = 2130772359;
+			public static int layout_constraintHeight_min = 2130772359;
 			
 			// aapt resource value: 0x7f010188
-			public static int layout_constraintTop_creator = 2130772360;
+			public static int layout_constraintHeight_percent = 2130772360;
 			
 			// aapt resource value: 0x7f010189
-			public static int layout_constraintTop_toBottomOf = 2130772361;
+			public static int layout_constraintHorizontal_bias = 2130772361;
 			
 			// aapt resource value: 0x7f01018a
-			public static int layout_constraintTop_toTopOf = 2130772362;
+			public static int layout_constraintHorizontal_chainStyle = 2130772362;
 			
 			// aapt resource value: 0x7f01018b
-			public static int layout_constraintVertical_bias = 2130772363;
+			public static int layout_constraintHorizontal_weight = 2130772363;
 			
 			// aapt resource value: 0x7f01018c
-			public static int layout_constraintVertical_chainStyle = 2130772364;
+			public static int layout_constraintLeft_creator = 2130772364;
 			
 			// aapt resource value: 0x7f01018d
-			public static int layout_constraintVertical_weight = 2130772365;
+			public static int layout_constraintLeft_toLeftOf = 2130772365;
 			
 			// aapt resource value: 0x7f01018e
-			public static int layout_constraintWidth_default = 2130772366;
+			public static int layout_constraintLeft_toRightOf = 2130772366;
 			
 			// aapt resource value: 0x7f01018f
-			public static int layout_constraintWidth_max = 2130772367;
+			public static int layout_constraintRight_creator = 2130772367;
 			
 			// aapt resource value: 0x7f010190
-			public static int layout_constraintWidth_min = 2130772368;
+			public static int layout_constraintRight_toLeftOf = 2130772368;
+			
+			// aapt resource value: 0x7f010191
+			public static int layout_constraintRight_toRightOf = 2130772369;
+			
+			// aapt resource value: 0x7f010192
+			public static int layout_constraintStart_toEndOf = 2130772370;
+			
+			// aapt resource value: 0x7f010193
+			public static int layout_constraintStart_toStartOf = 2130772371;
+			
+			// aapt resource value: 0x7f010194
+			public static int layout_constraintTop_creator = 2130772372;
+			
+			// aapt resource value: 0x7f010195
+			public static int layout_constraintTop_toBottomOf = 2130772373;
+			
+			// aapt resource value: 0x7f010196
+			public static int layout_constraintTop_toTopOf = 2130772374;
+			
+			// aapt resource value: 0x7f010197
+			public static int layout_constraintVertical_bias = 2130772375;
+			
+			// aapt resource value: 0x7f010198
+			public static int layout_constraintVertical_chainStyle = 2130772376;
+			
+			// aapt resource value: 0x7f010199
+			public static int layout_constraintVertical_weight = 2130772377;
+			
+			// aapt resource value: 0x7f01019a
+			public static int layout_constraintWidth_default = 2130772378;
+			
+			// aapt resource value: 0x7f01019b
+			public static int layout_constraintWidth_max = 2130772379;
+			
+			// aapt resource value: 0x7f01019c
+			public static int layout_constraintWidth_min = 2130772380;
+			
+			// aapt resource value: 0x7f01019d
+			public static int layout_constraintWidth_percent = 2130772381;
 			
 			// aapt resource value: 0x7f01013c
 			public static int layout_dodgeInsetEdges = 2130772284;
 			
-			// aapt resource value: 0x7f010191
-			public static int layout_editor_absoluteX = 2130772369;
+			// aapt resource value: 0x7f01019e
+			public static int layout_editor_absoluteX = 2130772382;
 			
-			// aapt resource value: 0x7f010192
-			public static int layout_editor_absoluteY = 2130772370;
+			// aapt resource value: 0x7f01019f
+			public static int layout_editor_absoluteY = 2130772383;
 			
-			// aapt resource value: 0x7f010193
-			public static int layout_goneMarginBottom = 2130772371;
+			// aapt resource value: 0x7f0101a0
+			public static int layout_goneMarginBottom = 2130772384;
 			
-			// aapt resource value: 0x7f010194
-			public static int layout_goneMarginEnd = 2130772372;
+			// aapt resource value: 0x7f0101a1
+			public static int layout_goneMarginEnd = 2130772385;
 			
-			// aapt resource value: 0x7f010195
-			public static int layout_goneMarginLeft = 2130772373;
+			// aapt resource value: 0x7f0101a2
+			public static int layout_goneMarginLeft = 2130772386;
 			
-			// aapt resource value: 0x7f010196
-			public static int layout_goneMarginRight = 2130772374;
+			// aapt resource value: 0x7f0101a3
+			public static int layout_goneMarginRight = 2130772387;
 			
-			// aapt resource value: 0x7f010197
-			public static int layout_goneMarginStart = 2130772375;
+			// aapt resource value: 0x7f0101a4
+			public static int layout_goneMarginStart = 2130772388;
 			
-			// aapt resource value: 0x7f010198
-			public static int layout_goneMarginTop = 2130772376;
+			// aapt resource value: 0x7f0101a5
+			public static int layout_goneMarginTop = 2130772389;
 			
 			// aapt resource value: 0x7f01013b
 			public static int layout_insetEdge = 2130772283;
@@ -953,8 +998,8 @@ namespace AppRopio.Base.Droid
 			// aapt resource value: 0x7f010139
 			public static int layout_keyline = 2130772281;
 			
-			// aapt resource value: 0x7f010199
-			public static int layout_optimizationLevel = 2130772377;
+			// aapt resource value: 0x7f0101a6
+			public static int layout_optimizationLevel = 2130772390;
 			
 			// aapt resource value: 0x7f01011f
 			public static int layout_scrollFlags = 2130772255;
@@ -1073,8 +1118,8 @@ namespace AppRopio.Base.Droid
 			// aapt resource value: 0x7f01016d
 			public static int passwordToggleTintMode = 2130772333;
 			
-			// aapt resource value: 0x7f0101c6
-			public static int placeholder = 2130772422;
+			// aapt resource value: 0x7f0101d5
+			public static int placeholder = 2130772437;
 			
 			// aapt resource value: 0x7f010095
 			public static int popupMenuStyle = 2130772117;
@@ -2827,41 +2872,41 @@ namespace AppRopio.Base.Droid
 			// aapt resource value: 0x7f0b0046
 			public static int SYM = 2131427398;
 			
-			// aapt resource value: 0x7f0b00b2
-			public static int action0 = 2131427506;
+			// aapt resource value: 0x7f0b00b7
+			public static int action0 = 2131427511;
 			
-			// aapt resource value: 0x7f0b0091
-			public static int action_bar = 2131427473;
+			// aapt resource value: 0x7f0b0096
+			public static int action_bar = 2131427478;
 			
 			// aapt resource value: 0x7f0b0001
 			public static int action_bar_activity_content = 2131427329;
 			
-			// aapt resource value: 0x7f0b0090
-			public static int action_bar_container = 2131427472;
+			// aapt resource value: 0x7f0b0095
+			public static int action_bar_container = 2131427477;
 			
-			// aapt resource value: 0x7f0b008c
-			public static int action_bar_root = 2131427468;
+			// aapt resource value: 0x7f0b0091
+			public static int action_bar_root = 2131427473;
 			
 			// aapt resource value: 0x7f0b0002
 			public static int action_bar_spinner = 2131427330;
 			
-			// aapt resource value: 0x7f0b0070
-			public static int action_bar_subtitle = 2131427440;
+			// aapt resource value: 0x7f0b0075
+			public static int action_bar_subtitle = 2131427445;
 			
-			// aapt resource value: 0x7f0b006f
-			public static int action_bar_title = 2131427439;
+			// aapt resource value: 0x7f0b0074
+			public static int action_bar_title = 2131427444;
 			
-			// aapt resource value: 0x7f0b00af
-			public static int action_container = 2131427503;
+			// aapt resource value: 0x7f0b00b4
+			public static int action_container = 2131427508;
 			
-			// aapt resource value: 0x7f0b0092
-			public static int action_context_bar = 2131427474;
+			// aapt resource value: 0x7f0b0097
+			public static int action_context_bar = 2131427479;
 			
-			// aapt resource value: 0x7f0b00b6
-			public static int action_divider = 2131427510;
+			// aapt resource value: 0x7f0b00bb
+			public static int action_divider = 2131427515;
 			
-			// aapt resource value: 0x7f0b00b0
-			public static int action_image = 2131427504;
+			// aapt resource value: 0x7f0b00b5
+			public static int action_image = 2131427509;
 			
 			// aapt resource value: 0x7f0b0003
 			public static int action_menu_divider = 2131427331;
@@ -2869,23 +2914,23 @@ namespace AppRopio.Base.Droid
 			// aapt resource value: 0x7f0b0004
 			public static int action_menu_presenter = 2131427332;
 			
-			// aapt resource value: 0x7f0b008e
-			public static int action_mode_bar = 2131427470;
+			// aapt resource value: 0x7f0b0093
+			public static int action_mode_bar = 2131427475;
 			
-			// aapt resource value: 0x7f0b008d
-			public static int action_mode_bar_stub = 2131427469;
+			// aapt resource value: 0x7f0b0092
+			public static int action_mode_bar_stub = 2131427474;
 			
-			// aapt resource value: 0x7f0b0071
-			public static int action_mode_close_button = 2131427441;
+			// aapt resource value: 0x7f0b0076
+			public static int action_mode_close_button = 2131427446;
 			
-			// aapt resource value: 0x7f0b00b1
-			public static int action_text = 2131427505;
+			// aapt resource value: 0x7f0b00b6
+			public static int action_text = 2131427510;
 			
-			// aapt resource value: 0x7f0b00bf
-			public static int actions = 2131427519;
+			// aapt resource value: 0x7f0b00c4
+			public static int actions = 2131427524;
 			
-			// aapt resource value: 0x7f0b0072
-			public static int activity_chooser_view_content = 2131427442;
+			// aapt resource value: 0x7f0b0077
+			public static int activity_chooser_view_content = 2131427447;
 			
 			// aapt resource value: 0x7f0b0036
 			public static int add = 2131427382;
@@ -2896,8 +2941,8 @@ namespace AppRopio.Base.Droid
 			// aapt resource value: 0x7f0b0027
 			public static int adjust_width = 2131427367;
 			
-			// aapt resource value: 0x7f0b0085
-			public static int alertTitle = 2131427461;
+			// aapt resource value: 0x7f0b008a
+			public static int alertTitle = 2131427466;
 			
 			// aapt resource value: 0x7f0b0060
 			public static int all = 2131427424;
@@ -2911,29 +2956,29 @@ namespace AppRopio.Base.Droid
 			// aapt resource value: 0x7f0b001f
 			public static int app_toolbar = 2131427359;
 			
-			// aapt resource value: 0x7f0b006b
-			public static int async = 2131427435;
+			// aapt resource value: 0x7f0b0070
+			public static int async = 2131427440;
 			
 			// aapt resource value: 0x7f0b002b
 			public static int auto = 2131427371;
 			
-			// aapt resource value: 0x7f0b0069
-			public static int basic = 2131427433;
+			// aapt resource value: 0x7f0b006c
+			public static int barrier = 2131427436;
 			
 			// aapt resource value: 0x7f0b003e
 			public static int beginning = 2131427390;
 			
-			// aapt resource value: 0x7f0b006c
-			public static int blocking = 2131427436;
+			// aapt resource value: 0x7f0b0071
+			public static int blocking = 2131427441;
 			
 			// aapt resource value: 0x7f0b004c
 			public static int bottom = 2131427404;
 			
-			// aapt resource value: 0x7f0b0078
-			public static int buttonPanel = 2131427448;
+			// aapt resource value: 0x7f0b007d
+			public static int buttonPanel = 2131427453;
 			
-			// aapt resource value: 0x7f0b00b3
-			public static int cancel_action = 2131427507;
+			// aapt resource value: 0x7f0b00b8
+			public static int cancel_action = 2131427512;
 			
 			// aapt resource value: 0x7f0b0053
 			public static int center = 2131427411;
@@ -2944,14 +2989,14 @@ namespace AppRopio.Base.Droid
 			// aapt resource value: 0x7f0b0055
 			public static int center_vertical = 2131427413;
 			
-			// aapt resource value: 0x7f0b006a
-			public static int chains = 2131427434;
+			// aapt resource value: 0x7f0b006d
+			public static int chains = 2131427437;
 			
-			// aapt resource value: 0x7f0b0088
-			public static int checkbox = 2131427464;
+			// aapt resource value: 0x7f0b008d
+			public static int checkbox = 2131427469;
 			
-			// aapt resource value: 0x7f0b00bb
-			public static int chronometer = 2131427515;
+			// aapt resource value: 0x7f0b00c0
+			public static int chronometer = 2131427520;
 			
 			// aapt resource value: 0x7f0b005c
 			public static int clip_horizontal = 2131427420;
@@ -2962,56 +3007,62 @@ namespace AppRopio.Base.Droid
 			// aapt resource value: 0x7f0b0048
 			public static int collapseActionView = 2131427400;
 			
-			// aapt resource value: 0x7f0b00a3
-			public static int container = 2131427491;
+			// aapt resource value: 0x7f0b00a8
+			public static int container = 2131427496;
 			
-			// aapt resource value: 0x7f0b007b
-			public static int contentPanel = 2131427451;
+			// aapt resource value: 0x7f0b0080
+			public static int contentPanel = 2131427456;
 			
-			// aapt resource value: 0x7f0b00a4
-			public static int coordinator = 2131427492;
+			// aapt resource value: 0x7f0b00a9
+			public static int coordinator = 2131427497;
 			
-			// aapt resource value: 0x7f0b0082
-			public static int custom = 2131427458;
+			// aapt resource value: 0x7f0b0087
+			public static int custom = 2131427463;
 			
-			// aapt resource value: 0x7f0b0081
-			public static int customPanel = 2131427457;
+			// aapt resource value: 0x7f0b0086
+			public static int customPanel = 2131427462;
 			
 			// aapt resource value: 0x7f0b002c
 			public static int dark = 2131427372;
 			
-			// aapt resource value: 0x7f0b008f
-			public static int decor_content_parent = 2131427471;
+			// aapt resource value: 0x7f0b0094
+			public static int decor_content_parent = 2131427476;
 			
-			// aapt resource value: 0x7f0b0075
-			public static int default_activity_button = 2131427445;
-			
-			// aapt resource value: 0x7f0b00a6
-			public static int design_bottom_sheet = 2131427494;
-			
-			// aapt resource value: 0x7f0b00ad
-			public static int design_menu_item_action_area = 2131427501;
-			
-			// aapt resource value: 0x7f0b00ac
-			public static int design_menu_item_action_area_stub = 2131427500;
+			// aapt resource value: 0x7f0b007a
+			public static int default_activity_button = 2131427450;
 			
 			// aapt resource value: 0x7f0b00ab
-			public static int design_menu_item_text = 2131427499;
+			public static int design_bottom_sheet = 2131427499;
 			
-			// aapt resource value: 0x7f0b00aa
-			public static int design_navigation_view = 2131427498;
+			// aapt resource value: 0x7f0b00b2
+			public static int design_menu_item_action_area = 2131427506;
+			
+			// aapt resource value: 0x7f0b00b1
+			public static int design_menu_item_action_area_stub = 2131427505;
+			
+			// aapt resource value: 0x7f0b00b0
+			public static int design_menu_item_text = 2131427504;
+			
+			// aapt resource value: 0x7f0b00af
+			public static int design_navigation_view = 2131427503;
+			
+			// aapt resource value: 0x7f0b006e
+			public static int dimensions = 2131427438;
+			
+			// aapt resource value: 0x7f0b006f
+			public static int direct = 2131427439;
 			
 			// aapt resource value: 0x7f0b0030
 			public static int disableHome = 2131427376;
 			
-			// aapt resource value: 0x7f0b0093
-			public static int edit_query = 2131427475;
+			// aapt resource value: 0x7f0b0098
+			public static int edit_query = 2131427480;
 			
 			// aapt resource value: 0x7f0b003f
 			public static int end = 2131427391;
 			
-			// aapt resource value: 0x7f0b00c1
-			public static int end_padder = 2131427521;
+			// aapt resource value: 0x7f0b00c6
+			public static int end_padder = 2131427526;
 			
 			// aapt resource value: 0x7f0b004e
 			public static int enterAlways = 2131427406;
@@ -3022,11 +3073,11 @@ namespace AppRopio.Base.Droid
 			// aapt resource value: 0x7f0b0050
 			public static int exitUntilCollapsed = 2131427408;
 			
-			// aapt resource value: 0x7f0b0073
-			public static int expand_activities_button = 2131427443;
+			// aapt resource value: 0x7f0b0078
+			public static int expand_activities_button = 2131427448;
 			
-			// aapt resource value: 0x7f0b0087
-			public static int expanded_menu = 2131427463;
+			// aapt resource value: 0x7f0b008c
+			public static int expanded_menu = 2131427468;
 			
 			// aapt resource value: 0x7f0b005e
 			public static int fill = 2131427422;
@@ -3040,11 +3091,14 @@ namespace AppRopio.Base.Droid
 			// aapt resource value: 0x7f0b0062
 			public static int @fixed = 2131427426;
 			
-			// aapt resource value: 0x7f0b006d
-			public static int forever = 2131427437;
+			// aapt resource value: 0x7f0b0072
+			public static int forever = 2131427442;
 			
 			// aapt resource value: 0x7f0b000a
 			public static int ghost_view = 2131427338;
+			
+			// aapt resource value: 0x7f0b0064
+			public static int gone = 2131427428;
 			
 			// aapt resource value: 0x7f0b0005
 			public static int home = 2131427333;
@@ -3055,11 +3109,11 @@ namespace AppRopio.Base.Droid
 			// aapt resource value: 0x7f0b0021
 			public static int hybrid = 2131427361;
 			
-			// aapt resource value: 0x7f0b0077
-			public static int icon = 2131427447;
+			// aapt resource value: 0x7f0b007c
+			public static int icon = 2131427452;
 			
-			// aapt resource value: 0x7f0b00c0
-			public static int icon_group = 2131427520;
+			// aapt resource value: 0x7f0b00c5
+			public static int icon_group = 2131427525;
 			
 			// aapt resource value: 0x7f0b0028
 			public static int icon_only = 2131427368;
@@ -3067,20 +3121,23 @@ namespace AppRopio.Base.Droid
 			// aapt resource value: 0x7f0b0049
 			public static int ifRoom = 2131427401;
 			
-			// aapt resource value: 0x7f0b0074
-			public static int image = 2131427444;
+			// aapt resource value: 0x7f0b0079
+			public static int image = 2131427449;
 			
-			// aapt resource value: 0x7f0b00bc
-			public static int info = 2131427516;
+			// aapt resource value: 0x7f0b00c1
+			public static int info = 2131427521;
 			
-			// aapt resource value: 0x7f0b006e
-			public static int italic = 2131427438;
+			// aapt resource value: 0x7f0b0065
+			public static int invisible = 2131427429;
+			
+			// aapt resource value: 0x7f0b0073
+			public static int italic = 2131427443;
 			
 			// aapt resource value: 0x7f0b0000
 			public static int item_touch_helper_previous_elevation = 2131427328;
 			
-			// aapt resource value: 0x7f0b00a2
-			public static int largeLabel = 2131427490;
+			// aapt resource value: 0x7f0b00a7
+			public static int largeLabel = 2131427495;
 			
 			// aapt resource value: 0x7f0b0057
 			public static int left = 2131427415;
@@ -3097,17 +3154,17 @@ namespace AppRopio.Base.Droid
 			// aapt resource value: 0x7f0b002e
 			public static int listMode = 2131427374;
 			
-			// aapt resource value: 0x7f0b0076
-			public static int list_item = 2131427446;
+			// aapt resource value: 0x7f0b007b
+			public static int list_item = 2131427451;
 			
-			// aapt resource value: 0x7f0b00c4
-			public static int masked = 2131427524;
+			// aapt resource value: 0x7f0b00c9
+			public static int masked = 2131427529;
 			
-			// aapt resource value: 0x7f0b00b5
-			public static int media_actions = 2131427509;
+			// aapt resource value: 0x7f0b00ba
+			public static int media_actions = 2131427514;
 			
-			// aapt resource value: 0x7f0b00c2
-			public static int message = 2131427522;
+			// aapt resource value: 0x7f0b00c7
+			public static int message = 2131427527;
 			
 			// aapt resource value: 0x7f0b0040
 			public static int middle = 2131427392;
@@ -3118,8 +3175,8 @@ namespace AppRopio.Base.Droid
 			// aapt resource value: 0x7f0b0037
 			public static int multiply = 2131427383;
 			
-			// aapt resource value: 0x7f0b00a9
-			public static int navigation_header_container = 2131427497;
+			// aapt resource value: 0x7f0b00ae
+			public static int navigation_header_container = 2131427502;
 			
 			// aapt resource value: 0x7f0b004a
 			public static int never = 2131427402;
@@ -3130,35 +3187,38 @@ namespace AppRopio.Base.Droid
 			// aapt resource value: 0x7f0b0023
 			public static int normal = 2131427363;
 			
-			// aapt resource value: 0x7f0b00be
-			public static int notification_background = 2131427518;
+			// aapt resource value: 0x7f0b00c3
+			public static int notification_background = 2131427523;
 			
-			// aapt resource value: 0x7f0b00b8
-			public static int notification_main_column = 2131427512;
+			// aapt resource value: 0x7f0b00bd
+			public static int notification_main_column = 2131427517;
 			
-			// aapt resource value: 0x7f0b00b7
-			public static int notification_main_column_container = 2131427511;
+			// aapt resource value: 0x7f0b00bc
+			public static int notification_main_column_container = 2131427516;
 			
-			// aapt resource value: 0x7f0b0067
-			public static int packed = 2131427431;
+			// aapt resource value: 0x7f0b006a
+			public static int packed = 2131427434;
 			
 			// aapt resource value: 0x7f0b005a
 			public static int parallax = 2131427418;
 			
-			// aapt resource value: 0x7f0b0064
-			public static int parent = 2131427428;
+			// aapt resource value: 0x7f0b0066
+			public static int parent = 2131427430;
 			
-			// aapt resource value: 0x7f0b007a
-			public static int parentPanel = 2131427450;
+			// aapt resource value: 0x7f0b007f
+			public static int parentPanel = 2131427455;
 			
 			// aapt resource value: 0x7f0b000b
 			public static int parent_matrix = 2131427339;
 			
+			// aapt resource value: 0x7f0b0067
+			public static int percent = 2131427431;
+			
 			// aapt resource value: 0x7f0b005b
 			public static int pin = 2131427419;
 			
-			// aapt resource value: 0x7f0b00a0
-			public static int progress_bar = 2131427488;
+			// aapt resource value: 0x7f0b00a5
+			public static int progress_bar = 2131427493;
 			
 			// aapt resource value: 0x7f0b0006
 			public static int progress_circular = 2131427334;
@@ -3166,17 +3226,17 @@ namespace AppRopio.Base.Droid
 			// aapt resource value: 0x7f0b0007
 			public static int progress_horizontal = 2131427335;
 			
-			// aapt resource value: 0x7f0b008a
-			public static int radio = 2131427466;
+			// aapt resource value: 0x7f0b008f
+			public static int radio = 2131427471;
 			
 			// aapt resource value: 0x7f0b0058
 			public static int right = 2131427416;
 			
-			// aapt resource value: 0x7f0b00bd
-			public static int right_icon = 2131427517;
+			// aapt resource value: 0x7f0b00c2
+			public static int right_icon = 2131427522;
 			
-			// aapt resource value: 0x7f0b00b9
-			public static int right_side = 2131427513;
+			// aapt resource value: 0x7f0b00be
+			public static int right_side = 2131427518;
 			
 			// aapt resource value: 0x7f0b0024
 			public static int satellite = 2131427364;
@@ -3196,53 +3256,53 @@ namespace AppRopio.Base.Droid
 			// aapt resource value: 0x7f0b0051
 			public static int scroll = 2131427409;
 			
-			// aapt resource value: 0x7f0b0080
-			public static int scrollIndicatorDown = 2131427456;
+			// aapt resource value: 0x7f0b0085
+			public static int scrollIndicatorDown = 2131427461;
 			
-			// aapt resource value: 0x7f0b007c
-			public static int scrollIndicatorUp = 2131427452;
+			// aapt resource value: 0x7f0b0081
+			public static int scrollIndicatorUp = 2131427457;
 			
-			// aapt resource value: 0x7f0b007d
-			public static int scrollView = 2131427453;
+			// aapt resource value: 0x7f0b0082
+			public static int scrollView = 2131427458;
 			
 			// aapt resource value: 0x7f0b0063
 			public static int scrollable = 2131427427;
 			
-			// aapt resource value: 0x7f0b0095
-			public static int search_badge = 2131427477;
-			
-			// aapt resource value: 0x7f0b0094
-			public static int search_bar = 2131427476;
-			
-			// aapt resource value: 0x7f0b0096
-			public static int search_button = 2131427478;
-			
-			// aapt resource value: 0x7f0b009b
-			public static int search_close_btn = 2131427483;
-			
-			// aapt resource value: 0x7f0b0097
-			public static int search_edit_frame = 2131427479;
-			
-			// aapt resource value: 0x7f0b009d
-			public static int search_go_btn = 2131427485;
-			
-			// aapt resource value: 0x7f0b0098
-			public static int search_mag_icon = 2131427480;
+			// aapt resource value: 0x7f0b009a
+			public static int search_badge = 2131427482;
 			
 			// aapt resource value: 0x7f0b0099
-			public static int search_plate = 2131427481;
+			public static int search_bar = 2131427481;
 			
-			// aapt resource value: 0x7f0b009a
-			public static int search_src_text = 2131427482;
+			// aapt resource value: 0x7f0b009b
+			public static int search_button = 2131427483;
+			
+			// aapt resource value: 0x7f0b00a0
+			public static int search_close_btn = 2131427488;
+			
+			// aapt resource value: 0x7f0b009c
+			public static int search_edit_frame = 2131427484;
+			
+			// aapt resource value: 0x7f0b00a2
+			public static int search_go_btn = 2131427490;
+			
+			// aapt resource value: 0x7f0b009d
+			public static int search_mag_icon = 2131427485;
 			
 			// aapt resource value: 0x7f0b009e
-			public static int search_voice_btn = 2131427486;
+			public static int search_plate = 2131427486;
 			
 			// aapt resource value: 0x7f0b009f
-			public static int select_dialog_listview = 2131427487;
+			public static int search_src_text = 2131427487;
 			
-			// aapt resource value: 0x7f0b0089
-			public static int shortcut = 2131427465;
+			// aapt resource value: 0x7f0b00a3
+			public static int search_voice_btn = 2131427491;
+			
+			// aapt resource value: 0x7f0b00a4
+			public static int select_dialog_listview = 2131427492;
+			
+			// aapt resource value: 0x7f0b008e
+			public static int shortcut = 2131427470;
 			
 			// aapt resource value: 0x7f0b0032
 			public static int showCustom = 2131427378;
@@ -3253,29 +3313,29 @@ namespace AppRopio.Base.Droid
 			// aapt resource value: 0x7f0b0034
 			public static int showTitle = 2131427380;
 			
-			// aapt resource value: 0x7f0b00a1
-			public static int smallLabel = 2131427489;
+			// aapt resource value: 0x7f0b00a6
+			public static int smallLabel = 2131427494;
 			
-			// aapt resource value: 0x7f0b00a8
-			public static int snackbar_action = 2131427496;
+			// aapt resource value: 0x7f0b00ad
+			public static int snackbar_action = 2131427501;
 			
-			// aapt resource value: 0x7f0b00a7
-			public static int snackbar_text = 2131427495;
+			// aapt resource value: 0x7f0b00ac
+			public static int snackbar_text = 2131427500;
 			
 			// aapt resource value: 0x7f0b0052
 			public static int snap = 2131427410;
 			
-			// aapt resource value: 0x7f0b0079
-			public static int spacer = 2131427449;
+			// aapt resource value: 0x7f0b007e
+			public static int spacer = 2131427454;
 			
 			// aapt resource value: 0x7f0b0008
 			public static int split_action_bar = 2131427336;
 			
-			// aapt resource value: 0x7f0b0065
-			public static int spread = 2131427429;
-			
 			// aapt resource value: 0x7f0b0068
-			public static int spread_inside = 2131427432;
+			public static int spread = 2131427432;
+			
+			// aapt resource value: 0x7f0b006b
+			public static int spread_inside = 2131427435;
 			
 			// aapt resource value: 0x7f0b0039
 			public static int src_atop = 2131427385;
@@ -3292,14 +3352,14 @@ namespace AppRopio.Base.Droid
 			// aapt resource value: 0x7f0b0059
 			public static int start = 2131427417;
 			
-			// aapt resource value: 0x7f0b00b4
-			public static int status_bar_latest_event_content = 2131427508;
+			// aapt resource value: 0x7f0b00b9
+			public static int status_bar_latest_event_content = 2131427513;
 			
-			// aapt resource value: 0x7f0b008b
-			public static int submenuarrow = 2131427467;
+			// aapt resource value: 0x7f0b0090
+			public static int submenuarrow = 2131427472;
 			
-			// aapt resource value: 0x7f0b009c
-			public static int submit_area = 2131427484;
+			// aapt resource value: 0x7f0b00a1
+			public static int submit_area = 2131427489;
 			
 			// aapt resource value: 0x7f0b002f
 			public static int tabMode = 2131427375;
@@ -3316,14 +3376,14 @@ namespace AppRopio.Base.Droid
 			// aapt resource value: 0x7f0b001b
 			public static int text2 = 2131427355;
 			
-			// aapt resource value: 0x7f0b007f
-			public static int textSpacerNoButtons = 2131427455;
+			// aapt resource value: 0x7f0b0084
+			public static int textSpacerNoButtons = 2131427460;
 			
-			// aapt resource value: 0x7f0b007e
-			public static int textSpacerNoTitle = 2131427454;
+			// aapt resource value: 0x7f0b0083
+			public static int textSpacerNoTitle = 2131427459;
 			
-			// aapt resource value: 0x7f0b00ae
-			public static int text_input_password_toggle = 2131427502;
+			// aapt resource value: 0x7f0b00b3
+			public static int text_input_password_toggle = 2131427507;
 			
 			// aapt resource value: 0x7f0b0014
 			public static int textinput_counter = 2131427348;
@@ -3331,26 +3391,26 @@ namespace AppRopio.Base.Droid
 			// aapt resource value: 0x7f0b0015
 			public static int textinput_error = 2131427349;
 			
-			// aapt resource value: 0x7f0b00ba
-			public static int time = 2131427514;
+			// aapt resource value: 0x7f0b00bf
+			public static int time = 2131427519;
 			
 			// aapt resource value: 0x7f0b001c
 			public static int title = 2131427356;
 			
-			// aapt resource value: 0x7f0b0086
-			public static int titleDividerNoCustom = 2131427462;
+			// aapt resource value: 0x7f0b008b
+			public static int titleDividerNoCustom = 2131427467;
 			
-			// aapt resource value: 0x7f0b0084
-			public static int title_template = 2131427460;
+			// aapt resource value: 0x7f0b0089
+			public static int title_template = 2131427465;
 			
 			// aapt resource value: 0x7f0b004d
 			public static int top = 2131427405;
 			
-			// aapt resource value: 0x7f0b0083
-			public static int topPanel = 2131427459;
+			// aapt resource value: 0x7f0b0088
+			public static int topPanel = 2131427464;
 			
-			// aapt resource value: 0x7f0b00a5
-			public static int touch_outside = 2131427493;
+			// aapt resource value: 0x7f0b00aa
+			public static int touch_outside = 2131427498;
 			
 			// aapt resource value: 0x7f0b000f
 			public static int transition_current_scene = 2131427343;
@@ -3379,8 +3439,8 @@ namespace AppRopio.Base.Droid
 			// aapt resource value: 0x7f0b0016
 			public static int view_offset_helper = 2131427350;
 			
-			// aapt resource value: 0x7f0b00c3
-			public static int visible = 2131427523;
+			// aapt resource value: 0x7f0b00c8
+			public static int visible = 2131427528;
 			
 			// aapt resource value: 0x7f0b002a
 			public static int wide = 2131427370;
@@ -3388,8 +3448,8 @@ namespace AppRopio.Base.Droid
 			// aapt resource value: 0x7f0b004b
 			public static int withText = 2131427403;
 			
-			// aapt resource value: 0x7f0b0066
-			public static int wrap = 2131427430;
+			// aapt resource value: 0x7f0b0069
+			public static int wrap = 2131427433;
 			
 			// aapt resource value: 0x7f0b003d
 			public static int wrap_content = 2131427389;
@@ -5111,8 +5171,8 @@ namespace AppRopio.Base.Droid
 		{
 			
 			public static int[] ARAppCompatSpinner = new int[] {
-					2130772391,
-					2130772392};
+					2130772404,
+					2130772405};
 			
 			// aapt resource value: 1
 			public static int ARAppCompatSpinner_MvxDropDownItemTemplate = 1;
@@ -5121,9 +5181,9 @@ namespace AppRopio.Base.Droid
 			public static int ARAppCompatSpinner_MvxItemTemplate = 0;
 			
 			public static int[] ARImageView = new int[] {
-					2130772420,
-					2130772421,
-					2130772422};
+					2130772435,
+					2130772436,
+					2130772437};
 			
 			// aapt resource value: 1
 			public static int ARImageView_circle = 1;
@@ -5135,8 +5195,8 @@ namespace AppRopio.Base.Droid
 			public static int ARImageView_placeholder = 2;
 			
 			public static int[] ARLinearLayout = new int[] {
-					2130772387,
-					2130772391};
+					2130772400,
+					2130772404};
 			
 			// aapt resource value: 1
 			public static int ARLinearLayout_MvxItemTemplate = 1;
@@ -5145,8 +5205,8 @@ namespace AppRopio.Base.Droid
 			public static int ARLinearLayout_MvxTemplateSelector = 0;
 			
 			public static int[] ARListView = new int[] {
-					2130772418,
-					2130772419};
+					2130772433,
+					2130772434};
 			
 			// aapt resource value: 1
 			public static int ARListView_MvxFooterTemplate = 1;
@@ -6129,8 +6189,6 @@ namespace AppRopio.Base.Droid
 					2130772336,
 					2130772337,
 					2130772338,
-					2130772339,
-					2130772340,
 					2130772341,
 					2130772342,
 					2130772343,
@@ -6167,7 +6225,20 @@ namespace AppRopio.Base.Droid
 					2130772374,
 					2130772375,
 					2130772376,
-					2130772377};
+					2130772377,
+					2130772378,
+					2130772379,
+					2130772380,
+					2130772381,
+					2130772382,
+					2130772383,
+					2130772384,
+					2130772385,
+					2130772386,
+					2130772387,
+					2130772388,
+					2130772389,
+					2130772390};
 			
 			// aapt resource value: 2
 			public static int ConstraintLayout_Layout_android_maxHeight = 2;
@@ -6185,136 +6256,179 @@ namespace AppRopio.Base.Droid
 			public static int ConstraintLayout_Layout_android_orientation = 0;
 			
 			// aapt resource value: 5
-			public static int ConstraintLayout_Layout_constraintSet = 5;
+			public static int ConstraintLayout_Layout_barrierAllowsGoneWidgets = 5;
 			
 			// aapt resource value: 6
-			public static int ConstraintLayout_Layout_layout_constraintBaseline_creator = 6;
+			public static int ConstraintLayout_Layout_barrierDirection = 6;
 			
 			// aapt resource value: 7
-			public static int ConstraintLayout_Layout_layout_constraintBaseline_toBaselineOf = 7;
+			public static int ConstraintLayout_Layout_chainUseRtl = 7;
 			
 			// aapt resource value: 8
-			public static int ConstraintLayout_Layout_layout_constraintBottom_creator = 8;
+			public static int ConstraintLayout_Layout_constraintSet = 8;
 			
 			// aapt resource value: 9
-			public static int ConstraintLayout_Layout_layout_constraintBottom_toBottomOf = 9;
+			public static int ConstraintLayout_Layout_constraint_referenced_ids = 9;
 			
 			// aapt resource value: 10
-			public static int ConstraintLayout_Layout_layout_constraintBottom_toTopOf = 10;
+			public static int ConstraintLayout_Layout_layout_constrainedHeight = 10;
 			
 			// aapt resource value: 11
-			public static int ConstraintLayout_Layout_layout_constraintDimensionRatio = 11;
+			public static int ConstraintLayout_Layout_layout_constrainedWidth = 11;
 			
 			// aapt resource value: 12
-			public static int ConstraintLayout_Layout_layout_constraintEnd_toEndOf = 12;
+			public static int ConstraintLayout_Layout_layout_constraintBaseline_creator = 12;
 			
 			// aapt resource value: 13
-			public static int ConstraintLayout_Layout_layout_constraintEnd_toStartOf = 13;
+			public static int ConstraintLayout_Layout_layout_constraintBaseline_toBaselineOf = 13;
 			
 			// aapt resource value: 14
-			public static int ConstraintLayout_Layout_layout_constraintGuide_begin = 14;
+			public static int ConstraintLayout_Layout_layout_constraintBottom_creator = 14;
 			
 			// aapt resource value: 15
-			public static int ConstraintLayout_Layout_layout_constraintGuide_end = 15;
+			public static int ConstraintLayout_Layout_layout_constraintBottom_toBottomOf = 15;
 			
 			// aapt resource value: 16
-			public static int ConstraintLayout_Layout_layout_constraintGuide_percent = 16;
+			public static int ConstraintLayout_Layout_layout_constraintBottom_toTopOf = 16;
 			
 			// aapt resource value: 17
-			public static int ConstraintLayout_Layout_layout_constraintHeight_default = 17;
+			public static int ConstraintLayout_Layout_layout_constraintCircle = 17;
 			
 			// aapt resource value: 18
-			public static int ConstraintLayout_Layout_layout_constraintHeight_max = 18;
+			public static int ConstraintLayout_Layout_layout_constraintCircleAngle = 18;
 			
 			// aapt resource value: 19
-			public static int ConstraintLayout_Layout_layout_constraintHeight_min = 19;
+			public static int ConstraintLayout_Layout_layout_constraintCircleRadius = 19;
 			
 			// aapt resource value: 20
-			public static int ConstraintLayout_Layout_layout_constraintHorizontal_bias = 20;
+			public static int ConstraintLayout_Layout_layout_constraintDimensionRatio = 20;
 			
 			// aapt resource value: 21
-			public static int ConstraintLayout_Layout_layout_constraintHorizontal_chainStyle = 21;
+			public static int ConstraintLayout_Layout_layout_constraintEnd_toEndOf = 21;
 			
 			// aapt resource value: 22
-			public static int ConstraintLayout_Layout_layout_constraintHorizontal_weight = 22;
+			public static int ConstraintLayout_Layout_layout_constraintEnd_toStartOf = 22;
 			
 			// aapt resource value: 23
-			public static int ConstraintLayout_Layout_layout_constraintLeft_creator = 23;
+			public static int ConstraintLayout_Layout_layout_constraintGuide_begin = 23;
 			
 			// aapt resource value: 24
-			public static int ConstraintLayout_Layout_layout_constraintLeft_toLeftOf = 24;
+			public static int ConstraintLayout_Layout_layout_constraintGuide_end = 24;
 			
 			// aapt resource value: 25
-			public static int ConstraintLayout_Layout_layout_constraintLeft_toRightOf = 25;
+			public static int ConstraintLayout_Layout_layout_constraintGuide_percent = 25;
 			
 			// aapt resource value: 26
-			public static int ConstraintLayout_Layout_layout_constraintRight_creator = 26;
+			public static int ConstraintLayout_Layout_layout_constraintHeight_default = 26;
 			
 			// aapt resource value: 27
-			public static int ConstraintLayout_Layout_layout_constraintRight_toLeftOf = 27;
+			public static int ConstraintLayout_Layout_layout_constraintHeight_max = 27;
 			
 			// aapt resource value: 28
-			public static int ConstraintLayout_Layout_layout_constraintRight_toRightOf = 28;
+			public static int ConstraintLayout_Layout_layout_constraintHeight_min = 28;
 			
 			// aapt resource value: 29
-			public static int ConstraintLayout_Layout_layout_constraintStart_toEndOf = 29;
+			public static int ConstraintLayout_Layout_layout_constraintHeight_percent = 29;
 			
 			// aapt resource value: 30
-			public static int ConstraintLayout_Layout_layout_constraintStart_toStartOf = 30;
+			public static int ConstraintLayout_Layout_layout_constraintHorizontal_bias = 30;
 			
 			// aapt resource value: 31
-			public static int ConstraintLayout_Layout_layout_constraintTop_creator = 31;
+			public static int ConstraintLayout_Layout_layout_constraintHorizontal_chainStyle = 31;
 			
 			// aapt resource value: 32
-			public static int ConstraintLayout_Layout_layout_constraintTop_toBottomOf = 32;
+			public static int ConstraintLayout_Layout_layout_constraintHorizontal_weight = 32;
 			
 			// aapt resource value: 33
-			public static int ConstraintLayout_Layout_layout_constraintTop_toTopOf = 33;
+			public static int ConstraintLayout_Layout_layout_constraintLeft_creator = 33;
 			
 			// aapt resource value: 34
-			public static int ConstraintLayout_Layout_layout_constraintVertical_bias = 34;
+			public static int ConstraintLayout_Layout_layout_constraintLeft_toLeftOf = 34;
 			
 			// aapt resource value: 35
-			public static int ConstraintLayout_Layout_layout_constraintVertical_chainStyle = 35;
+			public static int ConstraintLayout_Layout_layout_constraintLeft_toRightOf = 35;
 			
 			// aapt resource value: 36
-			public static int ConstraintLayout_Layout_layout_constraintVertical_weight = 36;
+			public static int ConstraintLayout_Layout_layout_constraintRight_creator = 36;
 			
 			// aapt resource value: 37
-			public static int ConstraintLayout_Layout_layout_constraintWidth_default = 37;
+			public static int ConstraintLayout_Layout_layout_constraintRight_toLeftOf = 37;
 			
 			// aapt resource value: 38
-			public static int ConstraintLayout_Layout_layout_constraintWidth_max = 38;
+			public static int ConstraintLayout_Layout_layout_constraintRight_toRightOf = 38;
 			
 			// aapt resource value: 39
-			public static int ConstraintLayout_Layout_layout_constraintWidth_min = 39;
+			public static int ConstraintLayout_Layout_layout_constraintStart_toEndOf = 39;
 			
 			// aapt resource value: 40
-			public static int ConstraintLayout_Layout_layout_editor_absoluteX = 40;
+			public static int ConstraintLayout_Layout_layout_constraintStart_toStartOf = 40;
 			
 			// aapt resource value: 41
-			public static int ConstraintLayout_Layout_layout_editor_absoluteY = 41;
+			public static int ConstraintLayout_Layout_layout_constraintTop_creator = 41;
 			
 			// aapt resource value: 42
-			public static int ConstraintLayout_Layout_layout_goneMarginBottom = 42;
+			public static int ConstraintLayout_Layout_layout_constraintTop_toBottomOf = 42;
 			
 			// aapt resource value: 43
-			public static int ConstraintLayout_Layout_layout_goneMarginEnd = 43;
+			public static int ConstraintLayout_Layout_layout_constraintTop_toTopOf = 43;
 			
 			// aapt resource value: 44
-			public static int ConstraintLayout_Layout_layout_goneMarginLeft = 44;
+			public static int ConstraintLayout_Layout_layout_constraintVertical_bias = 44;
 			
 			// aapt resource value: 45
-			public static int ConstraintLayout_Layout_layout_goneMarginRight = 45;
+			public static int ConstraintLayout_Layout_layout_constraintVertical_chainStyle = 45;
 			
 			// aapt resource value: 46
-			public static int ConstraintLayout_Layout_layout_goneMarginStart = 46;
+			public static int ConstraintLayout_Layout_layout_constraintVertical_weight = 46;
 			
 			// aapt resource value: 47
-			public static int ConstraintLayout_Layout_layout_goneMarginTop = 47;
+			public static int ConstraintLayout_Layout_layout_constraintWidth_default = 47;
 			
 			// aapt resource value: 48
-			public static int ConstraintLayout_Layout_layout_optimizationLevel = 48;
+			public static int ConstraintLayout_Layout_layout_constraintWidth_max = 48;
+			
+			// aapt resource value: 49
+			public static int ConstraintLayout_Layout_layout_constraintWidth_min = 49;
+			
+			// aapt resource value: 50
+			public static int ConstraintLayout_Layout_layout_constraintWidth_percent = 50;
+			
+			// aapt resource value: 51
+			public static int ConstraintLayout_Layout_layout_editor_absoluteX = 51;
+			
+			// aapt resource value: 52
+			public static int ConstraintLayout_Layout_layout_editor_absoluteY = 52;
+			
+			// aapt resource value: 53
+			public static int ConstraintLayout_Layout_layout_goneMarginBottom = 53;
+			
+			// aapt resource value: 54
+			public static int ConstraintLayout_Layout_layout_goneMarginEnd = 54;
+			
+			// aapt resource value: 55
+			public static int ConstraintLayout_Layout_layout_goneMarginLeft = 55;
+			
+			// aapt resource value: 56
+			public static int ConstraintLayout_Layout_layout_goneMarginRight = 56;
+			
+			// aapt resource value: 57
+			public static int ConstraintLayout_Layout_layout_goneMarginStart = 57;
+			
+			// aapt resource value: 58
+			public static int ConstraintLayout_Layout_layout_goneMarginTop = 58;
+			
+			// aapt resource value: 59
+			public static int ConstraintLayout_Layout_layout_optimizationLevel = 59;
+			
+			public static int[] ConstraintLayout_placeholder = new int[] {
+					2130772339,
+					2130772340};
+			
+			// aapt resource value: 0
+			public static int ConstraintLayout_placeholder_content = 0;
+			
+			// aapt resource value: 1
+			public static int ConstraintLayout_placeholder_emptyVisibility = 1;
 			
 			public static int[] ConstraintSet = new int[] {
 					16842948,
@@ -6333,18 +6447,13 @@ namespace AppRopio.Base.Droid
 					16843555,
 					16843556,
 					16843557,
+					16843558,
 					16843559,
 					16843560,
 					16843701,
 					16843702,
 					16843770,
 					16843840,
-					2130772335,
-					2130772336,
-					2130772337,
-					2130772338,
-					2130772339,
-					2130772340,
 					2130772341,
 					2130772342,
 					2130772343,
@@ -6380,13 +6489,26 @@ namespace AppRopio.Base.Droid
 					2130772373,
 					2130772374,
 					2130772375,
-					2130772376};
+					2130772376,
+					2130772377,
+					2130772378,
+					2130772379,
+					2130772380,
+					2130772381,
+					2130772382,
+					2130772383,
+					2130772384,
+					2130772385,
+					2130772386,
+					2130772387,
+					2130772388,
+					2130772389};
 			
 			// aapt resource value: 9
 			public static int ConstraintSet_android_alpha = 9;
 			
-			// aapt resource value: 21
-			public static int ConstraintSet_android_elevation = 21;
+			// aapt resource value: 22
+			public static int ConstraintSet_android_elevation = 22;
 			
 			// aapt resource value: 1
 			public static int ConstraintSet_android_id = 1;
@@ -6397,8 +6519,8 @@ namespace AppRopio.Base.Droid
 			// aapt resource value: 8
 			public static int ConstraintSet_android_layout_marginBottom = 8;
 			
-			// aapt resource value: 19
-			public static int ConstraintSet_android_layout_marginEnd = 19;
+			// aapt resource value: 20
+			public static int ConstraintSet_android_layout_marginEnd = 20;
 			
 			// aapt resource value: 5
 			public static int ConstraintSet_android_layout_marginLeft = 5;
@@ -6406,8 +6528,8 @@ namespace AppRopio.Base.Droid
 			// aapt resource value: 7
 			public static int ConstraintSet_android_layout_marginRight = 7;
 			
-			// aapt resource value: 18
-			public static int ConstraintSet_android_layout_marginStart = 18;
+			// aapt resource value: 19
+			public static int ConstraintSet_android_layout_marginStart = 19;
 			
 			// aapt resource value: 6
 			public static int ConstraintSet_android_layout_marginTop = 6;
@@ -6419,10 +6541,13 @@ namespace AppRopio.Base.Droid
 			public static int ConstraintSet_android_orientation = 0;
 			
 			// aapt resource value: 16
-			public static int ConstraintSet_android_rotationX = 16;
+			public static int ConstraintSet_android_rotation = 16;
 			
 			// aapt resource value: 17
-			public static int ConstraintSet_android_rotationY = 17;
+			public static int ConstraintSet_android_rotationX = 17;
+			
+			// aapt resource value: 18
+			public static int ConstraintSet_android_rotationY = 18;
 			
 			// aapt resource value: 14
 			public static int ConstraintSet_android_scaleX = 14;
@@ -6442,137 +6567,158 @@ namespace AppRopio.Base.Droid
 			// aapt resource value: 13
 			public static int ConstraintSet_android_translationY = 13;
 			
-			// aapt resource value: 20
-			public static int ConstraintSet_android_translationZ = 20;
+			// aapt resource value: 21
+			public static int ConstraintSet_android_translationZ = 21;
 			
 			// aapt resource value: 2
 			public static int ConstraintSet_android_visibility = 2;
 			
-			// aapt resource value: 22
-			public static int ConstraintSet_layout_constraintBaseline_creator = 22;
-			
 			// aapt resource value: 23
-			public static int ConstraintSet_layout_constraintBaseline_toBaselineOf = 23;
+			public static int ConstraintSet_layout_constrainedHeight = 23;
 			
 			// aapt resource value: 24
-			public static int ConstraintSet_layout_constraintBottom_creator = 24;
+			public static int ConstraintSet_layout_constrainedWidth = 24;
 			
 			// aapt resource value: 25
-			public static int ConstraintSet_layout_constraintBottom_toBottomOf = 25;
+			public static int ConstraintSet_layout_constraintBaseline_creator = 25;
 			
 			// aapt resource value: 26
-			public static int ConstraintSet_layout_constraintBottom_toTopOf = 26;
+			public static int ConstraintSet_layout_constraintBaseline_toBaselineOf = 26;
 			
 			// aapt resource value: 27
-			public static int ConstraintSet_layout_constraintDimensionRatio = 27;
+			public static int ConstraintSet_layout_constraintBottom_creator = 27;
 			
 			// aapt resource value: 28
-			public static int ConstraintSet_layout_constraintEnd_toEndOf = 28;
+			public static int ConstraintSet_layout_constraintBottom_toBottomOf = 28;
 			
 			// aapt resource value: 29
-			public static int ConstraintSet_layout_constraintEnd_toStartOf = 29;
+			public static int ConstraintSet_layout_constraintBottom_toTopOf = 29;
 			
 			// aapt resource value: 30
-			public static int ConstraintSet_layout_constraintGuide_begin = 30;
+			public static int ConstraintSet_layout_constraintCircle = 30;
 			
 			// aapt resource value: 31
-			public static int ConstraintSet_layout_constraintGuide_end = 31;
+			public static int ConstraintSet_layout_constraintCircleAngle = 31;
 			
 			// aapt resource value: 32
-			public static int ConstraintSet_layout_constraintGuide_percent = 32;
+			public static int ConstraintSet_layout_constraintCircleRadius = 32;
 			
 			// aapt resource value: 33
-			public static int ConstraintSet_layout_constraintHeight_default = 33;
+			public static int ConstraintSet_layout_constraintDimensionRatio = 33;
 			
 			// aapt resource value: 34
-			public static int ConstraintSet_layout_constraintHeight_max = 34;
+			public static int ConstraintSet_layout_constraintEnd_toEndOf = 34;
 			
 			// aapt resource value: 35
-			public static int ConstraintSet_layout_constraintHeight_min = 35;
+			public static int ConstraintSet_layout_constraintEnd_toStartOf = 35;
 			
 			// aapt resource value: 36
-			public static int ConstraintSet_layout_constraintHorizontal_bias = 36;
+			public static int ConstraintSet_layout_constraintGuide_begin = 36;
 			
 			// aapt resource value: 37
-			public static int ConstraintSet_layout_constraintHorizontal_chainStyle = 37;
+			public static int ConstraintSet_layout_constraintGuide_end = 37;
 			
 			// aapt resource value: 38
-			public static int ConstraintSet_layout_constraintHorizontal_weight = 38;
+			public static int ConstraintSet_layout_constraintGuide_percent = 38;
 			
 			// aapt resource value: 39
-			public static int ConstraintSet_layout_constraintLeft_creator = 39;
+			public static int ConstraintSet_layout_constraintHeight_default = 39;
 			
 			// aapt resource value: 40
-			public static int ConstraintSet_layout_constraintLeft_toLeftOf = 40;
+			public static int ConstraintSet_layout_constraintHeight_max = 40;
 			
 			// aapt resource value: 41
-			public static int ConstraintSet_layout_constraintLeft_toRightOf = 41;
+			public static int ConstraintSet_layout_constraintHeight_min = 41;
 			
 			// aapt resource value: 42
-			public static int ConstraintSet_layout_constraintRight_creator = 42;
+			public static int ConstraintSet_layout_constraintHeight_percent = 42;
 			
 			// aapt resource value: 43
-			public static int ConstraintSet_layout_constraintRight_toLeftOf = 43;
+			public static int ConstraintSet_layout_constraintHorizontal_bias = 43;
 			
 			// aapt resource value: 44
-			public static int ConstraintSet_layout_constraintRight_toRightOf = 44;
+			public static int ConstraintSet_layout_constraintHorizontal_chainStyle = 44;
 			
 			// aapt resource value: 45
-			public static int ConstraintSet_layout_constraintStart_toEndOf = 45;
+			public static int ConstraintSet_layout_constraintHorizontal_weight = 45;
 			
 			// aapt resource value: 46
-			public static int ConstraintSet_layout_constraintStart_toStartOf = 46;
+			public static int ConstraintSet_layout_constraintLeft_creator = 46;
 			
 			// aapt resource value: 47
-			public static int ConstraintSet_layout_constraintTop_creator = 47;
+			public static int ConstraintSet_layout_constraintLeft_toLeftOf = 47;
 			
 			// aapt resource value: 48
-			public static int ConstraintSet_layout_constraintTop_toBottomOf = 48;
+			public static int ConstraintSet_layout_constraintLeft_toRightOf = 48;
 			
 			// aapt resource value: 49
-			public static int ConstraintSet_layout_constraintTop_toTopOf = 49;
+			public static int ConstraintSet_layout_constraintRight_creator = 49;
 			
 			// aapt resource value: 50
-			public static int ConstraintSet_layout_constraintVertical_bias = 50;
+			public static int ConstraintSet_layout_constraintRight_toLeftOf = 50;
 			
 			// aapt resource value: 51
-			public static int ConstraintSet_layout_constraintVertical_chainStyle = 51;
+			public static int ConstraintSet_layout_constraintRight_toRightOf = 51;
 			
 			// aapt resource value: 52
-			public static int ConstraintSet_layout_constraintVertical_weight = 52;
+			public static int ConstraintSet_layout_constraintStart_toEndOf = 52;
 			
 			// aapt resource value: 53
-			public static int ConstraintSet_layout_constraintWidth_default = 53;
+			public static int ConstraintSet_layout_constraintStart_toStartOf = 53;
 			
 			// aapt resource value: 54
-			public static int ConstraintSet_layout_constraintWidth_max = 54;
+			public static int ConstraintSet_layout_constraintTop_creator = 54;
 			
 			// aapt resource value: 55
-			public static int ConstraintSet_layout_constraintWidth_min = 55;
+			public static int ConstraintSet_layout_constraintTop_toBottomOf = 55;
 			
 			// aapt resource value: 56
-			public static int ConstraintSet_layout_editor_absoluteX = 56;
+			public static int ConstraintSet_layout_constraintTop_toTopOf = 56;
 			
 			// aapt resource value: 57
-			public static int ConstraintSet_layout_editor_absoluteY = 57;
+			public static int ConstraintSet_layout_constraintVertical_bias = 57;
 			
 			// aapt resource value: 58
-			public static int ConstraintSet_layout_goneMarginBottom = 58;
+			public static int ConstraintSet_layout_constraintVertical_chainStyle = 58;
 			
 			// aapt resource value: 59
-			public static int ConstraintSet_layout_goneMarginEnd = 59;
+			public static int ConstraintSet_layout_constraintVertical_weight = 59;
 			
 			// aapt resource value: 60
-			public static int ConstraintSet_layout_goneMarginLeft = 60;
+			public static int ConstraintSet_layout_constraintWidth_default = 60;
 			
 			// aapt resource value: 61
-			public static int ConstraintSet_layout_goneMarginRight = 61;
+			public static int ConstraintSet_layout_constraintWidth_max = 61;
 			
 			// aapt resource value: 62
-			public static int ConstraintSet_layout_goneMarginStart = 62;
+			public static int ConstraintSet_layout_constraintWidth_min = 62;
 			
 			// aapt resource value: 63
-			public static int ConstraintSet_layout_goneMarginTop = 63;
+			public static int ConstraintSet_layout_constraintWidth_percent = 63;
+			
+			// aapt resource value: 64
+			public static int ConstraintSet_layout_editor_absoluteX = 64;
+			
+			// aapt resource value: 65
+			public static int ConstraintSet_layout_editor_absoluteY = 65;
+			
+			// aapt resource value: 66
+			public static int ConstraintSet_layout_goneMarginBottom = 66;
+			
+			// aapt resource value: 67
+			public static int ConstraintSet_layout_goneMarginEnd = 67;
+			
+			// aapt resource value: 68
+			public static int ConstraintSet_layout_goneMarginLeft = 68;
+			
+			// aapt resource value: 69
+			public static int ConstraintSet_layout_goneMarginRight = 69;
+			
+			// aapt resource value: 70
+			public static int ConstraintSet_layout_goneMarginStart = 70;
+			
+			// aapt resource value: 71
+			public static int ConstraintSet_layout_goneMarginTop = 71;
 			
 			public static int[] CoordinatorLayout = new int[] {
 					2130772277,
@@ -6703,12 +6849,12 @@ namespace AppRopio.Base.Droid
 			public static int FloatingActionButton_Behavior_Layout_behavior_autoHide = 0;
 			
 			public static int[] FontFamily = new int[] {
-					2130772378,
-					2130772379,
-					2130772380,
-					2130772381,
-					2130772382,
-					2130772383};
+					2130772391,
+					2130772392,
+					2130772393,
+					2130772394,
+					2130772395,
+					2130772396};
 			
 			// aapt resource value: 0
 			public static int FontFamily_fontProviderAuthority = 0;
@@ -6732,9 +6878,9 @@ namespace AppRopio.Base.Droid
 					16844082,
 					16844083,
 					16844095,
-					2130772384,
-					2130772385,
-					2130772386};
+					2130772397,
+					2130772398,
+					2130772399};
 			
 			// aapt resource value: 0
 			public static int FontFamilyFont_android_font = 0;
@@ -7107,8 +7253,8 @@ namespace AppRopio.Base.Droid
 			public static int MenuView_subMenuArrow = 8;
 			
 			public static int[] MvxBinding = new int[] {
-					2130772388,
-					2130772389};
+					2130772401,
+					2130772402};
 			
 			// aapt resource value: 0
 			public static int MvxBinding_MvxBind = 0;
@@ -7117,26 +7263,26 @@ namespace AppRopio.Base.Droid
 			public static int MvxBinding_MvxLang = 1;
 			
 			public static int[] MvxControl = new int[] {
-					2130772390};
+					2130772403};
 			
 			// aapt resource value: 0
 			public static int MvxControl_MvxTemplate = 0;
 			
 			public static int[] MvxExpandableListView = new int[] {
-					2130772393};
+					2130772406};
 			
 			// aapt resource value: 0
 			public static int MvxExpandableListView_MvxGroupItemTemplate = 0;
 			
 			public static int[] MvxImageView = new int[] {
-					2130772394};
+					2130772407};
 			
 			// aapt resource value: 0
 			public static int MvxImageView_MvxSource = 0;
 			
 			public static int[] MvxListView = new int[] {
-					2130772391,
-					2130772392};
+					2130772404,
+					2130772405};
 			
 			// aapt resource value: 1
 			public static int MvxListView_MvxDropDownItemTemplate = 1;
@@ -7145,7 +7291,7 @@ namespace AppRopio.Base.Droid
 			public static int MvxListView_MvxItemTemplate = 0;
 			
 			public static int[] MvxRecyclerView = new int[] {
-					2130772387};
+					2130772400};
 			
 			// aapt resource value: 0
 			public static int MvxRecyclerView_MvxTemplateSelector = 0;
