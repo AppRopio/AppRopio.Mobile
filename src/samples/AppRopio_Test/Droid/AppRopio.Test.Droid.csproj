@@ -413,6 +413,8 @@
     <Compile Include="Bootstrap\AppRopio_FeedbackPluginBootstrap.cs" />
     <Compile Include="Bootstrap\AppRopio_AuthPluginBootstrap.cs" />
     <Compile Include="Bootstrap\ColorPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_CloudPaymentsPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_PaymentsPluginBootstrap.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -662,6 +664,7 @@
     <AndroidAsset Include="Assets\Settings\Configs\AppsFlyer.json" />
     <AndroidAsset Include="Assets\Settings\Configs\GoogleAnalytics.json" />
     <AndroidAsset Include="Assets\Settings\Configs\Loyalty.json" />
+    <AndroidAsset Include="Assets\Settings\Configs\CloudPayments.json" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\API\AppRopio.Base.API.csproj">
@@ -907,6 +910,34 @@
     <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Contacts\AppRopio.Models.Contacts.csproj">
       <Project>{747299BF-FAF3-4C47-BF4C-B1A949BB5F56}</Project>
       <Name>AppRopio.Models.Contacts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Payments\AppRopio.Models.Payments.csproj">
+      <Project>{36D85C96-D45F-465B-98E6-AF1BC36400D5}</Project>
+      <Name>AppRopio.Models.Payments</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Payments\Base\API\AppRopio.Payments.API.csproj">
+      <Project>{9E008650-B5B9-40C9-8FBA-8B1A666082B0}</Project>
+      <Name>AppRopio.Payments.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Payments\Base\Core\AppRopio.Payments.Core.csproj">
+      <Project>{36A0974D-3DCE-490B-B186-2913785074CE}</Project>
+      <Name>AppRopio.Payments.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Payments\CloudPayments\Core\AppRopio.Payments.CloudPayments.Core.csproj">
+      <Project>{50148F33-EA1B-4612-AD4D-84A8BB1BB416}</Project>
+      <Name>AppRopio.Payments.CloudPayments.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Payments\CloudPayments\API\AppRopio.Payments.CloudPayments.API.csproj">
+      <Project>{1A98F64C-EEAF-439D-B3D7-B40D74694244}</Project>
+      <Name>AppRopio.Payments.CloudPayments.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Payments\Base\Droid\AppRopio.Payments.Droid.csproj">
+      <Project>{5263C41C-A81D-4A87-BABD-09F1FE76A271}</Project>
+      <Name>AppRopio.Payments.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Payments\CloudPayments\Droid\AppRopio.Payments.CloudPayments.Droid.csproj">
+      <Project>{4FBAA060-C9CD-4B0B-B92E-B162869EFF56}</Project>
+      <Name>AppRopio.Payments.CloudPayments.Droid</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

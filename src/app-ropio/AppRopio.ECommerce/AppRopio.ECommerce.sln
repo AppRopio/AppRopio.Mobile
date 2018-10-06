@@ -293,6 +293,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppRopio.Base.Settings.Droi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppRopio.Feedback.Droid", "..\AppRopio.Feedback\Droid\AppRopio.Feedback.Droid.csproj", "{AACFF13E-25CE-4264-9BE8-7873B6E403C5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppRopio.Payments.CloudPayments.Droid", "..\AppRopio.Payments\CloudPayments\Droid\AppRopio.Payments.CloudPayments.Droid.csproj", "{4FBAA060-C9CD-4B0B-B92E-B162869EFF56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppRopio.Payments.Droid", "..\AppRopio.Payments\Base\Droid\AppRopio.Payments.Droid.csproj", "{5263C41C-A81D-4A87-BABD-09F1FE76A271}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1682,7 +1686,6 @@ Global
 		{1BA96133-1BEF-43F7-8D07-A997F34F46EB}.Release|iPhone.ActiveCfg = Release|Any CPU
 		{1BA96133-1BEF-43F7-8D07-A997F34F46EB}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{1BA96133-1BEF-43F7-8D07-A997F34F46EB}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{1BA96133-1BEF-43F7-8D07-A997F34F46EB}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{1BA96133-1BEF-43F7-8D07-A997F34F46EB}.AppStore|iPhone.ActiveCfg = Debug|Any CPU
 		{1BA96133-1BEF-43F7-8D07-A997F34F46EB}.GooglePlay|Any CPU.ActiveCfg = GooglePlay|Any CPU
 		{1BA96133-1BEF-43F7-8D07-A997F34F46EB}.GooglePlay|Any CPU.Build.0 = GooglePlay|Any CPU
@@ -1943,6 +1946,32 @@ Global
 		{AACFF13E-25CE-4264-9BE8-7873B6E403C5}.GooglePlay|Any CPU.Build.0 = Release|Any CPU
 		{AACFF13E-25CE-4264-9BE8-7873B6E403C5}.BuildServer|Any CPU.ActiveCfg = Debug|Any CPU
 		{AACFF13E-25CE-4264-9BE8-7873B6E403C5}.BuildServer|Any CPU.Build.0 = Debug|Any CPU
+		{4FBAA060-C9CD-4B0B-B92E-B162869EFF56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FBAA060-C9CD-4B0B-B92E-B162869EFF56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FBAA060-C9CD-4B0B-B92E-B162869EFF56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FBAA060-C9CD-4B0B-B92E-B162869EFF56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FBAA060-C9CD-4B0B-B92E-B162869EFF56}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{4FBAA060-C9CD-4B0B-B92E-B162869EFF56}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{4FBAA060-C9CD-4B0B-B92E-B162869EFF56}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{4FBAA060-C9CD-4B0B-B92E-B162869EFF56}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{4FBAA060-C9CD-4B0B-B92E-B162869EFF56}.DebugReleaseServices|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{4FBAA060-C9CD-4B0B-B92E-B162869EFF56}.AppStore|iPhone.ActiveCfg = Debug|Any CPU
+		{4FBAA060-C9CD-4B0B-B92E-B162869EFF56}.GooglePlay|Any CPU.ActiveCfg = Release|Any CPU
+		{4FBAA060-C9CD-4B0B-B92E-B162869EFF56}.GooglePlay|Any CPU.Build.0 = Release|Any CPU
+		{4FBAA060-C9CD-4B0B-B92E-B162869EFF56}.BuildServer|Any CPU.ActiveCfg = Debug|Any CPU
+		{5263C41C-A81D-4A87-BABD-09F1FE76A271}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5263C41C-A81D-4A87-BABD-09F1FE76A271}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5263C41C-A81D-4A87-BABD-09F1FE76A271}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5263C41C-A81D-4A87-BABD-09F1FE76A271}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5263C41C-A81D-4A87-BABD-09F1FE76A271}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{5263C41C-A81D-4A87-BABD-09F1FE76A271}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{5263C41C-A81D-4A87-BABD-09F1FE76A271}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{5263C41C-A81D-4A87-BABD-09F1FE76A271}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{5263C41C-A81D-4A87-BABD-09F1FE76A271}.DebugReleaseServices|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{5263C41C-A81D-4A87-BABD-09F1FE76A271}.AppStore|iPhone.ActiveCfg = Release|Any CPU
+		{5263C41C-A81D-4A87-BABD-09F1FE76A271}.GooglePlay|Any CPU.ActiveCfg = Debug|Any CPU
+		{5263C41C-A81D-4A87-BABD-09F1FE76A271}.GooglePlay|Any CPU.Build.0 = Debug|Any CPU
+		{5263C41C-A81D-4A87-BABD-09F1FE76A271}.BuildServer|Any CPU.ActiveCfg = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{52D0AC04-1D74-44EA-8BD5-212EBE5DD5B3} = {8B388A7A-B9EB-4DD3-B52F-BA61132BC778}
@@ -2089,6 +2118,8 @@ Global
 		{31CEE808-7057-4D2E-A1EF-ED7128938D5A} = {5EDDAB15-8F80-4175-82CD-581DB4CE51B9}
 		{90CA3749-B1AE-47D7-85A9-CD446EA0711A} = {8DDBD24E-0056-4BF5-B808-3A1AAC0A8B7B}
 		{AACFF13E-25CE-4264-9BE8-7873B6E403C5} = {5ED6FE94-B3D5-48E7-8E20-68F60C961F70}
+		{4FBAA060-C9CD-4B0B-B92E-B162869EFF56} = {DD0FE64A-93BC-45DC-8735-7D5B6EDA6077}
+		{5263C41C-A81D-4A87-BABD-09F1FE76A271} = {A0E67762-7A5B-4765-9727-C29DE42EA6B7}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		Policies = $0
