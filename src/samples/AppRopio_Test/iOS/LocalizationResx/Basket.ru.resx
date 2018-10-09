@@ -182,4 +182,12 @@
         name="BasketProductCard_Done">
         <value>Готово</value>
     </data>
+    <data
+        name="Error_Delivery_Text">
+        <value>HI HI HIH IhihHIi</value>
+    </data>
+    <data
+        name="Error_Delivery_Time_Text">
+        <value>Не выбрано время доставки</value>
+    </data>
 </root>

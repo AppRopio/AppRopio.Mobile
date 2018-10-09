@@ -52,9 +52,19 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Categories.StepByStep.Cells
 
             this.SetupStyle(cell);
 
-            SetupGradientView(_gradientView);
+            if (cell.gradientVisibility)
+            {
+                SetupGradientView(_gradientView);
+            }
 
-            _separator.BackgroundColor = cell.Title.TextColor.ToUIColor();
+            if (cell.separatorVisibility)
+            {
+                _separator.BackgroundColor = cell.Title.TextColor.ToUIColor();
+            }
+            else
+            {
+                _separator.Hidden = !cell.separatorVisibility;
+            }
         }
 
         protected virtual void SetupGradientView(UIView gradientView)

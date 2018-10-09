@@ -35,6 +35,7 @@
             app:layout_constraintRight_toRightOf="parent"
             app:MvxBind="Click MarkCommand; Visibility Visibility(MarkEnabled); Selected Marked" />
         <LinearLayout
+            android:id="@+id/app_products_catalog_item_texts"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -60,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/app_products_catalog_item_horizontalMargin"
                 android:layout_marginRight="@dimen/app_products_catalog_item_horizontalMargin"
-                app:MvxBind="Text PriceUnit(OldPrice, UnitNameOld); Visibility Visibility(OldPrice)" />
+                app:MvxBind="Text PriceUnit(OldPrice, UnitNameOld); Visibility Visibility(OldPrice, true)" />
             <TextView
                 style="@style/app_products_catalog_item_price"
                 android:id="@+id/app_products_catalog_item_price"
@@ -70,6 +71,11 @@
                 android:layout_marginLeft="@dimen/app_products_catalog_item_horizontalMargin"
                 android:layout_marginRight="@dimen/app_products_catalog_item_horizontalMargin"
                 app:MvxBind="Text PriceUnit(Price, UnitName)" />
+            <FrameLayout
+                android:id="@+id/app_products_catalogCard_basketLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
         </LinearLayout>
     </android.support.constraint.ConstraintLayout>
 </android.support.v7.widget.CardView>

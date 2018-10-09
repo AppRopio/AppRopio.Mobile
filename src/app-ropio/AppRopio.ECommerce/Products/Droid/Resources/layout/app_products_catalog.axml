@@ -4,14 +4,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/app_color_background">
-    <mvvmcross.droid.support.v7.recyclerview.MvxRecyclerView
-        style="@style/app_products_catalog_items"
-        android:id="@+id/app_products_catalog_items"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:MvxBind="ItemsSource Items; ItemClick SelectionChangedCommand" />
-    <include
-        layout="@layout/app_products_catalog_empty" />
+        android:layout_height="match_parent">
+        <include
+            layout="@layout/app_products_catalog_search_bar" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <mvvmcross.droid.support.v7.recyclerview.MvxRecyclerView
+                style="@style/app_products_catalog_items"
+                android:id="@+id/app_products_catalog_items"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:MvxBind="ItemsSource Items; ItemClick SelectionChangedCommand" />
+            <include
+                layout="@layout/app_products_catalog_empty" />
+        </RelativeLayout>
+    </LinearLayout>
     <include
         layout="@layout/app_base_loading" />
 </RelativeLayout>

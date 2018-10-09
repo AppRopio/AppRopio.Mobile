@@ -9,6 +9,8 @@ namespace AppRopio.ECommerce.Products.Core.Models
     {
         public CategoriesType CategoriesType { get; set; }
 
+        public SearchType SearchType { get; set; }
+
         public NavigationType ProductCardNavigationType { get; set; }
 
         public BasketReference Basket { get; set; }
@@ -20,11 +22,17 @@ namespace AppRopio.ECommerce.Products.Core.Models
         public AssemblyElement Header { get; set; }
 
         public ProductDetailsConfig ProductDetails { get; set; }
+
+        public ProductsConfig() {
+            SearchType = SearchType.Screen;
+        }
     }
 
     public class BasketReference
     {
         public AssemblyElement AddToCart { get; set; }
+
+        public AssemblyElement ItemAddToCart { get; set; }
 
         public AssemblyElement CartIndicator { get; set; }
     }
