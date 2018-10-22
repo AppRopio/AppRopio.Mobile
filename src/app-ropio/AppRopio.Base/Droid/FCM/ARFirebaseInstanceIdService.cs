@@ -14,18 +14,18 @@
 //    limitations under the License.
 using System;
 using Android.App;
+using Android.Content;
 using Android.Runtime;
 using Android.Util;
-using Firebase.Iid;
-using Android.Content;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Droid.Platform;
-using AppRopio.Base.Core.Services.Push;
 using AppRopio.Base.Core;
+using AppRopio.Base.Core.Services.Push;
+using Firebase.Iid;
+using MvvmCross.Platform;
 
 namespace AppRopio.Base.Droid.FCM
 {
-    [Service(Name = "appropio.base.droid.fcm.arfirebaseinstanceidservice", Label = "Firebase Cloud Messaging push token handler")]
+    [Preserve(AllMembers = true)]
+    [Service]
     [IntentFilter(new string[] { "com.google.firebase.INSTANCE_ID_EVENT" })]
     public class ARFirebaseInstanceIdService : FirebaseInstanceIdService
     {

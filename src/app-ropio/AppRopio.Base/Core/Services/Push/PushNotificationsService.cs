@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using AppRopio.Base.API.Services;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
 using AppRopio.Base.Core.ViewModels.Services;
+using MvvmCross.Platform;
 
 namespace AppRopio.Base.Core.Services.Push
 {

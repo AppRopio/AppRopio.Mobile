@@ -2,5 +2,5 @@
 <resources>
 	<!--  app_color_accent  -->
 	<color
-		name="mainThemeColor">#FFD535</color>
+		name="main_theme_color">#FFD535</color>
 </resources>

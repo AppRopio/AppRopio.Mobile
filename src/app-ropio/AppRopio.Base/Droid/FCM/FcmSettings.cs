@@ -12,16 +12,19 @@
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
-namespace AppRopio.Base.Droid
+using System;
+
+namespace AppRopio.Base.Droid.FCM
 {
-    public class PushConstants
+    public class FcmSettings
     {
-        public const string PUSH_TOKEN_KEY = nameof(PushConstants.PUSH_TOKEN_KEY);
+        private static FcmSettings _instance;
+        public static FcmSettings Instance => _instance ?? (_instance = new FcmSettings());
 
-        public const string PUSH_DEEPLINK_KEY = nameof(PushConstants.PUSH_DEEPLINK_KEY);
+        public Type ActivityType { get; set; }
 
-        public const string PUSH_TITLE_KEY = nameof(PushConstants.PUSH_TITLE_KEY);
+        public int IconResourceId { get; set; }
 
-        public const string PUSH_BODY_KEY = nameof(PushConstants.PUSH_BODY_KEY);
+        public string ColorHex { get; set; }
     }
 }

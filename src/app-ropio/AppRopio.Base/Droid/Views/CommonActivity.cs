@@ -20,6 +20,7 @@ using MvvmCross.Platform;
 using MvvmCross.Platform.Platform;
 using Plugin.Permissions;
 using Plugin.Permissions.Abstractions;
+using AppRopio.Base.Core.Extentions;
 
 namespace AppRopio.Base.Droid.Views
 {
@@ -201,19 +202,27 @@ namespace AppRopio.Base.Droid.Views
 
                     System.Diagnostics.Debug.WriteLine(message: $"Try navigate to deeplink {deeplink}", category: PackageName);
 
-                    Mvx.CallbackWhenRegistered<IViewModelLookupService>(() => NavigateToDeeplinkFromPush(deeplink));
+                    Mvx.CallbackWhenRegistered<IViewModelLookupService>(service => NavigateToDeeplinkFromPush(service, deeplink));
                 }
             }
 
             _notifyIntent = null;
         }
 
-        protected virtual void NavigateToDeeplinkFromPush(string deeplink)
+        protected virtual void NavigateToDeeplinkFromPush(IViewModelLookupService vmLS, string deeplink)
         {
-            var vmLS = Mvx.Resolve<IViewModelLookupService>();
-            if (vmLS.IsRegisteredDeeplink(deeplink))
+            deeplink.ParseDeeplink(out var urlScheme, out var routing, out var urlParameters);
+
+            if (vmLS.IsRegisteredDeeplink(urlScheme))
             {
-                Mvx.CallbackWhenRegistered<IPushNotificationsService>(service => service.NavigateTo(deeplink));
+                Log.Verbose(PackageName, $"Deeplink was registered");
+
+                System.Diagnostics.Debug.WriteLine(message: $"Deeplink was registered", category: PackageName);
+
+                Mvx.CallbackWhenRegistered<IPushNotificationsService>(service =>
+                {
+                    service.NavigateTo(deeplink: deeplink);
+                });
             }
         }
 
@@ -234,8 +243,6 @@ namespace AppRopio.Base.Droid.Views
             _notifyIntent = intent;
 
             base.OnNewIntent(intent);
-
-            HandlePushNotificationIntent();
         }
 
         #endregion

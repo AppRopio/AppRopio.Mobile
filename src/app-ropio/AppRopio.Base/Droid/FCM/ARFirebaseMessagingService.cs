@@ -13,23 +13,20 @@
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
 using System;
-using Firebase.Messaging;
 using Android.App;
-using Android.Runtime;
-using Android.Util;
-using System.Text;
-using System.Linq;
 using Android.Content;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Droid.Platform;
-using Android.Support.V4.App;
 using Android.Graphics;
 using Android.Media;
 using Android.OS;
+using Android.Runtime;
+using Android.Support.V4.App;
+using Android.Util;
+using Firebase.Messaging;
 
 namespace AppRopio.Base.Droid.FCM
 {
-    [Service(Name = "appropio.base.droid.fcm.arfirebasemessagingservice", Label = "Firebase Cloud Messaging receiver")]
+    [Preserve(AllMembers = true)]
+    [Service]
     [IntentFilter(new string[] { "com.google.firebase.MESSAGING_EVENT" })]
     public class ARFirebaseMessagingService : FirebaseMessagingService
     {
@@ -37,18 +34,18 @@ namespace AppRopio.Base.Droid.FCM
         {
         }
 
-        protected ARFirebaseMessagingService(IntPtr javaReference, JniHandleOwnership transfer) 
+        protected ARFirebaseMessagingService(IntPtr javaReference, JniHandleOwnership transfer)
             : base(javaReference, transfer)
         {
         }
 
         public override void OnMessageReceived(RemoteMessage message)
         {
-            base.OnMessageReceived(message);
-
             Log.Verbose(this.PackageName, "On push message received");
 
             System.Diagnostics.Debug.WriteLine(message: $"On push message received", category: this.PackageName);
+
+            base.OnMessageReceived(message);
 
             ParseRemoteMessage(message);
         }
@@ -58,17 +55,18 @@ namespace AppRopio.Base.Droid.FCM
             var data = message.Data;
             var notification = message.GetNotification();
 
-            var deeplink = string.Empty;
-            data.TryGetValue(PushConstants.PUSH_DEEPLINK_KEY, out deeplink);
+            data.TryGetValue(PushConstants.PUSH_DEEPLINK_KEY, out var deeplink);
+            data.TryGetValue(PushConstants.PUSH_TITLE_KEY, out var title);
+            data.TryGetValue(PushConstants.PUSH_BODY_KEY, out var body);
 
-            SheduleNotification(notification.Title, notification.Body, message.MessageId, deeplink);
+            SheduleNotification(notification?.Title ?? title, notification?.Body ?? body, message.MessageId, deeplink);
         }
 
         private void SheduleNotification(string title, string message, string id, string deeplink)
         {
-            var activityType = Mvx.Resolve<IMvxAndroidCurrentTopActivity>().Activity.GetType();
+            EnsureIconResourceSet();
 
-            var notificationIntent = new Intent(Application.Context, activityType);
+            var notificationIntent = new Intent(Application.Context, FcmSettings.Instance.ActivityType); // Application.Context.PackageManager.GetLaunchIntentForPackage(PackageName);
             notificationIntent.SetFlags(ActivityFlags.SingleTop);
             notificationIntent.SetAction(Guid.NewGuid().ToString());
 
@@ -77,21 +75,15 @@ namespace AppRopio.Base.Droid.FCM
 
             var notificationPendingIntent = PendingIntent.GetActivity(Application.Context, 2, notificationIntent, PendingIntentFlags.UpdateCurrent);
 
-            //var iconDrawable = Resource.Drawable.ic_push_icon;
-            //if (global::Android.OS.Build.VERSION.SdkInt >= global::Android.OS.BuildVersionCodes.Lollipop)
-                //iconDrawable = Resource.Drawable.ic_push_silhouette;
-
             var notificationBuilder = new NotificationCompat.Builder(Application.Context)
                 .SetAutoCancel(true)
                 .SetContentIntent(notificationPendingIntent)
                 .SetContentTitle(title ?? PackageName)
                 .SetContentText(message)
-                //.SetSmallIcon(iconDrawable)
-                .SetSmallIcon(Android.Resource.Drawable.IcInputAdd)
+                .SetSmallIcon(FcmSettings.Instance.IconResourceId)
                 .SetChannelId(PackageName)
                 .SetPriority((int)NotificationPriority.High)
-                //.SetColor(Color.ParseColor(MAIN_THEME_COLOR).ToArgb())
-                .SetColor(Color.Yellow.ToArgb())
+                .SetColor(Color.ParseColor(FcmSettings.Instance.ColorHex).ToArgb())
                 .SetStyle(new NotificationCompat.BigTextStyle().BigText(message).SetBigContentTitle(title))
                 .SetDefaults((int)NotificationDefaults.All)
                 .SetSound(RingtoneManager.GetDefaultUri(RingtoneType.Notification))
@@ -101,15 +93,23 @@ namespace AppRopio.Base.Droid.FCM
 
             notification.Flags = NotificationFlags.AutoCancel;
 
-            var notificationManager = (NotificationManager)Application.Context.GetSystemService(Context.NotificationService);
+            var notificationManager = (NotificationManager)Application.Context.GetSystemService(NotificationService);
 
             if (Build.VERSION.SdkInt >= BuildVersionCodes.O)
             {
-                var channel = new NotificationChannel(PackageName, " ", NotificationImportance.High);
+                var channel = new NotificationChannel(PackageName, "Main channel", NotificationImportance.Default);
                 notificationManager.CreateNotificationChannel(channel);
             }
 
             notificationManager.Notify(id.GetHashCode(), notification);
+        }
+
+        private void EnsureIconResourceSet()
+        {
+            if (FcmSettings.Instance.IconResourceId == 0)
+            {
+                FcmSettings.Instance.IconResourceId = Application.Context.ApplicationInfo.Icon;
+            }
         }
     }
 }
