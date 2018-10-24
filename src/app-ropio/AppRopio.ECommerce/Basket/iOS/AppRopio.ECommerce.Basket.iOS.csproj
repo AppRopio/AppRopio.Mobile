@@ -111,6 +111,7 @@
     <Folder Include="Views\ProductCard\" />
     <Folder Include="Views\Order\Thanks\" />
     <Folder Include="Views\CartIndicator\" />
+    <Folder Include="Views\CatalogCard\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -212,6 +213,10 @@
     <Compile Include="Views\Order\Cells\OrderFieldAutocompleteCell.designer.cs">
       <DependentUpon>OrderFieldAutocompleteCell.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\CatalogCard\BasketCatalogItemView.cs" />
+    <Compile Include="Views\CatalogCard\BasketCatalogItemView.designer.cs">
+      <DependentUpon>BasketCatalogItemView.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -273,6 +278,7 @@
     <InterfaceDefinition Include="Views\Order\Cells\OrderFieldCounterCell.xib" />
     <InterfaceDefinition Include="Views\Order\OrderFieldAutocompleteViewController.xib" />
     <InterfaceDefinition Include="Views\Order\Cells\OrderFieldAutocompleteCell.xib" />
+    <InterfaceDefinition Include="Views\CatalogCard\BasketCatalogItemView.xib" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets')" />

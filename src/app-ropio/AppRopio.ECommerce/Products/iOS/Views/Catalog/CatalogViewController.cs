@@ -138,19 +138,25 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog
             {
                 collectionView.RegisterNibForCell(CatalogGridCell.Nib, CatalogGridCell.Key);
 
-                var width = ThemeConfig.Products.ProductCell.Size.Width.HasValue ?
-                                        ThemeConfig.Products.ProductCell.Size.Width.Value :
-                                        (DeviceInfo.ScreenWidth - flowLayout.SectionInset.Left - flowLayout.SectionInset.Right - flowLayout.MinimumInteritemSpacing) / 2;
+                var width = ThemeConfig.Products.ProductCell.Size.Width
+                    ?? (DeviceInfo.ScreenWidth - flowLayout.SectionInset.Left - flowLayout.SectionInset.Right - flowLayout.MinimumInteritemSpacing) / 2;
 
-                flowLayout.ItemSize = new CoreGraphics.CGSize(
-                    width,
-                    ThemeConfig.Products.ProductCell.Size.Height.HasValue ?
+                var height = (ThemeConfig.Products.ProductCell.Size.Height.HasValue ?
                         (nfloat)ThemeConfig.Products.ProductCell.Size.Height :
-                        width * 1.78
-                );
+                        width * 1.78);
+
+                var config = Mvx.Resolve<IProductConfigService>().Config;
+                if (config.Basket?.ItemAddToCart != null
+                    && Mvx.Resolve<IViewLookupService>().IsRegistered(config.Basket?.ItemAddToCart.TypeName)) {
+                    height += 32.0f;
+                }
+
+                flowLayout.ItemSize = new CGSize(width, height);
             }
             else
             {
+                //TODO: adjust size of the list cell when adding Add To Card button if necessarily
+
                 collectionView.RegisterNibForCell(CatalogListCell.Nib, CatalogListCell.Key);
 
                 var width = DeviceInfo.ScreenWidth - flowLayout.SectionInset.Left - flowLayout.SectionInset.Right - flowLayout.MinimumInteritemSpacing;

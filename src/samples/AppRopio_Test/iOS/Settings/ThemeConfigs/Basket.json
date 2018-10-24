@@ -91,6 +91,14 @@
             }
         }
     },
+    "catalogItem": {
+        "buyButton" : {
+            "layer": {
+                "cornerRadius": 8,
+                "maskToBounds": true
+            }
+        }
+    },
     "basket": {
         "cell": {
             "incButton": {

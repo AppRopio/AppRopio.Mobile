@@ -14,6 +14,8 @@ using MvvmCross.Platform;
 using UIKit;
 using AppRopio.Base.Core.Converters;
 using AppRopio.Base.Core.Combiners;
+using AppRopio.Base.Core.Services.ViewLookup;
+using MvvmCross.iOS.Views;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
 {
@@ -62,6 +64,8 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
 
             SetupMarkButton(MarkButton, ThemeConfig.Products.ProductCell.MarkButton);
 
+            SetupBasketView();
+
             this.SetupStyle(cell);
         }
 
@@ -101,6 +105,21 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
         protected virtual void SetupMarkButton(UIButton markButton, Button button)
         {
             markButton.SetupStyle(button);
+        }
+
+        protected void SetupBasketView()
+        {
+            var config = Mvx.Resolve<IProductConfigService>().Config;
+            if (config.Basket?.ItemAddToCart != null && Mvx.Resolve<IViewLookupService>().IsRegistered(config.Basket?.ItemAddToCart.TypeName))
+            {
+                var ViewModel = DataContext as ICatalogItemVM;
+                var basketView = ViewModel.BasketBlockViewModel == null ? null : Mvx.Resolve<IMvxIosViewCreator>().CreateView(ViewModel.BasketBlockViewModel) as UIView;
+                if (basketView != null)
+                {
+                    basketView.ChangeFrame(y: this.Frame.Size.Height - basketView.Frame.Size.Height, w: this.Frame.Size.Width);
+                    this.AddSubview(basketView);
+                }
+            }
         }
 
         #endregion
