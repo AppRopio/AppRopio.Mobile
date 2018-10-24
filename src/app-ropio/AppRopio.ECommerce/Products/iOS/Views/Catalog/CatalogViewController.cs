@@ -50,6 +50,45 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog
             ReleaseDesignerOutlets();
             base.CleanUp();
         }
+
+        protected virtual void SetupSearchBar(UISearchBar searchBar)
+        {
+            searchBar.SetupStyle(ThemeConfig.ContentSearch.SearchBar);
+        }
+
+        protected virtual void SetupStackView(UIStackView stackView)
+        {
+            stackView.LayoutMarginsRelativeArrangement = true;
+        }
+
+        protected override void InitializeControls()
+        {
+            base.InitializeControls();
+            SetupSearchBar(_searchBar);
+            SetupStackView(_stackView);
+        }
+
+        protected virtual void BindSearchView(UIView searchView, MvxFluentBindingDescriptionSet<CatalogViewController, ICatalogViewModel> set)
+        {
+            set.Bind(searchView).For("Visibility").To(vm => vm.SearchBar).WithConversion("Visibility");
+        }
+
+        protected virtual void BindSearchButton(UIButton searchButton, MvxFluentBindingDescriptionSet<CatalogViewController, ICatalogViewModel> set)
+        {
+            set.Bind(searchButton).To(vm => vm.ShowSearchCommand);
+        }
+
+        protected override void BindControls()
+        {
+            base.BindControls();
+
+            var set = this.CreateBindingSet<CatalogViewController, ICatalogViewModel>();
+
+            BindSearchView(_searchView, set);
+            BindSearchButton(_searchButton, set);
+
+            set.Apply();
+        }
     }
 
     public abstract class CatalogViewController<T> : ProductsViewController<T>

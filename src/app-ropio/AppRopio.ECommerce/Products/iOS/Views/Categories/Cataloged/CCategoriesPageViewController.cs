@@ -14,6 +14,7 @@ using MvvmCross.Binding.BindingContext;
 using MvvmCross.Platform;
 using UIKit;
 using System.Linq;
+using AppRopio.ECommerce.Products.Core;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.Categories.Cataloged
 {
@@ -89,7 +90,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Categories.Cataloged
 
         protected override void InitializeControls()
         {
-            Title = "Каталог";
+            Title = LocalizationService.GetLocalizableString(ProductsConstants.RESX_NAME, "CategoriesEmptyTitle");
 
             this.AutomaticallyAdjustsScrollViewInsets = false;
 
