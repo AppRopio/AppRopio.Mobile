@@ -286,5 +286,17 @@ namespace AppRopio_Test.LocalizationResx {
                 return ResourceManager.GetString("BasketProductCard_Done", resourceCulture);
             }
         }
+        
+        internal static string Error_Delivery_Text {
+            get {
+                return ResourceManager.GetString("Error_Delivery_Text", resourceCulture);
+            }
+        }
+        
+        internal static string Error_Delivery_Time_Text {
+            get {
+                return ResourceManager.GetString("Error_Delivery_Time_Text", resourceCulture);
+            }
+        }
     }
 }

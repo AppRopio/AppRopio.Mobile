@@ -1,17 +1,20 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Input;
+using AppRopio.ECommerce.Products.Core.Messages;
+using AppRopio.ECommerce.Products.Core.Services;
 using AppRopio.Models.Products.Responses;
 using MvvmCross.Core.ViewModels;
-using System.Linq;
-using System;
-using System.Windows.Input;
 using MvvmCross.Platform;
 using MvvmCross.Plugins.Messenger;
-using AppRopio.ECommerce.Products.Core.Messages;
-using System.Collections.Generic;
-using AppRopio.ECommerce.Products.Core.Services;
+using AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Services;
+using AppRopio.ECommerce.Products.Core.Models.Bundle;
+using AppRopio.Base.Core.ViewModels;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Items
 {
-    public class CatalogItemVM : MvxViewModel, ICatalogItemVM
+    public class CatalogItemVM : BaseViewModel, ICatalogItemVM
     {
         #region Commands
 
@@ -66,9 +69,14 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Items
 
         public bool MarkEnabled { get; }
 
+
+        public IMvxViewModel BasketBlockViewModel { get; protected set; }
+
         #endregion
 
         #region Services
+
+        protected ICatalogVmService VmService => Mvx.Resolve<ICatalogVmService>();
 
         protected IMvxMessenger Messenger { get { return Mvx.Resolve<IMvxMessenger>(); } }
 
@@ -106,6 +114,13 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Items
             StateName = model.State?.Name;
 
             MarkEnabled = ConfigService.Config.MarkedEnabled;
+
+            BasketBlockViewModel = VmService.LoadItemBasketVm();
+
+            if (BasketBlockViewModel is IMvxViewModel<IMvxBundle> parameterVM)
+                parameterVM.Prepare(new ProductCardBundle(Model, Base.Core.Models.Navigation.NavigationType.InsideScreen));
+            else
+                BasketBlockViewModel?.Init(new ProductCardBundle(Model, Base.Core.Models.Navigation.NavigationType.InsideScreen));
         }
 
         #endregion
@@ -122,6 +137,17 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Items
             Marked = !Marked;
 
             Messenger.Publish(new ProductMarkChangedMessage(this, Model, Marked));
+        }
+
+        #endregion
+
+        #region Public
+
+        public override void Unbind()
+        {
+            (BasketBlockViewModel as IBaseViewModel)?.Unbind();
+
+            base.Unbind();
         }
 
         #endregion

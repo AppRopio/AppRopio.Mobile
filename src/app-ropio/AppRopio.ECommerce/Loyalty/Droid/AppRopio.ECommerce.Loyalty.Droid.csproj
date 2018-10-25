@@ -40,28 +40,28 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
+    <Reference Include="Mono.Android.Export" />
     <Reference Include="MvvmCross.Platform">
-      <HintPath>..\..\packages\MvvmCross.Platform.5.6.3\lib\MonoAndroid\MvvmCross.Platform.dll</HintPath>
+      <HintPath>..\..\packages\MvvmCross.Platform.5.7.0\lib\MonoAndroid\MvvmCross.Platform.dll</HintPath>
     </Reference>
     <Reference Include="MvvmCross.Platform.Droid">
-      <HintPath>..\..\packages\MvvmCross.Platform.5.6.3\lib\MonoAndroid\MvvmCross.Platform.Droid.dll</HintPath>
+      <HintPath>..\..\packages\MvvmCross.Platform.5.7.0\lib\MonoAndroid\MvvmCross.Platform.Droid.dll</HintPath>
     </Reference>
     <Reference Include="MvvmCross.Core">
-      <HintPath>..\..\packages\MvvmCross.Core.5.6.3\lib\MonoAndroid\MvvmCross.Core.dll</HintPath>
+      <HintPath>..\..\packages\MvvmCross.Core.5.7.0\lib\MonoAndroid\MvvmCross.Core.dll</HintPath>
     </Reference>
     <Reference Include="MvvmCross.Droid">
-      <HintPath>..\..\packages\MvvmCross.Core.5.6.3\lib\MonoAndroid\MvvmCross.Droid.dll</HintPath>
+      <HintPath>..\..\packages\MvvmCross.Core.5.7.0\lib\MonoAndroid\MvvmCross.Droid.dll</HintPath>
     </Reference>
     <Reference Include="MvvmCross.Binding">
-      <HintPath>..\..\packages\MvvmCross.Binding.5.6.3\lib\MonoAndroid\MvvmCross.Binding.dll</HintPath>
+      <HintPath>..\..\packages\MvvmCross.Binding.5.7.0\lib\MonoAndroid\MvvmCross.Binding.dll</HintPath>
     </Reference>
     <Reference Include="MvvmCross.Binding.Droid">
-      <HintPath>..\..\packages\MvvmCross.Binding.5.6.3\lib\MonoAndroid\MvvmCross.Binding.Droid.dll</HintPath>
+      <HintPath>..\..\packages\MvvmCross.Binding.5.7.0\lib\MonoAndroid\MvvmCross.Binding.Droid.dll</HintPath>
     </Reference>
     <Reference Include="MvvmCross.Localization">
-      <HintPath>..\..\packages\MvvmCross.Binding.5.6.3\lib\MonoAndroid\MvvmCross.Localization.dll</HintPath>
+      <HintPath>..\..\packages\MvvmCross.Binding.5.7.0\lib\MonoAndroid\MvvmCross.Localization.dll</HintPath>
     </Reference>
-    <Reference Include="Mono.Android.Export" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />

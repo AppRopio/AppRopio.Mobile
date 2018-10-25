@@ -120,6 +120,8 @@
     <Compile Include="Models\Bundle\OrderFieldAutocompleteBundle.cs" />
     <Compile Include="Messages\Autocomplete\AutocompleteStartMessage.cs" />
     <Compile Include="Messages\Autocomplete\AutocompleteApplyMessage.cs" />
+    <Compile Include="ViewModels\CatalogCard\BasketCatalogItemVM.cs" />
+    <Compile Include="ViewModels\CatalogCard\IBasketCatalogItemVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Plugin.ExternalMaps.Abstractions">
@@ -127,9 +129,6 @@
     </Reference>
     <Reference Include="Plugin.ExternalMaps">
       <HintPath>..\..\packages\Xam.Plugin.ExternalMaps.4.0.1\lib\netstandard1.0\Plugin.ExternalMaps.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\packages\Newtonsoft.Json.10.0.3\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.InteropServices.RuntimeInformation">
       <HintPath>..\..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\netstandard1.1\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
@@ -140,26 +139,32 @@
     <Reference Include="Plugin.Messaging">
       <HintPath>..\..\packages\Xam.Plugins.Messaging.5.0.0\lib\netstandard1.0\Plugin.Messaging.dll</HintPath>
     </Reference>
-    <Reference Include="Plugin.Permissions.Abstractions">
-      <HintPath>..\..\packages\Plugin.Permissions.2.1.0\lib\netstandard1.0\Plugin.Permissions.Abstractions.dll</HintPath>
+    <Reference Include="Plugin.Messaging.Abstractions">
+      <HintPath>..\..\packages\Xam.Plugins.Messaging.5.2.0\lib\netstandard1.0\Plugin.Messaging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Messaging">
+      <HintPath>..\..\packages\Xam.Plugins.Messaging.5.2.0\lib\netstandard1.0\Plugin.Messaging.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\packages\Newtonsoft.Json.11.0.2\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Plugin.Permissions">
-      <HintPath>..\..\packages\Plugin.Permissions.2.1.0\lib\netstandard1.0\Plugin.Permissions.dll</HintPath>
+      <HintPath>..\..\packages\Plugin.Permissions.3.0.0.12\lib\netstandard1.0\Plugin.Permissions.dll</HintPath>
     </Reference>
     <Reference Include="MvvmCross.Platform">
-      <HintPath>..\..\packages\MvvmCross.Platform.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Platform.dll</HintPath>
+      <HintPath>..\..\packages\MvvmCross.Platform.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Platform.dll</HintPath>
     </Reference>
     <Reference Include="MvvmCross.Core">
-      <HintPath>..\..\packages\MvvmCross.Core.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Core.dll</HintPath>
+      <HintPath>..\..\packages\MvvmCross.Core.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Core.dll</HintPath>
     </Reference>
     <Reference Include="MvvmCross.Binding">
-      <HintPath>..\..\packages\MvvmCross.Binding.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Binding.dll</HintPath>
+      <HintPath>..\..\packages\MvvmCross.Binding.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Binding.dll</HintPath>
     </Reference>
     <Reference Include="MvvmCross.Localization">
-      <HintPath>..\..\packages\MvvmCross.Binding.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Localization.dll</HintPath>
+      <HintPath>..\..\packages\MvvmCross.Binding.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Localization.dll</HintPath>
     </Reference>
     <Reference Include="MvvmCross.Plugins.Messenger">
-      <HintPath>..\..\packages\MvvmCross.Plugin.Messenger.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Plugins.Messenger.dll</HintPath>
+      <HintPath>..\..\packages\MvvmCross.Plugin.Messenger.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Plugins.Messenger.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -195,6 +200,7 @@
     <Folder Include="ViewModels\Order\Thanks\" />
     <Folder Include="ViewModels\CartIndicator\" />
     <Folder Include="Messages\Autocomplete\" />
+    <Folder Include="ViewModels\CatalogCard\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\AppRopio.Base\API\AppRopio.Base.API.csproj">

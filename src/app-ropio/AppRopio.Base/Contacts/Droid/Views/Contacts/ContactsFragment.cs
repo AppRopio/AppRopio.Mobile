@@ -13,8 +13,10 @@
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
 using System;
+using AppRopio.Base.Contacts.Core;
 using AppRopio.Base.Contacts.Core.ViewModels.Contacts;
 using AppRopio.Base.Droid.Views;
+
 namespace AppRopio.Base.Contacts.Droid.Views.Contacts
 {
     public class ContactsFragment : CommonFragment<IContactsViewModel>
@@ -22,6 +24,7 @@ namespace AppRopio.Base.Contacts.Droid.Views.Contacts
         public ContactsFragment()
             : base (Resource.Layout.app_contacts)
         {
+            Title = LocalizationService.GetLocalizableString(ContactsConstants.RESX_NAME, "Title");
         }
     }
 }

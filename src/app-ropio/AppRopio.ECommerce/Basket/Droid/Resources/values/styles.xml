@@ -453,5 +453,15 @@
         <item
             name="android:src">?attr/app_basket_ic_item_large_plus</item>
     </style>
+    <!--    -->
+    <!--  ProductCard  -->
+    <style
+        name  ="app_basket_catalogCardView_buyButton"
+        parent="AppRopioTheme.Control.Button.Base">
+        <item
+            name="android:background">@drawable/app_basket_catalogCardView_buyButton</item>
+        <item
+            name="android:stateListAnimator">@null</item>
+    </style>
 	<!--    -->
 </resources>
