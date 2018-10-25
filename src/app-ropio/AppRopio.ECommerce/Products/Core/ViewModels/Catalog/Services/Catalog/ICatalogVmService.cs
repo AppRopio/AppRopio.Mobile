@@ -16,5 +16,7 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Services
                                                    SortType sort = null);
 
         IMvxViewModel LoadHeaderVm();
+
+        IMvxViewModel LoadItemBasketVm();
     }
 }

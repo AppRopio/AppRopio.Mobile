@@ -4,8 +4,6 @@ using AppRopio.Models.Base.Responses;
 using MvvmCross.Platform;
 using MvvmCross.Platform.Core;
 using MvvmCross.Platform.Platform;
-using Plugin.Geolocator;
-using Plugin.Geolocator.Abstractions;
 using AppRopio.Base.Core.Services.Permissions;
 using Plugin.Permissions.Abstractions;
 
@@ -34,10 +32,10 @@ namespace AppRopio.Base.Core.Services.Location
                 var hasPermission = await Mvx.Resolve<IPermissionsService>().CheckPermission(Permission.LocationWhenInUse);
                 if (hasPermission)
                 {
-                    Position position = null;
+                    Plugin.Geolocator.Abstractions.Position position = null;
                     try
                     {
-                        var locator = CrossGeolocator.Current;
+                        var locator = Plugin.Geolocator.CrossGeolocator.Current;
                         locator.DesiredAccuracy = 100;
 
                         position = await locator.GetLastKnownLocationAsync();
