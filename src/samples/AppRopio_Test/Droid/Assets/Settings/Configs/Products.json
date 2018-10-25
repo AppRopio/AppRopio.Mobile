@@ -1,8 +1,13 @@
 ﻿{
     "categoriesType": 3,
+    "searchType": 1,
     "basket": {
         "addToCart": {
             "typeName": "AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard.IBasketProductCardViewModel",
+            "assemblyName": "AppRopio.ECommerce.Basket.Core"
+        },
+        "itemAddToCart": {
+            "typeName": "AppRopio.ECommerce.Basket.Core.ViewModels.CatalogCard.IBasketCatalogItemVM",
             "assemblyName": "AppRopio.ECommerce.Basket.Core"
         },
         "cartIndicator": {

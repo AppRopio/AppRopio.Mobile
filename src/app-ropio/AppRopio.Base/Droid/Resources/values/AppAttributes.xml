@@ -52,6 +52,12 @@
 	<attr
 		name  ="app_color_invalid"
 		format="color" />
+    <attr
+        name  ="app_color_filter_unactiveColor"
+        format="color" />
+    <attr
+        name  ="app_color_filter_activeColor"
+        format="color" />
 	<!--	-->
     <!--  Fonts Palette  -->
 	<attr

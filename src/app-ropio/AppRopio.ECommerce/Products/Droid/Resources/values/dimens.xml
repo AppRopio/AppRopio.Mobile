@@ -18,13 +18,13 @@
 	<dimen
 		name="app_products_catalog_item_horizontalMargin">8dp</dimen>
 	<dimen
-		name="app_products_catalog_item_name_marginTop">14dp</dimen>
+		name="app_products_catalog_item_name_marginTop">8dp</dimen>
 	<dimen
-		name="app_products_catalog_item_oldPrice_marginTop">16dp</dimen>
+		name="app_products_catalog_item_oldPrice_marginTop">8dp</dimen>
 	<dimen
 		name="app_products_catalog_item_price_marginTop">2dp</dimen>
 	<dimen
-		name="app_products_catalog_item_price_marginBottom">12dp</dimen>
+		name="app_products_catalog_item_price_marginBottom">8dp</dimen>
 	<dimen
 		name="app_products_catalog_item_badges_padding">2dp</dimen>
 	<dimen
@@ -41,6 +41,22 @@
 		name="app_products_catalog_sort_filters_header_horizontalPadding">4dp</dimen>
 	<dimen
 		name="app_products_catalog_item_cornerRadius">2dp</dimen>
+    <dimen
+        name="app_products_catalog_searchView_height">48dp</dimen>
+    <dimen
+        name="app_products_catalog_searchView_cornerRadius">2dp</dimen>
+    <dimen
+        name="app_products_catalog_searchView_elevation">2dp</dimen>
+    <dimen
+        name="app_products_catalog_searchView_margin">8dp</dimen>
+    <dimen
+        name="app_products_catalog_search_editText_marginLeft">64dp</dimen>
+    <dimen
+        name="app_products_catalog_search_editText_marginRight">16dp</dimen>
+    <dimen
+        name="app_products_catalog_search_icon_size">24dp</dimen>
+    <dimen
+        name="app_products_catalog_search_icon_marginLeft">16dp</dimen>
 	<!--    -->
 	<!--  ContentSearch  -->
 	<dimen

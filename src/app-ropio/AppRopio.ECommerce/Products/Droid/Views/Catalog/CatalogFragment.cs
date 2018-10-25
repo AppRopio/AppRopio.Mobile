@@ -3,7 +3,6 @@ using Android.Support.V7.Widget;
 using Android.Util;
 using Android.Views;
 using AppRopio.Base.Core.Services.ViewLookup;
-using AppRopio.Base.Core.ViewModels;
 using AppRopio.Base.Droid.Adapters;
 using AppRopio.ECommerce.Products.Core.Services;
 using AppRopio.ECommerce.Products.Core.ViewModels.Catalog;
@@ -63,7 +62,8 @@ namespace AppRopio.ECommerce.Products.Droid.Views.Catalog
             recyclerView.Adapter = new ARPagingFlatGroupRecyclerAdapter(ViewModel, null, SetupItemTemplateSelector(), BindingContext)
             {
                 HasHeader = HasHeader,
-                TuneSectionHeaderOnBind = TuneSectionHeaderOnBind
+                TuneSectionHeaderOnBind = TuneSectionHeaderOnBind,
+                TuneSectionItemOnBind = TuneSectionItemOnBind
             };
         }
 
@@ -88,6 +88,25 @@ namespace AppRopio.ECommerce.Products.Droid.Views.Catalog
                     }
 
                     _headerInitialized = true;
+                }
+            }
+        }
+
+        private void TuneSectionItemOnBind(bool first, bool last, RecyclerView.ViewHolder viewHolder)
+        {
+            var config = Mvx.Resolve<IProductConfigService>().Config;
+            var viewLookupService = Mvx.Resolve<IViewLookupService>();
+            if (config.Basket?.ItemAddToCart != null && viewLookupService.IsRegistered(config.Basket?.ItemAddToCart.TypeName))
+            {
+                var viewModel = (viewHolder as IMvxRecyclerViewHolder)?.DataContext as ICatalogItemVM;
+                var basketView = viewModel.BasketBlockViewModel == null ? null : Activator.CreateInstance(viewLookupService.Resolve(config.Basket?.ItemAddToCart.TypeName), Context) as IMvxAndroidView;
+                if (basketView != null)
+                {
+                    basketView.BindingContext = new MvxAndroidBindingContext(Context, new MvxSimpleLayoutInflaterHolder(LayoutInflater), viewModel.BasketBlockViewModel);
+
+                    var basketLayout = viewHolder.ItemView.FindViewById<ViewGroup>(Resource.Id.app_products_catalogCard_basketLayout);
+                    basketLayout?.AddView((View)basketView);
+                    basketLayout.Visibility = ViewStates.Visible;
                 }
             }
         }
