@@ -27,13 +27,13 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard
         #region Commands
 
         private IMvxCommand _buyCommand;
-        public IMvxCommand BuyCommand => _buyCommand ?? (_buyCommand = new MvxCommand(OnBuyCommandExecute, () => !BasketLoading && !ReloadingByParameter && !QuantityLoading));
+        public IMvxCommand BuyCommand => _buyCommand ?? (_buyCommand = new MvxCommand(OnBuyCommandExecute, OnBuyCommandCanExecute));
 
         private IMvxCommand _incrementCommand;
-        public IMvxCommand IncrementCommand => _incrementCommand ?? (_incrementCommand = new MvxCommand(OnIncrementExecute, () => !BasketLoading && !ReloadingByParameter && !QuantityLoading));
+        public IMvxCommand IncrementCommand => _incrementCommand ?? (_incrementCommand = new MvxAsyncCommand(OnIncrementExecute, () => !BasketLoading && !ReloadingByParameter && !QuantityLoading));
 
         private IMvxCommand _decrementCommand;
-        public IMvxCommand DecrementCommand => _decrementCommand ?? (_decrementCommand = new MvxCommand(OnDecrementExecute, () => !BasketLoading && !ReloadingByParameter && !QuantityLoading));
+        public IMvxCommand DecrementCommand => _decrementCommand ?? (_decrementCommand = new MvxAsyncCommand(OnDecrementExecute, () => !BasketLoading && !ReloadingByParameter && !QuantityLoading));
 
         private IMvxCommand _quantityChangedCommand;
         public IMvxCommand QuantityChangedCommand => _quantityChangedCommand ?? (_quantityChangedCommand = new MvxCommand(OnQuantityChangedExecute, () => !BasketLoading && !ReloadingByParameter && !QuantityLoading));
@@ -45,6 +45,8 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard
         protected Product Model { get; private set; }
 
         protected bool ReloadingByParameter { get; set; }
+
+        protected virtual string AnalyticsPrefix => "catalog_product_card";
 
         private bool _basketLoading;
         public bool BasketLoading
@@ -220,7 +222,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard
 
                 Messenger.Publish(new ProductQuantityChangedMessage(this));
 
-                AnalyticsNotifyingService.NotifyEventIsHandled("catalog", "catalog_product_card_deleted_decrement_button", Model.Id);
+                AnalyticsNotifyingService.NotifyEventIsHandled("catalog", AnalyticsPrefix + "_deleted_decrement_button", Model.Id);
             }
 
             BasketLoading = false;
@@ -258,6 +260,17 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard
 
         #endregion
 
+        protected async Task OnProductAdded()
+        {
+            var confirmed = await UserDialogs.Confirm(LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Basket_AddedToBasketTitle"), LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Basket_AddedToBasketButton"));
+            if (confirmed)
+            {
+                AnalyticsNotifyingService.NotifyEventIsHandled("catalog", AnalyticsPrefix + "_notify_basket_button", Model.Id);
+
+                NavigationVmService.NavigateToBasket(new BaseBundle(Base.Core.Models.Navigation.NavigationType.ClearAndPush));
+            }
+        }
+
         protected virtual void OnBuyCommandExecute()
         {
             if (Model == null)
@@ -267,7 +280,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard
 
             RaiseCommandsCanExecuteChanged();
 
-            AnalyticsNotifyingService.NotifyEventIsHandled("catalog", "catalog_product_card_basket_button", Model.Id);
+            AnalyticsNotifyingService.NotifyEventIsHandled("catalog", AnalyticsPrefix + "_basket_button", Model.Id);
 
             Task.Run(async () =>
             {
@@ -285,7 +298,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard
 
                         UnitStepVisible = true;
 
-                        AnalyticsNotifyingService.NotifyEventIsHandled("catalog", "catalog_product_card_added_to_basket", Model.Id);
+                        AnalyticsNotifyingService.NotifyEventIsHandled("catalog", AnalyticsPrefix + "_added_to_basket", Model.Id);
                     }
 
                     RaiseCommandsCanExecuteChanged();
@@ -295,30 +308,24 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard
                 {
                     Messenger.Publish(new ProductAddToBasketMessage(this, Model.Id));
 
-                    var confirmed = await UserDialogs.Confirm(LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Basket_AddedToBasketTitle"), LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Basket_AddedToBasketButton"));
-                    if (confirmed)
-                    {
-                        AnalyticsNotifyingService.NotifyEventIsHandled("catalog", "catalog_product_card_notify_basket_button", Model.Id);
-
-                        NavigationVmService.NavigateToBasket(new BaseBundle(Base.Core.Models.Navigation.NavigationType.ClearAndPush));
-                    }
+                    await OnProductAdded();
                 }
             });
         }
 
-        protected virtual async void OnIncrementExecute()
+        protected virtual async Task OnIncrementExecute()
         {
             if (Model == null)
                 return;
             
             Quantity += Model.UnitStep;
 
-            AnalyticsNotifyingService.NotifyEventIsHandled("catalog", "catalog_product_card_change_quantity_increment_button", Model.Id);
+            AnalyticsNotifyingService.NotifyEventIsHandled("catalog", AnalyticsPrefix + "_change_quantity_increment_button", Model.Id);
 
             await OnQuantityChanged();
         }
 
-        protected virtual async void OnDecrementExecute()
+        protected virtual async Task OnDecrementExecute()
         {
             if (Model == null)
                 return;
@@ -330,7 +337,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard
                 return;
             }
 
-            AnalyticsNotifyingService.NotifyEventIsHandled("catalog", "catalog_product_card_change_quantity_decrement_button", Model.Id);
+            AnalyticsNotifyingService.NotifyEventIsHandled("catalog", AnalyticsPrefix + "_change_quantity_decrement_button", Model.Id);
 
             Quantity -= Model.UnitStep;
 
@@ -342,7 +349,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard
             if (Model == null)
                 return;
             
-            AnalyticsNotifyingService.NotifyEventIsHandled("catalog", "catalog_product_card_change_quantity_text_field", Model.Id);
+            AnalyticsNotifyingService.NotifyEventIsHandled("catalog", AnalyticsPrefix + "_change_quantity_text_field", Model.Id);
 
             if (float.TryParse(QuantityString.Replace(" ", ""), NumberStyles.Any, NumberFormatInfo.InvariantInfo, out float result))
             {
@@ -367,6 +374,8 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard
                 SetQuantityString();
             }
         }
+
+        protected virtual bool OnBuyCommandCanExecute() => !BasketLoading && !ReloadingByParameter && !QuantityLoading;
 
         #endregion
 

@@ -1,21 +1,20 @@
 
+using System.Linq;
+using AppRopio.Base.Core;
+using AppRopio.Base.Core.Converters;
 using AppRopio.Base.Core.Services.ViewLookup;
 using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.UIExtentions;
 using AppRopio.Base.iOS.Views;
+using AppRopio.ECommerce.Basket.Core;
+using AppRopio.ECommerce.Basket.Core.Services;
 using AppRopio.ECommerce.Basket.Core.ViewModels;
 using AppRopio.ECommerce.Basket.iOS.Services;
 using AppRopio.ECommerce.Basket.iOS.Views.Basket.Cells;
 using MvvmCross.Binding.BindingContext;
+using MvvmCross.iOS.Views;
 using MvvmCross.Platform;
 using UIKit;
-using AppRopio.ECommerce.Basket.Core.Services;
-using MvvmCross.iOS.Views;
-using CoreGraphics;
-using AppRopio.Base.Core.Converters;
-using System.Linq;
-using System;
-using AppRopio.ECommerce.Basket.Core;
 
 namespace AppRopio.ECommerce.Basket.iOS.Views.Basket
 {
@@ -150,7 +149,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Basket
                    "StringFormat", 
                    new StringFormatParameter { StringFormat = (arg) => 
                 {
-                    var str = string.Format($"{LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Basket_OrderBy")} {{0}}", ((decimal)arg).ToString("# ### ##0.##").Trim());
+                    var str = $"{LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Basket_OrderBy")} {((decimal)arg).ToString(AppSettings.CurrencyFormat, AppSettings.SettingsCulture.NumberFormat)}";
                     return BasketTheme.NextButton.UppercaseTitle ? str.ToUpperInvariant() : str;
                 } 
             });

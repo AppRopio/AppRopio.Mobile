@@ -56,7 +56,7 @@
         name  ="app_products_catalog_item_name"
         parent="AppRopio.TextAppearance.Body2.Medium">
         <item
-            name="android:maxLines">3</item>
+            name="android:lines">2</item>
         <item
             name="android:ellipsize">end</item>
     </style>
@@ -64,7 +64,7 @@
         name  ="app_products_catalog_item_oldPrice"
         parent="AppRopio.TextAppearance.Body2.Bold">
         <item
-            name="android:maxLines">1</item>
+            name="android:lines">1</item>
         <item
             name="android:ellipsize">end</item>
         <item
@@ -74,7 +74,7 @@
         name  ="app_products_catalog_item_price"
         parent="AppRopio.TextAppearance.Body2.Bold">
         <item
-            name="android:maxLines">1</item>
+            name="android:lines">1</item>
         <item
             name="android:ellipsize">end</item>
     </style>
@@ -448,5 +448,21 @@
             name="android:maxLines">@integer/app_products_textContent_maxLines</item>
         <item
             name="android:scrollbars">vertical</item>
+    </style>
+    <!--    -->
+    <!--  SearchTextView  -->
+    <style
+        name="app_products_catalog_search_textView"
+        parent="">
+        <item
+            name="android:fontFamily">?attr/app_font_medium</item>
+        <item
+            name="android:textSize">@dimen/app_input_text_size</item>
+        <item
+            name="android:textColor">?attr/app_color_placeholder</item>
+        <item
+            name="android:maxLines">1</item>
+        <item
+            name="android:ellipsize">end</item>
     </style>
 </resources>

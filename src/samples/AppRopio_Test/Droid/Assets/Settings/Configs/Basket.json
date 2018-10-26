@@ -2,5 +2,11 @@
     "loyalty": {
         "typeName": "AppRopio.ECommerce.Loyalty.Core.ViewModels.Promo.PromoCodeViewModel",
         "assemblyName": "AppRopio.ECommerce.Loyalty.Core"
+    },
+    "inAppPayments": {
+        "all": {
+            "typeName": "AppRopio.Payments.CloudPayments.Core.ViewModels.CloudPayments.Services.ICloudPaymentsVmService",
+            "assemblyName": "AppRopio.Payments.CloudPayments.Core"
+        }
     }
 }

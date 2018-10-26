@@ -31,6 +31,10 @@ namespace AppRopio.Base.Core
 
         public static string DefaultRegionID => _config.DefaultRegionID;
 
+        public static bool PreciseCurrency => _config.PreciseCurrency;
+
+        public static string CurrencyFormat => _config.PreciseCurrency ? "C2" : "C0";
+
         public static string PushToken
         {
             get { return CrossSettings.Current.GetValueOrDefault(nameof(PushToken), string.Empty); }
