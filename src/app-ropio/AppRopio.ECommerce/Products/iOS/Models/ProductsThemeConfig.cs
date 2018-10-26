@@ -125,6 +125,12 @@ namespace AppRopio.ECommerce.Products.iOS.Models
         [JsonProperty("size")]
         public Size Size { get; private set; }
 
+        [JsonProperty("separatorVisibility")]
+        public bool separatorVisibility { get; private set; }
+
+        [JsonProperty("gradientVisibility")]
+        public bool gradientVisibility { get; private set; }
+
         public CategoryCell()
         {
             BackgroundImage = new Image();
@@ -137,6 +143,8 @@ namespace AppRopio.ECommerce.Products.iOS.Models
             };
             Size = new Size { Width = 90, Height = 52 };
             Layer = new Layer();
+            separatorVisibility = false;
+            gradientVisibility = false;
         }
     }
 

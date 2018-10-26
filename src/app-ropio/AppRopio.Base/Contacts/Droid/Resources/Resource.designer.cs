@@ -110,14 +110,14 @@ namespace AppRopio.Base.Contacts.Droid
 			// aapt resource value: 0x7f01015f
 			public static int MvxDropDownItemTemplate = 2130772319;
 			
-			// aapt resource value: 0x7f01017a
-			public static int MvxFooterTemplate = 2130772346;
+			// aapt resource value: 0x7f01017c
+			public static int MvxFooterTemplate = 2130772348;
 			
 			// aapt resource value: 0x7f010160
 			public static int MvxGroupItemTemplate = 2130772320;
 			
-			// aapt resource value: 0x7f010179
-			public static int MvxHeaderTemplate = 2130772345;
+			// aapt resource value: 0x7f01017b
+			public static int MvxHeaderTemplate = 2130772347;
 			
 			// aapt resource value: 0x7f01015e
 			public static int MvxItemTemplate = 2130772318;
@@ -275,6 +275,12 @@ namespace AppRopio.Base.Contacts.Droid
 			// aapt resource value: 0x7f010171
 			public static int app_color_disabledControl = 2130772337;
 			
+			// aapt resource value: 0x7f010174
+			public static int app_color_filter_activeColor = 2130772340;
+			
+			// aapt resource value: 0x7f010173
+			public static int app_color_filter_unactiveColor = 2130772339;
+			
 			// aapt resource value: 0x7f010170
 			public static int app_color_highlightedControl = 2130772336;
 			
@@ -308,23 +314,23 @@ namespace AppRopio.Base.Contacts.Droid
 			// aapt resource value: 0x7f010168
 			public static int app_color_textNotification = 2130772328;
 			
-			// aapt resource value: 0x7f010177
-			public static int app_font_bold = 2130772343;
+			// aapt resource value: 0x7f010179
+			public static int app_font_bold = 2130772345;
 			
-			// aapt resource value: 0x7f010178
-			public static int app_font_italic = 2130772344;
-			
-			// aapt resource value: 0x7f010174
-			public static int app_font_light = 2130772340;
-			
-			// aapt resource value: 0x7f010175
-			public static int app_font_medium = 2130772341;
-			
-			// aapt resource value: 0x7f010173
-			public static int app_font_regular = 2130772339;
+			// aapt resource value: 0x7f01017a
+			public static int app_font_italic = 2130772346;
 			
 			// aapt resource value: 0x7f010176
-			public static int app_font_semibold = 2130772342;
+			public static int app_font_light = 2130772342;
+			
+			// aapt resource value: 0x7f010177
+			public static int app_font_medium = 2130772343;
+			
+			// aapt resource value: 0x7f010175
+			public static int app_font_regular = 2130772341;
+			
+			// aapt resource value: 0x7f010178
+			public static int app_font_semibold = 2130772344;
 			
 			// aapt resource value: 0x7f010103
 			public static int arrowHeadLength = 2130772227;
@@ -434,8 +440,8 @@ namespace AppRopio.Base.Contacts.Droid
 			// aapt resource value: 0x7f0100ee
 			public static int checkedTextViewStyle = 2130772206;
 			
-			// aapt resource value: 0x7f01017c
-			public static int circle = 2130772348;
+			// aapt resource value: 0x7f01017e
+			public static int circle = 2130772350;
 			
 			// aapt resource value: 0x7f01011e
 			public static int closeIcon = 2130772254;
@@ -557,8 +563,8 @@ namespace AppRopio.Base.Contacts.Droid
 			// aapt resource value: 0x7f0100bc
 			public static int dividerVertical = 2130772156;
 			
-			// aapt resource value: 0x7f01017b
-			public static int downscale = 2130772347;
+			// aapt resource value: 0x7f01017d
+			public static int downscale = 2130772349;
 			
 			// aapt resource value: 0x7f010101
 			public static int drawableSize = 2130772225;
@@ -884,8 +890,8 @@ namespace AppRopio.Base.Contacts.Droid
 			// aapt resource value: 0x7f010051
 			public static int passwordToggleTintMode = 2130772049;
 			
-			// aapt resource value: 0x7f01017d
-			public static int placeholder = 2130772349;
+			// aapt resource value: 0x7f01017f
+			public static int placeholder = 2130772351;
 			
 			// aapt resource value: 0x7f0100c1
 			public static int popupMenuStyle = 2130772161;
@@ -4661,9 +4667,9 @@ namespace AppRopio.Base.Contacts.Droid
 			public static int ARAppCompatSpinner_MvxItemTemplate = 0;
 			
 			public static int[] ARImageView = new int[] {
-					2130772347,
-					2130772348,
-					2130772349};
+					2130772349,
+					2130772350,
+					2130772351};
 			
 			// aapt resource value: 1
 			public static int ARImageView_circle = 1;
@@ -4685,8 +4691,8 @@ namespace AppRopio.Base.Contacts.Droid
 			public static int ARLinearLayout_MvxTemplateSelector = 0;
 			
 			public static int[] ARListView = new int[] {
-					2130772345,
-					2130772346};
+					2130772347,
+					2130772348};
 			
 			// aapt resource value: 1
 			public static int ARListView_MvxFooterTemplate = 1;

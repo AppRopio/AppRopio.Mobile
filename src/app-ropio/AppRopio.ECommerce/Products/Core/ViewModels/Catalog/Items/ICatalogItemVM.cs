@@ -25,5 +25,7 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Items
         List<IProductBadgeItemVM> Badges { get; }
 
         string StateName { get; }
+
+        IMvxViewModel BasketBlockViewModel { get; }
     }
 }

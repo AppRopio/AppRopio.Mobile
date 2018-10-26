@@ -1,6 +1,7 @@
 ﻿using Android.App;
 using Android.Content;
 using Android.Content.PM;
+using Android.Runtime;
 using Android.Support.V4.Widget;
 using Android.Views;
 using AppRopio.Base.Core.Models.Bundle;
@@ -77,9 +78,11 @@ namespace AppRopio.Navigation.Menu.Droid.Views
 
         #endregion
 
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+
+            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 
         public void LockDrawer()

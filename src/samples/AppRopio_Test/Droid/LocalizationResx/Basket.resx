@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
     <resheader
         name="resmimetype">
@@ -189,5 +189,17 @@ will be stored.</value>
     <data
         name="BasketProductCard_Done">
         <value>Done</value>
+    </data>
+    <data
+        name="BasketCatalogCard_AddToBasket">
+        <value>ADD TO CART</value>
+    </data>
+     <data
+        name="Error_Delivery_Text">
+        <value>Hello world</value>
+    </data>
+    <data
+        name="Error_Delivery_Time_Text">
+        <value>Не выбрано время доставки</value>
     </data>
 </root>

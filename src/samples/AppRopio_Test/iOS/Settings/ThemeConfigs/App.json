@@ -250,6 +250,7 @@
         "textNotification": { "HEX": "C9FFF5" },
 
         "background": { "HEX": "FFFFFF" },
+        "searchBackground": { "HEX": "00FF00" },
         "backgroundMenu": { "HEX": "2F4356" },
         "backgroundSearch": { "HEX": "1A8E8E93" },
         "backgroundNotification": { "HEX": "2586F7" },
