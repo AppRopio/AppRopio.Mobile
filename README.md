@@ -1,3 +1,5 @@
+[![Build Status](https://notissimus.visualstudio.com/AppropioGit/_apis/build/status/Mobile%20SDK/AppRopio.MobileSdk)](https://notissimus.visualstudio.com/AppropioGit/_build/latest?definitionId=24)
+
 # AppRopio.Mobile
 
 __AppRopio__ – создай свое мобильное приложение
