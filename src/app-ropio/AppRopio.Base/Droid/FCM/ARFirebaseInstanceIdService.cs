@@ -21,6 +21,7 @@ using AppRopio.Base.Core;
 using AppRopio.Base.Core.Services.Push;
 using Firebase.Iid;
 using MvvmCross.Platform;
+using Firebase.Messaging;
 
 namespace AppRopio.Base.Droid.FCM
 {
@@ -29,6 +30,8 @@ namespace AppRopio.Base.Droid.FCM
     [IntentFilter(new string[] { "com.google.firebase.INSTANCE_ID_EVENT" })]
     public class ARFirebaseInstanceIdService : FirebaseInstanceIdService
     {
+        private const string GLOBAL_TOPIC_KEY = "global";
+
         public ARFirebaseInstanceIdService()
         {
         }
@@ -41,6 +44,8 @@ namespace AppRopio.Base.Droid.FCM
         public override void OnTokenRefresh()
         {
             base.OnTokenRefresh();
+
+            FirebaseMessaging.Instance.SubscribeToTopic(GLOBAL_TOPIC_KEY);
 
             var token = FirebaseInstanceId.Instance.Token;
 

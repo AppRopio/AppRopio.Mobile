@@ -41,6 +41,7 @@
                     android:name="com.notissimus.AppRopio" />
             </intent-filter>
         </receiver>
+        <!-- FCM meta-data. -->
         <meta-data
             android:name ="com.google.firebase.messaging.default_notification_channel_id"
             android:value="com.notissimus.AppRopio" />
@@ -52,5 +53,9 @@
         <meta-data
             android:name    ="com.google.firebase.messaging.default_notification_color"
             android:resource="@color/main_theme_color" />
+        <!-- Activity type that received push notifications. -->
+        <meta-data
+            android:name="com.appropio.firebase.messaging.notification_received_activity"
+            android:value="AppRopio.Navigation.Menu.Droid;AppRopio.Navigation.Menu.Droid.Views.MenuActivity"/>
     </application>
 </manifest>

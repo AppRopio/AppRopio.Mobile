@@ -22,6 +22,8 @@ using Android.Runtime;
 using Android.Support.V4.App;
 using Android.Util;
 using Firebase.Messaging;
+using Android.Support.V4.Content;
+using System.Reflection;
 
 namespace AppRopio.Base.Droid.FCM
 {
@@ -41,13 +43,18 @@ namespace AppRopio.Base.Droid.FCM
 
         public override void OnMessageReceived(RemoteMessage message)
         {
-            Log.Verbose(this.PackageName, "On push message received");
-
-            System.Diagnostics.Debug.WriteLine(message: $"On push message received", category: this.PackageName);
+            LogMessage("On push message received");
 
             base.OnMessageReceived(message);
 
             ParseRemoteMessage(message);
+        }
+
+        private void LogMessage(string msg)
+        {
+            Log.Verbose(this.PackageName, msg);
+
+            System.Diagnostics.Debug.WriteLine(message: msg, category: this.PackageName);
         }
 
         private void ParseRemoteMessage(RemoteMessage message)
@@ -64,9 +71,14 @@ namespace AppRopio.Base.Droid.FCM
 
         private void SheduleNotification(string title, string message, string id, string deeplink)
         {
-            EnsureIconResourceSet();
+            var iconResourceId = EnsureIconResourceSet();
 
-            var notificationIntent = new Intent(Application.Context, FcmSettings.Instance.ActivityType); // Application.Context.PackageManager.GetLaunchIntentForPackage(PackageName);
+            var argbColor = EnsureColorSet();
+
+            var activityType = EnsureActivityTypeSet();
+
+            var notificationIntent = new Intent(Application.Context, activityType); 
+
             notificationIntent.SetFlags(ActivityFlags.SingleTop);
             notificationIntent.SetAction(Guid.NewGuid().ToString());
 
@@ -80,10 +92,10 @@ namespace AppRopio.Base.Droid.FCM
                 .SetContentIntent(notificationPendingIntent)
                 .SetContentTitle(title ?? PackageName)
                 .SetContentText(message)
-                .SetSmallIcon(FcmSettings.Instance.IconResourceId)
+                .SetSmallIcon(iconResourceId)
                 .SetChannelId(PackageName)
                 .SetPriority((int)NotificationPriority.High)
-                .SetColor(Color.ParseColor(FcmSettings.Instance.ColorHex).ToArgb())
+                .SetColor(argbColor)
                 .SetStyle(new NotificationCompat.BigTextStyle().BigText(message).SetBigContentTitle(title))
                 .SetDefaults((int)NotificationDefaults.All)
                 .SetSound(RingtoneManager.GetDefaultUri(RingtoneType.Notification))
@@ -104,12 +116,92 @@ namespace AppRopio.Base.Droid.FCM
             notificationManager.Notify(id.GetHashCode(), notification);
         }
 
-        private void EnsureIconResourceSet()
+        private int EnsureIconResourceSet()
         {
-            if (FcmSettings.Instance.IconResourceId == 0)
+            int iconResourceId;
+
+            LogMessage("EnsureIconResourceSet");
+
+            if ((FcmSettings.Instance?.IconResourceId ?? 0) == 0)
             {
-                FcmSettings.Instance.IconResourceId = Application.Context.ApplicationInfo.Icon;
+                LogMessage("Icon resource is null");
+
+                var metadata = GetMetadata();
+
+                LogMessage("Getting metadata");
+
+                iconResourceId = metadata.GetInt(PushConstants.METADATA_ICON_KEY);
             }
+            else
+                iconResourceId = FcmSettings.Instance.IconResourceId;
+
+            LogMessage($"Icon resource id {iconResourceId}");
+
+            return iconResourceId;
+        }
+
+        private int EnsureColorSet()
+        {
+            int argbColor;
+
+            LogMessage("EnsureColorSet");
+
+            if ((FcmSettings.Instance?.ColorHex ?? string.Empty).IsNullOrEmtpy())
+            {
+                var metadata = GetMetadata();
+                var resourceId = metadata.GetInt(PushConstants.METADATA_COLOR_KEY);
+
+                argbColor = ContextCompat.GetColor(Application.Context, resourceId);
+            }
+            else
+                argbColor = Color.ParseColor(FcmSettings.Instance.ColorHex).ToArgb();
+
+            LogMessage($"Color argb {argbColor}");
+
+            return argbColor;
+        }
+
+        private Type EnsureActivityTypeSet()
+        {
+            Type activityType = null;
+
+            LogMessage("EnsureActivityTypeSet");
+
+            if (FcmSettings.Instance?.ActivityType == null)
+            {
+                var metadata = GetMetadata();
+                var assemblyInfo = metadata.GetString(PushConstants.METADATA_ACTIVITY_TYPE_KEY);
+
+                var parts = assemblyInfo.Split(';');
+
+                if (parts.Length == 2)
+                {
+                    var assemblyName = parts[0];
+                    var typeName = parts[1];
+
+                    var assembly = Assembly.Load(new AssemblyName(assemblyName));
+
+                    activityType = assembly.GetType(typeName);
+                }
+            }
+            else
+                activityType = FcmSettings.Instance.ActivityType;
+
+            LogMessage($"Activity type {activityType.FullName}");
+
+            return activityType;
+        }
+
+        private Bundle GetMetadata()
+        {
+            LogMessage("GetMetadata");
+
+            var applicationInfo = Application.Context.PackageManager.GetApplicationInfo(Application.Context.PackageName, Android.Content.PM.PackageInfoFlags.MetaData);
+            var metadata = applicationInfo?.MetaData;
+
+            LogMessage($"Metadata is null: {metadata == null}");
+
+            return metadata;
         }
     }
 }

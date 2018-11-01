@@ -23,5 +23,11 @@ namespace AppRopio.Base.Droid
         public const string PUSH_TITLE_KEY = nameof(PushConstants.PUSH_TITLE_KEY);
 
         public const string PUSH_BODY_KEY = nameof(PushConstants.PUSH_BODY_KEY);
+
+        public const string METADATA_ICON_KEY = "com.google.firebase.messaging.default_notification_icon";
+
+        public const string METADATA_COLOR_KEY = "com.google.firebase.messaging.default_notification_color";
+
+        public const string METADATA_ACTIVITY_TYPE_KEY = "com.appropio.firebase.messaging.notification_received_activity";
     }
 }
