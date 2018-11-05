@@ -147,9 +147,7 @@ namespace AppRopio.Base.Droid
 
         private ILocalizationService SetupLocalizationService()
         {
-            var localizationService = new LocalizationService(AppDomain.CurrentDomain.GetAssemblies());
-            localizationService.SetCurrentUICulture(AppSettings.SettingsCulture);
-            return localizationService;
+            return new LocalizationService(AppDomain.CurrentDomain.GetAssemblies());
         }
 
         protected override void InitializeViewLookup()

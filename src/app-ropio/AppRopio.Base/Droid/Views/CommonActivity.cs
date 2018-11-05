@@ -8,7 +8,7 @@ using Android.Util;
 using Android.Views;
 using Android.Views.InputMethods;
 using Android.Widget;
-using AppRopio.Base.Core;
+using AppRopio.Base.Core.Extentions;
 using AppRopio.Base.Core.Services.Push;
 using AppRopio.Base.Core.Services.ViewModelLookup;
 using AppRopio.Base.Droid.Navigation;
@@ -20,11 +20,9 @@ using MvvmCross.Platform;
 using MvvmCross.Platform.Platform;
 using Plugin.Permissions;
 using Plugin.Permissions.Abstractions;
-using AppRopio.Base.Core.Extentions;
 
 namespace AppRopio.Base.Droid.Views
 {
-    [Activity]
     public abstract class CommonActivity<TViewModel> : MvxAppCompatActivity<TViewModel>, ICommonActivity
         where TViewModel : class, IMvxViewModel
     {
