@@ -1,13 +1,13 @@
-﻿using System;
-using MvvmCross.Platform.Plugins;
-using MvvmCross.Platform;
+﻿using System.Collections.Generic;
+using Android.App;
 using AppRopio.Analytics.AppsFlyer.Core.Services;
 using AppRopio.Analytics.AppsFlyer.Droid.Services;
 using Com.Appsflyer;
-using System.Collections.Generic;
-using Android.App;
-using MvvmCross.Platform.Droid.Platform;
+using MvvmCross.Droid.Platform;
+using MvvmCross.Platform;
 using MvvmCross.Platform.Core;
+using MvvmCross.Platform.Droid.Platform;
+using MvvmCross.Platform.Plugins;
 
 namespace AppRopio.Analytics.AppsFlyer.Droid
 {
@@ -24,20 +24,35 @@ namespace AppRopio.Analytics.AppsFlyer.Droid
         {
             Mvx.CallbackWhenRegistered<IMvxMainThreadDispatcher>(service =>
             {
-                service.RequestMainThreadAction(() =>
+                if (CurrentActivity == null)
                 {
-                    var config = Mvx.Resolve<IAFConfigService>().Config;
+                    Mvx.Resolve<IMvxAndroidActivityLifetimeListener>().ActivityChanged += Handle_ActivityChanged;
+                }
+                else
+                {
+                    service.RequestMainThreadAction(() =>
+                   {
+                       var config = Mvx.Resolve<IAFConfigService>().Config;
 
-                    AppsFlyerLib.Instance.StartTracking(CurrentActivity.Application, config.DevKey);
+                       AppsFlyerLib.Instance.StartTracking(CurrentActivity.Application, config.DevKey);
 
-                    _trackerDelegate = new CustomAppsFlyerConversionDelegate();
+                       _trackerDelegate = new CustomAppsFlyerConversionDelegate();
 
-                    AppsFlyerLib.Instance.RegisterConversionListener(Application.Context, _trackerDelegate);
+                       AppsFlyerLib.Instance.RegisterConversionListener(Application.Context, _trackerDelegate);
 
-                    Mvx.RegisterSingleton<IAppsFlyerService>(() => new AppsFlyerService());
-                });
+                       Mvx.RegisterSingleton<IAppsFlyerService>(() => new AppsFlyerService());
+                   });
+                }
             });
         }
+
+        private void Handle_ActivityChanged(object sender, MvvmCross.Droid.Views.MvxActivityEventArgs e)
+        {
+            Mvx.Resolve<IMvxAndroidActivityLifetimeListener>().ActivityChanged -= Handle_ActivityChanged;
+
+            Load();
+        }
+
 
         #region Delegate
 

@@ -78,14 +78,23 @@ namespace AppRopio.Base.Core.ViewModels.Services
 
         #region Public
 
-        public void NavigateTo(string deeplink)
+        public async void NavigateTo(string deeplink)
         {
             if (!deeplink.IsNullOrEmtpy())
             {
                 deeplink.ParseDeeplink(out string urlScheme, out List<string> routing, out Dictionary<string, string> urlParameters);
 
                 if (LookupService.IsRegisteredDeeplink(urlScheme))
-                    MvxNavigationService.Navigate(LookupService.ResolveDeeplink(urlScheme), (IMvxBundle)new MvxBundle(urlParameters), (IMvxBundle)new MvxBundle(urlParameters));
+                {
+                    try
+                    {
+                        await MvxNavigationService.Navigate(LookupService.ResolveDeeplink(urlScheme), (IMvxBundle)new MvxBundle(urlParameters), (IMvxBundle)new MvxBundle(urlParameters));
+                    }
+                    catch (Exception ex)
+                    {
+                        MvxTrace.Error(ex.BuildAllMessagesAndStackTrace());
+                    } 
+                }
             }
         }
 
