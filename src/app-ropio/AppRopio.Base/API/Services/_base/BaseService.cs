@@ -36,7 +36,7 @@ namespace AppRopio.Base.API.Services
             _lazyTrace = new Lazy<IMvxTrace>(() => _trace ?? Mvx.Resolve<IMvxTrace>());
         }
 
-        protected BaseService(IConnectionService connectionService, IMvxTrace trace)
+        protected BaseService(IConnectionService connectionService, IMvxTrace trace) : this()
         {
             _connectionService = connectionService;
             _trace = trace;
