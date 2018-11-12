@@ -15,16 +15,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z7b-FM-G3i">
-                    <rect key="frame" x="8" y="0.0" width="304" height="24"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="24" id="DUr-ii-fdH"/>
-                    </constraints>
+                    <rect key="frame" x="8" y="0.0" width="304" height="560"/>
                 </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Z7b-FM-G3i" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="8" id="6ww-pi-ikk"/>
                 <constraint firstAttribute="trailing" secondItem="Z7b-FM-G3i" secondAttribute="trailing" constant="8" id="6wz-ew-cCH"/>
+                <constraint firstAttribute="bottom" secondItem="Z7b-FM-G3i" secondAttribute="bottom" constant="8" id="7oH-Ap-m4F"/>
                 <constraint firstItem="Z7b-FM-G3i" firstAttribute="centerX" secondItem="1" secondAttribute="centerX" id="PJy-Xq-7kA"/>
                 <constraint firstItem="Z7b-FM-G3i" firstAttribute="top" secondItem="1" secondAttribute="top" id="oqR-nt-8YN"/>
             </constraints>

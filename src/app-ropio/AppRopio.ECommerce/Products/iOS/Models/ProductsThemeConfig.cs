@@ -251,6 +251,9 @@ namespace AppRopio.ECommerce.Products.iOS.Models
         [JsonProperty("markButton")]
         public Button MarkButton { get; private set; }
 
+        [JsonProperty("addToCartHeight")]
+        public float AddToCartHeight { get; set; }
+
         public ProductCell()
         {
             Image = new Image();
@@ -281,6 +284,8 @@ namespace AppRopio.ECommerce.Products.iOS.Models
             Layer = null;
 
             Size = new Size();
+
+            AddToCartHeight = 32.0f;
         }
     }
 

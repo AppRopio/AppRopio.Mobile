@@ -148,7 +148,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog
                 var config = Mvx.Resolve<IProductConfigService>().Config;
                 if (config.Basket?.ItemAddToCart != null
                     && Mvx.Resolve<IViewLookupService>().IsRegistered(config.Basket?.ItemAddToCart.TypeName)) {
-                    height += 32.0f;
+                    height += ThemeConfig.Products.ProductCell.AddToCartHeight;
                 }
 
                 flowLayout.ItemSize = new CGSize(width, height);

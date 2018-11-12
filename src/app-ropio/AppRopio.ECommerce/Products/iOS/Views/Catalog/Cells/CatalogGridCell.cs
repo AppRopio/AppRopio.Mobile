@@ -62,7 +62,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
 
             SetupBadgesCollection(Badges);
 
-            SetupMarkButton(MarkButton, ThemeConfig.Products.ProductCell.MarkButton);
+            SetupMarkButton(MarkButton, cell.MarkButton);
 
             SetupBasketView();
 
@@ -116,7 +116,8 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
                 var basketView = ViewModel.BasketBlockViewModel == null ? null : Mvx.Resolve<IMvxIosViewCreator>().CreateView(ViewModel.BasketBlockViewModel) as UIView;
                 if (basketView != null)
                 {
-                    basketView.ChangeFrame(y: this.Frame.Size.Height - basketView.Frame.Size.Height, w: this.Frame.Size.Width);
+                    float height = ThemeConfig.Products.ProductCell.AddToCartHeight;
+                    basketView.ChangeFrame(y: this.Frame.Size.Height - height, w: this.Frame.Size.Width, h: height);
                     this.AddSubview(basketView);
                 }
             }
