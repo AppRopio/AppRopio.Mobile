@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using AppRopio.Base.Core.Services.ViewLookup;
+using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.Models.ValueConverters;
 using AppRopio.Base.iOS.UIExtentions;
 using AppRopio.Base.iOS.ViewSources;
@@ -188,6 +189,9 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Categories.StepByStep
                 BindCollectionView(_collectionView, set);
             }
 
+            BindSearchView(_searchView, set);
+            BindSearchButton(_searchButton, set);
+
             set.Apply();
         }
 
@@ -207,6 +211,8 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Categories.StepByStep
                 _tableView.RemoveFromSuperview();
                 SetupCollectionView(_collectionView);
             }
+            SetupSearchBar(_searchBar);
+            SetupStackView(_stackView);
         }
 
         protected override void CleanUp()
@@ -228,6 +234,26 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Categories.StepByStep
         }
 
         #endregion
+
+        protected virtual void SetupSearchBar(UISearchBar searchBar)
+        {
+            searchBar.SetupStyle(ThemeConfig.ContentSearch.SearchBar);
+        }
+
+        protected virtual void SetupStackView(UIStackView stackView)
+        {
+            stackView.LayoutMarginsRelativeArrangement = true;
+        }
+
+        protected virtual void BindSearchView(UIView searchView, MvxFluentBindingDescriptionSet<SSCategoriesViewController, ISSCategoriesViewModel> set)
+        {
+            set.Bind(searchView).For("Visibility").To(vm => vm.SearchBar).WithConversion("Visibility");
+        }
+
+        protected virtual void BindSearchButton(UIButton searchButton, MvxFluentBindingDescriptionSet<SSCategoriesViewController, ISSCategoriesViewModel> set)
+        {
+            set.Bind(searchButton).To(vm => vm.ShowSearchCommand);
+        }
     }
 }
 

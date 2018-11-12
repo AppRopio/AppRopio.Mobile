@@ -4,6 +4,8 @@ using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.Helpers;
 using AppRopio.Base.iOS.UIExtentions;
 using AppRopio.Base.iOS.Views;
+using AppRopio.ECommerce.Products.Core.Models;
+using AppRopio.ECommerce.Products.Core.Services;
 using AppRopio.ECommerce.Products.Core.ViewModels;
 using AppRopio.ECommerce.Products.iOS.Models;
 using AppRopio.ECommerce.Products.iOS.Services;
@@ -16,6 +18,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views
         where T : class, IProductsViewModel
     {
         protected virtual ProductsThemeConfig ThemeConfig { get { return Mvx.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
+        protected virtual ProductsConfig Config { get { return Mvx.Resolve<IProductConfigService>().Config; } }
 
         protected ProductsViewController()
         {
@@ -53,7 +56,8 @@ namespace AppRopio.ECommerce.Products.iOS.Views
 
         protected virtual void SetupRightBarButtonItems()
         {
-            if (ViewModel != null && ViewModel.SearchEnabled && ThemeConfig.NavBarSearch.Enabled)
+            if (ViewModel != null && ViewModel.SearchEnabled && ThemeConfig.NavBarSearch.Enabled
+                && !ViewModel.SearchBar && Config.SearchType != SearchType.Disabled)
             {
                 var searchButton = new UIBarButtonItem(
                     ImageCache.GetImage(ThemeConfig.NavBarSearch.Image.Path),

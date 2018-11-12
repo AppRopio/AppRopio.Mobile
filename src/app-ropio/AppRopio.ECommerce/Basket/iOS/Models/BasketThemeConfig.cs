@@ -14,6 +14,9 @@ namespace AppRopio.ECommerce.Basket.iOS.Models
         [JsonProperty("productCard")]
         public BasketProductCard ProductCard { get; private set; }
 
+        [JsonProperty("catalogItem")]
+        public BasketCatalogItem CatalogItem { get; private set; }
+
         [JsonProperty("basket")]
         public Basket Basket { get; private set; }
 
@@ -27,6 +30,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Models
         {
             CartIndicator = new BasketCartIndicator();
             ProductCard = new BasketProductCard();
+            CatalogItem = new BasketCatalogItem();
             Basket = new Basket();
             Order = new Order();
             Thanks = new Thanks();
@@ -107,6 +111,17 @@ namespace AppRopio.ECommerce.Basket.iOS.Models
 
             IncrementButton = (Button)Theme.ControlPalette.Button.Icon.Clone();
             DecrementButton = (Button)Theme.ControlPalette.Button.Icon.Clone();
+        }
+    }
+
+    public class BasketCatalogItem : View
+    {
+        [JsonProperty("buyButton")]
+        public Button BuyButton { get; private set; }
+
+        public BasketCatalogItem()
+        {
+            BuyButton = (Button)Theme.ControlPalette.Button.Base.Clone();
         }
     }
 

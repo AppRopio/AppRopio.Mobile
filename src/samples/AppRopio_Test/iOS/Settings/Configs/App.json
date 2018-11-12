@@ -7,5 +7,6 @@
     "errorWhenConnectionFailed":"Connection failed",
     "errorWhenRequestCancelled":"Request cancelled",
     "host":"http://api.appropio.com/v2/",
-    "requestTimeoutInSeconds":30
+    "requestTimeoutInSeconds": 30,
+    "preciseCurrency": true
 }
