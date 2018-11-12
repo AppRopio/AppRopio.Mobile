@@ -19,7 +19,7 @@ namespace AppRopio.Base.Droid.Services.Device
 
         public string AppVersion => $"{GetVersionName()} {GetVersionCode()}";
 
-        public string DeviceInfo => JsonConvert.SerializeObject(new { Platform = Platform.ToString(), Token, OSVersion, AppVersion, PackageName, CurrentCulture = CultureInfo.CurrentCulture.ToString() });;
+        public string DeviceInfo => JsonConvert.SerializeObject(new { Platform = Platform.ToString(), Token, OSVersion, AppVersion, PackageName, CurrentCulture = CultureInfo.CurrentCulture.ToString() });
 
         private static string GetVersionName()
         {
