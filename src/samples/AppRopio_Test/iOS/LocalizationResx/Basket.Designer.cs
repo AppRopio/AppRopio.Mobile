@@ -287,6 +287,12 @@ namespace AppRopio_Test.LocalizationResx {
             }
         }
         
+        internal static string BasketCatalogCard_AddToBasket {
+            get {
+                return ResourceManager.GetString("BasketCatalogCard_AddToBasket", resourceCulture);
+            }
+        }
+        
         internal static string Error_Delivery_Text {
             get {
                 return ResourceManager.GetString("Error_Delivery_Text", resourceCulture);

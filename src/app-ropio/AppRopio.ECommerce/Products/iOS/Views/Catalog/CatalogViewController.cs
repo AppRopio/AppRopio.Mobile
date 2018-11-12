@@ -50,6 +50,45 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog
             ReleaseDesignerOutlets();
             base.CleanUp();
         }
+
+        protected virtual void SetupSearchBar(UISearchBar searchBar)
+        {
+            searchBar.SetupStyle(ThemeConfig.ContentSearch.SearchBar);
+        }
+
+        protected virtual void SetupStackView(UIStackView stackView)
+        {
+            stackView.LayoutMarginsRelativeArrangement = true;
+        }
+
+        protected override void InitializeControls()
+        {
+            base.InitializeControls();
+            SetupSearchBar(_searchBar);
+            SetupStackView(_stackView);
+        }
+
+        protected virtual void BindSearchView(UIView searchView, MvxFluentBindingDescriptionSet<CatalogViewController, ICatalogViewModel> set)
+        {
+            set.Bind(searchView).For("Visibility").To(vm => vm.SearchBar).WithConversion("Visibility");
+        }
+
+        protected virtual void BindSearchButton(UIButton searchButton, MvxFluentBindingDescriptionSet<CatalogViewController, ICatalogViewModel> set)
+        {
+            set.Bind(searchButton).To(vm => vm.ShowSearchCommand);
+        }
+
+        protected override void BindControls()
+        {
+            base.BindControls();
+
+            var set = this.CreateBindingSet<CatalogViewController, ICatalogViewModel>();
+
+            BindSearchView(_searchView, set);
+            BindSearchButton(_searchButton, set);
+
+            set.Apply();
+        }
     }
 
     public abstract class CatalogViewController<T> : ProductsViewController<T>
@@ -99,19 +138,25 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog
             {
                 collectionView.RegisterNibForCell(CatalogGridCell.Nib, CatalogGridCell.Key);
 
-                var width = ThemeConfig.Products.ProductCell.Size.Width.HasValue ?
-                                        ThemeConfig.Products.ProductCell.Size.Width.Value :
-                                        (DeviceInfo.ScreenWidth - flowLayout.SectionInset.Left - flowLayout.SectionInset.Right - flowLayout.MinimumInteritemSpacing) / 2;
+                var width = ThemeConfig.Products.ProductCell.Size.Width
+                    ?? (DeviceInfo.ScreenWidth - flowLayout.SectionInset.Left - flowLayout.SectionInset.Right - flowLayout.MinimumInteritemSpacing) / 2;
 
-                flowLayout.ItemSize = new CoreGraphics.CGSize(
-                    width,
-                    ThemeConfig.Products.ProductCell.Size.Height.HasValue ?
+                var height = (ThemeConfig.Products.ProductCell.Size.Height.HasValue ?
                         (nfloat)ThemeConfig.Products.ProductCell.Size.Height :
-                        width * 1.78
-                );
+                        width * 1.78);
+
+                var config = Mvx.Resolve<IProductConfigService>().Config;
+                if (config.Basket?.ItemAddToCart != null
+                    && Mvx.Resolve<IViewLookupService>().IsRegistered(config.Basket?.ItemAddToCart.TypeName)) {
+                    height += ThemeConfig.Products.ProductCell.AddToCartHeight;
+                }
+
+                flowLayout.ItemSize = new CGSize(width, height);
             }
             else
             {
+                //TODO: adjust size of the list cell when adding Add To Card button if necessarily
+
                 collectionView.RegisterNibForCell(CatalogListCell.Nib, CatalogListCell.Key);
 
                 var width = DeviceInfo.ScreenWidth - flowLayout.SectionInset.Left - flowLayout.SectionInset.Right - flowLayout.MinimumInteritemSpacing;

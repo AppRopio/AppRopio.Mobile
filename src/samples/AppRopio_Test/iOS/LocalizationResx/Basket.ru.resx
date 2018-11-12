@@ -183,6 +183,10 @@
         <value>Готово</value>
     </data>
     <data
+        name="BasketCatalogCard_AddToBasket">
+        <value>В КОРЗИНУ</value>
+    </data>
+    <data
         name="Error_Delivery_Text">
         <value>HI HI HIH IhihHIi</value>
     </data>

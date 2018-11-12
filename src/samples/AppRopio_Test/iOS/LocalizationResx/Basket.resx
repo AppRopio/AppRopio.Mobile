@@ -178,6 +178,10 @@ will be stored.</value>
         name="BasketProductCard_Done">
         <value>Done</value>
     </data>
+    <data
+        name="BasketCatalogCard_AddToBasket">
+        <value>ADD TO CART</value>
+    </data>
      <data
         name="Error_Delivery_Text">
         <value>Hello world</value>
