@@ -16,8 +16,6 @@ namespace AppRopio.Base.Droid
 {
     public class PushConstants
     {
-        public const string PUSH_TOKEN_KEY = nameof(PushConstants.PUSH_TOKEN_KEY);
-
         public const string PUSH_DEEPLINK_KEY = nameof(PushConstants.PUSH_DEEPLINK_KEY);
 
         public const string PUSH_TITLE_KEY = nameof(PushConstants.PUSH_TITLE_KEY);
