@@ -8,6 +8,9 @@ using Android.Util;
 using Android.Views;
 using Android.Views.InputMethods;
 using Android.Widget;
+using AppRopio.Base.Core.Extentions;
+using AppRopio.Base.Core.Services.Push;
+using AppRopio.Base.Core.Services.ViewModelLookup;
 using AppRopio.Base.Droid.Navigation;
 using MvvmCross.Binding.Droid.BindingContext;
 using MvvmCross.Core.ViewModels;
@@ -20,7 +23,6 @@ using Plugin.Permissions.Abstractions;
 
 namespace AppRopio.Base.Droid.Views
 {
-    [Activity]
     public abstract class CommonActivity<TViewModel> : MvxAppCompatActivity<TViewModel>, ICommonActivity
         where TViewModel : class, IMvxViewModel
     {
@@ -72,7 +74,7 @@ namespace AppRopio.Base.Droid.Views
         private View CreateView()
         {
             //View = Inflate(LayoutId);
-            
+
             View = this.BindingInflate(LayoutId, null);
 
             return View;
@@ -132,23 +134,7 @@ namespace AppRopio.Base.Droid.Views
         {
             //FacebookSdk.SdkInitialize(ApplicationContext);
 
-            SetupPushClient();
-
             InitStartPage();
-        }
-
-        protected virtual void SetupPushClient()
-        {
-            try
-            {
-                //PushClient.CheckDevice(this);
-                //PushClient.CheckManifest(this);
-                //PushClient.Register(this, PushHandlerBroadcastReceiver.SENDER_IDS);
-            }
-            catch
-            {
-
-            }
         }
 
         protected virtual void InitStartPage()
@@ -162,7 +148,7 @@ namespace AppRopio.Base.Droid.Views
             int resourceId = Resources.GetIdentifier("status_bar_height", "dimen", "android");
             if (resourceId > 0)
                 result = Resources.GetDimensionPixelSize(resourceId);
-            
+
             return result;
         }
 
@@ -174,7 +160,7 @@ namespace AppRopio.Base.Droid.Views
 
             if (_notifyIntent == null)
                 _notifyIntent = Intent;
-            
+
             SetContentView(View ?? CreateView());
 
             SetupBackground();
@@ -192,29 +178,50 @@ namespace AppRopio.Base.Droid.Views
         protected override void OnResume()
         {
             IsActive = true;
+
             base.OnResume();
 
-            //if (_notifyIntent != null
-            //  && _notifyIntent.HasExtra(PushHandlerService.NOTIFICATION_REMOTE_KEY)
-            //  && _notifyIntent.HasExtra(PushHandlerService.NOTIFICATION_ID_KEY))
-            //{
-            //  var notifitationId = _notifyIntent.GetStringExtra(PushHandlerService.NOTIFICATION_ID_KEY);
-            //  if (notifitationId.IsNullOrEmtpy())
-            //      return;
-            //  var notifitationMsg = string.Empty;
-            //  if (_notifyIntent.HasExtra(PushHandlerService.NOTIFICATION_TEXT_KEY))
-            //  {
-            //      notifitationMsg = _notifyIntent.GetStringExtra(PushHandlerService.NOTIFICATION_TEXT_KEY);
-            //  }
-            //  var messasge = new PushNotificationMessage(this)
-            //  {
-            //      Id = notifitationId,
-            //      Text = notifitationMsg,
-            //      ShouldDisplay = false,
-            //      AppLaunchedByNotification = false
-            //  };
-            //  Mvx.Resolve<IMvxMessenger>().Publish(messasge);
-            //}
+            HandlePushNotificationIntent();
+        }
+
+        protected virtual void HandlePushNotificationIntent()
+        {
+            if (_notifyIntent != null)
+            {
+                Log.Verbose(PackageName, $"Notify Intent");
+
+                System.Diagnostics.Debug.WriteLine(message: $"Notify Intent", category: PackageName);
+
+                if (_notifyIntent.HasExtra(PushConstants.PUSH_DEEPLINK_KEY))
+                {
+                    var deeplink = _notifyIntent.GetStringExtra(PushConstants.PUSH_DEEPLINK_KEY);
+
+                    Log.Verbose(PackageName, $"Try navigate to deeplink");
+
+                    System.Diagnostics.Debug.WriteLine(message: $"Try navigate to deeplink {deeplink}", category: PackageName);
+
+                    Mvx.CallbackWhenRegistered<IViewModelLookupService>(service => NavigateToDeeplinkFromPush(service, deeplink));
+                }
+            }
+
+            _notifyIntent = null;
+        }
+
+        protected virtual void NavigateToDeeplinkFromPush(IViewModelLookupService vmLS, string deeplink)
+        {
+            deeplink.ParseDeeplink(out var urlScheme, out var routing, out var urlParameters);
+
+            if (vmLS.IsRegisteredDeeplink(urlScheme))
+            {
+                Log.Verbose(PackageName, $"Deeplink was registered");
+
+                System.Diagnostics.Debug.WriteLine(message: $"Deeplink was registered", category: PackageName);
+
+                Mvx.CallbackWhenRegistered<IPushNotificationsService>(service =>
+                {
+                    service.NavigateTo(deeplink: deeplink);
+                });
+            }
         }
 
         protected override void OnSaveInstanceState(Bundle outState)
@@ -232,6 +239,7 @@ namespace AppRopio.Base.Droid.Views
         protected override void OnNewIntent(Intent intent)
         {
             _notifyIntent = intent;
+
             base.OnNewIntent(intent);
         }
 

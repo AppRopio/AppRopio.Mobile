@@ -17,31 +17,35 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Reflection;
-using MvvmCross.Platform.IoC;
 
 namespace AppRopio.Base.Core.Services.Localization
 {
     public class LocalizationService : ILocalizationService
     {
-        protected List<Type> Resources { get; } = new List<Type>();
+        private const string LOCAL_REPO_NAME = "LocalizationResx";
+
+        protected IEnumerable<TypeInfo> Resources { get; private set; }
 
         public LocalizationService(Assembly[] assemblies)
         {
-            var resources = from assembly in assemblies
-                            from type in assembly.ExceptionSafeGetTypes()
-                            where type.AssemblyQualifiedName.Contains("LocalizationResx")
-                            select type;
-
-            Resources = resources.ToList();
+            Resources = assemblies.SelectMany(assembly => assembly.DefinedTypes)
+                                  .Where(typeInfo => typeInfo.AssemblyQualifiedName.Contains(LOCAL_REPO_NAME));
         }
 
         public void SetCurrentUICulture(CultureInfo currentUiCulture)
         {
-            Resources.ForEach(resource =>
+            try
             {
-                var propertyInfo = resource.GetTypeInfo().GetDeclaredProperty("Culture");
-                propertyInfo?.SetValue(resource, currentUiCulture);
-            });
+                Resources.ForEach(resource =>
+                {
+                    var propertyInfo = resource.GetDeclaredProperty("Culture");
+                    propertyInfo?.SetValue(resource, currentUiCulture);
+                });
+            }
+            catch (ReflectionTypeLoadException)
+            {
+
+            }
         }
 
         public string GetLocalizableString(string resourceName, string propertyName)
@@ -51,9 +55,8 @@ namespace AppRopio.Base.Core.Services.Localization
             var resource = Resources.FirstOrDefault(x => x.Name.StartsWith(resourceName, StringComparison.OrdinalIgnoreCase));
             if (resource != null)
             {
-                var resourceManager = resource.GetTypeInfo()
-                                 .GetDeclaredProperty("ResourceManager")
-                                 .GetValue(resource) as System.Resources.ResourceManager;
+                var resourceManager = resource.GetDeclaredProperty("ResourceManager")
+                                              .GetValue(resource) as System.Resources.ResourceManager;
 
                 result = resourceManager.GetString(propertyName, AppSettings.SettingsCulture);
             }
@@ -61,6 +64,6 @@ namespace AppRopio.Base.Core.Services.Localization
             return result;
         }
 
-        public void RegisterRecourceType(Type resourceType) => Resources.Add(resourceType);
+        public void RegisterRecourceType(Type resourceType) => Resources = new List<TypeInfo>(Resources) { resourceType.GetTypeInfo() };
     }
 }

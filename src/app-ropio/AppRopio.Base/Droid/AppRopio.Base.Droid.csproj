@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>AppRopio.Base.Droid</RootNamespace>
     <AssemblyName>AppRopio.Base.Droid</AssemblyName>
-    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
@@ -279,6 +279,7 @@
     <Compile Include="Controls\ARWebView.cs" />
     <Compile Include="Converters\ResxValueConverter.cs" />
     <Compile Include="Services\Launcher\LauncherService.cs" />
+    <Compile Include="PushConstants.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
