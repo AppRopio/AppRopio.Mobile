@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>AppRopio.Test.Droid</RootNamespace>
     <AssemblyName>AppRopio.Test.Droid</AssemblyName>
-    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
@@ -31,6 +31,8 @@
     <AndroidSupportedAbis>arm64-v8a;armeabi;armeabi-v7a;x86;x86_64</AndroidSupportedAbis>
     <AndroidUseSharedRuntime>true</AndroidUseSharedRuntime>
     <AndroidStoreUncompressedFileExtensions>.dll</AndroidStoreUncompressedFileExtensions>
+    <AndroidEnableMultiDex>false</AndroidEnableMultiDex>
+    <EmbedAssembliesIntoApk>false</EmbedAssembliesIntoApk>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -285,6 +287,21 @@
     </Reference>
     <Reference Include="MvvmCross.Droid.Support.Design">
       <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Droid.Support.Design.5.7.0\lib\MonoAndroid70\MvvmCross.Droid.Support.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Firebase.Common">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Firebase.Common.60.1142.1\lib\MonoAndroid80\Xamarin.Firebase.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Firebase.Iid">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Firebase.Iid.60.1142.1\lib\MonoAndroid80\Xamarin.Firebase.Iid.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Firebase.Analytics.Impl">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Firebase.Analytics.Impl.60.1142.1\lib\MonoAndroid80\Xamarin.Firebase.Analytics.Impl.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Firebase.Analytics">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Firebase.Analytics.60.1142.1\lib\MonoAndroid80\Xamarin.Firebase.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Firebase.Messaging">
+      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Firebase.Messaging.60.1142.1\lib\MonoAndroid80\Xamarin.Firebase.Messaging.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -933,6 +950,30 @@
       <Project>{4FBAA060-C9CD-4B0B-B92E-B162869EFF56}</Project>
       <Name>AppRopio.Payments.CloudPayments.Droid</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Droid\FCM\AppRopio.Base.Droid.FCM.csproj">
+      <Project>{5D134578-1CBB-447C-BF6F-DE8B6D4497DB}</Project>
+      <Name>AppRopio.Base.Droid.FCM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Auth\API\AppRopio.Base.Auth.API.csproj">
+      <Project>{4A505153-08D4-4269-B753-21EEC043FDD4}</Project>
+      <Name>AppRopio.Base.Auth.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Auth\Core\AppRopio.Base.Auth.Core.csproj">
+      <Project>{717297CF-D3BD-498C-978A-C565C7E447D5}</Project>
+      <Name>AppRopio.Base.Auth.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Auth\Droid\AppRopio.Base.Auth.Droid.csproj">
+      <Project>{E9DCDB65-4EC2-471A-B639-F1D9A85154FC}</Project>
+      <Name>AppRopio.Base.Auth.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Payments\Best2Pay\API\AppRopio.Payments.Best2Pay.API.csproj">
+      <Project>{6A0E8A43-7E69-464B-9FBD-F0570B34DFE2}</Project>
+      <Name>AppRopio.Payments.Best2Pay.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Payments\Best2Pay\Core\AppRopio.Payments.Best2Pay.Core.csproj">
+      <Project>{3753EB62-6E31-4BD4-B153-93C1FDDA211F}</Project>
+      <Name>AppRopio.Payments.Best2Pay.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="LocalizationResx\Auth.resx">
@@ -1087,4 +1128,9 @@
   <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.Animated.Vector.Drawable.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Animated.Vector.Drawable.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.Animated.Vector.Drawable.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Animated.Vector.Drawable.targets')" />
   <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.v7.AppCompat.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.v7.AppCompat.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.v7.AppCompat.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.v7.AppCompat.targets')" />
   <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.Design.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Design.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Android.Support.Design.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Design.targets')" />
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Firebase.Common.60.1142.1\build\MonoAndroid80\Xamarin.Firebase.Common.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Firebase.Common.60.1142.1\build\MonoAndroid80\Xamarin.Firebase.Common.targets')" />
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Firebase.Iid.60.1142.1\build\MonoAndroid80\Xamarin.Firebase.Iid.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Firebase.Iid.60.1142.1\build\MonoAndroid80\Xamarin.Firebase.Iid.targets')" />
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Firebase.Analytics.Impl.60.1142.1\build\MonoAndroid80\Xamarin.Firebase.Analytics.Impl.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Firebase.Analytics.Impl.60.1142.1\build\MonoAndroid80\Xamarin.Firebase.Analytics.Impl.targets')" />
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Firebase.Analytics.60.1142.1\build\MonoAndroid80\Xamarin.Firebase.Analytics.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Firebase.Analytics.60.1142.1\build\MonoAndroid80\Xamarin.Firebase.Analytics.targets')" />
+  <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Firebase.Messaging.60.1142.1\build\MonoAndroid80\Xamarin.Firebase.Messaging.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Firebase.Messaging.60.1142.1\build\MonoAndroid80\Xamarin.Firebase.Messaging.targets')" />
 </Project>

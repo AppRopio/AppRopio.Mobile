@@ -297,6 +297,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppRopio.Payments.CloudPaym
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppRopio.Payments.Droid", "..\AppRopio.Payments\Base\Droid\AppRopio.Payments.Droid.csproj", "{5263C41C-A81D-4A87-BABD-09F1FE76A271}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppRopio.Base.Droid.FCM", "..\AppRopio.Base\Droid\FCM\AppRopio.Base.Droid.FCM.csproj", "{5D134578-1CBB-447C-BF6F-DE8B6D4497DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2185,6 +2187,20 @@ Global
 		{5263C41C-A81D-4A87-BABD-09F1FE76A271}.GooglePlay|Any CPU.Build.0 = Debug|Any CPU
 		{5263C41C-A81D-4A87-BABD-09F1FE76A271}.BuildServer|Any CPU.ActiveCfg = Debug|Any CPU
 		{5263C41C-A81D-4A87-BABD-09F1FE76A271}.BuildServer|Any CPU.Build.0 = Debug|Any CPU
+		{5D134578-1CBB-447C-BF6F-DE8B6D4497DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D134578-1CBB-447C-BF6F-DE8B6D4497DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D134578-1CBB-447C-BF6F-DE8B6D4497DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D134578-1CBB-447C-BF6F-DE8B6D4497DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D134578-1CBB-447C-BF6F-DE8B6D4497DB}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{5D134578-1CBB-447C-BF6F-DE8B6D4497DB}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{5D134578-1CBB-447C-BF6F-DE8B6D4497DB}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{5D134578-1CBB-447C-BF6F-DE8B6D4497DB}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{5D134578-1CBB-447C-BF6F-DE8B6D4497DB}.DebugReleaseServices|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{5D134578-1CBB-447C-BF6F-DE8B6D4497DB}.AppStore|iPhone.ActiveCfg = Debug|Any CPU
+		{5D134578-1CBB-447C-BF6F-DE8B6D4497DB}.GooglePlay|Any CPU.ActiveCfg = Release|Any CPU
+		{5D134578-1CBB-447C-BF6F-DE8B6D4497DB}.GooglePlay|Any CPU.Build.0 = Release|Any CPU
+		{5D134578-1CBB-447C-BF6F-DE8B6D4497DB}.BuildServer|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D134578-1CBB-447C-BF6F-DE8B6D4497DB}.BuildServer|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{52D0AC04-1D74-44EA-8BD5-212EBE5DD5B3} = {8B388A7A-B9EB-4DD3-B52F-BA61132BC778}
@@ -2333,6 +2349,7 @@ Global
 		{AACFF13E-25CE-4264-9BE8-7873B6E403C5} = {5ED6FE94-B3D5-48E7-8E20-68F60C961F70}
 		{4FBAA060-C9CD-4B0B-B92E-B162869EFF56} = {DD0FE64A-93BC-45DC-8735-7D5B6EDA6077}
 		{5263C41C-A81D-4A87-BABD-09F1FE76A271} = {A0E67762-7A5B-4765-9727-C29DE42EA6B7}
+		{5D134578-1CBB-447C-BF6F-DE8B6D4497DB} = {9B6A129F-A7AD-41A7-B5BF-27E53A5530EA}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		Policies = $0
