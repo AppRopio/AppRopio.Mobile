@@ -6,7 +6,7 @@
         }
     },
     "categories": {
-        "collectionType": 2,
+        "collectionType": 1,
         "categoryCell": {
             "icon": {
                 "path": "Images/Products/empty_icon.png",
@@ -15,10 +15,10 @@
             "title": {
                 "font": {
                     "ref": "@font/medium",
-                    "size": 12
+                    "size": 14
                 },
-                "textTransform": 1,
-                "textAlignment": 1,
+                "textTransform": 0,
+                "textAlignment": 0,
                 "textColor": { "HEX": "000000" },
                 "highlightedTextColor": { "HEX": "FFFFFF" }
             },
