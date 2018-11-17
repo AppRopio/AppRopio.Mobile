@@ -1,7 +1,9 @@
-﻿using Android.App;
+﻿using System.Globalization;
+using Android.App;
 using Android.OS;
 using AppRopio.Base.Core.Models.Device;
 using AppRopio.Base.Core.Services.Device;
+using Newtonsoft.Json;
 
 namespace AppRopio.Base.Droid.Services.Device
 {
@@ -17,7 +19,7 @@ namespace AppRopio.Base.Droid.Services.Device
 
         public string AppVersion => $"{GetVersionName()} {GetVersionCode()}";
 
-        public string DeviceInfo => $"{Build.Device} {Build.Model}";
+        public string DeviceInfo => JsonConvert.SerializeObject(new { Platform = Platform.ToString(), Token, OSVersion, AppVersion, PackageName, CurrentCulture = CultureInfo.CurrentCulture.ToString() });
 
         private static string GetVersionName()
         {

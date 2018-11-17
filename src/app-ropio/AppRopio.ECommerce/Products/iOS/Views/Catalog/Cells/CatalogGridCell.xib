@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" id="cZE-iV-UFb" customClass="CatalogGridCell">
-            <rect key="frame" x="0.0" y="0.0" width="148" height="250"/>
+            <rect key="frame" x="0.0" y="0.0" width="148" height="263"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="148" height="250"/>
+                <rect key="frame" x="0.0" y="0.0" width="148" height="263"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G6d-pv-M26">
@@ -26,13 +24,16 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3GA-xa-lYj" customClass="ARLabel">
-                        <rect key="frame" x="8" y="221" width="132" height="17"/>
+                        <rect key="frame" x="8" y="238" width="132" height="0.0"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xbu-os-xHf" customClass="ARLabel">
-                        <rect key="frame" x="8" y="200" width="132" height="17"/>
+                        <rect key="frame" x="8" y="217" width="132" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="17" id="UJF-JU-HOu"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.70980392156862748" green="0.70980392156862748" blue="0.74901960784313726" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -58,10 +59,12 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                     </collectionView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Bu-GV-Ibu" customClass="ARLabel">
-                        <rect key="frame" x="8" y="162" width="132" height="34"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Bu-GV-Ibu" customClass="ARLabel">
+                        <rect key="frame" x="8" y="162" width="132" height="33.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="17" id="iJr-ci-2zD"/>
+                        </constraints>
                         <string key="text">Рубашка
-«Камелот» Рубашка
 «Камелот»</string>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.20784313725490194" green="0.2196078431372549" blue="0.23137254901960785" alpha="1" colorSpace="calibratedRGB"/>
@@ -72,7 +75,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="4Bu-GV-Ibu" secondAttribute="trailing" constant="8" id="1VL-YR-Rpr"/>
-                <constraint firstItem="4Bu-GV-Ibu" firstAttribute="top" relation="greaterThanOrEqual" secondItem="G6d-pv-M26" secondAttribute="bottom" priority="750" constant="14" id="1eV-vd-y90"/>
+                <constraint firstItem="4Bu-GV-Ibu" firstAttribute="top" secondItem="G6d-pv-M26" secondAttribute="bottom" constant="14" id="1eV-vd-y90"/>
                 <constraint firstItem="UOV-m6-8Co" firstAttribute="bottom" secondItem="G6d-pv-M26" secondAttribute="bottom" constant="12" id="2sx-Nf-JW2"/>
                 <constraint firstAttribute="trailing" secondItem="voj-oo-G3q" secondAttribute="trailing" id="5Vq-Se-PeK"/>
                 <constraint firstItem="UOV-m6-8Co" firstAttribute="leading" secondItem="cZE-iV-UFb" secondAttribute="leading" constant="8" id="5ru-sp-uy2"/>
@@ -82,13 +85,14 @@
                 <constraint firstItem="G6d-pv-M26" firstAttribute="top" secondItem="cZE-iV-UFb" secondAttribute="top" id="Q98-KB-jTM"/>
                 <constraint firstItem="voj-oo-G3q" firstAttribute="top" secondItem="cZE-iV-UFb" secondAttribute="top" id="X6e-AV-0k6"/>
                 <constraint firstAttribute="trailing" secondItem="G6d-pv-M26" secondAttribute="trailing" id="YqP-0K-KXU"/>
-                <constraint firstAttribute="bottom" secondItem="3GA-xa-lYj" secondAttribute="bottom" constant="12" id="cJT-6c-USi"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="3GA-xa-lYj" secondAttribute="bottom" priority="750" constant="8" id="cJT-6c-USi"/>
                 <constraint firstItem="4Bu-GV-Ibu" firstAttribute="leading" secondItem="cZE-iV-UFb" secondAttribute="leading" constant="8" id="cNU-Ak-iWf"/>
-                <constraint firstItem="Xbu-os-xHf" firstAttribute="top" secondItem="4Bu-GV-Ibu" secondAttribute="bottom" constant="4" id="fv1-dd-bj9"/>
+                <constraint firstItem="Xbu-os-xHf" firstAttribute="top" secondItem="G6d-pv-M26" secondAttribute="bottom" constant="69" id="fv1-dd-bj9"/>
                 <constraint firstItem="3GA-xa-lYj" firstAttribute="top" secondItem="Xbu-os-xHf" secondAttribute="bottom" constant="4" id="kny-z3-xRf"/>
                 <constraint firstItem="Xbu-os-xHf" firstAttribute="leading" secondItem="cZE-iV-UFb" secondAttribute="leading" constant="8" id="n7Z-3d-ged"/>
                 <constraint firstAttribute="trailing" secondItem="3GA-xa-lYj" secondAttribute="trailing" constant="8" id="t3G-RD-LDB"/>
             </constraints>
+            <size key="customSize" width="148" height="302"/>
             <connections>
                 <outlet property="_badges" destination="UOV-m6-8Co" id="uS9-Ln-s0r"/>
                 <outlet property="_badgesWidthContraint" destination="4DB-cw-APi" id="wlA-9o-vz3"/>
@@ -98,6 +102,7 @@
                 <outlet property="_oldPrice" destination="Xbu-os-xHf" id="wVf-1h-fbP"/>
                 <outlet property="_price" destination="3GA-xa-lYj" id="rlR-e7-FoX"/>
             </connections>
+            <point key="canvasLocation" x="129.375" y="182.21830985915494"/>
         </collectionViewCell>
     </objects>
 </document>

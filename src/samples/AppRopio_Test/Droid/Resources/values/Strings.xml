@@ -2,4 +2,6 @@
 <resources>
 	<string
 		name="app_color_name">AppRopio</string>
+    <string
+        name="package_name">com.notissimus.AppRopio</string>
 </resources>

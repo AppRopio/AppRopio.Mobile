@@ -12,7 +12,6 @@ using MvvmCross.Core.ViewModels;
 
 namespace AppRopio.Navigation.Menu.Droid.Views
 {
-    [Activity]
     public abstract class BaseDrawerActivity<TViewModel> : CommonActivity<TViewModel>, View.IOnClickListener
         where TViewModel : class, IMvxViewModel
     {
