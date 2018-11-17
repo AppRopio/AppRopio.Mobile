@@ -24,7 +24,7 @@
         android:icon       ="@drawable/ic_launcher_APP">
         <meta-data
             android:name ="com.google.android.geo.API_KEY"
-            android:value="AIzaSyD69ICSDljFC6HgagkKQJiphay9lVjbDc0" />
+            android:value="%api_key%" />
         <receiver
             android:name    ="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"
             android:exported="false" />
