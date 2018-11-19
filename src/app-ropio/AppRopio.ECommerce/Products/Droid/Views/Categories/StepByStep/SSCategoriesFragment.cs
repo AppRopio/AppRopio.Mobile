@@ -1,19 +1,23 @@
 ﻿using System;
 using System.Collections;
 using Android.Support.V7.Widget;
+using Android.Util;
 using Android.Views;
 using AppRopio.Base.Droid.Adapters;
 using AppRopio.Base.Droid.Controls;
+using AppRopio.ECommerce.Products.Core.Models;
 using AppRopio.ECommerce.Products.Core.ViewModels.Categories;
 using AppRopio.ECommerce.Products.Core.ViewModels.Categories.Items;
-using MvvmCross.Droid.Support.V7.RecyclerView;
 using MvvmCross.Binding.Droid.BindingContext;
+using MvvmCross.Droid.Support.V7.RecyclerView;
 
 namespace AppRopio.ECommerce.Products.Droid.Views.Categories.StepByStep
 {
     public class SSCategoriesFragment : ProductsFragment<ISSCategoriesViewModel>
     {
         private MvxRecyclerView _recyclerView;
+
+        protected CollectionType CollectionType { get; set; }
 
         public SSCategoriesFragment()
             : base(Resource.Layout.app_products_sscategories)
@@ -47,6 +51,19 @@ namespace AppRopio.ECommerce.Products.Droid.Views.Categories.StepByStep
             };
         }
 
+        protected virtual void SetupLayoutManager(RecyclerView recyclerView)
+        {
+            if (CollectionType == CollectionType.Grid)
+            {
+                var gridLayoutManager = new GridLayoutManager(Context, 2, GridLayoutManager.Vertical, false);
+                gridLayoutManager.SetSpanSizeLookup(new CategoriesSpanSizeLookup(gridLayoutManager, ViewModel));
+
+                recyclerView.SetLayoutManager(gridLayoutManager);
+            }
+            else
+                recyclerView.SetLayoutManager(new LinearLayoutManager(Context, LinearLayoutManager.Vertical, false));
+        }
+
         protected virtual IEnumerable GetInnerItems(object item)
         {
             return new[] { item };
@@ -54,7 +71,7 @@ namespace AppRopio.ECommerce.Products.Droid.Views.Categories.StepByStep
 
         protected virtual IARFlatGroupTemplateSelector SetupTemplateSelector()
         {
-            return new CategoriesTemplateSelector();
+            return new CategoriesTemplateSelector(CollectionType);
         }
 
         protected virtual bool CheckSectionHasHeader(object arg)
@@ -108,6 +125,11 @@ namespace AppRopio.ECommerce.Products.Droid.Views.Categories.StepByStep
         {
             base.OnViewCreated(view, savedInstanceState);
 
+            var listTypeValue = new TypedValue();
+            Activity.Theme.ResolveAttribute(Resource.Attribute.app_products_categories_collectionType, listTypeValue, false);
+
+            CollectionType = (CollectionType)listTypeValue.Data;
+
             _recyclerView = view.FindViewById<MvxRecyclerView>(Resource.Id.app_products_sscategories_items);
             SetupRecyclerView(view, _recyclerView);
 
@@ -119,6 +141,23 @@ namespace AppRopio.ECommerce.Products.Droid.Views.Categories.StepByStep
             ViewModel.PropertyChanged -= ViewModel_PropertyChanged;
 
             base.OnDestroy();
+        }
+    }
+
+    public class CategoriesSpanSizeLookup : GridLayoutManager.SpanSizeLookup
+    {
+        private GridLayoutManager _layoutManager;
+//        private ISSCategoriesViewModel _viewModel;
+
+        public CategoriesSpanSizeLookup(GridLayoutManager layoutManager, ISSCategoriesViewModel viewModel)
+        {
+            _layoutManager = layoutManager;
+//            _viewModel = viewModel;
+        }
+        //TODO: count proper span size
+        public override int GetSpanSize(int position)
+        {
+            return _layoutManager.SpanCount;// (position == 0 && _viewModel.HeaderVm != null) ? _layoutManager.SpanCount : 1;
         }
     }
 }

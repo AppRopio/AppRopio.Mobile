@@ -1,7 +1,7 @@
 ﻿{
     "categoriesType": 1,
     "productCardNavigationType": 1,
-    "searchType": 3,
+    "searchType": 1,
     "basket": {
         "addToCart": {
             "typeName": "AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard.IBasketProductCardViewModel",

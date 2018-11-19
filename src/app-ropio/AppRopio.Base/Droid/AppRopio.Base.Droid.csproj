@@ -280,6 +280,7 @@
     <Compile Include="Converters\ResxValueConverter.cs" />
     <Compile Include="Services\Launcher\LauncherService.cs" />
     <Compile Include="PushConstants.cs" />
+    <Compile Include="Controls\ARAspectLayout.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

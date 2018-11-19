@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>AppRopio.ECommerce.Products.Droid</RootNamespace>
     <AssemblyName>AppRopio.ECommerce.Products.Droid</AssemblyName>
-    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
@@ -164,7 +164,6 @@
     <Compile Include="Views\Categories\StepByStep\CategoriesTemplateSelector.cs" />
     <Compile Include="Views\Catalog\CatalogFragment.cs" />
     <Compile Include="Views\Catalog\CatalogTemplateSelector.cs" />
-    <Compile Include="Views\Catalog\CatalogCollectionType.cs" />
     <Compile Include="ValueConverters\BadgeBackgroundValueConverter.cs" />
     <Compile Include="Views\Catalog\Header\CatalogSortFiltersHeaderView.cs" />
     <Compile Include="Views\ContentSearch\ContentSearchFragment.cs" />
@@ -191,7 +190,6 @@
     <AndroidResource Include="Resources\values\strings.xml" />
     <AndroidResource Include="Resources\values\attrs.xml" />
     <AndroidResource Include="Resources\layout\app_products_sscategories.axml" />
-    <AndroidResource Include="Resources\layout\app_products_sscategories_item.axml" />
     <AndroidResource Include="Resources\layout\app_products_sscategories_header.axml" />
     <AndroidResource Include="Resources\layout\app_products_sscategories_footer.axml" />
     <AndroidResource Include="Resources\values\dimens.xml" />
@@ -257,6 +255,9 @@
     <AndroidResource Include="Resources\layout\app_products_dcategories.axml" />
     <AndroidResource Include="Resources\layout\app_products_modalProductCard.axml" />
     <AndroidResource Include="Resources\layout\app_products_catalog_search_bar.axml" />
+    <AndroidResource Include="Resources\layout\app_products_sscategories_item_grid.axml" />
+    <AndroidResource Include="Resources\drawable\app_products_sscategories_item_grid_gradient.xml" />
+    <AndroidResource Include="Resources\layout\app_products_sscategories_item_list.axml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\AppRopio.Base\Core\AppRopio.Base.Core.csproj">

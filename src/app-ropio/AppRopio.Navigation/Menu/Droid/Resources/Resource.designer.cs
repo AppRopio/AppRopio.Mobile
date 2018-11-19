@@ -314,8 +314,8 @@ namespace AppRopio.Navigation.Menu.Droid
 			// aapt resource value: 0x7f0101a1
 			public static int app_color_textNotification = 2130772385;
 			
-			// aapt resource value: 0x7f0101b9
-			public static int app_drawer_header_logo = 2130772409;
+			// aapt resource value: 0x7f0101ba
+			public static int app_drawer_header_logo = 2130772410;
 			
 			// aapt resource value: 0x7f0101b2
 			public static int app_font_bold = 2130772402;
@@ -340,6 +340,9 @@ namespace AppRopio.Navigation.Menu.Droid
 			
 			// aapt resource value: 0x7f0100bc
 			public static int arrowShaftLength = 2130772156;
+			
+			// aapt resource value: 0x7f0101b9
+			public static int aspect = 2130772409;
 			
 			// aapt resource value: 0x7f0100a2
 			public static int autoCompleteTextViewStyle = 2130772130;
@@ -4981,6 +4984,12 @@ namespace AppRopio.Navigation.Menu.Droid
 			
 			// aapt resource value: 0
 			public static int ARAppCompatSpinner_MvxItemTemplate = 0;
+			
+			public static int[] ARAspectLayout = new int[] {
+					2130772409};
+			
+			// aapt resource value: 0
+			public static int ARAspectLayout_aspect = 0;
 			
 			public static int[] ARImageView = new int[] {
 					2130772406,

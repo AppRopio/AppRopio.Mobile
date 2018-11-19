@@ -6,7 +6,7 @@
         }
     },
     "categories": {
-        "collectionType": 2,
+        "collectionType": 0,
         "categoryCell": {
             "icon": {
                 "path": "Images/Products/empty_icon.png",

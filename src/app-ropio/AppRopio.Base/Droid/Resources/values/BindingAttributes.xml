@@ -39,4 +39,10 @@
 			name  ="MvxDropDownItemTemplate"
 			format="string" />
 	</declare-styleable>
+    <declare-styleable
+        name="ARAspectLayout">
+        <attr
+            name  ="aspect"
+            format="float" />
+    </declare-styleable>
 </resources>

@@ -7,6 +7,7 @@ using AppRopio.Base.Droid.Adapters;
 using AppRopio.ECommerce.Products.Core.Services;
 using AppRopio.ECommerce.Products.Core.ViewModels.Catalog;
 using AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Items;
+using AppRopio.ECommerce.Products.Core.Models;
 using MvvmCross.Binding.Droid.BindingContext;
 using MvvmCross.Droid.Support.V7.RecyclerView;
 using MvvmCross.Droid.Views;
@@ -38,7 +39,7 @@ namespace AppRopio.ECommerce.Products.Droid.Views.Catalog
 
         protected MvxRecyclerView RecyclerView { get; set; }
 
-        protected CatalogCollectionType CollectionType { get; set; }
+        protected CollectionType CollectionType { get; set; }
 
         protected CatalogFragment(int layoutId)
             : base(layoutId)
@@ -113,7 +114,7 @@ namespace AppRopio.ECommerce.Products.Droid.Views.Catalog
 
         protected virtual void SetupLayoutManager(RecyclerView recyclerView)
         {
-            if (CollectionType == CatalogCollectionType.Grid)
+            if (CollectionType == CollectionType.Grid)
             {
                 var gridLayoutManager = new GridLayoutManager(Context, 2, GridLayoutManager.Vertical, false);
                 gridLayoutManager.SetSpanSizeLookup(new CatalogSpanSizeLookup(gridLayoutManager, ViewModel));
@@ -136,7 +137,7 @@ namespace AppRopio.ECommerce.Products.Droid.Views.Catalog
             var listTypeValue = new TypedValue();
             Activity.Theme.ResolveAttribute(Resource.Attribute.app_products_catalog_collectionType, listTypeValue, false);
 
-            CollectionType = (CatalogCollectionType)listTypeValue.Data;
+            CollectionType = (CollectionType)listTypeValue.Data;
 
             SetupRecyclerView(RecyclerView);
 

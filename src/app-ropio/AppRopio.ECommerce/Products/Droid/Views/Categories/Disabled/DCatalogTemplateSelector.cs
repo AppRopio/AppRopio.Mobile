@@ -1,14 +1,13 @@
-﻿using System;
-using AppRopio.Base.Droid.Adapters;
-using AppRopio.ECommerce.Products.Droid.Views.Catalog;
+﻿using AppRopio.Base.Droid.Adapters;
+using AppRopio.ECommerce.Products.Core.Models;
 
 namespace AppRopio.ECommerce.Products.Droid.Views.Categories.Disabled
 {
     public class DCatalogTemplateSelector : IARFlatGroupTemplateSelector
     {
-        private CatalogCollectionType _collectionType;
+        private CollectionType _collectionType;
 
-        public DCatalogTemplateSelector(CatalogCollectionType collectionType)
+        public DCatalogTemplateSelector(CollectionType collectionType)
         {
             _collectionType = collectionType;
         }
@@ -30,7 +29,7 @@ namespace AppRopio.ECommerce.Products.Droid.Views.Categories.Disabled
 
         public int GetItemViewType(object forItemObject)
         {
-            return _collectionType == CatalogCollectionType.Grid ?
+            return _collectionType == CollectionType.Grid ?
                                                            Resource.Layout.app_products_catalog_item_grid
                                                                :
                                                            Resource.Layout.app_products_catalog_item_list;

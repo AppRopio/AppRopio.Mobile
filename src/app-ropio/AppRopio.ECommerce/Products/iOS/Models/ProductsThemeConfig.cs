@@ -1,5 +1,6 @@
 ﻿using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.Models.ThemeConfigs;
+using AppRopio.ECommerce.Products.Core.Models;
 using Newtonsoft.Json;
 
 namespace AppRopio.ECommerce.Products.iOS.Models
