@@ -10,6 +10,7 @@ using MvvmCross.Platform;
 using MvvmCross.Platform.Droid.Platform;
 using Android.Graphics;
 using MvvmCross.Core.ViewModels;
+using System.Net.Http;
 
 namespace AppRopio.Base.Droid.Controls
 {
@@ -56,8 +57,26 @@ namespace AppRopio.Base.Droid.Controls
 
                 Application.SynchronizationContext.Post(_ =>
                 {
-                    this.LoadUrl(_urlSource);
+                    if (HttpContent == null)
+                        this.LoadUrl(_urlSource);
+                    else
+                    {
+                        this.PostUrl(_urlSource, HttpContent.ReadAsByteArrayAsync().Result);
+                    }
                 }, null);
+            }
+        }
+
+        private HttpContent _httpContent;
+        public HttpContent HttpContent
+        {
+            get
+            {
+                return _httpContent;
+            }
+            set
+            {
+                _httpContent = value;
             }
         }
 

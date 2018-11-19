@@ -451,6 +451,7 @@
       <DependentUpon>Payments.ru.resx</DependentUpon>
     </Compile>
     <Compile Include="Bootstrap\AppRopio_Best2PayPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_YandexKassaPluginBootstrap.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -1004,6 +1005,18 @@
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Payments\Best2Pay\Droid\AppRopio.Payments.Best2Pay.Droid.csproj">
       <Project>{324F95D9-52EB-43FE-8B30-09030FC5C99C}</Project>
       <Name>AppRopio.Payments.Best2Pay.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Payments\YandexKassa\API\AppRopio.Payments.YandexKassa.API.csproj">
+      <Project>{E73FC559-4557-4BD7-BDDB-B4ED09DBD9E8}</Project>
+      <Name>AppRopio.Payments.YandexKassa.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Payments\YandexKassa\Core\AppRopio.Payments.YandexKassa.Core.csproj">
+      <Project>{58B770AC-C69C-49A4-9FCB-302186FC0D99}</Project>
+      <Name>AppRopio.Payments.YandexKassa.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Payments\YandexKassa\AppRopio.Payments.YandexKassa.Droid\AppRopio.Payments.YandexKassa.Droid.csproj">
+      <Project>{9EDB93B0-36F2-4E2E-8075-C0E63EC078BF}</Project>
+      <Name>AppRopio.Payments.YandexKassa.Droid</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
