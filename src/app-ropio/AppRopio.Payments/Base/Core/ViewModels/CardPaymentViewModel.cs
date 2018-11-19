@@ -31,11 +31,9 @@ namespace AppRopio.Payments.Core.ViewModels
             get { return _cardNumber; }
             set
             {
-                if (SetProperty(ref _cardNumber, value))
-                {
-                    CardNumber = CardsHelper.FormatCardNumber(_cardNumber);
-                    UpdateCanGoNext();
-                }
+                SetProperty(ref _cardNumber, CardsHelper.FormatCardNumber(value));
+
+                UpdateCanGoNext();
             }
         }
 
@@ -45,11 +43,9 @@ namespace AppRopio.Payments.Core.ViewModels
             get { return _expirationDate; }
             set
             {
-                if (SetProperty(ref _expirationDate, value))
-                {
-                    ExpirationDate = CardsHelper.FormatExpirationDate(_expirationDate);
-                    UpdateCanGoNext();
-                }
+                SetProperty(ref _expirationDate, CardsHelper.FormatExpirationDate(value));
+
+                UpdateCanGoNext();
             }
         }
 
@@ -59,10 +55,9 @@ namespace AppRopio.Payments.Core.ViewModels
             get { return _cvv; }
             set
             {
-                if (SetProperty(ref _cvv, value))
-                {
-                    UpdateCanGoNext();
-                }
+                SetProperty(ref _cvv, value);
+
+                UpdateCanGoNext();
             }
         }
 
@@ -72,10 +67,9 @@ namespace AppRopio.Payments.Core.ViewModels
             get { return _cardHolder; }
             set
             {
-                if (SetProperty(ref _cardHolder, value))
-                {
-                    UpdateCanGoNext();
-                }
+                SetProperty(ref _cardHolder, value);
+
+                UpdateCanGoNext();
             }
         }
 

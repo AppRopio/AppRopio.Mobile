@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <dimen
+        name="app_payments_inputLayout_height">66dp</dimen>
+    <dimen
+        name="app_payments_inputLayout_horizontalMargins">16dp</dimen>
+    <dimen
+        name="app_payments_inputLayout_verticalMargins">16dp</dimen>
+</resources>

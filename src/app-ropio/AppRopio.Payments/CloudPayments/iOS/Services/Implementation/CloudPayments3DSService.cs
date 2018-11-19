@@ -24,12 +24,12 @@ namespace AppRopio.Payments.CloudPayments.iOS.Services.Implementation
 			_webView.ShouldStartLoad = ShoulStartLoad;
         }
 
-        public Task<Dictionary<string, string>> Process3DS(string url, string redirectUrl, HttpContent postContent)
+        public Task<Dictionary<string, string>> Process3DS(string url, string redirectUrl, Dictionary<string, string> parameters)
         {
             _tcs = new TaskCompletionSource<Dictionary<string, string>>();
 
             _3dsUrl = url;
-            _postContent = postContent;
+            _postContent = new FormUrlEncodedContent(parameters);
             _redirectUrl = redirectUrl;
 
             NavigateTo3DSPage();
