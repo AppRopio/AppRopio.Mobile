@@ -9,6 +9,7 @@ using Android.Views;
 using MvvmCross.Platform;
 using MvvmCross.Platform.Droid.Platform;
 using Android.Graphics;
+using MvvmCross.Core.ViewModels;
 
 namespace AppRopio.Base.Droid.Controls
 {
@@ -29,16 +30,34 @@ namespace AppRopio.Base.Droid.Controls
                 _html = value;
                 Application.SynchronizationContext.Post(_ =>
                 {
-                    try
-                    {
-                        this.LoadDataWithBaseURL(null, value, "text/html; charset=utf-8", "UTF-8", null);
-                    }
-                    catch (Exception ex)
-                    {
-
-                    }
+                    this.LoadDataWithBaseURL(null, value, "text/html; charset=utf-8", "UTF-8", null);
                 }, null);
 
+            }
+        }
+
+        public IMvxCommand<string> ShouldLoadCommand { get; set; }
+
+        private string _urlSource;
+        public string UrlSource
+        {
+            get
+            {
+                return _urlSource;
+            }
+            set
+            {
+                _urlSource = value;
+
+                SetWebViewClient(new ARWebViewClient((DownloadEventArgs arg) =>
+                {
+                    return ShouldLoadCommand != null ? ShouldLoadCommand.CanExecute(arg.Url) : false;
+                }));
+
+                Application.SynchronizationContext.Post(_ =>
+                {
+                    this.LoadUrl(_urlSource);
+                }, null);
             }
         }
 
@@ -80,14 +99,7 @@ namespace AppRopio.Base.Droid.Controls
             data += "</body></html>";
             Application.SynchronizationContext.Post(_ =>
             {
-                try
-                {
-                    this.LoadDataWithBaseURL(null, data, "text/html; charset=utf-8", "UTF-8", null);
-                }
-                catch (Exception ex)
-                {
-
-                }
+                this.LoadDataWithBaseURL(null, data, "text/html; charset=utf-8", "UTF-8", null);
             }, null);
         }
 

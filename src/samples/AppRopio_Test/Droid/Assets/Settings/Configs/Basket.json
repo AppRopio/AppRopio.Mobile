@@ -3,10 +3,16 @@
         "typeName": "AppRopio.ECommerce.Loyalty.Core.ViewModels.Promo.PromoCodeViewModel",
         "assemblyName": "AppRopio.ECommerce.Loyalty.Core"
     },
+    //"inAppPayments": {
+    //    "all": {
+    //        "typeName": "AppRopio.Payments.CloudPayments.Core.ViewModels.CloudPayments.Services.ICloudPaymentsVmService",
+    //        "assemblyName": "AppRopio.Payments.CloudPayments.Core"
+    //    }
+    //}
     "inAppPayments": {
         "all": {
-            "typeName": "AppRopio.Payments.CloudPayments.Core.ViewModels.CloudPayments.Services.ICloudPaymentsVmService",
-            "assemblyName": "AppRopio.Payments.CloudPayments.Core"
+            "typeName": "AppRopio.Payments.Best2Pay.Core.ViewModels.Best2Pay.IBest2PayViewModel",
+            "assemblyName": "AppRopio.Payments.Best2Pay.Core"
         }
     }
 }

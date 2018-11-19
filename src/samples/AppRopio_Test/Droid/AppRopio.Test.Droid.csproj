@@ -450,6 +450,7 @@
     <Compile Include="LocalizationResx\Payments.ru.Designer.cs">
       <DependentUpon>Payments.ru.resx</DependentUpon>
     </Compile>
+    <Compile Include="Bootstrap\AppRopio_Best2PayPluginBootstrap.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -700,6 +701,8 @@
     <AndroidAsset Include="Assets\Settings\Configs\GoogleAnalytics.json" />
     <AndroidAsset Include="Assets\Settings\Configs\Loyalty.json" />
     <AndroidAsset Include="Assets\Settings\Configs\CloudPayments.json" />
+    <AndroidAsset Include="Assets\Settings\Configs\Best2Pay.json" />
+    <AndroidAsset Include="Assets\Settings\Configs\YandexKassa.json" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\API\AppRopio.Base.API.csproj">
@@ -997,6 +1000,10 @@
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Payments\Best2Pay\Core\AppRopio.Payments.Best2Pay.Core.csproj">
       <Project>{3753EB62-6E31-4BD4-B153-93C1FDDA211F}</Project>
       <Name>AppRopio.Payments.Best2Pay.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\app-ropio\AppRopio.Payments\Best2Pay\Droid\AppRopio.Payments.Best2Pay.Droid.csproj">
+      <Project>{324F95D9-52EB-43FE-8B30-09030FC5C99C}</Project>
+      <Name>AppRopio.Payments.Best2Pay.Droid</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
