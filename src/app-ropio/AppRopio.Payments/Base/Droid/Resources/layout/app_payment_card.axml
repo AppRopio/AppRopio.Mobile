@@ -1,3 +1,117 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
-</LinearLayout>
+<RelativeLayout
+    xmlns:android        ="http://schemas.android.com/apk/res/android"
+    xmlns:app            ="http://schemas.android.com/apk/res-auto"
+    android:layout_width ="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width ="match_parent"
+        android:layout_height="match_parent">
+        <ScrollView
+            android:layout_width ="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above ="@+id/payButton"
+            android:scrollbars   ="none">
+            <LinearLayout
+                android:orientation  ="vertical"
+                android:layout_width ="match_parent"
+                android:layout_height="wrap_content">
+                <!-- Card number -->
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width      ="match_parent"
+                    android:layout_height     ="@dimen/app_payments_inputLayout_height"
+                    android:layout_marginLeft ="@dimen/app_payments_inputLayout_horizontalMargins"
+                    android:layout_marginRight="@dimen/app_payments_inputLayout_horizontalMargins"
+                    android:layout_marginTop  ="@dimen/app_payments_inputLayout_verticalMargins"
+                    android:theme             ="@style/app_payments_inputLayout"
+                    app:errorEnabled          ="true"
+                    app:errorTextAppearance   ="@style/app_payments_inputLayout_errorTextAppearance"
+                    app:hintEnabled           ="true"
+                    app:hintTextAppearance    ="@style/app_payments_inputLayout_hintTextAppearance"
+                    app:MvxBind               ="Hint Resx('CardNumber', 'Payments')">
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width ="match_parent"
+                        android:layout_height="match_parent"
+                        android:maxLines     ="1"
+                        android:inputType    ="number"
+                        android:maxLength    ="@integer/app_payments_card_number_length"
+                        app:MvxBind          ="UpdatedText CardNumber" />
+                </android.support.design.widget.TextInputLayout>
+                <!-- Card holder -->
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width      ="match_parent"
+                    android:layout_height     ="@dimen/app_payments_inputLayout_height"
+                    android:layout_marginLeft ="@dimen/app_payments_inputLayout_horizontalMargins"
+                    android:layout_marginRight="@dimen/app_payments_inputLayout_horizontalMargins"
+                    android:theme             ="@style/app_payments_inputLayout"
+                    app:errorEnabled          ="true"
+                    app:errorTextAppearance   ="@style/app_payments_inputLayout_errorTextAppearance"
+                    app:hintEnabled           ="true"
+                    app:hintTextAppearance    ="@style/app_payments_inputLayout_hintTextAppearance"
+                    app:MvxBind               ="Hint Resx('CardHolder', 'Payments')">
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width ="match_parent"
+                        android:layout_height="match_parent"
+                        android:maxLines     ="1"
+                        android:inputType    ="text"
+                        android:maxLength    ="@integer/app_payments_card_holder_length"
+                        app:MvxBind          ="UpdatedText CardHolder" />
+                </android.support.design.widget.TextInputLayout>
+                <!-- Expiration date -->
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width      ="match_parent"
+                    android:layout_height     ="@dimen/app_payments_inputLayout_height"
+                    android:layout_marginLeft ="@dimen/app_payments_inputLayout_horizontalMargins"
+                    android:layout_marginRight="@dimen/app_payments_inputLayout_horizontalMargins"
+                    android:theme             ="@style/app_payments_inputLayout"
+                    app:errorEnabled          ="true"
+                    app:errorTextAppearance   ="@style/app_payments_inputLayout_errorTextAppearance"
+                    app:hintEnabled           ="true"
+                    app:hintTextAppearance    ="@style/app_payments_inputLayout_hintTextAppearance"
+                    app:MvxBind               ="Hint Resx('ExpirationDate', 'Payments')">
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width ="match_parent"
+                        android:layout_height="match_parent"
+                        android:maxLines     ="1"
+                        android:inputType    ="date"
+                        android:maxLength    ="@integer/app_payments_date_length"
+                        app:MvxBind          ="UpdatedText ExpirationDate" />
+                </android.support.design.widget.TextInputLayout>
+                <!-- CVV -->
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width      ="match_parent"
+                    android:layout_height     ="@dimen/app_payments_inputLayout_height"
+                    android:layout_marginLeft ="@dimen/app_payments_inputLayout_horizontalMargins"
+                    android:layout_marginRight="@dimen/app_payments_inputLayout_horizontalMargins"
+                    android:theme             ="@style/app_payments_inputLayout"
+                    app:errorEnabled          ="true"
+                    app:errorTextAppearance   ="@style/app_payments_inputLayout_errorTextAppearance"
+                    app:hintEnabled           ="true"
+                    app:hintTextAppearance    ="@style/app_payments_inputLayout_hintTextAppearance"
+                    app:MvxBind               ="Hint Resx('Cvv', 'Payments')">
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width ="match_parent"
+                        android:layout_height="match_parent"
+                        android:maxLines     ="1"
+                        android:inputType    ="number"
+                        android:password     ="true"
+                        android:maxLength    ="@integer/app_payments_cvv_length"
+                        app:MvxBind          ="UpdatedText Cvv" />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+        </ScrollView>
+        <Button
+            style                           ="@style/AppRopioTheme.Control.Button.Base"
+            android:id                      ="@+id/payButton"
+            android:layout_width            ="match_parent"
+            android:layout_height           ="wrap_content"
+            android:layout_alignParentBottom="true"
+            app:MvxBind                     ="Click PayCommand; Text Resx('Pay','Payments')" />
+    </RelativeLayout>
+    <android.webkit.WebView
+        android:id                      ="@+id/webView"
+        android:layout_width            ="match_parent"
+        android:layout_height           ="match_parent"
+        android:visibility              ="invisible"
+        android:layout_alignParentBottom="true" />
+</RelativeLayout>

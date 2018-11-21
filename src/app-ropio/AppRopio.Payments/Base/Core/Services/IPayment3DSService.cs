@@ -9,6 +9,6 @@ namespace AppRopio.Payments.Core.Services
 	{
         void SetWebView(object webView);
         
-		Task<Dictionary<string, string>> Process3DS(string url, string redirectUrl, HttpContent postContent);
+		Task<Dictionary<string, string>> Process3DS(string url, string redirectUrl, Dictionary<string, string> parameters);
 	}
 }

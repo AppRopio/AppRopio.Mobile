@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>AppRopio.Base.Contacts.Droid</RootNamespace>
     <AssemblyName>AppRopio.Base.Contacts.Droid</AssemblyName>
-    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>

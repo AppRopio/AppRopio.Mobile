@@ -200,6 +200,7 @@ namespace AppRopio.Base.Droid
         protected override void FillTargetFactories(IMvxTargetBindingFactoryRegistry registry)
         {
             registry.RegisterCustomBindingFactory<EditText>("PhoneBinding", view => new PhoneEditTextBinding(view));
+            registry.RegisterCustomBindingFactory<EditText>("UpdatedText", view => new UpdatedTextBinding(view));
 
             base.FillTargetFactories(registry);
         }

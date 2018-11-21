@@ -1,0 +1,8 @@
+﻿{
+    "shopId": "shop_id",
+    "scid": "scid",
+    "releaseScid": "release_scid",
+    "successUrl": "success_url",
+    "failUrl": "fail_url",
+    "shopUrl": "shop_url"
+}

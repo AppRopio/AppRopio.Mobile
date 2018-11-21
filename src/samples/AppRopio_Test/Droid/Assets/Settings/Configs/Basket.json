@@ -9,4 +9,16 @@
             "assemblyName": "AppRopio.Payments.CloudPayments.Core"
         }
     }
+    //"inAppPayments": {
+    //    "all": {
+    //        "typeName": "AppRopio.Payments.Best2Pay.Core.ViewModels.Best2Pay.IBest2PayViewModel",
+    //        "assemblyName": "AppRopio.Payments.Best2Pay.Core"
+    //    }
+    //}
+    //"inAppPayments": {
+    //    "all": {
+    //        "typeName": "AppRopio.Payments.YandexKassa.Core.ViewModels.YandexKassa.IYandexKassaViewModel",
+    //        "assemblyName": "AppRopio.Payments.YandexKassa.Core"
+    //    }
+    //}
 }
