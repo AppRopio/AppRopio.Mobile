@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections;
+using Android.Content;
+using Android.Graphics;
 using Android.Support.V7.Widget;
 using Android.Util;
 using Android.Views;
@@ -37,6 +39,8 @@ namespace AppRopio.ECommerce.Products.Droid.Views.Categories.StepByStep
         protected virtual void SetupRecyclerView(View view, MvxRecyclerView recyclerView)
         {
             recyclerView.Adapter = SetupAdapter(recyclerView);
+            SetupLayoutManager(recyclerView);
+            SetupItemDecoration(recyclerView);
         }
 
         protected virtual IMvxRecyclerAdapter SetupAdapter(MvxRecyclerView recyclerView)
@@ -62,6 +66,15 @@ namespace AppRopio.ECommerce.Products.Droid.Views.Categories.StepByStep
             }
             else
                 recyclerView.SetLayoutManager(new LinearLayoutManager(Context, LinearLayoutManager.Vertical, false));
+        }
+
+        protected virtual void SetupItemDecoration(RecyclerView recyclerView)
+        {
+            if (CollectionType == CollectionType.Grid) {
+                var itemDecoration = new CategoriesItemDecoration(Context, Resource.Dimension.app_products_sscategories_item_grid_spacing);
+                recyclerView.AddItemDecoration(itemDecoration);
+//                recyclerView.SetClipToPadding(false);
+            }
         }
 
         protected virtual IEnumerable GetInnerItems(object item)
@@ -146,18 +159,40 @@ namespace AppRopio.ECommerce.Products.Droid.Views.Categories.StepByStep
 
     public class CategoriesSpanSizeLookup : GridLayoutManager.SpanSizeLookup
     {
-        private GridLayoutManager _layoutManager;
-//        private ISSCategoriesViewModel _viewModel;
+        private readonly GridLayoutManager _layoutManager;
+        private readonly ISSCategoriesViewModel _viewModel;
 
         public CategoriesSpanSizeLookup(GridLayoutManager layoutManager, ISSCategoriesViewModel viewModel)
         {
             _layoutManager = layoutManager;
-//            _viewModel = viewModel;
+            _viewModel = viewModel;
         }
-        //TODO: count proper span size
+        //TODO: test with header, footer, both, without
         public override int GetSpanSize(int position)
         {
-            return _layoutManager.SpanCount;// (position == 0 && _viewModel.HeaderVm != null) ? _layoutManager.SpanCount : 1;
+            if (_viewModel == null || _viewModel.Items.IsNullOrEmpty())
+                return 1;
+            bool hasHeader = position == 0 && !_viewModel.TopBanners.IsNullOrEmpty();
+            bool hasFooter = (position == (_viewModel.Items.Count + (hasHeader ? 2 : 1)) && !_viewModel.BottomBanners.IsNullOrEmpty());
+            return (hasHeader || hasFooter) ? _layoutManager.SpanCount : 1;
+        }
+    }
+
+    public class CategoriesItemDecoration : RecyclerView.ItemDecoration
+    {
+        private readonly int _spacing;
+
+        public CategoriesItemDecoration(int spacing)
+        {
+            _spacing = spacing;
+        }
+        public CategoriesItemDecoration(Context context, int id)
+            : this(context.Resources.GetDimensionPixelSize(id)) {}
+        //TODO: made different spacing for each direction?
+        public override void GetItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state)
+        {
+            base.GetItemOffsets(outRect, view, parent, state);
+            outRect.Set(_spacing, _spacing, _spacing, _spacing);
         }
     }
 }

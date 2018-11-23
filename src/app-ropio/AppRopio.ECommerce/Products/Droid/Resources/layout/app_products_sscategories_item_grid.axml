@@ -20,12 +20,14 @@
             android:layout_height="@dimen/app_products_sscategories_item_grid_separator_height"
             android:layout_marginBottom="@dimen/app_products_sscategories_item_grid_separator_verticalMargin"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"/>
+            android:layout_centerHorizontal="true"
+            android:background="?attr/app_products_categories_color_textTitle"/>
         <TextView
-            style="@style/app_products_sscategories_item_list_title"
+            style="@style/app_products_sscategories_item_grid_title"
             android:layout_width="match_parent"
             android:layout_height="@dimen/app_products_sscategories_item_grid_separator_verticalMargin"
             android:layout_alignParentBottom="true"
+            android:gravity="center"
             app:MvxBind="Text Name"/>
     </RelativeLayout>
 </appropio.base.droid.controls.ARAspectLayout>

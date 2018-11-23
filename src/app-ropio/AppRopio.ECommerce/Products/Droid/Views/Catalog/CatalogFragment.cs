@@ -147,8 +147,8 @@ namespace AppRopio.ECommerce.Products.Droid.Views.Catalog
 
     public class CatalogSpanSizeLookup : GridLayoutManager.SpanSizeLookup
     {
-        private GridLayoutManager _layoutManager;
-        private ICatalogViewModel _viewModel;
+        private readonly GridLayoutManager _layoutManager;
+        private readonly ICatalogViewModel _viewModel;
 
         public CatalogSpanSizeLookup(GridLayoutManager layoutManager, ICatalogViewModel viewModel)
         {
