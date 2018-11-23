@@ -25,9 +25,9 @@ namespace AppRopio.Payments.CloudPayments.Core.Services.Implementation
             }
         }
 
-        private void ProcessCardPayment(PaymentOrderBundle bundle)
+        private async void ProcessCardPayment(PaymentOrderBundle bundle)
         {
-            NavigateTo<ICardPaymentViewModel>(bundle);
+            await NavigateTo<ICardPaymentViewModel>(bundle);
         }
 
         private async void ProcessNativePayment(PaymentOrderBundle bundle)

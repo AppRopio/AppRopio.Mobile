@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <style
+        name  ="app_payments_inputLayout_hintTextAppearance"
+        parent="AppRopioTheme.Control.TextInputLayout.HintTextAppearance">
+    </style>
+    <style
+        name  ="app_payments_inputLayout_errorTextAppearance"
+        parent="AppRopioTheme.Control.TextInputLayout.ErrorTextAppearance">
+    </style>
+    <style
+        name  ="app_payments_inputLayout"
+        parent="AppRopioTheme.Control.TextInputLayout">
+    </style>
+</resources>
