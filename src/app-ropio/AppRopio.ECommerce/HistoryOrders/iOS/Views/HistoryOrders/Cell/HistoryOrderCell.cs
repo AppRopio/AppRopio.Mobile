@@ -104,7 +104,7 @@ namespace AppRopio.ECommerce.HistoryOrders.iOS.Views.HistoryOrders
 
         protected virtual void BindNumber(UILabel number, MvxFluentBindingDescriptionSet<HistoryOrderCell, IHistoryOrderItemVM> set)
 		{
-            set.Bind(number).To(vm => vm.OrderNumber);
+            set.Bind(number).To(vm => vm.OrderNumber).WithConversion("StringFormat", $"№{{0}}");
 		}
 
 		protected virtual void BindOrderStatus(UILabel orderStatus, MvxFluentBindingDescriptionSet<HistoryOrderCell, IHistoryOrderItemVM> set)
