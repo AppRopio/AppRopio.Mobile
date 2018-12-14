@@ -4,10 +4,10 @@ using AppRopio.Base.Core.Services.ViewLookup;
 using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.UIExtentions;
 using AppRopio.Base.iOS.ViewSources;
+using AppRopio.ECommerce.Products.Core.Models;
 using AppRopio.ECommerce.Products.Core.Services;
 using AppRopio.ECommerce.Products.Core.ViewModels.Catalog;
 using AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells;
-using AppRopio.ECommerce.Products.iOS.Views.Catalog.Header;
 using CoreGraphics;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.iOS.Views;
@@ -134,7 +134,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog
             flowLayout.MinimumLineSpacing = 8;
             flowLayout.SectionInset = new UIEdgeInsets(8, 8, 8, 8);
 
-            if (ThemeConfig.Products.CollectionType == Models.CollectionType.Grid)
+            if (ThemeConfig.Products.CollectionType == CollectionType.Grid)
             {
                 collectionView.RegisterNibForCell(CatalogGridCell.Nib, CatalogGridCell.Key);
 
@@ -254,7 +254,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog
 
             var dataSource = new SupplementaryCollectionViewSource(
                 collectionView,
-                ThemeConfig.Products.CollectionType == Models.CollectionType.Grid ? CatalogGridCell.Key : CatalogListCell.Key,
+                ThemeConfig.Products.CollectionType == CollectionType.Grid ? CatalogGridCell.Key : CatalogListCell.Key,
                 ViewModel.HeaderVm)
             {
                 HeaderReuseID = config.Header?.TypeName
