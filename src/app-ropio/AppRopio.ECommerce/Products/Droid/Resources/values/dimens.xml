@@ -12,7 +12,7 @@
     <dimen
         name="app_products_sscategories_item_grid_separator_verticalMargin">60dp</dimen>
     <dimen
-        name="app_products_sscategories_item_grid_spacing">4dp</dimen>
+        name="app_products_sscategories_item_grid_spacing">8dp</dimen>
 	<!--    -->
 	<!--  Catalog Empty View  -->
 	<dimen
