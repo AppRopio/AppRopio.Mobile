@@ -332,14 +332,17 @@ namespace AppRopio.Base.Settings.Droid
 			// aapt resource value: 0x7f010178
 			public static int app_font_semibold = 2130772344;
 			
-			// aapt resource value: 0x7f010180
-			public static int app_settings_ic_check = 2130772352;
+			// aapt resource value: 0x7f010181
+			public static int app_settings_ic_check = 2130772353;
 			
 			// aapt resource value: 0x7f010103
 			public static int arrowHeadLength = 2130772227;
 			
 			// aapt resource value: 0x7f010104
 			public static int arrowShaftLength = 2130772228;
+			
+			// aapt resource value: 0x7f010180
+			public static int aspect = 2130772352;
 			
 			// aapt resource value: 0x7f0100ea
 			public static int autoCompleteTextViewStyle = 2130772202;
@@ -4692,6 +4695,12 @@ namespace AppRopio.Base.Settings.Droid
 			
 			// aapt resource value: 0
 			public static int ARAppCompatSpinner_MvxItemTemplate = 0;
+			
+			public static int[] ARAspectLayout = new int[] {
+					2130772352};
+			
+			// aapt resource value: 0
+			public static int ARAspectLayout_aspect = 0;
 			
 			public static int[] ARImageView = new int[] {
 					2130772349,

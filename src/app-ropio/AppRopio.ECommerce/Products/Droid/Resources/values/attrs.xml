@@ -46,4 +46,17 @@
     <attr
         name="app_products_ic_share"
         format="reference"/>
+    <attr
+        name  ="app_products_categories_collectionType"
+        format="enum">
+        <enum
+            name ="grid"
+            value="0" />
+        <enum
+            name ="list"
+            value="1" />
+    </attr>
+    <attr
+        name  ="app_products_categories_color_textTitle"
+        format="color" />
 </resources>

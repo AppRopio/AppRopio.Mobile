@@ -2,9 +2,17 @@
 <resources>
 	<!--  StepByStepCategories  -->
 	<dimen
-		name="app_products_sscategories_item_height">56dp</dimen>
+		name="app_products_sscategories_item_list_height">56dp</dimen>
 	<dimen
-		name="app_products_sscategories_item_horizontalMargin">16dp</dimen>
+		name="app_products_sscategories_item_list_horizontalMargin">16dp</dimen>
+    <dimen
+        name="app_products_sscategories_item_grid_separator_width">64dp</dimen>
+    <dimen
+        name="app_products_sscategories_item_grid_separator_height">2dp</dimen>
+    <dimen
+        name="app_products_sscategories_item_grid_separator_verticalMargin">60dp</dimen>
+    <dimen
+        name="app_products_sscategories_item_grid_spacing">8dp</dimen>
 	<!--    -->
 	<!--  Catalog Empty View  -->
 	<dimen

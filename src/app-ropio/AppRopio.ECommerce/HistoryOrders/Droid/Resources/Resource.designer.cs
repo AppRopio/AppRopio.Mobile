@@ -304,17 +304,20 @@ namespace AppRopio.ECommerce.HistoryOrders.Droid
 			// aapt resource value: 0x7f010126
 			public static int app_font_semibold = 2130772262;
 			
-			// aapt resource value: 0x7f01012e
-			public static int app_historyorders_ic_arrow = 2130772270;
-			
 			// aapt resource value: 0x7f01012f
-			public static int app_historyorders_ic_nophoto = 2130772271;
+			public static int app_historyorders_ic_arrow = 2130772271;
+			
+			// aapt resource value: 0x7f010130
+			public static int app_historyorders_ic_nophoto = 2130772272;
 			
 			// aapt resource value: 0x7f0100ba
 			public static int arrowHeadLength = 2130772154;
 			
 			// aapt resource value: 0x7f0100bb
 			public static int arrowShaftLength = 2130772155;
+			
+			// aapt resource value: 0x7f01012e
+			public static int aspect = 2130772270;
 			
 			// aapt resource value: 0x7f0100a1
 			public static int autoCompleteTextViewStyle = 2130772129;
@@ -4059,6 +4062,12 @@ namespace AppRopio.ECommerce.HistoryOrders.Droid
 			
 			// aapt resource value: 0
 			public static int ARAppCompatSpinner_MvxItemTemplate = 0;
+			
+			public static int[] ARAspectLayout = new int[] {
+					2130772270};
+			
+			// aapt resource value: 0
+			public static int ARAspectLayout_aspect = 0;
 			
 			public static int[] ARImageView = new int[] {
 					2130772267,

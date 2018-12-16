@@ -286,17 +286,17 @@ namespace AppRopio.Base.Filters.Droid
 			// aapt resource value: 0x7f010116
 			public static int app_color_textNotification = 2130772246;
 			
+			// aapt resource value: 0x7f010131
+			public static int app_filters_filters_color_ic_checkImage = 2130772273;
+			
 			// aapt resource value: 0x7f010130
-			public static int app_filters_filters_color_ic_checkImage = 2130772272;
+			public static int app_filters_filters_ic_arrow = 2130772272;
+			
+			// aapt resource value: 0x7f010132
+			public static int app_filters_filters_ic_cross = 2130772274;
 			
 			// aapt resource value: 0x7f01012f
-			public static int app_filters_filters_ic_arrow = 2130772271;
-			
-			// aapt resource value: 0x7f010131
-			public static int app_filters_filters_ic_cross = 2130772273;
-			
-			// aapt resource value: 0x7f01012e
-			public static int app_filters_sort_ic_item_check = 2130772270;
+			public static int app_filters_sort_ic_item_check = 2130772271;
 			
 			// aapt resource value: 0x7f010127
 			public static int app_font_bold = 2130772263;
@@ -321,6 +321,9 @@ namespace AppRopio.Base.Filters.Droid
 			
 			// aapt resource value: 0x7f0100bb
 			public static int arrowShaftLength = 2130772155;
+			
+			// aapt resource value: 0x7f01012e
+			public static int aspect = 2130772270;
 			
 			// aapt resource value: 0x7f0100a1
 			public static int autoCompleteTextViewStyle = 2130772129;
@@ -4158,6 +4161,12 @@ namespace AppRopio.Base.Filters.Droid
 			
 			// aapt resource value: 0
 			public static int ARAppCompatSpinner_MvxItemTemplate = 0;
+			
+			public static int[] ARAspectLayout = new int[] {
+					2130772270};
+			
+			// aapt resource value: 0
+			public static int ARAspectLayout_aspect = 0;
 			
 			public static int[] ARImageView = new int[] {
 					2130772267,
