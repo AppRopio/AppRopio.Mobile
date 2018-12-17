@@ -167,7 +167,7 @@ namespace AppRopio.ECommerce.Products.Droid.Views.Categories.StepByStep
             _layoutManager = layoutManager;
             _viewModel = viewModel;
         }
-        //TODO: test with header, footer, both, without
+        
         public override int GetSpanSize(int position)
         {
             if (_viewModel == null || _viewModel.Items.IsNullOrEmpty())
