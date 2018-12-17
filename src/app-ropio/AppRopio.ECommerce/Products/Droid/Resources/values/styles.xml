@@ -34,6 +34,11 @@
         <item
             name="android:textAllCaps">true</item>
     </style>
+    <style
+        name="app_products_sscategories_item_grid_image">
+        <item
+            name="android:scaleType">centerCrop</item>
+    </style>
     <!--    -->
     <!--  Cataloged Categories  -->
     <style
