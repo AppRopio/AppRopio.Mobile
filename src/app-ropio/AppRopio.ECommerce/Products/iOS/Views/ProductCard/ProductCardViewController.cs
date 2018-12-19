@@ -5,6 +5,7 @@ using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.UIExtentions;
 using AppRopio.Base.iOS.Views;
 using AppRopio.ECommerce.Products.Core.Messages;
+using AppRopio.ECommerce.Products.Core.Models;
 using AppRopio.ECommerce.Products.Core.Services;
 using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard;
 using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.Collection.Vertical;
@@ -253,7 +254,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard
                         {
                             if (dataType == ProductDataType.Products)
                             {
-                                if (ThemeConfig.Products.CollectionType == Models.CollectionType.Grid)
+                                if (ThemeConfig.Products.CollectionType == CollectionType.Grid)
                                 {
                                     var collectionItemWidth = ThemeConfig.Products.ProductCell.Size.Height ?? (DeviceInfo.ScreenWidth - PDHorizontalProductsCollectionCell.DEFAULT_INSET - (PDHorizontalProductsCollectionCell.DEFAULT_INSET / 2)) / 2;
 
