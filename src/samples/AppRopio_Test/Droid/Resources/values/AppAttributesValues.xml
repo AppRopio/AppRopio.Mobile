@@ -91,6 +91,10 @@
 			name="attr/app_products_productCard_color_ic_checkImage">@drawable/app_ic_item_check</item>
 		<item
 			name="attr/app_products_productCard_ic_cross">@drawable/app_ic_item_cross</item>
+        <item
+            name="attr/app_products_categories_collectionType">grid</item>
+        <item
+            name="attr/app_products_categories_color_textTitle">#FFFFFF</item>
 		<!--    -->
 		<!--    Filters    -->
 		<item

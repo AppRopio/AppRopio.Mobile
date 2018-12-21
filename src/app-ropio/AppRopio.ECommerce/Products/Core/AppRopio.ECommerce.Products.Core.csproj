@@ -160,6 +160,7 @@
     <Compile Include="ViewModels\ModalProductCard\ModalProductCardViewModel.cs" />
     <Compile Include="ViewModels\ModalProductCard\IModalProductCardViewModel.cs" />
     <Compile Include="Models\SearchType.cs" />
+    <Compile Include="Models\CollectionType.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Realm.DataBinding">
