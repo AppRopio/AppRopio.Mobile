@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace AppRopio.Payments.CloudPayments.API.Requests
 {
     public class Complete3DSRequest
@@ -6,5 +7,7 @@ namespace AppRopio.Payments.CloudPayments.API.Requests
         public string PaRes { get; set; }
 
         public string TransactionId { get; set; }
+
+        public string InvoiceId { get; set; }
     }
 }

@@ -34,8 +34,14 @@ namespace AppRopio.Navigation.Menu.iOS.Views
             var itemIndex = itemsCountBeforeThis + Config.Sections[indexPath.Section].Items?.IndexOf(Config.Sections[indexPath.Section].Items?.ElementAt(indexPath.Row)) ?? 0;
 
             indexPath = NSIndexPath.FromRowSection(itemIndex, 0);
-
-            return base.GetItemAt(indexPath);
+            try
+            {
+                return base.GetItemAt(indexPath);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
         }
 
         protected override UITableViewCell GetOrCreateCellFor(UITableView tableView, NSIndexPath indexPath, object item)

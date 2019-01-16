@@ -263,5 +263,10 @@ namespace AppRopio.ECommerce.Basket.API.Services.Fake
                 t.Add(new OrderFieldAutocompleteValue { Value = $"{value}_{i}" });
             return t;
         }
+
+        public async Task ConfirmOrder(string orderId, bool isPaid, string transactionId)
+        {
+            await Task.Delay(700);
+        }
     }
 }

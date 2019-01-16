@@ -44,7 +44,7 @@ namespace AppRopio.ECommerce.Marked.iOS.Views.Marked
 
             (collectionView.CollectionViewLayout as UICollectionViewFlowLayout).HeaderReferenceSize = CGSize.Empty;
 
-            if (ThemeConfig.Products.CollectionType == CollectionType.Grid)
+            if (ThemeConfig.Products.CollectionType == AppRopio.ECommerce.Products.Core.Models.CollectionType.Grid)
                 collectionView.RegisterNibForCell(MarkedGridCell.Nib, MarkedGridCell.Key);
             else
                 collectionView.RegisterNibForCell(MarkedListCell.Nib, MarkedListCell.Key);
@@ -61,7 +61,7 @@ namespace AppRopio.ECommerce.Marked.iOS.Views.Marked
 
         protected override BaseCollectionViewSource SetupCollectionDataSource(UICollectionView collectionView)
         {
-            return new BaseCollectionViewSource(collectionView,ThemeConfig.Products.CollectionType == CollectionType.Grid ? MarkedGridCell.Key : MarkedListCell.Key);
+            return new BaseCollectionViewSource(collectionView,ThemeConfig.Products.CollectionType == AppRopio.ECommerce.Products.Core.Models.CollectionType.Grid ? MarkedGridCell.Key : MarkedListCell.Key);
         }
 
         #endregion

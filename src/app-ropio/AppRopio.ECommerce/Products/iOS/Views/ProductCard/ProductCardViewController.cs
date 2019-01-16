@@ -253,7 +253,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard
                         {
                             if (dataType == ProductDataType.Products)
                             {
-                                if (ThemeConfig.Products.CollectionType == Models.CollectionType.Grid)
+                                if (ThemeConfig.Products.CollectionType == AppRopio.ECommerce.Products.Core.Models.CollectionType.Grid)
                                 {
                                     var collectionItemWidth = ThemeConfig.Products.ProductCell.Size.Height ?? (DeviceInfo.ScreenWidth - PDHorizontalProductsCollectionCell.DEFAULT_INSET - (PDHorizontalProductsCollectionCell.DEFAULT_INSET / 2)) / 2;
 

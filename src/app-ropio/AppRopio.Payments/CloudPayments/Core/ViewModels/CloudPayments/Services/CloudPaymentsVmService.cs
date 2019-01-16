@@ -75,12 +75,11 @@ namespace AppRopio.Payments.CloudPayments.Core.ViewModels.CloudPayments.Services
                 if (chargeResult.Model?.AcsUrl != null)
                 {
                     //3DSecure
-                    var p = Service.Get3DSPaymentParams(chargeResult.Model, Config.ThreeDSRedirectUrl);
-                    var postContent = new FormUrlEncodedContent(p);
+                    var parameters = Service.Get3DSPaymentParams(chargeResult.Model, Config.ThreeDSRedirectUrl);
 
                     threeDSCallback?.Invoke();
 
-                    var threeDSResult = await ThreeDSService.Process3DS(chargeResult.Model.AcsUrl, Config.ThreeDSRedirectUrl, postContent);
+                    var threeDSResult = await ThreeDSService.Process3DS(chargeResult.Model.AcsUrl, Config.ThreeDSRedirectUrl, parameters);
                     if (threeDSResult == null || !threeDSResult.ContainsKey("PaRes"))
                     {
                         return new PaymentResult { Succeeded = false };

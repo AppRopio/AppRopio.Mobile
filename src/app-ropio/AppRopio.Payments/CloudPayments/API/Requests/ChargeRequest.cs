@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace AppRopio.Payments.CloudPayments.API.Requests
 {
     public class ChargeRequest
@@ -11,6 +12,6 @@ namespace AppRopio.Payments.CloudPayments.API.Requests
 
         public string Name { get; set; }
 
-        public string InvoceId { get; set; }
+        public int InvoiceId { get; set; }
     }
 }
