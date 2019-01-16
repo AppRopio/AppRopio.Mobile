@@ -26,7 +26,7 @@ namespace AppRopio.ECommerce.Basket.API.Services.Implementation
 
         public Task DeleteAllItems()
         {
-            return Post(BASKET_DELETE_ALL, null);
+            return Post(BASKET_DELETE_ALL, postData: null, postDataCanBeNull: true);
         }
 
         public async Task<BasketModel> GetBasket(CancellationToken cancellationToken)

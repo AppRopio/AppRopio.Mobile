@@ -295,11 +295,12 @@ namespace AppRopio.Base.API.Services
         /// <param name="url">URL.</param>
         /// <param name="errorMessage">Сообщение об ошибке, в случае проблем с получением данных.</param>
         /// <param name="cancellationToken">Cancellation token source.</param>
-        public virtual async Task Post(string url, HttpContent postData, string errorMessage = null, CancellationToken? cancellationToken = null, Action<HttpRequestMessage> requestTuneAction = null)
+        public virtual async Task Post(string url, HttpContent postData, string errorMessage = null, CancellationToken? cancellationToken = null, Action<HttpRequestMessage> requestTuneAction = null, bool postDataCanBeNull = false)
         {
             if (string.IsNullOrEmpty(url))
                 throw new ArgumentNullException(nameof(url));
-            if (postData == null)
+
+            if (postData == null && !postDataCanBeNull)
                 throw new ArgumentNullException(nameof(postData));
 
             var stopWatch = Stopwatch.StartNew();
