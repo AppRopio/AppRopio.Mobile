@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <resources>
     <integer
-        name="app_payments_card_number_length">19</integer>
+        name="app_payments_card_number_length">23</integer>
     <integer
         name="app_payments_date_length">5</integer>
     <integer

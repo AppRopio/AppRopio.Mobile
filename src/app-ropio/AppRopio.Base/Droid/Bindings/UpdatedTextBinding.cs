@@ -45,7 +45,7 @@ namespace AppRopio.Base.Droid.Bindings
 
             var value = EditText.Text;
 
-            EditText.TextChanged -= OnTextChanged;
+            //EditText.TextChanged -= OnTextChanged;
 
             EditText.Text = value;
             EditText.SetSelection(EditText.Text.Length);
