@@ -39,7 +39,7 @@ namespace AppRopio.ECommerce.Basket.API.Services
 
         Task<Order> CreateOrder();
 
-        Task ConfirmOrder(string orderId, bool isPaid);
+        Task ConfirmOrder(string orderId, bool isPaid, string transactionId);
 
         /// <summary>
         /// Возвращает список значений для автозаполнения поля ввода

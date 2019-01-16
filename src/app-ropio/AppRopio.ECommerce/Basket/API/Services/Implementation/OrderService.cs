@@ -19,9 +19,9 @@ namespace AppRopio.ECommerce.Basket.API.Services.Implementation
         protected string CONFIRMED_ORDER_INFO = "order/confirmedInfo";
         protected string AUTOCOMPLETE = "order/autocompleteValues";
 
-        public Task ConfirmOrder(string orderId, bool isPaid)
+        public Task ConfirmOrder(string orderId, bool isPaid, string transactionId)
         {
-            return Post(CONFIRM_ORDER, ToStringContent(new { id = orderId, isPaid = isPaid }));
+            return Post(CONFIRM_ORDER, ToStringContent(new { id = orderId, isPaid = isPaid, transactionId = transactionId }));
         }
 
         public Task ConfirmPayment(string paymentId)

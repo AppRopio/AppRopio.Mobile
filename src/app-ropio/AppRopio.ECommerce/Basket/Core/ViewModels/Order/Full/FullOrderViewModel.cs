@@ -140,9 +140,9 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Full
             }
         }
 
-        private async Task FinishOrderingProcess(string orderID, bool isPaid)
+        private async Task FinishOrderingProcess(string orderID, bool isPaid, string transactionId)
         {
-            if (await OrderVmService.ConfirmOrder(orderID, isPaid))
+            if (await OrderVmService.ConfirmOrder(orderID, isPaid, transactionId))
             {
                 SendAnalyticsData(orderID);
 
@@ -248,7 +248,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Full
 
             if (_paymentSelectedToken == null)
                 _paymentSelectedToken = Messenger.Subscribe<PaymentSelectedMessage>(DeliveryViewModel.OnPaymentSelectedMessage);
-            
+
             var selectedDelivery = Items?.FirstOrDefault(x => x is IDeliveryTypeItemVM deliveryItem && deliveryItem.IsSelected) as IDeliveryTypeItemVM;
 
             var isNeedToSelectPayment = await OrderVmService.IsPaymentNecessary(selectedDelivery?.Id);

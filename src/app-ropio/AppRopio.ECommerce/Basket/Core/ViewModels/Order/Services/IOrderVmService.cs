@@ -19,7 +19,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Services
 
         Task<OrderModel> CreateOrder();
 
-        Task<bool> ConfirmOrder(string orderId, bool isPaid);
+        Task<bool> ConfirmOrder(string orderId, bool isPaid, string transactionId);
 
         Task<ConfirmedOrderInfo> OrderInfo(string orderId);
 

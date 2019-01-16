@@ -46,7 +46,7 @@ namespace AppRopio.Base.API.Services
         {
             if (string.IsNullOrEmpty(value))
                 return string.Empty;
-            
+
             return Regex.Replace(
                 value,
                 @"\\u(?<Value>[a-zA-Z0-9]{4})",
@@ -60,35 +60,43 @@ namespace AppRopio.Base.API.Services
 
         protected async Task WriteInOutput(string url, RequestResult result, Stopwatch stopwatch, HttpContent postData = null)
         {
-            var rawContent = result.ResponseCode == System.Net.HttpStatusCode.NoContent ? string.Empty : (result.Exception == null ? (await ReadContentAsString(result)) : result.Exception.Message);
-
-            var responseMessage = DecodeEncodedNonAsciiCharacters(rawContent);
-
-            string formatedOutput = string.Empty;
-            formatedOutput += $"{Environment.NewLine}{Environment.NewLine}";
-            formatedOutput += $"# REQUEST {Environment.NewLine}";
-
-            var requestHeaders = ConnectionService.Headers;
-            var responseHeaders = result.Headers;
-
-            formatedOutput += $"## Request headers {Environment.NewLine}```{Environment.NewLine}{JsonConvert.SerializeObject(requestHeaders)}{Environment.NewLine}```{Environment.NewLine}";
-
-            formatedOutput += $"## Url{Environment.NewLine}`{url}`{Environment.NewLine}";
-
-            formatedOutput += $"## Status code{Environment.NewLine}`{(int)result.ResponseCode} {result.ResponseCode}`{Environment.NewLine}";
-
-            if (postData != null)
+            try
             {
-                var json = await postData.ReadAsStringAsync();
-                formatedOutput += $"## Request message{Environment.NewLine}`{json}`{Environment.NewLine}";
-            }
-            formatedOutput += $"## Time{Environment.NewLine}`{stopwatch.ElapsedMilliseconds} ms`{Environment.NewLine}";
-            formatedOutput += $"# RESPONSE{Environment.NewLine}";
-            formatedOutput += $"## Response length{Environment.NewLine}`{(responseMessage == null ? 0 : responseMessage.Length)}`{Environment.NewLine}";
-            formatedOutput += $"## Response headers{Environment.NewLine}```{Environment.NewLine}{JsonConvert.SerializeObject(responseHeaders)}{Environment.NewLine}```{Environment.NewLine}";
-            formatedOutput += $"## Response message{Environment.NewLine}```{Environment.NewLine}{responseMessage}{Environment.NewLine}```{Environment.NewLine}{Environment.NewLine}";
+                var rawContent = result.ResponseCode == System.Net.HttpStatusCode.NoContent ? string.Empty : (result.Exception == null ? (await ReadContentAsString(result)) : result.Exception.Message);
 
-            Trace.Trace(MvxTraceLevel.Diagnostic, $"{GetType().FullName}", formatedOutput);
+                var responseMessage = DecodeEncodedNonAsciiCharacters(rawContent);
+
+                string formatedOutput = string.Empty;
+                formatedOutput += $"{Environment.NewLine}{Environment.NewLine}";
+                formatedOutput += $"# REQUEST {Environment.NewLine}";
+
+                var requestHeaders = ConnectionService.Headers;
+                var responseHeaders = result.Headers;
+
+                formatedOutput += $"## Request headers {Environment.NewLine}```{Environment.NewLine}{JsonConvert.SerializeObject(requestHeaders)}{Environment.NewLine}```{Environment.NewLine}";
+
+                formatedOutput += $"## Url{Environment.NewLine}`{url}`{Environment.NewLine}";
+
+                formatedOutput += $"## Status code{Environment.NewLine}`{(int)result.ResponseCode} {result.ResponseCode}`{Environment.NewLine}";
+
+                if (postData != null)
+                {
+                    var json = await postData.ReadAsStringAsync();
+                    formatedOutput += $"## Request message{Environment.NewLine}`{json}`{Environment.NewLine}";
+                }
+                formatedOutput += $"## Time{Environment.NewLine}`{stopwatch.ElapsedMilliseconds} ms`{Environment.NewLine}";
+                formatedOutput += $"# RESPONSE{Environment.NewLine}";
+                formatedOutput += $"## Response length{Environment.NewLine}`{(responseMessage == null ? 0 : responseMessage.Length)}`{Environment.NewLine}";
+                formatedOutput += $"## Response headers{Environment.NewLine}```{Environment.NewLine}{JsonConvert.SerializeObject(responseHeaders)}{Environment.NewLine}```{Environment.NewLine}";
+                formatedOutput += $"## Response message{Environment.NewLine}```{Environment.NewLine}{responseMessage}{Environment.NewLine}```{Environment.NewLine}{Environment.NewLine}";
+
+                Trace.Trace(MvxTraceLevel.Diagnostic, $"{GetType().FullName}", formatedOutput);
+            }
+            catch (Exception ex)
+            {
+                Trace.Trace(MvxTraceLevel.Error, "WriteOut", ex.StackTrace);
+            }
+
         }
 
         /// <summary>
@@ -177,7 +185,7 @@ namespace AppRopio.Base.API.Services
             {
                 content = await result.ResponseContent.ReadAsStringAsync();
             }
-            catch 
+            catch
             { }
 
             return content;
@@ -314,7 +322,7 @@ namespace AppRopio.Base.API.Services
 
             stopWatch.Stop();
 
-            Task.Run(() => WriteInOutput(url, result, stopWatch, postData));
+            await Task.Run(() => WriteInOutput(url, result, stopWatch, postData));
 
             if (result.Succeeded)
                 return;

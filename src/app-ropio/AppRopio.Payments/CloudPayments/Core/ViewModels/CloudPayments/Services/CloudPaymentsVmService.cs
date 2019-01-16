@@ -20,7 +20,7 @@ namespace AppRopio.Payments.CloudPayments.Core.ViewModels.CloudPayments.Services
     {
         protected ICloudPaymentsService Service { get { return Mvx.Resolve<ICloudPaymentsService>(); } }
 
-		protected IPaymentService ApiService { get { return Mvx.Resolve<IPaymentService>(); } }
+        protected IPaymentService ApiService { get { return Mvx.Resolve<IPaymentService>(); } }
 
         protected CloudPaymentsConfig Config { get { return Mvx.Resolve<ICloudPaymentsConfigService>().Config; } }
 
@@ -30,18 +30,18 @@ namespace AppRopio.Payments.CloudPayments.Core.ViewModels.CloudPayments.Services
         {
             PaymentOrderInfo info = null;
 
-			try
-			{
+            try
+            {
                 info = await ApiService.OrderInfo(orderId);
-			}
-			catch (ConnectionException ex)
-			{
-				OnConnectionException(ex);
-			}
-			catch (Exception ex)
-			{
-				OnException(ex);
-			}
+            }
+            catch (ConnectionException ex)
+            {
+                OnConnectionException(ex);
+            }
+            catch (Exception ex)
+            {
+                OnException(ex);
+            }
 
             return info;
         }
@@ -60,35 +60,36 @@ namespace AppRopio.Payments.CloudPayments.Core.ViewModels.CloudPayments.Services
 
         private async Task<PaymentResult> ProcessPayment(string cryptogram, decimal amount, string currency, string cardHolderName, Action threeDSCallback, string orderId)
         {
-			try
-			{
+            try
+            {
                 Response<ChargeResponse> chargeResult = null;
 
                 if (Config.MessageScheme == MessageSchemeType.Single)
                     chargeResult = await Service.Charge(cryptogram, amount, currency, cardHolderName, Config.StoreId, Config.ApiSecret, orderId);
                 else if (Config.MessageScheme == MessageSchemeType.Dual)
                     chargeResult = await Service.Auth(cryptogram, amount, currency, cardHolderName, Config.StoreId, Config.ApiSecret, orderId);
-                
+
                 if (chargeResult.Success)
                     return new PaymentResult { Succeeded = true };
 
                 if (chargeResult.Model?.AcsUrl != null)
-				{
-					//3DSecure
-                    var parameters = Service.Get3DSPaymentParams(chargeResult.Model, Config.ThreeDSRedirectUrl);
-					
-					threeDSCallback?.Invoke();
+                {
+                    //3DSecure
+                    var p = Service.Get3DSPaymentParams(chargeResult.Model, Config.ThreeDSRedirectUrl);
+                    var postContent = new FormUrlEncodedContent(p);
 
-                    var threeDSResult = await ThreeDSService.Process3DS(chargeResult.Model.AcsUrl, Config.ThreeDSRedirectUrl, parameters);
-					if (threeDSResult == null || !threeDSResult.ContainsKey("PaRes"))
-					{
+                    threeDSCallback?.Invoke();
+
+                    var threeDSResult = await ThreeDSService.Process3DS(chargeResult.Model.AcsUrl, Config.ThreeDSRedirectUrl, postContent);
+                    if (threeDSResult == null || !threeDSResult.ContainsKey("PaRes"))
+                    {
                         return new PaymentResult { Succeeded = false };
-					}
+                    }
 
                     var complete3DSResult = await Service.Completed3DSPayment(threeDSResult["PaRes"], chargeResult.Model.TransactionId, Config.StoreId, Config.ApiSecret);
-					if (complete3DSResult.Success)
-                        return new PaymentResult { Succeeded = true };
-				}
+                    if (complete3DSResult.Success)
+                        return new PaymentResult { Succeeded = true, TransactionId = chargeResult.Model.TransactionId };
+                }
 
                 if (chargeResult.Model?.CardHolderMessage != null && !chargeResult.Model.CardHolderMessage.IsNullOrEmpty())
                 {
@@ -97,15 +98,15 @@ namespace AppRopio.Payments.CloudPayments.Core.ViewModels.CloudPayments.Services
 
                 if (!chargeResult.Message.IsNullOrEmpty())
                     return new PaymentResult { Succeeded = false, ErrorMessage = chargeResult.Message };
-			}
-			catch (ConnectionException ex)
-			{
-				OnConnectionException(ex);
-			}
-			catch (Exception ex)
-			{
-				OnException(ex);
-			}
+            }
+            catch (ConnectionException ex)
+            {
+                OnConnectionException(ex);
+            }
+            catch (Exception ex)
+            {
+                OnException(ex);
+            }
 
             return new PaymentResult { Succeeded = false };
         }

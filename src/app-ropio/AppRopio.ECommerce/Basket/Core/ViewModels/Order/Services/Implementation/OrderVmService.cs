@@ -123,11 +123,11 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Services.Implementatio
             return order;
         }
 
-        public async Task<bool> ConfirmOrder(string orderId, bool isPaid)
+        public async Task<bool> ConfirmOrder(string orderId, bool isPaid, string transactionId)
         {
             try
             {
-                await ApiService.ConfirmOrder(orderId, isPaid);
+                await ApiService.ConfirmOrder(orderId, isPaid, transactionId);
                 return true;
             }
             catch (ConnectionException ex)
