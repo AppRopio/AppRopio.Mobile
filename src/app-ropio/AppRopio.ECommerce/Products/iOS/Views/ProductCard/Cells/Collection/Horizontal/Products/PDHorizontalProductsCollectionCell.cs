@@ -1,6 +1,8 @@
 ﻿using System;
 using AppRopio.Base.iOS;
+using AppRopio.Base.iOS.Controls;
 using AppRopio.Base.iOS.UIExtentions;
+using AppRopio.ECommerce.Products.Core.Models;
 using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.Collection.Horizontal.Products;
 using AppRopio.ECommerce.Products.iOS.Models;
 using AppRopio.ECommerce.Products.iOS.Services;
@@ -10,7 +12,6 @@ using MvvmCross.Binding.BindingContext;
 using MvvmCross.Binding.iOS.Views;
 using MvvmCross.Platform;
 using UIKit;
-using AppRopio.Base.iOS.Controls;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.Collection.Horizontal.Products
 {
@@ -73,7 +74,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.Collection.Hor
 
             var width = ThemeConfig.Products.ProductCell.Size.Width ?? (DeviceInfo.ScreenWidth - DEFAULT_INSET - (DEFAULT_INSET / 2)) / 2;
 
-            if (ThemeConfig.Products.CollectionType == AppRopio.ECommerce.Products.Core.Models.CollectionType.Grid)
+            if (ThemeConfig.Products.CollectionType == CollectionType.Grid)
             {
                 collectionView.RegisterNibForCell(CatalogGridCell.Nib, CatalogGridCell.Key);
 
@@ -132,7 +133,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.Collection.Hor
 
         protected virtual MvxCollectionViewSource SetupCollectionDataSource(UICollectionView collectionView)
         {
-            return new MvxCollectionViewSource(collectionView, ThemeConfig.Products.CollectionType == AppRopio.ECommerce.Products.Core.Models.CollectionType.Grid ? CatalogGridCell.Key : CatalogListCell.Key);
+            return new MvxCollectionViewSource(collectionView, ThemeConfig.Products.CollectionType == CollectionType.Grid ? CatalogGridCell.Key : CatalogListCell.Key);
         }
 
         #endregion

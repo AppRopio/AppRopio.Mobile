@@ -2,6 +2,7 @@
 using AppRopio.Base.iOS.FlowLayouts;
 using AppRopio.Base.iOS.UIExtentions;
 using AppRopio.Base.iOS.ViewSources;
+using AppRopio.ECommerce.Products.Core.Models;
 using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.Collection.Horizontal.Products;
 using AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells;
 using AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.Collection.Horizontal.Products;
@@ -55,7 +56,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ModalProductCard.Cells.Collectio
 
             var layout = new CardsCollectionViewLayout
             {
-                ItemSize = ThemeConfig.Products.CollectionType == AppRopio.ECommerce.Products.Core.Models.CollectionType.Grid ? 
+                ItemSize = ThemeConfig.Products.CollectionType == CollectionType.Grid ? 
                                       (collectionView.CollectionViewLayout as UICollectionViewFlowLayout).ItemSize 
                                       :
                                       new CGSize(ThemeConfig.Products.ProductCell.Size.Width ?? DeviceInfo.ScreenWidth - 32, ThemeConfig.Products.ProductCell.Size.Height ?? 146),
@@ -80,7 +81,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ModalProductCard.Cells.Collectio
 
         protected override MvvmCross.Binding.iOS.Views.MvxCollectionViewSource SetupCollectionDataSource(UICollectionView collectionView)
         {
-            return new InfinityCollectionViewSource(collectionView, ThemeConfig.Products.CollectionType == AppRopio.ECommerce.Products.Core.Models.CollectionType.Grid ? CatalogGridCell.Key : CatalogListCell.Key);
+            return new InfinityCollectionViewSource(collectionView, ThemeConfig.Products.CollectionType == CollectionType.Grid ? CatalogGridCell.Key : CatalogListCell.Key);
         }
     }
 }
