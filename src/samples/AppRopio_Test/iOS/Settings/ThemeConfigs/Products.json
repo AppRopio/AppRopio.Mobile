@@ -28,7 +28,7 @@
     },
     "products": {
         "productCell": {
-            "addToCartHeight": 32,
+            "addToCartHeight": 40,
             "image": {
                 "path": "Images/Products/no_photo.png"
             },

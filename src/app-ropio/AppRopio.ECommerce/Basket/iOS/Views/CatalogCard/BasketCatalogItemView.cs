@@ -103,7 +103,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.CatalogCard
 
         protected virtual CGRect GetFrame()
         {
-            return new CGRect(0, 0, UIScreen.MainScreen.Bounds.Width * 0.5f, 32.0f);
+            return new CGRect(0, 0, UIScreen.MainScreen.Bounds.Width * 0.5f, 40.0f);
         }
 
         protected virtual void SetupBuyButton(UIButton buyButton)
