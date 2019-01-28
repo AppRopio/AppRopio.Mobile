@@ -143,7 +143,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog
 
                 var height = (ThemeConfig.Products.ProductCell.Size.Height.HasValue ?
                         (nfloat)ThemeConfig.Products.ProductCell.Size.Height :
-                        width * 1.78);
+                        (width + 115.0f));
 
                 var config = Mvx.Resolve<IProductConfigService>().Config;
                 if (config.Basket?.ItemAddToCart != null
