@@ -36,6 +36,7 @@ namespace AppRopio.Base.iOS.Models.ThemeConfigs
                 Font = (Font)this.Font?.Clone(),
                 TextAlignment = this.TextAlignment,
                 TextTransform = this.TextTransform,
+                TextDecoration = this.TextDecoration,
                 Kerning = this.Kerning ?? null
             };
         }
