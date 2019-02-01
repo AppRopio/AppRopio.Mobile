@@ -18,6 +18,7 @@ using AppRopio.Base.Core.Services.ViewLookup;
 using MvvmCross.iOS.Views;
 using AppRopio.ECommerce.Products.Core;
 using AppRopio.Base.Core.Services.Localization;
+using AppRopio.ECommerce.Products.Core.Combiners;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
 {
@@ -186,20 +187,9 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
 
             MvxFluentBindingDescription<UILabel, ICatalogItemVM> priceBinding;
             if (Config.UnitNameEnabled)
-                priceBinding = set.Bind(price).ByCombining(new PriceUnitCombiner(), new [] { "Price", "UnitName" });
+                priceBinding = set.Bind(price).ByCombining(new PriceFromUnitCombiner(), new []{ "Price", "UnitName", "MaxPrice" });
             else
-                priceBinding = set.Bind(price).To(vm => vm.Price).WithConversion("PriceFormat");
-
-            if (Config.PriceType == PriceType.From || Config.PriceType == PriceType.FromTo) {
-                priceBinding.WithConversion(
-                    "StringFormat",
-                    new StringFormatParameter() {
-                        StringFormat = (arg) => {
-                            return $"{LocalizationService.GetLocalizableString(ProductsConstants.RESX_NAME, "Catalog_PriceFrom")} {arg}";
-                        }
-                    }
-                );
-            }
+                priceBinding = set.Bind(price).ByCombining(new PriceFromFormatCombiner(), new []{ "Price", "MaxPrice" });
         }
 
         protected virtual void BindMaxPrice(UILabel maxPrice, MvxFluentBindingDescriptionSet<CatalogGridCell, ICatalogItemVM> set)
