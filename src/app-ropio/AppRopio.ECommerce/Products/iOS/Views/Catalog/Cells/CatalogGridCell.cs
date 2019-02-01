@@ -216,12 +216,15 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
             if (Config.UnitNameEnabled)
                 priceBinding = set.Bind(maxPrice).ByCombining(new PriceUnitCombiner(), new [] { "MaxPrice", "UnitName" });
             else
-                priceBinding = set.Bind(maxPrice).To(vm => vm.MaxPrice).WithConversion("PriceFormat");
+                priceBinding = set.Bind(maxPrice).To(vm => vm.MaxPrice);
 
             priceBinding.WithConversion(
                 "StringFormat",
                 new StringFormatParameter() {
                     StringFormat = (arg) => {
+                        if (!Config.UnitNameEnabled) {
+                            arg = new PriceFormatConverter().Convert(arg, typeof(Decimal?), null, null);
+                        }
                         return $"{LocalizationService.GetLocalizableString(ProductsConstants.RESX_NAME, "Catalog_PriceTo")} {arg}";
                     }
                 }
@@ -244,13 +247,16 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
             if (Config.UnitNameEnabled)
                 priceBinding = set.Bind(oldPrice).ByCombining(new PriceUnitCombiner(), new[] { "OldPrice", "UnitNameOld" });
             else
-                priceBinding = set.Bind(oldPrice).To(vm => vm.OldPrice).WithConversion("PriceFormat");
+                priceBinding = set.Bind(oldPrice).To(vm => vm.OldPrice);
 
             if (Config.PriceType == PriceType.From) {
                 priceBinding.WithConversion(
                     "StringFormat",
                     new StringFormatParameter() {
                         StringFormat = (arg) => {
+                            if (!Config.UnitNameEnabled) {
+                                arg = new PriceFormatConverter().Convert(arg, typeof(Decimal?), null, null);
+                            }
                             return $"{LocalizationService.GetLocalizableString(ProductsConstants.RESX_NAME, "Catalog_PriceFrom")} {arg}";
                         }
                     }
