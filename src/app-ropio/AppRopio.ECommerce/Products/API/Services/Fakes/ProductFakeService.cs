@@ -34,6 +34,7 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                     },
                     Price = 1999000,
                     OldPrice = 2100200,
+                    MaxPrice = 3000000,
                     Badges = new List<ProductBadge>
                     {
                         new ProductBadge
@@ -49,6 +50,7 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                     },
                     State = new ProductState { Name = IsRussianCulture ? "В наличии" : "In stock", Type = ProductStateType.InStock },
                     UnitName = IsRussianCulture ? "шт" : "PC",
+                    UnitNameOld = IsRussianCulture ? "шт" : "PC",
                     UnitStep = 1.0f
                 },
                 new Product
@@ -72,6 +74,7 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                         }
                     },
                     UnitName = IsRussianCulture ? "кг" : "kg",
+                    UnitNameOld = IsRussianCulture ? "кг" : "kg",
                     UnitStep = 1.0f,
                     ExtraPrice = new Price
                     {
@@ -88,8 +91,10 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                         new Image { LargeUrl = "https://image.shutterstock.com/z/stock-photo-succulent-thick-juicy-portions-of-grilled-fillet-steak-served-with-tomatoes-and-roast-vegetables-on-138421859.jpg" }
                     },
                     Price = 2000100,
+                    MaxPrice = 3000000,
                     OldPrice = null,
                     UnitName = IsRussianCulture ? "мл" : "ml",
+                    UnitNameOld = IsRussianCulture ? "мл" : "ml",
                     UnitStep = 1.0f
                 },
                 new Product
@@ -103,6 +108,7 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                     Price = 2000100,
                     OldPrice = 2000200,
                     UnitName = IsRussianCulture ? "шт" : "PC",
+                    UnitNameOld = IsRussianCulture ? "шт" : "PC",
                     UnitStep = 1.0f
                 },
                 new Product
@@ -118,6 +124,7 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                     Price = 2000100,
                     OldPrice = null,
                     UnitName = IsRussianCulture ? "кг" : "kg",
+                    UnitNameOld = IsRussianCulture ? "кг" : "kg",
                     UnitStep = 1.0f
                 },
                 new Product
@@ -132,7 +139,9 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                     },
                     Price = 2000100,
                     OldPrice = 2000200,
+                    MaxPrice = 3000000,
                     UnitName = IsRussianCulture ? "мл" : "ml",
+                    UnitNameOld = IsRussianCulture ? "мл" : "ml",
                     UnitStep = 1.0f
                 },
                 new Product
@@ -156,6 +165,7 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                         }
                     },
                     UnitName = IsRussianCulture ? "шт" : "PC",
+                    UnitNameOld = IsRussianCulture ? "шт" : "PC",
                     UnitStep = 1.0f
                 },
                 new Product
@@ -170,6 +180,7 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                     },
                     Price = 2000100,
                     OldPrice = 2000200,
+                    MaxPrice = 3000000,
                     Badges = new List<ProductBadge>
                     {
                         new ProductBadge
@@ -179,6 +190,7 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                         }
                     },
                     UnitName = IsRussianCulture ? "кг" : "kg",
+                    UnitNameOld = IsRussianCulture ? "кг" : "kg",
                     UnitStep = 1.0f
                 },
                 new Product
@@ -192,6 +204,7 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                         new Image { LargeUrl = "https://image.shutterstock.com/z/stock-photo-gourmet-tasty-steak-burgers-with-ham-slices-on-a-wooden-tray-with-potato-wedges-and-dipping-sauce-316591013.jpg" }
                     },
                     Price = 2000100,
+                    MaxPrice = 3000000,
                     OldPrice = null,
                     Badges = new List<ProductBadge>
                     {
@@ -202,6 +215,7 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                         }
                     },
                     UnitName = IsRussianCulture ? "мл" : "ml",
+                    UnitNameOld = IsRussianCulture ? "мл" : "ml",
                     UnitStep = 1.0f
                 },
                 new Product
@@ -216,6 +230,7 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                     },
                     Price = 2000100,
                     OldPrice = 2000200,
+                    MaxPrice = 3000000,
                     Badges = new List<ProductBadge>
                     {
                         new ProductBadge
@@ -225,6 +240,7 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                         }
                     },
                     UnitName = IsRussianCulture ? "шт" : "PC",
+                    UnitNameOld = IsRussianCulture ? "шт" : "PC",
                     UnitStep = 1.0f
                 }
             };

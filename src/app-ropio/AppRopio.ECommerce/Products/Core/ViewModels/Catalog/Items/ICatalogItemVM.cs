@@ -16,6 +16,8 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Items
 
         decimal Price { get; }
 
+        decimal? MaxPrice { get; }
+
         string UnitName { get; }
 
         decimal? OldPrice { get; }

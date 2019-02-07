@@ -3,6 +3,7 @@
     {
         "productCell": 
         {
+            "addToCartHeight": 40,
             "image": { "path": "Images/Products/no_photo.png" },
             "badge": { "textColor": { "HEX": "FFFFFF" } },
             "markButton": {

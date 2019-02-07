@@ -286,7 +286,7 @@ namespace AppRopio.ECommerce.Products.iOS.Models
 
             Size = new Size();
 
-            AddToCartHeight = 32.0f;
+            AddToCartHeight = 40.0f;
         }
     }
 

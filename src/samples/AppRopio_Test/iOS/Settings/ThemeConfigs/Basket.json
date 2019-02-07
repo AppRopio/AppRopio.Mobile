@@ -94,7 +94,7 @@
     "catalogItem": {
         "buyButton" : {
             "layer": {
-                "cornerRadius": 8,
+                "cornerRadius": 16,
                 "maskToBounds": true
             }
         }

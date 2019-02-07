@@ -1,6 +1,5 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using AppRopio.Base.Core.Models.Config;
-using System.Collections.Generic;
 using AppRopio.Base.Core.Models.Navigation;
 
 namespace AppRopio.ECommerce.Products.Core.Models
@@ -10,6 +9,8 @@ namespace AppRopio.ECommerce.Products.Core.Models
         public CategoriesType CategoriesType { get; set; }
 
         public SearchType SearchType { get; set; }
+
+        public PriceType PriceType { get; set; }
 
         public NavigationType ProductCardNavigationType { get; set; }
 
@@ -25,6 +26,7 @@ namespace AppRopio.ECommerce.Products.Core.Models
 
         public ProductsConfig() {
             SearchType = SearchType.Screen;
+            PriceType = PriceType.Default;
         }
     }
 
