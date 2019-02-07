@@ -164,6 +164,7 @@
     <Compile Include="Models\PriceType.cs" />
     <Compile Include="Combiners\PriceFromUnitCombiner.cs" />
     <Compile Include="Combiners\PriceFromFormatCombiner.cs" />
+    <Compile Include="Combiners\PriceVisibilityValueCombiner.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Realm.DataBinding">
