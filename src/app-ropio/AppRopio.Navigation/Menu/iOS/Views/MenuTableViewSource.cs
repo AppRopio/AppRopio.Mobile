@@ -9,6 +9,8 @@ using AppRopio.Navigation.Menu.iOS.Services;
 using System;
 using System.Linq;
 using AppRopio.Navigation.Menu.Core.ViewModels.Items;
+using MvvmCross.Binding.ExtensionMethods;
+using System.Collections.ObjectModel;
 
 namespace AppRopio.Navigation.Menu.iOS.Views
 {
@@ -16,6 +18,8 @@ namespace AppRopio.Navigation.Menu.iOS.Views
     {
         protected MenuConfig Config { get; set; }
         protected MenuThemeConfig ThemeConfig { get; set; }
+
+        protected Collection<IMenuItemVM> MenuItemsSource => ItemsSource as Collection<IMenuItemVM>;
 
         public MenuTableViewSource(UITableView tableView, NSString nibName, NSString cellIdentifier)
             : base(tableView, nibName, cellIdentifier)
@@ -26,6 +30,9 @@ namespace AppRopio.Navigation.Menu.iOS.Views
 
         protected override object GetItemAt(NSIndexPath indexPath)
         {
+            if (MenuItemsSource.IsNullOrEmpty())
+                return null;
+
             var itemsCountBeforeThis = 0;
 
             for (int i = 0; i < indexPath.Section; i++)
@@ -74,11 +81,17 @@ namespace AppRopio.Navigation.Menu.iOS.Views
 
         public override System.nint RowsInSection(UITableView tableview, System.nint section)
         {
+            if (MenuItemsSource.IsNullOrEmpty())
+                return 0;
+
             return Config.Sections[(int)section].Items.Count;
         }
 
         public override System.nint NumberOfSections(UITableView tableView)
         {
+            if (MenuItemsSource.IsNullOrEmpty())
+                return 0;
+
             return Config.Sections.Count(x => !x.Items.IsNullOrEmpty());
         }
     }
