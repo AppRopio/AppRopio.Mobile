@@ -125,6 +125,18 @@ namespace AppRopio.Test.Droid.LocalizationResx {
             }
         }
         
+        internal static string Catalog_PriceFrom {
+            get {
+                return ResourceManager.GetString("Catalog_PriceFrom", resourceCulture);
+            }
+        }
+        
+        internal static string Catalog_PriceTo {
+            get {
+                return ResourceManager.GetString("Catalog_PriceTo", resourceCulture);
+            }
+        }
+        
         internal static string Selection_Clear {
             get {
                 return ResourceManager.GetString("Selection_Clear", resourceCulture);

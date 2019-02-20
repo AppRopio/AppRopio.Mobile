@@ -187,8 +187,12 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
             else
                 priceBinding = set.Bind(price).ByCombining(new PriceFromFormatCombiner(), new []{ "Price", "MaxPrice" });
 
-            if (Config.PriceType != PriceType.FromTo)
-                set.Bind(price).For("Visibility").ByCombining(new PriceVisibilityValueCombiner(), new[] { "Price", "MaxPrice" });
+            if (Config.PriceType != PriceType.FromTo) {
+                set.Bind(price)
+                    .For("Visibility")
+                    .ByCombining(new PriceVisibilityValueCombiner(), new[] { "Price", "MaxPrice" })
+                    .WithConversion("VisibilityHidden");
+            }
         }
 
         protected virtual void BindMaxPrice(UILabel maxPrice, MvxFluentBindingDescriptionSet<CatalogGridCell, ICatalogItemVM> set)
@@ -246,7 +250,10 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
                 }
             );
 
-            set.Bind(oldPrice).For("Visibility").ByCombining(new PriceVisibilityValueCombiner(), new[] { "OldPrice", "MaxPrice" });
+            set.Bind(oldPrice)
+                .For("Visibility")
+                .ByCombining(new PriceVisibilityValueCombiner(), new[] { "OldPrice", "MaxPrice" })
+                .WithConversion("VisibilityHidden");
         }
 
         protected virtual void BindBagesCollection(UICollectionView badges, MvxFluentBindingDescriptionSet<CatalogGridCell, ICatalogItemVM> set)

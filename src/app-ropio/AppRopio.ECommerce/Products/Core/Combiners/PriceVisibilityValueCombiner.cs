@@ -48,7 +48,7 @@ namespace AppRopio.ECommerce.Products.Core.Combiners
                 }
             }
 
-            value = oldPriceValid ? MvxVisibility.Visible : MvxVisibility.Collapsed;
+            value = oldPriceValid ? MvxVisibility.Visible : MvxVisibility.Hidden;
             return true;
         }
     }

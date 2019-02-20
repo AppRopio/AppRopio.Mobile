@@ -75,6 +75,14 @@ or change your search request</value>
         <value>SORT</value>
     </data>
     <data
+        name="Catalog_PriceFrom">
+        <value>from</value>
+    </data>
+    <data
+        name="Catalog_PriceTo">
+        <value>to</value>
+    </data>
+    <data
         name="Selection_Clear">
         <value>Clear</value>
     </data>

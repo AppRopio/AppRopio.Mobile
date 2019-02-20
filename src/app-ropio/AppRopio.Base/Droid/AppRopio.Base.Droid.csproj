@@ -282,6 +282,7 @@
     <Compile Include="PushConstants.cs" />
     <Compile Include="Bindings\UpdatedTextBinding.cs" />
     <Compile Include="Controls\ARAspectLayout.cs" />
+    <Compile Include="Converters\VisibilityViewStatesValueConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

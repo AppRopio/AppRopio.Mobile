@@ -54,6 +54,7 @@
                 android:layout_marginRight="@dimen/app_products_catalog_item_horizontalMargin"
                 android:layout_marginBottom="@dimen/app_products_catalog_item_oldPrice_marginTop"
                 app:MvxBind="Text Name" />
+<!--OLD PRICE-->
             <TextView
                 style="@style/app_products_catalog_item_oldPrice"
                 android:id="@+id/app_products_catalog_item_oldPrice"
@@ -61,16 +62,28 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/app_products_catalog_item_horizontalMargin"
                 android:layout_marginRight="@dimen/app_products_catalog_item_horizontalMargin"
-                app:MvxBind="Text PriceUnit(OldPrice, UnitNameOld); Visibility Visibility(OldPrice, true)" />
+                android:layout_marginBottom="@dimen/app_products_catalog_item_price_marginTop"
+                app:MvxBind="Text PriceUnit(OldPrice, UnitNameOld)" />
+<!--PRICE-->
             <TextView
                 style="@style/app_products_catalog_item_price"
                 android:id="@+id/app_products_catalog_item_price"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/app_products_catalog_item_horizontalMargin"
+                android:layout_marginRight="@dimen/app_products_catalog_item_horizontalMargin"
+                app:MvxBind="Text PriceFromUnit(Price, UnitName, MaxPrice)" />
+<!--MAX PRICE-->
+            <TextView
+                style="@style/app_products_catalog_item_price"
+                android:id="@+id/app_products_catalog_item_maxPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/app_products_catalog_item_price_marginTop"
                 android:layout_marginLeft="@dimen/app_products_catalog_item_horizontalMargin"
                 android:layout_marginRight="@dimen/app_products_catalog_item_horizontalMargin"
-                app:MvxBind="Text PriceUnit(Price, UnitName)" />
+                android:visibility="gone"
+                app:MvxBind="Text Format('{0} {1}', Resx('Catalog_PriceTo', 'Products'), PriceUnit(MaxPrice, UnitName))" />
             <FrameLayout
                 android:id="@+id/app_products_catalogCard_basketLayout"
                 android:layout_width="match_parent"
