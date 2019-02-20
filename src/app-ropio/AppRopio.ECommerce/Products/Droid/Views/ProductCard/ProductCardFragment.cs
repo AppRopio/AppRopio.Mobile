@@ -185,6 +185,11 @@ namespace AppRopio.ECommerce.Products.Droid.Views.ProductCard
                     };
                 }
             }
+            else if (viewHolder.ItemViewType == Resource.Layout.app_products_productCard_shortInfo)
+            {
+                var oldPriceTextView = viewHolder.ItemView.FindViewById<TextView>(Resource.Id.app_products_productCard_shortInfo_oldPrice);
+                oldPriceTextView.PaintFlags |= Android.Graphics.PaintFlags.StrikeThruText;
+            }
         }
 
         protected virtual void BindMinMaxInputs<TParameter>(IMvxBindingContextOwner mvxBindingContextOwner, EditText fromInput, EditText toInput, Func<object, string> stringFormat)

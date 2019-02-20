@@ -203,7 +203,8 @@
                 "size": 14
             },
             "textColor": { "HEX": "9C9C9C" },
-            "textTransform": 1
+            "textTransform": 1,
+            "textDecoration": 2
         },
         "price": {
             "font": {
