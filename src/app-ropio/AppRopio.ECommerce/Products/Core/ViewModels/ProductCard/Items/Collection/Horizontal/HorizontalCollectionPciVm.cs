@@ -2,13 +2,18 @@
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using AppRopio.ECommerce.Products.Core.Models;
+using AppRopio.ECommerce.Products.Core.Services;
 using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.Collection.Items;
 using AppRopio.Models.Products.Responses;
+using MvvmCross.Platform;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.Collection.Horizontal
 {
     public class HorizontalCollectionPciVm : BaseCollectionPciVm<CollectionItemVM, ProductParameterValue>, IHorizontalCollectionPciVm
     {
+        protected virtual ProductsConfig Config { get { return Mvx.Resolve<IProductConfigService>().Config; } }
+
         public HorizontalCollectionPciVm(ProductParameter parameter)
             : base(parameter)
         {
@@ -20,6 +25,17 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.Collecti
             base.LoadContent();
 
             Items = new System.Collections.ObjectModel.ObservableCollection<CollectionItemVM>(Items.OrderByDescending(x => x.Selected));
+
+            if (Config.ProductDetails.SelectFirstHorizontal)
+            {
+                bool selected = Items?.Any(x => x.Selected) ?? false;
+                if (!selected)
+                {
+                    var firstItem = Items?.FirstOrDefault();
+                    if (firstItem != null)
+                        OnItemSelected(firstItem);
+                }
+            }
         }
 
         protected override void OnItemSelected(CollectionItemVM item)

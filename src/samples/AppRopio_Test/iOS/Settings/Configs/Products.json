@@ -32,6 +32,8 @@
                     "assemblyName": "AppRopio.Feedback.Core"
                 }
             }
-        ]
+        ],
+        "selectFirstHorizontal": true,
+        "selectFirstVertical": true
     }
 }

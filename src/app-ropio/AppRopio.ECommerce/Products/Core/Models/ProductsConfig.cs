@@ -42,6 +42,10 @@ namespace AppRopio.ECommerce.Products.Core.Models
     public class ProductDetailsConfig
     {
         public List<ParameterCustomType> CustomTypes { get; set; }
+
+        public bool SelectFirstHorizontal { get; set; }
+
+        public bool SelectFirstVertical { get; set; }
     }
 
     public class ParameterCustomType
