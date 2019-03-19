@@ -27,5 +27,12 @@ namespace AppRopio.Base.Core.Models.App
 
         public List<Locale> Locales;
     }
+
+    public class Locale
+    {
+        public string Name { get; set; }
+
+        public string CurrencySymbol { get; set; }
+    }
 }
 
