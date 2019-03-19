@@ -322,7 +322,6 @@
     <Compile Include="Views\ModalProductCard\Cells\ShortInfo\ModalShortInfoCell.designer.cs">
       <DependentUpon>ModalShortInfoCell.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\CollectionType.cs" />
     <Compile Include="Views\Catalog\Cells\CatalogListCell.cs" />
     <Compile Include="Views\Catalog\Cells\CatalogListCell.designer.cs">
       <DependentUpon>CatalogListCell.cs</DependentUpon>

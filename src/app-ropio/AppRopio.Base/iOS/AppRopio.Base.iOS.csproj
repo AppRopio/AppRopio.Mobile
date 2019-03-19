@@ -238,6 +238,7 @@
     <Compile Include="Services\Contacts\ContactsService.cs" />
     <Compile Include="Services\Contacts\ContactPickerDelegate.cs" />
     <Compile Include="Services\Permissions\PermissionsService.cs" />
+    <Compile Include="ValueConverters\VisibilityHiddenValueConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\AppRopio.Base.Core.csproj">

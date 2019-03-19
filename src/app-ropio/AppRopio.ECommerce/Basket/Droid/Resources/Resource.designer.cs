@@ -260,68 +260,68 @@ namespace AppRopio.ECommerce.Basket.Droid
 			// aapt resource value: 0x7f010010
 			public static int ambientEnabled = 2130771984;
 			
-			// aapt resource value: 0x7f0101e8
-			public static int app_basket_cartIndicator_ic_basket = 2130772456;
-			
-			// aapt resource value: 0x7f0101df
-			public static int app_basket_delivery_on_address_ic_close = 2130772447;
+			// aapt resource value: 0x7f0101e9
+			public static int app_basket_cartIndicator_ic_basket = 2130772457;
 			
 			// aapt resource value: 0x7f0101e0
-			public static int app_basket_delivery_on_point_ic_close = 2130772448;
+			public static int app_basket_delivery_on_address_ic_close = 2130772448;
 			
 			// aapt resource value: 0x7f0101e1
-			public static int app_basket_delivery_on_point_ic_distance = 2130772449;
-			
-			// aapt resource value: 0x7f0101e7
-			public static int app_basket_delivery_on_point_ic_toolbar_search = 2130772455;
+			public static int app_basket_delivery_on_point_ic_close = 2130772449;
 			
 			// aapt resource value: 0x7f0101e2
-			public static int app_basket_delivery_on_point_item_callButton = 2130772450;
+			public static int app_basket_delivery_on_point_ic_distance = 2130772450;
+			
+			// aapt resource value: 0x7f0101e8
+			public static int app_basket_delivery_on_point_ic_toolbar_search = 2130772456;
 			
 			// aapt resource value: 0x7f0101e3
-			public static int app_basket_delivery_on_point_item_infoButton = 2130772451;
+			public static int app_basket_delivery_on_point_item_callButton = 2130772451;
 			
 			// aapt resource value: 0x7f0101e4
-			public static int app_basket_delivery_on_point_item_mapButton = 2130772452;
+			public static int app_basket_delivery_on_point_item_infoButton = 2130772452;
 			
 			// aapt resource value: 0x7f0101e5
-			public static int app_basket_delivery_on_point_item_routeButton = 2130772453;
+			public static int app_basket_delivery_on_point_item_mapButton = 2130772453;
 			
 			// aapt resource value: 0x7f0101e6
-			public static int app_basket_delivery_point_on_map_ic_pin = 2130772454;
+			public static int app_basket_delivery_on_point_item_routeButton = 2130772454;
 			
-			// aapt resource value: 0x7f0101db
-			public static int app_basket_full_order_ic_deliveryTime_calendar = 2130772443;
-			
-			// aapt resource value: 0x7f0101da
-			public static int app_basket_full_order_ic_item_check = 2130772442;
-			
-			// aapt resource value: 0x7f0101d6
-			public static int app_basket_ic_empty_image = 2130772438;
-			
-			// aapt resource value: 0x7f0101e9
-			public static int app_basket_ic_item_large_minus = 2130772457;
-			
-			// aapt resource value: 0x7f0101ea
-			public static int app_basket_ic_item_large_plus = 2130772458;
-			
-			// aapt resource value: 0x7f0101d7
-			public static int app_basket_ic_item_minus = 2130772439;
-			
-			// aapt resource value: 0x7f0101d9
-			public static int app_basket_ic_item_more = 2130772441;
-			
-			// aapt resource value: 0x7f0101d8
-			public static int app_basket_ic_item_plus = 2130772440;
+			// aapt resource value: 0x7f0101e7
+			public static int app_basket_delivery_point_on_map_ic_pin = 2130772455;
 			
 			// aapt resource value: 0x7f0101dc
-			public static int app_basket_payment_ic_item_check = 2130772444;
+			public static int app_basket_full_order_ic_deliveryTime_calendar = 2130772444;
 			
-			// aapt resource value: 0x7f0101de
-			public static int app_basket_thanks_ic_close = 2130772446;
+			// aapt resource value: 0x7f0101db
+			public static int app_basket_full_order_ic_item_check = 2130772443;
+			
+			// aapt resource value: 0x7f0101d7
+			public static int app_basket_ic_empty_image = 2130772439;
+			
+			// aapt resource value: 0x7f0101ea
+			public static int app_basket_ic_item_large_minus = 2130772458;
+			
+			// aapt resource value: 0x7f0101eb
+			public static int app_basket_ic_item_large_plus = 2130772459;
+			
+			// aapt resource value: 0x7f0101d8
+			public static int app_basket_ic_item_minus = 2130772440;
+			
+			// aapt resource value: 0x7f0101da
+			public static int app_basket_ic_item_more = 2130772442;
+			
+			// aapt resource value: 0x7f0101d9
+			public static int app_basket_ic_item_plus = 2130772441;
 			
 			// aapt resource value: 0x7f0101dd
-			public static int app_basket_thanks_ic_image = 2130772445;
+			public static int app_basket_payment_ic_item_check = 2130772445;
+			
+			// aapt resource value: 0x7f0101df
+			public static int app_basket_thanks_ic_close = 2130772447;
+			
+			// aapt resource value: 0x7f0101de
+			public static int app_basket_thanks_ic_image = 2130772446;
 			
 			// aapt resource value: 0x7f0101c5
 			public static int app_color_accent = 2130772421;
@@ -403,6 +403,9 @@ namespace AppRopio.ECommerce.Basket.Droid
 			
 			// aapt resource value: 0x7f0100d8
 			public static int arrowShaftLength = 2130772184;
+			
+			// aapt resource value: 0x7f0101d6
+			public static int aspect = 2130772438;
 			
 			// aapt resource value: 0x7f0100be
 			public static int autoCompleteTextViewStyle = 2130772158;
@@ -5848,6 +5851,12 @@ namespace AppRopio.ECommerce.Basket.Droid
 			
 			// aapt resource value: 0
 			public static int ARAppCompatSpinner_MvxItemTemplate = 0;
+			
+			public static int[] ARAspectLayout = new int[] {
+					2130772438};
+			
+			// aapt resource value: 0
+			public static int ARAspectLayout_aspect = 0;
 			
 			public static int[] ARImageView = new int[] {
 					2130772435,

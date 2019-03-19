@@ -47,6 +47,7 @@
                 app:MvxBind="Text PriceUnit(Price, UnitName);" />
             <TextView
                 style="@style/app_products_productCard_shortInfo_oldPrice"
+                android:id="@+id/app_products_productCard_shortInfo_oldPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/app_products_productCard_shortInfo_paddingHorizontal"

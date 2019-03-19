@@ -335,35 +335,38 @@ namespace AppRopio.Base.Map.Droid
 			// aapt resource value: 0x7f010195
 			public static int app_font_semibold = 2130772373;
 			
-			// aapt resource value: 0x7f01019d
-			public static int app_map_ic_map = 2130772381;
-			
-			// aapt resource value: 0x7f01019f
-			public static int app_map_list_item_callButton = 2130772383;
-			
 			// aapt resource value: 0x7f01019e
-			public static int app_map_list_item_ic_distance = 2130772382;
+			public static int app_map_ic_map = 2130772382;
 			
 			// aapt resource value: 0x7f0101a0
-			public static int app_map_list_item_infoButton = 2130772384;
+			public static int app_map_list_item_callButton = 2130772384;
+			
+			// aapt resource value: 0x7f01019f
+			public static int app_map_list_item_ic_distance = 2130772383;
 			
 			// aapt resource value: 0x7f0101a1
-			public static int app_map_list_item_mapButton = 2130772385;
+			public static int app_map_list_item_infoButton = 2130772385;
 			
 			// aapt resource value: 0x7f0101a2
-			public static int app_map_list_item_routeButton = 2130772386;
+			public static int app_map_list_item_mapButton = 2130772386;
 			
 			// aapt resource value: 0x7f0101a3
-			public static int app_map_points_ic_pin = 2130772387;
+			public static int app_map_list_item_routeButton = 2130772387;
 			
 			// aapt resource value: 0x7f0101a4
-			public static int app_map_points_ic_pin_deselected = 2130772388;
+			public static int app_map_points_ic_pin = 2130772388;
+			
+			// aapt resource value: 0x7f0101a5
+			public static int app_map_points_ic_pin_deselected = 2130772389;
 			
 			// aapt resource value: 0x7f0100d7
 			public static int arrowHeadLength = 2130772183;
 			
 			// aapt resource value: 0x7f0100d8
 			public static int arrowShaftLength = 2130772184;
+			
+			// aapt resource value: 0x7f01019d
+			public static int aspect = 2130772381;
 			
 			// aapt resource value: 0x7f0100be
 			public static int autoCompleteTextViewStyle = 2130772158;
@@ -5080,6 +5083,12 @@ namespace AppRopio.Base.Map.Droid
 			
 			// aapt resource value: 0
 			public static int ARAppCompatSpinner_MvxItemTemplate = 0;
+			
+			public static int[] ARAspectLayout = new int[] {
+					2130772381};
+			
+			// aapt resource value: 0
+			public static int ARAspectLayout_aspect = 0;
 			
 			public static int[] ARImageView = new int[] {
 					2130772378,

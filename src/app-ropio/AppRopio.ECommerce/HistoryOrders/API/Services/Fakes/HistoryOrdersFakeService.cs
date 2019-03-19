@@ -21,7 +21,7 @@ namespace AppRopio.ECommerce.HistoryOrders.API.Services.Fakes
                 new HistoryOrder()
                 {
                     Id = "1",
-                    OrderNumber = "№12345",
+                    OrderNumber = "12345",
                     ItemsCount = 5,
                     PaymentStatus = PaymentStatus.Paid,
                     OrderStatus = !IsRussianCulture ? "Paid 22.06 at 02:53 pm" : "Оплачен 22.06 в 14:53",
@@ -32,7 +32,7 @@ namespace AppRopio.ECommerce.HistoryOrders.API.Services.Fakes
 				new HistoryOrder()
 				{
 					Id = "2",
-					OrderNumber = "№12346",
+					OrderNumber = "12346",
 					ItemsCount = 2,
                     PaymentStatus = PaymentStatus.NotPaid,
                     OrderStatus = !IsRussianCulture ? "Paid 21.06 at 10;40 am" : "Оплачен 21.06 в 10:40",
@@ -43,7 +43,7 @@ namespace AppRopio.ECommerce.HistoryOrders.API.Services.Fakes
 				new HistoryOrder()
 				{
 					Id = "3",
-					OrderNumber = "№12347",
+					OrderNumber = "12347",
 					ItemsCount = 2,
                     PaymentStatus = PaymentStatus.Unknown,
                     OrderStatus = !IsRussianCulture ? "Paid 20.06 at 05:40 am" : "Оплачен 20.06 в 05:40",

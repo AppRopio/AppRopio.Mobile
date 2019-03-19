@@ -7,4 +7,8 @@
         name="app_products_catalog_search_icon_tintColor">#C4C4C4</color>
     <color
         name="app_products_productCard_shopsHorizontalCollection_item_background">#FFFFFF</color>
+    <color
+        name="app_products_sscategories_item_grid_gradient_endColor">#00000000</color>
+    <color
+        name="app_products_sscategories_item_grid_gradient_startColor">#69271F1F</color>
 </resources>

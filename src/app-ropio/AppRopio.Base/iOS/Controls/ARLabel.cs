@@ -20,6 +20,8 @@ namespace AppRopio.Base.iOS.Controls
             set
             {
                 base.Text = value.ApplyTransform(TextTransform);
+                if (!string.IsNullOrEmpty(base.Text))
+                    AttributedText = new NSAttributedString(base.Text);
             }
         }
 

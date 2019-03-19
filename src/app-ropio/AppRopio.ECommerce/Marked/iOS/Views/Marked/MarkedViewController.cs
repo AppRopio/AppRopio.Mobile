@@ -1,16 +1,15 @@
 ﻿using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.ViewSources;
+using AppRopio.ECommerce.Marked.Core;
 using AppRopio.ECommerce.Marked.Core.ViewModels.Marked;
 using AppRopio.ECommerce.Marked.iOS.Models;
 using AppRopio.ECommerce.Marked.iOS.Services;
+using AppRopio.ECommerce.Products.Core.Models;
 using AppRopio.ECommerce.Products.iOS.Models;
 using AppRopio.ECommerce.Products.iOS.Views.Catalog;
 using CoreGraphics;
 using MvvmCross.Platform;
 using UIKit;
-using AppRopio.Base.iOS.UIExtentions;
-using AppRopio.ECommerce.Marked.Core;
-using MvvmCross.Binding.BindingContext;
 
 namespace AppRopio.ECommerce.Marked.iOS.Views.Marked
 {

@@ -160,6 +160,11 @@
     <Compile Include="ViewModels\ModalProductCard\ModalProductCardViewModel.cs" />
     <Compile Include="ViewModels\ModalProductCard\IModalProductCardViewModel.cs" />
     <Compile Include="Models\SearchType.cs" />
+    <Compile Include="Models\CollectionType.cs" />
+    <Compile Include="Models\PriceType.cs" />
+    <Compile Include="Combiners\PriceFromUnitCombiner.cs" />
+    <Compile Include="Combiners\PriceFromFormatCombiner.cs" />
+    <Compile Include="Combiners\PriceVisibilityValueCombiner.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Realm.DataBinding">
@@ -280,6 +285,7 @@
     <Folder Include="ViewModels\ProductCard\Items\Collection\Horizontal\Shops\" />
     <Folder Include="ViewModels\ProductCard\Items\Collection\Horizontal\Shops\Items\" />
     <Folder Include="ViewModels\ModalProductCard\" />
+    <Folder Include="Combiners\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Fody.3.0.3\build\Fody.targets" Condition="Exists('..\..\packages\Fody.3.0.3\build\Fody.targets')" />

@@ -11,7 +11,7 @@
             name="android:scrollbars">none</item>
     </style>
     <style
-        name  ="app_products_sscategories_item_title"
+        name  ="app_products_sscategories_item_list_title"
         parent="AppRopio.TextAppearance.Body1">
         <item
             name="android:ellipsize">end</item>
@@ -19,6 +19,25 @@
             name="android:maxLines">1</item>
         <item
             name="android:gravity">center_vertical</item>
+    </style>
+    <style
+        name  ="app_products_sscategories_item_grid_title"
+        parent="AppRopio.TextAppearance.Body3">
+        <item
+            name="android:ellipsize">end</item>
+        <item
+            name="android:maxLines">3</item>
+        <item
+            name="android:gravity">center</item>
+        <item
+            name="android:textColor">?attr/app_products_categories_color_textTitle</item>
+        <item
+            name="android:textAllCaps">true</item>
+    </style>
+    <style
+        name="app_products_sscategories_item_grid_image">
+        <item
+            name="android:scaleType">centerCrop</item>
     </style>
     <!--    -->
     <!--  Cataloged Categories  -->

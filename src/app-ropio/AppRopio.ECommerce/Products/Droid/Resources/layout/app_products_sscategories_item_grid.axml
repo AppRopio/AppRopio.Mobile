@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<appropio.base.droid.controls.ARAspectLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <appropio.base.droid.controls.ARImageView
+            style="@style/app_products_sscategories_item_grid_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:MvxBind="ImageUrl BackgroundImageUrl"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/app_products_sscategories_item_grid_gradient"/>
+        <View
+            android:layout_width="@dimen/app_products_sscategories_item_grid_separator_width"
+            android:layout_height="@dimen/app_products_sscategories_item_grid_separator_height"
+            android:layout_marginBottom="@dimen/app_products_sscategories_item_grid_separator_verticalMargin"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="?attr/app_products_categories_color_textTitle"/>
+        <TextView
+            style="@style/app_products_sscategories_item_grid_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/app_products_sscategories_item_grid_separator_verticalMargin"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            app:MvxBind="Text Name"/>
+    </RelativeLayout>
+</appropio.base.droid.controls.ARAspectLayout>

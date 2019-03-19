@@ -31,6 +31,7 @@ namespace AppRopio.ECommerce.Marked.API.Services.Fakes
                     },
                     OldPrice = 1000100,
                     Price = 2000200,
+                    MaxPrice = 3000000,
                     ImageUrls = new List<Image>
                     {
                         new Image()
@@ -73,7 +74,8 @@ namespace AppRopio.ECommerce.Marked.API.Services.Fakes
 					},
 					OldPrice = 2000100,
 					Price = 2000100,
-					ImageUrls = new List<Image>
+                    MaxPrice = 3000000,
+                    ImageUrls = new List<Image>
                     {
                         new Image()
                         {
@@ -94,7 +96,8 @@ namespace AppRopio.ECommerce.Marked.API.Services.Fakes
 					},
 					OldPrice = 2000100,
 					Price = 2000100,
-					ImageUrls = new List<Image>
+                    MaxPrice = 3000000,
+                    ImageUrls = new List<Image>
 					{
 						new Image()
 						{
@@ -179,7 +182,8 @@ namespace AppRopio.ECommerce.Marked.API.Services.Fakes
 					},
 					OldPrice = 2000100,
 					Price = 2000100,
-					ImageUrls = new List<Image>
+                    MaxPrice = 3000000,
+                    ImageUrls = new List<Image>
 					{
 						new Image()
 						{
@@ -200,7 +204,8 @@ namespace AppRopio.ECommerce.Marked.API.Services.Fakes
 					},
 					OldPrice = 2000100,
 					Price = 2000100,
-					ImageUrls = new List<Image>
+                    MaxPrice = 3000000,
+                    ImageUrls = new List<Image>
 					{
 						new Image()
 						{
@@ -242,7 +247,8 @@ namespace AppRopio.ECommerce.Marked.API.Services.Fakes
 					},
 					OldPrice = 2000100,
 					Price = 2000100,
-					ImageUrls = new List<Image>
+                    MaxPrice = 3000000,
+                    ImageUrls = new List<Image>
 					{
 						new Image()
 						{
@@ -263,7 +269,8 @@ namespace AppRopio.ECommerce.Marked.API.Services.Fakes
 					},
 					OldPrice = 2000100,
 					Price = 2000100,
-					ImageUrls = new List<Image>
+                    MaxPrice = 3000000,
+                    ImageUrls = new List<Image>
 					{
 						new Image()
 						{

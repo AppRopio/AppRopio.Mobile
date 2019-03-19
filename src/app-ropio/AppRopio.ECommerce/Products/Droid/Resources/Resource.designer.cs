@@ -332,50 +332,59 @@ namespace AppRopio.ECommerce.Products.Droid
 			// aapt resource value: 0x7f0101bc
 			public static int app_font_semibold = 2130772412;
 			
-			// aapt resource value: 0x7f0101c6
-			public static int app_products_catalog_collectionType = 2130772422;
-			
 			// aapt resource value: 0x7f0101c7
-			public static int app_products_catalog_item_background = 2130772423;
-			
-			// aapt resource value: 0x7f0101ca
-			public static int app_products_contentsearch_ic_arrow = 2130772426;
-			
-			// aapt resource value: 0x7f0101cb
-			public static int app_products_contentsearch_ic_clock = 2130772427;
-			
-			// aapt resource value: 0x7f0101c5
-			public static int app_products_ic_empty_image = 2130772421;
-			
-			// aapt resource value: 0x7f0101cf
-			public static int app_products_ic_empty_image_large = 2130772431;
+			public static int app_products_catalog_collectionType = 2130772423;
 			
 			// aapt resource value: 0x7f0101c8
-			public static int app_products_ic_marked = 2130772424;
+			public static int app_products_catalog_item_background = 2130772424;
 			
-			// aapt resource value: 0x7f0101d0
-			public static int app_products_ic_share = 2130772432;
+			// aapt resource value: 0x7f0101d2
+			public static int app_products_categories_collectionType = 2130772434;
 			
-			// aapt resource value: 0x7f0101c4
-			public static int app_products_ic_toolbar_search = 2130772420;
+			// aapt resource value: 0x7f0101d3
+			public static int app_products_categories_color_textTitle = 2130772435;
 			
-			// aapt resource value: 0x7f0101c9
-			public static int app_products_ic_unmarked = 2130772425;
-			
-			// aapt resource value: 0x7f0101cd
-			public static int app_products_productCard_color_ic_checkImage = 2130772429;
+			// aapt resource value: 0x7f0101cb
+			public static int app_products_contentsearch_ic_arrow = 2130772427;
 			
 			// aapt resource value: 0x7f0101cc
-			public static int app_products_productCard_ic_arrow = 2130772428;
+			public static int app_products_contentsearch_ic_clock = 2130772428;
+			
+			// aapt resource value: 0x7f0101c6
+			public static int app_products_ic_empty_image = 2130772422;
+			
+			// aapt resource value: 0x7f0101d0
+			public static int app_products_ic_empty_image_large = 2130772432;
+			
+			// aapt resource value: 0x7f0101c9
+			public static int app_products_ic_marked = 2130772425;
+			
+			// aapt resource value: 0x7f0101d1
+			public static int app_products_ic_share = 2130772433;
+			
+			// aapt resource value: 0x7f0101c5
+			public static int app_products_ic_toolbar_search = 2130772421;
+			
+			// aapt resource value: 0x7f0101ca
+			public static int app_products_ic_unmarked = 2130772426;
 			
 			// aapt resource value: 0x7f0101ce
-			public static int app_products_productCard_ic_cross = 2130772430;
+			public static int app_products_productCard_color_ic_checkImage = 2130772430;
+			
+			// aapt resource value: 0x7f0101cd
+			public static int app_products_productCard_ic_arrow = 2130772429;
+			
+			// aapt resource value: 0x7f0101cf
+			public static int app_products_productCard_ic_cross = 2130772431;
 			
 			// aapt resource value: 0x7f0100c5
 			public static int arrowHeadLength = 2130772165;
 			
 			// aapt resource value: 0x7f0100c6
 			public static int arrowShaftLength = 2130772166;
+			
+			// aapt resource value: 0x7f0101c4
+			public static int aspect = 2130772420;
 			
 			// aapt resource value: 0x7f0100ac
 			public static int autoCompleteTextViewStyle = 2130772140;
@@ -1540,44 +1549,44 @@ namespace AppRopio.ECommerce.Products.Droid
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f0a0051
-			public static int abc_background_cache_hint_selector_material_dark = 2131361873;
-			
-			// aapt resource value: 0x7f0a0052
-			public static int abc_background_cache_hint_selector_material_light = 2131361874;
-			
 			// aapt resource value: 0x7f0a0053
-			public static int abc_btn_colored_borderless_text_material = 2131361875;
+			public static int abc_background_cache_hint_selector_material_dark = 2131361875;
 			
 			// aapt resource value: 0x7f0a0054
-			public static int abc_btn_colored_text_material = 2131361876;
+			public static int abc_background_cache_hint_selector_material_light = 2131361876;
 			
 			// aapt resource value: 0x7f0a0055
-			public static int abc_color_highlight_material = 2131361877;
+			public static int abc_btn_colored_borderless_text_material = 2131361877;
 			
 			// aapt resource value: 0x7f0a0056
-			public static int abc_hint_foreground_material_dark = 2131361878;
+			public static int abc_btn_colored_text_material = 2131361878;
 			
 			// aapt resource value: 0x7f0a0057
-			public static int abc_hint_foreground_material_light = 2131361879;
+			public static int abc_color_highlight_material = 2131361879;
+			
+			// aapt resource value: 0x7f0a0058
+			public static int abc_hint_foreground_material_dark = 2131361880;
+			
+			// aapt resource value: 0x7f0a0059
+			public static int abc_hint_foreground_material_light = 2131361881;
 			
 			// aapt resource value: 0x7f0a0004
 			public static int abc_input_method_navigation_guard = 2131361796;
 			
-			// aapt resource value: 0x7f0a0058
-			public static int abc_primary_text_disable_only_material_dark = 2131361880;
-			
-			// aapt resource value: 0x7f0a0059
-			public static int abc_primary_text_disable_only_material_light = 2131361881;
-			
 			// aapt resource value: 0x7f0a005a
-			public static int abc_primary_text_material_dark = 2131361882;
+			public static int abc_primary_text_disable_only_material_dark = 2131361882;
 			
 			// aapt resource value: 0x7f0a005b
-			public static int abc_primary_text_material_light = 2131361883;
+			public static int abc_primary_text_disable_only_material_light = 2131361883;
 			
 			// aapt resource value: 0x7f0a005c
-			public static int abc_search_url_text = 2131361884;
+			public static int abc_primary_text_material_dark = 2131361884;
+			
+			// aapt resource value: 0x7f0a005d
+			public static int abc_primary_text_material_light = 2131361885;
+			
+			// aapt resource value: 0x7f0a005e
+			public static int abc_search_url_text = 2131361886;
 			
 			// aapt resource value: 0x7f0a0005
 			public static int abc_search_url_text_normal = 2131361797;
@@ -1588,29 +1597,29 @@ namespace AppRopio.ECommerce.Products.Droid
 			// aapt resource value: 0x7f0a0007
 			public static int abc_search_url_text_selected = 2131361799;
 			
-			// aapt resource value: 0x7f0a005d
-			public static int abc_secondary_text_material_dark = 2131361885;
-			
-			// aapt resource value: 0x7f0a005e
-			public static int abc_secondary_text_material_light = 2131361886;
-			
 			// aapt resource value: 0x7f0a005f
-			public static int abc_tint_btn_checkable = 2131361887;
+			public static int abc_secondary_text_material_dark = 2131361887;
 			
 			// aapt resource value: 0x7f0a0060
-			public static int abc_tint_default = 2131361888;
+			public static int abc_secondary_text_material_light = 2131361888;
 			
 			// aapt resource value: 0x7f0a0061
-			public static int abc_tint_edittext = 2131361889;
+			public static int abc_tint_btn_checkable = 2131361889;
 			
 			// aapt resource value: 0x7f0a0062
-			public static int abc_tint_seek_thumb = 2131361890;
+			public static int abc_tint_default = 2131361890;
 			
 			// aapt resource value: 0x7f0a0063
-			public static int abc_tint_spinner = 2131361891;
+			public static int abc_tint_edittext = 2131361891;
 			
 			// aapt resource value: 0x7f0a0064
-			public static int abc_tint_switch_track = 2131361892;
+			public static int abc_tint_seek_thumb = 2131361892;
+			
+			// aapt resource value: 0x7f0a0065
+			public static int abc_tint_spinner = 2131361893;
+			
+			// aapt resource value: 0x7f0a0066
+			public static int abc_tint_switch_track = 2131361894;
 			
 			// aapt resource value: 0x7f0a0008
 			public static int accent_material_dark = 2131361800;
@@ -1629,6 +1638,12 @@ namespace AppRopio.ECommerce.Products.Droid
 			
 			// aapt resource value: 0x7f0a0050
 			public static int app_products_productCard_shopsHorizontalCollection_item_background = 2131361872;
+			
+			// aapt resource value: 0x7f0a0051
+			public static int app_products_sscategories_item_grid_gradient_endColor = 2131361873;
+			
+			// aapt resource value: 0x7f0a0052
+			public static int app_products_sscategories_item_grid_gradient_startColor = 2131361874;
 			
 			// aapt resource value: 0x7f0a000a
 			public static int background_floating_material_dark = 2131361802;
@@ -1687,8 +1702,8 @@ namespace AppRopio.ECommerce.Products.Droid
 			// aapt resource value: 0x7f0a0040
 			public static int design_bottom_navigation_shadow_color = 2131361856;
 			
-			// aapt resource value: 0x7f0a0065
-			public static int design_error = 2131361893;
+			// aapt resource value: 0x7f0a0067
+			public static int design_error = 2131361895;
 			
 			// aapt resource value: 0x7f0a0041
 			public static int design_fab_shadow_end_color = 2131361857;
@@ -1714,8 +1729,8 @@ namespace AppRopio.ECommerce.Products.Droid
 			// aapt resource value: 0x7f0a0048
 			public static int design_snackbar_background_color = 2131361864;
 			
-			// aapt resource value: 0x7f0a0066
-			public static int design_tint_password_toggle = 2131361894;
+			// aapt resource value: 0x7f0a0068
+			public static int design_tint_password_toggle = 2131361896;
 			
 			// aapt resource value: 0x7f0a0016
 			public static int dim_foreground_disabled_material_dark = 2131361814;
@@ -1837,11 +1852,11 @@ namespace AppRopio.ECommerce.Products.Droid
 			// aapt resource value: 0x7f0a003a
 			public static int switch_thumb_disabled_material_light = 2131361850;
 			
-			// aapt resource value: 0x7f0a0067
-			public static int switch_thumb_material_dark = 2131361895;
+			// aapt resource value: 0x7f0a0069
+			public static int switch_thumb_material_dark = 2131361897;
 			
-			// aapt resource value: 0x7f0a0068
-			public static int switch_thumb_material_light = 2131361896;
+			// aapt resource value: 0x7f0a006a
+			public static int switch_thumb_material_light = 2131361898;
 			
 			// aapt resource value: 0x7f0a003b
 			public static int switch_thumb_normal_material_dark = 2131361851;
@@ -2138,215 +2153,227 @@ namespace AppRopio.ECommerce.Products.Droid
 			// aapt resource value: 0x7f07009f
 			public static int app_loader_height = 2131165343;
 			
-			// aapt resource value: 0x7f0700b3
-			public static int app_products_catalog_empty_subtitle_topMargin = 2131165363;
-			
-			// aapt resource value: 0x7f0700b2
-			public static int app_products_catalog_empty_title_topMargin = 2131165362;
-			
-			// aapt resource value: 0x7f0700be
-			public static int app_products_catalog_headerHeight = 2131165374;
-			
-			// aapt resource value: 0x7f0700bc
-			public static int app_products_catalog_item_badge_cornerRadius = 2131165372;
-			
-			// aapt resource value: 0x7f0700bd
-			public static int app_products_catalog_item_badge_height = 2131165373;
-			
-			// aapt resource value: 0x7f0700ba
-			public static int app_products_catalog_item_badges_padding = 2131165370;
-			
-			// aapt resource value: 0x7f0700bb
-			public static int app_products_catalog_item_badges_text_horizontalPadding = 2131165371;
-			
-			// aapt resource value: 0x7f0700c1
-			public static int app_products_catalog_item_cornerRadius = 2131165377;
-			
-			// aapt resource value: 0x7f0700b4
-			public static int app_products_catalog_item_elevation = 2131165364;
-			
-			// aapt resource value: 0x7f0700b5
-			public static int app_products_catalog_item_horizontalMargin = 2131165365;
+			// aapt resource value: 0x7f0700b7
+			public static int app_products_catalog_empty_subtitle_topMargin = 2131165367;
 			
 			// aapt resource value: 0x7f0700b6
-			public static int app_products_catalog_item_name_marginTop = 2131165366;
-			
-			// aapt resource value: 0x7f0700b7
-			public static int app_products_catalog_item_oldPrice_marginTop = 2131165367;
-			
-			// aapt resource value: 0x7f0700b9
-			public static int app_products_catalog_item_price_marginBottom = 2131165369;
-			
-			// aapt resource value: 0x7f0700b8
-			public static int app_products_catalog_item_price_marginTop = 2131165368;
-			
-			// aapt resource value: 0x7f0700c3
-			public static int app_products_catalog_searchView_cornerRadius = 2131165379;
-			
-			// aapt resource value: 0x7f0700c4
-			public static int app_products_catalog_searchView_elevation = 2131165380;
+			public static int app_products_catalog_empty_title_topMargin = 2131165366;
 			
 			// aapt resource value: 0x7f0700c2
-			public static int app_products_catalog_searchView_height = 2131165378;
-			
-			// aapt resource value: 0x7f0700c5
-			public static int app_products_catalog_searchView_margin = 2131165381;
-			
-			// aapt resource value: 0x7f0700c6
-			public static int app_products_catalog_search_editText_marginLeft = 2131165382;
-			
-			// aapt resource value: 0x7f0700c7
-			public static int app_products_catalog_search_editText_marginRight = 2131165383;
-			
-			// aapt resource value: 0x7f0700c9
-			public static int app_products_catalog_search_icon_marginLeft = 2131165385;
-			
-			// aapt resource value: 0x7f0700c8
-			public static int app_products_catalog_search_icon_size = 2131165384;
+			public static int app_products_catalog_headerHeight = 2131165378;
 			
 			// aapt resource value: 0x7f0700c0
-			public static int app_products_catalog_sort_filters_header_horizontalPadding = 2131165376;
+			public static int app_products_catalog_item_badge_cornerRadius = 2131165376;
+			
+			// aapt resource value: 0x7f0700c1
+			public static int app_products_catalog_item_badge_height = 2131165377;
+			
+			// aapt resource value: 0x7f0700be
+			public static int app_products_catalog_item_badges_padding = 2131165374;
 			
 			// aapt resource value: 0x7f0700bf
-			public static int app_products_catalog_sort_filters_header_margins = 2131165375;
+			public static int app_products_catalog_item_badges_text_horizontalPadding = 2131165375;
+			
+			// aapt resource value: 0x7f0700c5
+			public static int app_products_catalog_item_cornerRadius = 2131165381;
+			
+			// aapt resource value: 0x7f0700b8
+			public static int app_products_catalog_item_elevation = 2131165368;
+			
+			// aapt resource value: 0x7f0700b9
+			public static int app_products_catalog_item_horizontalMargin = 2131165369;
+			
+			// aapt resource value: 0x7f0700ba
+			public static int app_products_catalog_item_name_marginTop = 2131165370;
+			
+			// aapt resource value: 0x7f0700bb
+			public static int app_products_catalog_item_oldPrice_marginTop = 2131165371;
+			
+			// aapt resource value: 0x7f0700bd
+			public static int app_products_catalog_item_price_marginBottom = 2131165373;
+			
+			// aapt resource value: 0x7f0700bc
+			public static int app_products_catalog_item_price_marginTop = 2131165372;
+			
+			// aapt resource value: 0x7f0700c7
+			public static int app_products_catalog_searchView_cornerRadius = 2131165383;
+			
+			// aapt resource value: 0x7f0700c8
+			public static int app_products_catalog_searchView_elevation = 2131165384;
+			
+			// aapt resource value: 0x7f0700c6
+			public static int app_products_catalog_searchView_height = 2131165382;
+			
+			// aapt resource value: 0x7f0700c9
+			public static int app_products_catalog_searchView_margin = 2131165385;
 			
 			// aapt resource value: 0x7f0700ca
-			public static int app_products_contentsearch_hints_autocompleteMinHeight = 2131165386;
+			public static int app_products_catalog_search_editText_marginLeft = 2131165386;
 			
 			// aapt resource value: 0x7f0700cb
-			public static int app_products_contentsearch_hints_autocomplete_horizontalPaddings = 2131165387;
-			
-			// aapt resource value: 0x7f0700ce
-			public static int app_products_contentsearch_hints_autocomplete_item_cornerRadius = 2131165390;
+			public static int app_products_catalog_search_editText_marginRight = 2131165387;
 			
 			// aapt resource value: 0x7f0700cd
-			public static int app_products_contentsearch_hints_autocomplete_item_marginBottom = 2131165389;
+			public static int app_products_catalog_search_icon_marginLeft = 2131165389;
 			
 			// aapt resource value: 0x7f0700cc
-			public static int app_products_contentsearch_hints_autocomplete_item_marginRight = 2131165388;
+			public static int app_products_catalog_search_icon_size = 2131165388;
 			
-			// aapt resource value: 0x7f0700d1
-			public static int app_products_contentsearch_hints_autocomplete_item_text_minHeight = 2131165393;
+			// aapt resource value: 0x7f0700c4
+			public static int app_products_catalog_sort_filters_header_horizontalPadding = 2131165380;
+			
+			// aapt resource value: 0x7f0700c3
+			public static int app_products_catalog_sort_filters_header_margins = 2131165379;
+			
+			// aapt resource value: 0x7f0700ce
+			public static int app_products_contentsearch_hints_autocompleteMinHeight = 2131165390;
 			
 			// aapt resource value: 0x7f0700cf
-			public static int app_products_contentsearch_hints_item_height = 2131165391;
+			public static int app_products_contentsearch_hints_autocomplete_horizontalPaddings = 2131165391;
 			
 			// aapt resource value: 0x7f0700d2
-			public static int app_products_contentsearch_hints_item_text_leftMargin = 2131165394;
+			public static int app_products_contentsearch_hints_autocomplete_item_cornerRadius = 2131165394;
+			
+			// aapt resource value: 0x7f0700d1
+			public static int app_products_contentsearch_hints_autocomplete_item_marginBottom = 2131165393;
 			
 			// aapt resource value: 0x7f0700d0
-			public static int app_products_contentsearch_history_item_height = 2131165392;
-			
-			// aapt resource value: 0x7f0700d9
-			public static int app_products_productCard_horizontalCollection_color_radius = 2131165401;
-			
-			// aapt resource value: 0x7f0700d8
-			public static int app_products_productCard_horizontalCollection_color_size = 2131165400;
-			
-			// aapt resource value: 0x7f0700d7
-			public static int app_products_productCard_horizontalCollection_content_height = 2131165399;
-			
-			// aapt resource value: 0x7f0700d6
-			public static int app_products_productCard_horizontalCollection_height = 2131165398;
-			
-			// aapt resource value: 0x7f0700db
-			public static int app_products_productCard_horizontalCollection_text_minHeight = 2131165403;
-			
-			// aapt resource value: 0x7f0700da
-			public static int app_products_productCard_horizontalCollection_text_radius = 2131165402;
-			
-			// aapt resource value: 0x7f0700d4
-			public static int app_products_productCard_horizontalMargins = 2131165396;
-			
-			// aapt resource value: 0x7f0700e4
-			public static int app_products_productCard_minMax_content_height = 2131165412;
-			
-			// aapt resource value: 0x7f0700e5
-			public static int app_products_productCard_minMax_content_horizontalPadding = 2131165413;
-			
-			// aapt resource value: 0x7f0700e6
-			public static int app_products_productCard_minMax_content_input_marginLeft = 2131165414;
-			
-			// aapt resource value: 0x7f0700e1
-			public static int app_products_productCard_multiSelection_image_paddingRight = 2131165409;
-			
-			// aapt resource value: 0x7f0700dd
-			public static int app_products_productCard_multiSelection_item_height = 2131165405;
-			
-			// aapt resource value: 0x7f0700de
-			public static int app_products_productCard_multiSelection_item_text_minHeight = 2131165406;
-			
-			// aapt resource value: 0x7f0700e0
-			public static int app_products_productCard_multiSelection_text_cornerRadius = 2131165408;
-			
-			// aapt resource value: 0x7f0700df
-			public static int app_products_productCard_multiSelection_text_paddingRight = 2131165407;
-			
-			// aapt resource value: 0x7f0700dc
-			public static int app_products_productCard_picker_spinner_item_titleHeight = 2131165404;
-			
-			// aapt resource value: 0x7f0700ec
-			public static int app_products_productCard_shopsHorizontalCollection_height_count = 2131165420;
-			
-			// aapt resource value: 0x7f0700eb
-			public static int app_products_productCard_shopsHorizontalCollection_height_indicator = 2131165419;
-			
-			// aapt resource value: 0x7f0700f1
-			public static int app_products_productCard_shopsHorizontalCollection_indicatorMargins = 2131165425;
-			
-			// aapt resource value: 0x7f0700f0
-			public static int app_products_productCard_shopsHorizontalCollection_indicatorSize = 2131165424;
-			
-			// aapt resource value: 0x7f0700ef
-			public static int app_products_productCard_shopsHorizontalCollection_item_cornerRadius = 2131165423;
-			
-			// aapt resource value: 0x7f0700ee
-			public static int app_products_productCard_shopsHorizontalCollection_item_elevation = 2131165422;
-			
-			// aapt resource value: 0x7f0700ed
-			public static int app_products_productCard_shopsHorizontalCollection_title_height = 2131165421;
-			
-			// aapt resource value: 0x7f0700e7
-			public static int app_products_productCard_shortInfo_minHeight = 2131165415;
-			
-			// aapt resource value: 0x7f0700e8
-			public static int app_products_productCard_shortInfo_paddingHorizontal = 2131165416;
-			
-			// aapt resource value: 0x7f0700e9
-			public static int app_products_productCard_shortInfo_paddingVertical = 2131165417;
+			public static int app_products_contentsearch_hints_autocomplete_item_marginRight = 2131165392;
 			
 			// aapt resource value: 0x7f0700d5
-			public static int app_products_productCard_title_height = 2131165397;
-			
-			// aapt resource value: 0x7f0700e2
-			public static int app_products_productCard_verticalCollection_content_height = 2131165410;
-			
-			// aapt resource value: 0x7f0700e3
-			public static int app_products_productCard_verticalCollection_horizontalMargins = 2131165411;
+			public static int app_products_contentsearch_hints_autocomplete_item_text_minHeight = 2131165397;
 			
 			// aapt resource value: 0x7f0700d3
-			public static int app_products_productCard_verticalMargins = 2131165395;
+			public static int app_products_contentsearch_hints_item_height = 2131165395;
+			
+			// aapt resource value: 0x7f0700d6
+			public static int app_products_contentsearch_hints_item_text_leftMargin = 2131165398;
+			
+			// aapt resource value: 0x7f0700d4
+			public static int app_products_contentsearch_history_item_height = 2131165396;
+			
+			// aapt resource value: 0x7f0700dd
+			public static int app_products_productCard_horizontalCollection_color_radius = 2131165405;
+			
+			// aapt resource value: 0x7f0700dc
+			public static int app_products_productCard_horizontalCollection_color_size = 2131165404;
+			
+			// aapt resource value: 0x7f0700db
+			public static int app_products_productCard_horizontalCollection_content_height = 2131165403;
+			
+			// aapt resource value: 0x7f0700da
+			public static int app_products_productCard_horizontalCollection_height = 2131165402;
+			
+			// aapt resource value: 0x7f0700df
+			public static int app_products_productCard_horizontalCollection_text_minHeight = 2131165407;
+			
+			// aapt resource value: 0x7f0700de
+			public static int app_products_productCard_horizontalCollection_text_radius = 2131165406;
+			
+			// aapt resource value: 0x7f0700d8
+			public static int app_products_productCard_horizontalMargins = 2131165400;
+			
+			// aapt resource value: 0x7f0700e8
+			public static int app_products_productCard_minMax_content_height = 2131165416;
+			
+			// aapt resource value: 0x7f0700e9
+			public static int app_products_productCard_minMax_content_horizontalPadding = 2131165417;
 			
 			// aapt resource value: 0x7f0700ea
-			public static int app_products_productCard_weight_separatorHeight = 2131165418;
+			public static int app_products_productCard_minMax_content_input_marginLeft = 2131165418;
 			
-			// aapt resource value: 0x7f0700f3
-			public static int app_products_selection_horizontalMargins = 2131165427;
+			// aapt resource value: 0x7f0700e5
+			public static int app_products_productCard_multiSelection_image_paddingRight = 2131165413;
 			
-			// aapt resource value: 0x7f0700f2
-			public static int app_products_selection_item_height = 2131165426;
+			// aapt resource value: 0x7f0700e1
+			public static int app_products_productCard_multiSelection_item_height = 2131165409;
 			
-			// aapt resource value: 0x7f0700b0
-			public static int app_products_sscategories_item_height = 2131165360;
+			// aapt resource value: 0x7f0700e2
+			public static int app_products_productCard_multiSelection_item_text_minHeight = 2131165410;
 			
-			// aapt resource value: 0x7f0700b1
-			public static int app_products_sscategories_item_horizontalMargin = 2131165361;
+			// aapt resource value: 0x7f0700e4
+			public static int app_products_productCard_multiSelection_text_cornerRadius = 2131165412;
 			
-			// aapt resource value: 0x7f0700f4
-			public static int app_products_textContent_margins = 2131165428;
+			// aapt resource value: 0x7f0700e3
+			public static int app_products_productCard_multiSelection_text_paddingRight = 2131165411;
+			
+			// aapt resource value: 0x7f0700e0
+			public static int app_products_productCard_picker_spinner_item_titleHeight = 2131165408;
+			
+			// aapt resource value: 0x7f0700f0
+			public static int app_products_productCard_shopsHorizontalCollection_height_count = 2131165424;
+			
+			// aapt resource value: 0x7f0700ef
+			public static int app_products_productCard_shopsHorizontalCollection_height_indicator = 2131165423;
 			
 			// aapt resource value: 0x7f0700f5
-			public static int app_products_webContent_margins = 2131165429;
+			public static int app_products_productCard_shopsHorizontalCollection_indicatorMargins = 2131165429;
+			
+			// aapt resource value: 0x7f0700f4
+			public static int app_products_productCard_shopsHorizontalCollection_indicatorSize = 2131165428;
+			
+			// aapt resource value: 0x7f0700f3
+			public static int app_products_productCard_shopsHorizontalCollection_item_cornerRadius = 2131165427;
+			
+			// aapt resource value: 0x7f0700f2
+			public static int app_products_productCard_shopsHorizontalCollection_item_elevation = 2131165426;
+			
+			// aapt resource value: 0x7f0700f1
+			public static int app_products_productCard_shopsHorizontalCollection_title_height = 2131165425;
+			
+			// aapt resource value: 0x7f0700eb
+			public static int app_products_productCard_shortInfo_minHeight = 2131165419;
+			
+			// aapt resource value: 0x7f0700ec
+			public static int app_products_productCard_shortInfo_paddingHorizontal = 2131165420;
+			
+			// aapt resource value: 0x7f0700ed
+			public static int app_products_productCard_shortInfo_paddingVertical = 2131165421;
+			
+			// aapt resource value: 0x7f0700d9
+			public static int app_products_productCard_title_height = 2131165401;
+			
+			// aapt resource value: 0x7f0700e6
+			public static int app_products_productCard_verticalCollection_content_height = 2131165414;
+			
+			// aapt resource value: 0x7f0700e7
+			public static int app_products_productCard_verticalCollection_horizontalMargins = 2131165415;
+			
+			// aapt resource value: 0x7f0700d7
+			public static int app_products_productCard_verticalMargins = 2131165399;
+			
+			// aapt resource value: 0x7f0700ee
+			public static int app_products_productCard_weight_separatorHeight = 2131165422;
+			
+			// aapt resource value: 0x7f0700f7
+			public static int app_products_selection_horizontalMargins = 2131165431;
+			
+			// aapt resource value: 0x7f0700f6
+			public static int app_products_selection_item_height = 2131165430;
+			
+			// aapt resource value: 0x7f0700b3
+			public static int app_products_sscategories_item_grid_separator_height = 2131165363;
+			
+			// aapt resource value: 0x7f0700b4
+			public static int app_products_sscategories_item_grid_separator_verticalMargin = 2131165364;
+			
+			// aapt resource value: 0x7f0700b2
+			public static int app_products_sscategories_item_grid_separator_width = 2131165362;
+			
+			// aapt resource value: 0x7f0700b5
+			public static int app_products_sscategories_item_grid_spacing = 2131165365;
+			
+			// aapt resource value: 0x7f0700b0
+			public static int app_products_sscategories_item_list_height = 2131165360;
+			
+			// aapt resource value: 0x7f0700b1
+			public static int app_products_sscategories_item_list_horizontalMargin = 2131165361;
+			
+			// aapt resource value: 0x7f0700f8
+			public static int app_products_textContent_margins = 2131165432;
+			
+			// aapt resource value: 0x7f0700f9
+			public static int app_products_webContent_margins = 2131165433;
 			
 			// aapt resource value: 0x7f0700a0
 			public static int app_separator_height = 2131165344;
@@ -2905,91 +2932,94 @@ namespace AppRopio.ECommerce.Products.Droid
 			public static int app_products_productCard_multiSelection_text = 2130837598;
 			
 			// aapt resource value: 0x7f02005f
-			public static int avd_hide_password = 2130837599;
-			
-			// aapt resource value: 0x7f020076
-			public static int avd_hide_password_1 = 2130837622;
-			
-			// aapt resource value: 0x7f020077
-			public static int avd_hide_password_2 = 2130837623;
-			
-			// aapt resource value: 0x7f020078
-			public static int avd_hide_password_3 = 2130837624;
+			public static int app_products_sscategories_item_grid_gradient = 2130837599;
 			
 			// aapt resource value: 0x7f020060
-			public static int avd_show_password = 2130837600;
+			public static int avd_hide_password = 2130837600;
+			
+			// aapt resource value: 0x7f020077
+			public static int avd_hide_password_1 = 2130837623;
+			
+			// aapt resource value: 0x7f020078
+			public static int avd_hide_password_2 = 2130837624;
 			
 			// aapt resource value: 0x7f020079
-			public static int avd_show_password_1 = 2130837625;
-			
-			// aapt resource value: 0x7f02007a
-			public static int avd_show_password_2 = 2130837626;
-			
-			// aapt resource value: 0x7f02007b
-			public static int avd_show_password_3 = 2130837627;
+			public static int avd_hide_password_3 = 2130837625;
 			
 			// aapt resource value: 0x7f020061
-			public static int design_bottom_navigation_item_background = 2130837601;
+			public static int avd_show_password = 2130837601;
+			
+			// aapt resource value: 0x7f02007a
+			public static int avd_show_password_1 = 2130837626;
+			
+			// aapt resource value: 0x7f02007b
+			public static int avd_show_password_2 = 2130837627;
+			
+			// aapt resource value: 0x7f02007c
+			public static int avd_show_password_3 = 2130837628;
 			
 			// aapt resource value: 0x7f020062
-			public static int design_fab_background = 2130837602;
+			public static int design_bottom_navigation_item_background = 2130837602;
 			
 			// aapt resource value: 0x7f020063
-			public static int design_ic_visibility = 2130837603;
+			public static int design_fab_background = 2130837603;
 			
 			// aapt resource value: 0x7f020064
-			public static int design_ic_visibility_off = 2130837604;
+			public static int design_ic_visibility = 2130837604;
 			
 			// aapt resource value: 0x7f020065
-			public static int design_password_eye = 2130837605;
+			public static int design_ic_visibility_off = 2130837605;
 			
 			// aapt resource value: 0x7f020066
-			public static int design_snackbar_background = 2130837606;
+			public static int design_password_eye = 2130837606;
 			
 			// aapt resource value: 0x7f020067
-			public static int navigation_empty_icon = 2130837607;
+			public static int design_snackbar_background = 2130837607;
 			
 			// aapt resource value: 0x7f020068
-			public static int notification_action_background = 2130837608;
+			public static int navigation_empty_icon = 2130837608;
 			
 			// aapt resource value: 0x7f020069
-			public static int notification_bg = 2130837609;
+			public static int notification_action_background = 2130837609;
 			
 			// aapt resource value: 0x7f02006a
-			public static int notification_bg_low = 2130837610;
+			public static int notification_bg = 2130837610;
 			
 			// aapt resource value: 0x7f02006b
-			public static int notification_bg_low_normal = 2130837611;
+			public static int notification_bg_low = 2130837611;
 			
 			// aapt resource value: 0x7f02006c
-			public static int notification_bg_low_pressed = 2130837612;
+			public static int notification_bg_low_normal = 2130837612;
 			
 			// aapt resource value: 0x7f02006d
-			public static int notification_bg_normal = 2130837613;
+			public static int notification_bg_low_pressed = 2130837613;
 			
 			// aapt resource value: 0x7f02006e
-			public static int notification_bg_normal_pressed = 2130837614;
+			public static int notification_bg_normal = 2130837614;
 			
 			// aapt resource value: 0x7f02006f
-			public static int notification_icon_background = 2130837615;
-			
-			// aapt resource value: 0x7f020074
-			public static int notification_template_icon_bg = 2130837620;
-			
-			// aapt resource value: 0x7f020075
-			public static int notification_template_icon_low_bg = 2130837621;
+			public static int notification_bg_normal_pressed = 2130837615;
 			
 			// aapt resource value: 0x7f020070
-			public static int notification_tile_bg = 2130837616;
+			public static int notification_icon_background = 2130837616;
+			
+			// aapt resource value: 0x7f020075
+			public static int notification_template_icon_bg = 2130837621;
+			
+			// aapt resource value: 0x7f020076
+			public static int notification_template_icon_low_bg = 2130837622;
 			
 			// aapt resource value: 0x7f020071
-			public static int notify_panel_notification_icon_bg = 2130837617;
+			public static int notification_tile_bg = 2130837617;
 			
 			// aapt resource value: 0x7f020072
-			public static int tooltip_frame_dark = 2130837618;
+			public static int notify_panel_notification_icon_bg = 2130837618;
 			
 			// aapt resource value: 0x7f020073
-			public static int tooltip_frame_light = 2130837619;
+			public static int tooltip_frame_dark = 2130837619;
+			
+			// aapt resource value: 0x7f020074
+			public static int tooltip_frame_light = 2130837620;
 			
 			static Drawable()
 			{
@@ -4024,115 +4054,118 @@ namespace AppRopio.ECommerce.Products.Droid
 			public static int app_products_sscategories_header = 2130903118;
 			
 			// aapt resource value: 0x7f03004f
-			public static int app_products_sscategories_item = 2130903119;
+			public static int app_products_sscategories_item_grid = 2130903119;
 			
 			// aapt resource value: 0x7f030050
-			public static int app_products_textContent = 2130903120;
+			public static int app_products_sscategories_item_list = 2130903120;
 			
 			// aapt resource value: 0x7f030051
-			public static int app_products_webContent = 2130903121;
+			public static int app_products_textContent = 2130903121;
 			
 			// aapt resource value: 0x7f030052
-			public static int design_bottom_navigation_item = 2130903122;
+			public static int app_products_webContent = 2130903122;
 			
 			// aapt resource value: 0x7f030053
-			public static int design_bottom_sheet_dialog = 2130903123;
+			public static int design_bottom_navigation_item = 2130903123;
 			
 			// aapt resource value: 0x7f030054
-			public static int design_layout_snackbar = 2130903124;
+			public static int design_bottom_sheet_dialog = 2130903124;
 			
 			// aapt resource value: 0x7f030055
-			public static int design_layout_snackbar_include = 2130903125;
+			public static int design_layout_snackbar = 2130903125;
 			
 			// aapt resource value: 0x7f030056
-			public static int design_layout_tab_icon = 2130903126;
+			public static int design_layout_snackbar_include = 2130903126;
 			
 			// aapt resource value: 0x7f030057
-			public static int design_layout_tab_text = 2130903127;
+			public static int design_layout_tab_icon = 2130903127;
 			
 			// aapt resource value: 0x7f030058
-			public static int design_menu_item_action_area = 2130903128;
+			public static int design_layout_tab_text = 2130903128;
 			
 			// aapt resource value: 0x7f030059
-			public static int design_navigation_item = 2130903129;
+			public static int design_menu_item_action_area = 2130903129;
 			
 			// aapt resource value: 0x7f03005a
-			public static int design_navigation_item_header = 2130903130;
+			public static int design_navigation_item = 2130903130;
 			
 			// aapt resource value: 0x7f03005b
-			public static int design_navigation_item_separator = 2130903131;
+			public static int design_navigation_item_header = 2130903131;
 			
 			// aapt resource value: 0x7f03005c
-			public static int design_navigation_item_subheader = 2130903132;
+			public static int design_navigation_item_separator = 2130903132;
 			
 			// aapt resource value: 0x7f03005d
-			public static int design_navigation_menu = 2130903133;
+			public static int design_navigation_item_subheader = 2130903133;
 			
 			// aapt resource value: 0x7f03005e
-			public static int design_navigation_menu_item = 2130903134;
+			public static int design_navigation_menu = 2130903134;
 			
 			// aapt resource value: 0x7f03005f
-			public static int design_text_input_password_icon = 2130903135;
+			public static int design_navigation_menu_item = 2130903135;
 			
 			// aapt resource value: 0x7f030060
-			public static int notification_action = 2130903136;
+			public static int design_text_input_password_icon = 2130903136;
 			
 			// aapt resource value: 0x7f030061
-			public static int notification_action_tombstone = 2130903137;
+			public static int notification_action = 2130903137;
 			
 			// aapt resource value: 0x7f030062
-			public static int notification_media_action = 2130903138;
+			public static int notification_action_tombstone = 2130903138;
 			
 			// aapt resource value: 0x7f030063
-			public static int notification_media_cancel_action = 2130903139;
+			public static int notification_media_action = 2130903139;
 			
 			// aapt resource value: 0x7f030064
-			public static int notification_template_big_media = 2130903140;
+			public static int notification_media_cancel_action = 2130903140;
 			
 			// aapt resource value: 0x7f030065
-			public static int notification_template_big_media_custom = 2130903141;
+			public static int notification_template_big_media = 2130903141;
 			
 			// aapt resource value: 0x7f030066
-			public static int notification_template_big_media_narrow = 2130903142;
+			public static int notification_template_big_media_custom = 2130903142;
 			
 			// aapt resource value: 0x7f030067
-			public static int notification_template_big_media_narrow_custom = 2130903143;
+			public static int notification_template_big_media_narrow = 2130903143;
 			
 			// aapt resource value: 0x7f030068
-			public static int notification_template_custom_big = 2130903144;
+			public static int notification_template_big_media_narrow_custom = 2130903144;
 			
 			// aapt resource value: 0x7f030069
-			public static int notification_template_icon_group = 2130903145;
+			public static int notification_template_custom_big = 2130903145;
 			
 			// aapt resource value: 0x7f03006a
-			public static int notification_template_lines_media = 2130903146;
+			public static int notification_template_icon_group = 2130903146;
 			
 			// aapt resource value: 0x7f03006b
-			public static int notification_template_media = 2130903147;
+			public static int notification_template_lines_media = 2130903147;
 			
 			// aapt resource value: 0x7f03006c
-			public static int notification_template_media_custom = 2130903148;
+			public static int notification_template_media = 2130903148;
 			
 			// aapt resource value: 0x7f03006d
-			public static int notification_template_part_chronometer = 2130903149;
+			public static int notification_template_media_custom = 2130903149;
 			
 			// aapt resource value: 0x7f03006e
-			public static int notification_template_part_time = 2130903150;
+			public static int notification_template_part_chronometer = 2130903150;
 			
 			// aapt resource value: 0x7f03006f
-			public static int select_dialog_item_material = 2130903151;
+			public static int notification_template_part_time = 2130903151;
 			
 			// aapt resource value: 0x7f030070
-			public static int select_dialog_multichoice_material = 2130903152;
+			public static int select_dialog_item_material = 2130903152;
 			
 			// aapt resource value: 0x7f030071
-			public static int select_dialog_singlechoice_material = 2130903153;
+			public static int select_dialog_multichoice_material = 2130903153;
 			
 			// aapt resource value: 0x7f030072
-			public static int support_simple_spinner_dropdown_item = 2130903154;
+			public static int select_dialog_singlechoice_material = 2130903154;
 			
 			// aapt resource value: 0x7f030073
-			public static int tooltip = 2130903155;
+			public static int support_simple_spinner_dropdown_item = 2130903155;
+			
+			// aapt resource value: 0x7f030074
+			public static int tooltip = 2130903156;
 			
 			static Layout()
 			{
@@ -5534,173 +5567,179 @@ namespace AppRopio.ECommerce.Products.Droid
 			// aapt resource value: 0x7f09017c
 			public static int Widget_Design_TextInputLayout = 2131296636;
 			
-			// aapt resource value: 0x7f0901ae
-			public static int app_products_catalog_empty_button = 2131296686;
-			
-			// aapt resource value: 0x7f0901ad
-			public static int app_products_catalog_empty_subtitle = 2131296685;
-			
-			// aapt resource value: 0x7f0901ac
-			public static int app_products_catalog_empty_title = 2131296684;
-			
-			// aapt resource value: 0x7f0901aa
-			public static int app_products_catalog_item_badges_item_name = 2131296682;
-			
-			// aapt resource value: 0x7f0901a5
-			public static int app_products_catalog_item_image = 2131296677;
-			
-			// aapt resource value: 0x7f0901a9
-			public static int app_products_catalog_item_markButton = 2131296681;
-			
-			// aapt resource value: 0x7f0901a6
-			public static int app_products_catalog_item_name = 2131296678;
-			
-			// aapt resource value: 0x7f0901a7
-			public static int app_products_catalog_item_oldPrice = 2131296679;
-			
-			// aapt resource value: 0x7f0901a8
-			public static int app_products_catalog_item_price = 2131296680;
-			
-			// aapt resource value: 0x7f0901a4
-			public static int app_products_catalog_items = 2131296676;
-			
-			// aapt resource value: 0x7f0901d7
-			public static int app_products_catalog_search_textView = 2131296727;
-			
-			// aapt resource value: 0x7f0901ab
-			public static int app_products_catalog_sort_filters_header_button = 2131296683;
-			
-			// aapt resource value: 0x7f0901a3
-			public static int app_products_ccategories_tabs = 2131296675;
-			
-			// aapt resource value: 0x7f0901a2
-			public static int app_products_ccategories_tabs_text = 2131296674;
-			
 			// aapt resource value: 0x7f0901b0
-			public static int app_products_contentsearch_hints_autocomplete_item_text = 2131296688;
-			
-			// aapt resource value: 0x7f0901b2
-			public static int app_products_contentsearch_hints_item_icon = 2131296690;
-			
-			// aapt resource value: 0x7f0901b1
-			public static int app_products_contentsearch_hints_item_text = 2131296689;
+			public static int app_products_catalog_empty_button = 2131296688;
 			
 			// aapt resource value: 0x7f0901af
-			public static int app_products_contentsearch_hints_scrollView = 2131296687;
+			public static int app_products_catalog_empty_subtitle = 2131296687;
 			
-			// aapt resource value: 0x7f0901b7
-			public static int app_products_contentsearch_history_clearButton = 2131296695;
+			// aapt resource value: 0x7f0901ae
+			public static int app_products_catalog_empty_title = 2131296686;
+			
+			// aapt resource value: 0x7f0901ac
+			public static int app_products_catalog_item_badges_item_name = 2131296684;
+			
+			// aapt resource value: 0x7f0901a7
+			public static int app_products_catalog_item_image = 2131296679;
+			
+			// aapt resource value: 0x7f0901ab
+			public static int app_products_catalog_item_markButton = 2131296683;
+			
+			// aapt resource value: 0x7f0901a8
+			public static int app_products_catalog_item_name = 2131296680;
+			
+			// aapt resource value: 0x7f0901a9
+			public static int app_products_catalog_item_oldPrice = 2131296681;
+			
+			// aapt resource value: 0x7f0901aa
+			public static int app_products_catalog_item_price = 2131296682;
+			
+			// aapt resource value: 0x7f0901a6
+			public static int app_products_catalog_items = 2131296678;
+			
+			// aapt resource value: 0x7f0901d9
+			public static int app_products_catalog_search_textView = 2131296729;
+			
+			// aapt resource value: 0x7f0901ad
+			public static int app_products_catalog_sort_filters_header_button = 2131296685;
+			
+			// aapt resource value: 0x7f0901a5
+			public static int app_products_ccategories_tabs = 2131296677;
+			
+			// aapt resource value: 0x7f0901a4
+			public static int app_products_ccategories_tabs_text = 2131296676;
+			
+			// aapt resource value: 0x7f0901b2
+			public static int app_products_contentsearch_hints_autocomplete_item_text = 2131296690;
 			
 			// aapt resource value: 0x7f0901b4
-			public static int app_products_contentsearch_history_item_icon = 2131296692;
+			public static int app_products_contentsearch_hints_item_icon = 2131296692;
 			
 			// aapt resource value: 0x7f0901b3
-			public static int app_products_contentsearch_history_item_icon_clock = 2131296691;
+			public static int app_products_contentsearch_hints_item_text = 2131296691;
 			
-			// aapt resource value: 0x7f0901b5
-			public static int app_products_contentsearch_history_item_text = 2131296693;
-			
-			// aapt resource value: 0x7f0901b6
-			public static int app_products_contentsearch_history_items = 2131296694;
-			
-			// aapt resource value: 0x7f0901b8
-			public static int app_products_contentsearch_searchInput = 2131296696;
-			
-			// aapt resource value: 0x7f0901bf
-			public static int app_products_productCard_arrow = 2131296703;
-			
-			// aapt resource value: 0x7f0901c7
-			public static int app_products_productCard_cross = 2131296711;
-			
-			// aapt resource value: 0x7f0901c1
-			public static int app_products_productCard_horizontalCollection_color_checkImage = 2131296705;
-			
-			// aapt resource value: 0x7f0901c0
-			public static int app_products_productCard_horizontalCollection_scrollView = 2131296704;
-			
-			// aapt resource value: 0x7f0901c2
-			public static int app_products_productCard_horizontalCollection_text = 2131296706;
-			
-			// aapt resource value: 0x7f0901c9
-			public static int app_products_productCard_minMax_content_hint = 2131296713;
-			
-			// aapt resource value: 0x7f0901ca
-			public static int app_products_productCard_minMax_content_input = 2131296714;
-			
-			// aapt resource value: 0x7f0901c5
-			public static int app_products_productCard_multiSelection_scrollView = 2131296709;
-			
-			// aapt resource value: 0x7f0901c6
-			public static int app_products_productCard_multiSelection_text = 2131296710;
-			
-			// aapt resource value: 0x7f0901cc
-			public static int app_products_productCard_multilineText = 2131296716;
-			
-			// aapt resource value: 0x7f0901cb
-			public static int app_products_productCard_multilineTitle = 2131296715;
-			
-			// aapt resource value: 0x7f0901c4
-			public static int app_products_productCard_picker_spinner_item_title = 2131296708;
-			
-			// aapt resource value: 0x7f0901c3
-			public static int app_products_productCard_picker_spinner_value = 2131296707;
-			
-			// aapt resource value: 0x7f0901d0
-			public static int app_products_productCard_shopsHorizontalCollection_item_address = 2131296720;
-			
-			// aapt resource value: 0x7f0901cf
-			public static int app_products_productCard_shopsHorizontalCollection_item_name = 2131296719;
-			
-			// aapt resource value: 0x7f0901d1
-			public static int app_products_productCard_shopsHorizontalCollection_item_quantity = 2131296721;
-			
-			// aapt resource value: 0x7f0901ce
-			public static int app_products_productCard_shopsHorizontalCollection_title = 2131296718;
-			
-			// aapt resource value: 0x7f0901bd
-			public static int app_products_productCard_shortInfo_extraPrice = 2131296701;
-			
-			// aapt resource value: 0x7f0901ba
-			public static int app_products_productCard_shortInfo_name = 2131296698;
-			
-			// aapt resource value: 0x7f0901bc
-			public static int app_products_productCard_shortInfo_oldPrice = 2131296700;
-			
-			// aapt resource value: 0x7f0901bb
-			public static int app_products_productCard_shortInfo_price = 2131296699;
+			// aapt resource value: 0x7f0901b1
+			public static int app_products_contentsearch_hints_scrollView = 2131296689;
 			
 			// aapt resource value: 0x7f0901b9
-			public static int app_products_productCard_shortInfo_status = 2131296697;
+			public static int app_products_contentsearch_history_clearButton = 2131296697;
 			
-			// aapt resource value: 0x7f0901be
-			public static int app_products_productCard_title = 2131296702;
+			// aapt resource value: 0x7f0901b6
+			public static int app_products_contentsearch_history_item_icon = 2131296694;
 			
-			// aapt resource value: 0x7f0901cd
-			public static int app_products_productCard_transition_value = 2131296717;
+			// aapt resource value: 0x7f0901b5
+			public static int app_products_contentsearch_history_item_icon_clock = 2131296693;
+			
+			// aapt resource value: 0x7f0901b7
+			public static int app_products_contentsearch_history_item_text = 2131296695;
+			
+			// aapt resource value: 0x7f0901b8
+			public static int app_products_contentsearch_history_items = 2131296696;
+			
+			// aapt resource value: 0x7f0901ba
+			public static int app_products_contentsearch_searchInput = 2131296698;
+			
+			// aapt resource value: 0x7f0901c1
+			public static int app_products_productCard_arrow = 2131296705;
+			
+			// aapt resource value: 0x7f0901c9
+			public static int app_products_productCard_cross = 2131296713;
+			
+			// aapt resource value: 0x7f0901c3
+			public static int app_products_productCard_horizontalCollection_color_checkImage = 2131296707;
+			
+			// aapt resource value: 0x7f0901c2
+			public static int app_products_productCard_horizontalCollection_scrollView = 2131296706;
+			
+			// aapt resource value: 0x7f0901c4
+			public static int app_products_productCard_horizontalCollection_text = 2131296708;
+			
+			// aapt resource value: 0x7f0901cb
+			public static int app_products_productCard_minMax_content_hint = 2131296715;
+			
+			// aapt resource value: 0x7f0901cc
+			public static int app_products_productCard_minMax_content_input = 2131296716;
+			
+			// aapt resource value: 0x7f0901c7
+			public static int app_products_productCard_multiSelection_scrollView = 2131296711;
 			
 			// aapt resource value: 0x7f0901c8
-			public static int app_products_productCard_verticalCollection_text = 2131296712;
+			public static int app_products_productCard_multiSelection_text = 2131296712;
 			
-			// aapt resource value: 0x7f0901d4
-			public static int app_products_selection_button = 2131296724;
+			// aapt resource value: 0x7f0901ce
+			public static int app_products_productCard_multilineText = 2131296718;
 			
-			// aapt resource value: 0x7f0901d5
-			public static int app_products_selection_button_clear = 2131296725;
+			// aapt resource value: 0x7f0901cd
+			public static int app_products_productCard_multilineTitle = 2131296717;
 			
-			// aapt resource value: 0x7f0901d3
-			public static int app_products_selection_checkImage = 2131296723;
+			// aapt resource value: 0x7f0901c6
+			public static int app_products_productCard_picker_spinner_item_title = 2131296710;
+			
+			// aapt resource value: 0x7f0901c5
+			public static int app_products_productCard_picker_spinner_value = 2131296709;
 			
 			// aapt resource value: 0x7f0901d2
-			public static int app_products_selection_title = 2131296722;
+			public static int app_products_productCard_shopsHorizontalCollection_item_address = 2131296722;
+			
+			// aapt resource value: 0x7f0901d1
+			public static int app_products_productCard_shopsHorizontalCollection_item_name = 2131296721;
+			
+			// aapt resource value: 0x7f0901d3
+			public static int app_products_productCard_shopsHorizontalCollection_item_quantity = 2131296723;
+			
+			// aapt resource value: 0x7f0901d0
+			public static int app_products_productCard_shopsHorizontalCollection_title = 2131296720;
+			
+			// aapt resource value: 0x7f0901bf
+			public static int app_products_productCard_shortInfo_extraPrice = 2131296703;
+			
+			// aapt resource value: 0x7f0901bc
+			public static int app_products_productCard_shortInfo_name = 2131296700;
+			
+			// aapt resource value: 0x7f0901be
+			public static int app_products_productCard_shortInfo_oldPrice = 2131296702;
+			
+			// aapt resource value: 0x7f0901bd
+			public static int app_products_productCard_shortInfo_price = 2131296701;
+			
+			// aapt resource value: 0x7f0901bb
+			public static int app_products_productCard_shortInfo_status = 2131296699;
+			
+			// aapt resource value: 0x7f0901c0
+			public static int app_products_productCard_title = 2131296704;
+			
+			// aapt resource value: 0x7f0901cf
+			public static int app_products_productCard_transition_value = 2131296719;
+			
+			// aapt resource value: 0x7f0901ca
+			public static int app_products_productCard_verticalCollection_text = 2131296714;
+			
+			// aapt resource value: 0x7f0901d6
+			public static int app_products_selection_button = 2131296726;
+			
+			// aapt resource value: 0x7f0901d7
+			public static int app_products_selection_button_clear = 2131296727;
+			
+			// aapt resource value: 0x7f0901d5
+			public static int app_products_selection_checkImage = 2131296725;
+			
+			// aapt resource value: 0x7f0901d4
+			public static int app_products_selection_title = 2131296724;
+			
+			// aapt resource value: 0x7f0901a3
+			public static int app_products_sscategories_item_grid_image = 2131296675;
+			
+			// aapt resource value: 0x7f0901a2
+			public static int app_products_sscategories_item_grid_title = 2131296674;
 			
 			// aapt resource value: 0x7f0901a1
-			public static int app_products_sscategories_item_title = 2131296673;
+			public static int app_products_sscategories_item_list_title = 2131296673;
 			
 			// aapt resource value: 0x7f0901a0
 			public static int app_products_sscategories_items = 2131296672;
 			
-			// aapt resource value: 0x7f0901d6
-			public static int app_products_textContent = 2131296726;
+			// aapt resource value: 0x7f0901d8
+			public static int app_products_textContent = 2131296728;
 			
 			static Style()
 			{
@@ -5740,6 +5779,12 @@ namespace AppRopio.ECommerce.Products.Droid
 			
 			// aapt resource value: 0
 			public static int ARAppCompatSpinner_MvxItemTemplate = 0;
+			
+			public static int[] ARAspectLayout = new int[] {
+					2130772420};
+			
+			// aapt resource value: 0
+			public static int ARAspectLayout_aspect = 0;
 			
 			public static int[] ARImageView = new int[] {
 					2130772417,

@@ -6,7 +6,7 @@
         }
     },
     "categories": {
-        "collectionType": 1,
+        "collectionType": 0,
         "categoryCell": {
             "icon": {
                 "path": "Images/Products/empty_icon.png",
@@ -28,7 +28,7 @@
     },
     "products": {
         "productCell": {
-            "addToCartHeight": 32,
+            "addToCartHeight": 40,
             "image": {
                 "path": "Images/Products/no_photo.png"
             },
@@ -85,7 +85,8 @@
                     "size": 14
                 },
                 "textColor": { "HEX": "9C9C9C" },
-                "textTransform": 1
+                "textTransform": 0,
+                "textDecoration": 2
             },
             "price": {
                 "font": {
@@ -93,7 +94,7 @@
                     "size": 14
                 },
                 "textColor": { "HEX": "000000" },
-                "textTransform": 1
+                "textTransform": 0
             },
             "layer": {
                 "cornerRadius": 0,
@@ -202,7 +203,8 @@
                 "size": 14
             },
             "textColor": { "HEX": "9C9C9C" },
-            "textTransform": 1
+            "textTransform": 1,
+            "textDecoration": 2
         },
         "price": {
             "font": {
