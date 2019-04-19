@@ -85,6 +85,7 @@ namespace AppRopio.Base.Profile.iOS.View.MenuHeader
             _selectionChangedBtn = viewFromNib._selectionChangedBtn;
             _cornersView = viewFromNib._cornersView;
 
+            SetupSignLabel(_signLabel);
             SetupUserName(_userName);
             SetupHelpLabel(_helpLabel);
             SetupCornerView(_cornersView);
@@ -98,6 +99,11 @@ namespace AppRopio.Base.Profile.iOS.View.MenuHeader
         protected virtual CGRect GetFrame()
         {
             return new CoreGraphics.CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, 138);
+        }
+
+        protected virtual void SetupSignLabel(UILabel label)
+        {
+            label.TextColor = (UIColor)Theme.ColorPalette.TextMenu;
         }
 
         protected virtual void SetupUserName(UILabel label)

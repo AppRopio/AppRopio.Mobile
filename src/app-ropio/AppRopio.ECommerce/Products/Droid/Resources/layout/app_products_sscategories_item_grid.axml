@@ -6,10 +6,10 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <mvvmcross.binding.droid.views.MvxImageView
+        <appropio.base.droid.controls.ARImageView
+            style="@style/app_products_sscategories_item_grid_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="centerInside"
             app:MvxBind="ImageUrl BackgroundImageUrl"/>
         <View
             android:layout_width="match_parent"

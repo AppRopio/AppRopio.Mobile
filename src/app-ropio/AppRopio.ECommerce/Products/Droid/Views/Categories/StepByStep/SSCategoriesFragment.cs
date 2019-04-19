@@ -139,9 +139,9 @@ namespace AppRopio.ECommerce.Products.Droid.Views.Categories.StepByStep
             base.OnViewCreated(view, savedInstanceState);
 
             var listTypeValue = new TypedValue();
-            Activity.Theme.ResolveAttribute(Resource.Attribute.app_products_categories_collectionType, listTypeValue, false);
+            bool resolved = Activity.Theme.ResolveAttribute(Resource.Attribute.app_products_categories_collectionType, listTypeValue, false);
 
-            CollectionType = (CollectionType)listTypeValue.Data;
+            CollectionType = resolved ? (CollectionType)listTypeValue.Data : CollectionType.List;
 
             _recyclerView = view.FindViewById<MvxRecyclerView>(Resource.Id.app_products_sscategories_items);
             SetupRecyclerView(view, _recyclerView);
@@ -167,7 +167,7 @@ namespace AppRopio.ECommerce.Products.Droid.Views.Categories.StepByStep
             _layoutManager = layoutManager;
             _viewModel = viewModel;
         }
-        //TODO: test with header, footer, both, without
+        
         public override int GetSpanSize(int position)
         {
             if (_viewModel == null || _viewModel.Items.IsNullOrEmpty())

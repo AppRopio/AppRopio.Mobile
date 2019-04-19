@@ -34,7 +34,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_weight="1"
                     android:paddingRight="@dimen/app_historyorders_item_horizontalMargins"
-                    app:MvxBind="Text OrderNumber" />
+                    app:MvxBind="Text Format('№{0}', OrderNumber)" />
                 <TextView
                     style="@style/app_historyorders_item_badge"
                     android:layout_width="@dimen/app_historyorders_item_badgeWidth"

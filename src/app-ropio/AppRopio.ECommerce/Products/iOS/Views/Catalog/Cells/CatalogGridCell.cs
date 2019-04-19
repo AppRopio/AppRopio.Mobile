@@ -16,6 +16,9 @@ using AppRopio.Base.Core.Converters;
 using AppRopio.Base.Core.Combiners;
 using AppRopio.Base.Core.Services.ViewLookup;
 using MvvmCross.iOS.Views;
+using AppRopio.ECommerce.Products.Core;
+using AppRopio.Base.Core.Services.Localization;
+using AppRopio.ECommerce.Products.Core.Combiners;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
 {
@@ -25,12 +28,15 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
 
         protected virtual ProductsThemeConfig ThemeConfig { get { return Mvx.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
 
+        protected ILocalizationService LocalizationService => Mvx.Resolve<ILocalizationService>();
+
         public static NSString Key = new NSString("CatalogGridCell");
         public static UINib Nib = UINib.FromName("CatalogGridCell", NSBundle.MainBundle);
 
         protected virtual UIImageView Image => _image;
         protected virtual AppRopio.Base.iOS.Controls.ARLabel Name => _name;
         protected virtual AppRopio.Base.iOS.Controls.ARLabel Price => _price;
+        protected virtual AppRopio.Base.iOS.Controls.ARLabel MaxPrice => _maxPrice;
         protected virtual AppRopio.Base.iOS.Controls.ARLabel OldPrice => _oldPrice;
         protected virtual UICollectionView Badges => _badges;
         protected virtual NSLayoutConstraint BadgesWidthConstraint => _badgesWidthContraint;
@@ -57,6 +63,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
             SetupName(Name, cell.Title);
 
             SetupPrice(Price, cell.Price);
+            SetupMaxPrice(MaxPrice, cell.Price);
 
             SetupOldPrice(OldPrice, cell.OldPrice);
 
@@ -80,6 +87,11 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
         }
 
         protected virtual void SetupPrice(UILabel price, Label priceLabel)
+        {
+            price?.SetupStyle(priceLabel);
+        }
+
+        protected virtual void SetupMaxPrice(UILabel price, Label priceLabel)
         {
             price?.SetupStyle(priceLabel);
         }
@@ -134,6 +146,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
             BindImage(Image, set);
             BindName(Name, set);
             BindPrice(Price, set);
+            BindMaxPrice(MaxPrice, set);
             BindOldPrice(OldPrice, set);
             BindBagesCollection(Badges, set);
             BindMarkButton(MarkButton, set);
@@ -168,10 +181,49 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
             if (price == null)
                 return;
 
+            MvxFluentBindingDescription<UILabel, ICatalogItemVM> priceBinding;
             if (Config.UnitNameEnabled)
-                set.Bind(price).ByCombining(new PriceUnitCombiner(), new [] { "Price", "UnitName" });
+                priceBinding = set.Bind(price).ByCombining(new PriceFromUnitCombiner(), new []{ "Price", "UnitName", "MaxPrice" });
             else
-                set.Bind(price).To(vm => vm.Price).WithConversion("PriceFormat");
+                priceBinding = set.Bind(price).ByCombining(new PriceFromFormatCombiner(), new []{ "Price", "MaxPrice" });
+
+            if (Config.PriceType != PriceType.FromTo) {
+                set.Bind(price)
+                    .For("Visibility")
+                    .ByCombining(new PriceVisibilityValueCombiner(), new[] { "Price", "MaxPrice" })
+                    .WithConversion("VisibilityHidden");
+            }
+        }
+
+        protected virtual void BindMaxPrice(UILabel maxPrice, MvxFluentBindingDescriptionSet<CatalogGridCell, ICatalogItemVM> set)
+        {
+            if (maxPrice == null)
+                return;
+
+            if (!(Config.PriceType == PriceType.To || Config.PriceType == PriceType.FromTo)) {
+                maxPrice.Hidden = true;
+                return;
+            }
+
+            MvxFluentBindingDescription<UILabel, ICatalogItemVM> priceBinding;
+            if (Config.UnitNameEnabled)
+                priceBinding = set.Bind(maxPrice).ByCombining(new PriceUnitCombiner(), new []{ "MaxPrice", "UnitName" });
+            else
+                priceBinding = set.Bind(maxPrice).To(vm => vm.MaxPrice);
+
+            priceBinding.WithConversion(
+                "StringFormat",
+                new StringFormatParameter() {
+                    StringFormat = (arg) => {
+                        if (!Config.UnitNameEnabled) {
+                            arg = new PriceFormatConverter().Convert(arg, typeof(Decimal?), null, null);
+                        }
+                        return $"{LocalizationService.GetLocalizableString(ProductsConstants.RESX_NAME, "Catalog_PriceTo")} {arg}";
+                    }
+                }
+            );
+
+            set.Bind(maxPrice).For("Visibility").To(vm => vm.MaxPrice).WithConversion("Visibility");
         }
 
         protected virtual void BindOldPrice(UILabel oldPrice, MvxFluentBindingDescriptionSet<CatalogGridCell, ICatalogItemVM> set)
@@ -179,12 +231,29 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
             if (oldPrice == null)
                 return;
 
+            MvxFluentBindingDescription<UILabel, ICatalogItemVM> priceBinding;
             if (Config.UnitNameEnabled)
-                set.Bind(oldPrice).ByCombining(new PriceUnitCombiner(), new[] { "OldPrice", "UnitNameOld" });
+                priceBinding = set.Bind(oldPrice).ByCombining(new PriceUnitCombiner(), new []{ "OldPrice", "UnitNameOld" });
             else
-                set.Bind(oldPrice).To(vm => vm.OldPrice).WithConversion("PriceFormat");
-            
-            set.Bind(oldPrice).For("Visibility").To(vm => vm.OldPrice).WithConversion("Visibility");
+                priceBinding = set.Bind(oldPrice).To(vm => vm.OldPrice);
+
+            priceBinding.WithConversion(
+                "StringFormat",
+                new StringFormatParameter() {
+                    StringFormat = (arg) => {
+                        if (!Config.UnitNameEnabled) {
+                            arg = new PriceFormatConverter().Convert(arg, typeof(Decimal?), null, null);
+                        }
+                        return $"{arg}";
+//                        return $"{LocalizationService.GetLocalizableString(ProductsConstants.RESX_NAME, "Catalog_PriceFrom")} {arg}";
+                    }
+                }
+            );
+
+            set.Bind(oldPrice)
+                .For("Visibility")
+                .ByCombining(new PriceVisibilityValueCombiner(), new[] { "OldPrice", "MaxPrice" })
+                .WithConversion("VisibilityHidden");
         }
 
         protected virtual void BindBagesCollection(UICollectionView badges, MvxFluentBindingDescriptionSet<CatalogGridCell, ICatalogItemVM> set)

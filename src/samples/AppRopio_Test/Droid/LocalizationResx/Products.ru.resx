@@ -75,6 +75,14 @@
         <value>СОРТИРОВКА</value>
     </data>
     <data
+        name="Catalog_PriceFrom">
+        <value>от</value>
+    </data>
+    <data
+        name="Catalog_PriceTo">
+        <value>до</value>
+    </data>
+    <data
         name="Selection_Clear">
         <value>СБРОСИТЬ</value>
     </data>

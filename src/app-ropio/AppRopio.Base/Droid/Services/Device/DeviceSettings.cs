@@ -26,6 +26,9 @@ namespace AppRopio.Base.Droid.Services.Device
         {
             get
             {
+                if (!Instance.Contains(Key)) {
+                    Instance.AddOrUpdateValue(Key, Default);
+                }
                 return Instance.GetValueOrDefault(Key, Default);
             }
             set

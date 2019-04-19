@@ -41,6 +41,8 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Items
 
         public decimal Price { get; protected set; }
 
+        public decimal? MaxPrice { get; protected set; }
+
         public string UnitName { get; protected set; }
 
         public decimal? OldPrice { get; protected set; }
@@ -102,6 +104,8 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Items
 
             Price = model.Price;
             UnitName = model.UnitName;
+
+            MaxPrice = model.MaxPrice;
 
             OldPrice = model.OldPrice;
             UnitNameOld = model.UnitNameOld;

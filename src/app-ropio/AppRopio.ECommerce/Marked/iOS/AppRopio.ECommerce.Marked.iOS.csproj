@@ -88,16 +88,10 @@
     </Compile>
     <Compile Include="Plugin.cs" />
     <Compile Include="Views\Marked\MarkedGridCell.cs" />
-    <Compile Include="Views\Marked\MarkedGridCell.designer.cs">
-      <DependentUpon>MarkedGridCell.cs</DependentUpon>
-    </Compile>
     <Compile Include="Models\MarkedThemeConfig.cs" />
     <Compile Include="Services\IMarkedThemeConfigService.cs" />
     <Compile Include="Services\Implementation\MarkedThemeConfigService.cs" />
     <Compile Include="Views\Marked\MarkedListCell.cs" />
-    <Compile Include="Views\Marked\MarkedListCell.designer.cs">
-      <DependentUpon>MarkedListCell.cs</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\API\AppRopio.ECommerce.Marked.API.csproj">
@@ -146,8 +140,6 @@
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Views\Marked\MarkedViewController.xib" />
-    <InterfaceDefinition Include="Views\Marked\MarkedGridCell.xib" />
-    <InterfaceDefinition Include="Views\Marked\MarkedListCell.xib" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets')" />
