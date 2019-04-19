@@ -1,61 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest
-    xmlns:android      ="http://schemas.android.com/apk/res/android"
-    android:versionName="1.0.2"
-    package            ="com.notissimus.AppRopio"
-    android:versionCode="3">
-    <uses-sdk
-        android:minSdkVersion   ="21"
-        android:targetSdkVersion="27" />
-    <uses-permission
-        android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission
-        android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission
-        android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission
-        android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission
-        android:name="android.permission.INTERNET" />
-    <application
-        android:allowBackup="true"
-        android:label      ="@string/app_color_name"
-        android:theme      ="@style/Theme.DroidTest"
-        android:icon       ="@drawable/ic_launcher_APP">
-        <meta-data
-            android:name ="com.google.android.geo.API_KEY"
-            android:value="%api_key%" />
-        <receiver
-            android:name    ="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"
-            android:exported="false" />
-        <receiver
-            android:name      ="com.google.firebase.iid.FirebaseInstanceIdReceiver"
-            android:exported  ="true"
-            android:permission="com.google.android.c2dm.permission.SEND">
-            <intent-filter>
-                <action
-                    android:name="com.google.android.c2dm.intent.RECEIVE" />
-                <action
-                    android:name="com.google.android.c2dm.intent.REGISTRATION" />
-                <category
-                    android:name="com.notissimus.AppRopio" />
-            </intent-filter>
-        </receiver>
-        <!-- FCM meta-data. -->
-        <meta-data
-            android:name ="com.google.firebase.messaging.default_notification_channel_id"
-            android:value="com.notissimus.AppRopio" />
-        <!-- Set custom default icon. This is used when no icon is set for incoming notification messages. See README(https://goo.gl/l4GJaQ) for more. -->
-        <meta-data
-            android:name    ="com.google.firebase.messaging.default_notification_icon"
-            android:resource="@drawable/logo" />
-        <!-- Set color used with incoming notification messages. This is used when no color is set for the incoming notification message. See README(https://goo.gl/6BKBk7) for more. -->
-        <meta-data
-            android:name    ="com.google.firebase.messaging.default_notification_color"
-            android:resource="@color/main_theme_color" />
-        <!-- Activity type that received push notifications. -->
-        <meta-data
-            android:name="com.appropio.firebase.messaging.notification_received_activity"
-            android:value="AppRopio.Navigation.Menu.Droid;AppRopio.Navigation.Menu.Droid.Views.MenuActivity"/>
-    </application>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="1.0.2" package="com.notissimus.AppRopio" android:versionCode="3">
+	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="27" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<application android:allowBackup="true" android:label="@string/app_color_name" android:theme="@style/Theme.DroidTest" android:icon="@drawable/ic_launcher_APP">
+		<meta-data android:name="com.google.android.geo.API_KEY" android:value="%api_key%" />
+		<receiver android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver" android:exported="false" />
+		<receiver android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:exported="true" android:permission="com.google.android.c2dm.permission.SEND">
+			<intent-filter>
+				<action android:name="com.google.android.c2dm.intent.RECEIVE" />
+				<action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+				<category android:name="com.notissimus.AppRopio" />
+			</intent-filter>
+		</receiver>
+		<!-- FCM meta-data. -->
+		<meta-data android:name="com.google.firebase.messaging.default_notification_channel_id" android:value="com.notissimus.AppRopio" />
+		<!-- Set custom default icon. This is used when no icon is set for incoming notification messages. See README(https://goo.gl/l4GJaQ) for more. -->
+		<meta-data android:name="com.google.firebase.messaging.default_notification_icon" android:resource="@drawable/logo" />
+		<!-- Set color used with incoming notification messages. This is used when no color is set for the incoming notification message. See README(https://goo.gl/6BKBk7) for more. -->
+		<meta-data android:name="com.google.firebase.messaging.default_notification_color" android:resource="@color/main_theme_color" />
+		<!-- Activity type that received push notifications. -->
+		<meta-data android:name="com.appropio.firebase.messaging.notification_received_activity" android:value="AppRopio.Navigation.Menu.Droid;AppRopio.Navigation.Menu.Droid.Views.MenuActivity" />
+	</application>
 </manifest>

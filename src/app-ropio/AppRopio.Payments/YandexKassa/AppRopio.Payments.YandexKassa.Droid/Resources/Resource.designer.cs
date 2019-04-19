@@ -338,6 +338,9 @@ namespace AppRopio.Payments.YandexKassa.Droid
 			// aapt resource value: 0x7f010104
 			public static int arrowShaftLength = 2130772228;
 			
+			// aapt resource value: 0x7f010180
+			public static int aspect = 2130772352;
+			
 			// aapt resource value: 0x7f0100ea
 			public static int autoCompleteTextViewStyle = 2130772202;
 			
@@ -4590,6 +4593,12 @@ namespace AppRopio.Payments.YandexKassa.Droid
 			
 			// aapt resource value: 0
 			public static int ARAppCompatSpinner_MvxItemTemplate = 0;
+			
+			public static int[] ARAspectLayout = new int[] {
+					2130772352};
+			
+			// aapt resource value: 0
+			public static int ARAspectLayout_aspect = 0;
 			
 			public static int[] ARImageView = new int[] {
 					2130772349,
