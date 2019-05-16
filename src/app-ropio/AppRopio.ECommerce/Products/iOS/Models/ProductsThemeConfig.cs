@@ -252,8 +252,11 @@ namespace AppRopio.ECommerce.Products.iOS.Models
         [JsonProperty("markButton")]
         public Button MarkButton { get; private set; }
 
-        [JsonProperty("addToCartHeight")]
-        public float AddToCartHeight { get; set; }
+        [JsonProperty("actionButton")]
+        public Button ActionButton { get; private set; }
+
+        [JsonProperty("actionButtonHeight")]
+        public float ActionButtonHeight { get; set; }
 
         public ProductCell()
         {
@@ -286,7 +289,9 @@ namespace AppRopio.ECommerce.Products.iOS.Models
 
             Size = new Size();
 
-            AddToCartHeight = 40.0f;
+            ActionButton = (Button)Theme.ControlPalette.Button.Base.Clone();
+
+            ActionButtonHeight = 40.0f;
         }
     }
 

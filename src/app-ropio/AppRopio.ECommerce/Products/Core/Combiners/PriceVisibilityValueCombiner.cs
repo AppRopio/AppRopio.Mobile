@@ -10,35 +10,31 @@ using MvvmCross.Platform.UI;
 
 namespace AppRopio.ECommerce.Products.Core.Combiners
 {
-    public class PriceVisibilityValueCombiner : MvxValueCombiner
+    public class PriceVisibilityCommonValueCombiner : MvxValueCombiner
     {
         private ProductsConfig _config => Mvx.Resolve<IProductConfigService>().Config;
 
         public override bool TryGetValue(IEnumerable<IMvxSourceStep> steps, out object value) {
             var values = steps.ToList();
 
-            bool oldPriceValid = false;
+            bool priceValid = false;
 
-            var oldPriceValue = values.FirstOrDefault(x => x.SourceType == typeof(Decimal) || x.SourceType == typeof(Decimal?));
-            if (oldPriceValue != null) {
-                if (oldPriceValue.SourceType == typeof(Decimal)) {
-                    oldPriceValid = true;
-                } else if (oldPriceValue.SourceType == typeof(Decimal?)) {
-                    var price = (decimal?)oldPriceValue.GetValue();
-                    oldPriceValid = price.HasValue;
+            var priceValue = values.FirstOrDefault(x => x.SourceType == typeof(String));
+            if (priceValue != null) {
+                if (priceValue.SourceType == typeof(String)) {
+                    var price = (String)priceValue.GetValue();
+                    priceValid = !string.IsNullOrEmpty(price);
                 }
             }
 
             if (_config.PriceType == PriceType.FromTo || _config.PriceType == PriceType.To) {
                 bool maxPriceValid = false;
 
-                var maxPriceValue = values.LastOrDefault(x => x.SourceType == typeof(Decimal) || x.SourceType == typeof(Decimal?));
-                if (maxPriceValue != null && maxPriceValue != oldPriceValue) {
-                    if (maxPriceValue.SourceType == typeof(Decimal)) {
-                        maxPriceValid = true;
-                    } else if (maxPriceValue.SourceType == typeof(Decimal?)) {
-                        var price = (decimal?)maxPriceValue.GetValue();
-                        maxPriceValid = price.HasValue;
+                var maxPriceValue = values.LastOrDefault(x => x.SourceType == typeof(String));
+                if (maxPriceValue != null && maxPriceValue != priceValue) {
+                    if (maxPriceValue.SourceType == typeof(String)) {
+                        var price = (String)maxPriceValue.GetValue();
+                        maxPriceValid = !string.IsNullOrEmpty(price);
                     }
                 }
 
@@ -48,7 +44,7 @@ namespace AppRopio.ECommerce.Products.Core.Combiners
                 }
             }
 
-            value = oldPriceValid ? MvxVisibility.Visible : MvxVisibility.Hidden;
+            value = priceValid ? MvxVisibility.Visible : MvxVisibility.Hidden;
             return true;
         }
     }

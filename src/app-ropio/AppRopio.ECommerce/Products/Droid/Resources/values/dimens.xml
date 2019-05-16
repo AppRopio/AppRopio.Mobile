@@ -41,6 +41,16 @@
 		name="app_products_catalog_item_badge_cornerRadius">8dp</dimen>
 	<dimen
 		name="app_products_catalog_item_badge_height">16dp</dimen>
+    <dimen
+        name="app_products_catalog_item_button_cornerRadius">5dp</dimen>
+    <dimen
+        name="app_products_catalog_item_button_height">32dp</dimen>
+    <dimen
+        name="app_products_catalog_item_button_horizontalMargins">8dp</dimen>
+    <dimen
+        name="app_products_catalog_item_button_marginTop">8dp</dimen>
+    <dimen
+        name="app_products_catalog_item_button_marginBottom">0dp</dimen>
 	<dimen
 		name="app_products_catalog_headerHeight">56dp</dimen>
 	<dimen
