@@ -13,6 +13,15 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
 	partial class CatalogGridCell
 	{
 		[Outlet]
+		UIKit.UIButton _actionButton { get; set; }
+
+		[Outlet]
+		UIKit.NSLayoutConstraint _actionButtonBottomMarginConstraint { get; set; }
+
+		[Outlet]
+		UIKit.NSLayoutConstraint _actionButtonHeightConstraint { get; set; }
+
+		[Outlet]
 		UIKit.UICollectionView _badges { get; set; }
 
 		[Outlet]
@@ -38,6 +47,11 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (_actionButton != null) {
+				_actionButton.Dispose ();
+				_actionButton = null;
+			}
+
 			if (_badges != null) {
 				_badges.Dispose ();
 				_badges = null;
@@ -58,6 +72,11 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
 				_markButton = null;
 			}
 
+			if (_maxPrice != null) {
+				_maxPrice.Dispose ();
+				_maxPrice = null;
+			}
+
 			if (_name != null) {
 				_name.Dispose ();
 				_name = null;
@@ -73,9 +92,14 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
 				_price = null;
 			}
 
-			if (_maxPrice != null) {
-				_maxPrice.Dispose ();
-				_maxPrice = null;
+			if (_actionButtonHeightConstraint != null) {
+				_actionButtonHeightConstraint.Dispose ();
+				_actionButtonHeightConstraint = null;
+			}
+
+			if (_actionButtonBottomMarginConstraint != null) {
+				_actionButtonBottomMarginConstraint.Dispose ();
+				_actionButtonBottomMarginConstraint = null;
 			}
 		}
 	}

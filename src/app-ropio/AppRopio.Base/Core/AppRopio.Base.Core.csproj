@@ -128,6 +128,7 @@
     <Compile Include="Services\Localization\LocalizationService.cs" />
     <Compile Include="Messages\Localization\LanguageChangedMessage.cs" />
     <Compile Include="Converters\DateToStringConverter.cs" />
+    <Compile Include="ViewModels\_base\IActionCommandViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />

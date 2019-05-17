@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using AppRopio.Base.Core.Services.ViewLookup;
+using AppRopio.Base.Core.Services.ViewModelLookup;
 using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.UIExtentions;
 using AppRopio.Base.iOS.ViewSources;
@@ -147,8 +148,8 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog
 
                 var config = Mvx.Resolve<IProductConfigService>().Config;
                 if (config.Basket?.ItemAddToCart != null
-                    && Mvx.Resolve<IViewLookupService>().IsRegistered(config.Basket?.ItemAddToCart.TypeName)) {
-                    height += ThemeConfig.Products.ProductCell.AddToCartHeight;
+                    && Mvx.Resolve<IViewModelLookupService>().IsRegistered(config.Basket?.ItemAddToCart.TypeName)) {
+                    height += ThemeConfig.Products.ProductCell.ActionButtonHeight;
                 }
 
                 flowLayout.ItemSize = new CGSize(width, height);

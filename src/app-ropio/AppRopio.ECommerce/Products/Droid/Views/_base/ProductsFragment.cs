@@ -23,6 +23,13 @@ namespace AppRopio.ECommerce.Products.Droid.Views
 
         #endregion
 
+        #region Properties
+
+        private ProductsConfig _config;
+        protected virtual ProductsConfig Config => _config ?? (_config = Mvx.Resolve<IProductConfigService>().Config);
+
+        #endregion
+
         #region Constructor
 
         protected ProductsFragment()
@@ -58,11 +65,9 @@ namespace AppRopio.ECommerce.Products.Droid.Views
 
         public override void OnCreateOptionsMenu(Android.Views.IMenu menu, Android.Views.MenuInflater inflater)
         {
-            var config = Mvx.Resolve<IProductConfigService>().Config;
-
             if (ViewModel?.CartIndicatorVM != null)
             {
-                var cartIndicatorType = config.Basket.CartIndicator.TypeName;
+                var cartIndicatorType = Config.Basket.CartIndicator.TypeName;
 
                 var viewLookupService = Mvx.Resolve<IViewLookupService>();
 
@@ -80,7 +85,7 @@ namespace AppRopio.ECommerce.Products.Droid.Views
                 }
             }
 
-            if (ViewModel != null && ViewModel.SearchEnabled && !ViewModel.SearchBar && config.SearchType != SearchType.Disabled)
+            if (ViewModel != null && ViewModel.SearchEnabled && !ViewModel.SearchBar && Config.SearchType != SearchType.Disabled)
             {
                 var menuItem = menu.Add(0, MENU_SEARCH_ID, 0, new Java.Lang.String(""));
 

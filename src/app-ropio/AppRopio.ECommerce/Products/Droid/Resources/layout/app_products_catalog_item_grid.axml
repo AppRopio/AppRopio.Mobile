@@ -34,7 +34,17 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:MvxBind="Click MarkCommand; Visibility Visibility(MarkEnabled); Selected Marked" />
-        <LinearLayout
+<!--        <View
+            android:id="@+id/app_products_catalog_item_texts"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="@dimen/app_products_catalog_item_name_marginTop"
+            android:layout_marginBottom="@dimen/app_products_catalog_item_price_marginBottom"
+            app:layout_constraintTop_toBottomOf="@+id/app_products_catalog_item_image"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+-->        <LinearLayout
             android:id="@+id/app_products_catalog_item_texts"
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -63,7 +73,7 @@
                 android:layout_marginLeft="@dimen/app_products_catalog_item_horizontalMargin"
                 android:layout_marginRight="@dimen/app_products_catalog_item_horizontalMargin"
                 android:layout_marginBottom="@dimen/app_products_catalog_item_price_marginTop"
-                app:MvxBind="Text PriceUnit(OldPrice, UnitNameOld)" />
+                app:MvxBind="Text OldPrice; Visibility OldPriceVisibility(OldPrice, MaxPrice)" />
 <!--PRICE-->
             <TextView
                 style="@style/app_products_catalog_item_price"
@@ -72,7 +82,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/app_products_catalog_item_horizontalMargin"
                 android:layout_marginRight="@dimen/app_products_catalog_item_horizontalMargin"
-                app:MvxBind="Text PriceFromUnit(Price, UnitName, MaxPrice)" />
+                app:MvxBind="Text Price; Visibility PriceVisibility(Price, MaxPrice)" />
 <!--MAX PRICE-->
             <TextView
                 style="@style/app_products_catalog_item_price"
@@ -83,12 +93,16 @@
                 android:layout_marginLeft="@dimen/app_products_catalog_item_horizontalMargin"
                 android:layout_marginRight="@dimen/app_products_catalog_item_horizontalMargin"
                 android:visibility="gone"
-                app:MvxBind="Text Format('{0} {1}', Resx('Catalog_PriceTo', 'Products'), PriceUnit(MaxPrice, UnitName))" />
-            <FrameLayout
-                android:id="@+id/app_products_catalogCard_basketLayout"
+                app:MvxBind="Text MaxPrice; Visibility MaxPriceVisibility(MaxPrice)" />
+            <Button
+                style="@style/app_products_catalog_item_button"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:visibility="gone" />
+                android:layout_height="@dimen/app_products_catalog_item_button_height"
+                android:layout_marginLeft="@dimen/app_products_catalog_item_button_horizontalMargins"
+                android:layout_marginRight="@dimen/app_products_catalog_item_button_horizontalMargins"
+                android:layout_marginTop="@dimen/app_products_catalog_item_button_marginTop"
+                android:layout_marginBottom="@dimen/app_products_catalog_item_button_marginBottom"
+                app:MvxBind="Click ActionCommand; Text ActionText; Visibility Visibility(HasAction, false)" />
         </LinearLayout>
     </android.support.constraint.ConstraintLayout>
 </android.support.v7.widget.CardView>
