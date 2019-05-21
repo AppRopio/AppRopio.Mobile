@@ -2,7 +2,6 @@ using AppRopio.Base.Core.Services.ViewLookup;
 using AppRopio.ECommerce.Basket.Core.Services;
 using AppRopio.ECommerce.Basket.Core.ViewModels;
 using AppRopio.ECommerce.Basket.Core.ViewModels.CartIndicator;
-using AppRopio.ECommerce.Basket.Core.ViewModels.CatalogCard;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial;
@@ -13,7 +12,6 @@ using AppRopio.ECommerce.Basket.iOS.Services;
 using AppRopio.ECommerce.Basket.iOS.Services.Implementation;
 using AppRopio.ECommerce.Basket.iOS.Views.Basket;
 using AppRopio.ECommerce.Basket.iOS.Views.CartIndicator;
-using AppRopio.ECommerce.Basket.iOS.Views.CatalogCard;
 using AppRopio.ECommerce.Basket.iOS.Views.Order;
 using AppRopio.ECommerce.Basket.iOS.Views.Order.Delivery;
 using AppRopio.ECommerce.Basket.iOS.Views.Order.Full;
@@ -44,7 +42,6 @@ namespace AppRopio.ECommerce.Basket.iOS
             viewLookupService.Register<IOrderFieldAutocompleteVM>(typeof(OrderFieldAutocompleteViewController));
 
             viewLookupService.Register<IBasketProductCardViewModel, BasketProductCardView>();
-            viewLookupService.Register<IBasketCatalogItemVM, BasketCatalogItemView>();
             viewLookupService.Register<IBasketCartIndicatorViewModel, BasketCartIndicatorView>();
 
             var orderType = Mvx.Resolve<IBasketConfigService>().Config.OrderViewType;

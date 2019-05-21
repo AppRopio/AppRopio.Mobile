@@ -28,7 +28,13 @@
     },
     "products": {
         "productCell": {
-            "addToCartHeight": 40,
+            "actionButtonHeight": 40,
+            "actionButton": {
+                "layer": {
+                    "cornerRadius": 16,
+                    "maskToBounds": true
+                }
+            },
             "image": {
                 "path": "Images/Products/no_photo.png"
             },

@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
+using AppRopio.Base.Core.ViewModels._base;
 using AppRopio.Models.Products.Responses;
 using MvvmCross.Core.ViewModels;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Items
 {
-    public interface ICatalogItemVM : IMvxViewModel, IMarkedItemVM
+    public interface ICatalogItemVM : IMvxViewModel, IMarkedItemVM, IActionCommandViewModel
     {
         Product Model { get; }
 
@@ -14,20 +15,18 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Items
 
         string Name { get; }
 
-        decimal Price { get; }
+        string Price { get; }
 
-        decimal? MaxPrice { get; }
+        string MaxPrice { get; }
 
-        string UnitName { get; }
-
-        decimal? OldPrice { get; }
-
-        string UnitNameOld { get; }
+        string OldPrice { get; }
 
         List<IProductBadgeItemVM> Badges { get; }
 
         string StateName { get; }
 
         IMvxViewModel BasketBlockViewModel { get; }
+
+        bool HasAction { get; }
     }
 }

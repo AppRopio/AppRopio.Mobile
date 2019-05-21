@@ -180,6 +180,7 @@
     <Compile Include="Views\Categories\Disabled\DCategoriesFragment.cs" />
     <Compile Include="Views\Categories\Disabled\DCatalogTemplateSelector.cs" />
     <Compile Include="Views\ModalProductCard\ModalProductCardFragment.cs" />
+    <Compile Include="Combiners\PriceVisibilityValueCombiner.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -257,6 +258,10 @@
     <AndroidResource Include="Resources\layout\app_products_sscategories_item_grid.axml" />
     <AndroidResource Include="Resources\drawable\app_products_sscategories_item_grid_gradient.xml" />
     <AndroidResource Include="Resources\layout\app_products_sscategories_item_list.axml" />
+    <AndroidResource Include="Resources\drawable\app_products_catalog_item_button.xml" />
+    <AndroidResource Include="Resources\drawable\app_products_catalog_item_button_disabled.xml" />
+    <AndroidResource Include="Resources\drawable\app_products_catalog_item_button_focused.xml" />
+    <AndroidResource Include="Resources\drawable\app_products_catalog_item_button_normal.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\AppRopio.Base\Core\AppRopio.Base.Core.csproj">
@@ -299,6 +304,7 @@
     <Folder Include="Views\Categories\Cataloged\" />
     <Folder Include="Views\Categories\Disabled\" />
     <Folder Include="Views\ModalProductCard\" />
+    <Folder Include="Combiners\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.targets" Condition="Exists('..\..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.targets')" />

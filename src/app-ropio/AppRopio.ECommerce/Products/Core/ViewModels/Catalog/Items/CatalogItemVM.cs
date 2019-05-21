@@ -1,16 +1,19 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Windows.Input;
+using AppRopio.Base.Core;
+using AppRopio.Base.Core.ViewModels;
+using AppRopio.Base.Core.ViewModels._base;
 using AppRopio.ECommerce.Products.Core.Messages;
+using AppRopio.ECommerce.Products.Core.Models;
+using AppRopio.ECommerce.Products.Core.Models.Bundle;
 using AppRopio.ECommerce.Products.Core.Services;
+using AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Services;
 using AppRopio.Models.Products.Responses;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
-using AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Services;
-using AppRopio.ECommerce.Products.Core.Models.Bundle;
-using AppRopio.Base.Core.ViewModels;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Items
 {
@@ -27,6 +30,8 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Items
             }
         }
 
+        public ICommand ActionCommand { get; protected set; }
+
         #endregion
 
         #region Properties
@@ -39,15 +44,11 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Items
 
         public string Name { get; protected set; }
 
-        public decimal Price { get; protected set; }
+        public string Price { get; protected set; }
 
-        public decimal? MaxPrice { get; protected set; }
+        public string MaxPrice { get; protected set; }
 
-        public string UnitName { get; protected set; }
-
-        public decimal? OldPrice { get; protected set; }
-
-        public string UnitNameOld { get; protected set; }
+        public string OldPrice { get; protected set; }
 
         public string StateName { get; protected set; }
 
@@ -71,6 +72,9 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Items
 
         public bool MarkEnabled { get; }
 
+        public string ActionText { get; protected set; }
+
+        public bool HasAction { get; protected set; }
 
         public IMvxViewModel BasketBlockViewModel { get; protected set; }
 
@@ -79,8 +83,6 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Items
         #region Services
 
         protected ICatalogVmService VmService => Mvx.Resolve<ICatalogVmService>();
-
-        protected IMvxMessenger Messenger { get { return Mvx.Resolve<IMvxMessenger>(); } }
 
         protected IProductConfigService ConfigService => Mvx.Resolve<IProductConfigService>();
 
@@ -102,13 +104,11 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Items
 
             Name = model.Name;
 
-            Price = model.Price;
-            UnitName = model.UnitName;
+            Price = FormatPrice(model);
 
-            MaxPrice = model.MaxPrice;
+            MaxPrice = FormatMaxPrice(model);
 
-            OldPrice = model.OldPrice;
-            UnitNameOld = model.UnitNameOld;
+            OldPrice = FormatOldPrice(model);
 
             if (!model.Badges.IsNullOrEmpty())
                 Badges = model.Badges.Select(SetupBadgeItem).ToList();
@@ -125,11 +125,77 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Items
                 parameterVM.Prepare(new ProductCardBundle(Model, Base.Core.Models.Navigation.NavigationType.InsideScreen));
             else
                 BasketBlockViewModel?.Init(new ProductCardBundle(Model, Base.Core.Models.Navigation.NavigationType.InsideScreen));
+
+            if (BasketBlockViewModel is IActionCommandViewModel actionCommandVM) {
+                HasAction = true;
+                ActionCommand = actionCommandVM.ActionCommand;
+                ActionText = actionCommandVM.ActionText;
+            }
+        }
+
+        #endregion
+
+        #region Private
+
+        private string FormatPriceUnit(decimal price, string unitName)
+        {
+            string priceString = string.Empty;
+
+            var numberFormat = (NumberFormatInfo)AppSettings.SettingsCulture.NumberFormat.Clone();
+            var currencyFormat = AppSettings.CurrencyFormat;
+
+            priceString += price.ToString(currencyFormat, numberFormat);
+
+            var config = ConfigService.Config;
+
+            if (config.UnitNameEnabled && !string.IsNullOrEmpty(unitName))
+                priceString += $"/{unitName}";
+
+            return priceString;
         }
 
         #endregion
 
         #region Protected
+
+        protected virtual string FormatPrice(Product model)
+        {
+            decimal price = model.Price;
+            decimal? maxPrice = model.MaxPrice;
+            string unitName = model.UnitName;
+
+            string priceString = FormatPriceUnit(price, unitName);
+
+            var priceType = ConfigService.Config.PriceType;
+            if (maxPrice.HasValue && priceType != PriceType.Default && priceType != PriceType.To)
+                priceString = $"{LocalizationService.GetLocalizableString(ProductsConstants.RESX_NAME, "Catalog_PriceFrom")} {priceString}";
+
+            return priceString;
+        }
+
+        protected virtual string FormatOldPrice(Product model)
+        {
+            decimal? oldPrice = model.OldPrice;
+            string unitNameOld = model.UnitNameOld;
+
+            return oldPrice.HasValue ? FormatPriceUnit(oldPrice.Value, unitNameOld) : string.Empty;
+        }
+
+        protected virtual string FormatMaxPrice(Product model)
+        {
+            decimal? maxPrice = model.MaxPrice;
+
+            if (!maxPrice.HasValue)
+                return string.Empty;
+
+            string unitName = model.UnitName;
+
+            string priceString = $"{LocalizationService.GetLocalizableString(ProductsConstants.RESX_NAME, "Catalog_PriceTo")} ";
+
+            priceString += FormatPriceUnit(maxPrice.Value, unitName);
+
+            return priceString;
+        }
 
         protected virtual IProductBadgeItemVM SetupBadgeItem(ProductBadge model)
         {

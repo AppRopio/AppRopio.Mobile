@@ -1,7 +1,9 @@
 ﻿using System;
+using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.Models.ThemeConfigs;
 using AppRopio.Base.iOS.UIExtentions;
+using AppRopio.ECommerce.Products.Core.Combiners;
 using AppRopio.ECommerce.Products.Core.Models;
 using AppRopio.ECommerce.Products.Core.Services;
 using AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Items;
@@ -12,13 +14,6 @@ using MvvmCross.Binding.BindingContext;
 using MvvmCross.Binding.iOS.Views;
 using MvvmCross.Platform;
 using UIKit;
-using AppRopio.Base.Core.Converters;
-using AppRopio.Base.Core.Combiners;
-using AppRopio.Base.Core.Services.ViewLookup;
-using MvvmCross.iOS.Views;
-using AppRopio.ECommerce.Products.Core;
-using AppRopio.Base.Core.Services.Localization;
-using AppRopio.ECommerce.Products.Core.Combiners;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
 {
@@ -41,6 +36,9 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
         protected virtual UICollectionView Badges => _badges;
         protected virtual NSLayoutConstraint BadgesWidthConstraint => _badgesWidthContraint;
         protected virtual UIButton MarkButton => _markButton;
+        protected virtual UIButton ActionButton => _actionButton;
+        protected virtual NSLayoutConstraint ActionButtonHeightConstraint => _actionButtonHeightConstraint;
+        protected virtual NSLayoutConstraint ActionButtonBottomMarginConstraint => _actionButtonBottomMarginConstraint;
 
         protected CatalogGridCell(IntPtr handle)
             : base(handle)
@@ -71,7 +69,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
 
             SetupMarkButton(MarkButton, cell.MarkButton);
 
-            SetupBasketView();
+            SetupActionButton(ActionButton, cell.ActionButton);
 
             this.SetupStyle(cell);
         }
@@ -116,23 +114,15 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
 
         protected virtual void SetupMarkButton(UIButton markButton, Button button)
         {
-            markButton.SetupStyle(button);
+            markButton?.SetupStyle(button);
         }
 
-        protected void SetupBasketView()
+        protected void SetupActionButton(UIButton actionButton, Button button)
         {
-            var config = Mvx.Resolve<IProductConfigService>().Config;
-            if (config.Basket?.ItemAddToCart != null && Mvx.Resolve<IViewLookupService>().IsRegistered(config.Basket?.ItemAddToCart.TypeName))
-            {
-                var ViewModel = DataContext as ICatalogItemVM;
-                var basketView = ViewModel.BasketBlockViewModel == null ? null : Mvx.Resolve<IMvxIosViewCreator>().CreateView(ViewModel.BasketBlockViewModel) as UIView;
-                if (basketView != null)
-                {
-                    float height = ThemeConfig.Products.ProductCell.AddToCartHeight;
-                    basketView.ChangeFrame(y: this.Frame.Size.Height - height, w: this.Frame.Size.Width, h: height);
-                    this.AddSubview(basketView);
-                }
-            }
+            actionButton?.SetupStyle(button);
+
+            if (ActionButtonHeightConstraint != null && ActionButtonBottomMarginConstraint != null)
+                ActionButtonHeightConstraint.Constant = ThemeConfig.Products.ProductCell.ActionButtonHeight - ActionButtonBottomMarginConstraint.Constant;
         }
 
         #endregion
@@ -150,6 +140,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
             BindOldPrice(OldPrice, set);
             BindBagesCollection(Badges, set);
             BindMarkButton(MarkButton, set);
+            BindActionButton(ActionButton, set);
 
             set.Apply();
         }
@@ -181,16 +172,12 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
             if (price == null)
                 return;
 
-            MvxFluentBindingDescription<UILabel, ICatalogItemVM> priceBinding;
-            if (Config.UnitNameEnabled)
-                priceBinding = set.Bind(price).ByCombining(new PriceFromUnitCombiner(), new []{ "Price", "UnitName", "MaxPrice" });
-            else
-                priceBinding = set.Bind(price).ByCombining(new PriceFromFormatCombiner(), new []{ "Price", "MaxPrice" });
+            set.Bind(price).For(v => v.Text).To(vm => vm.Price);
 
             if (Config.PriceType != PriceType.FromTo) {
                 set.Bind(price)
                     .For("Visibility")
-                    .ByCombining(new PriceVisibilityValueCombiner(), new[] { "Price", "MaxPrice" })
+                    .ByCombining(new PriceVisibilityCommonValueCombiner(), new[] { "Price", "MaxPrice" })
                     .WithConversion("VisibilityHidden");
             }
         }
@@ -205,23 +192,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
                 return;
             }
 
-            MvxFluentBindingDescription<UILabel, ICatalogItemVM> priceBinding;
-            if (Config.UnitNameEnabled)
-                priceBinding = set.Bind(maxPrice).ByCombining(new PriceUnitCombiner(), new []{ "MaxPrice", "UnitName" });
-            else
-                priceBinding = set.Bind(maxPrice).To(vm => vm.MaxPrice);
-
-            priceBinding.WithConversion(
-                "StringFormat",
-                new StringFormatParameter() {
-                    StringFormat = (arg) => {
-                        if (!Config.UnitNameEnabled) {
-                            arg = new PriceFormatConverter().Convert(arg, typeof(Decimal?), null, null);
-                        }
-                        return $"{LocalizationService.GetLocalizableString(ProductsConstants.RESX_NAME, "Catalog_PriceTo")} {arg}";
-                    }
-                }
-            );
+            set.Bind(maxPrice).For(v => v.Text).To(vm => vm.MaxPrice);
 
             set.Bind(maxPrice).For("Visibility").To(vm => vm.MaxPrice).WithConversion("Visibility");
         }
@@ -231,28 +202,11 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
             if (oldPrice == null)
                 return;
 
-            MvxFluentBindingDescription<UILabel, ICatalogItemVM> priceBinding;
-            if (Config.UnitNameEnabled)
-                priceBinding = set.Bind(oldPrice).ByCombining(new PriceUnitCombiner(), new []{ "OldPrice", "UnitNameOld" });
-            else
-                priceBinding = set.Bind(oldPrice).To(vm => vm.OldPrice);
-
-            priceBinding.WithConversion(
-                "StringFormat",
-                new StringFormatParameter() {
-                    StringFormat = (arg) => {
-                        if (!Config.UnitNameEnabled) {
-                            arg = new PriceFormatConverter().Convert(arg, typeof(Decimal?), null, null);
-                        }
-                        return $"{arg}";
-//                        return $"{LocalizationService.GetLocalizableString(ProductsConstants.RESX_NAME, "Catalog_PriceFrom")} {arg}";
-                    }
-                }
-            );
+            set.Bind(oldPrice).For(v => v.Text).To(vm => vm.OldPrice);
 
             set.Bind(oldPrice)
                 .For("Visibility")
-                .ByCombining(new PriceVisibilityValueCombiner(), new[] { "OldPrice", "MaxPrice" })
+                .ByCombining(new PriceVisibilityCommonValueCombiner(), new[] { "OldPrice", "MaxPrice" })
                 .WithConversion("VisibilityHidden");
         }
 
@@ -282,6 +236,16 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
             set.Bind(markButton).To(vm => vm.MarkCommand);
             set.Bind(markButton).For(v => v.Selected).To(vm => vm.Marked);
             set.Bind(markButton).For("Visibility").To(vm => vm.MarkEnabled).WithConversion("Visibility");
+        }
+
+        protected virtual void BindActionButton(UIButton actionButton, MvxFluentBindingDescriptionSet<CatalogGridCell, ICatalogItemVM> set)
+        {
+            if (actionButton == null)
+                return;
+            
+            set.Bind(actionButton).To(vm => vm.ActionCommand);
+            set.Bind(actionButton).For("Title").To(vm => vm.ActionText);
+            set.Bind(actionButton).For("Visibility").To(vm => vm.HasAction).WithConversion("Visibility");
         }
 
         #endregion

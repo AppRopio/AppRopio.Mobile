@@ -6,20 +6,20 @@ using AppRopio.ECommerce.Basket.Core.ViewModels;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Basket;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Items.Services;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Services;
+using AppRopio.ECommerce.Basket.Core.ViewModels.CartIndicator;
+using AppRopio.ECommerce.Basket.Core.ViewModels.CatalogCard;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Full;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial;
+using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Payment;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Services;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Services.Implementation;
-using MvvmCross.Platform;
-using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Payment;
-using MvvmCross.Plugins.Messenger;
-using AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard.Services;
-using AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Thanks;
-using AppRopio.ECommerce.Basket.Core.ViewModels.CartIndicator;
-using AppRopio.ECommerce.Basket.Core.ViewModels.CatalogCard;
+using AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard;
+using AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard.Services;
+using MvvmCross.Platform;
+using MvvmCross.Plugins.Messenger;
 
 namespace AppRopio.ECommerce.Basket.Core
 {
