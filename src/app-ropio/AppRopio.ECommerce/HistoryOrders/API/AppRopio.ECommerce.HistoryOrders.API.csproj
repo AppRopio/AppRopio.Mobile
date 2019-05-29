@@ -59,6 +59,10 @@
       <Project>{36D85C96-D45F-465B-98E6-AF1BC36400D5}</Project>
       <Name>AppRopio.Models.Payments</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\AppRopio.Base\Core\AppRopio.Base.Core.csproj">
+      <Project>{EA6D5113-1E80-494B-886D-3D7FDFA04E99}</Project>
+      <Name>AppRopio.Base.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MvvmCross.Platform">
