@@ -31,7 +31,6 @@
     <Compile Include="Services\IHistoryOrdersService.cs" />
     <Compile Include="Services\Implementation\HistoryOrdersService.cs" />
     <Compile Include="Services\Fakes\HistoryOrdersFakeService.cs" />
-    <Compile Include="App.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\" />
@@ -58,10 +57,6 @@
     <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Payments\AppRopio.Models.Payments.csproj">
       <Project>{36D85C96-D45F-465B-98E6-AF1BC36400D5}</Project>
       <Name>AppRopio.Models.Payments</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\AppRopio.Base\Core\AppRopio.Base.Core.csproj">
-      <Project>{EA6D5113-1E80-494B-886D-3D7FDFA04E99}</Project>
-      <Name>AppRopio.Base.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
