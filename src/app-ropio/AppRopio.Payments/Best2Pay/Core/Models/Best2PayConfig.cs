@@ -1,5 +1,4 @@
-﻿using System;
-namespace AppRopio.Payments.Best2Pay.Core.Models
+﻿namespace AppRopio.Payments.Best2Pay.Core.Models
 {
     public class Best2PayConfig
     {
@@ -8,5 +7,7 @@ namespace AppRopio.Payments.Best2Pay.Core.Models
         public string Password { get; set; }
 
         public bool EPayment { get; set; }
+
+        public bool Test { get; set; }
     }
 }
