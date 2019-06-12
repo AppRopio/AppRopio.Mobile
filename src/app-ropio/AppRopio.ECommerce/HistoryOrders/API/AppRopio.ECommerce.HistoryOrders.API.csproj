@@ -7,7 +7,7 @@
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <RootNamespace>AppRopio.ECommerce.HistoryOrders.API</RootNamespace>
-    <AssemblyName>AppRopio.ECommerce.OrdersHistory.API</AssemblyName>
+    <AssemblyName>AppRopio.ECommerce.HistoryOrders.API</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <TargetFrameworkProfile>Profile151</TargetFrameworkProfile>
   </PropertyGroup>
@@ -31,7 +31,6 @@
     <Compile Include="Services\IHistoryOrdersService.cs" />
     <Compile Include="Services\Implementation\HistoryOrdersService.cs" />
     <Compile Include="Services\Fakes\HistoryOrdersFakeService.cs" />
-    <Compile Include="App.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\" />
