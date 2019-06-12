@@ -37,7 +37,7 @@ namespace AppRopio.Payments.Best2Pay.Core.ViewModels.Best2Pay.Services
             _forwardUrl = platform == PlatformType.iPhone || platform == PlatformType.iPad ? @"https://best2pay.ru/mobileAPI/iOS" : @"https://best2pay.ru/mobileAPI/Android";
             _forwardVerifyUrl = "https://best2pay.ru/mobileAPI/Phone";
 
-            _best2Pay = new API.Best2Pay(Config.Sector, Config.Password, _forwardUrl, _forwardVerifyUrl);
+            _best2Pay = new API.Best2Pay(Config.Sector, Config.Password, _forwardUrl, _forwardVerifyUrl, Config.Test);
         }
 
         public async Task<PaymentOrderInfo> GetPaymentInfo(string orderId)

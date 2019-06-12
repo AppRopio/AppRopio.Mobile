@@ -23,7 +23,7 @@ namespace AppRopio.Payments.Best2Pay.API
             if (ID != -1) data += "&id=" + ID;
             if (!string.IsNullOrEmpty(firstname) && firstname.Length != 0) data += "&firstname=" + firstname;
             if (!string.IsNullOrEmpty(lastname) && lastname.Length != 0) data += "&lastname=" + lastname;
-            if (email.Length != 0) data += "&email=" + email;
+            if (!string.IsNullOrEmpty(email) && email.Length != 0) data += "&email=" + email;
             data += "&wm=" + (wm ? "1" : "0");
             data += "&ym=" + (ym ? "1" : "0");
             data += "&qiwi=" + (qiwi ? "1" : "0");
@@ -48,7 +48,7 @@ namespace AppRopio.Payments.Best2Pay.API
 
             if (!string.IsNullOrEmpty(lastname) && lastname.Length != 0) data.Add("lastname", lastname);
 
-            if (email.Length != 0) data.Add("email", email);
+            if (!string.IsNullOrEmpty(email) && email.Length != 0) data.Add("email", email);
 
             data.Add("wm", (wm ? "1" : "0"));
 

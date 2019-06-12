@@ -14,7 +14,7 @@ namespace AppRopio.Payments.Best2Pay.API
 
         public bool IsTest { get; set; }
 
-        public Best2Pay(int sector, string password, string forwardUrl, string forwardVerifyUrl)
+        public Best2Pay(int sector, string password, string forwardUrl, string forwardVerifyUrl, bool test)
         {
             _password = password;
             _sector = sector;
@@ -24,7 +24,7 @@ namespace AppRopio.Payments.Best2Pay.API
 #if DEBUG
             IsTest = true;
 #else
-            IsTest = false;
+            IsTest = test;
 #endif
         }
 

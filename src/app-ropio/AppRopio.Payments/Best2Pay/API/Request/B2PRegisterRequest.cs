@@ -34,8 +34,8 @@ namespace AppRopio.Payments.Best2Pay.API
             if (description.Length != 0) data += "&description=" + description;
             data += "&sector=" + sector;
             data += "&url=" + forwardURL;
-            if (email.Length != 0) data += "&email=" + email;
-            if (phone.Length != 0) data += "&phone=" + phone;
+            if (!string.IsNullOrEmpty(email) && email.Length != 0) data += "&email=" + email;
+            if (!string.IsNullOrEmpty(phone) && phone.Length != 0) data += "&phone=" + phone;
             if (signature.Length != 0) data += "&signature=" + signature;
             if (bank_name.Length != 0) data += "&bank_name=" + bank_name;
             if (address.Length != 0) data += "&address=" + address;
@@ -71,9 +71,9 @@ namespace AppRopio.Payments.Best2Pay.API
             data.Add("sector", sector.ToString());
             data.Add("url", forwardURL);
 
-            if (email.Length != 0) data.Add("email", email);
+            if (!string.IsNullOrEmpty(email) && email.Length != 0) data.Add("email", email);
 
-            if (phone.Length != 0) data.Add("phone", phone);
+            if (!string.IsNullOrEmpty(phone) && phone.Length != 0) data.Add("phone", phone);
 
             if (signature.Length != 0) data.Add("signature", signature);
 
