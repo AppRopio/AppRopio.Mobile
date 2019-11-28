@@ -6,6 +6,7 @@ using AppRopio.Base.Auth.API.Services;
 using AppRopio.Base.Auth.Core.Extentions;
 using AppRopio.Base.Auth.Core.Models.OAuth;
 using AppRopio.Base.Auth.Core.Services;
+using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.Core.ViewModels.Services;
 using MvvmCross.Platform;
 using MvvmCross.Plugins.Messenger;
@@ -29,7 +30,7 @@ namespace AppRopio.Base.Auth.Core.ViewModels.Auth.Services
         protected virtual async Task<bool> OnSignInBySocial(string socialToken, OAuthType socialType, CancellationTokenSource cts)
         {
             if (socialToken.IsNullOrEmtpy())
-                throw new Exception("Неудалось получить доступ к социальной сети");
+                throw new Exception(Mvx.Resolve<ILocalizationService>().GetLocalizableString(AuthConst.RESX_NAME, "Auth_Social_NoAccess"));
             try
             {
                 var token = await AuthService.SocialSignIn(socialToken, socialType.GetSocialType(), cts);
@@ -44,7 +45,7 @@ namespace AppRopio.Base.Auth.Core.ViewModels.Auth.Services
             }
             catch (Exception ex)
             {
-                OnException(ex, "Не удалось завершить авторизацию");
+                OnException(ex, Mvx.Resolve<ILocalizationService>().GetLocalizableString(AuthConst.RESX_NAME, "Auth_Social_Failed"));
             }
 
             return false;
@@ -62,7 +63,7 @@ namespace AppRopio.Base.Auth.Core.ViewModels.Auth.Services
 
                 if (await OnSignInBySocial(socialToken, socialType, cts))
                 {
-                    await UserDialogs.Alert("Вы успешно выполнили вход");
+                    await UserDialogs.Alert(Mvx.Resolve<ILocalizationService>().GetLocalizableString(AuthConst.RESX_NAME, "Auth_Social_Success"));
                     ChangePresentation(new Base.Core.PresentationHints.NavigateToDefaultViewModelHint());
                 }
             }

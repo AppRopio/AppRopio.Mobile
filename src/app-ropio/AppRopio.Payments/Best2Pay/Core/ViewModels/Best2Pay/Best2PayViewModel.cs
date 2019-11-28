@@ -64,6 +64,8 @@ namespace AppRopio.Payments.Best2Pay.Core.ViewModels.Best2Pay
                                                             NavigationType.ClearAndPush :
                                                             parameters.NavigationType;
             OrderId = parameters.OrderId;
+
+            Title = LocalizationService.GetLocalizableString(Best2PayConstants.RESX_NAME, "Title");
         }
 
         #endregion

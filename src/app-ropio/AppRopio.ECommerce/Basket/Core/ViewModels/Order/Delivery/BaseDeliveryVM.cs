@@ -154,7 +154,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery
                     if (VmNavigationType == NavigationType.PresentModal)
                         await UserDialogs.Alert($"{LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Order_DeliveryPriceAlert")} {DeliveryPrice.Value.ToString($"# ### ##0.## {AppSettings.SettingsCulture.NumberFormat.CurrencySymbol}").Trim()}");
                     else
-                        await UserDialogs.Confirm($"{LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Order_DeliveryPriceAlert")} {DeliveryPrice.Value.ToString($"# ### ##0.## {AppSettings.SettingsCulture.NumberFormat.CurrencySymbol}").Trim()}", "Ок");
+                        await UserDialogs.Confirm($"{LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Order_DeliveryPriceAlert")} {DeliveryPrice.Value.ToString($"# ### ##0.## {AppSettings.SettingsCulture.NumberFormat.CurrencySymbol}").Trim()}", LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Order_AlertOk"));
                 }
 
                 if (VmNavigationType == NavigationType.PresentModal)

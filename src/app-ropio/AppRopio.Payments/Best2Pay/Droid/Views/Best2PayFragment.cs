@@ -22,7 +22,6 @@ namespace AppRopio.Payments.Best2Pay.Droid.Views
         public Best2PayFragment()
             : base(Resource.Layout.app_payment_best2pay)
         {
-            Title = "Оплата картой";
         }
     }
 }
