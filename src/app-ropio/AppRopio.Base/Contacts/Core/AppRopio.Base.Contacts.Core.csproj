@@ -1,106 +1,56 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2BD59760-4635-4B39-835F-CFD29A45BC96}</ProjectGuid>
-    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <OutputType>Library</OutputType>
-    <RootNamespace>AppRopio.Base.Contacts.Core</RootNamespace>
-    <AssemblyName>AppRopio.Base.Contacts.Core</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Profile151</TargetFrameworkProfile>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug</OutputPath>
-    <DefineConstants>DEBUG;</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release</OutputPath>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PluginLoader.cs" />
-    <Compile Include="App.cs" />
-    <Compile Include="ContactsConstants.cs" />
-    <Compile Include="ViewModels\Contacts\IContactsViewModel.cs" />
-    <Compile Include="ViewModels\Contacts\ContactsViewModel.cs" />
-    <Compile Include="Services\IContactsConfigService.cs" />
-    <Compile Include="Services\IContactsNavigationVmService.cs" />
-    <Compile Include="Services\Implementation\ContactsNavigationVmService.cs" />
-    <Compile Include="Models\ContactsConfig.cs" />
-    <Compile Include="Services\Implementation\ContactsConfigService.cs" />
-    <Compile Include="Services\Implementation\ContactsRouterSubscriber.cs" />
-    <Compile Include="ViewModels\Contacts\Services\ContactsVmService.cs" />
-    <Compile Include="ViewModels\Contacts\Services\IContactsVmService.cs" />
+    <PackageReference Include="Microsoft.NETCore.Platforms" Version="2.0.1"  />
+    <PackageReference Include="Microsoft.NETCore.Targets" Version="2.0.0"  />
+    <PackageReference Include="MvvmCross" Version="5.7.0"  />
+    <PackageReference Include="MvvmCross.Binding" Version="5.7.0"  />
+    <PackageReference Include="MvvmCross.Core" Version="5.7.0"  />
+    <PackageReference Include="MvvmCross.Platform" Version="5.7.0"  />
+    <PackageReference Include="NETStandard.Library" Version="2.0.1"  />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2"  />
+    <PackageReference Include="runtime.native.System" Version="4.3.0"  />
+    <PackageReference Include="System.Collections" Version="4.3.0"  />
+    <PackageReference Include="System.Collections.Concurrent" Version="4.3.0"  />
+    <PackageReference Include="System.Diagnostics.Debug" Version="4.3.0"  />
+    <PackageReference Include="System.Diagnostics.Tools" Version="4.3.0"  />
+    <PackageReference Include="System.Diagnostics.Tracing" Version="4.3.0"  />
+    <PackageReference Include="System.Globalization" Version="4.3.0"  />
+    <PackageReference Include="System.IO" Version="4.3.0"  />
+    <PackageReference Include="System.IO.Compression" Version="4.3.0"  />
+    <PackageReference Include="System.Linq" Version="4.3.0"  />
+    <PackageReference Include="System.Linq.Expressions" Version="4.3.0"  />
+    <PackageReference Include="System.Net.Http" Version="4.3.3"  />
+    <PackageReference Include="System.Net.Primitives" Version="4.3.0"  />
+    <PackageReference Include="System.ObjectModel" Version="4.3.0"  />
+    <PackageReference Include="System.Reflection" Version="4.3.0"  />
+    <PackageReference Include="System.Reflection.Extensions" Version="4.3.0"  />
+    <PackageReference Include="System.Reflection.Primitives" Version="4.3.0"  />
+    <PackageReference Include="System.Resources.ResourceManager" Version="4.3.0"  />
+    <PackageReference Include="System.Runtime" Version="4.3.0"  />
+    <PackageReference Include="System.Runtime.Extensions" Version="4.3.0"  />
+    <PackageReference Include="System.Runtime.InteropServices" Version="4.3.0"  />
+    <PackageReference Include="System.Runtime.InteropServices.RuntimeInformation" Version="4.3.0"  />
+    <PackageReference Include="System.Runtime.Numerics" Version="4.3.0"  />
+    <PackageReference Include="System.Text.Encoding" Version="4.3.0"  />
+    <PackageReference Include="System.Text.Encoding.Extensions" Version="4.3.0"  />
+    <PackageReference Include="System.Text.RegularExpressions" Version="4.3.0"  />
+    <PackageReference Include="System.Threading" Version="4.3.0"  />
+    <PackageReference Include="System.Threading.Tasks" Version="4.3.0"  />
+    <PackageReference Include="System.Threading.Timer" Version="4.3.0"  />
+    <PackageReference Include="System.Xml.ReaderWriter" Version="4.3.0"  />
+    <PackageReference Include="System.Xml.XDocument" Version="4.3.0"  />
+    <PackageReference Include="Xam.Plugins.Messaging" Version="5.2.0"  />
   </ItemGroup>
+    
   <ItemGroup>
-    <Reference Include="System.Runtime.InteropServices.RuntimeInformation">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\netstandard1.1\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
-    </Reference>
-    <Reference Include="Plugin.Messaging.Abstractions">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\Xam.Plugins.Messaging.5.2.0\lib\netstandard1.0\Plugin.Messaging.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Plugin.Messaging">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\Xam.Plugins.Messaging.5.2.0\lib\netstandard1.0\Plugin.Messaging.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\Newtonsoft.Json.11.0.2\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Platform">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Platform.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Platform.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Core">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Core.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Binding">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Binding.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Localization">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Localization.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\..\API\AppRopio.Base.API.csproj"/>
+    <ProjectReference Include="..\API\AppRopio.Base.Contacts.API.csproj"/>
+    <ProjectReference Include="..\..\Core\AppRopio.Base.Core.csproj"/>
+    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Base\AppRopio.Models.Base.csproj"/>
+    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Contacts\AppRopio.Models.Contacts.csproj"/>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="Services\" />
-    <Folder Include="Services\Implementation\" />
-    <Folder Include="ViewModels\" />
-    <Folder Include="ViewModels\Contacts\" />
-    <Folder Include="ViewModels\Contacts\Services\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\API\AppRopio.Base.API.csproj">
-      <Project>{124841B9-39F6-44B5-8B96-50183FBFE341}</Project>
-      <Name>AppRopio.Base.API</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\API\AppRopio.Base.Contacts.API.csproj">
-      <Project>{B972BFB8-3481-4411-83DE-50CF6780D028}</Project>
-      <Name>AppRopio.Base.Contacts.API</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Core\AppRopio.Base.Core.csproj">
-      <Project>{EA6D5113-1E80-494B-886D-3D7FDFA04E99}</Project>
-      <Name>AppRopio.Base.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Base\AppRopio.Models.Base.csproj">
-      <Project>{C4F2B57C-507E-4B99-B2E4-FA4B3C99FD59}</Project>
-      <Name>AppRopio.Models.Base</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Contacts\AppRopio.Models.Contacts.csproj">
-      <Project>{747299BF-FAF3-4C47-BF4C-B1A949BB5F56}</Project>
-      <Name>AppRopio.Models.Contacts</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
-  <Import Project="..\..\..\AppRopio.ECommerce\packages\NETStandard.Library.2.0.1\build\NETStandard.Library.targets" Condition="Exists('..\..\..\AppRopio.ECommerce\packages\NETStandard.Library.2.0.1\build\NETStandard.Library.targets')" />
 </Project>

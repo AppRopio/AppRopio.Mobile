@@ -5,7 +5,6 @@ using System.Reflection;
 using AppRopio.Base.Core.Attributes;
 using MvvmCross.Core;
 using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
 using Newtonsoft.Json;
 
 namespace AppRopio.Base.Core.Extentions
