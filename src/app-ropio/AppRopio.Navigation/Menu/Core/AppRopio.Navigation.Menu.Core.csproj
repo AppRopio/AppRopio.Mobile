@@ -1,96 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E9C4484A-135D-42D9-A9CB-E1A8884D5041}</ProjectGuid>
-    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <OutputType>Library</OutputType>
-    <RootNamespace>AppRopio.Navigation.Menu.Core</RootNamespace>
-    <AssemblyName>AppRopio.Navigation.Menu.Core</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Profile151</TargetFrameworkProfile>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug</OutputPath>
-    <DefineConstants>DEBUG;</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile></DocumentationFile>
-    <ConsolePause>false</ConsolePause>
-    <NoStdLib>false</NoStdLib>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release</OutputPath>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
-    <NoStdLib>false</NoStdLib>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="App.cs" />
-    <Compile Include="ViewModels\MenuViewModel.cs" />
-    <Compile Include="ViewModels\Services\IMenuVmService.cs" />
-    <Compile Include="ViewModels\IMenuViewModel.cs" />
-    <Compile Include="ViewModels\Items\MenuItemVM.cs" />
-    <Compile Include="ViewModels\Items\IMenuItemVM.cs" />
-    <Compile Include="Models\MenuConfig.cs" />
-    <Compile Include="MenuConstants.cs" />
-    <Compile Include="MenuSettings.cs" />
-    <Compile Include="ViewModels\Services\Implementation\MenuVmService.cs" />
-    <Compile Include="Services\IMenuConfigService.cs" />
-    <Compile Include="Services\Implementation\MenuConfigService.cs" />
-    <Compile Include="Models\MenuSection.cs" />
-    <Compile Include="Models\MenuItem.cs" />
+    <PackageReference Include="MvvmCross" Version="5.7.0"  />
+    <PackageReference Include="MvvmCross.Binding" Version="5.7.0"  />
+    <PackageReference Include="MvvmCross.Core" Version="5.7.0"  />
+    <PackageReference Include="MvvmCross.Platform" Version="5.7.0"  />
+    <PackageReference Include="MvvmCross.Plugin.Messenger" Version="5.7.0"  />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2"  />
   </ItemGroup>
+    
   <ItemGroup>
-    <Folder Include="ViewModels\" />
-    <Folder Include="Models\" />
-    <Folder Include="ViewModels\Services\" />
-    <Folder Include="ViewModels\Items\" />
-    <Folder Include="ViewModels\Services\Implementation\" />
-    <Folder Include="Services\" />
-    <Folder Include="Services\Implementation\" />
+    <ProjectReference Include="..\..\..\AppRopio.Base\Core\AppRopio.Base.Core.csproj"/>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\AppRopio.Base\Core\AppRopio.Base.Core.csproj">
-      <Project>{EA6D5113-1E80-494B-886D-3D7FDFA04E99}</Project>
-      <Name>AppRopio.Base.Core</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Plugin.Settings.Abstractions">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\Xam.Plugins.Settings.3.1.1\lib\netstandard1.0\Plugin.Settings.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Plugin.Settings">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\Xam.Plugins.Settings.3.1.1\lib\netstandard1.0\Plugin.Settings.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\Newtonsoft.Json.11.0.2\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Platform">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Platform.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Platform.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Core">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Core.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Binding">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Binding.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Localization">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Localization.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Plugins.Messenger">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Plugin.Messenger.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Plugins.Messenger.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
 </Project>

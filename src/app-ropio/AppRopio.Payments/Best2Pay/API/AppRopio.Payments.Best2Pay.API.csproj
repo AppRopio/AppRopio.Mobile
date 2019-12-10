@@ -1,76 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6A0E8A43-7E69-464B-9FBD-F0570B34DFE2}</ProjectGuid>
-    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <OutputType>Library</OutputType>
-    <RootNamespace>AppRopio.Payments.Best2Pay.API</RootNamespace>
-    <AssemblyName>AppRopio.Payments.Best2Pay.API</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Profile151</TargetFrameworkProfile>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug</OutputPath>
-    <DefineConstants>DEBUG;</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release</OutputPath>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="B2PError.cs" />
-    <Compile Include="Best2Pay.cs" />
-    <Compile Include="Extensions\Parameters.cs" />
-    <Compile Include="MD5\MD5Core.cs" />
-    <Compile Include="Request\B2PEpaymentRequest.cs" />
-    <Compile Include="Request\B2POperationRequest.cs" />
-    <Compile Include="Request\B2PPurchaseRequest.cs" />
-    <Compile Include="Request\B2PRegisterRequest.cs" />
-    <Compile Include="Request\IB2PRequest.cs" />
-    <Compile Include="Response\B2POperationResponse.cs" />
-    <Compile Include="Response\B2POrderResponse.cs" />
-    <Compile Include="Response\B2PRegisterResponse.cs" />
-    <Compile Include="Response\IB2PResponse.cs" />
-    <Compile Include="App.cs" />
+    <PackageReference Include="MvvmCross" Version="5.7.0"  />
+    <PackageReference Include="MvvmCross.Binding" Version="5.7.0"  />
+    <PackageReference Include="MvvmCross.Core" Version="5.7.0"  />
+    <PackageReference Include="MvvmCross.Platform" Version="5.7.0"  />
   </ItemGroup>
+    
   <ItemGroup>
-    <Folder Include="Extensions\" />
-    <Folder Include="MD5\" />
-    <Folder Include="Request\" />
-    <Folder Include="Response\" />
+    <ProjectReference Include="..\..\..\AppRopio.Base\API\AppRopio.Base.API.csproj"/>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\AppRopio.Base\API\AppRopio.Base.API.csproj">
-      <Project>{124841B9-39F6-44B5-8B96-50183FBFE341}</Project>
-      <Name>AppRopio.Base.API</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="MvvmCross.Platform">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Platform.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Platform.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Core">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Core.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Binding">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Binding.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Localization">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Localization.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
 </Project>

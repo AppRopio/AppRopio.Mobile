@@ -1,95 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{124841B9-39F6-44B5-8B96-50183FBFE341}</ProjectGuid>
-    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <OutputType>Library</OutputType>
-    <RootNamespace>AppRopio.Base.API</RootNamespace>
-    <AssemblyName>AppRopio.Base.API</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Profile151</TargetFrameworkProfile>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug</OutputPath>
-    <DefineConstants>DEBUG;</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile></DocumentationFile>
-    <ConsolePause>false</ConsolePause>
-    <NoStdLib>false</NoStdLib>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release</OutputPath>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
-    <NoStdLib>false</NoStdLib>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Helpers\ParseHelper.cs" />
-    <Compile Include="Models\Parse\ParseResult.cs" />
-    <Compile Include="Models\Parse\ParseResult_T.cs" />
-    <Compile Include="Models\Request\RequestCancelReason.cs" />
-    <Compile Include="Models\Request\RequestResult.cs" />
-    <Compile Include="Models\Parse\MediaTypeFormat.cs" />
-    <Compile Include="Exceptions\ConnectionException.cs" />
-    <Compile Include="Attributes\DescriptionAttribute.cs" />
-    <Compile Include="App.cs" />
-    <Compile Include="Services\_base\BaseService.cs" />
-    <Compile Include="Services\_base\ConnectionService.cs" />
-    <Compile Include="Services\_base\IConnectionService.cs" />
-    <Compile Include="Services\IErrorService.cs" />
-    <Compile Include="Services\Implementations\ErrorService.cs" />
-    <Compile Include="Services\IPushService.cs" />
-    <Compile Include="Services\Implementations\PushService.cs" />
-    <Compile Include="ApiSettings.cs" />
+    <PackageReference Include="MvvmCross" Version="5.7.0"  />
+    <PackageReference Include="MvvmCross.Binding" Version="5.7.0"  />
+    <PackageReference Include="MvvmCross.Core" Version="5.7.0"  />
+    <PackageReference Include="MvvmCross.Platform" Version="5.7.0"  />
+    <PackageReference Include="MvvmCross.Plugin.Messenger" Version="5.7.0"  />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2"  />
   </ItemGroup>
+    
   <ItemGroup>
-    <Folder Include="Services\" />
-    <Folder Include="Helpers\" />
-    <Folder Include="Models\" />
-    <Folder Include="Models\Parse\" />
-    <Folder Include="Models\Request\" />
-    <Folder Include="Exceptions\" />
-    <Folder Include="Attributes\" />
-    <Folder Include="Services\_base\" />
-    <Folder Include="Services\Implementations\" />
+    <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Base\AppRopio.Models.Base.csproj"/>
   </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\AppRopio.ECommerce\packages\Newtonsoft.Json.11.0.2\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Platform">
-      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Platform.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Platform.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Core">
-      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Core.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Binding">
-      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Binding.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Localization">
-      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Localization.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Plugins.Messenger">
-      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Plugin.Messenger.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Plugins.Messenger.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Base\AppRopio.Models.Base.csproj">
-      <Project>{C4F2B57C-507E-4B99-B2E4-FA4B3C99FD59}</Project>
-      <Name>AppRopio.Models.Base</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
 </Project>

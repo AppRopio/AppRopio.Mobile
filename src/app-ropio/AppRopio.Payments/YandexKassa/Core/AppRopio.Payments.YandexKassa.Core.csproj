@@ -1,105 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{58B770AC-C69C-49A4-9FCB-302186FC0D99}</ProjectGuid>
-    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <OutputType>Library</OutputType>
-    <RootNamespace>AppRopio.Payments.YandexKassa.Core</RootNamespace>
-    <AssemblyName>AppRopio.Payments.YandexKassa.Core</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Profile151</TargetFrameworkProfile>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug</OutputPath>
-    <DefineConstants>DEBUG;</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release</OutputPath>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\YandexKassa\IYandexKassaViewModel.cs" />
-    <Compile Include="ViewModels\YandexKassa\YandexKassaViewModel.cs" />
-    <Compile Include="App.cs" />
-    <Compile Include="Services\Implementation\YandexKassaRouterSubscriber.cs" />
-    <Compile Include="PluginLoader.cs" />
-    <Compile Include="ViewModels\YandexKassa\Services\YandexKassaVmService.cs" />
-    <Compile Include="ViewModels\YandexKassa\Services\IYandexKassaVmService.cs" />
-    <Compile Include="YandexKassaConstants.cs" />
-    <Compile Include="Services\IYandexKassaWebViewService.cs" />
-    <Compile Include="Services\IYandexKassaConfigService.cs" />
-    <Compile Include="Models\YandexKassaConfig.cs" />
-    <Compile Include="Services\Implementation\YandexKassaConfigService.cs" />
-    <Compile Include="Services\IYandexKassaPaymentNavigationVmService.cs" />
-    <Compile Include="Services\Implementation\YandexKassaPaymentNavigationVmService.cs" />
+    <PackageReference Include="MvvmCross" Version="5.7.0"  />
+    <PackageReference Include="MvvmCross.Binding" Version="5.7.0"  />
+    <PackageReference Include="MvvmCross.Core" Version="5.7.0"  />
+    <PackageReference Include="MvvmCross.Platform" Version="5.7.0"  />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2"  />
   </ItemGroup>
+    
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\Newtonsoft.Json.11.0.2\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Platform">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Platform.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Platform.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Core">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Core.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Binding">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Binding.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Localization">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Localization.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\..\..\AppRopio.Base\Core\AppRopio.Base.Core.csproj"/>
+    <ProjectReference Include="..\..\Base\Core\AppRopio.Payments.Core.csproj"/>
+    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Payments\AppRopio.Models.Payments.csproj"/>
+    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Basket\AppRopio.Models.Basket.csproj"/>
+    <ProjectReference Include="..\..\Base\API\AppRopio.Payments.API.csproj"/>
+    <ProjectReference Include="..\..\..\AppRopio.Base\API\AppRopio.Base.API.csproj"/>
+    <ProjectReference Include="..\API\AppRopio.Payments.YandexKassa.API.csproj"/>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModels\" />
-    <Folder Include="ViewModels\YandexKassa\" />
-    <Folder Include="Services\" />
-    <Folder Include="Services\Implementation\" />
-    <Folder Include="ViewModels\YandexKassa\Services\" />
-    <Folder Include="Models\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\AppRopio.Base\Core\AppRopio.Base.Core.csproj">
-      <Project>{EA6D5113-1E80-494B-886D-3D7FDFA04E99}</Project>
-      <Name>AppRopio.Base.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Base\Core\AppRopio.Payments.Core.csproj">
-      <Project>{36A0974D-3DCE-490B-B186-2913785074CE}</Project>
-      <Name>AppRopio.Payments.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Payments\AppRopio.Models.Payments.csproj">
-      <Project>{36D85C96-D45F-465B-98E6-AF1BC36400D5}</Project>
-      <Name>AppRopio.Models.Payments</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Basket\AppRopio.Models.Basket.csproj">
-      <Project>{55D9E12B-8008-4DAD-8CB6-5A128777340C}</Project>
-      <Name>AppRopio.Models.Basket</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Base\API\AppRopio.Payments.API.csproj">
-      <Project>{9E008650-B5B9-40C9-8FBA-8B1A666082B0}</Project>
-      <Name>AppRopio.Payments.API</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\AppRopio.Base\API\AppRopio.Base.API.csproj">
-      <Project>{124841B9-39F6-44B5-8B96-50183FBFE341}</Project>
-      <Name>AppRopio.Base.API</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\API\AppRopio.Payments.YandexKassa.API.csproj">
-      <Project>{E73FC559-4557-4BD7-BDDB-B4ED09DBD9E8}</Project>
-      <Name>AppRopio.Payments.YandexKassa.API</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
 </Project>
