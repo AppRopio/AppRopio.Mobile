@@ -153,15 +153,15 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Delivery
 
         protected virtual void BindDeliveryPriceLabel(UILabel deliveryPriceLabel, MvxFluentBindingDescriptionSet<DeliveryOnAddressVC, IDeliveryOnAddressVM> set)
         {
-            set.Bind(deliveryPriceLabel).To(vm => vm.DeliveryPrice).WithConversion("StringFormat", "{0:# ### ##0.## \u20BD;;" + LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "DeliveryAddress_DeliveryFree") +"}");
+            set.Bind(deliveryPriceLabel).To(vm => vm.DeliveryPrice).WithConversion("StringFormat", LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "DeliveryAddress_DeliveryFree"));
         }
 
         protected virtual void BindNextButton(UIButton nextButton, UIButton accessoryNextButton, MvxFluentBindingDescriptionSet<DeliveryOnAddressVC, IDeliveryOnAddressVM> set)
         {
             if (OrderViewType == OrderViewType.Partial)
             {
-                set.Bind(nextButton).For("Title").To(vm => vm.Amount).WithConversion("StringFormat", "Заказать{0: за # ### ##0.## \u20BD;;}");
-                set.Bind(accessoryNextButton).For("Title").To(vm => vm.Amount).WithConversion("StringFormat", "Заказать{0: за # ### ##0.## \u20BD;;}");
+                set.Bind(nextButton).For("Title").To(vm => vm.Amount).WithConversion("StringFormat", LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "DeliveryAddress_OrderFor"));
+                set.Bind(accessoryNextButton).For("Title").To(vm => vm.Amount).WithConversion("StringFormat", LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "DeliveryAddress_OrderFor"));
             }
 
             set.Bind(nextButton).To(vm => vm.NextCommand);

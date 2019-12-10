@@ -41,7 +41,7 @@ namespace AppRopio.Base.Map.Core.ViewModels.Points.Map
 
         public PointsMapViewModel()
         {
-            Title = "На карте";
+            Title = LocalizationService.GetLocalizableString(MapConstants.RESX_NAME, "Map_Title");
         }
 
         #endregion

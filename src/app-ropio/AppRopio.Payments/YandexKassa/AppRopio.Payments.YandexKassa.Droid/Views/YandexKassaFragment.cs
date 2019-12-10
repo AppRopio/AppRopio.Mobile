@@ -14,6 +14,7 @@
 //    limitations under the License.
 using System;
 using AppRopio.Base.Droid.Views;
+using AppRopio.Payments.YandexKassa.Core;
 using AppRopio.Payments.YandexKassa.Core.ViewModels.YandexKassa;
 
 namespace AppRopio.Payments.YandexKassa.Droid.Views
@@ -23,7 +24,7 @@ namespace AppRopio.Payments.YandexKassa.Droid.Views
         public YandexKassaFragment()
             : base(Resource.Layout.app_payment_yandexkassa)
         {
-            Title = "Оплата картой";
+            Title = LocalizationService.GetLocalizableString(YandexKassaConstants.RESX_NAME, "Card_Payment");
         }
     }
 }

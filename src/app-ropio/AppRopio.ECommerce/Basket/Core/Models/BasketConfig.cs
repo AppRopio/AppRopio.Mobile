@@ -28,7 +28,7 @@ namespace AppRopio.ECommerce.Basket.Core.Models
         /// <summary>
         /// Возможность отправки открытки вместе с доставкой
         /// </summary>
-        [Obsolete("Рефакторинг", true)]
+        [Obsolete("Refactoring", true)]
         public bool CanDeliveryWithPostcard { get; set; }
     }
 

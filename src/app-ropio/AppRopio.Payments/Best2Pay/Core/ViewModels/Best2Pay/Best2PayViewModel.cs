@@ -98,7 +98,7 @@ namespace AppRopio.Payments.Best2Pay.Core.ViewModels.Best2Pay
                 PaymentUrl = VmService.GetPurchaseUrl(oid, PaymentInfo.CustomerEmail);
             else
             {
-                await UserDialogs.Error("Не удалось произвести оплату");
+                await UserDialogs.Error(LocalizationService.GetLocalizableString(Best2PayConstants.RESX_NAME, "Purchase_Failed"));
             }
         }
 

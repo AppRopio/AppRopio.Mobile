@@ -1,14 +1,13 @@
-
-using UIKit;
-using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial;
+using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.Views;
-using MvvmCross.Platform;
+using AppRopio.ECommerce.Basket.Core;
+using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial;
 using AppRopio.ECommerce.Basket.iOS.Services;
+using AppRopio.ECommerce.Basket.iOS.Views.Order.Cells;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Binding.iOS.Views;
-using AppRopio.ECommerce.Basket.iOS.Views.Order.Cells;
-using AppRopio.Base.iOS;
-using ObjCRuntime;
+using MvvmCross.Platform;
+using UIKit;
 
 namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Partial
 {
@@ -34,7 +33,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Partial
 
         protected override void InitializeControls()
         {
-            Title = "Выбор доставки";
+            Title = LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "DeliveryTypes_Title");
 
             SetupTableView(_tableView);
         }

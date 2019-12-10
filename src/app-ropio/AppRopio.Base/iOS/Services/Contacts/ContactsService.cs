@@ -1,23 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using AppRopio.Base.Core.Models.Contacts;
 using AppRopio.Base.Core.Services.Contacts;
-using ContactsUI;
-using MvvmCross.Platform;
-using System.Linq;
-using UIKit;
-using MvvmCross.Platform.Core;
-using Foundation;
-using Contacts;
-using Plugin.Permissions.Abstractions;
+using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.Core.Services.Permissions;
+using Contacts;
+using ContactsUI;
+using Foundation;
+using MvvmCross.Platform;
+using MvvmCross.Platform.Core;
+using Plugin.Permissions.Abstractions;
+using UIKit;
 
 namespace AppRopio.Base.iOS.Services.Contacts
 {
     public class ContactsService : IContactsService
     {
-        private readonly string _permissionMessage = "Доступ к контактам запрещен, необходимо изменить настройки приложения";
+        private readonly string _permissionMessage = Mvx.Resolve<ILocalizationService>().GetLocalizableString("Base", "Hint_Contacts_AccessDenied");
         protected IPermissionsService PermissionsService => Mvx.Resolve<IPermissionsService>();
 
         protected UIViewController GetPresentedViewController()

@@ -6,6 +6,7 @@ using Android.OS;
 using Android.Support.V4.App;
 using Android.Support.V4.View;
 using AppRopio.Base.Core.Models.Navigation;
+using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.Core.ViewModels;
 using AppRopio.Base.Droid.Views;
 using MvvmCross.Core.ViewModels;
@@ -13,6 +14,7 @@ using MvvmCross.Droid.Support.V4;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Droid.Views;
 using MvvmCross.Droid.Views.Attributes;
+using MvvmCross.Platform;
 using MvvmCross.Platform.Core;
 using MvvmCross.Platform.Platform;
 
@@ -493,7 +495,7 @@ namespace AppRopio.Base.Droid.Navigation
                 else
                 {
                     LastBackClick = new Java.Util.Date();
-                    (CurrentActivity as ICommonActivity)?.ShowToast("Для выхода из приложения нажмите кнопку повторно");
+                    (CurrentActivity as ICommonActivity)?.ShowToast(Mvx.Resolve<ILocalizationService>().GetLocalizableString("Base", "Hint_CloseApp"));
                 }
             }
         }

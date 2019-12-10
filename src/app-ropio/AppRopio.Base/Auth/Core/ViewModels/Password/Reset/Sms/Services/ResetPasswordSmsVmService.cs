@@ -3,6 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using AppRopio.Base.API.Exceptions;
 using AppRopio.Base.Auth.API.Services;
+using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.Core.ViewModels.Services;
 using MvvmCross.Platform;
 using MvvmCross.Platform.Core;
@@ -50,7 +51,7 @@ namespace AppRopio.Base.Auth.Core.ViewModels.Password.Reset.Sms.Services
                 await AuthService.ResendCode(cts);
                 Mvx.Resolve<IMvxMainThreadDispatcher>().RequestMainThreadAction(() =>
                 {
-                    UserDialogs.Alert("Код подтверждения отправлен.");
+                    UserDialogs.Alert(Mvx.Resolve<ILocalizationService>().GetLocalizableString(AuthConst.RESX_NAME, "Password_Sms_CodeSent"));
                 });
             }
             catch (ConnectionException ex)

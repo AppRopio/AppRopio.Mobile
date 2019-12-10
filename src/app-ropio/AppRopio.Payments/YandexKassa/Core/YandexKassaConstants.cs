@@ -5,6 +5,8 @@ namespace AppRopio.Payments.YandexKassa.Core
     {
         public const string CONFIG_NAME = "YandexKassa.json";
 
+        public const string RESX_NAME = "YandexKassa";
+
 #if DEBUG
         public const string PAY_URL = "https://demomoney.yandex.ru/eshop.xml";
 #else

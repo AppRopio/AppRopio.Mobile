@@ -2,6 +2,7 @@
 using Android.Views;
 using Android.Webkit;
 using AppRopio.Base.Droid.Views;
+using AppRopio.Payments.Core;
 using AppRopio.Payments.Core.Services;
 using AppRopio.Payments.Core.ViewModels;
 using MvvmCross.Platform;
@@ -15,7 +16,7 @@ namespace AppRopio.Payments.Droid.Views
         public CardPaymentFragment()
             : base (Resource.Layout.app_payment_card)
         {
-            Title = "Оплата картой";
+            Title = LocalizationService.GetLocalizableString(PaymentsConstants.RESX_NAME, "Card_Payment");
         }
 
         public override void OnViewCreated(View view, Bundle savedInstanceState)

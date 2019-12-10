@@ -142,7 +142,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Delivery
         protected virtual void BindNextButton(UIButton nextButton, MvxFluentBindingDescriptionSet<DeliveryOnPointVC, IDeliveryOnPointVM> set)
         {
             if (OrderViewType == OrderViewType.Partial)
-                set.Bind(nextButton).For("Title").To(vm => vm.Amount).WithConversion("StringFormat", "Заказать{0: за # ### ##0.## ₽;;}");
+                set.Bind(nextButton).For("Title").To(vm => vm.Amount).WithConversion("StringFormat", LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "DeliveryPoint_OrderFor"));
             
             set.Bind(nextButton).To(vm => vm.NextCommand);
             set.Bind(nextButton).For(s => s.Enabled).To(vm => vm.CanGoNext);

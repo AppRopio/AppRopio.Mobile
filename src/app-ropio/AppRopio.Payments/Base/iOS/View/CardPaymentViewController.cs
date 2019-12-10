@@ -1,6 +1,7 @@
 ﻿using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.UIExtentions;
 using AppRopio.Base.iOS.Views;
+using AppRopio.Payments.Core;
 using AppRopio.Payments.Core.Services;
 using AppRopio.Payments.Core.ViewModels;
 using AppRopio.Payments.iOS.Models;
@@ -36,7 +37,7 @@ namespace AppRopio.Payments.CloudPayments.iOS.View
 
         protected override void InitializeControls()
         {
-            Title = "Оплата картой";
+            Title = LocalizationService.GetLocalizableString(PaymentsConstants.RESX_NAME, "Card_Payment");
 
             var threeDSService = Mvx.Resolve<IPayment3DSService>();
             threeDSService.SetWebView(WebView);
@@ -107,7 +108,7 @@ namespace AppRopio.Payments.CloudPayments.iOS.View
 
 		protected virtual void SetupAccessoryButton(UIButton button)
 		{
-			button.SetTitle("Готово", UIControlState.Normal);
+			button.SetTitle(LocalizationService.GetLocalizableString("Base", "Done"), UIControlState.Normal);
 			button.ChangeFrame(w: DeviceInfo.ScreenWidth, h: 44);
             button.SetupStyle(Theme.CardPayment.AccessoryNextButton);
 		}

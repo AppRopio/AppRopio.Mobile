@@ -4,6 +4,7 @@ using Android.Support.V7.Widget;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
+using AppRopio.Base.Core;
 using AppRopio.Base.Core.Converters;
 using AppRopio.Base.Core.Services.ViewLookup;
 using AppRopio.Base.Droid.Adapters;
@@ -153,8 +154,8 @@ namespace AppRopio.ECommerce.Products.Droid.Views.ProductCard
                 var fromInput = viewHolder.ItemView.FindViewById<EditText>(Resource.Id.app_products_productCard_minMax_content_input_from);
                 var toInput = viewHolder.ItemView.FindViewById<EditText>(Resource.Id.app_products_productCard_minMax_content_input_to);
 
-                fromInput.Hint = CultureInfo.CurrentCulture == new CultureInfo("ru-RU") ? "дд.мм.гггг" : $"MM{CultureInfo.CurrentCulture.DateTimeFormat.DateSeparator}dd{CultureInfo.CurrentCulture.DateTimeFormat.DateSeparator}yyyy";
-                toInput.Hint = CultureInfo.CurrentCulture == new CultureInfo("ru-RU") ? "дд.мм.гггг" : $"MM{CultureInfo.CurrentCulture.DateTimeFormat.DateSeparator}dd{CultureInfo.CurrentCulture.DateTimeFormat.DateSeparator}yyyy";
+                fromInput.Hint = AppSettings.SettingsCulture == new CultureInfo("ru-RU") ? "дд.мм.гггг" : $"MM{AppSettings.SettingsCulture.DateTimeFormat.DateSeparator}dd{AppSettings.SettingsCulture.DateTimeFormat.DateSeparator}yyyy";
+                toInput.Hint = AppSettings.SettingsCulture == new CultureInfo("ru-RU") ? "дд.мм.гггг" : $"MM{AppSettings.SettingsCulture.DateTimeFormat.DateSeparator}dd{AppSettings.SettingsCulture.DateTimeFormat.DateSeparator}yyyy";
 
                 var mvxBindingContextOwner = (viewHolder as IMvxBindingContextOwner);
 
