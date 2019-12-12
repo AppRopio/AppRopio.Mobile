@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace AppRopio.Base.Core.Models.App
 {
     public class AppConfig
@@ -22,6 +24,15 @@ namespace AppRopio.Base.Core.Models.App
         public string Host { get; set; }
 
         public bool PreciseCurrency { get; set; }
+
+        public List<Locale> Locales;
+    }
+
+    public class Locale
+    {
+        public string Name { get; set; }
+
+        public string CurrencySymbol { get; set; }
     }
 }
 

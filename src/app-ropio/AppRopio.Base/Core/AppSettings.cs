@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using AppRopio.Base.Core.Models.App;
 using AppRopio.Base.Core.Services.Settings;
 using MvvmCross.Platform;
@@ -92,7 +93,20 @@ namespace AppRopio.Base.Core
             get
             {
                 var cultureName = CrossSettings.Current.GetValueOrDefault(nameof(SettingsCulture), string.Empty);
-                return cultureName.IsNullOrEmpty() ? CultureInfo.CurrentUICulture : new CultureInfo(cultureName);
+                if (!string.IsNullOrEmpty(cultureName))
+                {
+                    var cultureInfo = new CultureInfo(cultureName);
+                    if (!_config.Locales.IsNullOrEmpty())
+                    {
+                        var locale = _config.Locales.FirstOrDefault(l => l.Name == cultureName);
+                        if (locale != null && !string.IsNullOrEmpty(locale.CurrencySymbol))
+                        {
+                            cultureInfo.NumberFormat.CurrencySymbol = locale.CurrencySymbol;
+                        }
+                    }
+                    return cultureInfo;
+                }
+                return CultureInfo.CurrentUICulture;
             }
             set { CrossSettings.Current.AddOrUpdateValue(nameof(SettingsCulture), value.Name); }
         }
@@ -106,6 +120,15 @@ namespace AppRopio.Base.Core
         {
             var json = Mvx.Resolve<ISettingsService>().ReadStringFromFile(Path.Combine(CoreConstants.CONFIGS_FOLDER, CoreConstants.CONFIG_NAME));
             _config = JsonConvert.DeserializeObject<AppConfig>(json);
+
+            if (!_config.Locales.IsNullOrEmpty())
+            {
+                var locale = _config.Locales.FirstOrDefault();
+                if (locale != null)
+                {
+                    AppSettings.SettingsCulture = new CultureInfo(locale.Name);
+                }
+            }
         }
     }
 }
