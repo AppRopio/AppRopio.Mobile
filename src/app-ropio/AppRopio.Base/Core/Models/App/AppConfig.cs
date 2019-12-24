@@ -25,13 +25,11 @@ namespace AppRopio.Base.Core.Models.App
 
         public bool PreciseCurrency { get; set; }
 
-        public List<Locale> Locales;
+        public Dictionary<string, Localization> Localizations;
     }
 
-    public class Locale
+    public class Localization
     {
-        public string Name { get; set; }
-
         public string CurrencySymbol { get; set; }
     }
 }

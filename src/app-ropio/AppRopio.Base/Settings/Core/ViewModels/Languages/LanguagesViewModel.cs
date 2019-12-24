@@ -105,7 +105,7 @@ namespace AppRopio.Base.Settings.Core.ViewModels.Languages
         {
             return Task.Run(() =>
             {
-                Items = AppConfig.Locales.Select(x => (ILangItemVM)new LangItemVM(x.Name, x.Name == _selectedId)).ToList();
+                Items = AppConfig.Localizations.Select(x => (ILangItemVM)new LangItemVM(x.Key, x.Key == _selectedId)).ToList();
                 RaisePropertyChanged(() => Items);
             });
         }
@@ -142,8 +142,8 @@ namespace AppRopio.Base.Settings.Core.ViewModels.Languages
         {
             Loading = true;
 
-            Items = AppConfig.Locales
-                          .Select(x => (ILangItemVM)new LangItemVM(x.Name, x.Name == _selectedId))
+            Items = AppConfig.Localizations
+                          .Select(x => (ILangItemVM)new LangItemVM(x.Key, x.Key == _selectedId))
                           .Where(x => x.Name.ToLowerInvariant().Contains(SearchText.ToLowerInvariant()))
                           .ToList();
 

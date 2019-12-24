@@ -96,10 +96,9 @@ namespace AppRopio.Base.Core
                 if (!string.IsNullOrEmpty(cultureName))
                 {
                     var cultureInfo = new CultureInfo(cultureName);
-                    if (!_config.Locales.IsNullOrEmpty())
+                    if (!_config.Localizations.IsNullOrEmpty())
                     {
-                        var locale = _config.Locales.FirstOrDefault(l => l.Name == cultureName);
-                        if (locale != null && !string.IsNullOrEmpty(locale.CurrencySymbol))
+                        if (_config.Localizations.TryGetValue(cultureName, out Localization locale) && !string.IsNullOrEmpty(locale.CurrencySymbol))
                         {
                             cultureInfo.NumberFormat.CurrencySymbol = locale.CurrencySymbol;
                         }
@@ -121,12 +120,15 @@ namespace AppRopio.Base.Core
             var json = Mvx.Resolve<ISettingsService>().ReadStringFromFile(Path.Combine(CoreConstants.CONFIGS_FOLDER, CoreConstants.CONFIG_NAME));
             _config = JsonConvert.DeserializeObject<AppConfig>(json);
 
-            if (!_config.Locales.IsNullOrEmpty())
+            if (AppSettings.SettingsCulture == CultureInfo.CurrentUICulture)
             {
-                var locale = _config.Locales.FirstOrDefault();
-                if (locale != null)
+                if (!_config.Localizations.IsNullOrEmpty())
                 {
-                    AppSettings.SettingsCulture = new CultureInfo(locale.Name);
+                    var locale = _config.Localizations.FirstOrDefault();
+                    if (!string.IsNullOrEmpty(locale.Key))
+                    {
+                        AppSettings.SettingsCulture = new CultureInfo(locale.Key);
+                    }
                 }
             }
         }
