@@ -7,12 +7,9 @@ namespace AppRopio.Base.Settings.Core.Models
     {
         public List<SettingsElement> Elements { get; set; }
 
-        public List<string> Languages { get; set; }
-
         public SettingsConfig()
         {
             Elements = new List<SettingsElement>();
-            Languages = new List<string>();
         }
     }
 }
