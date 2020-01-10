@@ -5,186 +5,186 @@
 		parent="Theme.AppCompat.Light.NoActionBar">
 		<!--  Color Palette  -->
 		<item
-			name="attr/app_color_textBase">#1E2C3A</item>
+			name="app_color_textBase">#1E2C3A</item>
 		<item
-			name="attr/app_color_textMenu">#E4EFF9</item>
+			name="app_color_textMenu">#E4EFF9</item>
 		<item
-			name="attr/app_color_textAccent">#0A1A2A</item>
+			name="app_color_textAccent">#0A1A2A</item>
 		<item
-			name="attr/app_color_textAccentHighlighted">#141414</item>
+			name="app_color_textAccentHighlighted">#141414</item>
 		<item
-			name="attr/app_color_textAccentDisabled">#1E2C3A</item>
+			name="app_color_textAccentDisabled">#1E2C3A</item>
 		<item
-			name="attr/app_color_textGray">#CBD5DE</item>
+			name="app_color_textGray">#CBD5DE</item>
 		<item
-			name="attr/app_color_textNotification">#C9FFF5</item>
+			name="app_color_textNotification">#C9FFF5</item>
 		<item
-			name="attr/app_color_background">#FFFFFF</item>
+			name="app_color_background">#FFFFFF</item>
 		<item
-			name="attr/app_color_backgroundMenu">#2F4356</item>
+			name="app_color_backgroundMenu">#2F4356</item>
 		<item
-			name="attr/app_color_backgroundSearch">#EBEDF7</item>
+			name="app_color_backgroundSearch">#EBEDF7</item>
 		<item
-			name="attr/app_color_backgroundNotification">#2586F7</item>
+			name="app_color_backgroundNotification">#2586F7</item>
 		<item
-			name="attr/app_color_placeholder">#DBE1E7</item>
+			name="app_color_placeholder">#DBE1E7</item>
 		<item
-			name="attr/app_color_separator">#F3F4F9</item>
+			name="app_color_separator">#F3F4F9</item>
 		<item
-			name="attr/app_color_accent">#FFD535</item>
+			name="app_color_accent">#FFD535</item>
 		<item
-			name="attr/app_color_highlightedControl">#F9C21F</item>
+			name="app_color_highlightedControl">#F9C21F</item>
 		<item
-			name="attr/app_color_disabledControl">#E3EBF3</item>
+			name="app_color_disabledControl">#E3EBF3</item>
 		<item
-			name="attr/app_color_invalid">#EA0048</item>
+			name="app_color_invalid">#EA0048</item>
 
         <item
-            name="attr/app_color_filter_unactiveColor">#FF0000</item>
+            name="app_color_filter_unactiveColor">#FF0000</item>
         <item
-            name="attr/app_color_filter_activeColor">#00FF00</item>
+            name="app_color_filter_activeColor">#00FF00</item>
 		<!--		-->
 		<!--  Fonts Palette  -->
 		<item
-			name="attr/app_font_regular">@font/roboto_regular</item>
+			name="app_font_regular">@font/roboto_regular</item>
 		<item
-			name="attr/app_font_light">@font/roboto_light</item>
+			name="app_font_light">@font/roboto_light</item>
 		<item
-			name="attr/app_font_medium">@font/roboto_medium</item>
+			name="app_font_medium">@font/roboto_medium</item>
 		<item
-			name="attr/app_font_semibold">@null</item>
+			name="app_font_semibold">@null</item>
 		<item
-			name="attr/app_font_bold">@font/roboto_bold</item>
+			name="app_font_bold">@font/roboto_bold</item>
 		<item
-			name="attr/app_font_italic">@font/roboto_italic</item>
+			name="app_font_italic">@font/roboto_italic</item>
 		<!--    -->
 		<!--  Controls Styles Palette  -->
 		<!--    -->
 		<!--    Menu    -->
 		<item
-			name="attr/app_drawer_header_logo">@drawable/logo</item>
+			name="app_drawer_header_logo">@drawable/logo</item>
 		<!--        -->
 		<!--  Products  -->
 		<item
-			name="attr/app_products_ic_toolbar_search">@drawable/products_ic_toolbar_search</item>
+			name="app_products_ic_toolbar_search">@drawable/products_ic_toolbar_search</item>
 		<item
-			name="attr/app_products_ic_empty_image">@drawable/app_products_ic_empty_image</item>
+			name="app_products_ic_empty_image">@drawable/app_products_ic_empty_image</item>
 		<item
-			name="attr/app_products_catalog_collectionType">grid</item>
+			name="app_products_catalog_collectionType">grid</item>
 		<item
-			name="attr/app_products_catalog_item_background">#FFFFFF</item>
+			name="app_products_catalog_item_background">#FFFFFF</item>
 		<item
-			name="attr/app_products_ic_marked">@drawable/app_products_ic_marked</item>
+			name="app_products_ic_marked">@drawable/app_products_ic_marked</item>
 		<item
-			name="attr/app_products_ic_unmarked">@drawable/app_products_ic_unmarked</item>
+			name="app_products_ic_unmarked">@drawable/app_products_ic_unmarked</item>
 		<item
-			name="attr/app_products_contentsearch_ic_arrow">@drawable/app_contentsearch_ic_arrow</item>
+			name="app_products_contentsearch_ic_arrow">@drawable/app_contentsearch_ic_arrow</item>
 		<item
-			name="attr/app_products_contentsearch_ic_clock">@drawable/app_contentsearch_ic_clock</item>
+			name="app_products_contentsearch_ic_clock">@drawable/app_contentsearch_ic_clock</item>
 		<item
-			name="attr/app_products_ic_empty_image_large">@drawable/app_ic_empty_image_large</item>
+			name="app_products_ic_empty_image_large">@drawable/app_ic_empty_image_large</item>
 		<item
-			name="attr/app_products_ic_share">@drawable/app_products_ic_share</item>
+			name="app_products_ic_share">@drawable/app_products_ic_share</item>
 		<item
-			name="attr/app_products_productCard_ic_arrow">@drawable/app_ic_arrow</item>
+			name="app_products_productCard_ic_arrow">@drawable/app_ic_arrow</item>
 		<item
-			name="attr/app_products_productCard_color_ic_checkImage">@drawable/app_ic_item_check</item>
+			name="app_products_productCard_color_ic_checkImage">@drawable/app_ic_item_check</item>
 		<item
-			name="attr/app_products_productCard_ic_cross">@drawable/app_ic_item_cross</item>
+			name="app_products_productCard_ic_cross">@drawable/app_ic_item_cross</item>
         <item
-            name="attr/app_products_categories_collectionType">list</item>
+            name="app_products_categories_collectionType">list</item>
         <item
-            name="attr/app_products_categories_color_textTitle">#FFFFFF</item>
+            name="app_products_categories_color_textTitle">#FFFFFF</item>
 		<!--    -->
 		<!--    Filters    -->
 		<item
-			name="attr/app_filters_sort_ic_item_check">@drawable/app_ic_item_check</item>
+			name="app_filters_sort_ic_item_check">@drawable/app_ic_item_check</item>
 		<item
-			name="attr/app_filters_filters_ic_arrow">@drawable/app_ic_arrow</item>
+			name="app_filters_filters_ic_arrow">@drawable/app_ic_arrow</item>
 		<item
-			name="attr/app_filters_filters_color_ic_checkImage">@drawable/app_ic_item_check</item>
+			name="app_filters_filters_color_ic_checkImage">@drawable/app_ic_item_check</item>
 		<item
-			name="attr/app_filters_filters_ic_cross">@drawable/app_ic_item_cross</item>
+			name="app_filters_filters_ic_cross">@drawable/app_ic_item_cross</item>
 		<!--        -->
 		<!--  Basket  -->
 		<item
-			name="attr/app_basket_ic_empty_image">@drawable/basket_ic_empty_image</item>
+			name="app_basket_ic_empty_image">@drawable/basket_ic_empty_image</item>
 		<item
-			name="attr/app_basket_ic_item_minus">@drawable/app_basket_ic_item_minus</item>
+			name="app_basket_ic_item_minus">@drawable/app_basket_ic_item_minus</item>
 		<item
-			name="attr/app_basket_ic_item_plus">@drawable/app_basket_ic_item_plus</item>
+			name="app_basket_ic_item_plus">@drawable/app_basket_ic_item_plus</item>
 		<item
-			name="attr/app_basket_ic_item_more">@drawable/app_basket_ic_item_more</item>
+			name="app_basket_ic_item_more">@drawable/app_basket_ic_item_more</item>
 		<item
-			name="attr/app_basket_full_order_ic_item_check">@drawable/app_ic_item_check</item>
+			name="app_basket_full_order_ic_item_check">@drawable/app_ic_item_check</item>
 		<item
-			name="attr/app_basket_full_order_ic_deliveryTime_calendar">@drawable/app_basket_ic_calendar</item>
+			name="app_basket_full_order_ic_deliveryTime_calendar">@drawable/app_basket_ic_calendar</item>
 		<item
-			name="attr/app_basket_payment_ic_item_check">@drawable/app_ic_item_check</item>
+			name="app_basket_payment_ic_item_check">@drawable/app_ic_item_check</item>
 		<item
-			name="attr/app_basket_thanks_ic_image">@drawable/basket_ic_empty_image</item>
+			name="app_basket_thanks_ic_image">@drawable/basket_ic_empty_image</item>
 		<item
-			name="attr/app_basket_thanks_ic_close">@drawable/app_basket_thanks_ic_close</item>
+			name="app_basket_thanks_ic_close">@drawable/app_basket_thanks_ic_close</item>
 		<item
-			name="attr/app_basket_delivery_on_address_ic_close">@drawable/app_basket_thanks_ic_close</item>
+			name="app_basket_delivery_on_address_ic_close">@drawable/app_basket_thanks_ic_close</item>
 		<item
-			name="attr/app_basket_delivery_on_point_ic_close">@drawable/app_basket_thanks_ic_close</item>
+			name="app_basket_delivery_on_point_ic_close">@drawable/app_basket_thanks_ic_close</item>
 		<item
-			name="attr/app_basket_delivery_on_point_ic_distance">@drawable/app_basket_delivery_on_point_ic_distance</item>
+			name="app_basket_delivery_on_point_ic_distance">@drawable/app_basket_delivery_on_point_ic_distance</item>
 		<item
-			name="attr/app_basket_delivery_on_point_item_callButton">@drawable/app_basket_delivery_on_point_item_callButton</item>
+			name="app_basket_delivery_on_point_item_callButton">@drawable/app_basket_delivery_on_point_item_callButton</item>
 		<item
-			name="attr/app_basket_delivery_on_point_item_infoButton">@drawable/app_basket_delivery_on_point_item_infoButton</item>
+			name="app_basket_delivery_on_point_item_infoButton">@drawable/app_basket_delivery_on_point_item_infoButton</item>
 		<item
-			name="attr/app_basket_delivery_on_point_item_mapButton">@drawable/app_basket_delivery_on_point_item_mapButton</item>
+			name="app_basket_delivery_on_point_item_mapButton">@drawable/app_basket_delivery_on_point_item_mapButton</item>
 		<item
-			name="attr/app_basket_delivery_on_point_item_routeButton">@drawable/app_basket_delivery_on_point_item_routeButton</item>
+			name="app_basket_delivery_on_point_item_routeButton">@drawable/app_basket_delivery_on_point_item_routeButton</item>
 		<item
-			name="attr/app_basket_delivery_point_on_map_ic_pin">@drawable/common_ic_selected_pin</item>
+			name="app_basket_delivery_point_on_map_ic_pin">@drawable/common_ic_selected_pin</item>
 		<item
-			name="attr/app_basket_delivery_on_point_ic_toolbar_search">@drawable/products_ic_toolbar_search</item>
+			name="app_basket_delivery_on_point_ic_toolbar_search">@drawable/products_ic_toolbar_search</item>
 		<item
-			name="attr/app_basket_cartIndicator_ic_basket">@drawable/app_basket_cartIndicator_ic_basket</item>
+			name="app_basket_cartIndicator_ic_basket">@drawable/app_basket_cartIndicator_ic_basket</item>
 		<item
-			name="attr/app_basket_ic_item_large_plus">@drawable/app_basket_ic_item_large_plus</item>
+			name="app_basket_ic_item_large_plus">@drawable/app_basket_ic_item_large_plus</item>
 		<item
-			name="attr/app_basket_ic_item_large_minus">@drawable/app_basket_ic_item_large_minus</item>
+			name="app_basket_ic_item_large_minus">@drawable/app_basket_ic_item_large_minus</item>
 		<!--    -->
 		<!--  Marked  -->
 		<item
-			name="attr/app_marked_ic_empty_image">@drawable/app_marked_ic_empty_image</item>
+			name="app_marked_ic_empty_image">@drawable/app_marked_ic_empty_image</item>
 		<!--        -->
 		<!--    HistoryOrders    -->
 		<item
-			name="attr/app_historyorders_ic_arrow">@drawable/app_ic_arrow</item>
+			name="app_historyorders_ic_arrow">@drawable/app_ic_arrow</item>
 		<item
-			name="attr/app_historyorders_ic_nophoto">@drawable/app_historyorders_ic_nophoto</item>
+			name="app_historyorders_ic_nophoto">@drawable/app_historyorders_ic_nophoto</item>
 		<!--        -->
 		<!--    Map    -->
 		<item
-			name="attr/app_map_ic_map">@drawable/app_map_ic_map</item>
+			name="app_map_ic_map">@drawable/app_map_ic_map</item>
         <item
-            name="attr/app_map_list_item_ic_distance">@drawable/app_basket_delivery_on_point_ic_distance</item>
+            name="app_map_list_item_ic_distance">@drawable/app_basket_delivery_on_point_ic_distance</item>
         <item
-            name="attr/app_map_list_item_callButton">@drawable/app_basket_delivery_on_point_item_callButton</item>
+            name="app_map_list_item_callButton">@drawable/app_basket_delivery_on_point_item_callButton</item>
         <item
-            name="attr/app_map_list_item_infoButton">@drawable/app_basket_delivery_on_point_item_infoButton</item>
+            name="app_map_list_item_infoButton">@drawable/app_basket_delivery_on_point_item_infoButton</item>
         <item
-            name="attr/app_map_list_item_mapButton">@drawable/app_basket_delivery_on_point_item_mapButton</item>
+            name="app_map_list_item_mapButton">@drawable/app_basket_delivery_on_point_item_mapButton</item>
         <item
-            name="attr/app_map_list_item_routeButton">@drawable/app_basket_delivery_on_point_item_routeButton</item>
+            name="app_map_list_item_routeButton">@drawable/app_basket_delivery_on_point_item_routeButton</item>
         <item
-            name="attr/app_map_points_ic_pin">@drawable/common_ic_selected_pin</item>
+            name="app_map_points_ic_pin">@drawable/common_ic_selected_pin</item>
         <item
-            name="attr/app_map_points_ic_pin_deselected">@drawable/common_ic_unselected_pin</item>
+            name="app_map_points_ic_pin_deselected">@drawable/common_ic_unselected_pin</item>
 		<!--        -->
 <!--   Info     -->
         <item
-            name="attr/app_information_info_ic_arrow">@drawable/app_ic_arrow</item>
+            name="app_information_info_ic_arrow">@drawable/app_ic_arrow</item>
 <!--        -->
 <!--    Settings    -->
         <item
-            name="attr/app_settings_ic_check">@drawable/app_ic_item_check</item>
+            name="app_settings_ic_check">@drawable/app_ic_item_check</item>
 <!--        -->
 	</style>
 </resources>
