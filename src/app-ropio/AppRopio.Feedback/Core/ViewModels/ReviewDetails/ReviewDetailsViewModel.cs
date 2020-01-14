@@ -146,7 +146,7 @@ namespace AppRopio.Feedback.Core.ViewModels.ReviewDetails
             }
             else
             {
-                UserDialogs.Alert(LocalizationService.GetLocalizableString(FeedbackConstants.RESX_NAME, "ReviewDetails_FailedToRemoved"));
+                UserDialogs.Alert(LocalizationService.GetLocalizableString(FeedbackConstants.RESX_NAME, "ReviewDetails_FailedToRemove"));
             }
 
             Loading = false;

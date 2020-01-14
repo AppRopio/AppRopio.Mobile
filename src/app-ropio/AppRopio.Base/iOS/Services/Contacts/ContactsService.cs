@@ -18,7 +18,7 @@ namespace AppRopio.Base.iOS.Services.Contacts
 {
     public class ContactsService : IContactsService
     {
-        private readonly string _permissionMessage = Mvx.Resolve<ILocalizationService>().GetLocalizableString("Base", "Hint_Contacts_AccessDenied");
+        private readonly string _permissionMessage = Mvx.Resolve<ILocalizationService>().GetLocalizableString("Base", "Permissions_Contacts_AccessDenied");
         protected IPermissionsService PermissionsService => Mvx.Resolve<IPermissionsService>();
 
         protected UIViewController GetPresentedViewController()

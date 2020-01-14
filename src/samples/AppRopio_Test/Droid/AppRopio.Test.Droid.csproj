@@ -335,6 +335,26 @@
     <Compile Include="Bootstrap\AppRopio_MarkedPluginBootstrap.cs" />
     <Compile Include="Bootstrap\AppRopio_HistoryOrdersPluginBootstrap.cs" />
     <Compile Include="Bootstrap\AppRopio_MapPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_InformationPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_ContactsPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_SettingsPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_AppsFlyerPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_FirebaseAnalyticsPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_GoogleAnalyticsPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_LoyaltyPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_FeedbackPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_AuthPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_CloudPaymentsPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_PaymentsPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\ColorPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
+    <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\NetworkPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\VisibilityPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\JsonPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\DownloadCachePluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_Best2PayPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\AppRopio_YandexKassaPluginBootstrap.cs" />
     <Compile Include="LocalizationResx\Auth.Designer.cs">
       <DependentUpon>Auth.resx</DependentUpon>
     </Compile>
@@ -352,6 +372,12 @@
     </Compile>
     <Compile Include="LocalizationResx\Basket.ru.Designer.cs">
       <DependentUpon>Basket.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Best2Pay.Designer.cs">
+      <DependentUpon>Best2Pay.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Best2Pay.ru.Designer.cs">
+      <DependentUpon>Best2Pay.ru.resx</DependentUpon>
     </Compile>
     <Compile Include="LocalizationResx\Contacts.Designer.cs">
       <DependentUpon>Contacts.resx</DependentUpon>
@@ -407,6 +433,12 @@
     <Compile Include="LocalizationResx\Menu.ru.Designer.cs">
       <DependentUpon>Menu.ru.resx</DependentUpon>
     </Compile>
+    <Compile Include="LocalizationResx\Payments.Designer.cs">
+      <DependentUpon>Payments.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Payments.ru.Designer.cs">
+      <DependentUpon>Payments.ru.resx</DependentUpon>
+    </Compile>
     <Compile Include="LocalizationResx\Products.Designer.cs">
       <DependentUpon>Products.resx</DependentUpon>
     </Compile>
@@ -425,32 +457,12 @@
     <Compile Include="LocalizationResx\Settings.ru.Designer.cs">
       <DependentUpon>Settings.ru.resx</DependentUpon>
     </Compile>
-    <Compile Include="Bootstrap\AppRopio_InformationPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\AppRopio_ContactsPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\AppRopio_SettingsPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\AppRopio_AppsFlyerPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\AppRopio_FirebaseAnalyticsPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\AppRopio_GoogleAnalyticsPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\AppRopio_LoyaltyPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\AppRopio_FeedbackPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\AppRopio_AuthPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\AppRopio_CloudPaymentsPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\AppRopio_PaymentsPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\ColorPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
-    <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\NetworkPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\VisibilityPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\JsonPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\DownloadCachePluginBootstrap.cs" />
-    <Compile Include="LocalizationResx\Payments.Designer.cs">
-      <DependentUpon>Payments.resx</DependentUpon>
+    <Compile Include="LocalizationResx\YandexKassa.Designer.cs">
+      <DependentUpon>YandexKassa.resx</DependentUpon>
     </Compile>
-    <Compile Include="LocalizationResx\Payments.ru.Designer.cs">
-      <DependentUpon>Payments.ru.resx</DependentUpon>
+    <Compile Include="LocalizationResx\YandexKassa.ru.Designer.cs">
+      <DependentUpon>YandexKassa.ru.resx</DependentUpon>
     </Compile>
-    <Compile Include="Bootstrap\AppRopio_Best2PayPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\AppRopio_YandexKassaPluginBootstrap.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -1019,6 +1031,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <GoogleServicesJson Include="google-services.json" />
+  </ItemGroup>
+  <ItemGroup>
     <EmbeddedResource Include="LocalizationResx\Auth.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Auth.Designer.cs</LastGenOutput>
@@ -1042,6 +1057,14 @@
     <EmbeddedResource Include="LocalizationResx\Basket.ru.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Basket.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Best2Pay.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Best2Pay.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Best2Pay.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Best2Pay.ru.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="LocalizationResx\Contacts.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -1115,6 +1138,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Menu.ru.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Payments.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Payments.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Payments.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Payments.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="LocalizationResx\Products.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Products.Designer.cs</LastGenOutput>
@@ -1139,17 +1170,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Settings.ru.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="LocalizationResx\Payments.resx">
+    <EmbeddedResource Include="LocalizationResx\YandexKassa.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Payments.Designer.cs</LastGenOutput>
+      <LastGenOutput>YandexKassa.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="LocalizationResx\Payments.ru.resx">
+    <EmbeddedResource Include="LocalizationResx\YandexKassa.ru.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Payments.ru.Designer.cs</LastGenOutput>
+      <LastGenOutput>YandexKassa.ru.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <GoogleServicesJson Include="google-services.json" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets')" />

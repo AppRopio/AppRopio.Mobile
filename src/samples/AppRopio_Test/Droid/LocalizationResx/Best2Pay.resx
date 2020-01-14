@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data
+        name="Title">
+        <value>Card payment</value>
+    </data>
+    <data
+        name="Purchase_Failed">
+        <value>Failed to make payment</value>
+    </data>
+    <data
+        name="Payment_OrderNumber">
+        <value>Payment order #</value>
+    </data>
+    <data
+        name="Operation_ErrorDefault">
+        <value>Operation failed, please, try again.</value>
+    </data>
+    <data
+        name="Operation_Error0">
+        <value>Payment has been declined. Please, try to make a purchase later or call the Internet-bank.</value>
+    </data>
+    <data
+        name="Operation_Error3">
+        <value>Payment has been declined. Please, call the bank of your credit card.</value>
+    </data>
+    <data
+        name="Operation_Error5">
+        <value>Payment has been declined. Please, call the bank of your credit card.</value>
+    </data>
+    <data
+        name="Operation_Error12">
+        <value>Payment has been declined. Possible reasons: you ran out of fund on your account, used wrong credit card credentials, your credit card doesn't allow purchase on the Internet. Please, try to make a purchase again or call the bank of your credit card.</value>
+    </data>
+    <data
+        name="Operation_Error16">
+        <value>Payment has been declined. Please, call the Internet-bank.</value>
+    </data>
+</root>

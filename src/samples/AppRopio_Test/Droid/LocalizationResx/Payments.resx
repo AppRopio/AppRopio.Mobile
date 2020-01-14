@@ -36,4 +36,12 @@
         name="Cvv">
         <value>CVV</value>
     </data>
+    <data
+        name="Error_PaymentFailed">
+        <value>Failed to make a payment, check the entered data. If the error occurs again try to make a payment later</value>
+    </data>
+    <data
+        name="Card_Payment">
+        <value>Card payment</value>
+    </data>
 </root>

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data
+        name="Title">
+        <value>Оплата картой</value>
+    </data>
+    <data
+        name="Purchase_Failed">
+        <value>Не удалось произвести оплату</value>
+    </data>
+    <data
+        name="Payment_OrderNumber">
+        <value>Оплата заказа №</value>
+    </data>
+    <data
+        name="Operation_ErrorDefault">
+        <value>Операция завершилась неуспешно, попробуйте еще раз.</value>
+    </data>
+    <data
+        name="Operation_Error0">
+        <value>Платеж отклонен. Пожалуйста, попробуйте выполнить платеж позднее или обратитесь в Интернет-магазин.</value>
+    </data>
+    <data
+        name="Operation_Error3">
+        <value>Платеж отклонен. Пожалуйста, обратитесь в Банк, выпустивший вашу карту.</value>
+    </data>
+    <data
+        name="Operation_Error5">
+        <value>Платеж отклонен. Пожалуйста, обратитесь в Банк, выпустивший вашу карту.</value>
+    </data>
+    <data
+        name="Operation_Error12">
+        <value>Платеж отклонен. Возможные причины: недостаточно средств на счете, были указаны неверные реквизиты карты, по вашей карте запрещены расчеты через Интернет. Пожалуйста, попробуйте выполнить платеж повторно или обратитесь в Банк, выпустивший вашу карту.</value>
+    </data>
+    <data
+        name="Operation_Error16">
+        <value>Платеж отклонен. Пожалуйста, обратитесь в Интернет-магазин.</value>
+    </data>
+</root>

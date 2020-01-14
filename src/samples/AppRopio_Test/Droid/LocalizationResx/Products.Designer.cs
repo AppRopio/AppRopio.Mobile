@@ -160,5 +160,11 @@ namespace AppRopio.Test.Droid.LocalizationResx {
                 return ResourceManager.GetString("ProductCard_To", resourceCulture);
             }
         }
+        
+        internal static string ProductCard_Done {
+            get {
+                return ResourceManager.GetString("ProductCard_Done", resourceCulture);
+            }
+        }
     }
 }

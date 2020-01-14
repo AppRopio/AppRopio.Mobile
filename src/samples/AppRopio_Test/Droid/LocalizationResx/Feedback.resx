@@ -33,6 +33,22 @@
         <value>DELETE</value>
     </data>
     <data
+        name="ReviewDetails_Removed">
+        <value>Your review has been deleted</value>
+    </data>
+    <data
+        name="ReviewDetails_FailedToRemove">
+        <value>Failed to delete a review</value>
+    </data>
+    <data
+        name="ReviewPost_Sent">
+        <value>Your review has been sent!</value>
+    </data>
+    <data
+        name="ReviewPost_FailedToSend">
+        <value>Failed to send a review</value>
+    </data>
+    <data
         name="Reviews_Title">
         <value>Reviews</value>
     </data>

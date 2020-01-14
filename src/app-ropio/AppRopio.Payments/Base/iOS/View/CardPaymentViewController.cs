@@ -63,6 +63,8 @@ namespace AppRopio.Payments.CloudPayments.iOS.View
 
         protected virtual void SetupCardNumberTextField(UITextField cardNumber)
         {
+            cardNumber.Placeholder = LocalizationService.GetLocalizableString(PaymentsConstants.RESX_NAME, "CardNumber");
+
             SetupTextField(cardNumber, Theme.CardPayment.CardNumberTextField);
 
             cardNumber.ShouldChangeCharacters = (textField, range, replacementString) => 
@@ -73,6 +75,8 @@ namespace AppRopio.Payments.CloudPayments.iOS.View
 
 		protected virtual void SetupCardHolderTextField(UITextField cardHolder)
 		{
+            cardHolder.Placeholder = LocalizationService.GetLocalizableString(PaymentsConstants.RESX_NAME, "CardHolder");
+
             SetupTextField(cardHolder, Theme.CardPayment.CardHolderTextField);
 
             cardHolder.ShouldChangeCharacters = (textField, range, replacementString) =>
@@ -83,6 +87,8 @@ namespace AppRopio.Payments.CloudPayments.iOS.View
 
 		protected virtual void SetupExpirationDateTextField(UITextField expirationDate)
 		{
+            expirationDate.Placeholder = LocalizationService.GetLocalizableString(PaymentsConstants.RESX_NAME, "ExpirationDate");
+
             SetupTextField(expirationDate, Theme.CardPayment.ExpirationDateTextField);
 
             expirationDate.ShouldChangeCharacters = (textField, range, replacementString) =>
@@ -93,6 +99,8 @@ namespace AppRopio.Payments.CloudPayments.iOS.View
 
 		protected virtual void SetupCvvTextField(UITextField cvv)
 		{
+            cvv.Placeholder = LocalizationService.GetLocalizableString(PaymentsConstants.RESX_NAME, "Cvv");
+
             SetupTextField(cvv, Theme.CardPayment.CvvTextField);
 
             cvv.ShouldChangeCharacters = (textField, range, replacementString) =>
@@ -103,6 +111,7 @@ namespace AppRopio.Payments.CloudPayments.iOS.View
 
 		protected virtual void SetupPayButton(UIButton button)
         {
+            button.WithTitleForAllStates(LocalizationService.GetLocalizableString(PaymentsConstants.RESX_NAME, "Pay"));
             button.SetupStyle(Theme.CardPayment.PayButton);
         }
 

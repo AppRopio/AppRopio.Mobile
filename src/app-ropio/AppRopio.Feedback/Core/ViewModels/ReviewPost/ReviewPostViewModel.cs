@@ -90,7 +90,7 @@ namespace AppRopio.Feedback.Core.ViewModels.ReviewPost
             }
             else
             {
-                UserDialogs.Alert(LocalizationService.GetLocalizableString(FeedbackConstants.RESX_NAME, "ReviewPost_FailedToSent"));
+                UserDialogs.Alert(LocalizationService.GetLocalizableString(FeedbackConstants.RESX_NAME, "ReviewPost_FailedToSend"));
             }
 
             Loading = false;

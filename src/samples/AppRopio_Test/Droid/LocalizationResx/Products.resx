@@ -98,4 +98,8 @@ or change your search request</value>
         name="ProductCard_To">
         <value>To</value>
     </data>
+    <data
+        name="ProductCard_Done">
+        <value>Done</value>
+    </data>
 </root>

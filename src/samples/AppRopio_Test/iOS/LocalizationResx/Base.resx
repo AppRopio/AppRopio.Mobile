@@ -20,4 +20,28 @@
         name="Search">
         <value>Search</value>
     </data>
+    <data
+        name="Done">
+        <value>Done</value>
+    </data>
+    <data
+        name="Cancel">
+        <value>Cancel</value>
+    </data>
+    <data
+        name="Hint_CloseApp">
+        <value>Click the button again to exit the application</value>
+    </data>
+    <data
+        name="Permissions_Request">
+        <value>To gain the requested permissions you need to change the application settings</value>
+    </data>
+    <data
+        name="Permissions_Go">
+        <value>Change</value>
+    </data>
+    <data
+        name="Permissions_Contacts_AccessDenied">
+        <value>Access to contacts is denied, you need to change the application settings</value>
+    </data>
 </root>

@@ -124,19 +124,19 @@ namespace AppRopio.Test.Droid.LocalizationResx {
                 return ResourceManager.GetString("Catalog_Sort", resourceCulture);
             }
         }
-        
+
         internal static string Catalog_PriceFrom {
             get {
                 return ResourceManager.GetString("Catalog_PriceFrom", resourceCulture);
             }
         }
-        
+
         internal static string Catalog_PriceTo {
             get {
                 return ResourceManager.GetString("Catalog_PriceTo", resourceCulture);
             }
         }
-        
+
         internal static string Selection_Clear {
             get {
                 return ResourceManager.GetString("Selection_Clear", resourceCulture);
@@ -158,6 +158,12 @@ namespace AppRopio.Test.Droid.LocalizationResx {
         internal static string ProductCard_To {
             get {
                 return ResourceManager.GetString("ProductCard_To", resourceCulture);
+            }
+        }
+        
+        internal static string ProductCard_Done {
+            get {
+                return ResourceManager.GetString("ProductCard_Done", resourceCulture);
             }
         }
     }

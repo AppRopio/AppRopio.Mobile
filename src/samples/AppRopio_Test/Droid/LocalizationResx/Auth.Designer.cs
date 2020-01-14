@@ -143,6 +143,24 @@ namespace AppRopio.Test.Droid.LocalizationResx {
             }
         }
         
+        internal static string Auth_Social_NoAccess {
+            get {
+                return ResourceManager.GetString("Auth_Social_NoAccess", resourceCulture);
+            }
+        }
+        
+        internal static string Auth_Social_Failed {
+            get {
+                return ResourceManager.GetString("Auth_Social_Failed", resourceCulture);
+            }
+        }
+        
+        internal static string Auth_Social_Success {
+            get {
+                return ResourceManager.GetString("Auth_Social_Success", resourceCulture);
+            }
+        }
+        
         internal static string SignUp_Title {
             get {
                 return ResourceManager.GetString("SignUp_Title", resourceCulture);
@@ -332,6 +350,12 @@ namespace AppRopio.Test.Droid.LocalizationResx {
         internal static string Password_Sms_SentToPhone {
             get {
                 return ResourceManager.GetString("Password_Sms_SentToPhone", resourceCulture);
+            }
+        }
+        
+        internal static string Password_Sms_CodeSent {
+            get {
+                return ResourceManager.GetString("Password_Sms_CodeSent", resourceCulture);
             }
         }
         

@@ -93,6 +93,10 @@
         <value>Стоимость доставки</value>
     </data>
     <data
+        name="Order_AlertOk">
+        <value>Ок</value>
+    </data>
+    <data
         name="Order_Done">
         <value>Готово</value>
     </data>
@@ -115,6 +119,10 @@
     <data
         name="DeliveryPoint_Confirm">
         <value>ПОДТВЕРДИТЬ</value>
+    </data>
+    <data
+        name="DeliveryPoint_OrderFor">
+        <value>Заказать{0: за # ### ##0.##}</value>
     </data>
     <data
         name="DeliveryPoint_Details">
@@ -157,6 +165,30 @@
     <data
         name="DeliveryAddress_Confirm">
         <value>ПОДТВЕРДИТЬ</value>
+    </data>
+    <data
+        name="DeliveryTypes_Title">
+        <value>Выбор доставки</value>
+    </data>
+    <data
+        name="DeliveryAddress_OrderFor">
+        <value>Заказать{0: за # ### ##0.##}</value>
+    </data>
+    <data
+        name="DeliveryTypes_Unavailable">
+        <value>К сожалению выбранный способ оплаты недоступен, пожалуйста, выберите другой</value>
+    </data>
+    <data
+        name="DeliveryTypes_Failed">
+        <value>Не удалось оформить заказ, повторите попытку позже</value>
+    </data>
+    <data
+        name="User_Title">
+        <value>Личные данные</value>
+    </data>
+    <data
+        name="User_Continue">
+        <value>Продолжить</value>
     </data>
     <data
         name="Payment_Title">
