@@ -98,4 +98,8 @@
         name="ProductCard_To">
         <value>До</value>
     </data>
+    <data
+        name="ProductCard_Done">
+        <value>Готово</value>
+    </data>
 </root>

@@ -52,5 +52,41 @@ namespace AppRopio.Test.Droid.LocalizationResx {
                 return ResourceManager.GetString("Search", resourceCulture);
             }
         }
+        
+        internal static string Done {
+            get {
+                return ResourceManager.GetString("Done", resourceCulture);
+            }
+        }
+        
+        internal static string Cancel {
+            get {
+                return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        internal static string Hint_CloseApp {
+            get {
+                return ResourceManager.GetString("Hint_CloseApp", resourceCulture);
+            }
+        }
+        
+        internal static string Permissions_Request {
+            get {
+                return ResourceManager.GetString("Permissions_Request", resourceCulture);
+            }
+        }
+        
+        internal static string Permissions_Go {
+            get {
+                return ResourceManager.GetString("Permissions_Go", resourceCulture);
+            }
+        }
+        
+        internal static string Permissions_Contacts_AccessDenied {
+            get {
+                return ResourceManager.GetString("Permissions_Contacts_AccessDenied", resourceCulture);
+            }
+        }
     }
 }

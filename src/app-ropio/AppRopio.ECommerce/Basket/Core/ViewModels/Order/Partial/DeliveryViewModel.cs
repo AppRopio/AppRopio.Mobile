@@ -524,7 +524,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
                 var confirmed = await OrderVmService.ConfirmPayment(msg.Payment.Id);
 
                 if (!confirmed)
-                    UserDialogs.Error("К сожалению выбранный способ оплаты недоступен, пожалуйста, выберите другой");
+                    UserDialogs.Error(LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "DeliveryTypes_Unavailable"));
                 else
                     CreateOrder(msg.Payment);
             });
@@ -538,7 +538,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
             {
                 OrderProcessingChanged(new OrderProcessingMessage(this, false));
 
-                UserDialogs.Error("Не удалось оформить заказ, повторите попытку позже");
+                UserDialogs.Error(LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "DeliveryTypes_Failed"));
 
                 AnalyticsNotifyingService.NotifyEventIsHandled("order", "order_creation_failed");
 

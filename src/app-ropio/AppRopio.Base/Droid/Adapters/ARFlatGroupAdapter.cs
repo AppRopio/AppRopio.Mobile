@@ -153,7 +153,7 @@ namespace AppRopio.Base.Droid.Adapters
 
         private IMvxTemplateSelector _itemTemplateSelector;
 
-        [System.Obsolete("Используй FlatGroupTemplateSelector")]
+        [System.Obsolete("Use FlatGroupTemplateSelector instead")]
         public virtual IMvxTemplateSelector ItemTemplateSelector
         {
             get

@@ -76,5 +76,17 @@ namespace AppRopio.Test.Droid.LocalizationResx {
                 return ResourceManager.GetString("Cvv", resourceCulture);
             }
         }
+        
+        internal static string Error_PaymentFailed {
+            get {
+                return ResourceManager.GetString("Error_PaymentFailed", resourceCulture);
+            }
+        }
+        
+        internal static string Card_Payment {
+            get {
+                return ResourceManager.GetString("Card_Payment", resourceCulture);
+            }
+        }
     }
 }

@@ -242,7 +242,7 @@ namespace AppRopio.Base.iOS.UIExtentions
 
 #if DEBUG
 			if (resultImage == null && throwIfNotExists)
-				throw new Exception(string.Format("Отсутствует изображение по пути {0}", path));
+				throw new Exception(string.Format("Image is missing on the path {0}", path));
 #endif
 			return resultImage;
 		}

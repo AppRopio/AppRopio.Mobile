@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.Core.Services.Permissions;
 using AppRopio.Base.Core.Services.UserDialogs;
 using Foundation;
@@ -27,7 +28,7 @@ namespace AppRopio.Base.iOS.Services.Permissions
                 {
                     if (goToSettingsAlert)
                     {
-                        var result = await UserDialogs.Confirm(goToSettingsMessage ?? "Для доступа к запрашиваемым разрешениям, необходимо изменить настройки приложения", "Перейти");
+                        var result = await UserDialogs.Confirm(goToSettingsMessage ?? Mvx.Resolve<ILocalizationService>().GetLocalizableString("Base", "Permissions_Request"), Mvx.Resolve<ILocalizationService>().GetLocalizableString("Base", "Permissions_Go"));
                         if (result)
                         {
                             Mvx.Resolve<IMvxMainThreadDispatcher>().RequestMainThreadAction(() =>

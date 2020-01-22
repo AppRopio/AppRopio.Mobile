@@ -84,6 +84,18 @@
         <value>Пропустить</value>
     </data>
     <data
+        name="Auth_Social_NoAccess">
+        <value>Неудалось получить доступ к социальной сети</value>
+    </data>
+    <data
+        name="Auth_Social_Failed">
+        <value>Не удалось завершить авторизацию</value>
+    </data>
+    <data
+        name="Auth_Social_Success">
+        <value>Вы успешно выполнили вход</value>
+    </data>
+    <data
         name="SignUp_Title">
         <value>Регистрация</value>
     </data>
@@ -219,6 +231,10 @@
     <data
         name="Password_Sms_SentToPhone">
         <value>Отправлено на номер</value>
+    </data>
+    <data
+        name="Password_Sms_CodeSent">
+        <value>Код подтверждения отправлен.</value>
     </data>
     <data
         name="Password_New_Title">

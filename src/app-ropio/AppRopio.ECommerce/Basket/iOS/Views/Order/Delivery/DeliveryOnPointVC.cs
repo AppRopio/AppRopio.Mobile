@@ -1,20 +1,20 @@
-
+using AppRopio.Base.Core;
+using AppRopio.Base.Core.Converters;
+using AppRopio.Base.Core.Models.Navigation;
 using AppRopio.Base.iOS;
+using AppRopio.Base.iOS.UIExtentions;
 using AppRopio.Base.iOS.Views;
+using AppRopio.ECommerce.Basket.Core;
 using AppRopio.ECommerce.Basket.Core.Enums;
 using AppRopio.ECommerce.Basket.Core.Services;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery;
 using AppRopio.ECommerce.Basket.iOS.Services;
 using AppRopio.ECommerce.Basket.iOS.Views.Order.Delivery.Cells;
+using CoreGraphics;
 using MvvmCross.Binding.BindingContext;
+using MvvmCross.Binding.iOS.Views;
 using MvvmCross.Platform;
 using UIKit;
-using AppRopio.Base.Core.Models.Navigation;
-using MvvmCross.Binding.iOS.Views;
-using AppRopio.Base.iOS.UIExtentions;
-using CoreGraphics;
-using Foundation;
-using AppRopio.ECommerce.Basket.Core;
 
 namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Delivery
 {
@@ -142,7 +142,16 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Delivery
         protected virtual void BindNextButton(UIButton nextButton, MvxFluentBindingDescriptionSet<DeliveryOnPointVC, IDeliveryOnPointVM> set)
         {
             if (OrderViewType == OrderViewType.Partial)
-                set.Bind(nextButton).For("Title").To(vm => vm.Amount).WithConversion("StringFormat", "Заказать{0: за # ### ##0.## ₽;;}");
+                set.Bind(nextButton).For("Title").To(vm => vm.Amount).WithConversion(
+                    "StringFormat",
+                    new StringFormatParameter()
+                    {
+                        StringFormat = (arg) =>
+                        {
+                            return string.Format(LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "DeliveryPoint_OrderFor"), arg) + $" {AppSettings.SettingsCulture.NumberFormat.CurrencySymbol}";
+                        }
+                    }
+                );
             
             set.Bind(nextButton).To(vm => vm.NextCommand);
             set.Bind(nextButton).For(s => s.Enabled).To(vm => vm.CanGoNext);

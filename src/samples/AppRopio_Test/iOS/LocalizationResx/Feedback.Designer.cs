@@ -71,6 +71,30 @@ namespace AppRopio_Test.LocalizationResx {
             }
         }
         
+        internal static string ReviewDetails_Removed {
+            get {
+                return ResourceManager.GetString("ReviewDetails_Removed", resourceCulture);
+            }
+        }
+        
+        internal static string ReviewDetails_FailedToRemove {
+            get {
+                return ResourceManager.GetString("ReviewDetails_FailedToRemove", resourceCulture);
+            }
+        }
+        
+        internal static string ReviewPost_Sent {
+            get {
+                return ResourceManager.GetString("ReviewPost_Sent", resourceCulture);
+            }
+        }
+        
+        internal static string ReviewPost_FailedToSend {
+            get {
+                return ResourceManager.GetString("ReviewPost_FailedToSend", resourceCulture);
+            }
+        }
+        
         internal static string Reviews_Title {
             get {
                 return ResourceManager.GetString("Reviews_Title", resourceCulture);

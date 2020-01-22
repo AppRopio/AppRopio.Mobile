@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Models.Payments.Responses;
 using AppRopio.Payments.ApplePay.Models;
 using Foundation;
@@ -44,7 +45,7 @@ namespace AppRopio.Payments.ApplePay.Services
             //добавляем итоговую стоимость
             paymentItems.Add(new PKPaymentSummaryItem()
             {
-                Label = "Итог",
+                Label = Mvx.Resolve<ILocalizationService>().GetLocalizableString(ApplePayConstants.RESX_NAME, "Payment_Sum"),
                 Amount = new NSDecimalNumber(info.Amount.ToString())
             });
 

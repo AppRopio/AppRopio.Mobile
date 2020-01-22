@@ -140,13 +140,13 @@ namespace AppRopio.Feedback.Core.ViewModels.ReviewDetails
 
             if (await VmService.DeleteReview(ReviewDetails.Id))
             {
-                UserDialogs.Alert("Ваш отзыв удален");
+                UserDialogs.Alert(LocalizationService.GetLocalizableString(FeedbackConstants.RESX_NAME, "ReviewDetails_Removed"));
 
                 Close(this);
             }
             else
             {
-                UserDialogs.Error("Не удалось удалить отзыв");
+                UserDialogs.Alert(LocalizationService.GetLocalizableString(FeedbackConstants.RESX_NAME, "ReviewDetails_FailedToRemove"));
             }
 
             Loading = false;
