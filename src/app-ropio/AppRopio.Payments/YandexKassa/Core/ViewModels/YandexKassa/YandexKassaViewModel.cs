@@ -138,7 +138,7 @@ namespace AppRopio.Payments.YandexKassa.Core.ViewModels.YandexKassa
 
         protected virtual void OnPaymentFailed()
         {
-            UserDialogs.Error($"Не удалось оплатить заказ №{OrderId}");
+            UserDialogs.Error($"{LocalizationService.GetLocalizableString(YandexKassaConstants.RESX_NAME, "PaymentFailed_OrderNumber")}{OrderId}");
 
             Close(this);
         }

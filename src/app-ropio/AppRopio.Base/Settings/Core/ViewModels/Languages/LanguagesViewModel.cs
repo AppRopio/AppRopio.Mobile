@@ -20,6 +20,7 @@ using AppRopio.Base.API.Services;
 using AppRopio.Base.Core;
 using AppRopio.Base.Core.Extentions;
 using AppRopio.Base.Core.Messages.Localization;
+using AppRopio.Base.Core.Models.App;
 using AppRopio.Base.Core.Models.Navigation;
 using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.Core.ViewModels.Search;
@@ -56,7 +57,9 @@ namespace AppRopio.Base.Settings.Core.ViewModels.Languages
 
         #region Services
 
-        protected SettingsConfig Config { get { return Mvx.Resolve<ISettingsConfigService>().Config; } }
+        protected SettingsConfig SettingsConfig { get { return Mvx.Resolve<ISettingsConfigService>().Config; } }
+
+        protected AppConfig AppConfig { get { return Mvx.Resolve<AppConfig>(); } }
 
         public ILangItemVM SelectedLanguage { get; private set; }
 
@@ -102,7 +105,7 @@ namespace AppRopio.Base.Settings.Core.ViewModels.Languages
         {
             return Task.Run(() =>
             {
-                Items = Config.Languages.Select(x => (ILangItemVM)new LangItemVM(x, x == _selectedId)).ToList();
+                Items = AppConfig.Localizations.Select(x => (ILangItemVM)new LangItemVM(x.Key, x.Key == _selectedId)).ToList();
                 RaisePropertyChanged(() => Items);
             });
         }
@@ -139,11 +142,11 @@ namespace AppRopio.Base.Settings.Core.ViewModels.Languages
         {
             Loading = true;
 
-            Items = Config.Languages
-                          .Select(x => (ILangItemVM)new LangItemVM(x, x == _selectedId))
+            Items = AppConfig.Localizations
+                          .Select(x => (ILangItemVM)new LangItemVM(x.Key, x.Key == _selectedId))
                           .Where(x => x.Name.ToLowerInvariant().Contains(SearchText.ToLowerInvariant()))
                           .ToList();
-            
+
             RaisePropertyChanged(() => Items);
 
             Loading = false;

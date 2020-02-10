@@ -1,10 +1,11 @@
-using System;
 using System.ComponentModel;
+using AppRopio.Base.Core;
 using AppRopio.Base.Core.Converters;
+using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.UIExtentions;
 using AppRopio.Base.iOS.Views;
-using AppRopio.ECommerce.Basket.Core.Services;
+using AppRopio.ECommerce.Basket.Core;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Full;
 using AppRopio.ECommerce.Basket.iOS.Controls;
 using AppRopio.ECommerce.Basket.iOS.Services;
@@ -14,8 +15,6 @@ using MvvmCross.Binding.BindingContext;
 using MvvmCross.Binding.iOS.Views;
 using MvvmCross.Platform;
 using UIKit;
-using AppRopio.ECommerce.Basket.Core;
-using AppRopio.Base.Core;
 
 namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Full
 {
@@ -111,7 +110,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Full
                     .WithTune(tune =>
                     {
                         tune.SetupStyle(OrderTheme.DeliveryInfo.TimeCancelButton);
-                        tune.SetTitle("Отмена", UIControlState.Normal);
+                        tune.SetTitle(Mvx.Resolve<ILocalizationService>().GetLocalizableString("Base", "Cnacel"), UIControlState.Normal);
                         tune.HorizontalAlignment = UIControlContentHorizontalAlignment.Left;
                         tune.TouchUpInside += (sender, e) => HideDeliveryTimePicker(deliveryPickerView);
                     }),
@@ -120,7 +119,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Full
                     .WithTune(tune =>
                     {
                         tune.SetupStyle(OrderTheme.DeliveryInfo.TimeApplyButton);
-                        tune.SetTitle("Готово", UIControlState.Normal);
+                        tune.SetTitle(Mvx.Resolve<ILocalizationService>().GetLocalizableString("Base", "Done"), UIControlState.Normal);
                         tune.HorizontalAlignment = UIControlContentHorizontalAlignment.Right;
                         tune.TouchUpInside += (sender, e) => HideDeliveryTimePicker(deliveryPickerView);
 

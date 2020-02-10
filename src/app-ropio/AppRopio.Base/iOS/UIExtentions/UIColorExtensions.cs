@@ -3,7 +3,6 @@ using UIKit;
 using CoreAnimation;
 using CoreGraphics;
 using Foundation;
-using System.Drawing;
 using AppRopio.Base.iOS.Models.ThemeConfigs;
 
 namespace AppRopio.Base.iOS.UIExtentions
@@ -164,7 +163,7 @@ namespace AppRopio.Base.iOS.UIExtentions
 
             //draw a rectangle
             context.SetFillColor(backgroundColour);
-            context.FillRect(new RectangleF(0, 0, width, height));
+            context.FillRect(new CGRect(0, 0, width, height));
             UIImage returnedImage = UIImage.FromImage(context.ToImage());
             return returnedImage;
         }

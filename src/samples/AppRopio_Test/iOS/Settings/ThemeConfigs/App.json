@@ -264,11 +264,5 @@
         "invalid": { "HEX": "EA0048" }
     },
     "fontsPalette": {
-        "regular": ".SFUIText",
-        "light": ".SFUIText-Light",
-        "medium": ".SFUIText-Medium",
-        "semibold": ".SFUIText-Semibold",
-        "bold": ".SFUIText-Bold",
-        "italic": ".SFUIText-Italic"
     }
 }

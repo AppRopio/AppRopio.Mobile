@@ -40,7 +40,7 @@ namespace AppRopio.Base.iOS
                 UIBarMetrics.Default
             );
 
-            var searchTextField = view.ValueForKey(new NSString("_searchField")) as UITextField;
+            var searchTextField = UIDevice.CurrentDevice.CheckSystemVersion(13, 0) ? view.SearchTextField : (view.ValueForKey(new NSString("_searchField")) as UITextField);
             if (searchTextField != null)
             {
                 searchTextField.BackgroundColor = (UIColor)model.TextField.Background;

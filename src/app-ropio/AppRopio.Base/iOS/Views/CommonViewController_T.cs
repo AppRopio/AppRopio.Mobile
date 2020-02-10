@@ -255,7 +255,7 @@ namespace AppRopio.Base.iOS.Views
                 toolbar.Translucent = true;
                 toolbar.SizeToFit();
 
-                var doneButton = new UIBarButtonItem("Готово", UIBarButtonItemStyle.Done, null);
+                var doneButton = new UIBarButtonItem(Mvx.Resolve<ILocalizationService>().GetLocalizableString("Base", "Done"), UIBarButtonItemStyle.Done, null);
                 toolbar.SetItems(new UIBarButtonItem[] { new UIBarButtonItem(UIBarButtonSystemItem.FlexibleSpace), doneButton }, false);
 
                 var textField = allFields[i] as UITextField;

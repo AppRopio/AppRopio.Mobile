@@ -3,6 +3,7 @@ using System.Linq;
 using AppRopio.Base.Auth.Core.ViewModels.SignUp.Items;
 using AppRopio.Base.Auth.iOS.Models;
 using AppRopio.Base.Auth.iOS.Services;
+using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.Controls;
 using AppRopio.Base.iOS.UIExtentions;
@@ -112,7 +113,7 @@ namespace AppRopio.Base.Auth.iOS.Views.SignUp.Cells
                     .WithTune(tune =>
                     {
                         tune.SetupStyle(ThemeConfig.TextButton);
-                        tune.SetTitle("Готово", UIControlState.Normal);
+                        tune.SetTitle(Mvx.Resolve<ILocalizationService>().GetLocalizableString("Base", "Done"), UIControlState.Normal);
                         tune.TouchUpInside += (sender, e) => TextField?.EndEditing(true);
                     }),
                     new UIView().WithFrame(0, 0, DeviceInfo.ScreenWidth, 1).WithBackground(Theme.ColorPalette.Separator.ToUIColor()),

@@ -143,6 +143,12 @@ namespace AppRopio_Test.LocalizationResx {
             }
         }
         
+        internal static string Order_AlertOk {
+            get {
+                return ResourceManager.GetString("Order_AlertOk", resourceCulture);
+            }
+        }
+        
         internal static string Order_OrderBy {
             get {
                 return ResourceManager.GetString("Order_OrderBy", resourceCulture);
@@ -188,6 +194,12 @@ namespace AppRopio_Test.LocalizationResx {
         internal static string DeliveryPoint_Confirm {
             get {
                 return ResourceManager.GetString("DeliveryPoint_Confirm", resourceCulture);
+            }
+        }
+        
+        internal static string DeliveryPoint_OrderFor {
+            get {
+                return ResourceManager.GetString("DeliveryPoint_OrderFor", resourceCulture);
             }
         }
         
@@ -248,6 +260,42 @@ namespace AppRopio_Test.LocalizationResx {
         internal static string DeliveryAddress_Confirm {
             get {
                 return ResourceManager.GetString("DeliveryAddress_Confirm", resourceCulture);
+            }
+        }
+        
+        internal static string DeliveryAddress_OrderFor {
+            get {
+                return ResourceManager.GetString("DeliveryAddress_OrderFor", resourceCulture);
+            }
+        }
+        
+        internal static string DeliveryTypes_Title {
+            get {
+                return ResourceManager.GetString("DeliveryTypes_Title", resourceCulture);
+            }
+        }
+        
+        internal static string DeliveryTypes_Unavailable {
+            get {
+                return ResourceManager.GetString("DeliveryTypes_Unavailable", resourceCulture);
+            }
+        }
+        
+        internal static string DeliveryTypes_Failed {
+            get {
+                return ResourceManager.GetString("DeliveryTypes_Failed", resourceCulture);
+            }
+        }
+        
+        internal static string User_Title {
+            get {
+                return ResourceManager.GetString("User_Title", resourceCulture);
+            }
+        }
+        
+        internal static string User_Continue {
+            get {
+                return ResourceManager.GetString("User_Continue", resourceCulture);
             }
         }
         

@@ -32,7 +32,22 @@
         name="ReviewDetails_Delete">
         <value>УДАЛИТЬ</value>
     </data>
-    
+    <data
+        name="ReviewDetails_Removed">
+        <value>Ваш отзыв удален</value>
+    </data>
+    <data
+        name="ReviewDetails_FailedToRemove">
+        <value>Не удалось удалить отзыв</value>
+    </data>
+    <data
+        name="ReviewPost_Sent">
+        <value>Ваш отзыв отправлен!</value>
+    </data>
+    <data
+        name="ReviewPost_FailedToSend">
+        <value>Не удалось отправить отзыв</value>
+    </data>
     <data
         name="Reviews_Title">
         <value>Отзывы</value>

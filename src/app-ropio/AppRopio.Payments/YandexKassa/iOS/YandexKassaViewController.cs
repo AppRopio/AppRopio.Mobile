@@ -1,5 +1,6 @@
 ﻿using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.Views;
+using AppRopio.Payments.YandexKassa.Core;
 using AppRopio.Payments.YandexKassa.Core.ViewModels.YandexKassa;
 using MvvmCross.Binding.BindingContext;
 
@@ -15,7 +16,7 @@ namespace AppRopio.Payments.YandexKassa.iOS
 
         protected override void InitializeControls()
         {
-            Title = "Оплата картой";
+            Title = LocalizationService.GetLocalizableString(YandexKassaConstants.RESX_NAME, "Card_Payment");
         }
 
         protected override void BindControls()

@@ -83,6 +83,10 @@ will be stored.</value>
         <value>Delivery price</value>
     </data>
     <data
+        name="Order_AlertOk">
+        <value>Ok</value>
+    </data>
+    <data
         name="Order_OrderBy">
         <value>ORDER FOR</value>
     </data>
@@ -113,6 +117,10 @@ will be stored.</value>
     <data
         name="DeliveryPoint_Confirm">
         <value>CONFIRM</value>
+    </data>
+    <data
+        name="DeliveryPoint_OrderFor">
+        <value>Order{0: for # ### ##0.##}</value>
     </data>
     <data
         name="DeliveryPoint_Details">
@@ -153,6 +161,30 @@ will be stored.</value>
     <data
         name="DeliveryAddress_Confirm">
         <value>CONFIRM</value>
+    </data>
+    <data
+        name="DeliveryAddress_OrderFor">
+        <value>Order{0: for # ### ##0.##}</value>
+    </data>
+    <data
+        name="DeliveryTypes_Title">
+        <value>Delivery choice</value>
+    </data>
+    <data
+        name="DeliveryTypes_Unavailable">
+        <value>Unfortunately, the chosen payment type is unavailable, please, choose another one</value>
+    </data>
+    <data
+        name="DeliveryTypes_Failed">
+        <value>Failed to make the order, please try again later</value>
+    </data>
+    <data
+        name="User_Title">
+        <value>Personal data</value>
+    </data>
+    <data
+        name="User_Continue">
+        <value>Continue</value>
     </data>
     <data
         name="Payment_Title">

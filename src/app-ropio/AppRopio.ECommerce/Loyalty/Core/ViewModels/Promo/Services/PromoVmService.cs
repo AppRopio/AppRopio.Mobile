@@ -28,7 +28,7 @@ namespace AppRopio.ECommerce.Loyalty.Core.ViewModels.Promo.Services
                 result = applied.IsApplied;
 
                 if (!applied.Message.IsNullOrEmpty())
-                    UserDialogs.Confirm(applied.Message, "ОК", !applied.IsApplied);
+                    UserDialogs.Confirm(applied.Message, "OK", !applied.IsApplied);
             }
             catch (ConnectionException ex)
             {

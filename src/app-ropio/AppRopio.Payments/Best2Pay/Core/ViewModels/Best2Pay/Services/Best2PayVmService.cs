@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using AppRopio.Base.API.Exceptions;
 using AppRopio.Base.Core.Models.Device;
 using AppRopio.Base.Core.Services.Device;
+using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.Core.ViewModels.Services;
 using AppRopio.Models.Payments.Responses;
 using AppRopio.Payments.API.Services;
@@ -25,6 +26,8 @@ namespace AppRopio.Payments.Best2Pay.Core.ViewModels.Best2Pay.Services
 
         protected Best2PayConfig Config { get { return Mvx.Resolve<IBest2PayConfigService>().Config; } }
 
+        protected ILocalizationService LocalizationService { get { return Mvx.Resolve<ILocalizationService>(); } }
+
         private string _forwardUrl;
         private string _forwardVerifyUrl;
         private bool _ePayment = false;
@@ -37,7 +40,7 @@ namespace AppRopio.Payments.Best2Pay.Core.ViewModels.Best2Pay.Services
             _forwardUrl = platform == PlatformType.iPhone || platform == PlatformType.iPad ? @"https://best2pay.ru/mobileAPI/iOS" : @"https://best2pay.ru/mobileAPI/Android";
             _forwardVerifyUrl = "https://best2pay.ru/mobileAPI/Phone";
 
-            _best2Pay = new API.Best2Pay(Config.Sector, Config.Password, _forwardUrl, _forwardVerifyUrl);
+            _best2Pay = new API.Best2Pay(Config.Sector, Config.Password, _forwardUrl, _forwardVerifyUrl, Config.Test);
         }
 
         public async Task<PaymentOrderInfo> GetPaymentInfo(string orderId)
@@ -71,7 +74,7 @@ namespace AppRopio.Payments.Best2Pay.Core.ViewModels.Best2Pay.Services
                 email = email,
                 phone = phone,
                 reference = orderId,
-                description = "Оплата заказа №" + orderId,
+                description = LocalizationService.GetLocalizableString(Best2PayConstants.RESX_NAME, "Payment_OrderNumber") + orderId,
                 deviceID = Mvx.Resolve<IDeviceService>().Token
 			};
 
@@ -161,7 +164,7 @@ namespace AppRopio.Payments.Best2Pay.Core.ViewModels.Best2Pay.Services
                         //_card = null;
                     }
 
-                    await UserDialogs.Error(errorText ?? $"Не удалось произвести оплату");
+                    await UserDialogs.Error(errorText ?? LocalizationService.GetLocalizableString(Best2PayConstants.RESX_NAME, "Purchase_Failed"));
                     tcs.TrySetResult(false);
                     return;
                 }
@@ -185,7 +188,7 @@ namespace AppRopio.Payments.Best2Pay.Core.ViewModels.Best2Pay.Services
                 else
                 {
                     //иначе показываем пользователю сообщение об ошибке
-                    await UserDialogs.Error($"Не удалось произвести оплату");
+                    await UserDialogs.Error(LocalizationService.GetLocalizableString(Best2PayConstants.RESX_NAME, "Purchase_Failed"));
                     tcs.TrySetResult(false);
                 }
             });
@@ -200,29 +203,29 @@ namespace AppRopio.Payments.Best2Pay.Core.ViewModels.Best2Pay.Services
 				case 2:
 				case 6:
 				case 12:
-					return "Платеж отклонен. Возможные причины: недостаточно средств на счете, были указаны неверные реквизиты карты, по вашей карте запрещены расчеты через Интернет. Пожалуйста, попробуйте выполнить платеж повторно или обратитесь в Банк, выпустивший вашу карту.";
+					return LocalizationService.GetLocalizableString(Best2PayConstants.RESX_NAME, "Operation_Error12");
 				case 3:
-					return "Платеж отклонен. Пожалуйста, обратитесь в Банк, выпустивший вашу карту.";
-				case 4:
+                    return LocalizationService.GetLocalizableString(Best2PayConstants.RESX_NAME, "Operation_Error3");
+                case 4:
 				case 5:
-					//if (_isPurchaseByToken)
-					//    return "Попробуйте повторить операцию с полным вводом реквизитов карты, возможно ваш банк запретил операцию по зарегистрированной карте.";
-					//else
-					return "Платёж отклонён. Пожалуйста, обратитесь в Банк, выпустивший Вашу карту.";
-				case 7:
+                    //if (_isPurchaseByToken)
+                    //    return "Попробуйте повторить операцию с полным вводом реквизитов карты, возможно ваш банк запретил операцию по зарегистрированной карте.";
+                    //else
+                    return LocalizationService.GetLocalizableString(Best2PayConstants.RESX_NAME, "Operation_Error5");
+                case 7:
 				case 8:
 				case 9:
 				case 10:
 				case 11:
 				case 15:
 				case 16:
-					return "Платеж отклонен. Пожалуйста, обратитесь в Интернет-магазин.";
-				case 13:
+                    return LocalizationService.GetLocalizableString(Best2PayConstants.RESX_NAME, "Operation_Error16");
+                case 13:
 				case 0:
-					return "Платеж отклонен. Пожалуйста, попробуйте выполнить платеж позднее или обратитесь в Интернет-магазин.";
-				default:
-					return "Операция завершилась неуспешно, попробуйте еще раз.";
-			}
+                    return LocalizationService.GetLocalizableString(Best2PayConstants.RESX_NAME, "Operation_Error0");
+                default:
+                    return LocalizationService.GetLocalizableString(Best2PayConstants.RESX_NAME, "Operation_ErrorDefault");
+            }
 		}
 	}
 }

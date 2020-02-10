@@ -5,6 +5,7 @@ using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.Models.ValueConverters;
 using AppRopio.Base.iOS.UIExtentions;
 using AppRopio.Base.iOS.ViewSources;
+using AppRopio.ECommerce.Products.Core;
 using AppRopio.ECommerce.Products.Core.Models;
 using AppRopio.ECommerce.Products.Core.Services;
 using AppRopio.ECommerce.Products.Core.ViewModels.Categories;
@@ -198,7 +199,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Categories.StepByStep
 
         protected override void InitializeControls()
         {
-            Title = "Каталог";
+            Title = LocalizationService.GetLocalizableString(ProductsConstants.RESX_NAME, "CategoriesEmptyTitle");
 
             if (ThemeConfig.Categories.CollectionType == CollectionType.List)
             {

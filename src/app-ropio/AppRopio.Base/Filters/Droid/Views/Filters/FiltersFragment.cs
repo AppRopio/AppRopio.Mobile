@@ -1,19 +1,20 @@
 ﻿using System;
 using System.Globalization;
+using Android.App;
 using Android.Support.V7.Widget;
 using Android.Widget;
+using AppRopio.Base.Core;
 using AppRopio.Base.Core.Converters;
 using AppRopio.Base.Droid.Adapters;
 using AppRopio.Base.Droid.Listeners;
 using AppRopio.Base.Droid.Views;
+using AppRopio.Base.Filters.Core;
 using AppRopio.Base.Filters.Core.ViewModels.Filters;
 using AppRopio.Base.Filters.Core.ViewModels.Filters.Items.MinMax;
 using AppRopio.Base.Filters.Core.ViewModels.Filters.Items.MinMax.Date;
 using AppRopio.Base.Filters.Core.ViewModels.Filters.Items.MinMax.Number;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Droid.Support.V7.RecyclerView;
-using Android.App;
-using AppRopio.Base.Filters.Core;
 
 namespace AppRopio.Base.Filters.Droid.Views.Filters
 {
@@ -67,8 +68,8 @@ namespace AppRopio.Base.Filters.Droid.Views.Filters
                 var fromInput = viewHolder.ItemView.FindViewById<EditText>(Resource.Id.app_filters_filters_minMax_content_input_from);
                 var toInput = viewHolder.ItemView.FindViewById<EditText>(Resource.Id.app_filters_filters_minMax_content_input_to);
 
-                fromInput.Hint = CultureInfo.CurrentCulture == new CultureInfo("ru-RU") ? "дд.мм.гггг" : $"MM{CultureInfo.CurrentCulture.DateTimeFormat.DateSeparator}dd{CultureInfo.CurrentCulture.DateTimeFormat.DateSeparator}yyyy";
-                toInput.Hint = CultureInfo.CurrentCulture == new CultureInfo("ru-RU") ? "дд.мм.гггг" : $"MM{CultureInfo.CurrentCulture.DateTimeFormat.DateSeparator}dd{CultureInfo.CurrentCulture.DateTimeFormat.DateSeparator}yyyy";
+                fromInput.Hint = AppSettings.SettingsCulture == new CultureInfo("ru-RU") ? "дд.мм.гггг" : $"MM{AppSettings.SettingsCulture.DateTimeFormat.DateSeparator}dd{AppSettings.SettingsCulture.DateTimeFormat.DateSeparator}yyyy";
+                toInput.Hint = AppSettings.SettingsCulture == new CultureInfo("ru-RU") ? "дд.мм.гггг" : $"MM{AppSettings.SettingsCulture.DateTimeFormat.DateSeparator}dd{AppSettings.SettingsCulture.DateTimeFormat.DateSeparator}yyyy";
 
                 var mvxBindingContextOwner = (viewHolder as IMvxBindingContextOwner);
 

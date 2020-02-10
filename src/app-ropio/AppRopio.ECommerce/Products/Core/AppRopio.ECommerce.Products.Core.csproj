@@ -1,294 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F2ECB410-3A5A-44E0-818A-C655FEE87DEA}</ProjectGuid>
-    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <OutputType>Library</OutputType>
-    <RootNamespace>AppRopio.ECommerce.Products.Core</RootNamespace>
-    <AssemblyName>AppRopio.ECommerce.Products.Core</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Profile151</TargetFrameworkProfile>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug</OutputPath>
-    <DefineConstants>DEBUG;</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
-    <NoStdLib>false</NoStdLib>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release</OutputPath>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
-    <NoStdLib>false</NoStdLib>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Compile Include="PluginLoader.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="App.cs" />
-    <Compile Include="Models\CategoriesType.cs" />
-    <Compile Include="ViewModels\Categories\ICategoriesViewModel.cs" />
-    <Compile Include="ViewModels\Catalog\CatalogViewModel.cs" />
-    <Compile Include="ViewModels\Catalog\ICatalogViewModel.cs" />
-    <Compile Include="Models\ProductsConfig.cs" />
-    <Compile Include="Services\IProductConfigService.cs" />
-    <Compile Include="Services\Implementation\ProductConfigService.cs" />
-    <Compile Include="ViewModels\ProductCard\ProductCardViewModel.cs" />
-    <Compile Include="ViewModels\ProductCard\IProductCardViewModel.cs" />
-    <Compile Include="ViewModels\Categories\Items\ICategoriesItemVM.cs" />
-    <Compile Include="ViewModels\Categories\Items\CategoriesItemVM.cs" />
-    <Compile Include="Services\Implementation\ProductRouterSubscriber.cs" />
-    <Compile Include="ViewModels\Categories\StepByStep\ISSCategoriesViewModel.cs" />
-    <Compile Include="ViewModels\Categories\StepByStep\SSCategoriesViewModel.cs" />
-    <Compile Include="ViewModels\Categories\Cataloged\CCategoriesViewModel.cs" />
-    <Compile Include="ViewModels\Categories\Cataloged\ICCategoriesViewModel.cs" />
-    <Compile Include="ViewModels\Categories\Services\Categories\ICategoriesVmService.cs" />
-    <Compile Include="ViewModels\Categories\Services\Categories\CategoriesVmService.cs" />
-    <Compile Include="ViewModels\Catalog\Items\ICatalogItemVM.cs" />
-    <Compile Include="ViewModels\Catalog\Items\CatalogItemVM.cs" />
-    <Compile Include="ViewModels\Catalog\Header\CatalogSearchHeaderVm.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\IProductDetailsItemVM.cs" />
-    <Compile Include="ProductsConstants.cs" />
-    <Compile Include="ViewModels\Categories\Items\Banners\IBannerItemVM.cs" />
-    <Compile Include="ViewModels\Categories\Items\Banners\BannerItemVM.cs" />
-    <Compile Include="ViewModels\Categories\Services\Banners\IBannersVmService.cs" />
-    <Compile Include="ViewModels\Categories\Services\Banners\BannersVmService.cs" />
-    <Compile Include="ViewModels\Categories\Cataloged\CCategoriesPageViewModel.cs" />
-    <Compile Include="Models\Bundle\ProductsBundle.cs" />
-    <Compile Include="Models\Bundle\CategoryBundle.cs" />
-    <Compile Include="ViewModels\Catalog\Header\CatalogSortFiltersHeaderVM.cs" />
-    <Compile Include="ViewModels\_base\IProductsViewModel.cs" />
-    <Compile Include="ViewModels\_base\ProductsViewModel.cs" />
-    <Compile Include="ViewModels\ContentSearch\IContentSearchViewModel.cs" />
-    <Compile Include="ViewModels\ContentSearch\ContentSearchViewModel.cs" />
-    <Compile Include="ViewModels\Catalog\Services\Catalog\CatalogVmService.cs" />
-    <Compile Include="ViewModels\Catalog\Services\Catalog\ICatalogVmService.cs" />
-    <Compile Include="Services\IProductsNavigationVmService.cs" />
-    <Compile Include="Services\Implementation\ProductsNavigationVmService.cs" />
-    <Compile Include="Messages\ProductMarkChangedMessage.cs" />
-    <Compile Include="ViewModels\Categories\Disabled\DCategoriesViewModel.cs" />
-    <Compile Include="ViewModels\ContentSearch\IContentSearchInternalViewModel.cs" />
-    <Compile Include="ViewModels\ContentSearch\Items\History\IHistorySearchItemVM.cs" />
-    <Compile Include="ViewModels\ContentSearch\Items\History\HistorySearchItemVM.cs" />
-    <Compile Include="ViewModels\ContentSearch\Items\Hint\IHintItemVM.cs" />
-    <Compile Include="ViewModels\ContentSearch\Items\Hint\HintItemVM.cs" />
-    <Compile Include="ViewModels\ContentSearch\Items\Autocomplete\IAutocompleteItemVM.cs" />
-    <Compile Include="ViewModels\ContentSearch\Items\Autocomplete\AutocompleteItemVM.cs" />
-    <Compile Include="ViewModels\ContentSearch\Services\IContentSearchVmService.cs" />
-    <Compile Include="ViewModels\ContentSearch\Services\ContentSearchVmService.cs" />
-    <Compile Include="ViewModels\ContentSearch\Services\DataBase\IHistorySearchDbService.cs" />
-    <Compile Include="ViewModels\ContentSearch\Services\DataBase\HistorySearchDbService.cs" />
-    <Compile Include="Models\DataBase\HistorySearchDbo.cs" />
-    <Compile Include="ViewModels\ContentSearch\Items\IContentSearchItemVM.cs" />
-    <Compile Include="Models\Bundle\ProductCardBundle.cs" />
-    <Compile Include="ViewModels\ProductCard\Services\ProductCardVmService.cs" />
-    <Compile Include="ViewModels\ProductCard\Services\IProductCardVmService.cs" />
-    <Compile Include="Services\IMarkProductVmService.cs" />
-    <Compile Include="Services\Implementation\MarkProductVmService.cs" />
-    <Compile Include="Services\IProductsShareVmService.cs" />
-    <Compile Include="Services\Implementation\ProductsShareVmService.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\ISelectableProductCardItemVM.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\ProductDetailsItemVM.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\Collection\BaseCollectionPciVm.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\Collection\Horizontal\HorizontalCollectionPciVm.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\Collection\Horizontal\IHorizontalCollectionPciVm.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\Collection\IBaseCollectionPciVm.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\Collection\Items\CollectionItemVM.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\Collection\Vertical\IVerticalCollectionPciVm.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\Collection\Vertical\VerticalCollectionPciVm.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\MinMax\BaseMinMaxPciVm.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\MinMax\Date\DateMinMaxPciVm.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\MinMax\Date\IDateMinMaxPciVm.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\MinMax\IBaseMinMaxPciVm.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\MinMax\Number\INumberMinMaxPciVm.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\MinMax\Number\NumberMinMaxPciVm.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\Picker\IPickerPciVm.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\Picker\Items\PickerCollectionItemVM.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\Picker\PickerPciVm.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\Selection\BaseSelectionPciVm.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\Selection\IBaseSelectionPciVm.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\Selection\MultiSelection\IMultiSelectionPciVm.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\Selection\MultiSelection\Items\MultiCollectionItemVm.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\Selection\MultiSelection\MultiSelectionPciVm.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\Selection\OneSelection\IOneSelectionPciVm.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\Selection\OneSelection\OneSelectionPciVm.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\Switch\ISwitchPciVm.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\Switch\SwitchPciVm.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\Multiline\IMultilinePciVm.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\Multiline\MultilinePciVm.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\Transition\ITransitionPciVm.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\Transition\TransitionPciVm.cs" />
-    <Compile Include="Messages\ProductDetailsSelectionChangedMessage.cs" />
-    <Compile Include="Messages\ProductDetailsReloadWhenValueChangedMessage.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\Images\IImagesProductsPciVm.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\Images\ImagesProductsPciVm.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\ShortInfo\IShortInfoProductsPciVm.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\ShortInfo\ShortInfoProductsPciVm.cs" />
-    <Compile Include="Models\Bundle\SelectionBundle.cs" />
-    <Compile Include="ViewModels\ProductCard\Selection\ProductDetailsSelectionViewModel.cs" />
-    <Compile Include="ViewModels\ProductCard\Selection\IProductDetailsSelectionViewModel.cs" />
-    <Compile Include="ViewModels\ProductCard\Selection\Services\ProductDetailsSelectionVmService.cs" />
-    <Compile Include="ViewModels\ProductCard\Selection\Services\IProductDetailsSelectionVmService.cs" />
-    <Compile Include="ViewModels\ProductWebContent\IProductWebContentViewModel.cs" />
-    <Compile Include="ViewModels\ProductTextContent\IProductTextContentViewModel.cs" />
-    <Compile Include="ViewModels\ProductTextContent\ProductTextContentViewModel.cs" />
-    <Compile Include="ViewModels\ProductWebContent\ProductWebContentViewModel.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\Collection\Horizontal\Products\IHorizontalProductsCollectionPciVm.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\Collection\Horizontal\Products\HorizontalProductsCollectionPciVm.cs" />
-    <Compile Include="ViewModels\Catalog\Items\IProductBadgeItemVM.cs" />
-    <Compile Include="ViewModels\Catalog\Items\ProductBadgeItemVM.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\IProductBasicItemVM.cs" />
-    <Compile Include="Messages\ProductCardMarkedMessage.cs" />
-    <Compile Include="ViewModels\_base\IMarkedItemVM.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\Collection\Horizontal\Shops\IHorizontalShopsCollectionPciVm.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\Collection\Horizontal\Shops\HorizontalShopsCollectionPciVm.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\Collection\Horizontal\Shops\Items\IShopAvailabilityItemVM.cs" />
-    <Compile Include="ViewModels\ProductCard\Items\Collection\Horizontal\Shops\Items\ShopAvailabilityItemVM.cs" />
-    <Compile Include="Messages\ProductDetailsReloadingByParameterMessage.cs" />
-    <Compile Include="Services\IProductsVmService.cs" />
-    <Compile Include="Services\Implementation\ProductsVmService.cs" />
-    <Compile Include="Messages\ProductMarkedQuantityChangedMessage.cs" />
-    <Compile Include="ViewModels\Categories\Disabled\IDCategoriesViewModel.cs" />
-    <Compile Include="ViewModels\ModalProductCard\ModalProductCardViewModel.cs" />
-    <Compile Include="ViewModels\ModalProductCard\IModalProductCardViewModel.cs" />
-    <Compile Include="Models\SearchType.cs" />
-    <Compile Include="Models\CollectionType.cs" />
-    <Compile Include="Models\PriceType.cs" />
-    <Compile Include="Combiners\PriceFromUnitCombiner.cs" />
-    <Compile Include="Combiners\PriceFromFormatCombiner.cs" />
-    <Compile Include="Combiners\PriceVisibilityValueCombiner.cs" />
+    <PackageReference Include="Fody" Version="3.0.3" />
+    <PackageReference Include="MvvmCross" Version="5.7.0"  />
+    <PackageReference Include="MvvmCross.Binding" Version="5.7.0"  />
+    <PackageReference Include="MvvmCross.Core" Version="5.7.0"  />
+    <PackageReference Include="MvvmCross.Platform" Version="5.7.0"  />
+    <PackageReference Include="MvvmCross.Plugin.Messenger" Version="5.7.0"  />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2"  />
+    <PackageReference Include="Plugin.Share" Version="7.1.1"  />
+    <PackageReference Include="Realm" Version="3.2.1"  />
+    <PackageReference Include="Realm.Database" Version="3.2.1"  />
+    <PackageReference Include="Realm.DataBinding" Version="1.2.0"  />
   </ItemGroup>
+    
   <ItemGroup>
-    <Reference Include="Realm.DataBinding">
-      <HintPath>..\..\packages\Realm.DataBinding.1.2.0\lib\netstandard1.0\Realm.DataBinding.dll</HintPath>
-    </Reference>
-    <Reference Include="Plugin.Share.Abstractions">
-      <HintPath>..\..\packages\Plugin.Share.7.1.1\lib\netstandard1.0\Plugin.Share.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Plugin.Share">
-      <HintPath>..\..\packages\Plugin.Share.7.1.1\lib\netstandard1.0\Plugin.Share.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\packages\Newtonsoft.Json.11.0.2\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Realm">
-      <HintPath>..\..\packages\Realm.Database.3.2.1\lib\portable-net45+sl5+wp8+wpa81+win8+monoandroid+Xamarin.iOS10+monotouch+Xamarin.Mac\Realm.dll</HintPath>
-    </Reference>
-    <Reference Include="Realm.Sync">
-      <HintPath>..\..\packages\Realm.3.2.1\lib\portable-net45+sl5+wp8+wpa81+win8+monoandroid+Xamarin.iOS10+monotouch+Xamarin.Mac\Realm.Sync.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Platform">
-      <HintPath>..\..\packages\MvvmCross.Platform.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Platform.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Core">
-      <HintPath>..\..\packages\MvvmCross.Core.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Binding">
-      <HintPath>..\..\packages\MvvmCross.Binding.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Binding.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Localization">
-      <HintPath>..\..\packages\MvvmCross.Binding.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Localization.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Plugins.Messenger">
-      <HintPath>..\..\packages\MvvmCross.Plugin.Messenger.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Plugins.Messenger.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\..\..\AppRopio.Base\Core\AppRopio.Base.Core.csproj"/>
+    <ProjectReference Include="..\API\AppRopio.ECommerce.Products.API.csproj"/>
+    <ProjectReference Include="..\..\..\AppRopio.Base\API\AppRopio.Base.API.csproj"/>
+    <ProjectReference Include="..\..\..\AppRopio.Base\Filters\Core\AppRopio.Base.Filters.Core.csproj"/>
+    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Products\AppRopio.Models.Products.csproj"/>
+    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Filters\AppRopio.Models.Filters.csproj"/>
+    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Base\AppRopio.Models.Base.csproj"/>
   </ItemGroup>
+
   <ItemGroup>
-    <None Include="packages.config" />
     <None Include="FodyWeavers.xml" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\AppRopio.Base\Core\AppRopio.Base.Core.csproj">
-      <Project>{EA6D5113-1E80-494B-886D-3D7FDFA04E99}</Project>
-      <Name>AppRopio.Base.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\API\AppRopio.ECommerce.Products.API.csproj">
-      <Project>{AB6F8756-ADEC-4C34-A00B-988972E44E61}</Project>
-      <Name>AppRopio.ECommerce.Products.API</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\AppRopio.Base\API\AppRopio.Base.API.csproj">
-      <Project>{124841B9-39F6-44B5-8B96-50183FBFE341}</Project>
-      <Name>AppRopio.Base.API</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\AppRopio.Base\Filters\Core\AppRopio.Base.Filters.Core.csproj">
-      <Project>{19D459DF-4188-4F2B-BC76-CE7C4A459A9D}</Project>
-      <Name>AppRopio.Base.Filters.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Products\AppRopio.Models.Products.csproj">
-      <Project>{B621BAAF-BBB9-43D8-9990-7431667877AC}</Project>
-      <Name>AppRopio.Models.Products</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Filters\AppRopio.Models.Filters.csproj">
-      <Project>{F538DE02-55D4-4F2F-9144-A94F70EB652A}</Project>
-      <Name>AppRopio.Models.Filters</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Base\AppRopio.Models.Base.csproj">
-      <Project>{C4F2B57C-507E-4B99-B2E4-FA4B3C99FD59}</Project>
-      <Name>AppRopio.Models.Base</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModels\" />
-    <Folder Include="ViewModels\Categories\" />
-    <Folder Include="ViewModels\Catalog\" />
-    <Folder Include="ViewModels\ProductCard\" />
-    <Folder Include="Models\" />
-    <Folder Include="ViewModels\Categories\Services\" />
-    <Folder Include="Services\" />
-    <Folder Include="Services\Implementation\" />
-    <Folder Include="ViewModels\Categories\Items\" />
-    <Folder Include="ViewModels\Categories\Cataloged\" />
-    <Folder Include="ViewModels\Categories\StepByStep\" />
-    <Folder Include="ViewModels\Categories\Services\Categories\" />
-    <Folder Include="ViewModels\Catalog\Items\" />
-    <Folder Include="ViewModels\Catalog\Services\" />
-    <Folder Include="ViewModels\Catalog\Header\" />
-    <Folder Include="ViewModels\ProductCard\Items\" />
-    <Folder Include="ViewModels\Categories\Items\Banners\" />
-    <Folder Include="ViewModels\Categories\Services\Banners\" />
-    <Folder Include="Models\Bundle\" />
-    <Folder Include="ViewModels\_base\" />
-    <Folder Include="ViewModels\ContentSearch\" />
-    <Folder Include="ViewModels\Catalog\Services\Catalog\" />
-    <Folder Include="Messages\" />
-    <Folder Include="ViewModels\Categories\Disabled\" />
-    <Folder Include="ViewModels\ContentSearch\Services\" />
-    <Folder Include="ViewModels\ContentSearch\Items\" />
-    <Folder Include="ViewModels\ContentSearch\Items\History\" />
-    <Folder Include="ViewModels\ContentSearch\Items\Autocomplete\" />
-    <Folder Include="ViewModels\ContentSearch\Items\Hint\" />
-    <Folder Include="ViewModels\ContentSearch\Services\DataBase\" />
-    <Folder Include="Models\DataBase\" />
-    <Folder Include="ViewModels\ProductCard\Services\" />
-    <Folder Include="ViewModels\ProductCard\Items\Collection\" />
-    <Folder Include="ViewModels\ProductCard\Items\MinMax\" />
-    <Folder Include="ViewModels\ProductCard\Items\Picker\" />
-    <Folder Include="ViewModels\ProductCard\Items\Selection\" />
-    <Folder Include="ViewModels\ProductCard\Items\Switch\" />
-    <Folder Include="ViewModels\ProductCard\Items\Multiline\" />
-    <Folder Include="ViewModels\ProductCard\Items\Transition\" />
-    <Folder Include="ViewModels\ProductCard\Items\Images\" />
-    <Folder Include="ViewModels\ProductCard\Items\ShortInfo\" />
-    <Folder Include="ViewModels\ProductCard\Selection\" />
-    <Folder Include="ViewModels\ProductCard\Selection\Services\" />
-    <Folder Include="ViewModels\ProductWebContent\" />
-    <Folder Include="ViewModels\ProductTextContent\" />
-    <Folder Include="ViewModels\ProductCard\Items\Collection\Horizontal\Products\" />
-    <Folder Include="ViewModels\ProductCard\Items\Collection\Horizontal\Shops\" />
-    <Folder Include="ViewModels\ProductCard\Items\Collection\Horizontal\Shops\Items\" />
-    <Folder Include="ViewModels\ModalProductCard\" />
-    <Folder Include="Combiners\" />
-  </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
-  <Import Project="..\..\packages\Fody.3.0.3\build\Fody.targets" Condition="Exists('..\..\packages\Fody.3.0.3\build\Fody.targets')" />
-  <Import Project="..\..\packages\Realm.Database.3.2.1\build\Realm.Database.targets" Condition="Exists('..\..\packages\Realm.Database.3.2.1\build\Realm.Database.targets')" />
-  <Import Project="..\..\packages\Realm.3.2.1\build\Realm.targets" Condition="Exists('..\..\packages\Realm.3.2.1\build\Realm.targets')" />
 </Project>

@@ -83,6 +83,18 @@ of your personal data.</value>
         <value>Skip</value>
     </data>
     <data
+        name="Auth_Social_NoAccess">
+        <value>Failed to access the social network</value>
+    </data>
+    <data
+        name="Auth_Social_Failed">
+        <value>Failed to complete authorization</value>
+    </data>
+    <data
+        name="Auth_Social_Success">
+        <value>You have signed in successfully</value>
+    </data>
+    <data
         name="SignUp_Title">
         <value>Sign up</value>
     </data>
@@ -218,6 +230,10 @@ again</value>
     <data
         name="Password_Sms_SentToPhone">
         <value>Sent to phone</value>
+    </data>
+    <data
+        name="Password_Sms_CodeSent">
+        <value>Confirmation code has been sent.</value>
     </data>
     <data
         name="Password_New_Title">

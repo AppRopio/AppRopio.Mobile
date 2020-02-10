@@ -13,15 +13,15 @@ namespace AppRopio.Base.iOS.Services.Settings
             if (File.Exists(path))
                 return File.ReadAllBytes(path);
 
-            throw new FileNotFoundException($"Не найден файл по пути {path}");
+            throw new FileNotFoundException($"File not found on the path {path}");
         }
 
         public string ReadStringFromFile(string path)
         {
             if (File.Exists(path))
                 return File.ReadAllText(path, System.Text.Encoding.UTF8);
-            
-            throw new FileNotFoundException($"Не найден файл по пути {path}");
+
+            throw new FileNotFoundException($"File not found on the path {path}");
         }
     }
 }

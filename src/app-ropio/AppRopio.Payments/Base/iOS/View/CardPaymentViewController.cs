@@ -1,6 +1,7 @@
 ﻿using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.UIExtentions;
 using AppRopio.Base.iOS.Views;
+using AppRopio.Payments.Core;
 using AppRopio.Payments.Core.Services;
 using AppRopio.Payments.Core.ViewModels;
 using AppRopio.Payments.iOS.Models;
@@ -36,7 +37,7 @@ namespace AppRopio.Payments.CloudPayments.iOS.View
 
         protected override void InitializeControls()
         {
-            Title = "Оплата картой";
+            Title = LocalizationService.GetLocalizableString(PaymentsConstants.RESX_NAME, "Card_Payment");
 
             var threeDSService = Mvx.Resolve<IPayment3DSService>();
             threeDSService.SetWebView(WebView);
@@ -62,6 +63,8 @@ namespace AppRopio.Payments.CloudPayments.iOS.View
 
         protected virtual void SetupCardNumberTextField(UITextField cardNumber)
         {
+            cardNumber.Placeholder = LocalizationService.GetLocalizableString(PaymentsConstants.RESX_NAME, "CardNumber");
+
             SetupTextField(cardNumber, Theme.CardPayment.CardNumberTextField);
 
             cardNumber.ShouldChangeCharacters = (textField, range, replacementString) => 
@@ -72,6 +75,8 @@ namespace AppRopio.Payments.CloudPayments.iOS.View
 
 		protected virtual void SetupCardHolderTextField(UITextField cardHolder)
 		{
+            cardHolder.Placeholder = LocalizationService.GetLocalizableString(PaymentsConstants.RESX_NAME, "CardHolder");
+
             SetupTextField(cardHolder, Theme.CardPayment.CardHolderTextField);
 
             cardHolder.ShouldChangeCharacters = (textField, range, replacementString) =>
@@ -82,6 +87,8 @@ namespace AppRopio.Payments.CloudPayments.iOS.View
 
 		protected virtual void SetupExpirationDateTextField(UITextField expirationDate)
 		{
+            expirationDate.Placeholder = LocalizationService.GetLocalizableString(PaymentsConstants.RESX_NAME, "ExpirationDate");
+
             SetupTextField(expirationDate, Theme.CardPayment.ExpirationDateTextField);
 
             expirationDate.ShouldChangeCharacters = (textField, range, replacementString) =>
@@ -92,6 +99,8 @@ namespace AppRopio.Payments.CloudPayments.iOS.View
 
 		protected virtual void SetupCvvTextField(UITextField cvv)
 		{
+            cvv.Placeholder = LocalizationService.GetLocalizableString(PaymentsConstants.RESX_NAME, "Cvv");
+
             SetupTextField(cvv, Theme.CardPayment.CvvTextField);
 
             cvv.ShouldChangeCharacters = (textField, range, replacementString) =>
@@ -102,12 +111,13 @@ namespace AppRopio.Payments.CloudPayments.iOS.View
 
 		protected virtual void SetupPayButton(UIButton button)
         {
+            button.WithTitleForAllStates(LocalizationService.GetLocalizableString(PaymentsConstants.RESX_NAME, "Pay"));
             button.SetupStyle(Theme.CardPayment.PayButton);
         }
 
 		protected virtual void SetupAccessoryButton(UIButton button)
 		{
-			button.SetTitle("Готово", UIControlState.Normal);
+			button.SetTitle(LocalizationService.GetLocalizableString("Base", "Done"), UIControlState.Normal);
 			button.ChangeFrame(w: DeviceInfo.ScreenWidth, h: 44);
             button.SetupStyle(Theme.CardPayment.AccessoryNextButton);
 		}

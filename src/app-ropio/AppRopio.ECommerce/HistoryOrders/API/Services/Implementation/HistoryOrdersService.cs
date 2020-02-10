@@ -12,6 +12,11 @@ namespace AppRopio.ECommerce.HistoryOrders.API.Services.Implementation
         protected string HISTORY_ORDER_PRODUCTS_URL = "history/orderProducts?id={0}";
         protected string HISTORY_REPEAT_URL = "history/repeat?orderId={0}";
 
+        public HistoryOrdersService(IConnectionService connectionService)
+            : base(connectionService, null)
+        {
+        }
+
         public async Task<List<HistoryOrder>> GetOrders(int count, int offset = 0)
         {
             var url = string.Format(HISTORY_URL, count, offset);

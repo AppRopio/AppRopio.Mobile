@@ -86,11 +86,11 @@ namespace AppRopio.Feedback.Core.ViewModels.ReviewPost
             {
                 ChangePresentation(new NavigateToDefaultViewModelHint());
 
-                UserDialogs.Alert("Ваш отзыв отправлен!");
+                UserDialogs.Alert(LocalizationService.GetLocalizableString(FeedbackConstants.RESX_NAME, "ReviewPost_Sent"));
             }
             else
             {
-                UserDialogs.Error("Не удалось отправить отзыв");
+                UserDialogs.Alert(LocalizationService.GetLocalizableString(FeedbackConstants.RESX_NAME, "ReviewPost_FailedToSend"));
             }
 
             Loading = false;

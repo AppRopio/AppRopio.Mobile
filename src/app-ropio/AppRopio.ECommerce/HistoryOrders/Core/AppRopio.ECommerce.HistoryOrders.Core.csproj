@@ -1,127 +1,25 @@
-﻿<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4639DABF-78CC-458B-8E9D-F1B857B3C42A}</ProjectGuid>
-    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <OutputType>Library</OutputType>
-    <RootNamespace>AppRopio.ECommerce.HistoryOrders.Core</RootNamespace>
-    <AssemblyName>AppRopio.ECommerce.OrdersHistory.Core</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Profile151</TargetFrameworkProfile>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug</OutputPath>
-    <DefineConstants>DEBUG;</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release</OutputPath>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\HistoryOrders\HistoryOrdersViewModel.cs" />
-    <Compile Include="ViewModels\HistoryOrders\IHistoryOrdersViewModel.cs" />
-    <Compile Include="App.cs" />
-    <Compile Include="Services\Implementation\HistoryOrdersRouterSubscriber.cs" />
-    <Compile Include="PluginLoader.cs" />
-    <Compile Include="HistoryOrdersConstants.cs" />
-    <Compile Include="Services\Implementation\HistoryOrdersConfigService.cs" />
-    <Compile Include="Services\IHistoryOrdersConfigService.cs" />
-    <Compile Include="Models\HistoryOrdersConfig.cs" />
-    <Compile Include="ViewModels\HistoryOrders\Services\IHistoryOrdersVmService.cs" />
-    <Compile Include="ViewModels\HistoryOrders\Services\HistoryOrdersVmService.cs" />
-    <Compile Include="Services\IHistoryOrdersNavigationVmService.cs" />
-    <Compile Include="Services\Implementation\HistoryOrdersNavigationVmService.cs" />
-    <Compile Include="Models\Bundle\HistoryOrderBundle.cs" />
-    <Compile Include="ViewModels\HistoryOrders\Items\HistoryOrderItemVM.cs" />
-    <Compile Include="ViewModels\HistoryOrders\Items\IHistoryOrderItemVM.cs" />
-    <Compile Include="ViewModels\HistoryOrderDetails\HistoryOrderDetailsViewModel.cs" />
-    <Compile Include="ViewModels\HistoryOrderDetails\IHistoryOrderDetailsViewModel.cs" />
-    <Compile Include="ViewModels\HistoryOrderProducts\HistoryOrderProductsViewModel.cs" />
-    <Compile Include="ViewModels\HistoryOrderProducts\IHistoryOrderProductsViewModel.cs" />
-    <Compile Include="ViewModels\HistoryOrderDetails\Services\HistoryOrderDetailsVmService.cs" />
-    <Compile Include="ViewModels\HistoryOrderDetails\Services\IHistoryOrderDetailsVmService.cs" />
-    <Compile Include="ViewModels\HistoryOrderProducts\Items\HistoryOrderProductItemVM.cs" />
-    <Compile Include="ViewModels\HistoryOrderProducts\Items\IHistoryOrderProductItemVM.cs" />
+    <PackageReference Include="MvvmCross" Version="5.7.0"  />
+    <PackageReference Include="MvvmCross.Binding" Version="5.7.0"  />
+    <PackageReference Include="MvvmCross.Core" Version="5.7.0"  />
+    <PackageReference Include="MvvmCross.Platform" Version="5.7.0"  />
+    <PackageReference Include="MvvmCross.Plugin.Messenger" Version="5.7.0"  />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2"  />
   </ItemGroup>
+    
   <ItemGroup>
-    <Folder Include="ViewModels\" />
-    <Folder Include="ViewModels\HistoryOrders\" />
-    <Folder Include="Services\" />
-    <Folder Include="Services\Implementation\" />
-    <Folder Include="Models\" />
-    <Folder Include="ViewModels\HistoryOrders\Services\" />
-    <Folder Include="Models\Bundle\" />
-    <Folder Include="ViewModels\HistoryOrders\Items\" />
-    <Folder Include="ViewModels\HistoryOrderDetails\" />
-    <Folder Include="ViewModels\HistoryOrderProducts\" />
-    <Folder Include="ViewModels\HistoryOrderDetails\Services\" />
-    <Folder Include="ViewModels\HistoryOrderProducts\Items\" />
+    <ProjectReference Include="..\API\AppRopio.ECommerce.HistoryOrders.API.csproj"/>
+    <ProjectReference Include="..\..\..\AppRopio.Base\API\AppRopio.Base.API.csproj"/>
+    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Basket\AppRopio.Models.Basket.csproj"/>
+    <ProjectReference Include="..\..\Products\Core\AppRopio.ECommerce.Products.Core.csproj"/>
+    <ProjectReference Include="..\..\..\AppRopio.Base\Core\AppRopio.Base.Core.csproj"/>
+    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Base\AppRopio.Models.Base.csproj"/>
+    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.HistoryOrders\AppRopio.Models.HistoryOrders.csproj"/>
+    <ProjectReference Include="..\..\Basket\Core\AppRopio.ECommerce.Basket.Core.csproj"/>
   </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\packages\Newtonsoft.Json.11.0.2\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Platform">
-      <HintPath>..\..\packages\MvvmCross.Platform.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Platform.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Core">
-      <HintPath>..\..\packages\MvvmCross.Core.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Binding">
-      <HintPath>..\..\packages\MvvmCross.Binding.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Binding.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Localization">
-      <HintPath>..\..\packages\MvvmCross.Binding.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Localization.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Plugins.Messenger">
-      <HintPath>..\..\packages\MvvmCross.Plugin.Messenger.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Plugins.Messenger.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\API\AppRopio.ECommerce.HistoryOrders.API.csproj">
-      <Project>{27CCC837-6EC5-40B4-8631-80C0541B08DE}</Project>
-      <Name>AppRopio.ECommerce.HistoryOrders.API</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\AppRopio.Base\API\AppRopio.Base.API.csproj">
-      <Project>{124841B9-39F6-44B5-8B96-50183FBFE341}</Project>
-      <Name>AppRopio.Base.API</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Basket\AppRopio.Models.Basket.csproj">
-      <Project>{55D9E12B-8008-4DAD-8CB6-5A128777340C}</Project>
-      <Name>AppRopio.Models.Basket</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Products\Core\AppRopio.ECommerce.Products.Core.csproj">
-      <Project>{F2ECB410-3A5A-44E0-818A-C655FEE87DEA}</Project>
-      <Name>AppRopio.ECommerce.Products.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\AppRopio.Base\Core\AppRopio.Base.Core.csproj">
-      <Project>{EA6D5113-1E80-494B-886D-3D7FDFA04E99}</Project>
-      <Name>AppRopio.Base.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Base\AppRopio.Models.Base.csproj">
-      <Project>{C4F2B57C-507E-4B99-B2E4-FA4B3C99FD59}</Project>
-      <Name>AppRopio.Models.Base</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.HistoryOrders\AppRopio.Models.HistoryOrders.csproj">
-      <Project>{E4E61823-2231-48DE-8644-00497FD299C8}</Project>
-      <Name>AppRopio.Models.HistoryOrders</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Basket\Core\AppRopio.ECommerce.Basket.Core.csproj">
-      <Project>{B2302667-FF48-4A51-9032-84F45B8F173C}</Project>
-      <Name>AppRopio.ECommerce.Basket.Core</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
 </Project>

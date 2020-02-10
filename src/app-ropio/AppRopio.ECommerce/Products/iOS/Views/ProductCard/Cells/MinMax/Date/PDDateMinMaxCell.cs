@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Globalization;
+using AppRopio.Base.Core;
 using AppRopio.Base.Core.Converters;
+using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.UIExtentions;
+using AppRopio.ECommerce.Products.Core;
+using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.MinMax.Date;
 using CoreGraphics;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using UIKit;
-using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.MinMax.Date;
 using MvvmCross.Platform;
-using AppRopio.Base.Core.Services.Localization;
-using AppRopio.ECommerce.Products.Core;
+using UIKit;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.MinMax.Date
 {
@@ -83,7 +84,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.MinMax.Date
 
             fromField.ReturnKeyType = UIReturnKeyType.Done;
             fromField.KeyboardType = UIKeyboardType.NumberPad;
-            fromField.Placeholder = CultureInfo.CurrentCulture == new CultureInfo("ru-RU") ? "дд.мм.гггг" : $"MM{CultureInfo.CurrentCulture.DateTimeFormat.DateSeparator}dd{CultureInfo.CurrentCulture.DateTimeFormat.DateSeparator}yyyy";
+            fromField.Placeholder = AppSettings.SettingsCulture == new CultureInfo("ru-RU") ? "дд.мм.гггг" : $"MM{AppSettings.SettingsCulture.DateTimeFormat.DateSeparator}dd{AppSettings.SettingsCulture.DateTimeFormat.DateSeparator}yyyy";
 
             if (ThemeConfig.ProductDetails.DetailsCell.MinMax.DateInputMode == Models.DateInputMode.Picker)
                 SetupDatePickerFor(_fromDatePicker = new UIDatePicker(), fromField);
@@ -101,7 +102,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.MinMax.Date
 
             toField.ReturnKeyType = UIReturnKeyType.Done;
             toField.KeyboardType = UIKeyboardType.NumberPad;
-            toField.Placeholder = CultureInfo.CurrentCulture == new CultureInfo("ru-RU") ? "дд.мм.гггг" : $"MM{CultureInfo.CurrentCulture.DateTimeFormat.DateSeparator}dd{CultureInfo.CurrentCulture.DateTimeFormat.DateSeparator}yyyy";
+            toField.Placeholder = AppSettings.SettingsCulture == new CultureInfo("ru-RU") ? "дд.мм.гггг" : $"MM{AppSettings.SettingsCulture.DateTimeFormat.DateSeparator}dd{AppSettings.SettingsCulture.DateTimeFormat.DateSeparator}yyyy";
 
             if (ThemeConfig.ProductDetails.DetailsCell.MinMax.DateInputMode == Models.DateInputMode.Picker)
                 SetupDatePickerFor(_toDatePicker = new UIDatePicker(), toField);

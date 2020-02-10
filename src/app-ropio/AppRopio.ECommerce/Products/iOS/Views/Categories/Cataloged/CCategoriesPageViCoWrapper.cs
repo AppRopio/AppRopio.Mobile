@@ -1,13 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using AppRopio.Base.Core.Services.ViewLookup;
 using AppRopio.Base.iOS.UIExtentions;
+using AppRopio.ECommerce.Products.Core;
 using AppRopio.ECommerce.Products.Core.Services;
 using AppRopio.ECommerce.Products.Core.ViewModels.Categories;
 using MvvmCross.iOS.Views;
 using MvvmCross.Platform;
 using UIKit;
-using System;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.Categories.Cataloged
 {
@@ -71,7 +72,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Categories.Cataloged
 
         protected override void InitializeControls()
         {
-            Title = "Каталог";
+            Title = LocalizationService.GetLocalizableString(ProductsConstants.RESX_NAME, "CategoriesEmptyTitle");
         }
 
         protected override void CleanUp()

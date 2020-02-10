@@ -1,5 +1,6 @@
 using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.Views;
+using AppRopio.ECommerce.Basket.Core;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial;
 using AppRopio.ECommerce.Basket.iOS.Services;
 using AppRopio.ECommerce.Basket.iOS.Views.Order.Cells;
@@ -24,7 +25,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Partial
 
         protected override void InitializeControls()
         {
-            Title = "Личные данные";
+            Title = LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "User_Title");
 
             RegisterKeyboardActions = true;
 
@@ -57,7 +58,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Partial
 
         protected virtual void SetupNextButton(UIButton nextButton)
         {
-            nextButton.SetTitle("Продолжить", UIControlState.Normal);
+            nextButton.SetTitle(LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "User_Continue"), UIControlState.Normal);
             nextButton.SetupStyle(OrderTheme.NextButton);
         }
 

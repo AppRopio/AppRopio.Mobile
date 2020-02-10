@@ -1,8 +1,6 @@
-﻿using System;
-using MvvmCross.Platform.Plugins;
-using AppRopio.ECommerce.HistoryOrders.API;
-using MvvmCross.Platform;
+﻿using MvvmCross.Platform;
 using MvvmCross.Platform.Platform;
+using MvvmCross.Platform.Plugins;
 
 namespace AppRopio.ECommerce.HistoryOrders.Core
 {
@@ -18,8 +16,6 @@ namespace AppRopio.ECommerce.HistoryOrders.Core
 			{
 				return;
 			}
-
-			new API.App().Initialize();
 
 			new App().Initialize();
 

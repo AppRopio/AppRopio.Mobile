@@ -36,4 +36,12 @@
         name="Cvv">
         <value>CVV</value>
     </data>
+    <data
+        name="Error_PaymentFailed">
+        <value>Не удалось совершить платеж, проверьте введенные данные. Если ошибка повторится, попробуйте совершить платеж позже</value>
+    </data>
+    <data
+        name="Card_Payment">
+        <value>Оплата картой</value>
+    </data>
 </root>

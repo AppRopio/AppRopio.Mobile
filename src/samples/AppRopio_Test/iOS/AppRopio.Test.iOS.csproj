@@ -388,23 +388,17 @@
     <Compile Include="Views\DemoViewController.designer.cs">
       <DependentUpon>DemoViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="LocalizationResx\Products.Designer.cs">
-      <DependentUpon>Products.resx</DependentUpon>
+    <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
+    <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\NetworkPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\VisibilityPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\JsonPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\DownloadCachePluginBootstrap.cs" />
+    <Compile Include="LocalizationResx\ApplePay.Designer.cs">
+      <DependentUpon>ApplePay.resx</DependentUpon>
     </Compile>
-    <Compile Include="LocalizationResx\Products.ru.Designer.cs">
-      <DependentUpon>Products.ru.resx</DependentUpon>
-    </Compile>
-    <Compile Include="LocalizationResx\Menu.Designer.cs">
-      <DependentUpon>Menu.resx</DependentUpon>
-    </Compile>
-    <Compile Include="LocalizationResx\Menu.ru.Designer.cs">
-      <DependentUpon>Menu.ru.resx</DependentUpon>
-    </Compile>
-    <Compile Include="LocalizationResx\Profile.Designer.cs">
-      <DependentUpon>Profile.resx</DependentUpon>
-    </Compile>
-    <Compile Include="LocalizationResx\Profile.ru.Designer.cs">
-      <DependentUpon>Profile.ru.resx</DependentUpon>
+    <Compile Include="LocalizationResx\ApplePay.ru.Designer.cs">
+      <DependentUpon>ApplePay.ru.resx</DependentUpon>
     </Compile>
     <Compile Include="LocalizationResx\Auth.Designer.cs">
       <DependentUpon>Auth.resx</DependentUpon>
@@ -418,29 +412,17 @@
     <Compile Include="LocalizationResx\Base.ru.Designer.cs">
       <DependentUpon>Base.ru.resx</DependentUpon>
     </Compile>
-    <Compile Include="LocalizationResx\Filters.Designer.cs">
-      <DependentUpon>Filters.resx</DependentUpon>
-    </Compile>
-    <Compile Include="LocalizationResx\Filters.ru.Designer.cs">
-      <DependentUpon>Filters.ru.resx</DependentUpon>
-    </Compile>
     <Compile Include="LocalizationResx\Basket.Designer.cs">
       <DependentUpon>Basket.resx</DependentUpon>
     </Compile>
     <Compile Include="LocalizationResx\Basket.ru.Designer.cs">
       <DependentUpon>Basket.ru.resx</DependentUpon>
     </Compile>
-    <Compile Include="LocalizationResx\HistoryOrders.Designer.cs">
-      <DependentUpon>HistoryOrders.resx</DependentUpon>
+    <Compile Include="LocalizationResx\Best2Pay.Designer.cs">
+      <DependentUpon>Best2Pay.resx</DependentUpon>
     </Compile>
-    <Compile Include="LocalizationResx\HistoryOrders.ru.Designer.cs">
-      <DependentUpon>HistoryOrders.ru.resx</DependentUpon>
-    </Compile>
-    <Compile Include="LocalizationResx\Marked.Designer.cs">
-      <DependentUpon>Marked.resx</DependentUpon>
-    </Compile>
-    <Compile Include="LocalizationResx\Marked.ru.Designer.cs">
-      <DependentUpon>Marked.ru.resx</DependentUpon>
+    <Compile Include="LocalizationResx\Best2Pay.ru.Designer.cs">
+      <DependentUpon>Best2Pay.ru.resx</DependentUpon>
     </Compile>
     <Compile Include="LocalizationResx\Contacts.Designer.cs">
       <DependentUpon>Contacts.resx</DependentUpon>
@@ -448,11 +430,23 @@
     <Compile Include="LocalizationResx\Contacts.ru.Designer.cs">
       <DependentUpon>Contacts.ru.resx</DependentUpon>
     </Compile>
-    <Compile Include="LocalizationResx\Map.Designer.cs">
-      <DependentUpon>Map.resx</DependentUpon>
+    <Compile Include="LocalizationResx\Feedback.Designer.cs">
+      <DependentUpon>Feedback.resx</DependentUpon>
     </Compile>
-    <Compile Include="LocalizationResx\Map.ru.Designer.cs">
-      <DependentUpon>Map.ru.resx</DependentUpon>
+    <Compile Include="LocalizationResx\Feedback.ru.Designer.cs">
+      <DependentUpon>Feedback.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Filters.Designer.cs">
+      <DependentUpon>Filters.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Filters.ru.Designer.cs">
+      <DependentUpon>Filters.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\HistoryOrders.Designer.cs">
+      <DependentUpon>HistoryOrders.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\HistoryOrders.ru.Designer.cs">
+      <DependentUpon>HistoryOrders.ru.resx</DependentUpon>
     </Compile>
     <Compile Include="LocalizationResx\Information.Designer.cs">
       <DependentUpon>Information.resx</DependentUpon>
@@ -460,30 +454,60 @@
     <Compile Include="LocalizationResx\Information.ru.Designer.cs">
       <DependentUpon>Information.ru.resx</DependentUpon>
     </Compile>
-    <Compile Include="LocalizationResx\Settings.Designer.cs">
-      <DependentUpon>Settings.resx</DependentUpon>
-    </Compile>
-    <Compile Include="LocalizationResx\Settings.ru.Designer.cs">
-      <DependentUpon>Settings.ru.resx</DependentUpon>
-    </Compile>
     <Compile Include="LocalizationResx\Loyalty.Designer.cs">
       <DependentUpon>Loyalty.resx</DependentUpon>
     </Compile>
     <Compile Include="LocalizationResx\Loyalty.ru.Designer.cs">
       <DependentUpon>Loyalty.ru.resx</DependentUpon>
     </Compile>
-    <Compile Include="LocalizationResx\Feedback.Designer.cs">
-      <DependentUpon>Feedback.resx</DependentUpon>
+    <Compile Include="LocalizationResx\Map.Designer.cs">
+      <DependentUpon>Map.resx</DependentUpon>
     </Compile>
-    <Compile Include="LocalizationResx\Feedback.ru.Designer.cs">
-      <DependentUpon>Feedback.ru.resx</DependentUpon>
+    <Compile Include="LocalizationResx\Map.ru.Designer.cs">
+      <DependentUpon>Map.ru.resx</DependentUpon>
     </Compile>
-    <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
-    <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\NetworkPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\VisibilityPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\JsonPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\DownloadCachePluginBootstrap.cs" />
+    <Compile Include="LocalizationResx\Marked.Designer.cs">
+      <DependentUpon>Marked.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Marked.ru.Designer.cs">
+      <DependentUpon>Marked.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Menu.Designer.cs">
+      <DependentUpon>Menu.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Menu.ru.Designer.cs">
+      <DependentUpon>Menu.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Payments.Designer.cs">
+      <DependentUpon>Payments.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Payments.ru.Designer.cs">
+      <DependentUpon>Payments.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Products.Designer.cs">
+      <DependentUpon>Products.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Products.ru.Designer.cs">
+      <DependentUpon>Products.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Profile.Designer.cs">
+      <DependentUpon>Profile.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Profile.ru.Designer.cs">
+      <DependentUpon>Profile.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Settings.Designer.cs">
+      <DependentUpon>Settings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\Settings.ru.Designer.cs">
+      <DependentUpon>Settings.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\YandexKassa.Designer.cs">
+      <DependentUpon>YandexKassa.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResx\YandexKassa.ru.Designer.cs">
+      <DependentUpon>YandexKassa.ru.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Settings\Configs\Menu.json" />
@@ -1048,29 +1072,13 @@
     <ITunesArtwork Include="iTunesArtwork%402x" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="LocalizationResx\Products.resx">
+    <EmbeddedResource Include="LocalizationResx\ApplePay.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Products.Designer.cs</LastGenOutput>
+      <LastGenOutput>ApplePay.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="LocalizationResx\Products.ru.resx">
+    <EmbeddedResource Include="LocalizationResx\ApplePay.ru.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Products.ru.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LocalizationResx\Menu.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Menu.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LocalizationResx\Menu.ru.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Menu.ru.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LocalizationResx\Profile.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Profile.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LocalizationResx\Profile.ru.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Profile.ru.Designer.cs</LastGenOutput>
+      <LastGenOutput>ApplePay.ru.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="LocalizationResx\Auth.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -1088,14 +1096,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Base.ru.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="LocalizationResx\Filters.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Filters.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LocalizationResx\Filters.ru.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Filters.ru.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="LocalizationResx\Basket.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Basket.Designer.cs</LastGenOutput>
@@ -1104,21 +1104,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Basket.ru.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="LocalizationResx\HistoryOrders.resx">
+    <EmbeddedResource Include="LocalizationResx\Best2Pay.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>HistoryOrders.Designer.cs</LastGenOutput>
+      <LastGenOutput>Best2Pay.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="LocalizationResx\HistoryOrders.ru.resx">
+    <EmbeddedResource Include="LocalizationResx\Best2Pay.ru.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>HistoryOrders.ru.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LocalizationResx\Marked.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Marked.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LocalizationResx\Marked.ru.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Marked.ru.Designer.cs</LastGenOutput>
+      <LastGenOutput>Best2Pay.ru.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="LocalizationResx\Contacts.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -1128,13 +1120,29 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Contacts.ru.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="LocalizationResx\Map.resx">
+    <EmbeddedResource Include="LocalizationResx\Feedback.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Map.Designer.cs</LastGenOutput>
+      <LastGenOutput>Feedback.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="LocalizationResx\Map.ru.resx">
+    <EmbeddedResource Include="LocalizationResx\Feedback.ru.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Map.ru.Designer.cs</LastGenOutput>
+      <LastGenOutput>Feedback.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Filters.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Filters.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Filters.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Filters.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\HistoryOrders.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>HistoryOrders.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\HistoryOrders.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>HistoryOrders.ru.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="LocalizationResx\Information.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -1144,14 +1152,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Information.ru.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="LocalizationResx\Settings.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LocalizationResx\Settings.ru.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Settings.ru.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="LocalizationResx\Loyalty.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Loyalty.Designer.cs</LastGenOutput>
@@ -1160,13 +1160,69 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Loyalty.ru.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="LocalizationResx\Feedback.resx">
+    <EmbeddedResource Include="LocalizationResx\Map.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Feedback.Designer.cs</LastGenOutput>
+      <LastGenOutput>Map.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="LocalizationResx\Feedback.ru.resx">
+    <EmbeddedResource Include="LocalizationResx\Map.ru.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Feedback.ru.Designer.cs</LastGenOutput>
+      <LastGenOutput>Map.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Marked.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Marked.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Marked.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Marked.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Menu.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Menu.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Menu.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Menu.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Payments.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Payments.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Payments.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Payments.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Products.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Products.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Products.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Products.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Profile.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Profile.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Profile.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Profile.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Settings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\Settings.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Settings.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\YandexKassa.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>YandexKassa.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResx\YandexKassa.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>YandexKassa.ru.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

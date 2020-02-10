@@ -1,6 +1,7 @@
 ﻿using System;
 using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.Views;
+using AppRopio.Payments.Best2Pay.Core;
 using AppRopio.Payments.Best2Pay.Core.ViewModels.Best2Pay;
 using MvvmCross.Binding.BindingContext;
 using UIKit;
@@ -17,7 +18,7 @@ namespace AppRopio.Payments.Best2Pay.iOS.Views
 
         protected override void InitializeControls()
         {
-            Title = "Оплата картой";
+            Title = LocalizationService.GetLocalizableString(Best2PayConstants.RESX_NAME, "Title");
         }
 
         protected override void BindControls()

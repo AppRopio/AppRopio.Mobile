@@ -20,4 +20,28 @@
         name="Search">
         <value>Поиск</value>
     </data>
+    <data
+        name="Done">
+        <value>Готово</value>
+    </data>
+    <data
+        name="Cancel">
+        <value>Отмена</value>
+    </data>
+    <data
+        name="Hint_CloseApp">
+        <value>Для выхода из приложения нажмите кнопку повторно</value>
+    </data>
+    <data
+        name="Permissions_Request">
+        <value>Для доступа к запрашиваемым разрешениям, необходимо изменить настройки приложения</value>
+    </data>
+    <data
+        name="Permissions_Go">
+        <value>Перейти</value>
+    </data>
+    <data
+        name="Permissions_Contacts_AccessDenied">
+        <value>Доступ к контактам запрещен, необходимо изменить настройки приложения</value>
+    </data>
 </root>

@@ -161,7 +161,7 @@ namespace AppRopio.Payments.Core.ViewModels
             if (paymentResult.Succeeded)
                 await PaymentsVmService.OrderPaid(OrderId);
             else
-                await UserDialogs.Error(paymentResult.ErrorMessage.IsNullOrEmtpy() ? "Не удалось совершить платеж, проверьте введенные данные. Если ошибка повторится попробуйте совершить платеж позже" : paymentResult.ErrorMessage);
+                await UserDialogs.Error(paymentResult.ErrorMessage.IsNullOrEmtpy() ? LocalizationService.GetLocalizableString(PaymentsConstants.RESX_NAME, "Error_PaymentFailed") : paymentResult.ErrorMessage);
 
             Loading = false;
         }
