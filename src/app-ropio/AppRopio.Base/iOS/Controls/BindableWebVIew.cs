@@ -31,7 +31,7 @@ namespace AppRopio.Base.iOS
             {
                 _text = value;
                 if (!string.IsNullOrEmpty(value))
-                    LoadHtmlString(value, new NSUrl(Path.Combine(NSBundle.MainBundle.BundlePath, "Content/"), true));
+                    LoadHtmlString("<meta name=\"viewport\" content=\"initial-scale=1.0\"/>"+value, new NSUrl(Path.Combine(NSBundle.MainBundle.BundlePath, "Content/"), true));
             }
         }
 
@@ -83,6 +83,17 @@ namespace AppRopio.Base.iOS
         public event EventHandler LoadFinished;
         public event EventHandler<WKWebErrorArgs> LoadError;
 
+        public BindableWebView(NSCoder coder)
+            : base(CGRect.Empty, new WKWebViewConfiguration() {
+                AllowsInlineMediaPlayback = true,
+                DataDetectorTypes = WKDataDetectorTypes.All
+            })
+        {
+            NavigationDelegate = new BindableNavigationDelegate();
+            LoadFinished += HandleLoadFinished;
+            ShouldStartLoad = OnShouldStartLoad;
+        }
+
         public BindableWebView(IntPtr handle)
             : base (handle)
         {
@@ -106,9 +117,9 @@ namespace AppRopio.Base.iOS
             return ShouldLoadCommand != null ? ShouldLoadCommand.CanExecute(request.Url.AbsoluteString) : true;
         }
 
-        private void HandleLoadFinished(object sender, EventArgs e)
+        private void HandleLoadFinished(object sender, EventArgs ev)
         {
-            var url = Url.ToString();
+            var url = Url?.ToString();
 
             var command = this.LoadFinishedCommand;
             if (command != null && command.CanExecute(url))
