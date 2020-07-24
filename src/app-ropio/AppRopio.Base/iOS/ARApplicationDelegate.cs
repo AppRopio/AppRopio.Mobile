@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using AppRopio.Base.Core;
 using AppRopio.Base.Core.Services.Analytics;
@@ -13,6 +14,7 @@ using MvvmCross.Platform;
 using MvvmCross.Platform.Platform;
 using UIKit;
 using UserNotifications;
+using WebKit;
 
 namespace AppRopio.Base.iOS
 {
@@ -71,7 +73,10 @@ namespace AppRopio.Base.iOS
             var viewController = new UIViewController();
             viewController.View.BackgroundColor = (UIColor)Theme.ColorPalette.Accent;
 
-            var webView = new UIWebView(new CoreGraphics.CGRect(0, 0, DeviceInfo.ScreenWidth, DeviceInfo.ScreenHeight));
+            var webView = new WKWebView(new CoreGraphics.CGRect(0, 0, DeviceInfo.ScreenWidth, DeviceInfo.ScreenHeight), new WKWebViewConfiguration() {
+                AllowsInlineMediaPlayback = true,
+                DataDetectorTypes = WKDataDetectorTypes.All
+            });
             webView.Opaque = false;
             webView.BackgroundColor = UIColor.Clear;
             webView.ScrollView.BackgroundColor = UIColor.Clear;
@@ -230,13 +235,9 @@ namespace AppRopio.Base.iOS
 
         public override void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken)
         {
-            string token = deviceToken.Description;
-            if (!string.IsNullOrWhiteSpace(token))
-            {
-                token = token.Trim('<');
-                token = token.Trim('>');
-            }
-            token = token.Replace(" ", string.Empty);
+            byte[] result = new byte[deviceToken.Length];
+            Marshal.Copy(deviceToken.Bytes, result, 0, (int)deviceToken.Length);
+            var token = BitConverter.ToString(result).Replace("-", "");
 
             MvxTrace.Trace($"\nPush token: {token}\n");
 

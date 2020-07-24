@@ -74,20 +74,20 @@ namespace AppRopio.Base.Auth.iOS.Models
 			LegalText = new Label()
 			{
 				TextColor = (Color)Theme.ColorPalette.TextGray.Clone(),
-				Font = new Font { Name = Theme.FontsPalette.Regular, Size = 14 }
+				Font = Theme.FontsPalette.RegularOfSize(14)
 			};
 
 			Description = new Label()
 			{
 				TextColor = (Color)Theme.ColorPalette.TextBase.Clone(),
-				Font = new Font { Name = Theme.FontsPalette.Regular, Size = 16 },
+				Font = Theme.FontsPalette.RegularOfSize(16),
                 TextAlignment = TextAlignment.Center
 			};
 
 			Title = new Label
 			{
 				TextColor = (Color)Theme.ColorPalette.TextBase.Clone(),
-				Font = new Font { Name = Theme.FontsPalette.Bold, Size = 16 },
+				Font = Theme.FontsPalette.BoldOfSize(16),
                 TextAlignment = TextAlignment.Center
 			};
 

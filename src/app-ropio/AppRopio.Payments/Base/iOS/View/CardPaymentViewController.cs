@@ -9,6 +9,7 @@ using AppRopio.Payments.iOS.Services;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Platform;
 using UIKit;
+using WebKit;
 
 namespace AppRopio.Payments.CloudPayments.iOS.View
 {
@@ -23,7 +24,7 @@ namespace AppRopio.Payments.CloudPayments.iOS.View
 
         protected PaymentsThemeConfig Theme { get { return Mvx.Resolve<IPaymentsThemeConfigService>().ThemeConfig; } }
 
-        protected UIWebView ThreeDSWebView
+        protected WKWebView ThreeDSWebView
         {
             get { return WebView; }
         }
