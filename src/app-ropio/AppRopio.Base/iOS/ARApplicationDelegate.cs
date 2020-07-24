@@ -13,6 +13,7 @@ using MvvmCross.Platform;
 using MvvmCross.Platform.Platform;
 using UIKit;
 using UserNotifications;
+using WebKit;
 
 namespace AppRopio.Base.iOS
 {
@@ -71,7 +72,10 @@ namespace AppRopio.Base.iOS
             var viewController = new UIViewController();
             viewController.View.BackgroundColor = (UIColor)Theme.ColorPalette.Accent;
 
-            var webView = new UIWebView(new CoreGraphics.CGRect(0, 0, DeviceInfo.ScreenWidth, DeviceInfo.ScreenHeight));
+            var webView = new WKWebView(new CoreGraphics.CGRect(0, 0, DeviceInfo.ScreenWidth, DeviceInfo.ScreenHeight), new WKWebViewConfiguration() {
+                AllowsInlineMediaPlayback = true,
+                DataDetectorTypes = WKDataDetectorTypes.All
+            });
             webView.Opaque = false;
             webView.BackgroundColor = UIColor.Clear;
             webView.ScrollView.BackgroundColor = UIColor.Clear;

@@ -86,10 +86,14 @@
                     </constraints>
                     <state key="normal" title="ОПЛАТИТЬ"/>
                 </button>
-                <webView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3jU-Oq-b5L" customClass="BindableWebView">
+				<wkWebView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3jU-Oq-b5L" customClass="BindableWebView">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                </webView>
+					<wkWebViewConfiguration key="configuration" allowsInlineMediaPlayback="YES">
+						<audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+						<wkPreferences key="preferences"/>
+					</wkWebViewConfiguration>
+                </wkWebView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>

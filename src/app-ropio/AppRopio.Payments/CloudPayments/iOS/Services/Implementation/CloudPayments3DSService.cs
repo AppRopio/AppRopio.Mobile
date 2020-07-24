@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using AppRopio.Base.iOS;
 using AppRopio.Payments.Core.Services;
 using Foundation;
-using UIKit;
+using WebKit;
 
 namespace AppRopio.Payments.CloudPayments.iOS.Services.Implementation
 {
     public class CloudPayments3DSService : IPayment3DSService
     {
-        private UIWebView _webView;
+        private BindableWebView _webView;
         private string _3dsUrl;
         private string _redirectUrl;
         private HttpContent _postContent;
@@ -20,7 +21,7 @@ namespace AppRopio.Payments.CloudPayments.iOS.Services.Implementation
 
         public void SetWebView(object webView)
         {
-            _webView = (UIWebView)webView;
+            _webView = (BindableWebView)webView;
 			_webView.ShouldStartLoad = ShoulStartLoad;
         }
 
@@ -56,14 +57,14 @@ namespace AppRopio.Payments.CloudPayments.iOS.Services.Implementation
 			_webView.LoadRequest(request);
         }
 
-		private void WebView_LoadError(object sender, UIWebErrorArgs e)
+		private void WebView_LoadError(object sender, WKWebErrorArgs ev)
 		{
 			_webView.LoadError -= WebView_LoadError;
 
-            _tcs.SetException(new NSErrorException(e.Error));
+            _tcs.SetException(new NSErrorException(ev.Error));
 		}
 
-		private bool ShoulStartLoad(UIWebView webView, NSUrlRequest request, UIWebViewNavigationType navigationType)
+		private bool ShoulStartLoad(WKWebView webView, NSUrlRequest request)
         {
             if (request.Url.AbsoluteString == _redirectUrl)
             {
