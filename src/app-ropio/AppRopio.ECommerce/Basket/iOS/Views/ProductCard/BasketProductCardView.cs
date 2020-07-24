@@ -146,7 +146,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.ProductCard
             incrementBtn.SetupStyle(ThemeConfig.ProductCard.IncrementButton);
 
             quantityTextField.TextAlignment = UITextAlignment.Center;
-            quantityTextField.RightView = unitName;
+            quantityTextField.RightView = new UIView().WithFrame(unitName.Frame).WithSubviews(unitName);
             quantityTextField.RightViewMode = UITextFieldViewMode.Always;
             quantityTextField.LeftView = new UIView().WithFrame(0, 0, 22, 44);
             quantityTextField.LeftViewMode = UITextFieldViewMode.Always;
