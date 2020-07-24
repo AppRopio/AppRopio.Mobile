@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using AppRopio.Base.Core;
 using AppRopio.Base.Core.Services.Analytics;
@@ -234,13 +235,9 @@ namespace AppRopio.Base.iOS
 
         public override void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken)
         {
-            string token = deviceToken.Description;
-            if (!string.IsNullOrWhiteSpace(token))
-            {
-                token = token.Trim('<');
-                token = token.Trim('>');
-            }
-            token = token.Replace(" ", string.Empty);
+            byte[] result = new byte[deviceToken.Length];
+            Marshal.Copy(deviceToken.Bytes, result, 0, (int)deviceToken.Length);
+            var token = BitConverter.ToString(result).Replace("-", "");
 
             MvxTrace.Trace($"\nPush token: {token}\n");
 
