@@ -4,18 +4,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MvvmCross" Version="5.7.0"  />
-    <PackageReference Include="MvvmCross.Binding" Version="5.7.0"  />
-    <PackageReference Include="MvvmCross.Core" Version="5.7.0"  />
-    <PackageReference Include="MvvmCross.Platform" Version="5.7.0"  />
-    <PackageReference Include="MvvmCross.Plugin.Messenger" Version="5.7.0"  />
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2"  />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
   </ItemGroup>
     
   <ItemGroup>
-    <ProjectReference Include="..\API\AppRopio.Base.Filters.API.csproj"/>
-    <ProjectReference Include="..\..\Core\AppRopio.Base.Core.csproj"/>
-    <ProjectReference Include="..\..\API\AppRopio.Base.API.csproj"/>
-    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Filters\AppRopio.Models.Filters.csproj"/>
+    <ProjectReference Include="..\API\AppRopio.Base.Filters.API.csproj" />
+    <ProjectReference Include="..\..\Core\AppRopio.Base.Core.csproj" />
+    <ProjectReference Include="..\..\API\AppRopio.Base.API.csproj" />
+    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Filters\AppRopio.Models.Filters.csproj" />
   </ItemGroup>
 </Project>

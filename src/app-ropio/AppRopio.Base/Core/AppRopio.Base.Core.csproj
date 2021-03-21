@@ -6,14 +6,8 @@
   <ItemGroup>
     <PackageReference Include="DotNetCross.Memory.Unsafe" Version="0.2.3.4" />
     <PackageReference Include="Fody" Version="3.0.3" />
-    <PackageReference Include="Microsoft.NETCore.Platforms" Version="2.0.1"  />
-    <PackageReference Include="Microsoft.NETCore.Targets" Version="2.0.0"  />
-    <PackageReference Include="MvvmCross" Version="5.7.0" />
-    <PackageReference Include="MvvmCross.Binding" Version="5.7.0" />
-    <PackageReference Include="MvvmCross.Core" Version="5.7.0" />
-    <PackageReference Include="MvvmCross.Platform" Version="5.7.0" />
-    <PackageReference Include="MvvmCross.Plugin.File" Version="5.7.0" />
-    <PackageReference Include="MvvmCross.Plugin.Messenger" Version="5.7.0" />
+    <PackageReference Include="Microsoft.NETCore.Platforms" Version="2.0.1" />
+    <PackageReference Include="Microsoft.NETCore.Targets" Version="2.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
     <PackageReference Include="Plugin.Permissions" Version="3.0.0.12" />
     <PackageReference Include="Plugin.Share" Version="7.1.1" />

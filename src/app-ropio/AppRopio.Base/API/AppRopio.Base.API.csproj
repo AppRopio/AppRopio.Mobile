@@ -4,15 +4,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MvvmCross" Version="5.7.0"  />
-    <PackageReference Include="MvvmCross.Binding" Version="5.7.0"  />
-    <PackageReference Include="MvvmCross.Core" Version="5.7.0"  />
-    <PackageReference Include="MvvmCross.Platform" Version="5.7.0"  />
-    <PackageReference Include="MvvmCross.Plugin.Messenger" Version="5.7.0"  />
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2"  />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
   </ItemGroup>
     
   <ItemGroup>
-    <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Base\AppRopio.Models.Base.csproj"/>
+    <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Base\AppRopio.Models.Base.csproj" />
   </ItemGroup>
 </Project>

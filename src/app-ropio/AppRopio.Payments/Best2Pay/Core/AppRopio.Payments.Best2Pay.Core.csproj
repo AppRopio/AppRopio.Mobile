@@ -4,19 +4,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MvvmCross" Version="5.7.0"  />
-    <PackageReference Include="MvvmCross.Binding" Version="5.7.0"  />
-    <PackageReference Include="MvvmCross.Core" Version="5.7.0"  />
-    <PackageReference Include="MvvmCross.Platform" Version="5.7.0"  />
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2"  />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
   </ItemGroup>
     
   <ItemGroup>
-    <ProjectReference Include="..\..\..\AppRopio.Base\Core\AppRopio.Base.Core.csproj"/>
-    <ProjectReference Include="..\..\Base\Core\AppRopio.Payments.Core.csproj"/>
-    <ProjectReference Include="..\..\Base\API\AppRopio.Payments.API.csproj"/>
-    <ProjectReference Include="..\API\AppRopio.Payments.Best2Pay.API.csproj"/>
-    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Payments\AppRopio.Models.Payments.csproj"/>
-    <ProjectReference Include="..\..\..\AppRopio.Base\API\AppRopio.Base.API.csproj"/>
+    <ProjectReference Include="..\..\..\AppRopio.Base\Core\AppRopio.Base.Core.csproj" />
+    <ProjectReference Include="..\..\Base\Core\AppRopio.Payments.Core.csproj" />
+    <ProjectReference Include="..\..\Base\API\AppRopio.Payments.API.csproj" />
+    <ProjectReference Include="..\API\AppRopio.Payments.Best2Pay.API.csproj" />
+    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Payments\AppRopio.Models.Payments.csproj" />
+    <ProjectReference Include="..\..\..\AppRopio.Base\API\AppRopio.Base.API.csproj" />
   </ItemGroup>
 </Project>

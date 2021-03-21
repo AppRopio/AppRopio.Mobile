@@ -2,18 +2,11 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="MvvmCross" Version="5.7.0"  />
-    <PackageReference Include="MvvmCross.Binding" Version="5.7.0"  />
-    <PackageReference Include="MvvmCross.Core" Version="5.7.0"  />
-    <PackageReference Include="MvvmCross.Platform" Version="5.7.0"  />
-  </ItemGroup>
     
   <ItemGroup>
-    <ProjectReference Include="..\..\..\AppRopio.Base\API\AppRopio.Base.API.csproj"/>
-    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Products\AppRopio.Models.Products.csproj"/>
-    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Filters\AppRopio.Models.Filters.csproj"/>
-    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Base\AppRopio.Models.Base.csproj"/>
+    <ProjectReference Include="..\..\..\AppRopio.Base\API\AppRopio.Base.API.csproj" />
+    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Products\AppRopio.Models.Products.csproj" />
+    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Filters\AppRopio.Models.Filters.csproj" />
+    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Base\AppRopio.Models.Base.csproj" />
   </ItemGroup>
 </Project>

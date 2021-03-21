@@ -4,61 +4,56 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NETCore.Platforms" Version="2.0.1"  />
-    <PackageReference Include="Microsoft.NETCore.Targets" Version="2.0.0"  />
-    <PackageReference Include="MvvmCross" Version="5.7.0"  />
-    <PackageReference Include="MvvmCross.Binding" Version="5.7.0"  />
-    <PackageReference Include="MvvmCross.Core" Version="5.7.0"  />
-    <PackageReference Include="MvvmCross.Platform" Version="5.7.0"  />
-    <PackageReference Include="MvvmCross.Plugin.Messenger" Version="5.7.0"  />
-    <PackageReference Include="NETStandard.Library" Version="2.0.1"  />
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2"  />
-    <PackageReference Include="Plugin.Permissions" Version="3.0.0.12"  />
-    <PackageReference Include="runtime.native.System" Version="4.3.0"  />
-    <PackageReference Include="System.Collections" Version="4.3.0"  />
-    <PackageReference Include="System.Collections.Concurrent" Version="4.3.0"  />
-    <PackageReference Include="System.Diagnostics.Debug" Version="4.3.0"  />
-    <PackageReference Include="System.Diagnostics.Tools" Version="4.3.0"  />
-    <PackageReference Include="System.Diagnostics.Tracing" Version="4.3.0"  />
-    <PackageReference Include="System.Globalization" Version="4.3.0"  />
-    <PackageReference Include="System.IO" Version="4.3.0"  />
-    <PackageReference Include="System.IO.Compression" Version="4.3.0"  />
-    <PackageReference Include="System.Linq" Version="4.3.0"  />
-    <PackageReference Include="System.Linq.Expressions" Version="4.3.0"  />
-    <PackageReference Include="System.Net.Http" Version="4.3.3"  />
-    <PackageReference Include="System.Net.Primitives" Version="4.3.0"  />
-    <PackageReference Include="System.ObjectModel" Version="4.3.0"  />
-    <PackageReference Include="System.Reflection" Version="4.3.0"  />
-    <PackageReference Include="System.Reflection.Extensions" Version="4.3.0"  />
-    <PackageReference Include="System.Reflection.Primitives" Version="4.3.0"  />
-    <PackageReference Include="System.Resources.ResourceManager" Version="4.3.0"  />
-    <PackageReference Include="System.Runtime" Version="4.3.0"  />
-    <PackageReference Include="System.Runtime.Extensions" Version="4.3.0"  />
-    <PackageReference Include="System.Runtime.InteropServices" Version="4.3.0"  />
-    <PackageReference Include="System.Runtime.InteropServices.RuntimeInformation" Version="4.3.0"  />
-    <PackageReference Include="System.Runtime.Numerics" Version="4.3.0"  />
-    <PackageReference Include="System.Text.Encoding" Version="4.3.0"  />
-    <PackageReference Include="System.Text.Encoding.Extensions" Version="4.3.0"  />
-    <PackageReference Include="System.Text.RegularExpressions" Version="4.3.0"  />
-    <PackageReference Include="System.Threading" Version="4.3.0"  />
-    <PackageReference Include="System.Threading.Tasks" Version="4.3.0"  />
-    <PackageReference Include="System.Threading.Timer" Version="4.3.0"  />
-    <PackageReference Include="System.Xml.ReaderWriter" Version="4.3.0"  />
-    <PackageReference Include="System.Xml.XDocument" Version="4.3.0"  />
-    <PackageReference Include="Xam.Plugin.ExternalMaps" Version="4.0.1"  />
-    <PackageReference Include="Xam.Plugins.Messaging" Version="5.2.0"  />
+    <PackageReference Include="Microsoft.NETCore.Platforms" Version="2.0.1" />
+    <PackageReference Include="Microsoft.NETCore.Targets" Version="2.0.0" />
+    <PackageReference Include="NETStandard.Library" Version="2.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Plugin.Permissions" Version="3.0.0.12" />
+    <PackageReference Include="runtime.native.System" Version="4.3.0" />
+    <PackageReference Include="System.Collections" Version="4.3.0" />
+    <PackageReference Include="System.Collections.Concurrent" Version="4.3.0" />
+    <PackageReference Include="System.Diagnostics.Debug" Version="4.3.0" />
+    <PackageReference Include="System.Diagnostics.Tools" Version="4.3.0" />
+    <PackageReference Include="System.Diagnostics.Tracing" Version="4.3.0" />
+    <PackageReference Include="System.Globalization" Version="4.3.0" />
+    <PackageReference Include="System.IO" Version="4.3.0" />
+    <PackageReference Include="System.IO.Compression" Version="4.3.0" />
+    <PackageReference Include="System.Linq" Version="4.3.0" />
+    <PackageReference Include="System.Linq.Expressions" Version="4.3.0" />
+    <PackageReference Include="System.Net.Http" Version="4.3.3" />
+    <PackageReference Include="System.Net.Primitives" Version="4.3.0" />
+    <PackageReference Include="System.ObjectModel" Version="4.3.0" />
+    <PackageReference Include="System.Reflection" Version="4.3.0" />
+    <PackageReference Include="System.Reflection.Extensions" Version="4.3.0" />
+    <PackageReference Include="System.Reflection.Primitives" Version="4.3.0" />
+    <PackageReference Include="System.Resources.ResourceManager" Version="4.3.0" />
+    <PackageReference Include="System.Runtime" Version="4.3.0" />
+    <PackageReference Include="System.Runtime.Extensions" Version="4.3.0" />
+    <PackageReference Include="System.Runtime.InteropServices" Version="4.3.0" />
+    <PackageReference Include="System.Runtime.InteropServices.RuntimeInformation" Version="4.3.0" />
+    <PackageReference Include="System.Runtime.Numerics" Version="4.3.0" />
+    <PackageReference Include="System.Text.Encoding" Version="4.3.0" />
+    <PackageReference Include="System.Text.Encoding.Extensions" Version="4.3.0" />
+    <PackageReference Include="System.Text.RegularExpressions" Version="4.3.0" />
+    <PackageReference Include="System.Threading" Version="4.3.0" />
+    <PackageReference Include="System.Threading.Tasks" Version="4.3.0" />
+    <PackageReference Include="System.Threading.Timer" Version="4.3.0" />
+    <PackageReference Include="System.Xml.ReaderWriter" Version="4.3.0" />
+    <PackageReference Include="System.Xml.XDocument" Version="4.3.0" />
+    <PackageReference Include="Xam.Plugin.ExternalMaps" Version="4.0.1" />
+    <PackageReference Include="Xam.Plugins.Messaging" Version="5.2.0" />
   </ItemGroup>
     
   <ItemGroup>
-    <ProjectReference Include="..\..\..\AppRopio.Base\API\AppRopio.Base.API.csproj"/>
-    <ProjectReference Include="..\..\..\AppRopio.Base\Core\AppRopio.Base.Core.csproj"/>
-    <ProjectReference Include="..\API\AppRopio.ECommerce.Basket.API.csproj"/>
-    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Basket\AppRopio.Models.Basket.csproj"/>
-    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Base\AppRopio.Models.Base.csproj"/>
-    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Products\AppRopio.Models.Products.csproj"/>
-    <ProjectReference Include="..\..\Products\Core\AppRopio.ECommerce.Products.Core.csproj"/>
-    <ProjectReference Include="..\..\Loyalty\Abstractions\AppRopio.ECommerce.Loyalty.Abstractions.csproj"/>
-    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Payments\AppRopio.Models.Payments.csproj"/>
-    <ProjectReference Include="..\..\..\AppRopio.Payments\Base\Core\AppRopio.Payments.Core.csproj"/>
+    <ProjectReference Include="..\..\..\AppRopio.Base\API\AppRopio.Base.API.csproj" />
+    <ProjectReference Include="..\..\..\AppRopio.Base\Core\AppRopio.Base.Core.csproj" />
+    <ProjectReference Include="..\API\AppRopio.ECommerce.Basket.API.csproj" />
+    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Basket\AppRopio.Models.Basket.csproj" />
+    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Base\AppRopio.Models.Base.csproj" />
+    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Products\AppRopio.Models.Products.csproj" />
+    <ProjectReference Include="..\..\Products\Core\AppRopio.ECommerce.Products.Core.csproj" />
+    <ProjectReference Include="..\..\Loyalty\Abstractions\AppRopio.ECommerce.Loyalty.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Payments\AppRopio.Models.Payments.csproj" />
+    <ProjectReference Include="..\..\..\AppRopio.Payments\Base\Core\AppRopio.Payments.Core.csproj" />
   </ItemGroup>
 </Project>

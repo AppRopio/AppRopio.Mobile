@@ -5,26 +5,21 @@
 
   <ItemGroup>
     <PackageReference Include="Fody" Version="3.0.3" />
-    <PackageReference Include="MvvmCross" Version="5.7.0"  />
-    <PackageReference Include="MvvmCross.Binding" Version="5.7.0"  />
-    <PackageReference Include="MvvmCross.Core" Version="5.7.0"  />
-    <PackageReference Include="MvvmCross.Platform" Version="5.7.0"  />
-    <PackageReference Include="MvvmCross.Plugin.Messenger" Version="5.7.0"  />
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2"  />
-    <PackageReference Include="Plugin.Share" Version="7.1.1"  />
-    <PackageReference Include="Realm" Version="3.2.1"  />
-    <PackageReference Include="Realm.Database" Version="3.2.1"  />
-    <PackageReference Include="Realm.DataBinding" Version="1.2.0"  />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Plugin.Share" Version="7.1.1" />
+    <PackageReference Include="Realm" Version="3.2.1" />
+    <PackageReference Include="Realm.Database" Version="3.2.1" />
+    <PackageReference Include="Realm.DataBinding" Version="1.2.0" />
   </ItemGroup>
     
   <ItemGroup>
-    <ProjectReference Include="..\..\..\AppRopio.Base\Core\AppRopio.Base.Core.csproj"/>
-    <ProjectReference Include="..\API\AppRopio.ECommerce.Products.API.csproj"/>
-    <ProjectReference Include="..\..\..\AppRopio.Base\API\AppRopio.Base.API.csproj"/>
-    <ProjectReference Include="..\..\..\AppRopio.Base\Filters\Core\AppRopio.Base.Filters.Core.csproj"/>
-    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Products\AppRopio.Models.Products.csproj"/>
-    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Filters\AppRopio.Models.Filters.csproj"/>
-    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Base\AppRopio.Models.Base.csproj"/>
+    <ProjectReference Include="..\..\..\AppRopio.Base\Core\AppRopio.Base.Core.csproj" />
+    <ProjectReference Include="..\API\AppRopio.ECommerce.Products.API.csproj" />
+    <ProjectReference Include="..\..\..\AppRopio.Base\API\AppRopio.Base.API.csproj" />
+    <ProjectReference Include="..\..\..\AppRopio.Base\Filters\Core\AppRopio.Base.Filters.Core.csproj" />
+    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Products\AppRopio.Models.Products.csproj" />
+    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Filters\AppRopio.Models.Filters.csproj" />
+    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Base\AppRopio.Models.Base.csproj" />
   </ItemGroup>
 
   <ItemGroup>
