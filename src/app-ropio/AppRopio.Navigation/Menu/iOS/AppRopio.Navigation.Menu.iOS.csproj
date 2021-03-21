@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -19,20 +19,27 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <MtouchLink></MtouchLink>
-    <MtouchHttpClientHandler></MtouchHttpClientHandler>
-    <MtouchTlsProvider></MtouchTlsProvider>
+    <MtouchLink>
+    </MtouchLink>
+    <MtouchHttpClientHandler>
+    </MtouchHttpClientHandler>
+    <MtouchTlsProvider>
+    </MtouchTlsProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>true</Optimize>
     <OutputPath>bin\Release</OutputPath>
-    <DefineConstants></DefineConstants>
+    <DefineConstants>
+    </DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <MtouchLink></MtouchLink>
-    <MtouchHttpClientHandler></MtouchHttpClientHandler>
-    <MtouchTlsProvider></MtouchTlsProvider>
+    <MtouchLink>
+    </MtouchLink>
+    <MtouchHttpClientHandler>
+    </MtouchHttpClientHandler>
+    <MtouchTlsProvider>
+    </MtouchTlsProvider>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -45,42 +52,8 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\..\AppRopio.ECommerce\packages\Newtonsoft.Json.11.0.2\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="MvvmCross.Platform">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Platform.5.7.0\lib\Xamarin.iOS10\MvvmCross.Platform.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Platform.iOS">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Platform.5.7.0\lib\Xamarin.iOS10\MvvmCross.Platform.iOS.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Core">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Core.5.7.0\lib\Xamarin.iOS10\MvvmCross.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.iOS">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Core.5.7.0\lib\Xamarin.iOS10\MvvmCross.iOS.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Binding">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.7.0\lib\Xamarin.iOS10\MvvmCross.Binding.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Binding.iOS">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.7.0\lib\Xamarin.iOS10\MvvmCross.Binding.iOS.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Localization">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.7.0\lib\Xamarin.iOS10\MvvmCross.Localization.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Plugins.Visibility">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Plugin.Visibility.5.7.0\lib\Xamarin.iOS10\MvvmCross.Plugins.Visibility.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Plugins.Visibility.iOS">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Plugin.Visibility.5.7.0\lib\Xamarin.iOS10\MvvmCross.Plugins.Visibility.iOS.dll</HintPath>
-    </Reference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\" />
-    <Folder Include="Navigation\" />
-    <Folder Include="Views\Items\" />
-    <Folder Include="Models\" />
-    <Folder Include="Services\" />
-    <Folder Include="Services\Implementation\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\MenuViewController.cs" />
@@ -110,6 +83,8 @@
     <ProjectReference Include="..\..\..\AppRopio.Base\iOS\AppRopio.Base.iOS.csproj">
       <Project>{2F005241-B90A-484A-A3A0-51684D5ECE54}</Project>
       <Name>AppRopio.Base.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
     <ProjectReference Include="..\Core\AppRopio.Navigation.Menu.Core.csproj">
       <Project>{E9C4484A-135D-42D9-A9CB-E1A8884D5041}</Project>
@@ -117,6 +92,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Entitlements.plist" />
   </ItemGroup>

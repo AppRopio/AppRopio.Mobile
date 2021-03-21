@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.props" Condition="Exists('..\..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.props')" />
   <PropertyGroup>
@@ -14,7 +14,8 @@
     <AndroidResgenClass>Resource</AndroidResgenClass>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidTlsProvider></AndroidTlsProvider>
+    <AndroidTlsProvider>
+    </AndroidTlsProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -136,51 +137,6 @@
     <Reference Include="Xamarin.GooglePlayServices.Maps">
       <HintPath>..\..\packages\Xamarin.GooglePlayServices.Maps.60.1142.1\lib\MonoAndroid80\Xamarin.GooglePlayServices.Maps.dll</HintPath>
     </Reference>
-    <Reference Include="MvvmCross.Platform">
-      <HintPath>..\..\packages\MvvmCross.Platform.5.7.0\lib\MonoAndroid\MvvmCross.Platform.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Platform.Droid">
-      <HintPath>..\..\packages\MvvmCross.Platform.5.7.0\lib\MonoAndroid\MvvmCross.Platform.Droid.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Core">
-      <HintPath>..\..\packages\MvvmCross.Core.5.7.0\lib\MonoAndroid\MvvmCross.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Droid">
-      <HintPath>..\..\packages\MvvmCross.Core.5.7.0\lib\MonoAndroid\MvvmCross.Droid.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Binding">
-      <HintPath>..\..\packages\MvvmCross.Binding.5.7.0\lib\MonoAndroid\MvvmCross.Binding.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Binding.Droid">
-      <HintPath>..\..\packages\MvvmCross.Binding.5.7.0\lib\MonoAndroid\MvvmCross.Binding.Droid.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Localization">
-      <HintPath>..\..\packages\MvvmCross.Binding.5.7.0\lib\MonoAndroid\MvvmCross.Localization.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Plugins.Visibility">
-      <HintPath>..\..\packages\MvvmCross.Plugin.Visibility.5.7.0\lib\MonoAndroid\MvvmCross.Plugins.Visibility.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Plugins.Visibility.Droid">
-      <HintPath>..\..\packages\MvvmCross.Plugin.Visibility.5.7.0\lib\MonoAndroid\MvvmCross.Plugins.Visibility.Droid.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Plugins.Json">
-      <HintPath>..\..\packages\MvvmCross.Plugin.Json.5.7.0\lib\MonoAndroid\MvvmCross.Plugins.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Droid.Support.Core.UI">
-      <HintPath>..\..\packages\MvvmCross.Droid.Support.Core.UI.5.7.0\lib\MonoAndroid70\MvvmCross.Droid.Support.Core.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Droid.Support.Fragment">
-      <HintPath>..\..\packages\MvvmCross.Droid.Support.Fragment.5.7.0\lib\MonoAndroid70\MvvmCross.Droid.Support.Fragment.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Droid.Support.V7.RecyclerView">
-      <HintPath>..\..\packages\MvvmCross.Droid.Support.V7.RecyclerView.5.7.0\lib\MonoAndroid70\MvvmCross.Droid.Support.V7.RecyclerView.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Droid.Support.V7.AppCompat">
-      <HintPath>..\..\packages\MvvmCross.Droid.Support.V7.AppCompat.5.7.0\lib\MonoAndroid70\MvvmCross.Droid.Support.V7.AppCompat.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Droid.Support.Design">
-      <HintPath>..\..\packages\MvvmCross.Droid.Support.Design.5.7.0\lib\MonoAndroid70\MvvmCross.Droid.Support.Design.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
@@ -199,6 +155,7 @@
     <Compile Include="Views\ProductCard\BasketProductCardView.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="packages.config" />
   </ItemGroup>
@@ -240,19 +197,7 @@
     <AndroidResource Include="Resources\layout\app_basket_productCardView.axml" />
     <AndroidResource Include="Resources\drawable\app_basket_productCardView_quantityInput.xml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\" />
-    <Folder Include="Views\Basket\" />
-    <Folder Include="Resources\layout\" />
-    <Folder Include="Views\Order\" />
-    <Folder Include="Views\Order\Full\" />
-    <Folder Include="Resources\drawable\" />
-    <Folder Include="Views\Order\Payment\" />
-    <Folder Include="Views\Order\Thanks\" />
-    <Folder Include="Views\Order\Delivery\" />
-    <Folder Include="Views\CartIndicator\" />
-    <Folder Include="Views\ProductCard\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\..\..\AppRopio.Base\Core\AppRopio.Base.Core.csproj">
       <Project>{EA6D5113-1E80-494B-886D-3D7FDFA04E99}</Project>

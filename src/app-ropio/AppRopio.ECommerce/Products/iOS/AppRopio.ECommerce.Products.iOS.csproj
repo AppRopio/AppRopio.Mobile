@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -19,20 +19,27 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <MtouchLink></MtouchLink>
-    <MtouchHttpClientHandler></MtouchHttpClientHandler>
-    <MtouchTlsProvider></MtouchTlsProvider>
+    <MtouchLink>
+    </MtouchLink>
+    <MtouchHttpClientHandler>
+    </MtouchHttpClientHandler>
+    <MtouchTlsProvider>
+    </MtouchTlsProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>true</Optimize>
     <OutputPath>bin\Release</OutputPath>
-    <DefineConstants></DefineConstants>
+    <DefineConstants>
+    </DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <MtouchLink></MtouchLink>
-    <MtouchHttpClientHandler></MtouchHttpClientHandler>
-    <MtouchTlsProvider></MtouchTlsProvider>
+    <MtouchLink>
+    </MtouchLink>
+    <MtouchHttpClientHandler>
+    </MtouchHttpClientHandler>
+    <MtouchTlsProvider>
+    </MtouchTlsProvider>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -54,95 +61,9 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\packages\Newtonsoft.Json.11.0.2\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="MvvmCross.Platform">
-      <HintPath>..\..\packages\MvvmCross.Platform.5.7.0\lib\Xamarin.iOS10\MvvmCross.Platform.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Platform.iOS">
-      <HintPath>..\..\packages\MvvmCross.Platform.5.7.0\lib\Xamarin.iOS10\MvvmCross.Platform.iOS.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Core">
-      <HintPath>..\..\packages\MvvmCross.Core.5.7.0\lib\Xamarin.iOS10\MvvmCross.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.iOS">
-      <HintPath>..\..\packages\MvvmCross.Core.5.7.0\lib\Xamarin.iOS10\MvvmCross.iOS.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Binding">
-      <HintPath>..\..\packages\MvvmCross.Binding.5.7.0\lib\Xamarin.iOS10\MvvmCross.Binding.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Binding.iOS">
-      <HintPath>..\..\packages\MvvmCross.Binding.5.7.0\lib\Xamarin.iOS10\MvvmCross.Binding.iOS.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Localization">
-      <HintPath>..\..\packages\MvvmCross.Binding.5.7.0\lib\Xamarin.iOS10\MvvmCross.Localization.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Plugins.Messenger">
-      <HintPath>..\..\packages\MvvmCross.Plugin.Messenger.5.7.0\lib\Xamarin.iOS10\MvvmCross.Plugins.Messenger.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Plugins.Visibility">
-      <HintPath>..\..\packages\MvvmCross.Plugin.Visibility.5.7.0\lib\Xamarin.iOS10\MvvmCross.Plugins.Visibility.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Plugins.Visibility.iOS">
-      <HintPath>..\..\packages\MvvmCross.Plugin.Visibility.5.7.0\lib\Xamarin.iOS10\MvvmCross.Plugins.Visibility.iOS.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Plugins.DownloadCache">
-      <HintPath>..\..\packages\MvvmCross.Plugin.DownloadCache.5.7.0\lib\Xamarin.iOS10\MvvmCross.Plugins.DownloadCache.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Plugins.DownloadCache.iOS">
-      <HintPath>..\..\packages\MvvmCross.Plugin.DownloadCache.5.7.0\lib\Xamarin.iOS10\MvvmCross.Plugins.DownloadCache.iOS.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
-    <Folder Include="Views\" />
-    <Folder Include="Views\Catalog\" />
-    <Folder Include="Views\Categories\" />
-    <Folder Include="Views\ProductCard\" />
-    <Folder Include="Views\Categories\StepByStep\" />
-    <Folder Include="Views\Categories\Cataloged\" />
-    <Folder Include="Views\Categories\StepByStep\Cells\" />
-    <Folder Include="Views\Catalog\Cells\" />
-    <Folder Include="Services\" />
-    <Folder Include="Models\" />
-    <Folder Include="Services\Implementation\" />
-    <Folder Include="Views\Categories\Cells\" />
-    <Folder Include="Views\Categories\Disabled\" />
-    <Folder Include="Views\Categories\Cataloged\Cells\" />
-    <Folder Include="Views\Categories\Cataloged\ViewSources\" />
-    <Folder Include="Views\_base\" />
-    <Folder Include="Views\ContentSearch\" />
-    <Folder Include="Views\ContentSearch\Cells\" />
-    <Folder Include="Views\ContentSearch\Cells\History\" />
-    <Folder Include="Views\ContentSearch\Cells\Hint\" />
-    <Folder Include="Views\ContentSearch\Cells\Autocomplete\" />
-    <Folder Include="Views\ContentSearch\ViewSources\" />
-    <Folder Include="Views\ProductCard\Cells\" />
-    <Folder Include="Views\ProductCard\ViewSources\" />
-    <Folder Include="Views\ProductCard\Cells\Collection\" />
-    <Folder Include="Views\ProductCard\Cells\MinMax\" />
-    <Folder Include="Views\ProductCard\Cells\Picker\" />
-    <Folder Include="Views\ProductCard\Cells\Selection\" />
-    <Folder Include="Views\ProductCard\Cells\Switch\" />
-    <Folder Include="Views\ProductCard\Cells\MultilineText\" />
-    <Folder Include="Views\ProductCard\Cells\Transition\" />
-    <Folder Include="Views\ProductCard\Cells\Images\" />
-    <Folder Include="Views\ProductCard\Cells\ShortInfo\" />
-    <Folder Include="Views\ProductCard\Cells\Images\Cells\" />
-    <Folder Include="Views\ProductTextContent\" />
-    <Folder Include="Views\ProductWebContent\" />
-    <Folder Include="Views\ProductCard\Selection\" />
-    <Folder Include="Views\ProductCard\Selection\Cells\" />
-    <Folder Include="Views\ProductCard\Cells\Collection\Horizontal\Products\" />
-    <Folder Include="Views\ProductCard\Cells\Collection\Horizontal\Shops\" />
-    <Folder Include="Views\ProductCard\Cells\Collection\Horizontal\Shops\Cells\" />
-    <Folder Include="Views\Categories\Disabled\ViewSources\" />
-    <Folder Include="Views\ModalProductCard\" />
-    <Folder Include="Views\ModalProductCard\Cells\" />
-    <Folder Include="Views\ModalProductCard\Cells\ShortInfo\" />
-    <Folder Include="Views\ModalProductCard\Cells\Images\" />
-    <Folder Include="Views\ModalProductCard\Cells\Collection\" />
-    <Folder Include="Views\ModalProductCard\Cells\Collection\Horizontal\" />
-    <Folder Include="Views\ModalProductCard\Cells\Collection\Horizontal\Products\" />
-    <Folder Include="Views\Categories\SupplementaryView\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Plugin.cs" />
@@ -354,6 +275,8 @@
     <ProjectReference Include="..\..\..\AppRopio.Base\iOS\AppRopio.Base.iOS.csproj">
       <Project>{2F005241-B90A-484A-A3A0-51684D5ECE54}</Project>
       <Name>AppRopio.Base.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
     <ProjectReference Include="..\API\AppRopio.ECommerce.Products.API.csproj">
       <Project>{AB6F8756-ADEC-4C34-A00B-988972E44E61}</Project>
@@ -366,6 +289,8 @@
     <ProjectReference Include="..\..\..\AppRopio.Base\Auth\iOS\AppRopio.Base.Auth.iOS.csproj">
       <Project>{497B2A01-631F-4F0F-B93D-BF53AF209132}</Project>
       <Name>AppRopio.Base.Auth.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
     <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Products\AppRopio.Models.Products.csproj">
       <Project>{B621BAAF-BBB9-43D8-9990-7431667877AC}</Project>
@@ -381,6 +306,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Entitlements.plist" />
   </ItemGroup>

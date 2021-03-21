@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.props" Condition="Exists('..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.props')" />
   <PropertyGroup>
@@ -48,7 +48,7 @@
     <PlatformTarget>x86</PlatformTarget>
     <MtouchUseLlvm>false</MtouchUseLlvm>
     <MtouchUseThumb>false</MtouchUseThumb>
-<MtouchExtraArgs>--linkskip=MvvmCross --linkskip=MvvmCross.Core --linkskip=MvvmCross.Binding --linkskip=MvvmCross.Platform</MtouchExtraArgs>
+    <MtouchExtraArgs>--linkskip=MvvmCross --linkskip=MvvmCross.Core --linkskip=MvvmCross.Binding --linkskip=MvvmCross.Platform</MtouchExtraArgs>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <Optimize>true</Optimize>
@@ -93,7 +93,8 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
     <Optimize>false</Optimize>
     <OutputPath>bin\iPhone\AppStore</OutputPath>
-    <DefineConstants></DefineConstants>
+    <DefineConstants>
+    </DefineConstants>
     <WarningLevel>4</WarningLevel>
     <CodesignKey>iPhone Distribution</CodesignKey>
     <MtouchNoSymbolStrip>false</MtouchNoSymbolStrip>
@@ -102,9 +103,9 @@
     <MtouchArch>ARMv7, ARM64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <AssemblyName>AppRopio.Test.iOS</AssemblyName>
-<MtouchDebug>false</MtouchDebug>
-<MtouchUseLlvm>false</MtouchUseLlvm>
-<MtouchExtraArgs>--linkskip=MvvmCross --linkskip=MvvmCross.Core --linkskip=MvvmCross.Binding --linkskip=MvvmCross.Platform</MtouchExtraArgs>
+    <MtouchDebug>false</MtouchDebug>
+    <MtouchUseLlvm>false</MtouchUseLlvm>
+    <MtouchExtraArgs>--linkskip=MvvmCross --linkskip=MvvmCross.Core --linkskip=MvvmCross.Binding --linkskip=MvvmCross.Platform</MtouchExtraArgs>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -246,110 +247,72 @@
     <Reference Include="Google.Analytics">
       <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\Xamarin.Google.iOS.Analytics.3.17.0.3\lib\Xamarin.iOS10\Google.Analytics.dll</HintPath>
     </Reference>
-    <Reference Include="MvvmCross.Platform">
-      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Platform.5.7.0\lib\Xamarin.iOS10\MvvmCross.Platform.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Platform.iOS">
-      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Platform.5.7.0\lib\Xamarin.iOS10\MvvmCross.Platform.iOS.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Core">
-      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Core.5.7.0\lib\Xamarin.iOS10\MvvmCross.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.iOS">
-      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Core.5.7.0\lib\Xamarin.iOS10\MvvmCross.iOS.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Binding">
-      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Binding.5.7.0\lib\Xamarin.iOS10\MvvmCross.Binding.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Binding.iOS">
-      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Binding.5.7.0\lib\Xamarin.iOS10\MvvmCross.Binding.iOS.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Localization">
-      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Binding.5.7.0\lib\Xamarin.iOS10\MvvmCross.Localization.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Plugins.File">
-      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Plugin.File.5.7.0\lib\Xamarin.iOS10\MvvmCross.Plugins.File.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Plugins.File.iOS">
-      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Plugin.File.5.7.0\lib\Xamarin.iOS10\MvvmCross.Plugins.File.iOS.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Plugins.Messenger">
-      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Plugin.Messenger.5.7.0\lib\Xamarin.iOS10\MvvmCross.Plugins.Messenger.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Plugins.Network">
-      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Plugin.Network.5.7.0\lib\Xamarin.iOS10\MvvmCross.Plugins.Network.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Plugins.Network.iOS">
-      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Plugin.Network.5.7.0\lib\Xamarin.iOS10\MvvmCross.Plugins.Network.iOS.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Plugins.Visibility">
-      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Plugin.Visibility.5.7.0\lib\Xamarin.iOS10\MvvmCross.Plugins.Visibility.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Plugins.Visibility.iOS">
-      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Plugin.Visibility.5.7.0\lib\Xamarin.iOS10\MvvmCross.Plugins.Visibility.iOS.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Plugins.Json">
-      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Plugin.Json.5.7.0\lib\Xamarin.iOS10\MvvmCross.Plugins.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Plugins.DownloadCache">
-      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Plugin.DownloadCache.5.7.0\lib\Xamarin.iOS10\MvvmCross.Plugins.DownloadCache.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Plugins.DownloadCache.iOS">
-      <HintPath>..\..\..\app-ropio\AppRopio.ECommerce\packages\MvvmCross.Plugin.DownloadCache.5.7.0\lib\Xamarin.iOS10\MvvmCross.Plugins.DownloadCache.iOS.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\58.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\80.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\120 copy.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\87.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\120.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\180.png" />
-    <ImageAsset Include="Assets.xcassets\LauchImage.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\LauchImage.imageset\splash_logo.png" />
-    <ImageAsset Include="Assets.xcassets\LauchImage.imageset\splash_logo%402x.png" />
-    <ImageAsset Include="Assets.xcassets\LauchImage.imageset\splash_logo%403x.png" />
-    <ImageAsset Include="Assets.xcassets\DemoImage.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\DemoImage.imageset\page_1.png" />
-    <ImageAsset Include="Assets.xcassets\DemoImage.imageset\page_1%402x.png" />
-    <ImageAsset Include="Assets.xcassets\DemoImage.imageset\page_1%403x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\splash_2 copy%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\60.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\40.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\58.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\80.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\120 copy.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\87.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\120.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\180.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LauchImage.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LauchImage.imageset\splash_logo.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LauchImage.imageset\splash_logo%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LauchImage.imageset\splash_logo%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\DemoImage.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\DemoImage.imageset\page_1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\DemoImage.imageset\page_1%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\DemoImage.imageset\page_1%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\splash_2 copy%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\60.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\40.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
-    <Folder Include="Settings\" />
-    <Folder Include="Settings\Configs\" />
-    <Folder Include="Settings\ThemeConfigs\" />
-    <Folder Include="Images\" />
-    <Folder Include="Images\Menu\" />
-    <Folder Include="Images\Basket\" />
-    <Folder Include="Images\Products\" />
-    <Folder Include="Images\Auth\" />
-    <Folder Include="Images\Auth\Auth\" />
-    <Folder Include="Images\Auth\SignIn\" />
-    <Folder Include="Images\Auth\Common\" />
-    <Folder Include="Images\Auth\Password\" />
-    <Folder Include="Images\Auth\SignUp\" />
-    <Folder Include="Images\Auth\Thanks\" />
-    <Folder Include="Images\Filters\" />
-    <Folder Include="Images\Main\" />
-    <Folder Include="Images\Marked\" />
-    <Folder Include="Images\OrdersHistory\" />
-    <Folder Include="Images\Thanks\" />
-    <Folder Include="Images\Settings\" />
-    <Folder Include="Assets.xcassets\LauchImage.imageset\" />
-    <Folder Include="Images\Feedback\" />
-    <Folder Include="Views\" />
     <Folder Include="Assets.xcassets\DemoImage.imageset\" />
-    <Folder Include="LocalizationResx\" />
-    <Folder Include="ru.lproj\" />
-    <Folder Include="Base.lproj\" />
+    <Folder Include="Assets.xcassets\LauchImage.imageset\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
     <None Include="packages.config" />
@@ -712,6 +675,8 @@
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\iOS\AppRopio.Base.iOS.csproj">
       <Project>{2F005241-B90A-484A-A3A0-51684D5ECE54}</Project>
       <Name>AppRopio.Base.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.ECommerce\Products\API\AppRopio.ECommerce.Products.API.csproj">
       <Project>{AB6F8756-ADEC-4C34-A00B-988972E44E61}</Project>
@@ -724,6 +689,8 @@
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.ECommerce\Products\iOS\AppRopio.ECommerce.Products.iOS.csproj">
       <Project>{81C286E1-FF5F-4914-8761-82D0AA86E1B8}</Project>
       <Name>AppRopio.ECommerce.Products.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Navigation\Menu\Core\AppRopio.Navigation.Menu.Core.csproj">
       <Project>{E9C4484A-135D-42D9-A9CB-E1A8884D5041}</Project>
@@ -732,6 +699,8 @@
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Navigation\Menu\iOS\AppRopio.Navigation.Menu.iOS.csproj">
       <Project>{B35AF323-7E0F-4B1E-8B2E-02D0D22551DF}</Project>
       <Name>AppRopio.Navigation.Menu.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Auth\API\AppRopio.Base.Auth.API.csproj">
       <Project>{4A505153-08D4-4269-B753-21EEC043FDD4}</Project>
@@ -744,6 +713,8 @@
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Auth\iOS\AppRopio.Base.Auth.iOS.csproj">
       <Project>{497B2A01-631F-4F0F-B93D-BF53AF209132}</Project>
       <Name>AppRopio.Base.Auth.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Analytics\GoogleAnalytics\Core\AppRopio.Analytics.GoogleAnalytics.Core.csproj">
       <Project>{2A27A987-3DCD-4474-961C-06000D14CF40}</Project>
@@ -752,6 +723,8 @@
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Analytics\GoogleAnalytics\iOS\AppRopio.Analytics.GoogleAnalytics.iOS.csproj">
       <Project>{4A82B80A-46A9-4E49-A7C7-FF498C57FE6A}</Project>
       <Name>AppRopio.Analytics.GoogleAnalytics.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Analytics\Firebase\Core\AppRopio.Analytics.Firebase.Core.csproj">
       <Project>{4DF16D5C-5EF7-44B9-AD83-C737EA2BF38D}</Project>
@@ -760,6 +733,8 @@
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Analytics\Firebase\iOS\AppRopio.Analytics.Firebase.iOS.csproj">
       <Project>{883D043E-FFD3-4A05-8C75-AB4312F5051F}</Project>
       <Name>AppRopio.Analytics.Firebase.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Analytics\AppsFlyer\Core\AppRopio.Analytics.AppsFlyer.Core.csproj">
       <Project>{FF262391-8114-4461-B2BD-4110535579A9}</Project>
@@ -768,6 +743,8 @@
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Analytics\AppsFlyer\iOS\AppRopio.Analytics.AppsFlyer.iOS.csproj">
       <Project>{7B13C972-DA64-4523-81FE-75F42827F843}</Project>
       <Name>AppRopio.Analytics.AppsFlyer.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.ECommerce\Basket\API\AppRopio.ECommerce.Basket.API.csproj">
       <Project>{F22152B2-AF3C-4BAA-8A78-B2C4C6ED2109}</Project>
@@ -780,10 +757,14 @@
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.ECommerce\Basket\iOS\AppRopio.ECommerce.Basket.iOS.csproj">
       <Project>{28E7EA9F-EF2E-4F90-9FA4-54445B3C22C0}</Project>
       <Name>AppRopio.ECommerce.Basket.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Geofencing\iOS\AppRopio.Geofencing.iOS.csproj">
       <Project>{AA19DDCC-DE7B-482B-ABEC-7384730DC312}</Project>
       <Name>AppRopio.Geofencing.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Geofencing\Core\AppRopio.Geofencing.Core.csproj">
       <Project>{D4A1E5AF-60C2-4734-ABF9-536B7DCD219E}</Project>
@@ -804,10 +785,14 @@
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Beacons\iOS\AppRopio.Beacons.iOS.csproj">
       <Project>{85669DD7-16D5-4F0B-84D4-CDF979C1EB17}</Project>
       <Name>AppRopio.Beacons.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Filters\iOS\AppRopio.Base.Filters.iOS.csproj">
       <Project>{15D560A5-457C-4928-BED9-46BBD85F2F8D}</Project>
       <Name>AppRopio.Base.Filters.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Filters\Core\AppRopio.Base.Filters.Core.csproj">
       <Project>{19D459DF-4188-4F2B-BC76-CE7C4A459A9D}</Project>
@@ -828,6 +813,8 @@
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Profile\iOS\AppRopio.Base.Profile.iOS.csproj">
       <Project>{874CC15C-5C21-460C-A1AE-F40113D12087}</Project>
       <Name>AppRopio.Base.Profile.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
     <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Profile\AppRopio.Models.Profile.csproj">
       <Project>{024A13DC-DD20-4F74-998F-2B82D1CAF4C3}</Project>
@@ -876,6 +863,8 @@
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Map\iOS\AppRopio.Base.Map.iOS.csproj">
       <Project>{84101BD1-2422-4DF7-BE0A-AC211E497C01}</Project>
       <Name>AppRopio.Base.Map.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Contacts\API\AppRopio.Base.Contacts.API.csproj">
       <Project>{B972BFB8-3481-4411-83DE-50CF6780D028}</Project>
@@ -888,6 +877,8 @@
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Contacts\iOS\AppRopio.Base.Contacts.iOS.csproj">
       <Project>{53D2EC0B-5133-4AB1-BB14-9D8BE1F932F0}</Project>
       <Name>AppRopio.Base.Contacts.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
     <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Contacts\AppRopio.Models.Contacts.csproj">
       <Project>{747299BF-FAF3-4C47-BF4C-B1A949BB5F56}</Project>
@@ -900,6 +891,8 @@
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.ECommerce\Marked\iOS\AppRopio.ECommerce.Marked.iOS.csproj">
       <Project>{E94AFFA6-0EE8-443A-A57E-91DBB5DE46F0}</Project>
       <Name>AppRopio.ECommerce.Marked.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.ECommerce\Marked\Core\AppRopio.ECommerce.Marked.Core.csproj">
       <Project>{D7B66AD6-DE32-493E-A746-223D23C4A403}</Project>
@@ -920,6 +913,8 @@
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.ECommerce\Loyalty\iOS\AppRopio.ECommerce.Loyalty.iOS.csproj">
       <Project>{29D6072F-6086-42FC-B979-B780DA70D6CA}</Project>
       <Name>AppRopio.ECommerce.Loyalty.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
     <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Loyalty\AppRopio.Models.Loyalty.csproj">
       <Project>{4F3314CC-A2AB-4962-AF1F-0FAB3E13EFE8}</Project>
@@ -932,6 +927,8 @@
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Analytics\MobileCenter\iOS\AppRopio.Analytics.MobileCenter.iOS.csproj">
       <Project>{66789C73-43A3-4EA7-8E12-2EF60982F19C}</Project>
       <Name>AppRopio.Analytics.MobileCenter.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Analytics\MobileCenter\Core\AppRopio.Analytics.MobileCenter.Core.csproj">
       <Project>{2A2E97B5-DC27-4FC7-A7A2-63E4780FF49A}</Project>
@@ -952,6 +949,8 @@
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.ECommerce\HistoryOrders\iOS\AppRopio.ECommerce.HistoryOrders.iOS.csproj">
       <Project>{7AAD4FD5-A934-45BF-87CD-59D895590FCB}</Project>
       <Name>AppRopio.ECommerce.HistoryOrders.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Payments\CloudPayments\Core\AppRopio.Payments.CloudPayments.Core.csproj">
       <Project>{50148F33-EA1B-4612-AD4D-84A8BB1BB416}</Project>
@@ -960,10 +959,14 @@
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Payments\CloudPayments\iOS\AppRopio.Payments.CloudPayments.iOS.csproj">
       <Project>{654159DE-7A31-4502-B5D4-BB7360B7FF98}</Project>
       <Name>AppRopio.Payments.CloudPayments.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Payments\ApplePay\AppRopio.Payments.ApplePay.csproj">
       <Project>{55C04CE9-B3AD-4671-90A1-59E53FB3961D}</Project>
       <Name>AppRopio.Payments.ApplePay</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Payments\CloudPayments\API\AppRopio.Payments.CloudPayments.API.csproj">
       <Project>{1A98F64C-EEAF-439D-B3D7-B40D74694244}</Project>
@@ -980,6 +983,8 @@
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Payments\YandexKassa\iOS\AppRopio.Payments.YandexKassa.iOS.csproj">
       <Project>{807AD2A3-696D-4113-9B41-E608915E08FF}</Project>
       <Name>AppRopio.Payments.YandexKassa.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Payments\Base\API\AppRopio.Payments.API.csproj">
       <Project>{9E008650-B5B9-40C9-8FBA-8B1A666082B0}</Project>
@@ -996,6 +1001,8 @@
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Payments\Base\iOS\AppRopio.Payments.iOS.csproj">
       <Project>{6B4DA3CF-117C-449B-8A34-7A1DE96987CA}</Project>
       <Name>AppRopio.Payments.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Payments\Best2Pay\Core\AppRopio.Payments.Best2Pay.Core.csproj">
       <Project>{3753EB62-6E31-4BD4-B153-93C1FDDA211F}</Project>
@@ -1004,6 +1011,8 @@
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Payments\Best2Pay\iOS\AppRopio.Payments.Best2Pay.iOS.csproj">
       <Project>{F744A9F2-AA9B-4ACE-88AE-0165EA355CD5}</Project>
       <Name>AppRopio.Payments.Best2Pay.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
     <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Information\AppRopio.Models.Information.csproj">
       <Project>{18FC63AF-DFAC-4AD8-80C3-D48C7C266853}</Project>
@@ -1016,6 +1025,8 @@
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Settings\iOS\AppRopio.Base.Settings.iOS.csproj">
       <Project>{D0E574BA-564D-4550-B030-699122DB0419}</Project>
       <Name>AppRopio.Base.Settings.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Feedback\Core\AppRopio.Feedback.Core.csproj">
       <Project>{BFB67EFA-1590-4E89-98B9-CB65C5D974BB}</Project>
@@ -1024,6 +1035,8 @@
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Feedback\iOS\AppRopio.Feedback.iOS.csproj">
       <Project>{DE5342E2-5356-411B-8CD6-8258E04B8C46}</Project>
       <Name>AppRopio.Feedback.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
     <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Settings\AppRopio.Models.Settings.csproj">
       <Project>{E26E8E61-01AB-4D1C-88A8-FE57A0287A67}</Project>
@@ -1060,6 +1073,8 @@
     <ProjectReference Include="..\..\..\app-ropio\AppRopio.Base\Information\iOS\AppRopio.Base.Information.iOS.csproj">
       <Project>{2B532561-B567-41FE-BDAE-36A475F708BD}</Project>
       <Name>AppRopio.Base.Information.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

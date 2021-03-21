@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\..\AppRopio.ECommerce\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.props" Condition="Exists('..\..\AppRopio.ECommerce\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.props')" />
   <PropertyGroup>
@@ -14,7 +14,8 @@
     <AndroidResgenClass>Resource</AndroidResgenClass>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidTlsProvider></AndroidTlsProvider>
+    <AndroidTlsProvider>
+    </AndroidTlsProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -24,7 +25,8 @@
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile></DocumentationFile>
+    <DocumentationFile>
+    </DocumentationFile>
     <ConsolePause>false</ConsolePause>
     <AndroidLinkMode>None</AndroidLinkMode>
   </PropertyGroup>
@@ -151,80 +153,6 @@
     <Reference Include="Xamarin.GooglePlayServices.Maps">
       <HintPath>..\..\AppRopio.ECommerce\packages\Xamarin.GooglePlayServices.Maps.60.1142.1\lib\MonoAndroid80\Xamarin.GooglePlayServices.Maps.dll</HintPath>
     </Reference>
-    <Reference Include="MvvmCross.Platform">
-      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Platform.5.7.0\lib\MonoAndroid\MvvmCross.Platform.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MvvmCross.Platform.Droid">
-      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Platform.5.7.0\lib\MonoAndroid\MvvmCross.Platform.Droid.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MvvmCross.Core">
-      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Core.5.7.0\lib\MonoAndroid\MvvmCross.Core.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MvvmCross.Droid">
-      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Core.5.7.0\lib\MonoAndroid\MvvmCross.Droid.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MvvmCross.Binding">
-      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.7.0\lib\MonoAndroid\MvvmCross.Binding.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MvvmCross.Binding.Droid">
-      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.7.0\lib\MonoAndroid\MvvmCross.Binding.Droid.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MvvmCross.Localization">
-      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.7.0\lib\MonoAndroid\MvvmCross.Localization.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MvvmCross.Plugins.File">
-      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Plugin.File.5.7.0\lib\MonoAndroid\MvvmCross.Plugins.File.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MvvmCross.Plugins.File.Droid">
-      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Plugin.File.5.7.0\lib\MonoAndroid\MvvmCross.Plugins.File.Droid.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MvvmCross.Plugins.Network">
-      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Plugin.Network.5.7.0\lib\MonoAndroid\MvvmCross.Plugins.Network.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MvvmCross.Plugins.Network.Droid">
-      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Plugin.Network.5.7.0\lib\MonoAndroid\MvvmCross.Plugins.Network.Droid.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MvvmCross.Plugins.Json">
-      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Plugin.Json.5.7.0\lib\MonoAndroid\MvvmCross.Plugins.Json.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MvvmCross.Plugins.DownloadCache">
-      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Plugin.DownloadCache.5.7.0\lib\MonoAndroid\MvvmCross.Plugins.DownloadCache.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MvvmCross.Plugins.DownloadCache.Droid">
-      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Plugin.DownloadCache.5.7.0\lib\MonoAndroid\MvvmCross.Plugins.DownloadCache.Droid.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MvvmCross.Droid.Support.Core.UI">
-      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Droid.Support.Core.UI.5.7.0\lib\MonoAndroid70\MvvmCross.Droid.Support.Core.UI.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MvvmCross.Droid.Support.Fragment">
-      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Droid.Support.Fragment.5.7.0\lib\MonoAndroid70\MvvmCross.Droid.Support.Fragment.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MvvmCross.Droid.Support.V7.RecyclerView">
-      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Droid.Support.V7.RecyclerView.5.7.0\lib\MonoAndroid70\MvvmCross.Droid.Support.V7.RecyclerView.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Droid.Support.V7.AppCompat">
-      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Droid.Support.V7.AppCompat.5.7.0\lib\MonoAndroid70\MvvmCross.Droid.Support.V7.AppCompat.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MvvmCross.Droid.Support.Design">
-      <HintPath>..\..\AppRopio.ECommerce\packages\MvvmCross.Droid.Support.Design.5.7.0\lib\MonoAndroid70\MvvmCross.Droid.Support.Design.dll</HintPath>
-    </Reference>
     <Reference Include="Plugin.CurrentActivity">
       <HintPath>..\..\AppRopio.ECommerce\packages\Plugin.CurrentActivity.2.1.0.4\lib\monoandroid44\Plugin.CurrentActivity.dll</HintPath>
     </Reference>
@@ -302,27 +230,7 @@
     <AndroidResource Include="Resources\drawable\app_control_button_base_focused.xml" />
     <AndroidResource Include="Resources\drawable\app_control_button_base_disabled.xml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\" />
-    <Folder Include="Services\" />
-    <Folder Include="Services\Device\" />
-    <Folder Include="Services\Log\" />
-    <Folder Include="Services\Settings\" />
-    <Folder Include="Services\ThemeConfig\" />
-    <Folder Include="Services\UserDialogs\" />
-    <Folder Include="Navigation\" />
-    <Folder Include="Controls\" />
-    <Folder Include="Adapters\" />
-    <Folder Include="Resources\layout\" />
-    <Folder Include="Resources\drawable\" />
-    <Folder Include="Services\MultipleViewModelCache\" />
-    <Folder Include="Bindings\" />
-    <Folder Include="Converters\" />
-    <Folder Include="Services\Permissions\" />
-    <Folder Include="Listeners\" />
-    <Folder Include="AttributeHelpers\" />
-    <Folder Include="Services\Launcher\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\..\..\appropio.models\src\AppRopio.Models.Base\AppRopio.Models.Base.csproj">
       <Project>{C4F2B57C-507E-4B99-B2E4-FA4B3C99FD59}</Project>
