@@ -56,7 +56,11 @@
     <AndroidResource Include="Resources\layout\app_loyalty_promocode.axml" />
     <AndroidResource Include="Resources\values\styles.xml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <PackageReference Include="MvvmCross">
+      <Version>6.4.2</Version>
+    </PackageReference>
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Loyalty\AppRopio.Models.Loyalty.csproj">
       <Project>{4F3314CC-A2AB-4962-AF1F-0FAB3E13EFE8}</Project>

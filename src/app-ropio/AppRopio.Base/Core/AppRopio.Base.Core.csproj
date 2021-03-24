@@ -8,9 +8,10 @@
     <PackageReference Include="Fody" Version="3.0.3" />
     <PackageReference Include="Microsoft.NETCore.Platforms" Version="2.0.1" />
     <PackageReference Include="Microsoft.NETCore.Targets" Version="2.0.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
-    <PackageReference Include="Plugin.Permissions" Version="3.0.0.12" />
-    <PackageReference Include="Plugin.Share" Version="7.1.1" />
+    <PackageReference Include="MvvmCross" Version="6.4.2" />
+    <PackageReference Include="MvvmCross.Plugin.File" Version="6.4.2" />
+    <PackageReference Include="MvvmCross.Plugin.Messenger" Version="6.4.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Realm" Version="3.2.1" />
     <PackageReference Include="Realm.Database" Version="3.2.1" />
     <PackageReference Include="Realm.DataBinding" Version="1.2.0" />
@@ -47,10 +48,7 @@
     <PackageReference Include="System.Threading.Timer" Version="4.3.0" />
     <PackageReference Include="System.Xml.ReaderWriter" Version="4.3.0" />
     <PackageReference Include="System.Xml.XDocument" Version="4.3.0" />
-    <PackageReference Include="Xam.Plugin.ExternalMaps" Version="4.0.1" />
-    <PackageReference Include="Xam.Plugin.Geolocator" Version="4.5.0.6" />
-    <PackageReference Include="Xam.Plugins.Messaging" Version="5.2.0" />
-    <PackageReference Include="Xam.Plugins.Settings" Version="3.1.1" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.4.0" />
   </ItemGroup>
     
   <ItemGroup>

@@ -80,6 +80,9 @@
     <PackageReference Include="AndroidAltBeaconLibrary">
       <Version>2.10.0.31004-pre2</Version>
     </PackageReference>
+    <PackageReference Include="MvvmCross">
+      <Version>6.4.2</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

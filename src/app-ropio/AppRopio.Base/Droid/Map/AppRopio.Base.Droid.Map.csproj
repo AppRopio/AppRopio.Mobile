@@ -64,17 +64,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Android.Support.Fragment">
-      <Version>27.0.2.1</Version>
+    <PackageReference Include="MvvmCross">
+      <Version>6.4.2</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Android.Support.Media.Compat">
-      <Version>27.0.2.1</Version>
-    </PackageReference>
-    <PackageReference Include="Xamarin.Build.Download">
-      <Version>0.4.11</Version>
+    <PackageReference Include="MvvmCross.Droid.Support.Fragment">
+      <Version>6.4.2</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.GooglePlayServices.Maps">
-      <Version>60.1142.1</Version>
+      <Version>71.1610.4</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

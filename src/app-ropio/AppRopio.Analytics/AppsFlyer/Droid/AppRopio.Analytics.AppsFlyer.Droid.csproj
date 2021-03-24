@@ -58,7 +58,11 @@
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <PackageReference Include="MvvmCross">
+      <Version>6.4.2</Version>
+    </PackageReference>
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\AppRopio.Analytics.AppsFlyer.Core.csproj">
       <Project>{FF262391-8114-4461-B2BD-4110535579A9}</Project>

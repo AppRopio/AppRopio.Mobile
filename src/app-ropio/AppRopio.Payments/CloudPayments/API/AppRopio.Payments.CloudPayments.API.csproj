@@ -4,7 +4,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="MvvmCross" Version="6.4.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="PCLCrypto" Version="2.0.147" />
     <PackageReference Include="PInvoke.BCrypt" Version="0.5.111" />
     <PackageReference Include="PInvoke.Kernel32" Version="0.5.111" />

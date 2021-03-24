@@ -67,13 +67,13 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AppCenter.Analytics">
-      <Version>1.9.0</Version>
+      <Version>3.4.3</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.AppCenter.Crashes">
-      <Version>1.9.0</Version>
+      <Version>3.4.3</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Android.Support.Compat">
-      <Version>27.0.2.1</Version>
+    <PackageReference Include="MvvmCross">
+      <Version>6.4.2</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

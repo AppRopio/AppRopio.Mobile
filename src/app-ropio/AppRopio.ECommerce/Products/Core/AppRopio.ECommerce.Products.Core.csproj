@@ -5,11 +5,13 @@
 
   <ItemGroup>
     <PackageReference Include="Fody" Version="3.0.3" />
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
-    <PackageReference Include="Plugin.Share" Version="7.1.1" />
+    <PackageReference Include="MvvmCross" Version="6.4.2" />
+    <PackageReference Include="MvvmCross.Plugin.Messenger" Version="6.4.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Realm" Version="3.2.1" />
     <PackageReference Include="Realm.Database" Version="3.2.1" />
     <PackageReference Include="Realm.DataBinding" Version="1.2.0" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.4.0" />
   </ItemGroup>
     
   <ItemGroup>
