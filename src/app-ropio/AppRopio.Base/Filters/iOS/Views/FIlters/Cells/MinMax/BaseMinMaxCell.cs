@@ -2,8 +2,8 @@
 using AppRopio.Base.Filters.iOS.Models;
 using AppRopio.Base.Filters.iOS.Services;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross;
 using UIKit;
 using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.UIExtentions;

@@ -1,5 +1,5 @@
 ﻿using System;
-using MvvmCross.Core.Views;
+using MvvmCross.Views;
 
 namespace AppRopio.Base.iOS.Views
 {

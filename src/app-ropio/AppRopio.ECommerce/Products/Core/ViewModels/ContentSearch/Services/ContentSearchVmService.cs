@@ -11,7 +11,7 @@ using AppRopio.ECommerce.Products.Core.ViewModels.ContentSearch.Items.Hint;
 using AppRopio.ECommerce.Products.Core.ViewModels.ContentSearch.Items.History;
 using AppRopio.ECommerce.Products.Core.ViewModels.ContentSearch.Services.DataBase;
 using AppRopio.Models.Products.Responses;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.ContentSearch.Services
 {

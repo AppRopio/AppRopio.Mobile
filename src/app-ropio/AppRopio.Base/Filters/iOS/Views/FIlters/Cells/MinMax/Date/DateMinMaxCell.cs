@@ -9,7 +9,7 @@ using AppRopio.Base.iOS.UIExtentions;
 using CoreGraphics;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platform;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.Base.Filters.iOS.Views.Filters.Cells.MinMax.Date

@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using AppRopio.Base.API.Services;
 using AppRopio.Models.Information.Enums;
 using AppRopio.Models.Information.Responses;
-using MvvmCross.Platform;
+using MvvmCross;
 using Newtonsoft.Json;
 
 namespace AppRopio.Base.Information.API.Services.Fakes

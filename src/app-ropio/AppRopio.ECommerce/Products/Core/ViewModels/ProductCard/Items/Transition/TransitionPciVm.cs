@@ -7,7 +7,7 @@ using AppRopio.Base.Core.Models.Bundle;
 using AppRopio.Base.Core.Models.Navigation;
 using AppRopio.ECommerce.Products.Core.Services;
 using AppRopio.Models.Products.Responses;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.Transition
 {

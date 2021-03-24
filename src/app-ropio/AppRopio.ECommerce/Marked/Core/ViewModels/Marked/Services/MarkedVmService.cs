@@ -6,8 +6,8 @@ using AppRopio.Base.Core.ViewModels.Services;
 using AppRopio.ECommerce.Marked.API.Services;
 using AppRopio.ECommerce.Marked.Core.ViewModels.Marked.Items;
 using AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Items;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.Marked.Core.ViewModels.Marked.Services
 {

@@ -5,8 +5,8 @@ using System.Collections.Specialized;
 using System.Windows.Input;
 using AppRopio.Base.iOS.Helpers;
 using Foundation;
-using MvvmCross.Binding.ExtensionMethods;
-using MvvmCross.Binding.iOS.Views;
+using MvvmCross.Binding.Extensions;
+using MvvmCross.Platforms.Ios.Binding;
 using UIKit;
 using System.Linq;
 

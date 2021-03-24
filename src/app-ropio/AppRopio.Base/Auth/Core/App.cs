@@ -14,12 +14,12 @@ using AppRopio.Base.Auth.Core.ViewModels.SignUp;
 using AppRopio.Base.Auth.Core.ViewModels.SignUp.Services;
 using AppRopio.Base.Auth.Core.ViewModels.Thanks;
 using AppRopio.Base.Core.Services.ViewModelLookup;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.Base.Auth.Core
 {
-	public class App : MvvmCross.Core.ViewModels.MvxApplication
+	public class App : MvvmCross.ViewModels.MvxApplication
 	{
 		public override void Initialize()
 		{

@@ -6,8 +6,8 @@ using AppRopio.Base.Core.Models.Bundle;
 using AppRopio.Base.Core.Models.Navigation;
 using AppRopio.Base.Core.ViewModels;
 using AppRopio.Models.Contacts.Responses;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.Base.Contacts.Core.ViewModels.Contacts
 {

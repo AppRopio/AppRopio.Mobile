@@ -20,8 +20,8 @@ using AppRopio.Base.Settings.Core.ViewModels.Settings;
 using AppRopio.Base.Settings.Droid.Views.Languages;
 using AppRopio.Base.Settings.Droid.Views.Regions;
 using AppRopio.Base.Settings.Droid.Views.Settings;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.Base.Settings.Droid
 {

@@ -4,7 +4,7 @@ using AppRopio.Base.API.Services;
 using AppRopio.Models.Base.Responses;
 using AppRopio.Models.HistoryOrders.Responses;
 using AppRopio.Models.Payments.Responses;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.HistoryOrders.API.Services.Fakes
 {

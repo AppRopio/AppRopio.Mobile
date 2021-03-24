@@ -1,5 +1,5 @@
 ﻿using System;
-using MvvmCross.Binding.iOS.Views;
+using MvvmCross.Platforms.Ios.Binding;
 using UIKit;
 using System.Collections.ObjectModel;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items.Delivery;

@@ -1,8 +1,8 @@
 ﻿using AppRopio.Base.Core.Services.ViewLookup;
 using AppRopio.ECommerce.Marked.Core.ViewModels.Marked;
 using AppRopio.ECommerce.Marked.Droid.Views.Marked;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.ECommerce.Marked.Droid
 {

@@ -1,6 +1,6 @@
 ﻿using AppRopio.Base.Core.Services.ViewLookup;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 using AppRopio.Base.Map.iOS.Services;
 using AppRopio.Base.Map.iOS.Services.Implementation;
 using AppRopio.Base.Map.Core.ViewModels.Points;

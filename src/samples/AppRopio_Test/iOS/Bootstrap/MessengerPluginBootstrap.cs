@@ -1,9 +1,9 @@
-using MvvmCross.Platform.Plugins;
+using MvvmCross.Plugin;
 
 namespace AppRopio_Test.Bootstrap
 {
     public class MessengerPluginBootstrap
-        : MvxPluginBootstrapAction<MvvmCross.Plugins.Messenger.PluginLoader>
+        : MvxPluginBootstrapAction<MvvmCross.Plugin.Messenger.PluginLoader>
     {
     }
 }

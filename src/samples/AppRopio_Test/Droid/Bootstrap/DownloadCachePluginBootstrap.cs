@@ -1,9 +1,9 @@
-using MvvmCross.Platform.Plugins;
+using MvvmCross.Plugin;
 
 namespace AppRopio.Test.Droid.Bootstrap
 {
     public class DownloadCachePluginBootstrap
-        : MvxPluginBootstrapAction<MvvmCross.Plugins.DownloadCache.PluginLoader>
+        : MvxPluginBootstrapAction<MvvmCross.Plugin.DownloadCache.PluginLoader>
     {
     }
 }

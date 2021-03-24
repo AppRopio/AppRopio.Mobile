@@ -6,7 +6,7 @@ using AppRopio.Base.Core.ViewModels;
 using AppRopio.Base.Droid.Adapters;
 using AppRopio.Base.Droid.Controls;
 using AppRopio.ECommerce.Products.Core.ViewModels.Categories;
-using MvvmCross.Binding.Droid.BindingContext;
+using MvvmCross.Platforms.Android.Binding.BindingContext;
 
 namespace AppRopio.ECommerce.Products.Droid.Views.Categories.Cataloged
 {

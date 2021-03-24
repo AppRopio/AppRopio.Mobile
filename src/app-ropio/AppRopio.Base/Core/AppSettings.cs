@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using AppRopio.Base.Core.Models.App;
 using AppRopio.Base.Core.Services.Settings;
-using MvvmCross.Platform;
+using MvvmCross;
 using Newtonsoft.Json;
 using Plugin.Settings;
 

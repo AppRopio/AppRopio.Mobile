@@ -7,8 +7,8 @@ using AppRopio.Base.Auth.Core.ViewModels.Password.Reset.Sms.Services;
 using AppRopio.Base.Core.Extentions;
 using AppRopio.Base.Core.Models.Bundle;
 using AppRopio.Base.Core.Models.Navigation;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.Base.Auth.Core.ViewModels.Password.Reset.Sms
 {

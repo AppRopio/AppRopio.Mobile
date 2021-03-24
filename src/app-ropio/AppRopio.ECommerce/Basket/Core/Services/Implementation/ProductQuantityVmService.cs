@@ -7,7 +7,7 @@ using AppRopio.Base.Core.Services.TasksQueue;
 using AppRopio.Base.Core.ViewModels.Services;
 using AppRopio.ECommerce.Basket.API.Services;
 using AppRopio.Models.Products.Responses;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.Basket.Core.Services.Implementation
 {

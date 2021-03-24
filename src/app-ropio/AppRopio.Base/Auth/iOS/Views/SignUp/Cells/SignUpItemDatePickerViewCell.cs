@@ -9,9 +9,9 @@ using AppRopio.Base.iOS.UIExtentions;
 using CoreGraphics;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.ExtensionMethods;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Binding.Extensions;
+using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross;
 using MvvmCross.Platform.iOS;
 using UIKit;
 

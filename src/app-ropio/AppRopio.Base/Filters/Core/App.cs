@@ -7,8 +7,8 @@ using AppRopio.Base.Filters.Core.ViewModels.Filters.Selection.Services;
 using AppRopio.Base.Filters.Core.ViewModels.Filters.Services;
 using AppRopio.Base.Filters.Core.ViewModels.Sort;
 using AppRopio.Base.Filters.Core.ViewModels.Sort.Services;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.Base.Filters.Core
 {

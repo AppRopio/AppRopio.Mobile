@@ -5,8 +5,8 @@ using AppRopio.ECommerce.Products.Core.Models;
 using AppRopio.ECommerce.Products.Core.Services;
 using MvvmCross.Binding.Bindings.SourceSteps;
 using MvvmCross.Binding.Combiners;
-using MvvmCross.Platform;
-using MvvmCross.Platform.UI;
+using MvvmCross;
+using MvvmCross.UI;
 
 namespace AppRopio.ECommerce.Products.Core.Combiners
 {

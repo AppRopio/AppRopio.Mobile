@@ -13,8 +13,8 @@ using AppRopio.Base.Filters.Core.ViewModels.Filters.Items;
 using AppRopio.Base.Filters.Core.ViewModels.Filters.Messages;
 using AppRopio.Base.Filters.Core.ViewModels.Filters.Services;
 using AppRopio.Models.Filters.Responses;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.Base.Filters.Core.ViewModels.Filters
 {

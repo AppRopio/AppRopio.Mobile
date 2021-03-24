@@ -3,11 +3,11 @@ using Android.App;
 using AppRopio.Analytics.AppsFlyer.Core.Services;
 using AppRopio.Analytics.AppsFlyer.Droid.Services;
 using Com.Appsflyer;
-using MvvmCross.Droid.Platform;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Android.Core;
+using MvvmCross;
 using MvvmCross.Platform.Core;
-using MvvmCross.Platform.Droid.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross.Platforms.Android;
+using MvvmCross.Plugin;
 
 namespace AppRopio.Analytics.AppsFlyer.Droid
 {
@@ -46,7 +46,7 @@ namespace AppRopio.Analytics.AppsFlyer.Droid
             });
         }
 
-        private void Handle_ActivityChanged(object sender, MvvmCross.Droid.Views.MvxActivityEventArgs e)
+        private void Handle_ActivityChanged(object sender, MvvmCross.Platforms.Android.Views.MvxActivityEventArgs e)
         {
             Mvx.Resolve<IMvxAndroidActivityLifetimeListener>().ActivityChanged -= Handle_ActivityChanged;
 

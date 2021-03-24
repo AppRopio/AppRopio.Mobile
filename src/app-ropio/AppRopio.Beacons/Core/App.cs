@@ -2,8 +2,8 @@
 using AppRopio.Base.API;
 using AppRopio.Base.API.Services;
 using AppRopio.Base.Core;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.Beacons.Core
 {

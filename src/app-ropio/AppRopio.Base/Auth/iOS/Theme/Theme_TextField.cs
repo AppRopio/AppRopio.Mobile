@@ -1,6 +1,6 @@
 ﻿using AppRopio.Base.Auth.iOS.Services;
 using AppRopio.Base.iOS.UIExtentions;
-using MvvmCross.Platform;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.Base.iOS

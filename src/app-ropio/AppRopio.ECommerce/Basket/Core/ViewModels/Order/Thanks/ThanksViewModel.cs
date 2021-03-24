@@ -5,7 +5,7 @@ using AppRopio.Base.Core.Models.Bundle;
 using AppRopio.Base.Core.Models.Navigation;
 using AppRopio.Base.Core.ViewModels;
 using AppRopio.ECommerce.Basket.Core.Models.Bundle;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Thanks
 {

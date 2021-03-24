@@ -1,5 +1,5 @@
 ﻿using System;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross.Plugin.Messenger;
 namespace AppRopio.Base.Filters.Core.ViewModels.Filters.Messages
 {
     public class FiltersReloadWhenValueChangedMessage : MvxMessage

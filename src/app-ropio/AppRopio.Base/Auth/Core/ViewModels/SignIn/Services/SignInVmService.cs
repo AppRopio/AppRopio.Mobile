@@ -5,7 +5,7 @@ using AppRopio.Base.API.Exceptions;
 using AppRopio.Base.Auth.API.Services;
 using AppRopio.Base.Auth.Core.Services;
 using AppRopio.Base.Core.ViewModels.Services;
-using MvvmCross.Platform;
+using MvvmCross;
 using MvvmCross.Platform.Core;
 
 namespace AppRopio.Base.Auth.Core.ViewModels.SignIn.Services

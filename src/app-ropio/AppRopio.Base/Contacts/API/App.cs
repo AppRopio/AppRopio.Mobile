@@ -1,8 +1,8 @@
 ﻿using AppRopio.Base.API;
 using AppRopio.Base.Contacts.API.Services;
 using AppRopio.Base.Contacts.API.Services.Implementation;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.Base.Contacts.API
 {

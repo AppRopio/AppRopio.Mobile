@@ -4,7 +4,7 @@ using AppRopio.Base.Core.Extentions;
 using AppRopio.Base.Core.ViewModels;
 using AppRopio.Base.Map.Core.Models.Bundle;
 using AppRopio.Base.Map.Core.ViewModels.Points.List.Items;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.Base.Map.Core.ViewModels.Points
 {

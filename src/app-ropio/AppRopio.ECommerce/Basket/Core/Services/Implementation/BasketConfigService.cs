@@ -2,7 +2,7 @@
 using AppRopio.Base.Core;
 using AppRopio.Base.Core.Services.Settings;
 using AppRopio.ECommerce.Basket.Core.Models;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.Basket.Core.Services.Implementation
 {

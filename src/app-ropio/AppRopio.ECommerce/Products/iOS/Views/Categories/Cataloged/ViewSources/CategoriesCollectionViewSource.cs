@@ -8,9 +8,9 @@ using AppRopio.ECommerce.Products.iOS.Models;
 using AppRopio.ECommerce.Products.iOS.Services;
 using CoreGraphics;
 using Foundation;
-using MvvmCross.Binding.ExtensionMethods;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Binding.Extensions;
+using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.Categories.Cataloged.ViewSources

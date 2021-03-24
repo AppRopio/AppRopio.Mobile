@@ -6,8 +6,8 @@ using AppRopio.Base.Settings.Core.ViewModels.Languages;
 using AppRopio.Base.Settings.Core.ViewModels.Regions;
 using AppRopio.Base.Settings.Core.ViewModels.Services;
 using AppRopio.Base.Settings.Core.ViewModels.Settings;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.Base.Settings.Core
 {

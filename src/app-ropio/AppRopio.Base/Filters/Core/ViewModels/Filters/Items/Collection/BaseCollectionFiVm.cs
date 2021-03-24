@@ -4,7 +4,7 @@ using AppRopio.Models.Filters.Responses;
 using System.Collections.ObjectModel;
 using AppRopio.Base.Filters.Core.ViewModels.Filters.Items.Collection.Items;
 using System.Windows.Input;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;

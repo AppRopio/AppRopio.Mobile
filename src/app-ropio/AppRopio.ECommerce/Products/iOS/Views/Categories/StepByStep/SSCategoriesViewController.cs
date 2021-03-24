@@ -13,9 +13,9 @@ using AppRopio.ECommerce.Products.iOS.Views.Categories.Cells;
 using AppRopio.ECommerce.Products.iOS.Views.Categories.StepByStep.Cells;
 using AppRopio.ECommerce.Products.iOS.Views.Categories.SupplementaryView;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Views;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.Categories.StepByStep

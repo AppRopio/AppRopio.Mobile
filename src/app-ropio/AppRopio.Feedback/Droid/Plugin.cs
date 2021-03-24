@@ -8,8 +8,8 @@ using AppRopio.Feedback.Droid.Views.ReviewDetails;
 using AppRopio.Feedback.Droid.Views.ReviewPost;
 using AppRopio.Feedback.Droid.Views.Reviews;
 using AppRopio.Feedback.Droid.Views.Score;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.Feedback.Droid
 {

@@ -1,12 +1,12 @@
 ﻿using System;
 
 using Foundation;
-using MvvmCross.Binding.iOS.Views;
+using MvvmCross.Platforms.Ios.Binding;
 using UIKit;
 using MvvmCross.Binding.BindingContext;
 using AppRopio.Base.Filters.Core.ViewModels.Filters.Items.Selection.OneSelection;
 using AppRopio.Base.Filters.iOS.Models;
-using MvvmCross.Platform;
+using MvvmCross;
 using AppRopio.Base.Filters.iOS.Services;
 using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.Helpers;

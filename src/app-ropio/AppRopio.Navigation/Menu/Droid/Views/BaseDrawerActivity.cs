@@ -8,7 +8,7 @@ using Android.Support.V7.App;
 using Android.Views;
 using AppRopio.Base.Droid.Views;
 using AppRopio.Navigation.Menu.Droid.Models;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.Navigation.Menu.Droid.Views
 {

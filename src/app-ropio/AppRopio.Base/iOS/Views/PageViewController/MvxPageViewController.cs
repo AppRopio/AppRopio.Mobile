@@ -1,8 +1,8 @@
 ﻿using System;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.iOS.Views;
+using MvvmCross.ViewModels;
+using MvvmCross.Platforms.Ios.Views;
 using UIKit;
 
 namespace AppRopio.Base.iOS.Views.PageViewController

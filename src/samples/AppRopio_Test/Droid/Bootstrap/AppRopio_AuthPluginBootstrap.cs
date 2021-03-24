@@ -1,5 +1,5 @@
 ﻿//using System;
-//using MvvmCross.Platform.Plugins;
+//using MvvmCross.Plugin;
 
 //namespace AppRopio.Test.Droid.Bootstrap
 //{

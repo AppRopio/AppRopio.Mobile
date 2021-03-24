@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using AppRopio.Base.API.Exceptions;
 using AppRopio.Base.Auth.API.Services;
 using AppRopio.Base.Core.ViewModels.Services;
-using MvvmCross.Platform;
+using MvvmCross;
 using MvvmCross.Platform.Core;
 
 namespace AppRopio.Base.Auth.Core.ViewModels.Password.Reset.Main.Services

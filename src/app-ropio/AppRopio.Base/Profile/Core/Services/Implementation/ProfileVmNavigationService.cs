@@ -2,7 +2,7 @@
 using AppRopio.Base.Core.Models.Bundle;
 using AppRopio.Base.Core.ViewModels.Services;
 using AppRopio.Base.Auth.Core.Services;
-using MvvmCross.Platform;
+using MvvmCross;
 using AppRopio.Base.Profile.Core.ViewModels.Profile;
 namespace AppRopio.Base.Profile.Core.Services.Implementation
 {

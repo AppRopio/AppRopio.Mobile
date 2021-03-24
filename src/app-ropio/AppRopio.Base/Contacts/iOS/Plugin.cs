@@ -4,8 +4,8 @@ using AppRopio.Base.Contacts.iOS.Services;
 using AppRopio.Base.Contacts.iOS.Services.Implementation;
 using AppRopio.Base.Contacts.iOS.Views.Contacts;
 using AppRopio.Base.Core.Services.ViewLookup;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.Base.Contacts.iOS
 {

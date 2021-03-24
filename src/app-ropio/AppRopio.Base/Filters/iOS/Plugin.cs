@@ -9,8 +9,8 @@ using AppRopio.Base.Filters.iOS.Views.Filters;
 using AppRopio.Base.Filters.iOS.Views.Filters.Selection;
 using AppRopio.Base.Filters.iOS.Views.Sort;
 using MvvmCross.Binding.Bindings.Target.Construction;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 using UIKit;
 
 namespace AppRopio.Base.Filters.iOS

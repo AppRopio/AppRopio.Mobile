@@ -3,8 +3,8 @@ using AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrders;
 using AppRopio.ECommerce.HistoryOrders.Droid.Views.HistoryOrderDetails;
 using AppRopio.ECommerce.HistoryOrders.Droid.Views.HistoryOrderProducts;
 using AppRopio.ECommerce.HistoryOrders.Droid.Views.HistoryOrders;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.ECommerce.HistoryOrders.Droid
 {

@@ -9,9 +9,9 @@ using AppRopio.Base.Core.ViewModels;
 using AppRopio.Base.Profile.Core.Services;
 using AppRopio.Base.Profile.Core.ViewModels.Profile;
 using AppRopio.Models.Auth.Responses;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross.ViewModels;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.Base.Profile.Core.ViewModels.MenuHeader
 {

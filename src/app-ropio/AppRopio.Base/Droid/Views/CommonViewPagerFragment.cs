@@ -1,5 +1,5 @@
 ﻿using System;
-using MvvmCross.Binding.Droid.BindingContext;
+using MvvmCross.Platforms.Android.Binding.BindingContext;
 using MvvmCross.Droid.Support.V4;
 using Android.Views;
 

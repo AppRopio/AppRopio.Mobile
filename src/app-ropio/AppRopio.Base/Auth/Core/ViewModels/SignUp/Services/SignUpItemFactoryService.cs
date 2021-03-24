@@ -3,7 +3,7 @@ using AppRopio.Base.Auth.Core.Models.Registration;
 using AppRopio.Base.Auth.Core.ViewModels.SignUp.Items;
 using AppRopio.Base.Core.ViewModels.Services;
 using AppRopio.Base.Core.Services.Localization;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Base.Auth.Core.ViewModels.SignUp.Services
 {

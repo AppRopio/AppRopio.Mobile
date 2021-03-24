@@ -10,11 +10,11 @@ using AppRopio.Base.Droid.Views;
 using AppRopio.ECommerce.Basket.Core;
 using AppRopio.ECommerce.Basket.Core.ViewModels;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Items;
-using MvvmCross.Binding.Droid.BindingContext;
+using MvvmCross.Platforms.Android.Binding.BindingContext;
 using MvvmCross.Droid.Support.V7.RecyclerView;
-using MvvmCross.Platform;
+using MvvmCross;
 using AppRopio.ECommerce.Basket.Core.Services;
-using MvvmCross.Droid.Views;
+using MvvmCross.Platforms.Android.Views;
 
 namespace AppRopio.ECommerce.Basket.Droid.Views.Basket
 {

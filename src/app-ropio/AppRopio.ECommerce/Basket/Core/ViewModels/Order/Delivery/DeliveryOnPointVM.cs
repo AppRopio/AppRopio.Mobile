@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using AppRopio.Base.Core.ViewModels.Search;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery.Items;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery
 {

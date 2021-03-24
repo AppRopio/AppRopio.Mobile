@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using AppRopio.Base.Core.Services.Settings;
-using MvvmCross.Platform;
+using MvvmCross;
 using Newtonsoft.Json;
 
 namespace AppRopio.Base.Droid.Services.ThemeConfig

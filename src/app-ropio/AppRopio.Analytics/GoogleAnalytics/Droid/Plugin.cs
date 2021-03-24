@@ -1,7 +1,7 @@
 ﻿using System;
 using AppRopio.Analytics.GoogleAnalytics.Core.Services;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.Analytics.GoogleAnalytics.Droid
 {

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Windows.Input;
 using Foundation;
-using MvvmCross.Binding.ExtensionMethods;
-using MvvmCross.Binding.iOS.Views;
+using MvvmCross.Binding.Extensions;
+using MvvmCross.Platforms.Ios.Binding;
 using UIKit;
 
 namespace AppRopio.Base.iOS.ViewSources

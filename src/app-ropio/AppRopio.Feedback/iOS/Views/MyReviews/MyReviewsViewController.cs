@@ -6,7 +6,7 @@ using AppRopio.Feedback.Core.ViewModels.MyReviews;
 using AppRopio.Feedback.iOS.Models;
 using AppRopio.Feedback.iOS.Services;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platform;
+using MvvmCross;
 using UIKit;
 using AppRopio.Feedback.Core;
 

@@ -4,8 +4,8 @@ using AppRopio.ECommerce.Products.Core.ViewModels.Categories.Items;
 using AppRopio.ECommerce.Products.iOS.Models;
 using AppRopio.ECommerce.Products.iOS.Services;
 using Foundation;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.Categories.StepByStep

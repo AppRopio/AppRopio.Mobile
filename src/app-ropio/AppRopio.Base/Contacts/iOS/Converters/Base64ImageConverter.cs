@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using Foundation;
-using MvvmCross.Platform.Converters;
+using MvvmCross.Converters;
 using UIKit;
 
 namespace AppRopio.Base.Contacts.iOS.Converters

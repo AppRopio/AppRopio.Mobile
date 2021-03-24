@@ -5,8 +5,8 @@ using AppRopio.Base.iOS;
 using AppRopio.Models.Information.Responses;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.Base.Information.iOS.Views.Cell

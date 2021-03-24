@@ -5,8 +5,8 @@ using AppRopio.ECommerce.Products.Core.Models;
 using AppRopio.ECommerce.Products.Core.ViewModels.Catalog;
 using AppRopio.ECommerce.Products.Core.ViewModels.Categories.Items.Banners;
 using AppRopio.ECommerce.Products.Core.ViewModels.Categories.Services.Banners;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.Categories.Disabled
 {

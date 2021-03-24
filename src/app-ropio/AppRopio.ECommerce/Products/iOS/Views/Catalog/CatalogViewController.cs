@@ -11,8 +11,8 @@ using AppRopio.ECommerce.Products.Core.ViewModels.Catalog;
 using AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells;
 using CoreGraphics;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Views;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.Catalog

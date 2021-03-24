@@ -13,8 +13,8 @@ using AppRopio.Feedback.Core.ViewModels.ReviewPost;
 using AppRopio.Feedback.Core.ViewModels.ReviewPost.Services;
 using AppRopio.Feedback.Core.ViewModels.Reviews;
 using AppRopio.Feedback.Core.ViewModels.Reviews.Services;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.Feedback.Core
 {

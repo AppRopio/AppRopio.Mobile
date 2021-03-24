@@ -5,7 +5,7 @@ using MvvmCross.Binding.Bindings.SourceSteps;
 using MvvmCross.Binding.Combiners;
 using AppRopio.Base.Core.Converters;
 using AppRopio.ECommerce.Products.Core.Models;
-using MvvmCross.Platform;
+using MvvmCross;
 using AppRopio.ECommerce.Products.Core.Services;
 using AppRopio.Base.Core.Services.Localization;
 

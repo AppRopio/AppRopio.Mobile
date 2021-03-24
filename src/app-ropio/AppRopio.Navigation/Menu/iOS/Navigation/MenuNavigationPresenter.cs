@@ -12,15 +12,15 @@ using AppRopio.Navigation.Menu.Core.ViewModels.Services;
 using AppRopio.Navigation.Menu.iOS.Models;
 using AppRopio.Navigation.Menu.iOS.Services;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.iOS.Platform;
-using MvvmCross.iOS.Views;
-using MvvmCross.iOS.Views.Presenters;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross.Platforms.Ios.Core;
+using MvvmCross.Platforms.Ios.Views;
+using MvvmCross.Platforms.Ios.Presenters;
+using MvvmCross;
 using MvvmCross.Platform.Core;
-using MvvmCross.Platform.iOS.Views;
+using MvvmCross.Platforms.Ios.Views.Base;
 using UIKit;
-using MvvmCross.Core.Navigation;
+using MvvmCross.Navigation;
 using AppRopio.Base.Core.Models.Bundle;
 
 namespace AppRopio.Navigation.Menu.iOS.Navigation

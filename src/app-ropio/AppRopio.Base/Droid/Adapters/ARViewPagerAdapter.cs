@@ -10,11 +10,11 @@ using Android.Views;
 using AppRopio.Base.Droid.Listeners;
 using MvvmCross.Binding;
 using MvvmCross.Binding.Attributes;
-using MvvmCross.Binding.Droid.BindingContext;
-using MvvmCross.Binding.ExtensionMethods;
-using MvvmCross.Droid.Views;
+using MvvmCross.Platforms.Android.Binding.BindingContext;
+using MvvmCross.Binding.Extensions;
+using MvvmCross.Platforms.Android.Views;
 using MvvmCross.Platform.Platform;
-using MvvmCross.Platform.WeakSubscription;
+using MvvmCross.WeakSubscription;
 
 namespace AppRopio.Base.Droid.Adapters
 {

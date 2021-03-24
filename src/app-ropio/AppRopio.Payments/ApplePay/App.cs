@@ -1,7 +1,7 @@
 ﻿using System;
 using AppRopio.Payments.ApplePay.Services;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.Payments.ApplePay
 {

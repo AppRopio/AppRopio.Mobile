@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 using AppRopio.Models.Products.Responses;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.MinMax

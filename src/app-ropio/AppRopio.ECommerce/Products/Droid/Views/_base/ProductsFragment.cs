@@ -6,9 +6,9 @@ using AppRopio.ECommerce.Products.Core.Models;
 using AppRopio.ECommerce.Products.Core.Services;
 using AppRopio.ECommerce.Products.Core.ViewModels;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.Droid.BindingContext;
-using MvvmCross.Droid.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Android.Binding.BindingContext;
+using MvvmCross.Platforms.Android.Views;
+using MvvmCross;
 using MvvmCross.Platform.Platform;
 
 namespace AppRopio.ECommerce.Products.Droid.Views

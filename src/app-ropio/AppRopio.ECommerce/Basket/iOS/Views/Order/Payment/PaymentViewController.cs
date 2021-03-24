@@ -1,7 +1,7 @@
 ﻿using AppRopio.Base.iOS.Views;
 using UIKit;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Payment;
-using MvvmCross.Platform;
+using MvvmCross;
 using AppRopio.ECommerce.Basket.iOS.Services;
 using System.Linq;
 using AppRopio.Base.iOS.UIExtentions;
@@ -9,7 +9,7 @@ using AppRopio.Base.iOS;
 using CoreAnimation;
 using CoreGraphics;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
+using MvvmCross.Platforms.Ios.Binding;
 using System;
 using AppRopio.ECommerce.Basket.Core;
 

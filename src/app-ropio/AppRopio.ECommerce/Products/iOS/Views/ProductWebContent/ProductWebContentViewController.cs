@@ -4,7 +4,7 @@ using AppRopio.ECommerce.Products.Core.ViewModels.ProductWebContent;
 using AppRopio.ECommerce.Products.iOS.Models;
 using AppRopio.ECommerce.Products.iOS.Services;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platform;
+using MvvmCross;
 using UIKit;
 using AppRopio.Base.iOS;
 

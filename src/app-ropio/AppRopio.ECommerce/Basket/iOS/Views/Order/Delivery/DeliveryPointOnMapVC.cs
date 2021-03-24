@@ -12,7 +12,7 @@ using CoreGraphics;
 using CoreLocation;
 using MapKit;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platform;
+using MvvmCross;
 using UIKit;
 using AppRopio.ECommerce.Basket.Core;
 

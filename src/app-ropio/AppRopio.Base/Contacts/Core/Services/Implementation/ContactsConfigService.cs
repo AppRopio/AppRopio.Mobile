@@ -3,7 +3,7 @@ using System.IO;
 using AppRopio.Base.Contacts.Core.Models;
 using AppRopio.Base.Core;
 using AppRopio.Base.Core.Services.Settings;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Base.Contacts.Core.Services.Implementation
 {

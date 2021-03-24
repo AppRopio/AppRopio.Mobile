@@ -21,8 +21,8 @@ using AppRopio.ECommerce.Products.Droid.Views.ProductCard;
 using AppRopio.ECommerce.Products.Droid.Views.ProductCard.Selection;
 using AppRopio.ECommerce.Products.Droid.Views.ProductTextContent;
 using AppRopio.ECommerce.Products.Droid.Views.ProductWebContent;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.ECommerce.Products.Droid
 {

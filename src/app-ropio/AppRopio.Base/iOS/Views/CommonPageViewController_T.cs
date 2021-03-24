@@ -1,8 +1,8 @@
 ﻿using System;
 using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.iOS.Views.PageViewController;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.Base.iOS.Views

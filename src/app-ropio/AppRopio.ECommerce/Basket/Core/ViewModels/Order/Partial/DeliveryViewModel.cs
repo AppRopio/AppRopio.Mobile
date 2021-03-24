@@ -14,9 +14,9 @@ using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items.Delivery;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Services;
 using AppRopio.Payments.Core.Bundle;
 using AppRopio.Payments.Core.Messages;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross.ViewModels;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 using PaymentModel = AppRopio.Models.Basket.Responses.Order.Payment;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial

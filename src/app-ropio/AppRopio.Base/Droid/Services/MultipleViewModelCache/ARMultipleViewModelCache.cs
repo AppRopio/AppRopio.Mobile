@@ -1,9 +1,9 @@
 ﻿using System;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.Base.Droid.Services.MultipleViewModelCache
 {
-    public class ARMultipleViewModelCache : MvvmCross.Droid.Views.IMvxMultipleViewModelCache
+    public class ARMultipleViewModelCache : MvvmCross.Platforms.Android.Views.IMvxMultipleViewModelCache
     {
         public void Cache(IMvxViewModel toCache, string viewModelTag = "singleInstanceCache")
         {

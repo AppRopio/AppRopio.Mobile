@@ -6,8 +6,8 @@ using AppRopio.Base.Information.Core.ViewModels.Information;
 using AppRopio.Base.Information.Core.ViewModels.Information.Services;
 using AppRopio.Base.Information.Core.ViewModels.InformationTextContent;
 using AppRopio.Base.Information.Core.ViewModels.InformationWebContent;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.Base.Information.Core
 {

@@ -21,12 +21,12 @@ using Android.Widget;
 using AppRopio.Base.Droid.Listeners;
 using AppRopio.ECommerce.Loyalty.Core.ViewModels.Promo;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.Droid.BindingContext;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Core.Views;
-using MvvmCross.Droid.Views;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Droid.Platform;
+using MvvmCross.Platforms.Android.Binding.BindingContext;
+using MvvmCross.ViewModels;
+using MvvmCross.Views;
+using MvvmCross.Platforms.Android.Views;
+using MvvmCross;
+using MvvmCross.Platforms.Android;
 
 namespace AppRopio.ECommerce.Loyalty.Droid.Views.Promo
 {

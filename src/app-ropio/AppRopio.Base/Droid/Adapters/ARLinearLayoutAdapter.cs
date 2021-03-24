@@ -3,7 +3,7 @@ using System.Windows.Input;
 using Android.Content;
 using Android.Runtime;
 using Android.Views;
-using MvvmCross.Binding.Droid.Views;
+using MvvmCross.Platforms.Android.Binding;
 using MvvmCross.Droid.Support.V7.RecyclerView.ItemTemplates;
 
 namespace AppRopio.Base.Droid.Adapters

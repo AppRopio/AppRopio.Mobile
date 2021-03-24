@@ -1,7 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using AppRopio.ECommerce.Products.Core.ViewModels.Catalog;
 using AppRopio.ECommerce.Products.Core.ViewModels.Categories.Items.Banners;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.Categories.Disabled
 {

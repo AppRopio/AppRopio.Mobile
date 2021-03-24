@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using AppRopio.Base.API.Services;
 using AppRopio.Models.Filters.Responses;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Base.Filters.API.Services.Fakes
 {

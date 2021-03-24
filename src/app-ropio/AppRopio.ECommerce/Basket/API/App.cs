@@ -2,11 +2,11 @@
 using AppRopio.ECommerce.Basket.API.Services;
 using AppRopio.ECommerce.Basket.API.Services.Fake;
 using AppRopio.ECommerce.Basket.API.Services.Implementation;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.Basket.API
 {
-    public class App : MvvmCross.Core.ViewModels.MvxApplication
+    public class App : MvvmCross.ViewModels.MvxApplication
     {
         public override void Initialize()
         {

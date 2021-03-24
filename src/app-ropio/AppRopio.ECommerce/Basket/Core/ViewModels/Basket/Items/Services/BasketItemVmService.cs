@@ -7,8 +7,8 @@ using AppRopio.Base.Core.ViewModels.Services;
 using AppRopio.ECommerce.Basket.Core.Messages.Basket;
 using AppRopio.ECommerce.Basket.Core.Services;
 using AppRopio.Models.Products.Responses;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Items.Services
 {

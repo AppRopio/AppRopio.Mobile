@@ -4,7 +4,7 @@ using UIKit;
 using AppRopio.Base.iOS.Helpers;
 using System.Linq;
 using AppRopio.Base.iOS.UIExtentions;
-using MvvmCross.Platform;
+using MvvmCross;
 using AppRopio.Base.Core.Services.Localization;
 
 namespace AppRopio.Base.iOS

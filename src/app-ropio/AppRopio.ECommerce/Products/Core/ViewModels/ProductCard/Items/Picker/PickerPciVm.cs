@@ -7,9 +7,9 @@ using System.Windows.Input;
 using AppRopio.ECommerce.Products.Core.Messages;
 using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.Picker.Items;
 using AppRopio.Models.Products.Responses;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross.ViewModels;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.Picker
 {

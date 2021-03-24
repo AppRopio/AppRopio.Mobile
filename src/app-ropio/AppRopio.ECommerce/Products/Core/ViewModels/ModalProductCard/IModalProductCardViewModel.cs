@@ -1,6 +1,6 @@
 ﻿using System;
 using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.ModalProductCard
 {

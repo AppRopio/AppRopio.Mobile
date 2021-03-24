@@ -16,8 +16,8 @@ using System;
 using AppRopio.Base.Contacts.Core.ViewModels.Contacts;
 using AppRopio.Base.Contacts.Droid.Views.Contacts;
 using AppRopio.Base.Core.Services.ViewLookup;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.Base.Contacts.Droid
 {

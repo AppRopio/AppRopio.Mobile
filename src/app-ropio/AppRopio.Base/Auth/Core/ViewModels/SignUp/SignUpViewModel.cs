@@ -9,9 +9,9 @@ using AppRopio.Base.Auth.Core.ViewModels.SignUp.Items;
 using AppRopio.Base.Auth.Core.ViewModels.SignUp.Services;
 using AppRopio.Base.Core.Models.Bundle;
 using AppRopio.Base.Core.Models.Navigation;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross.ViewModels;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.Base.Auth.Core.ViewModels.SignUp
 {

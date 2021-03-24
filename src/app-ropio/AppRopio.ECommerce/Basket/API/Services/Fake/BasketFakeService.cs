@@ -7,7 +7,7 @@ using AppRopio.Base.API.Services;
 using AppRopio.Models.Base.Responses;
 using AppRopio.Models.Basket.Responses.Basket;
 using AppRopio.Models.Products.Responses;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.Basket.API.Services.Fake
 {

@@ -1,5 +1,5 @@
 ﻿using System;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross.Plugin.Messenger;
 using System.Collections.Generic;
 
 namespace AppRopio.Base.Core.Messsages.DataBase

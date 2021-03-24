@@ -15,9 +15,9 @@ using AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Items;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Services;
 using AppRopio.ECommerce.Loyalty.Abstractions;
 using AppRopio.ECommerce.Products.Core.Models.Bundle;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross.ViewModels;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Basket
 {

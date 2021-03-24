@@ -2,8 +2,8 @@
 using AppRopio.Models.Filters.Responses;
 using System.Collections.Generic;
 using AppRopio.Base.Filters.Core.Services;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 using AppRopio.Base.Filters.Core.ViewModels.Filters.Messages;
 
 namespace AppRopio.Base.Filters.Core.ViewModels.Filters.Items.Selection

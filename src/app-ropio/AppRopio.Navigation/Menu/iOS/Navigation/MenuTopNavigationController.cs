@@ -3,7 +3,7 @@ using AppRopio.Base.Core.ViewModels;
 using AppRopio.Base.iOS.Views;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Platform.Core;
-using MvvmCross.Platform.iOS.Views;
+using MvvmCross.Platforms.Ios.Views.Base;
 using UIKit;
 
 namespace AppRopio.Navigation.Menu.iOS.Navigation

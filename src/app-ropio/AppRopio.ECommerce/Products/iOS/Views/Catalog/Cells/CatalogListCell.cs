@@ -2,7 +2,7 @@
 using CoreAnimation;
 using CoreGraphics;
 using Foundation;
-using MvvmCross.Binding.iOS.Views;
+using MvvmCross.Platforms.Ios.Binding;
 using UIKit;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells

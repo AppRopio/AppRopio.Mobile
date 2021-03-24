@@ -1,5 +1,5 @@
 ﻿using System;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 using AppRopio.Base.Core.ViewModels.Search;
 namespace AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Header
 {

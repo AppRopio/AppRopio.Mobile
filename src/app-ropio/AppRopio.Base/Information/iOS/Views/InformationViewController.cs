@@ -7,8 +7,8 @@ using AppRopio.Base.Information.iOS.Views.Cell;
 using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.Views;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross;
 using UIKit;
 using AppRopio.Base.Information.Core;
 

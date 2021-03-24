@@ -4,8 +4,8 @@ using AppRopio.Payments.CloudPayments.iOS.View;
 using AppRopio.Payments.Core.ViewModels;
 using AppRopio.Payments.iOS.Services;
 using AppRopio.Payments.iOS.Services.Implementation;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.Payments.iOS
 {

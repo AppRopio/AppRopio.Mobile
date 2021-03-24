@@ -3,7 +3,7 @@ using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.UIExtentions;
 using AppRopio.ECommerce.Basket.iOS.Services;
 using Foundation;
-using MvvmCross.Platform;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Cells

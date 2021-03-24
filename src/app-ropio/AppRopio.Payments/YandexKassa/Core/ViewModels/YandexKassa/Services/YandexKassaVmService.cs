@@ -9,7 +9,7 @@ using AppRopio.Payments.Core.Services;
 using AppRopio.Payments.YandexKassa.API.Services;
 using AppRopio.Payments.YandexKassa.Core.Models;
 using AppRopio.Payments.YandexKassa.Core.Services;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Payments.YandexKassa.Core.ViewModels.YandexKassa.Services
 {

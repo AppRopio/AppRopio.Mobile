@@ -12,12 +12,12 @@ using AppRopio.Base.Filters.iOS.Views.Filters.Cells.Picker;
 using AppRopio.Base.Filters.iOS.Views.Filters.Cells.Selection.MultiSelection;
 using AppRopio.Base.Filters.iOS.Views.Filters.Cells.Selection.OneSelection;
 using AppRopio.Models.Filters.Responses;
-using MvvmCross.Binding.iOS.Views;
+using MvvmCross.Platforms.Ios.Binding;
 using UIKit;
 using Foundation;
 using AppRopio.Base.Filters.Core.ViewModels.Filters.Items.Selection.OneSelection;
 using AppRopio.Base.Filters.iOS.Views.FIlters.Cells.Switch;
-using MvvmCross.Binding.ExtensionMethods;
+using MvvmCross.Binding.Extensions;
 using System.Collections.Generic;
 
 namespace AppRopio.Base.Filters.iOS.Views.Filters

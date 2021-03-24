@@ -15,10 +15,10 @@ using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard;
 using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.Collection.Horizontal.Shops;
 using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.MinMax;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.Droid.BindingContext;
+using MvvmCross.Platforms.Android.Binding.BindingContext;
 using MvvmCross.Droid.Support.V7.RecyclerView;
-using MvvmCross.Droid.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Android.Views;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.Products.Droid.Views.ProductCard
 {

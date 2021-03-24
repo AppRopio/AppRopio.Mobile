@@ -1,6 +1,6 @@
 ﻿using AppRopio.Base.Core.Services.ViewModelLookup;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 using AppRopio.Base.Map.Core.ViewModels.Points;
 using AppRopio.Base.Map.Core.ViewModels.Points.List;
 using AppRopio.Base.Map.Core.ViewModels.Points.Map;

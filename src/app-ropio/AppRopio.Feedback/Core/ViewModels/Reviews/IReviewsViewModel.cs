@@ -3,7 +3,7 @@ using AppRopio.Base.Core.ViewModels;
 using AppRopio.Feedback.Core.ViewModels.Items;
 using AppRopio.Feedback.Core.ViewModels.Reviews.Items;
 using AppRopio.Models.Feedback.Responses;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.Feedback.Core.ViewModels.Reviews
 {

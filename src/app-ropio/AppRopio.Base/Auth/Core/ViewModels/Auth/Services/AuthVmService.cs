@@ -8,8 +8,8 @@ using AppRopio.Base.Auth.Core.Models.OAuth;
 using AppRopio.Base.Auth.Core.Services;
 using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.Core.ViewModels.Services;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.Base.Auth.Core.ViewModels.Auth.Services
 {

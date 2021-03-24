@@ -8,7 +8,7 @@ using AppRopio.Base.Map.iOS.Services;
 using AppRopio.Base.Map.iOS.Views.Points.List.Cells;
 using CoreGraphics;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platform;
+using MvvmCross;
 using UIKit;
 using AppRopio.Base.Map.Core;
 

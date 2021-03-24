@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using AppRopio.Base.Core.Messsages.DataBase;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 using Realms;
 
 namespace AppRopio.Base.Core.Services.DataBase

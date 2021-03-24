@@ -1,13 +1,13 @@
 ﻿using System;
 using AppRopio.Base.Core.Services.Router;
 using AppRopio.Base.Core.Services.ViewModelLookup;
-using MvvmCross.Platform;
+using MvvmCross;
 using AppRopio.Base.Profile.Core.Services;
 using AppRopio.Base.Profile.Core.Services.Implementation;
 
 namespace AppRopio.Base.Profile.Core
 {
-	public class App: MvvmCross.Core.ViewModels.MvxApplication
+	public class App: MvvmCross.ViewModels.MvxApplication
 	{
 		public override void Initialize()
 		{

@@ -31,7 +31,7 @@
             </LinearLayout>
             <View
                 style="@style/AppRopioTheme.Control.Separator" />
-            <mvvmcross.binding.droid.views.MvxLinearLayout
+            <MvvmCross.Platforms.Android.Binding.MvxLinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

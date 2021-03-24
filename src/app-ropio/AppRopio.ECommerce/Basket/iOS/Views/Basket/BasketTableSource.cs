@@ -3,8 +3,8 @@ using AppRopio.Base.Core.Services.Localization;
 using AppRopio.ECommerce.Basket.Core;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Items;
 using Foundation;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.ECommerce.Basket.iOS.Views.Basket

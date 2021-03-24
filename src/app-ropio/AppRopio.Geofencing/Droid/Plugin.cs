@@ -1,8 +1,8 @@
 ﻿using System;
 using AppRopio.Geofencing.Core.Service;
 using AppRopio.Geofencing.Droid.Services;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.Geofencing.Droid
 {

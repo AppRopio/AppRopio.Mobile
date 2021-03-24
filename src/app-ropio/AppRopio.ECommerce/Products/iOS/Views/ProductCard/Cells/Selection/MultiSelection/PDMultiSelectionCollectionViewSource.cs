@@ -7,7 +7,7 @@ using AppRopio.ECommerce.Products.iOS.Services;
 using AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.Selection.MultiSelection.Cells;
 using CoreGraphics;
 using Foundation;
-using MvvmCross.Platform;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.Selection.MultiSelection

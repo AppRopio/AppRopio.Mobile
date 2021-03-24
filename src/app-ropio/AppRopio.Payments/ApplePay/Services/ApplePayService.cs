@@ -6,7 +6,7 @@ using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Models.Payments.Responses;
 using AppRopio.Payments.ApplePay.Models;
 using Foundation;
-using MvvmCross.Platform;
+using MvvmCross;
 using Newtonsoft.Json;
 using PassKit;
 

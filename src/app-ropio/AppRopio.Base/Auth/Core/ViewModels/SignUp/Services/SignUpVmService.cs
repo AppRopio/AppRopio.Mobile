@@ -10,7 +10,7 @@ using AppRopio.Base.Core.Services.UserDialogs;
 using AppRopio.Base.Core.ViewModels.Services;
 using AppRopio.Models.Auth.Requests;
 using AppRopio.Models.Auth.Responses;
-using MvvmCross.Platform;
+using MvvmCross;
 using MvvmCross.Platform.Core;
 
 namespace AppRopio.Base.Auth.Core.ViewModels.SignUp.Services

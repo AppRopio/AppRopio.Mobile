@@ -7,8 +7,8 @@ using AppRopio.Base.Core.ViewModels.Services;
 using AppRopio.ECommerce.Basket.API.Services;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items;
 using AppRopio.Models.Basket.Responses.Order;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Services.Implementation
 {

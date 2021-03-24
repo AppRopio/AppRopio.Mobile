@@ -1,14 +1,14 @@
 using AppRopio.Navigation.Menu.Core.Services;
 using AppRopio.Navigation.Menu.Core.Services.Implementation;
 using AppRopio.Navigation.Menu.Core.ViewModels.Services;
-using MvvmCross.Platform;
+using MvvmCross;
 using MvvmCross.Platform.Platform;
 using AppRopio.Navigation.Menu.Core.ViewModels;
 using AppRopio.Base.Core.Services.ViewModelLookup;
 
 namespace AppRopio.Navigation.Menu.Core
 {
-    public class App : MvvmCross.Core.ViewModels.MvxApplication
+    public class App : MvvmCross.ViewModels.MvxApplication
     {
         public override void Initialize()
         {

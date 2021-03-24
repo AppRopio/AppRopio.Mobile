@@ -1,6 +1,6 @@
 ﻿using AppRopio.ECommerce.HistoryOrders.iOS.Views.HistoryOrders;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 using AppRopio.Base.Core.Services.ViewLookup;
 using AppRopio.ECommerce.HistoryOrders.iOS.Services;
 using AppRopio.ECommerce.HistoryOrders.iOS.Services.Implementation;

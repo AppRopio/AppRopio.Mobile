@@ -7,8 +7,8 @@ using AppRopio.Base.Core.ViewModels.Selection.Items;
 using AppRopio.Base.Core.ViewModels.Services;
 using AppRopio.ECommerce.Products.Core.Messages;
 using AppRopio.Models.Products.Responses;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Selection.Services
 {

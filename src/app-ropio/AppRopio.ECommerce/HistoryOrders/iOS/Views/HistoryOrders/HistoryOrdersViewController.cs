@@ -4,9 +4,9 @@ using AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrders;
 using AppRopio.ECommerce.HistoryOrders.iOS.Models;
 using AppRopio.ECommerce.HistoryOrders.iOS.Services;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Views;
+using MvvmCross;
 using UIKit;
 using AppRopio.ECommerce.HistoryOrders.Core;
 

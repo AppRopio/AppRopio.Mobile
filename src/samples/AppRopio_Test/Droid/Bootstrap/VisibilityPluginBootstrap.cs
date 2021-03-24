@@ -1,9 +1,9 @@
-using MvvmCross.Platform.Plugins;
+using MvvmCross.Plugin;
 
 namespace AppRopio.Test.Droid.Bootstrap
 {
     public class VisibilityPluginBootstrap
-        : MvxPluginBootstrapAction<MvvmCross.Plugins.Visibility.PluginLoader>
+        : MvxPluginBootstrapAction<MvvmCross.Plugin.Visibility.PluginLoader>
     {
     }
 }

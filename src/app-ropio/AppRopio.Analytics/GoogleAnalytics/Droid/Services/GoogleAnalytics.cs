@@ -3,7 +3,7 @@ using Android.Gms.Analytics;
 using AppRopio.Analytics.GoogleAnalytics.Core.Services;
 using Android.App;
 using Android.Gms.Analytics.Ecommerce;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Analytics.GoogleAnalytics.Droid.Services
 {

@@ -1,6 +1,6 @@
 ﻿using Android.Views;
 using AppRopio.Models.HistoryOrders.Responses;
-using MvvmCross.Platform.Converters;
+using MvvmCross.Converters;
 
 namespace AppRopio.ECommerce.HistoryOrders.Core.ValueConverters
 {

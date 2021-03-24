@@ -5,8 +5,8 @@ using AppRopio.Base.Map.Core.ViewModels.Points.Map;
 using AppRopio.Base.Map.Droid.Views.Points;
 using AppRopio.Base.Map.Droid.Views.Points.List;
 using AppRopio.Base.Map.Droid.Views.Points.Map;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.Base.Map.Droid
 {

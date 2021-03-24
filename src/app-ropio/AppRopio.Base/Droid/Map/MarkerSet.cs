@@ -5,8 +5,8 @@ using System.Collections.Specialized;
 using System.Linq;
 using Android.Gms.Maps;
 using Android.Gms.Maps.Model;
-using MvvmCross.Platform.Exceptions;
-using MvvmCross.Platform.WeakSubscription;
+using MvvmCross.Exceptions;
+using MvvmCross.WeakSubscription;
 
 namespace AppRopio.Base.Droid.Map
 {

@@ -2,8 +2,8 @@
 using System.Threading.Tasks;
 using AppRopio.Base.Core.ViewModels.Services;
 using AppRopio.ECommerce.HistoryOrders.API.Services;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 using AppRopio.Base.API.Exceptions;
 using AppRopio.ECommerce.HistoryOrders.Core.Services;
 using AppRopio.ECommerce.HistoryOrders.Core.Models.Bundle;

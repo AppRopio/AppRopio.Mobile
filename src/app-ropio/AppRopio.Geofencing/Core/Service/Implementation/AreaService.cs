@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using AppRopio.Base.API.Services;
 using AppRopio.Base.Core;
 using AppRopio.Models.Geofencing.Responses;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Geofencing.Core.Service.Implementation
 {

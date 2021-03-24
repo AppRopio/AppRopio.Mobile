@@ -12,8 +12,8 @@ using AppRopio.ECommerce.Basket.Core.ViewModels;
 using AppRopio.ECommerce.Basket.iOS.Services;
 using AppRopio.ECommerce.Basket.iOS.Views.Basket.Cells;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Views;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.ECommerce.Basket.iOS.Views.Basket

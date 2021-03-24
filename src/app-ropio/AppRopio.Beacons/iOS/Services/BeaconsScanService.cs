@@ -11,7 +11,7 @@ using AppRopio.Beacons.Core.Services.Implementation;
 using MvvmCross.Platform.Platform;
 using AppRopio.Beacons.iOS.Util;
 using Newtonsoft.Json;
-using MvvmCross.Platform;
+using MvvmCross;
 using AppRopio.Base.Core.Services.Device;
 
 namespace AppRopio.Beacons.iOS.Services

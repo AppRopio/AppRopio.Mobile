@@ -11,8 +11,8 @@ using AppRopio.Payments.Core.Bundle;
 using AppRopio.Payments.YandexKassa.Core.Models;
 using AppRopio.Payments.YandexKassa.Core.Services;
 using AppRopio.Payments.YandexKassa.Core.ViewModels.YandexKassa.Services;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.Payments.YandexKassa.Core.ViewModels.YandexKassa
 {

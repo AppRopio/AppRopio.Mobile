@@ -8,8 +8,8 @@ using CoreAnimation;
 using CoreGraphics;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross;
 using UIKit;
 using AppRopio.Base.iOS.UIExtentions;
 

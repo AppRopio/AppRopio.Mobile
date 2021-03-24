@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using AppRopio.Base.API.Services;
 using AppRopio.Models.Loyalty.Responses;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.Loyalty.API.Services.Fake
 {

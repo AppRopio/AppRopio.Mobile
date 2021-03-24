@@ -9,8 +9,8 @@ using AppRopio.ECommerce.Products.iOS.Services;
 using AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.Collection.Horizontal.Products

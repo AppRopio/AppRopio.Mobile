@@ -5,9 +5,9 @@ using AppRopio.Base.Core.Services.Contacts;
 using AppRopio.ECommerce.Basket.Core.Messages.Autocomplete;
 using AppRopio.Models.Basket.Responses.Enums;
 using AppRopio.Models.Basket.Responses.Order;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross.ViewModels;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items
 {

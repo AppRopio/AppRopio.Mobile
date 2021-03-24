@@ -12,8 +12,8 @@ using AppRopio.ECommerce.Products.Core.ViewModels.ContentSearch.Items.Autocomple
 using AppRopio.ECommerce.Products.Core.ViewModels.ContentSearch.Items.Hint;
 using AppRopio.ECommerce.Products.Core.ViewModels.ContentSearch.Items.History;
 using AppRopio.ECommerce.Products.Core.ViewModels.ContentSearch.Services;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 using MvvmCross.Platform.Platform;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.ContentSearch

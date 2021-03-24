@@ -1,9 +1,9 @@
-using MvvmCross.Platform.Plugins;
+using MvvmCross.Plugin;
 
 namespace AppRopio_Test.Bootstrap
 {
     public class JsonPluginBootstrap
-        : MvxPluginBootstrapAction<MvvmCross.Plugins.Json.PluginLoader>
+        : MvxPluginBootstrapAction<MvvmCross.Plugin.Json.PluginLoader>
     {
     }
 }

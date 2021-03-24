@@ -8,8 +8,8 @@ using AppRopio.Payments.Core.Bundle;
 using AppRopio.Payments.Core.Services;
 using AppRopio.Payments.Core.Utils;
 using AppRopio.Payments.Core.ViewModels.Services;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.Payments.Core.ViewModels
 {

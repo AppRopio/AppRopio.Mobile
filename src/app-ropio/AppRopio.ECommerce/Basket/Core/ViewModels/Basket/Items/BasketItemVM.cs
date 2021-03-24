@@ -8,9 +8,9 @@ using AppRopio.ECommerce.Basket.Core.Messages;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Items.Services;
 using AppRopio.Models.Basket.Responses.Basket;
 using AppRopio.Models.Products.Responses;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross.ViewModels;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 using AppRopio.Base.Core.Services.Localization;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Items

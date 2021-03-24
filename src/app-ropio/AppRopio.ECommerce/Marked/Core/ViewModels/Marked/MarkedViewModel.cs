@@ -8,8 +8,8 @@ using AppRopio.Base.Core.Models.Navigation;
 using AppRopio.ECommerce.Marked.Core.ViewModels.Marked.Services;
 using AppRopio.ECommerce.Products.Core.Messages;
 using AppRopio.ECommerce.Products.Core.ViewModels.Catalog;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.Marked.Core.ViewModels.Marked
 {

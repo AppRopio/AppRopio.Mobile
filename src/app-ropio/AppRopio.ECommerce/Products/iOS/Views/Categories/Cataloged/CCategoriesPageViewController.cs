@@ -11,7 +11,7 @@ using AppRopio.ECommerce.Products.iOS.Views.Categories.Cataloged.ViewSources;
 using CoreGraphics;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platform;
+using MvvmCross;
 using UIKit;
 using System.Linq;
 using AppRopio.ECommerce.Products.Core;

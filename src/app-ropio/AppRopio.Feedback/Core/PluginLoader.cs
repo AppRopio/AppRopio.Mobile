@@ -1,7 +1,7 @@
 ﻿using System;
-using MvvmCross.Platform;
+using MvvmCross;
 using MvvmCross.Platform.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross.Plugin;
 
 namespace AppRopio.Feedback.Core
 {

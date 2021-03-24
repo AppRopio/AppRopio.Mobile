@@ -7,7 +7,7 @@ using MapKit;
 using MvvmCross.Binding;
 using MvvmCross.Binding.Attributes;
 using MvvmCross.Platform.Platform;
-using MvvmCross.Platform.WeakSubscription;
+using MvvmCross.WeakSubscription;
 using AppRopio.Base.Map.Core.ViewModels.Points.List.Items;
 using UIKit;
 

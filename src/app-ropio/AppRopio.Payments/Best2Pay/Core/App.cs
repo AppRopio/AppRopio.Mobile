@@ -5,8 +5,8 @@ using AppRopio.Payments.Best2Pay.Core.Services;
 using AppRopio.Payments.Best2Pay.Core.Services.Implementation;
 using AppRopio.Payments.Best2Pay.Core.ViewModels.Best2Pay;
 using AppRopio.Payments.Best2Pay.Core.ViewModels.Best2Pay.Services;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.Payments.Best2Pay.Core
 {

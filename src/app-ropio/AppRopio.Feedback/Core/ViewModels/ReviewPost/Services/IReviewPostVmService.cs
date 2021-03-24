@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AppRopio.Feedback.Core.ViewModels.Items;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.Feedback.Core.ViewModels.ReviewPost.Services
 {

@@ -12,8 +12,8 @@ using AppRopio.ECommerce.Products.Core.Services;
 using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items;
 using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Services;
 using AppRopio.Models.Products.Responses;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard
 {

@@ -3,8 +3,8 @@ using System.Windows.Input;
 using AppRopio.Base.Auth.Core.ViewModels._base;
 using AppRopio.Base.Auth.Core.ViewModels.Password.New.Services;
 using AppRopio.Base.Core.PresentationHints;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.Base.Auth.Core.ViewModels.Password.New
 {

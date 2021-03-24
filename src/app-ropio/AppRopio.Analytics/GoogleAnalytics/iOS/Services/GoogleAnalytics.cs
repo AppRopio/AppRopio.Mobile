@@ -2,7 +2,7 @@
 using AppRopio.Analytics.GoogleAnalytics.Core.Services;
 using Foundation;
 using Google.Analytics;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Analytics.GoogleAnalytics.iOS.Services
 {

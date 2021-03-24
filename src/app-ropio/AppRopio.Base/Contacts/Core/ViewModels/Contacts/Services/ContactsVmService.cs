@@ -9,7 +9,7 @@ using AppRopio.Base.Core.Services.UserDialogs;
 using AppRopio.Base.Core.ViewModels.Services;
 using AppRopio.Models.Contacts.Enums;
 using AppRopio.Models.Contacts.Responses;
-using MvvmCross.Platform;
+using MvvmCross;
 using Plugin.Messaging;
 using AppRopio.Base.Core.Services.Localization;
 

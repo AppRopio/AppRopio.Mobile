@@ -4,8 +4,8 @@ using AppRopio.Base.Auth.Core.Formatters;
 using AppRopio.Base.Auth.Core.Models.Bundle;
 using AppRopio.Base.Auth.Core.ViewModels._base;
 using AppRopio.Base.Auth.Core.ViewModels.Password.Reset.Main.Services;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.Base.Auth.Core.ViewModels.Password.Reset.Main
 {

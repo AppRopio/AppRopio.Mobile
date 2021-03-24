@@ -6,8 +6,8 @@ using AppRopio.Base.iOS.UIExtentions;
 using AppRopio.ECommerce.Products.Core;
 using AppRopio.ECommerce.Products.Core.Services;
 using AppRopio.ECommerce.Products.Core.ViewModels.Categories;
-using MvvmCross.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Views;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.Categories.Cataloged

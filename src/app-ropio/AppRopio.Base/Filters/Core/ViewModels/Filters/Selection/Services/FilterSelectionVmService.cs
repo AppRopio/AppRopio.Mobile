@@ -7,8 +7,8 @@ using AppRopio.Base.Core.ViewModels.Selection.Items;
 using AppRopio.Base.Core.ViewModels.Services;
 using AppRopio.Base.Filters.Core.ViewModels.Filters.Messages;
 using AppRopio.Models.Filters.Responses;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.Base.Filters.Core.ViewModels.Filters.Selection.Services
 {

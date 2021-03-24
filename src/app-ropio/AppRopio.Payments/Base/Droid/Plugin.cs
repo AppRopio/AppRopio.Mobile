@@ -2,8 +2,8 @@
 using AppRopio.Base.Core.Services.ViewLookup;
 using AppRopio.Payments.Core.ViewModels;
 using AppRopio.Payments.Droid.Views;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.Payments.Droid
 {

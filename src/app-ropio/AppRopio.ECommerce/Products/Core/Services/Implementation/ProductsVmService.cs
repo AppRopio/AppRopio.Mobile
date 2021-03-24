@@ -3,8 +3,8 @@ using System.Reflection;
 using System.Threading.Tasks;
 using AppRopio.Base.Core.Services.ViewModelLookup;
 using AppRopio.Base.Core.ViewModels.Services;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.Products.Core.Services.Implementation
 {

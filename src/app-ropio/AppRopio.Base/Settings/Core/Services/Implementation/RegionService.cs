@@ -9,8 +9,8 @@ using AppRopio.Base.Settings.API.Services;
 using AppRopio.Base.Settings.Core.Models;
 using AppRopio.Base.Settings.Core.Models.Bundle;
 using AppRopio.Base.Settings.Core.ViewModels.Messages;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.Base.Settings.Core.Services.Implementation
 {

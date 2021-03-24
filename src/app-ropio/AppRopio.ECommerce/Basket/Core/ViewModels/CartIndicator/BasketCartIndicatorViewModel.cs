@@ -6,10 +6,10 @@ using AppRopio.ECommerce.Basket.API.Services;
 using AppRopio.ECommerce.Basket.Core.Messages;
 using AppRopio.ECommerce.Basket.Core.Messages.Order;
 using AppRopio.ECommerce.Basket.Core.Services;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 using MvvmCross.Platform.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.CartIndicator
 {

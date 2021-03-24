@@ -1,6 +1,6 @@
 ﻿using AppRopio.Base.Core.ViewModels;
 using AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrderProducts.Items;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrders
 {

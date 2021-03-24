@@ -10,7 +10,7 @@ using AppRopio.Base.Core.ViewModels.Selection.Services;
 using AppRopio.ECommerce.Products.Core.Models.Bundle;
 using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Selection.Services;
 using AppRopio.Models.Products.Responses;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Selection
 {
@@ -100,7 +100,7 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Selection
 
         #region Init
 
-        public override void Prepare(MvvmCross.Core.ViewModels.IMvxBundle parameters)
+        public override void Prepare(MvvmCross.ViewModels.IMvxBundle parameters)
         {
             var sortParameters = parameters.ReadAs<SelectionBundle>();
             this.InitFromBundle(sortParameters);

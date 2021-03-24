@@ -3,7 +3,7 @@ using AppRopio.Base.Core.Services.Launcher;
 using AppRopio.Base.Core.ViewModels.Services;
 using AppRopio.Base.Information.Core.ViewModels.InformationTextContent;
 using AppRopio.Base.Information.Core.ViewModels.InformationWebContent;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Base.Information.Core.Services.Implementation
 {

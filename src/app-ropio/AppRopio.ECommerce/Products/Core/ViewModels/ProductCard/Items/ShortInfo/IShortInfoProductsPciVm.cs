@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Items;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.ShortInfo
 {

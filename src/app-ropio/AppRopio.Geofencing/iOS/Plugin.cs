@@ -1,7 +1,7 @@
 ﻿using System;
-using MvvmCross.Platform.Plugins;
+using MvvmCross.Plugin;
 using AppRopio.Geofencing.Core.Service;
-using MvvmCross.Platform;
+using MvvmCross;
 using AppRopio.Geofencing.iOS.Services;
 using MvvmCross.Platform.Platform;
 

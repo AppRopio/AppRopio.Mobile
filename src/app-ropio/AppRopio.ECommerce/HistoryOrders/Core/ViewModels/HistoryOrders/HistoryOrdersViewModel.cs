@@ -5,8 +5,8 @@ using AppRopio.Base.Core.Models.Bundle;
 using AppRopio.Base.Core.Models.Navigation;
 using AppRopio.Base.Core.ViewModels;
 using AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrders.Services;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrders
 {

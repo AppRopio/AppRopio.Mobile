@@ -12,7 +12,7 @@ using AppRopio.Payments.Best2Pay.API;
 using AppRopio.Payments.Best2Pay.API.Extentions;
 using AppRopio.Payments.Best2Pay.Core.Models;
 using AppRopio.Payments.Best2Pay.Core.Services;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Payments.Best2Pay.Core.ViewModels.Best2Pay.Services
 {

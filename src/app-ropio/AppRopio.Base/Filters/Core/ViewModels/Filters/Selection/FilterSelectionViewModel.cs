@@ -10,7 +10,7 @@ using AppRopio.Base.Core.ViewModels.Selection.Services;
 using AppRopio.Base.Filters.Core.Models.Bundle;
 using AppRopio.Base.Filters.Core.ViewModels.Filters.Selection.Services;
 using AppRopio.Models.Filters.Responses;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Base.Filters.Core.ViewModels.Filters.Selection
 {
@@ -100,7 +100,7 @@ namespace AppRopio.Base.Filters.Core.ViewModels.Filters.Selection
 
         #region Init
 
-        public override void Prepare(MvvmCross.Core.ViewModels.IMvxBundle parameters)
+        public override void Prepare(MvvmCross.ViewModels.IMvxBundle parameters)
         {
             var sortParameters = parameters.ReadAs<SelectionBundle>();
             this.InitFromBundle(sortParameters);

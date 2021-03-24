@@ -2,7 +2,7 @@
 using MvvmCross.Binding;
 using MvvmCross.Binding.Bindings.Target;
 using MvvmCross.Platform.Platform;
-using MvvmCross.Platform.UI;
+using MvvmCross.UI;
 using UIKit;
 using AppRopio.Base.iOS.UIExtentions;
 

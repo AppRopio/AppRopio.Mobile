@@ -4,12 +4,12 @@ using AppRopio.Base.Filters.iOS.Models;
 using AppRopio.Base.Filters.iOS.Services;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross;
 using UIKit;
 using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.UIExtentions;
-using MvvmCross.Binding.ExtensionMethods;
+using MvvmCross.Binding.Extensions;
 using AppRopio.Base.Filters.Core.ViewModels.Filters.Items.Picker.Items;
 using AppRopio.Base.Core.Converters;
 

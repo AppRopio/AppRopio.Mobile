@@ -3,7 +3,7 @@ using System.IO;
 using AppRopio.Analytics.AppsFlyer.Core.Models.Config;
 using AppRopio.Base.Core;
 using AppRopio.Base.Core.Services.Settings;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Analytics.AppsFlyer.Core.Services.Implementation
 {

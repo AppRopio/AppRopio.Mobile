@@ -7,14 +7,14 @@ using Android.Support.V4.App;
 using Android.Support.V4.View;
 using AppRopio.Base.Droid.Listeners;
 using MvvmCross.Binding;
-using MvvmCross.Binding.Droid.BindingContext;
-using MvvmCross.Binding.ExtensionMethods;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.Platforms.Android.Binding.BindingContext;
+using MvvmCross.Binding.Extensions;
+using MvvmCross.ViewModels;
 using MvvmCross.Droid.Support.V4;
 using MvvmCross.Platform.Core;
 using MvvmCross.Platform.Droid.WeakSubscription;
 using MvvmCross.Platform.Platform;
-using MvvmCross.Platform.WeakSubscription;
+using MvvmCross.WeakSubscription;
 
 namespace AppRopio.Base.Droid.Adapters
 {

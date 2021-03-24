@@ -5,8 +5,8 @@ using Android.App;
 using Android.Views;
 using Android.Widget;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Core.Navigation;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.Navigation;
+using MvvmCross.ViewModels;
 using MvvmCross.Droid.Support.V7.AppCompat.EventSource;
 
 namespace AppRopio.Test.Droid
@@ -86,9 +86,9 @@ namespace AppRopio.Test.Droid
             command.CanExecuteChanged += (s, e) => { if (command.CanExecute(null)) command.Execute(null); };
         }
 
-        public void Include(MvvmCross.Platform.IoC.MvxPropertyInjector injector)
+        public void Include(MvvmCross.IoC.MvxPropertyInjector injector)
         {
-            injector = new MvvmCross.Platform.IoC.MvxPropertyInjector();
+            injector = new MvvmCross.IoC.MvxPropertyInjector();
         }
         public void Include(System.ComponentModel.INotifyPropertyChanged changed)
         {

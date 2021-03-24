@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using AppRopio.Base.API.Services;
 using AppRopio.Models.Auth.Responses;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Base.Auth.API.Services.Implementation.Fake
 {

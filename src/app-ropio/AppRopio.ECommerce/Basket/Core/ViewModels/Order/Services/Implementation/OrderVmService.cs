@@ -9,7 +9,7 @@ using AppRopio.ECommerce.Basket.API.Services;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Payment.Items;
 using AppRopio.Models.Basket.Responses.Order;
-using MvvmCross.Platform;
+using MvvmCross;
 using OrderModel = AppRopio.Models.Basket.Responses.Order.Order;
 using PaymentModel = AppRopio.Models.Basket.Responses.Order.Payment;
 

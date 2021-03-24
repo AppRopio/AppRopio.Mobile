@@ -9,7 +9,7 @@ using Android.Util;
 using Android.Views;
 using AppRopio.Base.Droid.Views;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 using MvvmCross.Platform.Core;
 using static Android.Gms.Maps.GoogleMap;
 

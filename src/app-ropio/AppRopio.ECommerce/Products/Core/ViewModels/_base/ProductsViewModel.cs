@@ -3,8 +3,8 @@ using AppRopio.Base.Core.Models.Bundle;
 using AppRopio.Base.Core.ViewModels;
 using AppRopio.ECommerce.Products.Core.Models;
 using AppRopio.ECommerce.Products.Core.Services;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels
 {

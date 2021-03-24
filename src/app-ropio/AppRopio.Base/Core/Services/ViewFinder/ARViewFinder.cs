@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using AppRopio.Base.Core.Services.ViewLookup;
-using MvvmCross.Core.Views;
+using MvvmCross.Views;
 using AppRopio.Base.Core.Services.ViewModelLookup;
 using System.Linq;
 namespace AppRopio.Base.Core.Services.ViewFinder

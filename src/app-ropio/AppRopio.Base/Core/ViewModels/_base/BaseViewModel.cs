@@ -6,10 +6,10 @@ using AppRopio.Base.Core.Services.Analytics;
 using AppRopio.Base.Core.Services.Device;
 using AppRopio.Base.Core.Services.UserDialogs;
 using AppRopio.Base.Core.Services.ViewModelLookup;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 using MvvmCross.Platform.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross.Plugin.Messenger;
 using System.Threading.Tasks;
 using AppRopio.Base.Core.Services.Localization;
 

@@ -10,12 +10,12 @@ using Android.Support.V7.Widget;
 using Android.Views;
 using MvvmCross.Binding;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.Droid.BindingContext;
-using MvvmCross.Binding.ExtensionMethods;
+using MvvmCross.Platforms.Android.Binding.BindingContext;
+using MvvmCross.Binding.Extensions;
 using MvvmCross.Droid.Support.V7.RecyclerView;
 using MvvmCross.Droid.Support.V7.RecyclerView.ItemTemplates;
 using MvvmCross.Platform.Platform;
-using MvvmCross.Platform.WeakSubscription;
+using MvvmCross.WeakSubscription;
 
 #pragma warning disable CS0618
 namespace AppRopio.Base.Droid.Adapters

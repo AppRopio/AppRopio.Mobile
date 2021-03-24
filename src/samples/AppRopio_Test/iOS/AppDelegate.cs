@@ -3,8 +3,8 @@ using AppRopio.Navigation.Menu.iOS;
 using AppRopio.Navigation.Menu.iOS.Navigation;
 using AppRopio_Test.Views;
 using Foundation;
-using MvvmCross.iOS.Platform;
-using MvvmCross.iOS.Views.Presenters;
+using MvvmCross.Platforms.Ios.Core;
+using MvvmCross.Platforms.Ios.Presenters;
 using UIKit;
 
 namespace AppRopio.Test.iOS

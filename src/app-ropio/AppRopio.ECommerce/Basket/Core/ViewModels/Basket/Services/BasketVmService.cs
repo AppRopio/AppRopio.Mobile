@@ -13,8 +13,8 @@ using AppRopio.ECommerce.Basket.API.Services;
 using AppRopio.ECommerce.Basket.Core.Services;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Items;
 using AppRopio.Models.Basket.Responses.Basket;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 using MvvmCross.Platform.Platform;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Services

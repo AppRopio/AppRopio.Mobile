@@ -3,7 +3,7 @@ using System.IO;
 using AppRopio.Base.Core;
 using AppRopio.Base.Core.Services.Settings;
 using AppRopio.Navigation.Menu.Core.Models;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Navigation.Menu.Core.Services.Implementation
 {

@@ -20,9 +20,9 @@ using AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Header;
 using AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Items;
 using AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Services;
 using AppRopio.Models.Filters.Responses;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross.ViewModels;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.Catalog
 {

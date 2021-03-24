@@ -7,9 +7,9 @@ using AppRopio.ECommerce.Basket.Core.Messages.Order;
 using AppRopio.ECommerce.Basket.Core.Models.Bundle;
 using AppRopio.ECommerce.Basket.Core.Services;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Services;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross.ViewModels;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 using AppRopio.Base.Core;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery

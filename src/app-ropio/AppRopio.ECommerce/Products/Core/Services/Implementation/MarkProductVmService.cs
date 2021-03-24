@@ -6,7 +6,7 @@ using AppRopio.Base.API.Exceptions;
 using AppRopio.Base.Core.ViewModels.Services;
 using AppRopio.ECommerce.Products.API.Services;
 using AppRopio.ECommerce.Products.Core.Messages;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.Products.Core.Services.Implementation
 {

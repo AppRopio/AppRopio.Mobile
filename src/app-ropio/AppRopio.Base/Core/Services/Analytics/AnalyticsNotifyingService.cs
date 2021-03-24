@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using AppRopio.Base.Core.Messages.Analytics;
 using AppRopio.Base.Core.Models.Analytics;
 using AppRopio.Base.Core.Services.Device;
-using MvvmCross.Platform;
+using MvvmCross;
 using MvvmCross.Platform.Core;
-using MvvmCross.Platform.IoC;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross.IoC;
+using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.Base.Core.Services.Analytics
 {

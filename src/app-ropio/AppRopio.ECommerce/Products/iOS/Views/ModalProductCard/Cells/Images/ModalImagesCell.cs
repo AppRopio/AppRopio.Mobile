@@ -9,8 +9,8 @@ using AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.Images.Cells;
 using CoreGraphics;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.ModalProductCard.Cells.Images

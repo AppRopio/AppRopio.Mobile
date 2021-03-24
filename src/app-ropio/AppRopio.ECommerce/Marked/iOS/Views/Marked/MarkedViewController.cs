@@ -8,7 +8,7 @@ using AppRopio.ECommerce.Products.Core.Models;
 using AppRopio.ECommerce.Products.iOS.Models;
 using AppRopio.ECommerce.Products.iOS.Views.Catalog;
 using CoreGraphics;
-using MvvmCross.Platform;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.ECommerce.Marked.iOS.Views.Marked

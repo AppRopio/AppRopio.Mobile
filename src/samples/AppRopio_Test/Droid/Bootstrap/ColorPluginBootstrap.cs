@@ -1,9 +1,9 @@
-using MvvmCross.Platform.Plugins;
+using MvvmCross.Plugin;
 
 namespace AppRopio.Test.Droid.Bootstrap
 {
     public class ColorPluginBootstrap
-        : MvxPluginBootstrapAction<MvvmCross.Plugins.Color.PluginLoader>
+        : MvxPluginBootstrapAction<MvvmCross.Plugin.Color.PluginLoader>
     {
     }
 }

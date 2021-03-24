@@ -1,7 +1,7 @@
 ﻿using System;
 using UIKit;
 using Foundation;
-using MvvmCross.Binding.ExtensionMethods;
+using MvvmCross.Binding.Extensions;
 
 namespace AppRopio.Base.iOS.ViewSources
 {

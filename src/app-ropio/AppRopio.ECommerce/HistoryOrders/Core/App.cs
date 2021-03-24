@@ -10,8 +10,8 @@ using AppRopio.ECommerce.HistoryOrders.Core.Services;
 using AppRopio.ECommerce.HistoryOrders.Core.Services.Implementation;
 using AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrders;
 using AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrders.Services;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.HistoryOrders.Core
 {

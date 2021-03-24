@@ -4,7 +4,7 @@ using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery.Items;
 using AppRopio.ECommerce.Basket.iOS.Services;
 using CoreGraphics;
 using MapKit;
-using MvvmCross.Platform;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Delivery.Map

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using AppRopio.Base.Auth.Core.Models.Registration;
-using MvvmCross.Platform;
+using MvvmCross;
 using AppRopio.Base.Core.Services.Localization;
 using System.Linq;
 using System;

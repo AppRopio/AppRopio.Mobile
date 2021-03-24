@@ -6,7 +6,7 @@ using AppRopio.Base.iOS.UIExtentions;
 using MvvmCross.Binding.BindingContext;
 using UIKit;
 using AppRopio.Base.Core.Services.Localization;
-using MvvmCross.Platform;
+using MvvmCross;
 using AppRopio.Base.Auth.Core;
 
 namespace AppRopio.Base.Auth.iOS.Views.SignIn

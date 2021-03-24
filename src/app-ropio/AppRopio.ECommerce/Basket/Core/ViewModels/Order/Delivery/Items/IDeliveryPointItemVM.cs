@@ -1,4 +1,4 @@
-﻿using MvvmCross.Core.ViewModels;
+﻿using MvvmCross.ViewModels;
 using System.Windows.Input;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery.Items

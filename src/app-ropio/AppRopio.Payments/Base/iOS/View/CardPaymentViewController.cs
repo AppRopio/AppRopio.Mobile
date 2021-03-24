@@ -7,7 +7,7 @@ using AppRopio.Payments.Core.ViewModels;
 using AppRopio.Payments.iOS.Models;
 using AppRopio.Payments.iOS.Services;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platform;
+using MvvmCross;
 using UIKit;
 using WebKit;
 

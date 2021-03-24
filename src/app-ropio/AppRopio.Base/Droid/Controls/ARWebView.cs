@@ -6,10 +6,10 @@ using Android.Util;
 using Android.Webkit;
 using Android.Support.CustomTabs;
 using Android.Views;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Droid.Platform;
+using MvvmCross;
+using MvvmCross.Platforms.Android;
 using Android.Graphics;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 using System.Net.Http;
 
 namespace AppRopio.Base.Droid.Controls

@@ -16,8 +16,8 @@ using System;
 using AppRopio.Base.Core.Services.ViewLookup;
 using AppRopio.Payments.Best2Pay.Core.ViewModels.Best2Pay;
 using AppRopio.Payments.Best2Pay.Droid.Views;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.Payments.Best2Pay.Droid
 {

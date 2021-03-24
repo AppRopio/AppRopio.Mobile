@@ -5,7 +5,7 @@ using System.Windows.Input;
 using AppRopio.Base.Core.ViewModels.Search;
 using AppRopio.Base.Core.ViewModels.Selection.Items;
 using AppRopio.Base.Core.ViewModels.Selection.Services;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.Base.Core.ViewModels.Selection
 {

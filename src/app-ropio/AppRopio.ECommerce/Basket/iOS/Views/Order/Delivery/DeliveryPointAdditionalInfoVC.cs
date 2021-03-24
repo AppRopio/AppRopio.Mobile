@@ -6,7 +6,7 @@ using AppRopio.ECommerce.Basket.Core;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery;
 using AppRopio.ECommerce.Basket.iOS.Services;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platform;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Delivery

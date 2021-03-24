@@ -8,8 +8,8 @@ using AppRopio.Base.Information.API.Services;
 using AppRopio.Base.Information.Core.Services;
 using AppRopio.Models.Information.Enums;
 using AppRopio.Models.Information.Responses;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.Base.Information.Core.ViewModels.Information.Services
 {

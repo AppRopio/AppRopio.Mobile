@@ -1,7 +1,7 @@
 ﻿using System;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 using AppRopio.Base.Core.Services.ViewModelLookup;
-using MvvmCross.Platform;
+using MvvmCross;
 using AppRopio.Base.Core.Models.Bundle;
 using AppRopio.Base.Core.ViewModels.Services;
 

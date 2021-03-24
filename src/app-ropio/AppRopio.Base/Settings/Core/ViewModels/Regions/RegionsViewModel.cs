@@ -8,9 +8,9 @@ using AppRopio.Base.Settings.Core.Models.Bundle;
 using AppRopio.Base.Settings.Core.ViewModels.Messages;
 using AppRopio.Base.Settings.Core.ViewModels.Regions.Items;
 using AppRopio.Base.Settings.Core.ViewModels.Services;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross.ViewModels;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.Base.Settings.Core.ViewModels.Regions
 {

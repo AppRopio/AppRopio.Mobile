@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using AppRopio.ECommerce.Products.API.Services;
 using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.Collection.Horizontal.Shops.Items;
 using AppRopio.Models.Products.Responses;
-using MvvmCross.Platform;
+using MvvmCross;
 using MvvmCross.Platform.Platform;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.Collection.Horizontal.Shops

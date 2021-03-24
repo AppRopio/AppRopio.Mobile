@@ -3,7 +3,7 @@ using System.IO;
 using AppRopio.Base.Core;
 using AppRopio.Base.Core.Services.Settings;
 using AppRopio.ECommerce.Products.Core.Models;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.Products.Core.Services.Implementation
 {

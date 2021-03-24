@@ -16,8 +16,8 @@ using System;
 using AppRopio.Base.Core.Services.ViewLookup;
 using AppRopio.Payments.YandexKassa.Core.ViewModels.YandexKassa;
 using AppRopio.Payments.YandexKassa.Droid.Views;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.Payments.YandexKassa.Droid
 {

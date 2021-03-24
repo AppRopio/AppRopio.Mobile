@@ -3,7 +3,7 @@ using AppRopio.Base.iOS;
 using AppRopio.Base.Settings.iOS.Models;
 using AppRopio.Base.Settings.iOS.Services;
 using Foundation;
-using MvvmCross.Platform;
+using MvvmCross;
 using UIKit;
 using AppRopio.Base.iOS.UIExtentions;
 

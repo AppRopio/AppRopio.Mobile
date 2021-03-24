@@ -1,8 +1,8 @@
-﻿using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+﻿using MvvmCross.ViewModels;
+using MvvmCross;
 using AppRopio.Analytics.AppsFlyer.Core.Services.Implementation;
 using AppRopio.Analytics.AppsFlyer.Core.Services;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.Analytics.AppsFlyer.Core
 {

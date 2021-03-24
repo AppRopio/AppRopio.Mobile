@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using MvvmCross.Core.Platform;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Exceptions;
+using MvvmCross.Core;
+using MvvmCross;
+using MvvmCross.Exceptions;
 using MvvmCross.Platform.Logging;
 using MvvmCross.Platform.Platform;
 

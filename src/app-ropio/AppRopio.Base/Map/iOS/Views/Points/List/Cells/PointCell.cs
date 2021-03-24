@@ -5,8 +5,8 @@ using AppRopio.Base.Map.Core.ViewModels.Points.List.Items;
 using AppRopio.Base.Map.iOS.Services;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.Base.Map.iOS.Views.Points.List.Cells

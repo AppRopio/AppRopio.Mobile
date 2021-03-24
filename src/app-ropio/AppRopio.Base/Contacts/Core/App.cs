@@ -5,8 +5,8 @@ using AppRopio.Base.Contacts.Core.ViewModels.Contacts.Services;
 using AppRopio.Base.Core.Services.Router;
 using AppRopio.Base.Core.Services.ViewLookup;
 using AppRopio.Base.Core.Services.ViewModelLookup;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.Base.Contacts.Core
 {

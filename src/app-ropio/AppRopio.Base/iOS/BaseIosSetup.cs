@@ -29,15 +29,15 @@ using AppRopio.Base.iOS.Services.Settings;
 using AppRopio.Base.iOS.Services.UserDialogs;
 using ModernHttpClient;
 using MvvmCross.Binding.Bindings.Target.Construction;
-using MvvmCross.Core.Views;
-using MvvmCross.iOS.Platform;
-using MvvmCross.iOS.Views;
-using MvvmCross.iOS.Views.Presenters;
-using MvvmCross.Platform;
+using MvvmCross.Views;
+using MvvmCross.Platforms.Ios.Core;
+using MvvmCross.Platforms.Ios.Views;
+using MvvmCross.Platforms.Ios.Presenters;
+using MvvmCross;
 using MvvmCross.Platform.Platform;
-using MvvmCross.Plugins.DownloadCache;
-using MvvmCross.Plugins.DownloadCache.iOS;
-using MvvmCross.Plugins.Network.Reachability;
+using MvvmCross.Plugin.DownloadCache;
+using MvvmCross.Plugin.DownloadCache.iOS;
+using MvvmCross.Plugin.Network.Reachability;
 using UIKit;
 
 namespace AppRopio.Base.iOS
@@ -177,9 +177,9 @@ namespace AppRopio.Base.iOS
 
         protected override void InitializeLastChance()
         {
-            MvvmCross.Plugins.DownloadCache.PluginLoader.Instance.EnsureLoaded();
-            MvvmCross.Plugins.File.PluginLoader.Instance.EnsureLoaded();
-            MvvmCross.Plugins.Json.PluginLoader.Instance.EnsureLoaded();
+            MvvmCross.Plugin.DownloadCache.PluginLoader.Instance.EnsureLoaded();
+            MvvmCross.Plugin.File.PluginLoader.Instance.EnsureLoaded();
+            MvvmCross.Plugin.Json.PluginLoader.Instance.EnsureLoaded();
 
             var configuration = MvxDownloadCacheConfiguration.Default;
             configuration.MaxInMemoryBytes = 20971520;
@@ -195,7 +195,7 @@ namespace AppRopio.Base.iOS
             base.InitializeLastChance();
         }
 
-        protected override MvvmCross.Core.ViewModels.IMvxNameMapping CreateViewToViewModelNaming()
+        protected override MvvmCross.ViewModels.IMvxNameMapping CreateViewToViewModelNaming()
         {
             return new ARPostfixAwareViewToViewModelNameMapping(Mvx.Resolve<IViewLookupService>(), Mvx.Resolve<IViewModelLookupService>(), "View", "ViewController");
         }

@@ -1,9 +1,9 @@
 ﻿﻿using System;
 using System.Linq;
 using AppRopio.Base.Core.Messages.Module;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross.ViewModels;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.Navigation.Menu.Core.ViewModels.Items
 {

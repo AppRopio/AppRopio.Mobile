@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using CoreAnimation;
 using CoreGraphics;
 using Foundation;
-using MvvmCross.iOS.Views.Presenters.Attributes;
+using MvvmCross.Platforms.Ios.Presenters.Attributes;
 using UIKit;
 using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.UIExtentions;

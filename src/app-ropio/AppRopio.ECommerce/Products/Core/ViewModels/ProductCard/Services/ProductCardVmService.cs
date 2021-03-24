@@ -28,8 +28,8 @@ using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.Switch;
 using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.Transition;
 using AppRopio.Models.Base.Responses;
 using AppRopio.Models.Products.Responses;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 using MvvmCross.Platform.Platform;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Services

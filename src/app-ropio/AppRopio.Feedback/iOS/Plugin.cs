@@ -9,8 +9,8 @@ using AppRopio.Feedback.iOS.Views.MyReviews;
 using AppRopio.Feedback.iOS.Views.ReviewDetails;
 using AppRopio.Feedback.iOS.Views.ReviewPost;
 using AppRopio.Feedback.iOS.Views.Reviews;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.Feedback.iOS
 {

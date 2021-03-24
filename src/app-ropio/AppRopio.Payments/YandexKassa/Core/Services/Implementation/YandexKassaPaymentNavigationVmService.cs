@@ -6,7 +6,7 @@ using AppRopio.Payments.Core.Bundle;
 using AppRopio.Payments.Core.Services;
 using AppRopio.Payments.YandexKassa.Core.ViewModels.YandexKassa;
 using AppRopio.Payments.YandexKassa.Core.ViewModels.YandexKassa.Services;
-using MvvmCross.Platform;
+using MvvmCross;
 using Newtonsoft.Json.Linq;
 
 namespace AppRopio.Payments.YandexKassa.Core.Services.Implementation

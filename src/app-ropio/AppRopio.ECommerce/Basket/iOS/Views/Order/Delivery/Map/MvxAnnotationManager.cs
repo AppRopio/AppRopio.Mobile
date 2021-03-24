@@ -6,9 +6,9 @@ using System.Linq;
 using MapKit;
 using MvvmCross.Binding;
 using MvvmCross.Platform.Platform;
-using MvvmCross.Platform.WeakSubscription;
+using MvvmCross.WeakSubscription;
 using MvvmCross.Binding.Attributes;
-using MvvmCross.Binding.ExtensionMethods;
+using MvvmCross.Binding.Extensions;
 
 namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Delivery.Map
 {

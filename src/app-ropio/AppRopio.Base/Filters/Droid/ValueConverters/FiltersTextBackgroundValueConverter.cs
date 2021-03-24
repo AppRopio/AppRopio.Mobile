@@ -3,9 +3,9 @@ using Android.App;
 using Android.Graphics;
 using Android.Graphics.Drawables;
 using Android.Util;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Converters;
-using MvvmCross.Platform.Droid.Platform;
+using MvvmCross;
+using MvvmCross.Converters;
+using MvvmCross.Platforms.Android;
 
 namespace AppRopio.Base.Filters.Droid.ValueConverters
 {

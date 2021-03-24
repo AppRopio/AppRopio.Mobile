@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using MvvmCross.Platform.Core;
-using MvvmCross.Plugins.DownloadCache;
+using MvvmCross.Plugin.DownloadCache;
 
 namespace AppRopio.Base.iOS.Helpers
 {

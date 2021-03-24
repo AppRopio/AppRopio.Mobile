@@ -4,11 +4,11 @@ using Android.Support.V7.App;
 using Android.Views;
 using Android.Views.InputMethods;
 using AppRopio.Base.Droid.Navigation;
-using MvvmCross.Binding.Droid.BindingContext;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.Platforms.Android.Binding.BindingContext;
+using MvvmCross.ViewModels;
 using MvvmCross.Droid.Support.V4;
-using MvvmCross.Droid.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Android.Views;
+using MvvmCross;
 using AppRopio.Base.Core.Services.Localization;
 
 namespace AppRopio.Base.Droid.Views

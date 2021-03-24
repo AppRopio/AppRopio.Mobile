@@ -1,6 +1,6 @@
 ﻿using System;
-using MvvmCross.Plugins.Messenger;
-using MvvmCross.Platform;
+using MvvmCross.Plugin.Messenger;
+using MvvmCross;
 using AppRopio.Base.Core.Messages.Analytics;
 
 namespace AppRopio.Analytics.GoogleAnalytics.Core.Services.Implementation

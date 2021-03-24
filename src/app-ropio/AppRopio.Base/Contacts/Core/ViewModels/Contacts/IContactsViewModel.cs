@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using AppRopio.Base.Core.ViewModels;
 using AppRopio.Models.Contacts.Responses;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.Base.Contacts.Core.ViewModels.Contacts
 {

@@ -2,11 +2,11 @@
 using AppRopio.Base.Auth.API.Services;
 using AppRopio.Base.Auth.API.Services.Implementation;
 using AppRopio.Base.Auth.API.Services.Implementation.Fake;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Base.Auth.API
 {
-    public class App : MvvmCross.Core.ViewModels.MvxApplication
+    public class App : MvvmCross.ViewModels.MvxApplication
 	{
 		public override void Initialize()
 		{

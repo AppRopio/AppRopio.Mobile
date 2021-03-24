@@ -1,7 +1,7 @@
 ﻿using System;
-using MvvmCross.Platform.Plugins;
+using MvvmCross.Plugin;
 using AppRopio.Beacons.Core.Services;
-using MvvmCross.Platform;
+using MvvmCross;
 using AppRopio.Beacons.iOS.Services;
 using MvvmCross.Platform.Platform;
 

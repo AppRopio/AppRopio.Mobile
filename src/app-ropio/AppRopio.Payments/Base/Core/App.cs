@@ -5,8 +5,8 @@ using AppRopio.Payments.Core.Services;
 using AppRopio.Payments.Core.Services.Implementation;
 using AppRopio.Payments.Core.ViewModels;
 using AppRopio.Payments.Core.ViewModels.Services;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.Payments.Core
 {

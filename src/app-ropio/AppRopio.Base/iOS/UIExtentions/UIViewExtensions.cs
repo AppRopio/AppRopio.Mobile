@@ -1,7 +1,7 @@
 ﻿using System;
 using UIKit;
 using CoreGraphics;
-using MvvmCross.Binding.ExtensionMethods;
+using MvvmCross.Binding.Extensions;
 
 namespace AppRopio.Base.iOS.UIExtentions
 {

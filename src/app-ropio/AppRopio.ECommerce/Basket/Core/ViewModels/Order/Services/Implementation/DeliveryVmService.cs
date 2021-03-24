@@ -9,8 +9,8 @@ using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items.Delivery;
 using AppRopio.Models.Base.Responses;
 using AppRopio.Models.Basket.Responses.Order;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 using DeliveryModel = AppRopio.Models.Basket.Responses.Order.Delivery;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Services.Implementation

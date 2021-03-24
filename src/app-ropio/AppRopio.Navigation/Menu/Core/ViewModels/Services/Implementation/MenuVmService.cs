@@ -6,8 +6,8 @@ using AppRopio.Base.Core.Services.ViewModelLookup;
 using AppRopio.Base.Core.ViewModels.Services;
 using AppRopio.Navigation.Menu.Core.Services;
 using AppRopio.Navigation.Menu.Core.ViewModels.Items;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 using AppRopio.Base.Core.Services.Localization;
 
 namespace AppRopio.Navigation.Menu.Core.ViewModels.Services

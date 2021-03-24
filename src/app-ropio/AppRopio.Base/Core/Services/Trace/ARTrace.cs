@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 using AppRopio.Base.Core.Services.Log;
-using MvvmCross.Platform;
+using MvvmCross;
 using MvvmCross.Platform.Platform;
 
 namespace AppRopio.Base.Core.Services.Trace

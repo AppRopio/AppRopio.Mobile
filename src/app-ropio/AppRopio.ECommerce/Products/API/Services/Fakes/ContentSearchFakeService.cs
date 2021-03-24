@@ -3,7 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using AppRopio.Base.API.Services;
 using AppRopio.Models.Products.Responses;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.Products.API.Services.Fakes
 {

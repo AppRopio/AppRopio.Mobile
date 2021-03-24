@@ -2,10 +2,10 @@
 using AppRopio.Base.iOS.Views;
 using UIKit;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order;
-using MvvmCross.Platform;
+using MvvmCross;
 using AppRopio.ECommerce.Basket.iOS.Services;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
+using MvvmCross.Platforms.Ios.Binding;
 using AppRopio.Base.iOS;
 using AppRopio.ECommerce.Basket.iOS.Views.Order.Cells;
 using AppRopio.Models.Basket.Responses.Enums;

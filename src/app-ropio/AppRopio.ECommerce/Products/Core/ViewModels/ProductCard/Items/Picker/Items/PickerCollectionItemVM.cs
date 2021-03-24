@@ -1,5 +1,5 @@
 ﻿using System;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 using AppRopio.Models.Products.Responses;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.Picker.Items

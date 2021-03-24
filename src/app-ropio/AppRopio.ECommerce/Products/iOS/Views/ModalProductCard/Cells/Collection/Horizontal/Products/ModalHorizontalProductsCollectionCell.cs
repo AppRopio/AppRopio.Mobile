@@ -79,7 +79,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ModalProductCard.Cells.Collectio
             this.CreateBinding().For(c => c.ItemsCount).To<IHorizontalProductsCollectionPciVm>(vm => vm.Items.Count).Apply();
         }
 
-        protected override MvvmCross.Binding.iOS.Views.MvxCollectionViewSource SetupCollectionDataSource(UICollectionView collectionView)
+        protected override MvvmCross.Platforms.Ios.Binding.MvxCollectionViewSource SetupCollectionDataSource(UICollectionView collectionView)
         {
             return new InfinityCollectionViewSource(collectionView, ThemeConfig.Products.CollectionType == CollectionType.Grid ? CatalogGridCell.Key : CatalogListCell.Key);
         }

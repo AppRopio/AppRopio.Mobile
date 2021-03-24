@@ -3,9 +3,9 @@ using System.Collections.Specialized;
 using System.Windows.Input;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.iOS.Views;
-using MvvmCross.Platform.WeakSubscription;
+using MvvmCross.ViewModels;
+using MvvmCross.Platforms.Ios.Views;
+using MvvmCross.WeakSubscription;
 using UIKit;
 
 namespace AppRopio.Test.iOS
@@ -142,9 +142,9 @@ namespace AppRopio.Test.iOS
             command.CanExecuteChanged += (s, e) => { if (command.CanExecute(null)) command.Execute(null); };
         }
 
-        public void Include(MvvmCross.Platform.IoC.MvxPropertyInjector injector)
+        public void Include(MvvmCross.IoC.MvxPropertyInjector injector)
         {
-            injector = new MvvmCross.Platform.IoC.MvxPropertyInjector();
+            injector = new MvvmCross.IoC.MvxPropertyInjector();
         }
 
         public void Include(System.ComponentModel.INotifyPropertyChanged changed)

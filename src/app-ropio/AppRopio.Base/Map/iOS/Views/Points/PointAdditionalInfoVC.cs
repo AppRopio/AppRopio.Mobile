@@ -4,7 +4,7 @@ using AppRopio.Base.iOS.Views;
 using AppRopio.Base.Map.Core.ViewModels.Points;
 using AppRopio.Base.Map.iOS.Services;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platform;
+using MvvmCross;
 using UIKit;
 using AppRopio.Base.Map.Core;
 

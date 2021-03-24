@@ -1,9 +1,9 @@
 ﻿using System.Threading.Tasks;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 using AppRopio.Base.Core.Services.Location;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 using AppRopio.ECommerce.Basket.Core.Messages.Autocomplete;
 using AppRopio.ECommerce.Basket.Core.Models.Bundle;
 using System.Linq;

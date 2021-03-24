@@ -4,7 +4,7 @@ using AppRopio.Base.Map.Core.ViewModels.Points.List.Items;
 using AppRopio.Base.Map.iOS.Services;
 using CoreGraphics;
 using MapKit;
-using MvvmCross.Platform;
+using MvvmCross;
 using UIKit;
 using System.Collections.Generic;
 using System.Linq;

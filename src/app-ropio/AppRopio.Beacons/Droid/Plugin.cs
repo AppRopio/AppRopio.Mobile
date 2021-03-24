@@ -1,9 +1,9 @@
 ﻿using System;
 using AppRopio.Beacons.Core.Services;
 using AppRopio.Beacons.Droid.Services;
-using MvvmCross.Platform;
+using MvvmCross;
 using MvvmCross.Platform.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross.Plugin;
 
 namespace AppRopio.Beacons.Droid
 {

@@ -3,9 +3,9 @@ using Android.Content;
 using Android.Graphics;
 using Android.Runtime;
 using Android.Util;
-using MvvmCross.Binding.Droid.BindingContext;
-using MvvmCross.Binding.Droid.Views;
-using MvvmCross.Binding.ExtensionMethods;
+using MvvmCross.Platforms.Android.Binding.BindingContext;
+using MvvmCross.Platforms.Android.Binding;
+using MvvmCross.Binding.Extensions;
 
 namespace AppRopio.Base.Droid.Adapters
 {

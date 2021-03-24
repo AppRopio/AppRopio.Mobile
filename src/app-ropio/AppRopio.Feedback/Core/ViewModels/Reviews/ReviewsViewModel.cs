@@ -7,8 +7,8 @@ using AppRopio.Base.Core.ViewModels;
 using AppRopio.Feedback.Core.Models.Bundle;
 using AppRopio.Feedback.Core.ViewModels.Reviews.Items;
 using AppRopio.Feedback.Core.ViewModels.Reviews.Services;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.Feedback.Core.ViewModels.Reviews
 {

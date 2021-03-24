@@ -3,7 +3,7 @@ using System.IO;
 using AppRopio.Base.Core;
 using AppRopio.Base.Core.Services.Settings;
 using AppRopio.Payments.Best2Pay.Core.Models;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Payments.Best2Pay.Core.Services.Implementation
 {

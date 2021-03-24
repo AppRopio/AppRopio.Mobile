@@ -6,7 +6,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml.Linq;
-using MvvmCross.Platform;
+using MvvmCross;
 using System.Net.Http;
 using AppRopio.Base.API.Services;
 using System.Xml.Serialization;

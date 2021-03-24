@@ -20,7 +20,7 @@ using Android.Util;
 using AppRopio.Base.Core;
 using AppRopio.Base.Core.Services.Push;
 using Firebase.Iid;
-using MvvmCross.Platform;
+using MvvmCross;
 using Firebase.Messaging;
 
 namespace AppRopio.Base.Droid.FCM

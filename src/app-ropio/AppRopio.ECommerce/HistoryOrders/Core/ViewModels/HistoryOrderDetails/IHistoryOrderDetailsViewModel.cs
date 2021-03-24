@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using AppRopio.Base.Core.ViewModels;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrders
 {

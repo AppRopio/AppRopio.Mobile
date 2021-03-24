@@ -4,7 +4,7 @@ using AppRopio.Payments.CloudPayments.Core.ViewModels.CloudPayments.Services;
 using AppRopio.Payments.Core.Bundle;
 using AppRopio.Payments.Core.Services;
 using AppRopio.Payments.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Payments.CloudPayments.Core.Services.Implementation
 {

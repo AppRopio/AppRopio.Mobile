@@ -7,7 +7,7 @@ using AppRopio.Base.API.Services;
 using AppRopio.Models.Auth.Enums;
 using AppRopio.Models.Auth.Requests;
 using AppRopio.Models.Auth.Responses;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Base.Auth.API.Services.Implementation.Fake
 {

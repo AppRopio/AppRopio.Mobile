@@ -1,15 +1,15 @@
 ﻿using Foundation;
 using UIKit;
-using MvvmCross.Binding.iOS.Views;
+using MvvmCross.Platforms.Ios.Binding;
 using AppRopio.Navigation.Menu.Core.Services;
-using MvvmCross.Platform;
+using MvvmCross;
 using AppRopio.Navigation.Menu.Core.Models;
 using AppRopio.Navigation.Menu.iOS.Models;
 using AppRopio.Navigation.Menu.iOS.Services;
 using System;
 using System.Linq;
 using AppRopio.Navigation.Menu.Core.ViewModels.Items;
-using MvvmCross.Binding.ExtensionMethods;
+using MvvmCross.Binding.Extensions;
 using System.Collections.ObjectModel;
 
 namespace AppRopio.Navigation.Menu.iOS.Views

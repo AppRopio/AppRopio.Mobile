@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using AppRopio.Models.Base.Responses;
 using AppRopio.Models.Map.Responses;
 using System.Linq;
-using MvvmCross.Platform;
+using MvvmCross;
 using AppRopio.Base.API.Services;
 
 namespace AppRopio.Base.Map.API.Services.Fakes

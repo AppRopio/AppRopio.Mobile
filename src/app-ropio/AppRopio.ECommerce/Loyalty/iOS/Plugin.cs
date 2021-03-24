@@ -1,7 +1,7 @@
-﻿using MvvmCross.Platform;
+﻿using MvvmCross;
 using AppRopio.ECommerce.Loyalty.iOS.Services;
 using AppRopio.ECommerce.Loyalty.iOS.Services.Implementation;
-using MvvmCross.Platform.Plugins;
+using MvvmCross.Plugin;
 using AppRopio.Base.Core.Services.ViewLookup;
 using AppRopio.ECommerce.Loyalty.Core.ViewModels.Promo;
 using AppRopio.ECommerce.Loyalty.iOS.Views.Promo;

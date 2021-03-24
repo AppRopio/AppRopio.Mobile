@@ -9,12 +9,12 @@ using AppRopio.Base.Core.Models.Navigation;
 using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.Core.ViewModels;
 using AppRopio.Base.Droid.Views;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 using MvvmCross.Droid.Support.V4;
 using MvvmCross.Droid.Support.V7.AppCompat;
-using MvvmCross.Droid.Views;
-using MvvmCross.Droid.Views.Attributes;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Android.Views;
+using MvvmCross.Platforms.Android.Presenters.Attributes;
+using MvvmCross;
 using MvvmCross.Platform.Core;
 using MvvmCross.Platform.Platform;
 
@@ -440,12 +440,12 @@ namespace AppRopio.Base.Droid.Navigation
 
         #region Public
 
-        public override MvvmCross.Core.Views.MvxBasePresentationAttribute GetPresentationAttribute(Type viewModelType)
+        public override MvvmCross.Views.MvxBasePresentationAttribute GetPresentationAttribute(Type viewModelType)
         {
             return base.GetPresentationAttribute(viewModelType);
         }
 
-        public override MvvmCross.Core.Views.MvxBasePresentationAttribute CreatePresentationAttribute(Type viewModelType, Type viewType)
+        public override MvvmCross.Views.MvxBasePresentationAttribute CreatePresentationAttribute(Type viewModelType, Type viewType)
         {
             if (viewType.IsSubclassOf(typeof(Fragment)))
             {

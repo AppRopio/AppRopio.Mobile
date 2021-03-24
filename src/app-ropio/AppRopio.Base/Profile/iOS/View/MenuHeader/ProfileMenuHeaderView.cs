@@ -4,13 +4,13 @@ using AppRopio.Base.Profile.Core.ViewModels.MenuHeader;
 using CoreGraphics;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Core.Views;
-using MvvmCross.iOS.Views;
+using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.ViewModels;
+using MvvmCross.Views;
+using MvvmCross.Platforms.Ios.Views;
 using ObjCRuntime;
 using UIKit;
-using MvvmCross.Platform;
+using MvvmCross;
 using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.Profile.Core;
 

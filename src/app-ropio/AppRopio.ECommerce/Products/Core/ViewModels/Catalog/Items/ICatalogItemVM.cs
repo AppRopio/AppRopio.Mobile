@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using AppRopio.Base.Core.ViewModels._base;
 using AppRopio.Models.Products.Responses;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Items
 {

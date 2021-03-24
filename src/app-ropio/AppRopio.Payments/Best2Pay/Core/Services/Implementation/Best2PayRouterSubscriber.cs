@@ -1,7 +1,7 @@
 ﻿using System;
 using AppRopio.Base.Core.Services.Router;
 using AppRopio.Payments.Core.Bundle;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Payments.Best2Pay.Core.Services.Implementation
 {

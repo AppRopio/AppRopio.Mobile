@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using AppRopio.Base.API.Exceptions;
 using AppRopio.Base.Core.Services.TasksQueue;
 using AppRopio.Base.Core.ViewModels.Services;
-using MvvmCross.Platform;
+using MvvmCross;
 using AppRopio.ECommerce.Basket.API.Services;
 
 namespace AppRopio.ECommerce.Basket.Core.Services.Implementation

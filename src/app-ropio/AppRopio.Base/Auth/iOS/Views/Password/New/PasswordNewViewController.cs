@@ -5,7 +5,7 @@ using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.UIExtentions;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platform;
+using MvvmCross;
 using UIKit;
 using AppRopio.Base.Auth.Core.Models.Config;
 using AppRopio.Base.Auth.Core;

@@ -3,7 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Items;
 using AppRopio.Models.Basket.Responses.Basket;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Services
 {

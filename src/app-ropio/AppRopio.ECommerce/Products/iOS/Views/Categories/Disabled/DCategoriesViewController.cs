@@ -5,7 +5,7 @@ using AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells;
 using AppRopio.ECommerce.Products.iOS.Views.Catalog.Header;
 using AppRopio.ECommerce.Products.iOS.Views.Categories.SupplementaryView;
 using AppRopio.ECommerce.Products.iOS.Views.Categories.Disabled.ViewSources;
-using MvvmCross.Platform;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.Categories.Disabled

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using AppRopio.Base.API.Exceptions;
 using AppRopio.Base.API.Helpers;
 using AppRopio.Base.API.Models;
-using MvvmCross.Platform;
+using MvvmCross;
 using MvvmCross.Platform.Platform;
 using Newtonsoft.Json;
 

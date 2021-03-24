@@ -1,9 +1,9 @@
 ﻿using AppRopio.Base.Auth.Core.Messages.Registration;
 using AppRopio.Base.Auth.Core.Models.Registration;
 using AppRopio.Models.Auth.Enums;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross.ViewModels;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 using AppRopio.Base.Core.Services.Localization;
 using System;
 

@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using AppRopio.Base.iOS.Views.PageViewController;
 using AppRopio.Base.iOS.Views.PageViewController.ViewSources;
-using MvvmCross.Core.Platform;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Core;
+using MvvmCross.ViewModels;
+using MvvmCross.Platforms.Ios.Views;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.Base.iOS.UIExtentions
 {
-    public static class MvxPageViewExtensionMethods
+    public static class MvxPageViewExtensions
     {
 
         public static UIViewController CreateViewController<T>(this MvxPageViewSource self, object parameterValuesObject, int pageIndex = -1)

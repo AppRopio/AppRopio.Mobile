@@ -2,7 +2,7 @@
 using Android.Content;
 using Android.Content.Res;
 using Android.Util;
-using MvvmCross.Binding.Droid.Views;
+using MvvmCross.Platforms.Android.Binding;
 using MvvmCross.Droid.Support.V7.RecyclerView.ItemTemplates;
 using MvvmCross.Platform.Platform;
 

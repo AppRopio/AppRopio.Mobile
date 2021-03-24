@@ -4,7 +4,7 @@ using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Thanks;
 using AppRopio.ECommerce.Basket.iOS.Models;
 using AppRopio.ECommerce.Basket.iOS.Services;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platform;
+using MvvmCross;
 using UIKit;
 using AppRopio.ECommerce.Basket.Core;
 using AppRopio.Base.iOS.UIExtentions;

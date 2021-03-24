@@ -9,7 +9,7 @@ using AppRopio.Feedback.API.Services;
 using AppRopio.Feedback.Core.Models.Bundle;
 using AppRopio.Feedback.Core.Services;
 using AppRopio.Feedback.Core.ViewModels.ReviewPost;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Feedback.Core.ViewModels.ReviewDetails.Services
 {

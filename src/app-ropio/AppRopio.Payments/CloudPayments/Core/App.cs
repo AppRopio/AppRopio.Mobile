@@ -3,8 +3,8 @@ using AppRopio.Base.Core.Services.ViewModelLookup;
 using AppRopio.Payments.CloudPayments.Core.Services;
 using AppRopio.Payments.CloudPayments.Core.Services.Implementation;
 using AppRopio.Payments.Core.ViewModels;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 using AppRopio.Payments.CloudPayments.Core.ViewModels.CloudPayments.Services;
 
 namespace AppRopio.Payments.CloudPayments.Core

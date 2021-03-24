@@ -1,7 +1,7 @@
 ﻿using AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrders.Services;
 using AppRopio.Models.HistoryOrders.Responses;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrders
 {

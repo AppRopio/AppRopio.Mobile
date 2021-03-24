@@ -6,7 +6,7 @@ using AppRopio.Base.API.Services;
 using AppRopio.Models.Basket.Responses.Enums;
 using AppRopio.Models.Basket.Responses.Order;
 using AppRopio.Models.Payments.Responses;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.Basket.API.Services.Fake
 {

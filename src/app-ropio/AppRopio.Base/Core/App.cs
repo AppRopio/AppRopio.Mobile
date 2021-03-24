@@ -7,9 +7,9 @@ using AppRopio.Base.Core.Services.Router;
 using AppRopio.Base.Core.Services.TasksQueue;
 using AppRopio.Base.Core.Services.ViewLookup;
 using AppRopio.Base.Core.Services.ViewModelLookup;
-using MvvmCross.Platform;
+using MvvmCross;
 using MvvmCross.Platform.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross.Plugin.Messenger;
 using AppRopio.Base.Core.Services.Localization;
 
 namespace AppRopio.Base.Core

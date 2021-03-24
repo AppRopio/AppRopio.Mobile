@@ -9,8 +9,8 @@ using AppRopio.Base.Filters.API;
 using AppRopio.Base.Filters.Core.Messages;
 using AppRopio.Base.Filters.Core.ViewModels.Sort.Items;
 using AppRopio.Models.Filters.Responses;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.Base.Filters.Core.ViewModels.Sort.Services
 {

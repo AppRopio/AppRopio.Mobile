@@ -19,13 +19,13 @@ using AppRopio.Base.iOS.Views;
 using AppRopio.Base.Settings.Core.ViewModels.Languages;
 using AppRopio.Base.iOS;
 using AppRopio.Base.Settings.iOS.Models;
-using MvvmCross.Platform;
+using MvvmCross;
 using AppRopio.Base.Settings.iOS.Services;
 using CoreGraphics;
 using AppRopio.Base.iOS.UIExtentions;
 using MvvmCross.Binding.BindingContext;
 using AppRopio.Base.Settings.iOS.Views.Languages.Cells;
-using MvvmCross.Binding.iOS.Views;
+using MvvmCross.Platforms.Ios.Binding;
 using AppRopio.Base.Settings.Core;
 
 namespace AppRopio.Base.Settings.iOS.Views.Languages

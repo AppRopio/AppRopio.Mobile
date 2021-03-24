@@ -5,9 +5,9 @@ using AppRopio.Navigation.Menu.Core.ViewModels;
 using AppRopio.Navigation.Menu.Droid.Navigation;
 using AppRopio.Navigation.Menu.Droid.Services;
 using AppRopio.Navigation.Menu.Droid.Views;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Droid.Views;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross.Platforms.Android.Views;
+using MvvmCross;
 
 namespace AppRopio.Navigation.Menu.Droid
 {

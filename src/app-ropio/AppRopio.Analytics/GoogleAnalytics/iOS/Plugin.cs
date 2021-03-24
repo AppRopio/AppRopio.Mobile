@@ -1,6 +1,6 @@
 ﻿using System;
-using MvvmCross.Platform.Plugins;
-using MvvmCross.Platform;
+using MvvmCross.Plugin;
+using MvvmCross;
 using AppRopio.Analytics.GoogleAnalytics.Core.Services;
 
 namespace AppRopio.Analytics.GoogleAnalytics.iOS

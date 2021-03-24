@@ -14,8 +14,8 @@
 //    limitations under the License.
 using System;
 using AppRopio.Base.Core.Services.Localization;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Converters;
+using MvvmCross;
+using MvvmCross.Converters;
 
 namespace AppRopio.Base.Droid.Converters
 {

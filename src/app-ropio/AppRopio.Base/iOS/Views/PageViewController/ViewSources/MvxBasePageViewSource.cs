@@ -1,6 +1,6 @@
 ﻿using System;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Exceptions;
+using MvvmCross;
+using MvvmCross.Exceptions;
 using UIKit;
 
 namespace AppRopio.Base.iOS.Views.PageViewController.ViewSources

@@ -20,8 +20,8 @@ using AppRopio.Base.Settings.iOS.Models;
 using AppRopio.Base.Settings.iOS.Services;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.Base.Settings.iOS.Views.Languages.Cells

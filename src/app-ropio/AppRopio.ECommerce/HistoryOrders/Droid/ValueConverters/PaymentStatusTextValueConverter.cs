@@ -1,8 +1,8 @@
 ﻿using System;
 using AppRopio.Models.HistoryOrders.Responses;
-using MvvmCross.Platform.Converters;
+using MvvmCross.Converters;
 using AppRopio.Base.Core.Services.Localization;
-using MvvmCross.Platform;
+using MvvmCross;
 using AppRopio.ECommerce.HistoryOrders.Core;
 
 namespace AppRopio.ECommerce.HistoryOrders.Droid.ValueConverters

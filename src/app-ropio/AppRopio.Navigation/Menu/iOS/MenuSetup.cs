@@ -4,10 +4,10 @@ using AppRopio.Navigation.Menu.Core.ViewModels;
 using AppRopio.Navigation.Menu.iOS.Services;
 using AppRopio.Navigation.Menu.iOS.Services.Implementation;
 using AppRopio.Navigation.Menu.iOS.Views;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.iOS.Platform;
-using MvvmCross.iOS.Views.Presenters;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross.Platforms.Ios.Core;
+using MvvmCross.Platforms.Ios.Presenters;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.Navigation.Menu.iOS

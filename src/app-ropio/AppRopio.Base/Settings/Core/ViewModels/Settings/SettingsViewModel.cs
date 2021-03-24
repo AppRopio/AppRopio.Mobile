@@ -16,9 +16,9 @@ using AppRopio.Base.Settings.Core.ViewModels.Items.Picker;
 using AppRopio.Base.Settings.Core.ViewModels.Items.Switch;
 using AppRopio.Base.Settings.Core.ViewModels.Messages;
 using AppRopio.Base.Settings.Core.ViewModels.Services;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross.ViewModels;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.Base.Settings.Core.ViewModels.Settings
 {

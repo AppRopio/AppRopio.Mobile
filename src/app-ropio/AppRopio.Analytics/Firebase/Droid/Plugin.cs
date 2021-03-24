@@ -1,8 +1,8 @@
 ﻿using System;
 using AppRopio.Analytics.Firebase.Core.Services;
 using AppRopio.Analytics.Firebase.Droid.Services;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.Analytics.Firebase.Droid
 {

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Net.Http;
 using System.Threading.Tasks;
-using MvvmCross.Platform;
+using MvvmCross;
 using MvvmCross.Platform.Core;
 using MvvmCross.Platform.Platform;
-using MvvmCross.Plugins.DownloadCache;
+using MvvmCross.Plugin.DownloadCache;
 using ModernHttpClient;
 
 namespace AppRopio.Base.iOS.Helpers

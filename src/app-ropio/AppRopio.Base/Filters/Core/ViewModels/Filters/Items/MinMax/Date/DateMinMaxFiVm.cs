@@ -2,7 +2,7 @@
 using AppRopio.Models.Filters.Responses;
 using System.Globalization;
 using System.Windows.Input;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.Base.Filters.Core.ViewModels.Filters.Items.MinMax.Date
 {

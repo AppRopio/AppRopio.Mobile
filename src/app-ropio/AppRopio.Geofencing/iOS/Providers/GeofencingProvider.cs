@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using AppRopio.Geofencing.iOS.Utils;
 using CoreLocation;
-using MvvmCross.Platform;
+using MvvmCross;
 using MvvmCross.Platform.Platform;
 using AppRopio.Base.Core.Services.Device;
 

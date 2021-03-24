@@ -11,8 +11,8 @@ using AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrderProducts.Item
 using AppRopio.ECommerce.Products.Core.Models.Bundle;
 using AppRopio.ECommerce.Products.Core.Services;
 using AppRopio.Models.HistoryOrders.Responses;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrders.Services
 {

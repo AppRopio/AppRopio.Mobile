@@ -10,9 +10,9 @@ using AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard.Services;
 using AppRopio.ECommerce.Products.Core.Messages;
 using AppRopio.ECommerce.Products.Core.Models.Bundle;
 using AppRopio.Models.Products.Responses;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross.ViewModels;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard
 {
@@ -236,7 +236,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard
 
         #region Init
 
-        public override void Prepare(MvvmCross.Core.ViewModels.IMvxBundle parameter)
+        public override void Prepare(MvvmCross.ViewModels.IMvxBundle parameter)
         {
             var productCardBundle = parameter.ReadAs<ProductCardBundle>();
             this.InitFromBundle(productCardBundle);

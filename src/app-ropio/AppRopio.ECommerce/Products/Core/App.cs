@@ -19,13 +19,13 @@ using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Selection.Services
 using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Services;
 using AppRopio.ECommerce.Products.Core.ViewModels.ProductTextContent;
 using AppRopio.ECommerce.Products.Core.ViewModels.ProductWebContent;
-using MvvmCross.Platform;
+using MvvmCross;
 using AppRopio.Base.Core.Models.Navigation;
 using AppRopio.ECommerce.Products.Core.ViewModels.ModalProductCard;
 
 namespace AppRopio.ECommerce.Products.Core
 {
-    public class App : MvvmCross.Core.ViewModels.MvxApplication
+    public class App : MvvmCross.ViewModels.MvxApplication
     {
         public override void Initialize()
         {

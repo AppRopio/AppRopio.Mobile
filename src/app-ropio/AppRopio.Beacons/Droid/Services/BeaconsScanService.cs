@@ -2,8 +2,8 @@
 using System.Threading.Tasks;
 using Android.App;
 using AppRopio.Beacons.Core.Services;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Droid.Platform;
+using MvvmCross;
+using MvvmCross.Platforms.Android;
 
 namespace AppRopio.Beacons.Droid.Services
 {

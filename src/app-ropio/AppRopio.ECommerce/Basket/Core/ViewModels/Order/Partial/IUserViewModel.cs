@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using AppRopio.Base.Core.ViewModels;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
 {

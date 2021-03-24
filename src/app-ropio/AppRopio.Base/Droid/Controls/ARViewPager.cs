@@ -6,7 +6,7 @@ using Android.Runtime;
 using Android.Support.V4.View;
 using Android.Util;
 using AppRopio.Base.Droid.Adapters;
-using MvvmCross.Binding.Droid.Views;
+using MvvmCross.Platforms.Android.Binding;
 
 namespace AppRopio.Base.Droid.Controls
 {

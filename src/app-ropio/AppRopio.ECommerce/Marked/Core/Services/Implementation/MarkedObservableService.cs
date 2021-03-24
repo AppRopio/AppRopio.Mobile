@@ -5,9 +5,9 @@ using AppRopio.Base.Core.Messages.Module;
 using AppRopio.ECommerce.Marked.API.Services;
 using AppRopio.ECommerce.Marked.Core.ViewModels.Marked;
 using AppRopio.ECommerce.Products.Core.Messages;
-using MvvmCross.Platform;
+using MvvmCross;
 using MvvmCross.Platform.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.ECommerce.Marked.Core.Services.Implementation
 {

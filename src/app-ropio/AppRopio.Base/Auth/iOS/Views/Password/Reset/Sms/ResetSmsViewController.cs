@@ -6,7 +6,7 @@ using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.UIExtentions;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platform;
+using MvvmCross;
 using UIKit;
 using AppRopio.Base.Auth.Core;
 

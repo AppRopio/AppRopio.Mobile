@@ -1,6 +1,6 @@
 ﻿using System;
 using CoreGraphics;
-using MvvmCross.Platform.Converters;
+using MvvmCross.Converters;
 using UIKit;
 
 namespace AppRopio.Base.iOS.ValueConverters

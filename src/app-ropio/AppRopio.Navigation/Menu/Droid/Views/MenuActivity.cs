@@ -8,9 +8,9 @@ using AppRopio.Base.Core.Models.Bundle;
 using AppRopio.Navigation.Menu.Core.Models;
 using AppRopio.Navigation.Menu.Core.Services;
 using AppRopio.Navigation.Menu.Core.ViewModels;
-using MvvmCross.Core.Navigation;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.Navigation;
+using MvvmCross.ViewModels;
+using MvvmCross;
 using Plugin.Permissions;
 
 namespace AppRopio.Navigation.Menu.Droid.Views

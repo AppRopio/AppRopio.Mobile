@@ -19,8 +19,8 @@ using AppRopio.ECommerce.Basket.iOS.Views.Order.Partial;
 using AppRopio.ECommerce.Basket.iOS.Views.Order.Payment;
 using AppRopio.ECommerce.Basket.iOS.Views.Order.Thanks;
 using AppRopio.ECommerce.Basket.iOS.Views.ProductCard;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.ECommerce.Basket.iOS
 {

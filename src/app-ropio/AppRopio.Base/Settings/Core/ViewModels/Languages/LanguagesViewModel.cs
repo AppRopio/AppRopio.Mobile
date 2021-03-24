@@ -29,8 +29,8 @@ using AppRopio.Base.Settings.Core.Models.Bundle;
 using AppRopio.Base.Settings.Core.Services;
 using AppRopio.Base.Settings.Core.ViewModels.Languages.Items;
 using AppRopio.Base.Settings.Core.ViewModels.Messages;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.Base.Settings.Core.ViewModels.Languages
 {

@@ -7,7 +7,7 @@ using System.Windows.Input;
 using AppRopio.ECommerce.Products.Core.Messages;
 using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.Selection.MultiSelection.Items;
 using AppRopio.Models.Products.Responses;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.Selection.MultiSelection
 {

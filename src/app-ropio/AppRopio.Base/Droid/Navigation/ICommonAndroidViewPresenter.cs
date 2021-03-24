@@ -1,6 +1,6 @@
 ﻿using System;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Droid.Views;
+using MvvmCross.ViewModels;
+using MvvmCross.Platforms.Android.Views;
 
 namespace AppRopio.Base.Droid.Navigation
 {

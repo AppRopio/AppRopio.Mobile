@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using AppRopio.Base.API.Exceptions;
 using AppRopio.Base.Core.ViewModels.Services;
-using MvvmCross.Platform;
+using MvvmCross;
 using MvvmCross.Platform.Core;
 using Plugin.Share;
 

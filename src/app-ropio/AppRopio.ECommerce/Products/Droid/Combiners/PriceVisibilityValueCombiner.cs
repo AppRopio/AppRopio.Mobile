@@ -6,9 +6,9 @@ using AppRopio.ECommerce.Products.Core.Combiners;
 using AppRopio.ECommerce.Products.Core.Models;
 using AppRopio.ECommerce.Products.Core.Services;
 using MvvmCross.Binding.Bindings.SourceSteps;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Converters;
-using MvvmCross.Platform.UI;
+using MvvmCross;
+using MvvmCross.Converters;
+using MvvmCross.UI;
 
 namespace AppRopio.ECommerce.Products.Droid.Combiners
 {

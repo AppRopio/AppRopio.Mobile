@@ -13,7 +13,7 @@ using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard;
 using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Selection;
 using AppRopio.ECommerce.Products.Core.ViewModels.ProductTextContent;
 using AppRopio.ECommerce.Products.Core.ViewModels.ProductWebContent;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.Products.Core.Services.Implementation
 {

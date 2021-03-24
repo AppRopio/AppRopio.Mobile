@@ -22,8 +22,8 @@ using AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.Transition;
 using AppRopio.Models.Products.Responses;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.ExtensionMethods;
-using MvvmCross.Binding.iOS.Views;
+using MvvmCross.Binding.Extensions;
+using MvvmCross.Platforms.Ios.Binding;
 using UIKit;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.ViewSources

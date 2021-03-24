@@ -29,14 +29,14 @@ using AppRopio.Base.Droid.Services.UserDialogs;
 using MvvmCross.Binding.Binders;
 using MvvmCross.Binding.Bindings.Target.Construction;
 using MvvmCross.Binding.Combiners;
-using MvvmCross.Core.Views;
+using MvvmCross.Views;
 using MvvmCross.Droid.Support.V7.AppCompat;
-using MvvmCross.Droid.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Android.Views;
+using MvvmCross;
 using MvvmCross.Platform.Platform;
-using MvvmCross.Plugins.DownloadCache;
-using MvvmCross.Plugins.DownloadCache.Droid;
-using MvvmCross.Plugins.Network.Reachability;
+using MvvmCross.Plugin.DownloadCache;
+using MvvmCross.Plugin.DownloadCache.Droid;
+using MvvmCross.Plugin.Network.Reachability;
 using Xamarin.Android.Net;
 using AppRopio.Base.Core.Services.Launcher;
 using AppRopio.Base.Droid.Services.Launcher;
@@ -168,9 +168,9 @@ namespace AppRopio.Base.Droid
         {
             base.InitializeLastChance();
 
-            MvvmCross.Plugins.DownloadCache.PluginLoader.Instance.EnsureLoaded();
-            MvvmCross.Plugins.File.PluginLoader.Instance.EnsureLoaded();
-            MvvmCross.Plugins.Json.PluginLoader.Instance.EnsureLoaded();
+            MvvmCross.Plugin.DownloadCache.PluginLoader.Instance.EnsureLoaded();
+            MvvmCross.Plugin.File.PluginLoader.Instance.EnsureLoaded();
+            MvvmCross.Plugin.Json.PluginLoader.Instance.EnsureLoaded();
 
             var configuration = MvxDownloadCacheConfiguration.Default;
             configuration.MaxInMemoryBytes = 20971520;
@@ -184,7 +184,7 @@ namespace AppRopio.Base.Droid
             //Mvx.RegisterSingleton<IMvxHttpFileDownloader>(new ARMvxHttpFileDownloader());
 
             var presenter = Mvx.Resolve<IMvxAndroidViewPresenter>() as IMvxMultipleViewModelCache;
-            Mvx.RegisterSingleton<MvvmCross.Droid.Views.IMvxMultipleViewModelCache>(presenter ?? new ARMultipleViewModelCache());
+            Mvx.RegisterSingleton<MvvmCross.Platforms.Android.Views.IMvxMultipleViewModelCache>(presenter ?? new ARMultipleViewModelCache());
 
             Mvx.CallbackWhenRegistered<IMvxValueCombinerRegistry>(service =>
             {
@@ -192,7 +192,7 @@ namespace AppRopio.Base.Droid
             });
         }
 
-        protected override MvvmCross.Core.ViewModels.IMvxNameMapping CreateViewToViewModelNaming()
+        protected override MvvmCross.ViewModels.IMvxNameMapping CreateViewToViewModelNaming()
         {
             return new ARPostfixAwareViewToViewModelNameMapping(Mvx.Resolve<IViewLookupService>(), Mvx.Resolve<IViewModelLookupService>(), "View", "Activity", "Fragment");
         }
@@ -205,7 +205,7 @@ namespace AppRopio.Base.Droid
             base.FillTargetFactories(registry);
         }
 
-        protected override void FillValueConverters(MvvmCross.Platform.Converters.IMvxValueConverterRegistry registry)
+        protected override void FillValueConverters(MvvmCross.Converters.IMvxValueConverterRegistry registry)
         {
             registry.AddOrOverwrite("ErrorFromBoolean", new ErrorFromBooleanValueConverter());
             registry.AddOrOverwrite("Resx", new ResxValueConverter());

@@ -8,8 +8,8 @@ using AppRopio.Base.Auth.Core.ViewModels.SignUp;
 using AppRopio.Base.Auth.Core.ViewModels.Thanks;
 using AppRopio.Base.Auth.Droid.Services.Implementation;
 using AppRopio.Base.Core.Services.ViewLookup;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.Base.Auth.Droid
 {

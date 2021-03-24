@@ -20,8 +20,8 @@ using AppRopio.Base.Information.Core.ViewModels.InformationWebContent;
 using AppRopio.Base.Information.Droid.Views.Information;
 using AppRopio.Base.Information.Droid.Views.InformationTextContent;
 using AppRopio.Base.Information.Droid.Views.InformationWebContent;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.Base.Information.Droid
 {

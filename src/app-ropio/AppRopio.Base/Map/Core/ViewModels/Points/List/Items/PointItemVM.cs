@@ -1,7 +1,7 @@
 using System;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 using AppRopio.Models.Map.Responses;
-using MvvmCross.Platform;
+using MvvmCross;
 using AppRopio.Base.Map.Core.Models.Bundle;
 using AppRopio.Base.Core.Models.Navigation;
 using AppRopio.Models.Base.Responses;

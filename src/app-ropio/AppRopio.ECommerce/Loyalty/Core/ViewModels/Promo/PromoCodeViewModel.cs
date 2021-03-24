@@ -1,9 +1,9 @@
 ﻿using System;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross.ViewModels;
+using MvvmCross.Plugin.Messenger;
 using System.Threading.Tasks;
 using AppRopio.ECommerce.Loyalty.Core.ViewModels.Promo.Services;
-using MvvmCross.Platform;
+using MvvmCross;
 using AppRopio.Base.Core.ViewModels;
 
 namespace AppRopio.ECommerce.Loyalty.Core.ViewModels.Promo

@@ -2,8 +2,8 @@
 using AppRopio.Payments.CloudPayments.Core.Services;
 using AppRopio.Payments.CloudPayments.Droid.Services.Implementation;
 using AppRopio.Payments.Core.Services;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.Payments.CloudPayments.Droid
 {

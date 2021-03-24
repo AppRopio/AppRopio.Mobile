@@ -1,6 +1,6 @@
 ﻿using AppRopio.Analytics.MobileCenter.Core.Services;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.Analytics.MobileCenter.iOS
 {

@@ -23,8 +23,8 @@ using AppRopio.ECommerce.Products.iOS.Views.ProductCard;
 using AppRopio.ECommerce.Products.iOS.Views.ProductCard.Selection;
 using AppRopio.ECommerce.Products.iOS.Views.ProductTextContent;
 using AppRopio.ECommerce.Products.iOS.Views.ProductWebContent;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 using AppRopio.Base.Core.Services.Localization;
 
 namespace AppRopio.ECommerce.Products.iOS

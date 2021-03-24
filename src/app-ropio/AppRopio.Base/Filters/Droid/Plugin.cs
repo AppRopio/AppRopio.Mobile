@@ -5,8 +5,8 @@ using AppRopio.Base.Filters.Core.ViewModels.Sort;
 using AppRopio.Base.Filters.Droid.Views.Filters;
 using AppRopio.Base.Filters.Droid.Views.Filters.Selection;
 using AppRopio.Base.Filters.Droid.Views.Sort;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.Base.Filters.Droid
 {

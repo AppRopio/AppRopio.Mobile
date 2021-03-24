@@ -13,8 +13,8 @@ using AppRopio.ECommerce.Basket.Droid.Views.Order.Full;
 using AppRopio.ECommerce.Basket.Droid.Views.Order.Payment;
 using AppRopio.ECommerce.Basket.Droid.Views.Order.Thanks;
 using AppRopio.ECommerce.Basket.Droid.Views.ProductCard;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.ECommerce.Basket.Droid
 {

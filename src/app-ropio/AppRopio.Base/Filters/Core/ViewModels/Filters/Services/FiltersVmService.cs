@@ -18,9 +18,9 @@ using AppRopio.Base.Filters.Core.ViewModels.Filters.Items.Selection;
 using AppRopio.Base.Filters.Core.ViewModels.Filters.Items.Selection.MultiSelection;
 using AppRopio.Base.Filters.Core.ViewModels.Filters.Items.Selection.OneSelection;
 using AppRopio.Models.Filters.Responses;
-using MvvmCross.Platform;
+using MvvmCross;
 using MvvmCross.Platform.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross.Plugin.Messenger;
 using AppRopio.Base.Filters.Core.ViewModels.Filters.Items.Switch;
 using AppRopio.Base.API.Exceptions;
 

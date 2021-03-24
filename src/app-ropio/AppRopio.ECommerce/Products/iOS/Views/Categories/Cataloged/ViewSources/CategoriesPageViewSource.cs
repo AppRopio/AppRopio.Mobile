@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using AppRopio.Base.iOS.Views;
 using AppRopio.Base.iOS.Views.PageViewController.ViewSources;
-using MvvmCross.Binding.ExtensionMethods;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.iOS.Views;
+using MvvmCross.Binding.Extensions;
+using MvvmCross.ViewModels;
+using MvvmCross.Platforms.Ios.Views;
 using UIKit;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.Categories.Cataloged.ViewSources

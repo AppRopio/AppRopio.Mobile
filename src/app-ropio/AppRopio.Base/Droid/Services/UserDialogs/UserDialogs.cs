@@ -3,8 +3,8 @@ using Android.App;
 using Android.Support.Design.Widget;
 using Android.Support.V7.App;
 using AppRopio.Base.Core.Services.UserDialogs;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Droid.Platform;
+using MvvmCross;
+using MvvmCross.Platforms.Android;
 using AppRopio.Base.Droid.Views;
 
 namespace AppRopio.Base.Droid.Services.UserDialogs

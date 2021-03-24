@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using AppRopio.Models.Basket.Responses.Order;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 using System.Linq;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items

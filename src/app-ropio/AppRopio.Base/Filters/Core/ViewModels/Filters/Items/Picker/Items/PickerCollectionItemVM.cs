@@ -1,5 +1,5 @@
 ﻿using System;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 using AppRopio.Models.Filters.Responses;
 namespace AppRopio.Base.Filters.Core.ViewModels.Filters.Items.Picker.Items
 {

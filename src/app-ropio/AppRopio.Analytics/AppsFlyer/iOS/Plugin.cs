@@ -1,6 +1,6 @@
 ﻿using System;
-using MvvmCross.Platform.Plugins;
-using MvvmCross.Platform;
+using MvvmCross.Plugin;
+using MvvmCross;
 using AppRopio.Analytics.AppsFlyer.Core.Services;
 using AppRopio.Analytics.AppsFlyer.iOS.Services;
 using Foundation;

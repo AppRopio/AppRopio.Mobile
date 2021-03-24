@@ -1,7 +1,7 @@
 ﻿using System;
 using Foundation;
 using MvvmCross.Platform.Core;
-using MvvmCross.Platform.iOS.Views;
+using MvvmCross.Platforms.Ios.Views.Base;
 using UIKit;
 
 namespace AppRopio.Base.iOS.Views.PageViewController

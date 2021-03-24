@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using AppRopio.Analytics.MobileCenter.Core.Services;
 using AppRopio.Base.Core.Models.Analytics;
-using MvvmCross.Platform;
+using MvvmCross;
 using MvvmCross.Platform.Core;
 
 namespace AppRopio.Analytics.MobileCenter.Droid.Services

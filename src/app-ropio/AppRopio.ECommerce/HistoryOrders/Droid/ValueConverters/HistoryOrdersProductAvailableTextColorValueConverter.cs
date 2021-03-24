@@ -1,9 +1,9 @@
 ﻿using System;
-using MvvmCross.Platform.Converters;
+using MvvmCross.Converters;
 using Android.Graphics;
-using MvvmCross.Platform.Droid.Platform;
+using MvvmCross.Platforms.Android;
 using Android.Util;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.HistoryOrders.Droid.ValueConverters
 {

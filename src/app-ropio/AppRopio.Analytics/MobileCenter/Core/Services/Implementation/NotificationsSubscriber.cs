@@ -1,7 +1,7 @@
 ﻿using System;
 using AppRopio.Base.Core.Messages.Analytics;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.Analytics.MobileCenter.Core.Services.Implementation
 {

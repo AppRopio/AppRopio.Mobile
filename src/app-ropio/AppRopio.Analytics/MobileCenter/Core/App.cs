@@ -1,8 +1,8 @@
 ﻿using System;
 using AppRopio.Analytics.MobileCenter.Core.Services;
 using AppRopio.Analytics.MobileCenter.Core.Services.Implementation;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.Analytics.MobileCenter.Core
 {

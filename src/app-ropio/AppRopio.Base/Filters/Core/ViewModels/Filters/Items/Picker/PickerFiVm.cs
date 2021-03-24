@@ -6,9 +6,9 @@ using System.Windows.Input;
 using AppRopio.Base.Filters.Core.ViewModels.Filters.Items.Picker.Items;
 using AppRopio.Base.Filters.Core.ViewModels.Filters.Messages;
 using AppRopio.Models.Filters.Responses;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross.ViewModels;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 using System;
 
 namespace AppRopio.Base.Filters.Core.ViewModels.Filters.Items.Picker

@@ -7,8 +7,8 @@ using AppRopio.Base.Settings.iOS.Services.Implementation;
 using AppRopio.Base.Settings.iOS.Views.Languages;
 using AppRopio.Base.Settings.iOS.Views.Regions;
 using AppRopio.Base.Settings.iOS.Views.Settings;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.Base.Settings.iOS
 {

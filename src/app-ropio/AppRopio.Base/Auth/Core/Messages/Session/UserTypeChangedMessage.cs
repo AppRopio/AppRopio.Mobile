@@ -1,5 +1,5 @@
 ﻿using AppRopio.Base.Auth.Core.Models.UserType;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.Base.Auth.Core.Messages.Session
 {

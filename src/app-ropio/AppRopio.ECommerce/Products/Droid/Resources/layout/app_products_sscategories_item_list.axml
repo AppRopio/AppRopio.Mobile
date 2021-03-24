@@ -9,7 +9,7 @@
         android:layout_height="@dimen/app_products_sscategories_item_list_height"
         android:paddingLeft="@dimen/app_products_sscategories_item_list_horizontalMargin"
         android:paddingRight="@dimen/app_products_sscategories_item_list_horizontalMargin">
-        <mvvmcross.binding.droid.views.MvxImageView
+        <MvvmCross.Platforms.Android.Binding.MvxImageView
             android:layout_width="@dimen/app_products_sscategories_item_list_height"
             android:layout_height="@dimen/app_products_sscategories_item_list_height"
             android:layout_marginRight="@dimen/app_products_sscategories_item_list_horizontalMargin"

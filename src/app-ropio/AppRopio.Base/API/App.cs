@@ -1,7 +1,7 @@
 ﻿using AppRopio.Base.API.Services;
 using AppRopio.Base.API.Services.Implementations;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.Base.API
 {

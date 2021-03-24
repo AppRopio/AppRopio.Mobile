@@ -5,8 +5,8 @@ using AppRopio.Base.API.Services;
 using AppRopio.Base.Auth.API.Services;
 using AppRopio.Base.Auth.Core.Messages.Session;
 using AppRopio.Models.Auth.Responses;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.Base.Auth.Core.Services.Implementation
 {

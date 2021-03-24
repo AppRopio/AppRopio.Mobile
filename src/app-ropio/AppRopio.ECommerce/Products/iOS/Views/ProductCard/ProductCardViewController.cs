@@ -36,11 +36,11 @@ using AppRopio.ECommerce.Products.iOS.Views.ProductCard.ViewSources;
 using AppRopio.Models.Products.Responses;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.iOS.Views;
-using MvvmCross.iOS.Views.Presenters;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Views;
+using MvvmCross.Platforms.Ios.Presenters;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 using UIKit;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard

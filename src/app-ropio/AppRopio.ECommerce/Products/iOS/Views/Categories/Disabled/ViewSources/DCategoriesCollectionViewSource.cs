@@ -6,7 +6,7 @@ using AppRopio.Base.iOS.ViewSources;
 using AppRopio.ECommerce.Products.Core.ViewModels.Categories.Disabled;
 using CoreGraphics;
 using Foundation;
-using MvvmCross.Binding.ExtensionMethods;
+using MvvmCross.Binding.Extensions;
 using UIKit;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.Categories.Disabled.ViewSources

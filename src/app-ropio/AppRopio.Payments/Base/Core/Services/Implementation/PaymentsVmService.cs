@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
 using AppRopio.Base.Core.ViewModels.Services;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 using AppRopio.Payments.Core.Messages;
 
 namespace AppRopio.Payments.Core.Services.Implementation

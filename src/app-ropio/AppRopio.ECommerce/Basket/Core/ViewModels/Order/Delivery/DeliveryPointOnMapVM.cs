@@ -3,7 +3,7 @@ using AppRopio.Base.Core.Extentions;
 using AppRopio.Base.Core.ViewModels;
 using AppRopio.ECommerce.Basket.Core.Models.Bundle;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery.Items;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery
 {

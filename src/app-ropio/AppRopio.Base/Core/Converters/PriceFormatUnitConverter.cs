@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Globalization;
 using System.Linq;
-using MvvmCross.Platform.Converters;
+using MvvmCross.Converters;
 using AppRopio.Base.Core.Services.Localization;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Base.Core.Converters
 {

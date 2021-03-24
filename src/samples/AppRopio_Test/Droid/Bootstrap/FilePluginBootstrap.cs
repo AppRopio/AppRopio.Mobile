@@ -1,9 +1,9 @@
-using MvvmCross.Platform.Plugins;
+using MvvmCross.Plugin;
 
 namespace AppRopio.Test.Droid.Bootstrap
 {
     public class FilePluginBootstrap
-        : MvxPluginBootstrapAction<MvvmCross.Plugins.File.PluginLoader>
+        : MvxPluginBootstrapAction<MvvmCross.Plugin.File.PluginLoader>
     {
     }
 }

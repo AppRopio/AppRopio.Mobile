@@ -1,4 +1,4 @@
-﻿using MvvmCross.Platform;
+﻿using MvvmCross;
 using AppRopio.ECommerce.Products.API.Services;
 using AppRopio.ECommerce.Products.API.Services.Implementation;
 using AppRopio.Base.API;
@@ -6,7 +6,7 @@ using AppRopio.ECommerce.Products.API.Services.Fakes;
 
 namespace AppRopio.ECommerce.Products.API
 {
-    public class App : MvvmCross.Core.ViewModels.MvxApplication
+    public class App : MvvmCross.ViewModels.MvxApplication
     {
         public override void Initialize()
         {

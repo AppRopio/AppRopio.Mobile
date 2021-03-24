@@ -5,7 +5,7 @@ using System.Net.Http;
 using System.Windows.Input;
 using CoreGraphics;
 using Foundation;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 using UIKit;
 using WebKit;
 

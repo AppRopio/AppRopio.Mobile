@@ -1,5 +1,5 @@
-﻿using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+﻿using MvvmCross;
+using MvvmCross.Plugin;
 using AppRopio.ECommerce.Loyalty.Core.ViewModels.Promo;
 using AppRopio.Base.Core.Services.ViewLookup;
 using AppRopio.ECommerce.Loyalty.Droid.Views.Promo;

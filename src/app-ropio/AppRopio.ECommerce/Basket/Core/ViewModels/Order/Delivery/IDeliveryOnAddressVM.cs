@@ -1,6 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery
 {

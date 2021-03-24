@@ -3,14 +3,14 @@ using System.Linq;
 using CoreGraphics;
 using Foundation;
 using UIKit;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.iOS.Views;
+using MvvmCross.ViewModels;
+using MvvmCross.Platforms.Ios.Views;
 using MvvmCross.Binding.BindingContext;
 using AppRopio.Base.Core.ViewModels;
 using AppRopio.Base.iOS.UIExtentions;
 using AppRopio.Base.iOS.Models.ThemeConfigs;
 using AppRopio.Base.Core.Services.Localization;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Base.iOS.Views
 {

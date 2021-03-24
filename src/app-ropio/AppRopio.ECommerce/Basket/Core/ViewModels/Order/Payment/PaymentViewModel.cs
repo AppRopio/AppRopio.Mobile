@@ -10,8 +10,8 @@ using AppRopio.ECommerce.Basket.Core.Models.Bundle;
 using AppRopio.ECommerce.Basket.Core.Services;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Payment.Items;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Services;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Payment
 {

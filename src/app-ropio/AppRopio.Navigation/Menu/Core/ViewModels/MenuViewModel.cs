@@ -10,9 +10,9 @@ using AppRopio.Base.Core.Services.Router;
 using AppRopio.Base.Core.ViewModels;
 using AppRopio.Navigation.Menu.Core.ViewModels.Items;
 using AppRopio.Navigation.Menu.Core.ViewModels.Services;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross.ViewModels;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.Navigation.Menu.Core.ViewModels
 {

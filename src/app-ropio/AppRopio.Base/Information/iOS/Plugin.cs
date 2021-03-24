@@ -7,8 +7,8 @@ using AppRopio.Base.Information.iOS.Services.Implementation;
 using AppRopio.Base.Information.iOS.Views;
 using AppRopio.Base.Information.iOS.Views.InformationTextContent;
 using AppRopio.Base.Information.iOS.Views.InformationWebContent;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.Base.Information.iOS
 {

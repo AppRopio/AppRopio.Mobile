@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using AppRopio.Base.API.Services;
 using AppRopio.Base.Core.ViewModels.Services;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Base.Core.Services.Push
 {

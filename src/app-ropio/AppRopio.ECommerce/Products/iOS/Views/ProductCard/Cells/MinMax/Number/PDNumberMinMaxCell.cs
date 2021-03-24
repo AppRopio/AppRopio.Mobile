@@ -7,7 +7,7 @@ using AppRopio.ECommerce.Products.Core;
 using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.MinMax.Number;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platform;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.MinMax.Number

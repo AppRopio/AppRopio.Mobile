@@ -1,11 +1,11 @@
 ﻿using System;
 using AppRopio.Payments.CloudPayments.API.Services;
 using AppRopio.Payments.CloudPayments.API.Services.Implementation;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Payments.CloudPayments.API
 {
-    public class App : MvvmCross.Core.ViewModels.MvxApplication
+    public class App : MvvmCross.ViewModels.MvxApplication
     {
         public override void Initialize()
         {

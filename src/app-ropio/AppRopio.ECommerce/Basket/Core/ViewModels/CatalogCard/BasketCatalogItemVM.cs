@@ -2,7 +2,7 @@
 using System.Windows.Input;
 using AppRopio.Base.Core.Services.Localization;
 using AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.CatalogCard
 {

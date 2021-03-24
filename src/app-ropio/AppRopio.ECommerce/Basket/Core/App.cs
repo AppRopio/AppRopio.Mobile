@@ -18,12 +18,12 @@ using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Services.Implementation;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Thanks;
 using AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard;
 using AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard.Services;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.ECommerce.Basket.Core
 {
-    public class App : MvvmCross.Core.ViewModels.MvxApplication
+    public class App : MvvmCross.ViewModels.MvxApplication
     {
         public override void Initialize()
         {

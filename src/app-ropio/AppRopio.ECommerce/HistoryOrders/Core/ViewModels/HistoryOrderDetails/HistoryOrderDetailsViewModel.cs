@@ -9,8 +9,8 @@ using AppRopio.ECommerce.HistoryOrders.Core.Services;
 using AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrders.Services;
 using AppRopio.Models.Basket.Responses.Order;
 using AppRopio.Models.HistoryOrders.Responses;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 using AppRopio.ECommerce.Basket.Core.Messages;
 
 namespace AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrders

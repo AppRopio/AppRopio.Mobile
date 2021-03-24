@@ -9,7 +9,7 @@ using AppRopio.Base.Core.Services.Permissions;
 using Contacts;
 using ContactsUI;
 using Foundation;
-using MvvmCross.Platform;
+using MvvmCross;
 using MvvmCross.Platform.Core;
 using Plugin.Permissions.Abstractions;
 using UIKit;

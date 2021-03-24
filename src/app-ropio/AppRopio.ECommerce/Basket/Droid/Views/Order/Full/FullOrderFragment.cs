@@ -15,11 +15,11 @@ using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Full;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items.Delivery;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.Droid.BindingContext;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.Platforms.Android.Binding.BindingContext;
+using MvvmCross.ViewModels;
 using MvvmCross.Droid.Support.V7.AppCompat.Widget;
 using MvvmCross.Droid.Support.V7.RecyclerView;
-using MvvmCross.Platform;
+using MvvmCross;
 using AppRopio.Base.Core;
 
 namespace AppRopio.ECommerce.Basket.Droid.Views.Order.Full

@@ -2,8 +2,8 @@
 
 using Foundation;
 using UIKit;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross;
 using AppRopio.ECommerce.Basket.iOS.Services;
 using MvvmCross.Binding.BindingContext;
 using AppRopio.Models.Basket.Responses.Enums;

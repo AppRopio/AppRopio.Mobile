@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using AppRopio.Base.API.Services;
 using AppRopio.Base.Core;
 using AppRopio.Models.Beacons.Responses;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Beacons.Core.Services.Implementation
 {

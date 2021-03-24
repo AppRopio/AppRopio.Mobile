@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using AppRopio.Models.Base.Responses;
-using MvvmCross.Platform;
+using MvvmCross;
 using MvvmCross.Platform.Core;
 using MvvmCross.Platform.Platform;
 using AppRopio.Base.Core.Services.Permissions;

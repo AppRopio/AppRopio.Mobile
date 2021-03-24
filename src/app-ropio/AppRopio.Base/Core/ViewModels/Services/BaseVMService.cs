@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using AppRopio.Base.API.Exceptions;
 using AppRopio.Base.Core.Services.Analytics;
 using AppRopio.Base.Core.Services.UserDialogs;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 using MvvmCross.Platform.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross.Plugin.Messenger;
 using AppRopio.Base.Core.Messages.Localization;
 
 namespace AppRopio.Base.Core.ViewModels.Services

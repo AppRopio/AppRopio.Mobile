@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using AppRopio.Base.Core.Extentions;
 using AppRopio.Base.Core.Services.ViewModelLookup;
-using MvvmCross.Core.Navigation;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.Navigation;
+using MvvmCross.ViewModels;
+using MvvmCross;
 using System.Threading.Tasks;
 using MvvmCross.Platform.Platform;
 

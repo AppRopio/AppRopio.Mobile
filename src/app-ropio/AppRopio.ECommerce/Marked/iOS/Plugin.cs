@@ -3,8 +3,8 @@ using AppRopio.ECommerce.Marked.Core.ViewModels.Marked;
 using AppRopio.ECommerce.Marked.iOS.Services;
 using AppRopio.ECommerce.Marked.iOS.Services.Implementation;
 using AppRopio.ECommerce.Marked.iOS.Views.Marked;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.ECommerce.Marked.iOS
 {

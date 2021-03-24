@@ -2,8 +2,8 @@
 using System.Runtime.CompilerServices;
 using CoreGraphics;
 using Foundation;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross;
 using MvvmCross.Platform.Logging;
 using UIKit;
 

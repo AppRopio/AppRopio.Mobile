@@ -4,7 +4,7 @@ using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.Core.Services.Permissions;
 using AppRopio.Base.Core.Services.UserDialogs;
 using Foundation;
-using MvvmCross.Platform;
+using MvvmCross;
 using MvvmCross.Platform.Core;
 using MvvmCross.Platform.Platform;
 using Plugin.Permissions;
