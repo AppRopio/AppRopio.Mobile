@@ -1,11 +1,9 @@
-﻿using System;
-using System.Threading.Tasks;
-using Plugin.Permissions.Abstractions;
+﻿using System.Threading.Tasks;
 
 namespace AppRopio.Base.Core.Services.Permissions
 {
     public interface IPermissionsService
     {
-        Task<bool> CheckPermission(Permission permission, bool goToSettingsAlert = false, string goToSettingsMessage = null);
+        Task<bool> CheckPermission(Xamarin.Essentials.Permissions.BasePermission permission, bool goToSettingsAlert = false, string goToSettingsMessage = null);
     }
 }

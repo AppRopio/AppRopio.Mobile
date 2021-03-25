@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using AppRopio.Base.Core.Attributes;
-using MvvmCross.Core;
+using MvvmCross.Base;
 using MvvmCross.ViewModels;
 using Newtonsoft.Json;
 
-namespace AppRopio.Base.Core.Extentions
-{
-    public static class MvxBundleExtentions
+namespace AppRopio.Base.Core.Extentions {
+	public static class MvxBundleExtentions
     {
         private static object Read(IDictionary<string, string> data, Type type)
         {

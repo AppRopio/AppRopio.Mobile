@@ -5,11 +5,10 @@ using System.Windows.Input;
 using AppRopio.Base.Core.ViewModels.Search;
 using AppRopio.Base.Core.ViewModels.Selection.Items;
 using AppRopio.Base.Core.ViewModels.Selection.Services;
-using MvvmCross.ViewModels;
+using MvvmCross.Commands;
 
-namespace AppRopio.Base.Core.ViewModels.Selection
-{
-    public abstract class BaseSelectionViewModel<TValue, TSelectedValue> : SearchViewModel, IBaseSelectionViewModel
+namespace AppRopio.Base.Core.ViewModels.Selection {
+	public abstract class BaseSelectionViewModel<TValue, TSelectedValue> : SearchViewModel, IBaseSelectionViewModel
         where TValue : class
         where TSelectedValue : class
     {

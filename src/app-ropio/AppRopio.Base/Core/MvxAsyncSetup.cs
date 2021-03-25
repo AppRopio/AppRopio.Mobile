@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using System.Linq;
 using System.Threading.Tasks;
 using MvvmCross.Core;
@@ -70,7 +70,7 @@ namespace AppRopio.Base.Core
             var pluginManager = InitializePluginFramework();
 
             var app = CreateApp();
-            Mvx.RegisterSingleton(app);
+            Mvx.IoCProvider.RegisterSingleton(app);
 
             InitializeApp(pluginManager, app);
 
@@ -135,3 +135,4 @@ namespace AppRopio.Base.Core
         }
     }
 }
+*/

@@ -1,22 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using AppRopio.Base.Core.Extentions;
 using AppRopio.Base.Core.Services.ViewModelLookup;
+using MvvmCross;
+using MvvmCross.Logging;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
-using MvvmCross;
-using System.Threading.Tasks;
-using MvvmCross.Platform.Platform;
 
-namespace AppRopio.Base.Core.ViewModels.Services
-{
+namespace AppRopio.Base.Core.ViewModels.Services {
     public class BaseVmNavigationService : BaseVmService, IBaseVmNavigationService
     {
         #region Services
 
-        protected IViewModelLookupService LookupService { get { return Mvx.Resolve<IViewModelLookupService>(); } }
+        protected IViewModelLookupService LookupService { get { return Mvx.IoCProvider.Resolve<IViewModelLookupService>(); } }
 
-        protected IMvxNavigationService MvxNavigationService => Mvx.Resolve<IMvxNavigationService>();
+        protected IMvxNavigationService MvxNavigationService => Mvx.IoCProvider.Resolve<IMvxNavigationService>();
 
         #endregion
 
@@ -44,7 +43,7 @@ namespace AppRopio.Base.Core.ViewModels.Services
                 }
                 catch (Exception ex)
                 {
-                    MvxTrace.Error(ex.BuildAllMessagesAndStackTrace());
+                    Mvx.IoCProvider.Resolve<IMvxLog>().Error(ex.BuildAllMessagesAndStackTrace());
                 }
         }
 
@@ -57,7 +56,7 @@ namespace AppRopio.Base.Core.ViewModels.Services
                 }
                 catch (Exception ex)
                 {
-                    MvxTrace.Error(ex.BuildAllMessagesAndStackTrace());
+                    Mvx.IoCProvider.Resolve<IMvxLog>().Error(ex.BuildAllMessagesAndStackTrace());
                 }
         }
 
@@ -70,7 +69,7 @@ namespace AppRopio.Base.Core.ViewModels.Services
                 }
                 catch (Exception ex)
                 {
-                    MvxTrace.Error(ex.BuildAllMessagesAndStackTrace());
+                    Mvx.IoCProvider.Resolve<IMvxLog>().Error(ex.BuildAllMessagesAndStackTrace());
                 }
         }
 
@@ -92,7 +91,7 @@ namespace AppRopio.Base.Core.ViewModels.Services
                     }
                     catch (Exception ex)
                     {
-                        MvxTrace.Error(ex.BuildAllMessagesAndStackTrace());
+                        Mvx.IoCProvider.Resolve<IMvxLog>().Error(ex.BuildAllMessagesAndStackTrace());
                     } 
                 }
             }

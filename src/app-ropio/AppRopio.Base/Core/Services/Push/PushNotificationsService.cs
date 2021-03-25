@@ -9,7 +9,7 @@ namespace AppRopio.Base.Core.Services.Push
     {
         #region Services
 
-        protected IPushService PushService { get { return Mvx.Resolve<IPushService>(); } }
+        protected IPushService PushService { get { return Mvx.IoCProvider.Resolve<IPushService>(); } }
 
         #endregion
 

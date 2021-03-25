@@ -1,9 +1,7 @@
-﻿using System;
-using System.Windows.Input;
-using MvvmCross.ViewModels;
+﻿using System.Windows.Input;
+using MvvmCross.Commands;
 
-namespace AppRopio.Base.Core.ViewModels.Search
-{
+namespace AppRopio.Base.Core.ViewModels.Search {
     public abstract class SearchViewModel : BaseViewModel, ISearchViewModel
     {
         #region Commands

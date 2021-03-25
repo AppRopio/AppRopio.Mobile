@@ -6,7 +6,8 @@ using AppRopio.Base.Core.Models.App;
 using AppRopio.Base.Core.Services.Settings;
 using MvvmCross;
 using Newtonsoft.Json;
-using Plugin.Settings;
+
+using Xamarin.Essentials;
 
 namespace AppRopio.Base.Core
 {
@@ -38,19 +39,19 @@ namespace AppRopio.Base.Core
 
         public static string PushToken
         {
-            get { return CrossSettings.Current.GetValueOrDefault(nameof(PushToken), string.Empty); }
-            set { CrossSettings.Current.AddOrUpdateValue(nameof(PushToken), value); }
+            get { return Preferences.Get(nameof(PushToken), string.Empty); }
+            set { Preferences.Set(nameof(PushToken), value); }
         }
 
         public static string RegionID
         {
-            get { return CrossSettings.Current.GetValueOrDefault(nameof(RegionID), null); }
+            get { return Preferences.Get(nameof(RegionID), null); }
             set 
             {
-                CrossSettings.Current.AddOrUpdateValue(nameof(RegionID), value);
-                if (Mvx.CanResolve<AppRopio.Base.API.Services.IConnectionService>())
+                Preferences.Set(nameof(RegionID), value);
+                if (Mvx.IoCProvider.CanResolve<AppRopio.Base.API.Services.IConnectionService>())
                 {
-                    var connectionService = Mvx.Resolve<AppRopio.Base.API.Services.IConnectionService>();
+                    var connectionService = Mvx.IoCProvider.Resolve<AppRopio.Base.API.Services.IConnectionService>();
                     connectionService.Headers["Region"] = value;
                 }
             }
@@ -60,15 +61,15 @@ namespace AppRopio.Base.Core
         {
             get 
             {
-                if (CrossSettings.Current.Contains(nameof(IsGeolocationEnabled)))
-                    return CrossSettings.Current.GetValueOrDefault(nameof(IsGeolocationEnabled), false);
+                if (Preferences.ContainsKey(nameof(IsGeolocationEnabled)))
+                    return Preferences.Get(nameof(IsGeolocationEnabled), false);
                 else
                     return null;
             }
             set 
             {
                 if (value != null)
-                    CrossSettings.Current.AddOrUpdateValue(nameof(IsGeolocationEnabled), value.Value);
+                    Preferences.Set(nameof(IsGeolocationEnabled), value.Value);
             }
         }
 
@@ -76,15 +77,15 @@ namespace AppRopio.Base.Core
         {
 			get
 			{
-				if (CrossSettings.Current.Contains(nameof(IsNotificationsEnabled)))
-					return CrossSettings.Current.GetValueOrDefault(nameof(IsNotificationsEnabled), false);
+				if (Preferences.ContainsKey(nameof(IsNotificationsEnabled)))
+					return Preferences.Get(nameof(IsNotificationsEnabled), false);
 				else
 					return null;
 			}
 			set 
             {
                 if (value != null)
-                    CrossSettings.Current.AddOrUpdateValue(nameof(IsNotificationsEnabled), value.Value);
+                    Preferences.Set(nameof(IsNotificationsEnabled), value.Value);
             }
         }
 
@@ -92,7 +93,7 @@ namespace AppRopio.Base.Core
         {
             get
             {
-                var cultureName = CrossSettings.Current.GetValueOrDefault(nameof(SettingsCulture), string.Empty);
+                var cultureName = Preferences.Get(nameof(SettingsCulture), string.Empty);
                 if (!string.IsNullOrEmpty(cultureName))
                 {
                     var cultureInfo = new CultureInfo(cultureName);
@@ -107,7 +108,7 @@ namespace AppRopio.Base.Core
                 }
                 return CultureInfo.CurrentUICulture;
             }
-            set { CrossSettings.Current.AddOrUpdateValue(nameof(SettingsCulture), value.Name); }
+            set { Preferences.Set(nameof(SettingsCulture), value.Name); }
         }
 
         static AppSettings()
@@ -117,7 +118,7 @@ namespace AppRopio.Base.Core
 
         private static void LoadFromAppConfig()
         {
-            var json = Mvx.Resolve<ISettingsService>().ReadStringFromFile(Path.Combine(CoreConstants.CONFIGS_FOLDER, CoreConstants.CONFIG_NAME));
+            var json = Mvx.IoCProvider.Resolve<ISettingsService>().ReadStringFromFile(Path.Combine(CoreConstants.CONFIGS_FOLDER, CoreConstants.CONFIG_NAME));
             _config = JsonConvert.DeserializeObject<AppConfig>(json);
 
             if (AppSettings.SettingsCulture == CultureInfo.CurrentUICulture)

@@ -4,9 +4,9 @@ using AppRopio.Base.Core.Messages.Analytics;
 using AppRopio.Base.Core.Models.Analytics;
 using AppRopio.Base.Core.Services.Device;
 using MvvmCross;
-using MvvmCross.Platform.Core;
 using MvvmCross.IoC;
 using MvvmCross.Plugin.Messenger;
+using MvvmCross.Base;
 
 namespace AppRopio.Base.Core.Services.Analytics
 {
@@ -14,9 +14,9 @@ namespace AppRopio.Base.Core.Services.Analytics
     {
         #region Services
 
-        protected IMvxMessenger Messenger { get { return MvxSingleton<IMvxIoCProvider>.Instance?.CanResolve<IMvxMessenger>() ?? false ? Mvx.Resolve<IMvxMessenger>() : null; } }
+        protected IMvxMessenger Messenger { get { return MvxSingleton<IMvxIoCProvider>.Instance?.CanResolve<IMvxMessenger>() ?? false ? Mvx.IoCProvider.Resolve<IMvxMessenger>() : null; } }
 
-        protected IDeviceService DeviceService { get { return MvxSingleton<IMvxIoCProvider>.Instance?.CanResolve<IDeviceService>() ?? false ? Mvx.Resolve<IDeviceService>() : null; } }
+        protected IDeviceService DeviceService { get { return MvxSingleton<IMvxIoCProvider>.Instance?.CanResolve<IDeviceService>() ?? false ? Mvx.IoCProvider.Resolve<IDeviceService>() : null; } }
 
         #endregion
 

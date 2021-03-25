@@ -87,7 +87,7 @@ namespace AppRopio.Base.Core.Converters
                     priceParameter.UnitName = paramsDictionary["UnitName"];
 
                 if (paramsDictionary.ContainsKey("ResxName") && paramsDictionary.ContainsKey("StringName"))
-                    priceParameter.PrefixString = Mvx.Resolve<ILocalizationService>().GetLocalizableString(paramsDictionary["ResxName"], paramsDictionary["StringName"]);
+                    priceParameter.PrefixString = Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString(paramsDictionary["ResxName"], paramsDictionary["StringName"]);
             }
 
             return priceParameter;

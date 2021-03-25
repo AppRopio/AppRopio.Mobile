@@ -4,21 +4,19 @@ using AppRopio.Base.Core.Models.Content;
 using AppRopio.Base.Core.Models.Navigation;
 using AppRopio.Base.Core.Services.Analytics;
 using AppRopio.Base.Core.Services.Device;
+using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.Core.Services.UserDialogs;
 using AppRopio.Base.Core.Services.ViewModelLookup;
-using MvvmCross.ViewModels;
 using MvvmCross;
-using MvvmCross.Platform.Platform;
+using MvvmCross.Logging;
 using MvvmCross.Plugin.Messenger;
-using System.Threading.Tasks;
-using AppRopio.Base.Core.Services.Localization;
+using MvvmCross.ViewModels;
 
-namespace AppRopio.Base.Core.ViewModels
-{
-    /// <summary>
-    /// Базовая ViewModel
-    /// </summary>
-    public abstract class BaseViewModel : MvxViewModel<IMvxBundle>, IBaseViewModel
+namespace AppRopio.Base.Core.ViewModels {
+	/// <summary>
+	/// Базовая ViewModel
+	/// </summary>
+	public abstract class BaseViewModel : MvxViewModel<IMvxBundle>, IBaseViewModel
     {
         #region Properties
 
@@ -94,19 +92,19 @@ namespace AppRopio.Base.Core.ViewModels
 
         #region Services
 
-        protected IUserDialogs UserDialogs => Mvx.Resolve<IUserDialogs>();
+        protected IUserDialogs UserDialogs => Mvx.IoCProvider.Resolve<IUserDialogs>();
 
-        protected IMvxTrace MvxTrace => Mvx.Resolve<IMvxTrace>();
+        protected IMvxLog Log => Mvx.IoCProvider.Resolve<IMvxLog>();
 
-        protected IViewModelLookupService LookupService => Mvx.Resolve<IViewModelLookupService>();
+        protected IViewModelLookupService LookupService => Mvx.IoCProvider.Resolve<IViewModelLookupService>();
 
-        protected IAnalyticsNotifyingService AnalyticsNotifyingService => Mvx.CanResolve<IAnalyticsNotifyingService>() ? Mvx.Resolve<IAnalyticsNotifyingService>() : new AnalyticsNotifyingService();
+        protected IAnalyticsNotifyingService AnalyticsNotifyingService => Mvx.IoCProvider.CanResolve<IAnalyticsNotifyingService>() ? Mvx.IoCProvider.Resolve<IAnalyticsNotifyingService>() : new AnalyticsNotifyingService();
 
-        protected IDeviceService DeviceService => Mvx.Resolve<IDeviceService>();
+        protected IDeviceService DeviceService => Mvx.IoCProvider.Resolve<IDeviceService>();
 
-        protected IMvxMessenger Messenger => Mvx.Resolve<IMvxMessenger>();
+        protected IMvxMessenger Messenger => Mvx.IoCProvider.Resolve<IMvxMessenger>();
 
-        protected ILocalizationService LocalizationService => Mvx.Resolve<ILocalizationService>();
+        protected ILocalizationService LocalizationService => Mvx.IoCProvider.Resolve<ILocalizationService>();
 
         #endregion
 

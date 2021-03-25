@@ -8,32 +8,30 @@ using AppRopio.Base.Core.Services.TasksQueue;
 using AppRopio.Base.Core.Services.ViewLookup;
 using AppRopio.Base.Core.Services.ViewModelLookup;
 using MvvmCross;
-using MvvmCross.Platform.Platform;
+using MvvmCross.Logging;
 using MvvmCross.Plugin.Messenger;
-using AppRopio.Base.Core.Services.Localization;
 
-namespace AppRopio.Base.Core
-{
-    public static class App
+namespace AppRopio.Base.Core {
+	public static class App
     {
         public static void Initialize()
         {
             (new API.App()).Initialize();
 
-            Mvx.RegisterSingleton<IAnalyticsNotifyingService>(() => new AnalyticsNotifyingService());
-            Mvx.RegisterSingleton<IViewLookupService>(() => new ViewLookupService());
-            Mvx.RegisterSingleton<IViewModelLookupService>(() => new ViewModelLookupService());
-            Mvx.RegisterSingleton<IRouterService>(() => new RouterService());
-            Mvx.RegisterSingleton<IPushNotificationsService>(() => new PushNotificationsService());
-            Mvx.RegisterSingleton<ILocationService>(() => new LocationService());
-            Mvx.RegisterSingleton<ITasksQueueService>(() => new TasksQueueService());
+            Mvx.IoCProvider.RegisterSingleton<IAnalyticsNotifyingService>(() => new AnalyticsNotifyingService());
+            Mvx.IoCProvider.RegisterSingleton<IViewLookupService>(() => new ViewLookupService());
+            Mvx.IoCProvider.RegisterSingleton<IViewModelLookupService>(() => new ViewModelLookupService());
+            Mvx.IoCProvider.RegisterSingleton<IRouterService>(() => new RouterService());
+            Mvx.IoCProvider.RegisterSingleton<IPushNotificationsService>(() => new PushNotificationsService());
+            Mvx.IoCProvider.RegisterSingleton<ILocationService>(() => new LocationService());
+            Mvx.IoCProvider.RegisterSingleton<ITasksQueueService>(() => new TasksQueueService());
 
-            MvxTrace.Trace(MvxTraceLevel.Diagnostic, "Base module is loaded");
+            Mvx.IoCProvider.Resolve<IMvxLog>().Info("Base module is loaded");
 
-            Mvx.CallbackWhenRegistered<IMvxMessenger>(async () =>
+            Mvx.IoCProvider.CallbackWhenRegistered<IMvxMessenger>(async () =>
             {
                 await Task.Delay(1000);
-                Mvx.Resolve<IAnalyticsNotifyingService>().NotifyApp(AppState.Started);
+                Mvx.IoCProvider.Resolve<IAnalyticsNotifyingService>().NotifyApp(AppState.Started);
             });
         }
     }

@@ -11,7 +11,7 @@ namespace AppRopio.Base.Core.Services.Router
     {
         #region Services
 
-        protected IViewModelLookupService LookupService { get { return Mvx.Resolve<IViewModelLookupService>(); } }
+        protected IViewModelLookupService LookupService { get { return Mvx.IoCProvider.Resolve<IViewModelLookupService>(); } }
 
         #endregion
 
