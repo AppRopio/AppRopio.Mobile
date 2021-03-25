@@ -2,13 +2,13 @@
 using Android.Content;
 using Android.Content.Res;
 using Android.Util;
-using MvvmCross.Platforms.Android.Binding;
+using MvvmCross;
 using MvvmCross.Droid.Support.V7.RecyclerView.ItemTemplates;
-using MvvmCross.Platform.Platform;
+using MvvmCross.Logging;
+using MvvmCross.Platforms.Android.Binding.Views;
 
-namespace AppRopio.Base.Droid.AttributeHelpers
-{
-    public class ARLinearLayoutAttributeExtensions
+namespace AppRopio.Base.Droid.AttributeHelpers {
+	public class ARLinearLayoutAttributeExtensions
     {
         private static string ReadItemTemplateSelectorClassName(Context context, IAttributeSet attrs)
         {
@@ -49,21 +49,21 @@ namespace AppRopio.Base.Droid.AttributeHelpers
                 var message = $"Sorry but type with class name: {templateSelectorClassName} does not exist." +
                              $"Make sure you have provided full Type name: namespace + class name, AssemblyName." +
                               $"Example (check Example.Droid sample!): Example.Droid.Common.TemplateSelectors.MultiItemTemplateModelTemplateSelector, Example.Droid";
-                MvxTrace.Error(message);
+                Mvx.IoCProvider.Resolve<IMvxLog>().Error(message);
                 throw new InvalidOperationException(message);
             }
 
             if (!typeof(IMvxTemplateSelector).IsAssignableFrom(type))
             {
                 string message = $"Sorry but type: {type} does not implement {nameof(IMvxTemplateSelector)} interface.";
-                MvxTrace.Error(message);
+                Mvx.IoCProvider.Resolve<IMvxLog>().Error(message);
                 throw new InvalidOperationException(message);
             }
 
             if (type.IsAbstract)
             {
                 string message = $"Sorry can not instatiate {nameof(IMvxTemplateSelector)} as provided type: {type} is abstract/interface.";
-                MvxTrace.Error(message);
+                Mvx.IoCProvider.Resolve<IMvxLog>().Error(message);
                 throw new InvalidOperationException(message);
             }
 

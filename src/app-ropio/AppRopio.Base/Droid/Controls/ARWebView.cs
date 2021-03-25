@@ -11,6 +11,7 @@ using MvvmCross.Platforms.Android;
 using Android.Graphics;
 using MvvmCross.ViewModels;
 using System.Net.Http;
+using MvvmCross.Commands;
 
 namespace AppRopio.Base.Droid.Controls
 {
@@ -106,7 +107,7 @@ namespace AppRopio.Base.Droid.Controls
             Settings.UseWideViewPort = true;
             Settings.SetPluginState(WebSettings.PluginState.On);
 
-            var wm = Mvx.Resolve<IMvxAndroidCurrentTopActivity>().Activity.WindowManager;
+            var wm = Mvx.IoCProvider.Resolve<IMvxAndroidCurrentTopActivity>().Activity.WindowManager;
             var display = wm.DefaultDisplay;
             var size = new Point();
             display.GetSize(size);

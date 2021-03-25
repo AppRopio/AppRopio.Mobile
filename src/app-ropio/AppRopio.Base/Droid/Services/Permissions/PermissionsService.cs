@@ -6,38 +6,38 @@ using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.Core.Services.Permissions;
 using AppRopio.Base.Core.Services.UserDialogs;
 using MvvmCross;
-using MvvmCross.Platform.Core;
-using MvvmCross.Platform.Platform;
-using Plugin.CurrentActivity;
-using Plugin.Permissions.Abstractions;
+using MvvmCross.Base;
+using MvvmCross.Logging;
+
+using Xamarin.Essentials;
 
 namespace AppRopio.Base.Droid.Services.Permissions
 {
     public class PermissionsService : IPermissionsService
     {
-        protected IUserDialogs UserDialogs => Mvx.Resolve<IUserDialogs>();
+        protected IUserDialogs UserDialogs => Mvx.IoCProvider.Resolve<IUserDialogs>();
 
         #region IPermissionsService implementation
 
-        public async Task<bool> CheckPermission(Permission permission, bool goToSettingsAlert = false, string goToSettingsMessage = null)
+        public async Task<bool> CheckPermission(Xamarin.Essentials.Permissions.BasePermission permission, bool goToSettingsAlert = false, string goToSettingsMessage = null)
         {
             try
             {
-                var status = await Plugin.Permissions.CrossPermissions.Current.CheckPermissionStatusAsync(permission);
+                var status = await permission.CheckStatusAsync();
                 if (status == PermissionStatus.Denied)
                 {
                     if (goToSettingsAlert)
                     {
-                        var result = await UserDialogs.Confirm(goToSettingsMessage ?? Mvx.Resolve<ILocalizationService>().GetLocalizableString("Base", "Permissions_Request"), Mvx.Resolve<ILocalizationService>().GetLocalizableString("Base", "Permissions_Go"));
+                        var result = await UserDialogs.Confirm(goToSettingsMessage ?? Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString("Base", "Permissions_Request"), Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString("Base", "Permissions_Go"));
                         if (result)
                         {
-                            Mvx.Resolve<IMvxMainThreadDispatcher>().RequestMainThreadAction(() =>
+                            Mvx.IoCProvider.Resolve<IMvxMainThreadAsyncDispatcher>().ExecuteOnMainThreadAsync(() =>
                             {
                                 var intent = new Intent();
                                 intent.SetAction(Android.Provider.Settings.ActionApplicationDetailsSettings);
                                 intent.SetData(Android.Net.Uri.FromParts("package", Application.Context.PackageName, null));
 
-                                CrossCurrentActivity.Current.Activity.StartActivity(intent);
+                                Platform.CurrentActivity.StartActivity(intent);
                             });
                         }
                     }
@@ -47,16 +47,14 @@ namespace AppRopio.Base.Droid.Services.Permissions
 
                 if (status != PermissionStatus.Granted)
                 {
-                    var results = await Plugin.Permissions.CrossPermissions.Current.RequestPermissionsAsync(permission);
-                    if (results.ContainsKey(permission))
-                        status = results[permission];
+                    status = await permission.RequestAsync();
                 }
 
                 return (status == PermissionStatus.Granted);
             }
             catch (Exception ex)
             {
-                MvxTrace.TaggedTrace(MvxTraceLevel.Error, nameof(PermissionsService), () => ex.BuildAllMessagesAndStackTrace());
+                Mvx.IoCProvider.Resolve<IMvxLog>().Error($"{nameof(PermissionsService)}: {ex.BuildAllMessagesAndStackTrace()}");
                 return false;
             }
         }

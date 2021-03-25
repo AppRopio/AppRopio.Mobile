@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
-using Android.Content;
 using Android.Widget;
 using AppRopio.Base.API.Services;
 using AppRopio.Base.Core;
 using AppRopio.Base.Core.Services.Device;
+using AppRopio.Base.Core.Services.Launcher;
 using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.Core.Services.Log;
+using AppRopio.Base.Core.Services.LogProvider;
 using AppRopio.Base.Core.Services.Permissions;
 using AppRopio.Base.Core.Services.Settings;
-using AppRopio.Base.Core.Services.Trace;
 using AppRopio.Base.Core.Services.UserDialogs;
 using AppRopio.Base.Core.Services.ViewFinder;
 using AppRopio.Base.Core.Services.ViewLookup;
@@ -21,32 +21,29 @@ using AppRopio.Base.Core.Services.ViewModelNameMapping;
 using AppRopio.Base.Droid.Bindings;
 using AppRopio.Base.Droid.Converters;
 using AppRopio.Base.Droid.Services.Device;
+using AppRopio.Base.Droid.Services.Launcher;
 using AppRopio.Base.Droid.Services.Log;
 using AppRopio.Base.Droid.Services.MultipleViewModelCache;
 using AppRopio.Base.Droid.Services.Permissions;
 using AppRopio.Base.Droid.Services.Settings;
 using AppRopio.Base.Droid.Services.UserDialogs;
+using MvvmCross;
 using MvvmCross.Binding.Binders;
 using MvvmCross.Binding.Bindings.Target.Construction;
 using MvvmCross.Binding.Combiners;
-using MvvmCross.Views;
 using MvvmCross.Droid.Support.V7.AppCompat;
+using MvvmCross.Logging;
+using MvvmCross.Platforms.Android.Presenters;
 using MvvmCross.Platforms.Android.Views;
-using MvvmCross;
-using MvvmCross.Platform.Platform;
-using MvvmCross.Plugin.DownloadCache;
-using MvvmCross.Plugin.DownloadCache.Droid;
 using MvvmCross.Plugin.Network.Reachability;
+using MvvmCross.Views;
 using Xamarin.Android.Net;
-using AppRopio.Base.Core.Services.Launcher;
-using AppRopio.Base.Droid.Services.Launcher;
 
-namespace AppRopio.Base.Droid
-{
-    public abstract class BaseAndroidSetup : MvxAppCompatSetup
+namespace AppRopio.Base.Droid {
+	public abstract class BaseAndroidSetup : MvxAppCompatSetup
     {
-        protected BaseAndroidSetup(Context applicationContext)
-            : base(applicationContext)
+        protected BaseAndroidSetup()
+            : base()
         {
         }
 
@@ -63,11 +60,11 @@ namespace AppRopio.Base.Droid
             var exception = handle as Exception;
             try
             {
-                var deviceService = Mvx.Resolve<IDeviceService>();
+                var deviceService = Mvx.IoCProvider.Resolve<IDeviceService>();
 
-                var data = Mvx.Resolve<ILogService>().Read();
+                var data = Mvx.IoCProvider.Resolve<ILogService>().Read();
 
-                Mvx.Resolve<IErrorService>().Send(
+                Mvx.IoCProvider.Resolve<IErrorService>().Send(
                     exception?.Message,
                     exception?.BuildAllMessagesAndStackTrace(),
                     deviceService.PackageName,
@@ -78,7 +75,7 @@ namespace AppRopio.Base.Droid
             }
             catch (Exception ex)
             {
-                MvxTrace.TaggedTrace(MvxTraceLevel.Warning, nameof(BaseAndroidSetup), ex.BuildAllMessagesAndStackTrace());
+                Mvx.IoCProvider.Resolve<IMvxLog>().Warn($"{nameof(BaseAndroidSetup)}: {ex.BuildAllMessagesAndStackTrace()}");
             }
         }
 
@@ -90,8 +87,8 @@ namespace AppRopio.Base.Droid
                 ErrorWhenTaskCanceled = AppSettings.ErrorWhenTaskCanceled,
                 IsConnectionAvailable = () => Task<bool>.Factory.StartNew(() =>
                 {
-                    if (Mvx.CanResolve<IMvxReachability>())
-                        return Mvx.Resolve<IMvxReachability>().IsHostReachable(AppSettings.Host);
+                    if (Mvx.IoCProvider.CanResolve<IMvxReachability>())
+                        return Mvx.IoCProvider.Resolve<IMvxReachability>().IsHostReachable(AppSettings.Host);
                     return true;
                 }),
                 RequestTimeoutInSeconds = AppSettings.RequestTimeoutInSeconds,
@@ -100,8 +97,8 @@ namespace AppRopio.Base.Droid
             };
 
             instance.Headers.Add("ApiKey", AppSettings.ApiKey);
-            instance.Headers.Add("Device", Mvx.Resolve<IDeviceService>().DeviceInfo);
-            instance.Headers.Add("DeviceToken", Mvx.Resolve<IDeviceService>().Token);
+            instance.Headers.Add("Device", Mvx.IoCProvider.Resolve<IDeviceService>().DeviceInfo);
+            instance.Headers.Add("DeviceToken", Mvx.IoCProvider.Resolve<IDeviceService>().Token);
             instance.Headers.Add("Company", AppSettings.CompanyID);
             instance.Headers.Add("Region", AppSettings.RegionID ?? AppSettings.DefaultRegionID);
             instance.Headers.Add("Accept-Language", AppSettings.SettingsCulture.Name);
@@ -116,31 +113,31 @@ namespace AppRopio.Base.Droid
 
         #region Protected
 
-        protected override IMvxTrace CreateDebugTrace()
+		protected override IMvxLogProvider CreateLogProvider()
         {
-            return new ARTrace();
-        }
+            return new ARLogProvider();
+		}
 
-        protected override void InitializeFirstChance()
+		protected override void InitializeFirstChance()
         {
             InitalizeExceptionHandler();
 
-            Mvx.RegisterSingleton<ISettingsService>(() => new SettingsService());
+            Mvx.IoCProvider.RegisterSingleton<ISettingsService>(() => new SettingsService());
 
-            Mvx.RegisterSingleton<IDeviceService>(() => new DeviceService());
-            Mvx.RegisterSingleton<ILogService>(() => new LogService());
+            Mvx.IoCProvider.RegisterSingleton<IDeviceService>(() => new DeviceService());
+            Mvx.IoCProvider.RegisterSingleton<ILogService>(() => new LogService());
 
-            Mvx.RegisterSingleton<IUserDialogs>(() => new UserDialogs());
+            Mvx.IoCProvider.RegisterSingleton<IUserDialogs>(() => new UserDialogs());
 
-            Mvx.RegisterSingleton<IPermissionsService>(() => new PermissionsService());
+            Mvx.IoCProvider.RegisterSingleton<IPermissionsService>(() => new PermissionsService());
 
-            Mvx.RegisterSingleton<ILauncherService>(() => new LauncherService());
+            Mvx.IoCProvider.RegisterSingleton<ILauncherService>(() => new LauncherService());
 
             var connectionService = SetupConnectionService();
-            Mvx.RegisterSingleton<IConnectionService>(connectionService);
+            Mvx.IoCProvider.RegisterSingleton<IConnectionService>(connectionService);
 
             var localizationService = SetupLocalizationService();
-            Mvx.RegisterSingleton<ILocalizationService>(localizationService);
+            Mvx.IoCProvider.RegisterSingleton<ILocalizationService>(localizationService);
 
             App.Initialize();
         }
@@ -150,51 +147,41 @@ namespace AppRopio.Base.Droid
             return new LocalizationService(AppDomain.CurrentDomain.GetAssemblies());
         }
 
-        protected override void InitializeViewLookup()
+        protected override IMvxViewsContainer InitializeViewLookup(IDictionary<Type, Type> viewModelViewLookup)
         {
-            var viewLookupService = Mvx.Resolve<IViewLookupService>();
+            if (viewModelViewLookup == null)
+                return null;
+
+            var viewLookupService = Mvx.IoCProvider.Resolve<IViewLookupService>();
             if (viewLookupService == null)
-                return;
+                return null;
 
-            var viewModelLookupService = Mvx.Resolve<IViewModelLookupService>();
+            var viewModelLookupService = Mvx.IoCProvider.Resolve<IViewModelLookupService>();
             if (viewModelLookupService == null)
-                return;
+                return null;
 
-            var container = Mvx.Resolve<IMvxViewsContainer>();
+            var container = Mvx.IoCProvider.Resolve<IMvxViewsContainer>();
+            container.AddAll(viewModelViewLookup);
             container.AddSecondary(new ARViewFinder(viewLookupService, viewModelLookupService));
+            return container;
         }
 
         protected override void InitializeLastChance()
         {
             base.InitializeLastChance();
 
-            MvvmCross.Plugin.DownloadCache.PluginLoader.Instance.EnsureLoaded();
-            MvvmCross.Plugin.File.PluginLoader.Instance.EnsureLoaded();
-            MvvmCross.Plugin.Json.PluginLoader.Instance.EnsureLoaded();
+            var presenter = Mvx.IoCProvider.Resolve<IMvxAndroidViewPresenter>() as IMvxMultipleViewModelCache;
+            Mvx.IoCProvider.RegisterSingleton<MvvmCross.Platforms.Android.Views.IMvxMultipleViewModelCache>(presenter ?? new ARMultipleViewModelCache());
 
-            var configuration = MvxDownloadCacheConfiguration.Default;
-            configuration.MaxInMemoryBytes = 20971520;
-            var fileDownloadCache = new MvxFileDownloadCache(
-                configuration.CacheName,
-                configuration.CacheFolderPath,
-                configuration.MaxFiles,
-                configuration.MaxFileAge);
-
-            Mvx.RegisterSingleton<IMvxFileDownloadCache>(fileDownloadCache);
-            //Mvx.RegisterSingleton<IMvxHttpFileDownloader>(new ARMvxHttpFileDownloader());
-
-            var presenter = Mvx.Resolve<IMvxAndroidViewPresenter>() as IMvxMultipleViewModelCache;
-            Mvx.RegisterSingleton<MvvmCross.Platforms.Android.Views.IMvxMultipleViewModelCache>(presenter ?? new ARMultipleViewModelCache());
-
-            Mvx.CallbackWhenRegistered<IMvxValueCombinerRegistry>(service =>
+            Mvx.IoCProvider.CallbackWhenRegistered<IMvxValueCombinerRegistry>(() =>
             {
-                service.Fill(ValueConverterAssemblies);
+                Mvx.IoCProvider.Resolve<IMvxValueCombinerRegistry>().Fill(ValueConverterAssemblies);
             });
         }
 
         protected override MvvmCross.ViewModels.IMvxNameMapping CreateViewToViewModelNaming()
         {
-            return new ARPostfixAwareViewToViewModelNameMapping(Mvx.Resolve<IViewLookupService>(), Mvx.Resolve<IViewModelLookupService>(), "View", "Activity", "Fragment");
+            return new ARPostfixAwareViewToViewModelNameMapping(Mvx.IoCProvider.Resolve<IViewLookupService>(), Mvx.IoCProvider.Resolve<IViewModelLookupService>(), "View", "Activity", "Fragment");
         }
 
         protected override void FillTargetFactories(IMvxTargetBindingFactoryRegistry registry)
@@ -216,11 +203,11 @@ namespace AppRopio.Base.Droid
             base.FillValueConverters(registry);
         }
 
-        protected override IEnumerable<Assembly> GetViewModelAssemblies()
+        public override IEnumerable<Assembly> GetViewModelAssemblies()
         {
             var result = base.GetViewModelAssemblies();
 
-            var viewModelAssemblies = Mvx.Resolve<IViewModelLookupService>().Assemblies;
+            var viewModelAssemblies = Mvx.IoCProvider.Resolve<IViewModelLookupService>().Assemblies;
             var assemblyList = result.ToList();
 
             viewModelAssemblies.ForEach(x =>
@@ -232,12 +219,12 @@ namespace AppRopio.Base.Droid
             return assemblyList;
         }
 
-        protected override IEnumerable<Assembly> GetViewAssemblies()
+        public override IEnumerable<Assembly> GetViewAssemblies()
         {
             var result = base.GetViewAssemblies();
             var assemblyList = result.ToList();
 
-            var viewAssemblies = Mvx.Resolve<IViewLookupService>().Assemblies;
+            var viewAssemblies = Mvx.IoCProvider.Resolve<IViewLookupService>().Assemblies;
             viewAssemblies.ForEach(x =>
             {
                 if (!assemblyList.Any(a => a.FullName == x.FullName))
@@ -268,14 +255,14 @@ namespace AppRopio.Base.Droid
 
                 var assemblyList = result.ToList();
 
-                var viewAssemblies = Mvx.Resolve<IViewLookupService>().Assemblies;
+                var viewAssemblies = Mvx.IoCProvider.Resolve<IViewLookupService>().Assemblies;
                 viewAssemblies.ForEach(x =>
                 {
                     if (!assemblyList.Any(a => a.FullName == x.FullName))
                         assemblyList.Add(x);
                 });
 
-                var viewModelAssemblies = Mvx.Resolve<IViewModelLookupService>().Assemblies;
+                var viewModelAssemblies = Mvx.IoCProvider.Resolve<IViewModelLookupService>().Assemblies;
                 viewModelAssemblies.ForEach(x =>
                 {
                     if (!assemblyList.Any(a => a.FullName == x.FullName))
@@ -297,7 +284,7 @@ namespace AppRopio.Base.Droid
 
                 var assemblyList = result.ToList();
 
-                var viewAssemblies = Mvx.Resolve<IViewLookupService>().Assemblies;
+                var viewAssemblies = Mvx.IoCProvider.Resolve<IViewLookupService>().Assemblies;
                 viewAssemblies.ForEach(x =>
                 {
                     if (!assemblyList.Any(a => a.FullName == x.FullName))

@@ -8,17 +8,16 @@ using Android.Runtime;
 using Android.Support.V4.View;
 using Android.Views;
 using AppRopio.Base.Droid.Listeners;
-using MvvmCross.Binding;
+using MvvmCross;
 using MvvmCross.Binding.Attributes;
-using MvvmCross.Platforms.Android.Binding.BindingContext;
 using MvvmCross.Binding.Extensions;
+using MvvmCross.Logging;
+using MvvmCross.Platforms.Android.Binding.BindingContext;
 using MvvmCross.Platforms.Android.Views;
-using MvvmCross.Platform.Platform;
 using MvvmCross.WeakSubscription;
 
-namespace AppRopio.Base.Droid.Adapters
-{
-    public class ARViewPagerAdapter : PagerAdapter, IARPagerAdapter
+namespace AppRopio.Base.Droid.Adapters {
+	public class ARViewPagerAdapter : PagerAdapter, IARPagerAdapter
     {
         #region Fields
 
@@ -121,8 +120,8 @@ namespace AppRopio.Base.Droid.Adapters
 
             _itemsSource = value;
             if (_itemsSource != null && !(_itemsSource is IList))
-                MvxBindingTrace.Trace(MvxTraceLevel.Warning,
-                                      "Binding to IEnumerable rather than IList - this can be inefficient, especially for large lists");
+                Mvx.IoCProvider.Resolve<IMvxLog>().Warn(
+                    "Binding to IEnumerable rather than IList - this can be inefficient, especially for large lists");
             var newObservable = _itemsSource as INotifyCollectionChanged;
             if (newObservable != null)
                 _subscription = newObservable.WeakSubscribe(OnItemsSourceCollectionChanged);

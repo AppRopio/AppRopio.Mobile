@@ -135,6 +135,9 @@
     <PackageReference Include="MvvmCross.Droid.Support.Fragment">
       <Version>6.4.2</Version>
     </PackageReference>
+    <PackageReference Include="MvvmCross.Droid.Support.V7.AppCompat">
+      <Version>6.4.2</Version>
+    </PackageReference>
     <PackageReference Include="MvvmCross.Droid.Support.V7.RecyclerView">
       <Version>6.4.2</Version>
     </PackageReference>

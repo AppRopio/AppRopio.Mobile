@@ -3,17 +3,16 @@ using Android.OS;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Views.InputMethods;
-using AppRopio.Base.Droid.Navigation;
-using MvvmCross.Platforms.Android.Binding.BindingContext;
-using MvvmCross.ViewModels;
-using MvvmCross.Droid.Support.V4;
-using MvvmCross.Platforms.Android.Views;
-using MvvmCross;
 using AppRopio.Base.Core.Services.Localization;
+using AppRopio.Base.Droid.Navigation;
+using MvvmCross;
+using MvvmCross.Droid.Support.V4;
+using MvvmCross.Platforms.Android.Binding.BindingContext;
+using MvvmCross.Platforms.Android.Presenters;
+using MvvmCross.ViewModels;
 
-namespace AppRopio.Base.Droid.Views
-{
-    public abstract class CommonFragment<TViewModel> : MvxFragment<TViewModel>
+namespace AppRopio.Base.Droid.Views {
+	public abstract class CommonFragment<TViewModel> : MvxFragment<TViewModel>
         where TViewModel : class, IMvxViewModel
     {
         #region Fields
@@ -22,7 +21,7 @@ namespace AppRopio.Base.Droid.Views
 
         #region Properties
 
-        protected ICommonAndroidViewPresenter CommonPresenter => Mvx.Resolve<IMvxAndroidViewPresenter>() as ICommonAndroidViewPresenter;
+        protected ICommonAndroidViewPresenter CommonPresenter => Mvx.IoCProvider.Resolve<IMvxAndroidViewPresenter>() as ICommonAndroidViewPresenter;
 
         public bool SetupToolbar { get; protected set; }
 
@@ -43,7 +42,7 @@ namespace AppRopio.Base.Droid.Views
 
         #region Services
 
-        protected ILocalizationService LocalizationService => Mvx.Resolve<ILocalizationService>();
+        protected ILocalizationService LocalizationService => Mvx.IoCProvider.Resolve<ILocalizationService>();
 
         #endregion
 

@@ -28,7 +28,7 @@ namespace AppRopio.Base.Droid.Services.ThemeConfig
         private TConfig LoadConfigFromJSON()
         {
             var path = Path.Combine(AndroidConstants.THEME_CONFIGS_FOLDER, ConfigName);
-            var json = Mvx.Resolve<ISettingsService>().ReadStringFromFile(path);
+            var json = Mvx.IoCProvider.Resolve<ISettingsService>().ReadStringFromFile(path);
             return json.IsNullOrEmtpy() ? default(TConfig) : JsonConvert.DeserializeObject<TConfig>(json, new JsonSerializerSettings
             {
                 NullValueHandling = NullValueHandling.Ignore

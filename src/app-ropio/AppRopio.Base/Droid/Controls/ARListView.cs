@@ -6,7 +6,7 @@ using Android.Util;
 using Android.Views;
 using AppRopio.Base.Droid.Adapters;
 using MvvmCross.Platforms.Android.Binding.BindingContext;
-using MvvmCross.Platforms.Android.Binding;
+using MvvmCross.Platforms.Android.Binding.Views;
 using MvvmCross.Binding.Extensions;
 using Android.Widget;
 

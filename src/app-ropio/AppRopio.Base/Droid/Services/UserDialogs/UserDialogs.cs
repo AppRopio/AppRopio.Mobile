@@ -11,7 +11,7 @@ namespace AppRopio.Base.Droid.Services.UserDialogs
 {
     public class UserDialogs : IUserDialogs
     {
-        protected Activity TopActivity => Mvx.Resolve<IMvxAndroidCurrentTopActivity>().Activity;
+        protected Activity TopActivity => Mvx.IoCProvider.Resolve<IMvxAndroidCurrentTopActivity>().Activity;
 
         private Task<Snackbar> CreateSnackbar(AppCompatActivity activity, string msg, bool autoHide = false)
         {

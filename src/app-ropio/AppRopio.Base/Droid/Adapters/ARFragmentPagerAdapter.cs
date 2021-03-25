@@ -6,19 +6,17 @@ using Android.Runtime;
 using Android.Support.V4.App;
 using Android.Support.V4.View;
 using AppRopio.Base.Droid.Listeners;
-using MvvmCross.Binding;
-using MvvmCross.Platforms.Android.Binding.BindingContext;
+using MvvmCross;
+using MvvmCross.Base;
 using MvvmCross.Binding.Extensions;
-using MvvmCross.ViewModels;
 using MvvmCross.Droid.Support.V4;
-using MvvmCross.Platform.Core;
-using MvvmCross.Platform.Droid.WeakSubscription;
-using MvvmCross.Platform.Platform;
+using MvvmCross.Logging;
+using MvvmCross.Platforms.Android.Binding.BindingContext;
+using MvvmCross.ViewModels;
 using MvvmCross.WeakSubscription;
 
-namespace AppRopio.Base.Droid.Adapters
-{
-    public class ARFragmentPagerAdapter : ARSimpleFragmentPagerAdapter, IARPagerAdapter
+namespace AppRopio.Base.Droid.Adapters {
+	public class ARFragmentPagerAdapter : ARSimpleFragmentPagerAdapter, IARPagerAdapter
     {
         #region Fields
 
@@ -86,8 +84,7 @@ namespace AppRopio.Base.Droid.Adapters
 
             _itemsSource = value;
             if (_itemsSource != null && !(_itemsSource is IList))
-                MvxBindingTrace.Trace(MvxTraceLevel.Warning,
-                                      "Binding to IEnumerable rather than IList - this can be inefficient, especially for large lists");
+                Mvx.IoCProvider.Resolve<IMvxLog>().Warn("Binding to IEnumerable rather than IList - this can be inefficient, especially for large lists");
             var newObservable = _itemsSource as INotifyCollectionChanged;
             if (newObservable != null)
                 _subscription = newObservable.WeakSubscribe(OnItemsSourceCollectionChanged);
