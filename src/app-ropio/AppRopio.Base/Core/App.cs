@@ -11,7 +11,8 @@ using MvvmCross;
 using MvvmCross.Logging;
 using MvvmCross.Plugin.Messenger;
 
-namespace AppRopio.Base.Core {
+namespace AppRopio.Base.Core
+{
 	public static class App
     {
         public static void Initialize()

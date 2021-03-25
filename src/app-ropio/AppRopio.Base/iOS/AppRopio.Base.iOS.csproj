@@ -310,10 +310,7 @@
     <Compile Include="FlowLayouts\PinterestLayout.cs" />
     <Compile Include="Models\ThemeConfigs\TextView.cs" />
     <Compile Include="Theme\Theme_TextView.cs" />
-    <Compile Include="MvxAsyncIosSetup.cs" />
     <Compile Include="UIExtentions\UINavigationControllerExtensions.cs" />
-    <Compile Include="Helpers\ARMvxFileDownloadRequest.cs" />
-    <Compile Include="Helpers\ARMvxHttpFileDownloader.cs" />
     <Compile Include="Services\UserDialogs\UserDialogs.cs" />
     <Compile Include="Controls\ARNotificationView.cs" />
     <Compile Include="Models\Notification\ARNotificationType.cs" />

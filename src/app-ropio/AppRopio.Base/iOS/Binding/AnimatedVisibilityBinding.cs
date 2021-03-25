@@ -1,10 +1,11 @@
 ﻿using System;
+using AppRopio.Base.iOS.UIExtentions;
+using MvvmCross;
 using MvvmCross.Binding;
 using MvvmCross.Binding.Bindings.Target;
-using MvvmCross.Platform.Platform;
+using MvvmCross.Logging;
 using MvvmCross.UI;
 using UIKit;
-using AppRopio.Base.iOS.UIExtentions;
 
 namespace AppRopio.Base.iOS.Binding
 {
@@ -36,7 +37,7 @@ namespace AppRopio.Base.iOS.Binding
                     break;
 
                 default:
-                    MvxBindingTrace.Trace(MvxTraceLevel.Warning, "Visibility out of range {0}", value);
+                    Mvx.IoCProvider.Resolve<IMvxLog>().Warn($"Visibility out of range {value}");
                     break;
             }
         }

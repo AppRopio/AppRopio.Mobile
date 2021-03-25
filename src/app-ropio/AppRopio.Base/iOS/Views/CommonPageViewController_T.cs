@@ -10,7 +10,7 @@ namespace AppRopio.Base.iOS.Views
     public abstract class CommonPageViewController<T> : MvxPageViewController<T>, IUnbindable
         where T : class, IMvxViewModel
     {
-        protected ILocalizationService LocalizationService => Mvx.Resolve<ILocalizationService>();
+        protected ILocalizationService LocalizationService => Mvx.IoCProvider.Resolve<ILocalizationService>();
 
         protected CommonPageViewController(
             UIPageViewControllerTransitionStyle style = UIPageViewControllerTransitionStyle.Scroll,

@@ -1,6 +1,6 @@
 ﻿using System;
 using Foundation;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using UIKit;
 
 namespace AppRopio.Base.iOS.ViewSources

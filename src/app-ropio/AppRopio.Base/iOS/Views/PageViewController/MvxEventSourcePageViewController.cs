@@ -1,6 +1,6 @@
 ﻿using System;
 using Foundation;
-using MvvmCross.Platform.Core;
+using MvvmCross.Base;
 using MvvmCross.Platforms.Ios.Views.Base;
 using UIKit;
 

@@ -6,7 +6,7 @@ using System.Windows.Input;
 using AppRopio.Base.iOS.Helpers;
 using Foundation;
 using MvvmCross.Binding.Extensions;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using UIKit;
 using System.Linq;
 

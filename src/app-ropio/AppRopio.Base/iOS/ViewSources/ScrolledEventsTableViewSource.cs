@@ -1,5 +1,5 @@
 ﻿using Foundation;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using UIKit;
 using System;
 
