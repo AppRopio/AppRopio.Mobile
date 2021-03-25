@@ -9,8 +9,8 @@ namespace AppRopio.Base.API
     {
         public override void Initialize()
         {
-            Mvx.RegisterType<IErrorService, ErrorService>();
-            Mvx.RegisterType<IPushService, PushService>();
+            Mvx.IoCProvider.RegisterType<IErrorService, ErrorService>();
+            Mvx.IoCProvider.RegisterType<IPushService, PushService>();
         }
     }
 }
