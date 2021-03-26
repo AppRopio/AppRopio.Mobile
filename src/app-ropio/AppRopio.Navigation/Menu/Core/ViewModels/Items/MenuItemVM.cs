@@ -82,7 +82,7 @@ namespace AppRopio.Navigation.Menu.Core.ViewModels.Items
                 BadgeEnabled = badgeEnabled;
             
             if (badgeEnabled)
-                _subscribtionToken = Mvx.Resolve<IMvxMessenger>().Subscribe<ModulesInteractionMessage<int>>(ChangeBadgeWhenInteractionMsgRecieve);
+                _subscribtionToken = Mvx.IoCProvider.Resolve<IMvxMessenger>().Subscribe<ModulesInteractionMessage<int>>(ChangeBadgeWhenInteractionMsgRecieve);
         }
 
         #endregion
