@@ -1,6 +1,6 @@
 ﻿using Foundation;
 using UIKit;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using AppRopio.Navigation.Menu.Core.Services;
 using MvvmCross;
 using AppRopio.Navigation.Menu.Core.Models;
@@ -24,8 +24,8 @@ namespace AppRopio.Navigation.Menu.iOS.Views
         public MenuTableViewSource(UITableView tableView, NSString nibName, NSString cellIdentifier)
             : base(tableView, nibName, cellIdentifier)
         {
-            Config = Mvx.Resolve<IMenuConfigService>().Config;
-            ThemeConfig = Mvx.Resolve<IMenuThemeConfigService>().ThemeConfig;
+            Config = Mvx.IoCProvider.Resolve<IMenuConfigService>().Config;
+            ThemeConfig = Mvx.IoCProvider.Resolve<IMenuThemeConfigService>().ThemeConfig;
         }
 
         protected override object GetItemAt(NSIndexPath indexPath)

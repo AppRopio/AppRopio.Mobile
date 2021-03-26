@@ -1,8 +1,8 @@
 ﻿using System.Linq;
 using AppRopio.Base.Core.ViewModels;
 using AppRopio.Base.iOS.Views;
+using MvvmCross.Base;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platform.Core;
 using MvvmCross.Platforms.Ios.Views.Base;
 using UIKit;
 
