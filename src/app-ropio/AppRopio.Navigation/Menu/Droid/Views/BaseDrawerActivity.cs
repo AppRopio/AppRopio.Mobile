@@ -1,8 +1,6 @@
-﻿using Android.App;
-using Android.Content.Res;
+﻿using Android.Content.Res;
 using Android.Graphics;
 using Android.OS;
-using Android.Support.Design.Widget;
 using Android.Support.V4.Widget;
 using Android.Support.V7.App;
 using Android.Views;

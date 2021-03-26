@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Android.Animation;
 using Android.Support.V4.Widget;
 using Android.Support.V7.App;
@@ -10,9 +11,9 @@ using AppRopio.Base.Core.PresentationHints;
 using AppRopio.Base.Droid.Navigation;
 using AppRopio.Navigation.Menu.Core.ViewModels.Services;
 using AppRopio.Navigation.Menu.Droid.Views;
-using MvvmCross.Core.Navigation;
-using MvvmCross.ViewModels;
 using MvvmCross;
+using MvvmCross.Navigation;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.Navigation.Menu.Droid.Navigation
 {
@@ -49,9 +50,9 @@ namespace AppRopio.Navigation.Menu.Droid.Navigation
             MainActivity?.RunOnUiThread(MainActivity.CloseDrawers);
         }
 
-        protected override void OnBeforeFragmentChanging(Android.Support.V4.App.FragmentTransaction ft, Android.Support.V4.App.Fragment fragment, MvvmCross.Platforms.Android.Presenters.Attributes.MvxFragmentPresentationAttribute attribute)
+        protected override void OnBeforeFragmentChanging(Android.Support.V4.App.FragmentTransaction ft, Android.Support.V4.App.Fragment fragment, MvvmCross.Platforms.Android.Presenters.Attributes.MvxFragmentPresentationAttribute attribute, MvxViewModelRequest request)
         {
-            base.OnBeforeFragmentChanging(ft, fragment, attribute);
+            base.OnBeforeFragmentChanging(ft, fragment, attribute, request);
 
             if (CanPop())
                 AnimateDrawerArrowToggle(DRAWER_CLOSED, DRAWER_OPENED, onEndCallback: () => MainActivity.Toggle.DrawerIndicatorEnabled = false);
@@ -65,9 +66,9 @@ namespace AppRopio.Navigation.Menu.Droid.Navigation
                 AnimateDrawerArrowToggle(DRAWER_OPENED, DRAWER_CLOSED, onStartCallback: () => MainActivity.Toggle.DrawerIndicatorEnabled = true);
         }
 
-        protected override void OnFragmentChanged(Android.Support.V4.App.FragmentTransaction ft, Android.Support.V4.App.Fragment fragment, MvvmCross.Platforms.Android.Presenters.Attributes.MvxFragmentPresentationAttribute attribute)
+        protected override void OnFragmentChanged(Android.Support.V4.App.FragmentTransaction ft, Android.Support.V4.App.Fragment fragment, MvvmCross.Platforms.Android.Presenters.Attributes.MvxFragmentPresentationAttribute attribute, MvxViewModelRequest request)
         {
-            base.OnFragmentChanged(ft, fragment, attribute);
+            base.OnFragmentChanged(ft, fragment, attribute, request);
 
             if (CanPop())
                 AnimateDrawerArrowToggle(DRAWER_CLOSED, DRAWER_OPENED, onEndCallback: () => MainActivity.Toggle.DrawerIndicatorEnabled = false);
@@ -75,18 +76,18 @@ namespace AppRopio.Navigation.Menu.Droid.Navigation
                 AnimateDrawerArrowToggle(DRAWER_OPENED, DRAWER_CLOSED, onStartCallback: () => MainActivity.Toggle.DrawerIndicatorEnabled = true);
         }
 
-        public override void ChangePresentation(MvxPresentationHint hint)
+        public override Task<bool> ChangePresentation(MvxPresentationHint hint)
         {
             if (hint is NavigateToDefaultViewModelHint)
             {
-                Mvx.CallbackWhenRegistered<IMvxNavigationService>(async service =>
+                Mvx.IoCProvider.CallbackWhenRegistered<IMvxNavigationService>(async () =>
                 {
-                    await service.Navigate(Mvx.Resolve<IMenuVmService>().DefaultViewModelType(), ((IMvxBundle)new BaseBundle(NavigationType.ClearAndPush)), null);
+                    await Mvx.IoCProvider.Resolve<IMvxNavigationService>().Navigate(Mvx.IoCProvider.Resolve<IMenuVmService>().DefaultViewModelType(), ((IMvxBundle)new BaseBundle(NavigationType.ClearAndPush)), null);
                 });
-                return;
+                return Task.FromResult(true);
             }
 
-            base.ChangePresentation(hint);
+            return base.ChangePresentation(hint);
         }
 
         protected class AnimatorUpdateListener : Java.Lang.Object, ValueAnimator.IAnimatorListener, ValueAnimator.IAnimatorUpdateListener

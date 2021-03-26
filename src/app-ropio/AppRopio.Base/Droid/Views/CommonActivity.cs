@@ -243,6 +243,13 @@ namespace AppRopio.Base.Droid.Views
             base.OnNewIntent(intent);
         }
 
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Android.Content.PM.Permission[] grantResults)
+        {
+            Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+
+            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
         #endregion
 
         #region Public
