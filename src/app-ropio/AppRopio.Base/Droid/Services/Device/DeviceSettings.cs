@@ -1,7 +1,8 @@
 ﻿using System;
 using Xamarin.Essentials;
 
-namespace AppRopio.Base.Droid.Services.Device {
+namespace AppRopio.Base.Droid.Services.Device
+{
 	public class DeviceSettings
     {
         #region Setting Constants

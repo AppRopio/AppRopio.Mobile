@@ -4,7 +4,8 @@ using AppRopio.Base.Core.Models.Bundle;
 using MvvmCross.Commands;
 using MvvmCross.ViewModels;
 
-namespace AppRopio.Base.Core.ViewModels.WebContent {
+namespace AppRopio.Base.Core.ViewModels.WebContent
+{
     public abstract class BaseWebContentViewModel : BaseViewModel, IBaseWebContentViewModel
     {
         #region Commands

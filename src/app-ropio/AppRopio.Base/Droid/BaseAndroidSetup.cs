@@ -39,7 +39,8 @@ using MvvmCross.Plugin.Network.Reachability;
 using MvvmCross.Views;
 using Xamarin.Android.Net;
 
-namespace AppRopio.Base.Droid {
+namespace AppRopio.Base.Droid
+{
 	public abstract class BaseAndroidSetup : MvxAppCompatSetup
     {
         protected BaseAndroidSetup()

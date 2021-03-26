@@ -19,7 +19,8 @@ using MvvmCross.Platforms.Android.Presenters;
 using MvvmCross.ViewModels;
 using Xamarin.Essentials;
 
-namespace AppRopio.Base.Droid.Views {
+namespace AppRopio.Base.Droid.Views
+{
 	public abstract class CommonActivity<TViewModel> : MvxAppCompatActivity<TViewModel>, ICommonActivity
         where TViewModel : class, IMvxViewModel
     {

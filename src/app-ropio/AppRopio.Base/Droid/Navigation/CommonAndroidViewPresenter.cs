@@ -19,7 +19,8 @@ using MvvmCross.Platforms.Android.Views;
 using MvvmCross.Presenters.Attributes;
 using MvvmCross.ViewModels;
 
-namespace AppRopio.Base.Droid.Navigation {
+namespace AppRopio.Base.Droid.Navigation
+{
 	public class CommonAndroidViewPresenter : MvxAppCompatViewPresenter, ICommonAndroidViewPresenter
     {
         #region Fields

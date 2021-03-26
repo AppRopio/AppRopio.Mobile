@@ -13,7 +13,8 @@ using MvvmCross;
 using MvvmCross.Logging;
 using Base64Decoder = Android.Util.Base64;
 
-namespace AppRopio.Base.Droid.Controls {
+namespace AppRopio.Base.Droid.Controls
+{
 	[Register("appropio.base.droid.controls.ARImageView")]
     public class ARImageView : ImageView
     {

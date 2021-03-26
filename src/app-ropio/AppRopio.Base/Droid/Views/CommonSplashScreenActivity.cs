@@ -6,7 +6,8 @@ using MvvmCross;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Logging;
 
-namespace AppRopio.Base.Droid.Views {
+namespace AppRopio.Base.Droid.Views
+{
 	public class CommonSplashScreenActivity : MvxSplashScreenAppCompatActivity
     {
         public CommonSplashScreenActivity(int resourceId = 0)

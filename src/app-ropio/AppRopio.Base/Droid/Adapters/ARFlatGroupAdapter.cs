@@ -18,7 +18,8 @@ using MvvmCross.Platforms.Android.Binding.BindingContext;
 using MvvmCross.WeakSubscription;
 
 #pragma warning disable CS0618
-namespace AppRopio.Base.Droid.Adapters {
+namespace AppRopio.Base.Droid.Adapters
+{
 	public interface IARFlatGroupTemplateSelector : IMvxTemplateSelector
     {
         int GetHeaderViewType(object forItemObject);

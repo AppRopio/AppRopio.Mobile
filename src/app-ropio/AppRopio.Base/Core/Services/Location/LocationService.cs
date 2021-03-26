@@ -5,10 +5,10 @@ using AppRopio.Models.Base.Responses;
 using MvvmCross;
 using MvvmCross.Base;
 using MvvmCross.Logging;
-
 using Xamarin.Essentials;
 
-namespace AppRopio.Base.Core.Services.Location {
+namespace AppRopio.Base.Core.Services.Location
+{
 	public class LocationService : ILocationService
     {
         public LocationService()
@@ -53,7 +53,7 @@ namespace AppRopio.Base.Core.Services.Location {
                             position.Timestamp, position.Latitude, position.Longitude,
                             position.Altitude, position.Accuracy, position.Course, position.Speed);
 
-                        Mvx.IoCProvider.Resolve<IMvxLog>().Error($"{nameof(LocationService)}: {output}");
+                        Mvx.IoCProvider.Resolve<IMvxLog>().Info($"{nameof(LocationService)}: {output}");
 
                         location = (CurrentOrLastLocation = new Coordinates { Latitude = position.Latitude, Longitude = position.Longitude });
                     }

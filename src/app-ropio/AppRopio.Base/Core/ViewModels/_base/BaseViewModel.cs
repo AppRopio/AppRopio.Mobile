@@ -12,7 +12,8 @@ using MvvmCross.Logging;
 using MvvmCross.Plugin.Messenger;
 using MvvmCross.ViewModels;
 
-namespace AppRopio.Base.Core.ViewModels {
+namespace AppRopio.Base.Core.ViewModels
+{
 	/// <summary>
 	/// Базовая ViewModel
 	/// </summary>

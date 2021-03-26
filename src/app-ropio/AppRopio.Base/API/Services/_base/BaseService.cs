@@ -12,7 +12,8 @@ using MvvmCross;
 using MvvmCross.Logging;
 using Newtonsoft.Json;
 
-namespace AppRopio.Base.API.Services {
+namespace AppRopio.Base.API.Services
+{
 	/// <summary>
 	/// Базовый класс для сервисов API
 	/// </summary>

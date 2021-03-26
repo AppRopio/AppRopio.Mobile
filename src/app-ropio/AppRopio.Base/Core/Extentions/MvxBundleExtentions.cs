@@ -7,7 +7,8 @@ using MvvmCross.Base;
 using MvvmCross.ViewModels;
 using Newtonsoft.Json;
 
-namespace AppRopio.Base.Core.Extentions {
+namespace AppRopio.Base.Core.Extentions
+{
 	public static class MvxBundleExtentions
     {
         private static object Read(IDictionary<string, string> data, Type type)

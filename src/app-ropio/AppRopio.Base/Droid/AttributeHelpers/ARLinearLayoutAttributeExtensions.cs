@@ -7,7 +7,8 @@ using MvvmCross.Droid.Support.V7.RecyclerView.ItemTemplates;
 using MvvmCross.Logging;
 using MvvmCross.Platforms.Android.Binding.Views;
 
-namespace AppRopio.Base.Droid.AttributeHelpers {
+namespace AppRopio.Base.Droid.AttributeHelpers
+{
 	public class ARLinearLayoutAttributeExtensions
     {
         private static string ReadItemTemplateSelectorClassName(Context context, IAttributeSet attrs)

@@ -8,7 +8,8 @@ using MvvmCross.Logging;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 
-namespace AppRopio.Base.Core.ViewModels.Services {
+namespace AppRopio.Base.Core.ViewModels.Services
+{
     public class BaseVmNavigationService : BaseVmService, IBaseVmNavigationService
     {
         #region Services

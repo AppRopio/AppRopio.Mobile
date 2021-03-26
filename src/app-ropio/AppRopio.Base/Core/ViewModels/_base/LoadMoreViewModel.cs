@@ -1,7 +1,8 @@
 ﻿using System.Threading.Tasks;
 using MvvmCross.Commands;
 
-namespace AppRopio.Base.Core.ViewModels {
+namespace AppRopio.Base.Core.ViewModels
+{
 	public abstract class LoadMoreViewModel : BaseViewModel, ILoadMoreViewModel
     {
         #region Fields

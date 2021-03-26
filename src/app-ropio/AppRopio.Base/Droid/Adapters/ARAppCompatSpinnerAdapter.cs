@@ -7,7 +7,8 @@ using MvvmCross.Binding.Extensions;
 using MvvmCross.Platforms.Android.Binding.BindingContext;
 using MvvmCross.Platforms.Android.Binding.Views;
 
-namespace AppRopio.Base.Droid.Adapters {
+namespace AppRopio.Base.Droid.Adapters
+{
 	public class ARAppCompatSpinnerAdapter : MvxAdapter
     {
         private bool dropDownWidthCalculated = false;

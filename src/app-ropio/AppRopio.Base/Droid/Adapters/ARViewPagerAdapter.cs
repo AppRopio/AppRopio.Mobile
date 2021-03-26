@@ -16,7 +16,8 @@ using MvvmCross.Platforms.Android.Binding.BindingContext;
 using MvvmCross.Platforms.Android.Views;
 using MvvmCross.WeakSubscription;
 
-namespace AppRopio.Base.Droid.Adapters {
+namespace AppRopio.Base.Droid.Adapters
+{
 	public class ARViewPagerAdapter : PagerAdapter, IARPagerAdapter
     {
         #region Fields

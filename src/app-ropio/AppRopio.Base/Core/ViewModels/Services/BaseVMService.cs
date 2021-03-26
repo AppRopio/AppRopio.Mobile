@@ -9,7 +9,8 @@ using MvvmCross;
 using MvvmCross.Logging;
 using MvvmCross.Plugin.Messenger;
 
-namespace AppRopio.Base.Core.ViewModels.Services {
+namespace AppRopio.Base.Core.ViewModels.Services
+{
 	public class BaseVmService : IDisposable
     {
         #region Fields

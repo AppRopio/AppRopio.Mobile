@@ -11,7 +11,8 @@ using MvvmCross.Platforms.Android.Binding.BindingContext;
 using MvvmCross.Platforms.Android.Presenters;
 using MvvmCross.ViewModels;
 
-namespace AppRopio.Base.Droid.Views {
+namespace AppRopio.Base.Droid.Views
+{
 	public abstract class CommonFragment<TViewModel> : MvxFragment<TViewModel>
         where TViewModel : class, IMvxViewModel
     {
