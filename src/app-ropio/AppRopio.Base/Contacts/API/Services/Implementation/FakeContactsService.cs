@@ -10,7 +10,7 @@ namespace AppRopio.Base.Contacts.API.Services.Implementation
 {
     public class FakeContactsService : IContactsService
     {
-        public bool IsRussianCulture => Mvx.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
+        public bool IsRussianCulture => Mvx.IoCProvider.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
 
         public async Task<ListResponse> LoadContacts(Coordinates location)
         {

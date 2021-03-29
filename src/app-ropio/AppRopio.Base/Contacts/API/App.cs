@@ -11,9 +11,9 @@ namespace AppRopio.Base.Contacts.API
         public override void Initialize()
         {
             if (ApiSettings.DebugServiceEnabled)
-                Mvx.RegisterType<IContactsService>(() => new FakeContactsService());
+                Mvx.IoCProvider.RegisterType<IContactsService>(() => new FakeContactsService());
             else
-                Mvx.RegisterType<IContactsService>(() => new ContactsService());
+                Mvx.IoCProvider.RegisterType<IContactsService>(() => new ContactsService());
         }
     }
 }
