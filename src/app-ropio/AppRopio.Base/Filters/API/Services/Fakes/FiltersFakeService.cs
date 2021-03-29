@@ -8,7 +8,7 @@ namespace AppRopio.Base.Filters.API.Services.Fakes
 {
     public class FiltersFakeService : IFiltersService
     {
-        public bool IsRussianCulture => Mvx.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
+        public bool IsRussianCulture => Mvx.IoCProvider.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
 
         public async Task<List<Filter>> LoadFilters(string categoryId)
         {

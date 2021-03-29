@@ -10,9 +10,9 @@ namespace AppRopio.Base.Filters.API
         public override void Initialize()
         {
             if (ApiSettings.DebugServiceEnabled)
-                Mvx.RegisterType<IFiltersService>(() => new FiltersFakeService());
+                Mvx.IoCProvider.RegisterType<IFiltersService>(() => new FiltersFakeService());
             else
-                Mvx.RegisterType<IFiltersService>(() => new FiltersService());
+                Mvx.IoCProvider.RegisterType<IFiltersService>(() => new FiltersService());
         }
     }
 }
