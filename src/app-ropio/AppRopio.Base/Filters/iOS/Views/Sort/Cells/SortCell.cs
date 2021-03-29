@@ -5,7 +5,7 @@ using AppRopio.Base.Filters.iOS.Models;
 using AppRopio.Base.Filters.iOS.Services;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using MvvmCross;
 using UIKit;
 using AppRopio.Base.iOS.Helpers;
@@ -15,7 +15,7 @@ namespace AppRopio.Base.Filters.iOS.Views.Sort.Cells
 {
     public partial class SortCell : MvxTableViewCell
     {
-        protected FiltersThemeConfig ThemeConfig { get { return Mvx.Resolve<IFiltersThemeConfigService>().ThemeConfig; } }
+        protected FiltersThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IFiltersThemeConfigService>().ThemeConfig; } }
 
         public static readonly NSString Key = new NSString("SortCell");
         public static readonly UINib Nib = UINib.FromName("SortCell", NSBundle.MainBundle);

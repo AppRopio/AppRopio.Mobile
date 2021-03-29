@@ -12,22 +12,30 @@ using MvvmCross.Binding.Bindings.Target.Construction;
 using MvvmCross;
 using MvvmCross.Plugin;
 using UIKit;
+using AppRopio.Base.Filters.Core;
 
 namespace AppRopio.Base.Filters.iOS
 {
-    public class Plugin : IMvxPlugin
+    [MvxPlugin]
+    [Preserve(AllMembers = true)]
+    public class Plugin : BasePlugin
     {
-        public void Load()
+        public override void Load()
         {
-            Mvx.RegisterSingleton<IFiltersThemeConfigService>(() => new FiltersThemeConfigService());
+            base.Load();
 
-            var viewLookupService = Mvx.Resolve<IViewLookupService>();
+            Mvx.IoCProvider.RegisterSingleton<IFiltersThemeConfigService>(() => new FiltersThemeConfigService());
+
+            var viewLookupService = Mvx.IoCProvider.Resolve<IViewLookupService>();
 
             viewLookupService.Register<ISortViewModel, SortViewController>();
             viewLookupService.Register<IFiltersViewModel, FiltersViewController>();
             viewLookupService.Register<IFilterSelectionViewModel, SelectionViewController>();
 
-            Mvx.CallbackWhenRegistered<IMvxTargetBindingFactoryRegistry>((registry) => registry.RegisterCustomBindingFactory<UITextField>("FiltersDateBinding", view => new FiltersDateBinding(view)));
+            Mvx.IoCProvider.CallbackWhenRegistered<IMvxTargetBindingFactoryRegistry>(() =>
+            {
+                Mvx.IoCProvider.Resolve<IMvxTargetBindingFactoryRegistry>().RegisterCustomBindingFactory<UITextField>("FiltersDateBinding", view => new FiltersDateBinding(view));
+            });
         }
     }
 }

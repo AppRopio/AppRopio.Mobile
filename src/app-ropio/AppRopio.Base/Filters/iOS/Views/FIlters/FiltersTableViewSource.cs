@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using AppRopio.Base.Filters.Core.ViewModels.Filters.Items;
 using AppRopio.Base.Filters.Core.ViewModels.Filters.Items.Collection.Vertical;
 using AppRopio.Base.Filters.Core.ViewModels.Filters.Items.Picker;
@@ -12,7 +12,7 @@ using AppRopio.Base.Filters.iOS.Views.Filters.Cells.Picker;
 using AppRopio.Base.Filters.iOS.Views.Filters.Cells.Selection.MultiSelection;
 using AppRopio.Base.Filters.iOS.Views.Filters.Cells.Selection.OneSelection;
 using AppRopio.Models.Filters.Responses;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using UIKit;
 using Foundation;
 using AppRopio.Base.Filters.Core.ViewModels.Filters.Items.Selection.OneSelection;

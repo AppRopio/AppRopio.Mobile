@@ -5,7 +5,7 @@ using AppRopio.Base.Filters.iOS.Services;
 using AppRopio.Base.iOS;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using MvvmCross;
 using UIKit;
 using AppRopio.Base.iOS.UIExtentions;
@@ -20,7 +20,7 @@ namespace AppRopio.Base.Filters.iOS.Views.FIlters.Cells.Switch
         {
             get
             {
-                return Mvx.Resolve<IFiltersThemeConfigService>().ThemeConfig;
+                return Mvx.IoCProvider.Resolve<IFiltersThemeConfigService>().ThemeConfig;
             }
         }
 

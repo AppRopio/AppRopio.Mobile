@@ -4,7 +4,7 @@ using AppRopio.Base.Filters.iOS.Models;
 using AppRopio.Base.Filters.iOS.Services;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using MvvmCross;
 using UIKit;
 using AppRopio.Base.Filters.Core.ViewModels.Filters.Items.Collection.Horizontal;
@@ -15,7 +15,7 @@ namespace AppRopio.Base.Filters.iOS.Views.Filters.Cells.Collection.Horizontal
 {
     public partial class HorizontalCollectionCell : MvxTableViewCell
     {
-        protected FiltersThemeConfig ThemeConfig { get { return Mvx.Resolve<IFiltersThemeConfigService>().ThemeConfig; } }
+        protected FiltersThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IFiltersThemeConfigService>().ThemeConfig; } }
 
         public const float HORIZONTAL_COLLECTION_HEIGHT = 98;
 

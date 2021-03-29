@@ -1,7 +1,7 @@
 ﻿using System;
 
 using Foundation;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using UIKit;
 using MvvmCross.Binding.BindingContext;
 using AppRopio.Base.Filters.Core.ViewModels.Filters.Items.Selection.OneSelection;
@@ -16,7 +16,7 @@ namespace AppRopio.Base.Filters.iOS.Views.Filters.Cells.Selection.OneSelection
 {
     public partial class OneSelectionCell : MvxTableViewCell
     {
-        protected FiltersThemeConfig ThemeConfig { get { return Mvx.Resolve<IFiltersThemeConfigService>().ThemeConfig; } }
+        protected FiltersThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IFiltersThemeConfigService>().ThemeConfig; } }
 
         public const float ONE_SELECTION_HEIGHT = 52;
         public const float ONE_SELECTION_CONTENT_HEIGHT = 20;

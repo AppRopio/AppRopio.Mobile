@@ -7,7 +7,7 @@ using AppRopio.Base.iOS.Helpers;
 using AppRopio.Base.iOS.UIExtentions;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using MvvmCross;
 using UIKit;
 
@@ -18,7 +18,7 @@ namespace AppRopio.Base.Filters.iOS.Views.FIlters.Cells.Selection.MultiSelection
         public const float HORIZONTAL_MARGINS = 30;
         public const float LABEL_HEIGHT = 20;
 
-        protected FiltersThemeConfig ThemeConfig { get { return Mvx.Resolve<IFiltersThemeConfigService>().ThemeConfig; } }
+        protected FiltersThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IFiltersThemeConfigService>().ThemeConfig; } }
 
         public static readonly NSString Key = new NSString("MultiSelectionTextCell");
         public static readonly UINib Nib;

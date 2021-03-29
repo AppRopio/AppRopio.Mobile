@@ -5,7 +5,7 @@ using AppRopio.Base.Filters.iOS.Models;
 using AppRopio.Base.Filters.iOS.Services;
 using AppRopio.Base.Filters.iOS.Views.Filters.Selection.Cells;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using MvvmCross;
 using UIKit;
 using AppRopio.Base.Filters.Core;
@@ -16,7 +16,7 @@ namespace AppRopio.Base.Filters.iOS.Views.Filters.Selection
     {
         private UIBarButtonItem _clearBarButton { get; set; }
 
-        protected FiltersThemeConfig ThemeConfig { get { return Mvx.Resolve<IFiltersThemeConfigService>().ThemeConfig; } }
+        protected FiltersThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IFiltersThemeConfigService>().ThemeConfig; } }
 
         public SelectionViewController()
             : base("SelectionViewController", null)

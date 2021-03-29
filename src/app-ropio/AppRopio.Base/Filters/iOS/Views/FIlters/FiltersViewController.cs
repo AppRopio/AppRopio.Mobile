@@ -14,7 +14,7 @@ using AppRopio.Base.Filters.iOS.Views.Filters.Cells.Selection.MultiSelection;
 using AppRopio.Base.Filters.iOS.Views.Filters.Cells.Selection.OneSelection;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using MvvmCross;
 using MvvmCross.Plugin.Messenger;
 using UIKit;
@@ -30,9 +30,9 @@ namespace AppRopio.Base.Filters.iOS.Views.Filters
 
         private MvxSubscriptionToken _subscriptionToken;
 
-        protected FiltersThemeConfig ThemeConfig { get { return Mvx.Resolve<IFiltersThemeConfigService>().ThemeConfig; } }
+        protected FiltersThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IFiltersThemeConfigService>().ThemeConfig; } }
 
-        protected IMvxMessenger MessengerService { get { return Mvx.Resolve<IMvxMessenger>(); } }
+        protected IMvxMessenger MessengerService { get { return Mvx.IoCProvider.Resolve<IMvxMessenger>(); } }
 
         public FiltersViewController()
             : base("FiltersViewController", null)

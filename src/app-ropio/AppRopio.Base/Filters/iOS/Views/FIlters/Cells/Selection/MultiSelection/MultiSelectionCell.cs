@@ -8,7 +8,7 @@ using AppRopio.Base.iOS.Helpers;
 using AppRopio.Base.iOS.UIExtentions;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using MvvmCross;
 using UIKit;
 
@@ -16,7 +16,7 @@ namespace AppRopio.Base.Filters.iOS.Views.Filters.Cells.Selection.MultiSelection
 {
     public partial class MultiSelectionCell : MvxTableViewCell
     {
-        protected FiltersThemeConfig ThemeConfig { get { return Mvx.Resolve<IFiltersThemeConfigService>().ThemeConfig; } }
+        protected FiltersThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IFiltersThemeConfigService>().ThemeConfig; } }
 
         public const float MULTY_SELECTION_TITLE_HEIGHT = 52;
         public const float MULTY_SELECTION_CONTENT_HEIGHT = 30;
