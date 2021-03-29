@@ -25,7 +25,7 @@ using Firebase.Messaging;
 
 namespace AppRopio.Base.Droid.FCM
 {
-    [Preserve(AllMembers = true)]
+    [MvvmCross.Preserve(AllMembers = true)]
     [Service]
     [IntentFilter(new string[] { "com.google.firebase.INSTANCE_ID_EVENT" })]
     public class ARFirebaseInstanceIdService : FirebaseInstanceIdService
@@ -53,7 +53,7 @@ namespace AppRopio.Base.Droid.FCM
 
             System.Diagnostics.Debug.WriteLine(message: $"Push token refresh: {token}", category: PackageName);
 
-            Mvx.CallbackWhenRegistered<IPushNotificationsService>(async service =>
+            Mvx.IoCProvider.CallbackWhenRegistered<IPushNotificationsService>(async () =>
             {
                 try
                 {
@@ -63,7 +63,7 @@ namespace AppRopio.Base.Droid.FCM
 
                     AppSettings.PushToken = token;
 
-                    await service.RegisterDeviceForPushNotificatons(token);
+                    await Mvx.IoCProvider.Resolve<IPushNotificationsService>().RegisterDeviceForPushNotificatons(token);
 
                     Log.Verbose(PackageName, $"Push token sent");
 
