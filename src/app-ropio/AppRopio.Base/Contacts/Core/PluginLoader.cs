@@ -1,32 +1,16 @@
 ﻿using MvvmCross;
-using MvvmCross.Platform.Platform;
+using MvvmCross.Logging;
 using MvvmCross.Plugin;
 
 namespace AppRopio.Base.Contacts.Core
 {
-    public class PluginLoader : IMvxPluginLoader
+    public abstract class BasePlugin : IMvxPlugin
     {
-        public static readonly PluginLoader Instance = new PluginLoader();
-
-        private bool _loaded;
-
-        public void EnsureLoaded()
+        public virtual void Load()
         {
-            if (_loaded)
-            {
-                return;
-            }
-
-            new API.App().Initialize();
-
             new App().Initialize();
 
-            var manager = Mvx.Resolve<IMvxPluginManager>();
-            manager.EnsurePlatformAdaptionLoaded<PluginLoader>();
-
-            MvxTrace.Trace(MvxTraceLevel.Diagnostic, "Contacts plugin is loaded");
-
-            _loaded = true;
+            Mvx.IoCProvider.Resolve<IMvxLog>().Info("Contacts plugin is loaded");
         }
     }
 }

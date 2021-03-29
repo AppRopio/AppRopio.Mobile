@@ -14,15 +14,17 @@ namespace AppRopio.Base.Contacts.Core
     {
         public override void Initialize()
         {
-            Mvx.RegisterType<IContactsNavigationVmService>(() => new ContactsNavigationVmService());
+            new API.App().Initialize();
 
-            Mvx.RegisterSingleton<IContactsConfigService>(() => new ContactsConfigService());
+            Mvx.IoCProvider.RegisterType<IContactsNavigationVmService>(() => new ContactsNavigationVmService());
 
-            Mvx.RegisterSingleton<IContactsVmService>(() => new ContactsVmService());
+            Mvx.IoCProvider.RegisterSingleton<IContactsConfigService>(() => new ContactsConfigService());
+
+            Mvx.IoCProvider.RegisterSingleton<IContactsVmService>(() => new ContactsVmService());
 
             #region VMs registration
 
-            var vmLookupService = Mvx.Resolve<IViewModelLookupService>();
+            var vmLookupService = Mvx.IoCProvider.Resolve<IViewModelLookupService>();
 
             vmLookupService.Register<IContactsViewModel>(typeof(ContactsViewModel));
 
@@ -30,7 +32,7 @@ namespace AppRopio.Base.Contacts.Core
 
             #region RouterSubscriber registration
 
-            var routerService = Mvx.Resolve<IRouterService>();
+            var routerService = Mvx.IoCProvider.Resolve<IRouterService>();
 
             routerService.Register<IContactsViewModel>(new ContactsRouterSubscriber());
 
