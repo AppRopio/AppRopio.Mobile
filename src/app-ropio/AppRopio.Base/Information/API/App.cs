@@ -11,9 +11,9 @@ namespace AppRopio.Base.Information.API
 		public override void Initialize()
 		{
             if (ApiSettings.DebugServiceEnabled)
-    			Mvx.RegisterType<IInformationService>(() => new FakeInformationService());
+    			Mvx.IoCProvider.RegisterType<IInformationService>(() => new FakeInformationService());
             else
-                Mvx.RegisterType<IInformationService>(() => new InformationService());
+                Mvx.IoCProvider.RegisterType<IInformationService>(() => new InformationService());
 		}
 	}
 }

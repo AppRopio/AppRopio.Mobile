@@ -11,7 +11,7 @@ namespace AppRopio.Base.Information.API.Services.Fakes
 {
     public class FakeInformationService : IInformationService
     {
-        public bool IsRussianCulture => Mvx.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
+        public bool IsRussianCulture => Mvx.IoCProvider.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
 
         private Dictionary<string, ArticleInfo> _fullArticles = new Dictionary<string, ArticleInfo>()
         {
