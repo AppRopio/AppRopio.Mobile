@@ -21,7 +21,7 @@ namespace AppRopio.Base.Information.Core.Services.Implementation
 
 		public void NavigateToUrl(BaseWebContentBundle bundle)
 		{
-            Mvx.Resolve<ILauncherService>().LaunchUri(bundle.Url);
+            Mvx.IoCProvider.Resolve<ILauncherService>().LaunchUri(bundle.Url);
 		}
     }
 }

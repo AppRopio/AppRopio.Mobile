@@ -17,7 +17,7 @@ namespace AppRopio.Base.Information.Core.ViewModels.Information.Services
     {
 		#region Services
 
-		protected IInformationService ApiService { get { return Mvx.Resolve<IInformationService>(); } }
+		protected IInformationService ApiService { get { return Mvx.IoCProvider.Resolve<IInformationService>(); } }
 
 		#endregion
 
@@ -49,7 +49,7 @@ namespace AppRopio.Base.Information.Core.ViewModels.Information.Services
             {
                 var info = await ApiService.GetArticle(article.Id);
 
-                var navigationService = Mvx.Resolve<IInformationNavigationVmService>();
+                var navigationService = Mvx.IoCProvider.Resolve<IInformationNavigationVmService>();
 
                 switch (article.Type)
                 {
