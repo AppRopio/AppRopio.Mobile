@@ -38,7 +38,7 @@ namespace AppRopio.Base.Auth.Core.ViewModels.SignUp.Services
 							var confirmPassword = new SignUpItemBaseViewModel(item)
 							{
 								Internal = true,
-                                Placeholder = Mvx.Resolve<ILocalizationService>().GetLocalizableString(AuthConst.RESX_NAME, "ConfirmPassword")
+                                Placeholder = Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString(AuthConst.RESX_NAME, "ConfirmPassword")
 							};
 							result.Add(confirmPassword);
 						}

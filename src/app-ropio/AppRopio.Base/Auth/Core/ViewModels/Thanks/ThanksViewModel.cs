@@ -1,8 +1,12 @@
-﻿using System.Windows.Input;
+﻿using System.Threading.Tasks;
+using System.Windows.Input;
+using AppRopio.Base.Auth.Core.Services;
 using AppRopio.Base.Core.Extentions;
 using AppRopio.Base.Core.Models.Bundle;
 using AppRopio.Base.Core.PresentationHints;
 using AppRopio.Base.Core.ViewModels;
+using MvvmCross;
+using MvvmCross.Commands;
 using MvvmCross.ViewModels;
 
 namespace AppRopio.Base.Auth.Core.ViewModels.Thanks
@@ -13,9 +17,15 @@ namespace AppRopio.Base.Auth.Core.ViewModels.Thanks
 		{
 			get
 			{
-				return new MvxCommand(OnStartCommandExecute);
+				return new MvxAsyncCommand(OnStartCommandExecute);
 			}
 		}
+
+		#region Services
+
+		protected IAuthNavigationVmService NavigationVmService { get { return Mvx.IoCProvider.Resolve<IAuthNavigationVmService>(); } }
+
+		#endregion
 
 		public ThanksViewModel()
 		{
@@ -37,9 +47,9 @@ namespace AppRopio.Base.Auth.Core.ViewModels.Thanks
 			VmNavigationType = parameters.NavigationType;
 		}
 
-		protected virtual void OnStartCommandExecute()
+		protected virtual async Task OnStartCommandExecute()
 		{
-			ChangePresentation(new NavigateToDefaultViewModelHint());
+			await NavigationVmService.ChangePresentation(new NavigateToDefaultViewModelHint());
 		}
 
 		#endregion

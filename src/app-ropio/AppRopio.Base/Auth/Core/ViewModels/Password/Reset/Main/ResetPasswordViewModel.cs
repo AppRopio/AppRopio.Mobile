@@ -6,6 +6,8 @@ using AppRopio.Base.Auth.Core.ViewModels._base;
 using AppRopio.Base.Auth.Core.ViewModels.Password.Reset.Main.Services;
 using MvvmCross.ViewModels;
 using MvvmCross;
+using MvvmCross.Commands;
+using System.Threading.Tasks;
 
 namespace AppRopio.Base.Auth.Core.ViewModels.Password.Reset.Main
 {
@@ -18,7 +20,7 @@ namespace AppRopio.Base.Auth.Core.ViewModels.Password.Reset.Main
 		{
 			get
 			{
-				return _forgotCmd ?? (_forgotCmd = new MvxCommand(OnForgotCmdExecute));
+				return _forgotCmd ?? (_forgotCmd = new MvxAsyncCommand(OnForgotCmdExecute));
 			}
 		}
 
@@ -27,7 +29,7 @@ namespace AppRopio.Base.Auth.Core.ViewModels.Password.Reset.Main
 		{
 			get
 			{
-				return _closeCmd ?? (_closeCmd = new MvxCommand(OnCloseExecute));
+				return _closeCmd ?? (_closeCmd = new MvxAsyncCommand(OnCloseExecute));
 			}
 		}
 
@@ -72,7 +74,7 @@ namespace AppRopio.Base.Auth.Core.ViewModels.Password.Reset.Main
 		#region Services
 
 		private IResetPasswordVmService _resetMainVmService;
-		protected IResetPasswordVmService ResetMainVmService { get { return _resetMainVmService ?? (_resetMainVmService = Mvx.Resolve<IResetPasswordVmService>()); } }
+		protected IResetPasswordVmService ResetMainVmService { get { return _resetMainVmService ?? (_resetMainVmService = Mvx.IoCProvider.Resolve<IResetPasswordVmService>()); } }
 
 		#endregion
 
@@ -93,12 +95,12 @@ namespace AppRopio.Base.Auth.Core.ViewModels.Password.Reset.Main
 						 || (!Config.IdentifyUserByEmail && PhoneNumberFormatter.IsValid(Identity));
 		}
 
-		protected virtual void OnCloseExecute()
+		protected virtual async Task OnCloseExecute()
 		{
-			Close(this);
+			await NavigationVmService.Close(this);
 		}
 
-		protected virtual async void OnForgotCmdExecute()
+		protected virtual async Task OnForgotCmdExecute()
 		{
 			if (IsViewModelPropertiesValid())
 			{

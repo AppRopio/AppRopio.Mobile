@@ -5,7 +5,6 @@ using AppRopio.Base.API.Exceptions;
 using AppRopio.Base.Auth.API.Services;
 using AppRopio.Base.Core.ViewModels.Services;
 using MvvmCross;
-using MvvmCross.Platform.Core;
 
 namespace AppRopio.Base.Auth.Core.ViewModels.Password.Reset.Main.Services
 {
@@ -14,7 +13,7 @@ namespace AppRopio.Base.Auth.Core.ViewModels.Password.Reset.Main.Services
 
         #region Services
 
-        protected IAuthService AuthService { get { return Mvx.Resolve<IAuthService>(); } }
+        protected IAuthService AuthService { get { return Mvx.IoCProvider.Resolve<IAuthService>(); } }
 
         #endregion
 

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
@@ -6,12 +6,10 @@ using AppRopio.Base.API.Exceptions;
 using AppRopio.Base.Auth.API.Services;
 using AppRopio.Base.Auth.Core.Services;
 using AppRopio.Base.Auth.Core.ViewModels.SignUp.Items;
-using AppRopio.Base.Core.Services.UserDialogs;
 using AppRopio.Base.Core.ViewModels.Services;
 using AppRopio.Models.Auth.Requests;
 using AppRopio.Models.Auth.Responses;
 using MvvmCross;
-using MvvmCross.Platform.Core;
 
 namespace AppRopio.Base.Auth.Core.ViewModels.SignUp.Services
 {
@@ -19,7 +17,7 @@ namespace AppRopio.Base.Auth.Core.ViewModels.SignUp.Services
     {
         #region Services
 
-        protected IAuthService AuthService { get { return Mvx.Resolve<IAuthService>(); } }
+        protected IAuthService AuthService { get { return Mvx.IoCProvider.Resolve<IAuthService>(); } }
 
         #endregion
 
@@ -72,7 +70,7 @@ namespace AppRopio.Base.Auth.Core.ViewModels.SignUp.Services
             try
             {
                 AuthSettings.Token = token;
-                await Mvx.Resolve<ISessionService>().StartByToken(token);
+                await Mvx.IoCProvider.Resolve<ISessionService>().StartByToken(token);
                 return true;
             }
             catch

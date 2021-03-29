@@ -15,6 +15,7 @@ using AppRopio.Base.Auth.Core.ViewModels.SignUp.Services;
 using AppRopio.Base.Auth.Core.ViewModels.Thanks;
 using AppRopio.Base.Core.Services.ViewModelLookup;
 using MvvmCross;
+using MvvmCross.IoC;
 using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.Base.Auth.Core
@@ -25,18 +26,18 @@ namespace AppRopio.Base.Auth.Core
 		{
 			(new API.App()).Initialize();
 
-            Mvx.LazyConstructAndRegisterSingleton<ISessionService, SessionService>();
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<ISessionService, SessionService>();
 
-			Mvx.RegisterSingleton<IAuthConfigService>(() => new AuthConfigService());
-			Mvx.RegisterType(typeof(IPasswordNewVmService), typeof(PasswordNewVmService));
-			Mvx.RegisterType(typeof(IResetPasswordVmService), typeof(ResetPasswordVmService));
-			Mvx.RegisterType(typeof(IResetPasswordSmsVmService), typeof(ResetPasswordSmsVmService));
-			Mvx.RegisterType(typeof(ISignInVmService), typeof(SignInVmService));
-			Mvx.RegisterType(typeof(ISignUpVmService), typeof(SignUpVmService));
-			Mvx.RegisterType(typeof(IAuthVmService), typeof(AuthVmService));
-			Mvx.RegisterType(typeof(ISignUpItemFactoryService), typeof(SignUpItemFactoryService));
+			Mvx.IoCProvider.RegisterSingleton<IAuthConfigService>(() => new AuthConfigService());
+			Mvx.IoCProvider.RegisterType(typeof(IPasswordNewVmService), typeof(PasswordNewVmService));
+			Mvx.IoCProvider.RegisterType(typeof(IResetPasswordVmService), typeof(ResetPasswordVmService));
+			Mvx.IoCProvider.RegisterType(typeof(IResetPasswordSmsVmService), typeof(ResetPasswordSmsVmService));
+			Mvx.IoCProvider.RegisterType(typeof(ISignInVmService), typeof(SignInVmService));
+			Mvx.IoCProvider.RegisterType(typeof(ISignUpVmService), typeof(SignUpVmService));
+			Mvx.IoCProvider.RegisterType(typeof(IAuthVmService), typeof(AuthVmService));
+			Mvx.IoCProvider.RegisterType(typeof(ISignUpItemFactoryService), typeof(SignUpItemFactoryService));
 
-			var vmLookupService = Mvx.Resolve<IViewModelLookupService>();
+			var vmLookupService = Mvx.IoCProvider.Resolve<IViewModelLookupService>();
 
 			vmLookupService.Register<IAuthViewModel>(typeof(AuthViewModel));
 			vmLookupService.Register<ISignUpViewModel>(typeof(SignUpViewModel));
@@ -46,10 +47,10 @@ namespace AppRopio.Base.Auth.Core
 			vmLookupService.Register<IPasswordNewViewModel>(typeof(PasswordNewViewModel));
 			vmLookupService.Register<IThanksViewModel>(typeof(ThanksViewModel));
 
-			Mvx.RegisterType<IAuthNavigationVmService>(() => new AuthNavigationVmService());
+			Mvx.IoCProvider.RegisterType<IAuthNavigationVmService>(() => new AuthNavigationVmService());
 
 			if (!string.IsNullOrEmpty(AuthSettings.Token))
-				Mvx.CallbackWhenRegistered<IMvxMessenger>(() => Mvx.Resolve<ISessionService>().StartByToken(AuthSettings.Token).ConfigureAwait(false));
+				Mvx.IoCProvider.CallbackWhenRegistered<IMvxMessenger>(() => Mvx.IoCProvider.Resolve<ISessionService>().StartByToken(AuthSettings.Token).ConfigureAwait(false));
 		}
 	}
 }

@@ -37,7 +37,7 @@ namespace AppRopio.Base.Auth.Core.Services.Implementation
         private AuthConfig LoadConfigFromJSON()
         {
             var path = Path.Combine(CoreConstants.CONFIGS_FOLDER, SettingsName);
-            var json = Mvx.Resolve<ISettingsService>().ReadStringFromFile(path);
+            var json = Mvx.IoCProvider.Resolve<ISettingsService>().ReadStringFromFile(path);
             return Newtonsoft.Json.JsonConvert.DeserializeObject<AuthConfig>(json);
         }
 

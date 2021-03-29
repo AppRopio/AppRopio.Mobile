@@ -6,7 +6,7 @@ using AppRopio.Base.Auth.API.Services;
 using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.Core.ViewModels.Services;
 using MvvmCross;
-using MvvmCross.Platform.Core;
+using MvvmCross.Base;
 
 namespace AppRopio.Base.Auth.Core.ViewModels.Password.Reset.Sms.Services
 {
@@ -15,7 +15,7 @@ namespace AppRopio.Base.Auth.Core.ViewModels.Password.Reset.Sms.Services
 
         #region Services
 
-        protected IAuthService AuthService { get { return Mvx.Resolve<IAuthService>(); } }
+        protected IAuthService AuthService { get { return Mvx.IoCProvider.Resolve<IAuthService>(); } }
 
 
         #endregion
@@ -49,9 +49,9 @@ namespace AppRopio.Base.Auth.Core.ViewModels.Password.Reset.Sms.Services
             try
             {
                 await AuthService.ResendCode(cts);
-                Mvx.Resolve<IMvxMainThreadDispatcher>().RequestMainThreadAction(() =>
+                Mvx.IoCProvider.Resolve<IMvxMainThreadAsyncDispatcher>().ExecuteOnMainThreadAsync(() =>
                 {
-                    UserDialogs.Alert(Mvx.Resolve<ILocalizationService>().GetLocalizableString(AuthConst.RESX_NAME, "Password_Sms_CodeSent"));
+                    UserDialogs.Alert(Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString(AuthConst.RESX_NAME, "Password_Sms_CodeSent"));
                 });
             }
             catch (ConnectionException ex)

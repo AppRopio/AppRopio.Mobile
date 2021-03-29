@@ -1,4 +1,5 @@
-﻿using System.Windows.Input;
+﻿using System.Threading.Tasks;
+using System.Windows.Input;
 using AppRopio.Base.Auth.Core.Models.OAuth;
 using AppRopio.Base.Auth.Core.Services;
 using AppRopio.Base.Auth.Core.ViewModels.Auth.Services;
@@ -6,17 +7,15 @@ using AppRopio.Base.Core.Extentions;
 using AppRopio.Base.Core.Models.Bundle;
 using AppRopio.Base.Core.Models.Navigation;
 using AppRopio.Base.Core.ViewModels;
-using MvvmCross.ViewModels;
 using MvvmCross;
-using System;
+using MvvmCross.Commands;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.Base.Auth.Core.ViewModels.Auth
 {
     public class AuthViewModel : BaseViewModel, IAuthViewModel
 	{
 		#region Fields
-
-		protected IAuthNavigationVmService NavigationVmService { get { return Mvx.Resolve<IAuthNavigationVmService>(); } }
 
 		#endregion
 
@@ -45,7 +44,7 @@ namespace AppRopio.Base.Auth.Core.ViewModels.Auth
 		{
 			get
 			{
-				return _skipAuthCommand ?? (_skipAuthCommand = new MvxCommand(SkipAuthExecute));
+				return _skipAuthCommand ?? (_skipAuthCommand = new MvxAsyncCommand(SkipAuthExecute));
 			}
 		}
 
@@ -72,19 +71,21 @@ namespace AppRopio.Base.Auth.Core.ViewModels.Auth
 
 		#region Services
 
-		protected IAuthVmService SocialService { get { return Mvx.Resolve<IAuthVmService>(); } }
+		protected IAuthVmService SocialService { get { return Mvx.IoCProvider.Resolve<IAuthVmService>(); } }
 
-        public string SignInText => LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "Auth_SignIn");
+		protected IAuthNavigationVmService NavigationVmService { get { return Mvx.IoCProvider.Resolve<IAuthNavigationVmService>(); } }
+
+		public string SignInText => LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "Auth_SignIn");
 
         public string SignUpText => LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "Auth_SignUp");
 
         public string SkipText => LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "Auth_Skip");
 
-        #endregion
+		#endregion
 
-        #region Constructor
+		#region Constructor
 
-        public AuthViewModel()
+		public AuthViewModel()
 		{
 			VmNavigationType = NavigationType.ClearAndPush;
 		}
@@ -121,12 +122,12 @@ namespace AppRopio.Base.Auth.Core.ViewModels.Auth
 			NavigationVmService.NavigateToSignUp(new BaseBundle(NavigationType.Push));
 		}
 
-		protected virtual void SkipAuthExecute()
+		protected virtual async Task SkipAuthExecute()
 		{
 			if (VmNavigationType == NavigationType.ClearAndPush || VmNavigationType == NavigationType.DoubleClearAndPush)
-                ChangePresentation(new Base.Core.PresentationHints.NavigateToDefaultViewModelHint());
+                await NavigationVmService.ChangePresentation(new Base.Core.PresentationHints.NavigateToDefaultViewModelHint());
 			else
-				Close(this);
+				await NavigationVmService.Close(this);
 		}
 
 		public override void Prepare(IMvxBundle parameters)

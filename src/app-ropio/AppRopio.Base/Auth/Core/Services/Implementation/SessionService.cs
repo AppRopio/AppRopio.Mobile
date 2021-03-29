@@ -68,13 +68,13 @@ namespace AppRopio.Base.Auth.Core.Services.Implementation
         #region Services
 
         private IMvxMessenger _messagerService;
-        protected IMvxMessenger MessagerService => _messagerService ?? (_messagerService = Mvx.Resolve<IMvxMessenger>());
+        protected IMvxMessenger MessagerService => _messagerService ?? (_messagerService = Mvx.IoCProvider.Resolve<IMvxMessenger>());
 
         private IUserService _userService;
-        protected IUserService UserService => _userService ?? (_userService = Mvx.Resolve<IUserService>());
+        protected IUserService UserService => _userService ?? (_userService = Mvx.IoCProvider.Resolve<IUserService>());
 
         private IConnectionService _connectionService;
-        protected IConnectionService ConnectionService => _connectionService ?? (_connectionService = Mvx.Resolve<IConnectionService>());
+        protected IConnectionService ConnectionService => _connectionService ?? (_connectionService = Mvx.IoCProvider.Resolve<IConnectionService>());
 
 		#endregion
 

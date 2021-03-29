@@ -9,13 +9,14 @@ using AppRopio.Base.Auth.Core.ViewModels.SignUp.Items;
 using AppRopio.Base.Auth.Core.ViewModels.SignUp.Services;
 using AppRopio.Base.Core.Models.Bundle;
 using AppRopio.Base.Core.Models.Navigation;
-using MvvmCross.ViewModels;
 using MvvmCross;
+using MvvmCross.Commands;
 using MvvmCross.Plugin.Messenger;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.Base.Auth.Core.ViewModels.SignUp
 {
-	public class SignUpViewModel : AuthBaseViewModel, ISignUpViewModel
+    public class SignUpViewModel : AuthBaseViewModel, ISignUpViewModel
 	{
 		#region Fields
 
@@ -59,7 +60,7 @@ namespace AppRopio.Base.Auth.Core.ViewModels.SignUp
 		#region Services
 
 		private ISignUpVmService _signUpService;
-		protected ISignUpVmService SignUpService { get { return _signUpService ?? (_signUpService = Mvx.Resolve<ISignUpVmService>()); } }
+		protected ISignUpVmService SignUpService { get { return _signUpService ?? (_signUpService = Mvx.IoCProvider.Resolve<ISignUpVmService>()); } }
 
 		#endregion
 
@@ -70,7 +71,7 @@ namespace AppRopio.Base.Auth.Core.ViewModels.SignUp
 			VmNavigationType = Base.Core.Models.Navigation.NavigationType.Push;
 			Items = new List<ISignUpItemBaseViewModel>();
 
-			_token = Mvx.Resolve<IMvxMessenger>().Subscribe<RegistrationItemTextChangedMessage>((RegistrationItemTextChangedMessage obj) =>
+			_token = Mvx.IoCProvider.Resolve<IMvxMessenger>().Subscribe<RegistrationItemTextChangedMessage>((RegistrationItemTextChangedMessage obj) =>
 		   {
 			   OnItemValueChanged(obj as ISignUpItemBaseViewModel);
 		   });
@@ -83,7 +84,7 @@ namespace AppRopio.Base.Auth.Core.ViewModels.SignUp
 
 		private void SetItems()
 		{
-			Items = Mvx.Resolve<ISignUpItemFactoryService>().ItemsFactory(Config.Items, Config.RequireConfirmPassword);
+			Items = Mvx.IoCProvider.Resolve<ISignUpItemFactoryService>().ItemsFactory(Config.Items, Config.RequireConfirmPassword);
 		}
 
 		private bool CheckItems(bool markInvalidFields)

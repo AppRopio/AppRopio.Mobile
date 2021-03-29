@@ -12,7 +12,7 @@ namespace AppRopio.Base.Auth.Core.ViewModels._base
 	{
 		#region Fields
 
-		protected AuthConfig Config { get { return Mvx.Resolve<IAuthConfigService>().Config; } }
+		protected AuthConfig Config { get { return Mvx.IoCProvider.Resolve<IAuthConfigService>().Config; } }
 
 		#endregion
 
@@ -39,7 +39,7 @@ namespace AppRopio.Base.Auth.Core.ViewModels._base
 
 		#region Services
 
-		protected IAuthNavigationVmService NavigationVmService { get { return Mvx.Resolve<IAuthNavigationVmService>(); } }
+		protected IAuthNavigationVmService NavigationVmService { get { return Mvx.IoCProvider.Resolve<IAuthNavigationVmService>(); } }
 
 		#endregion
 
