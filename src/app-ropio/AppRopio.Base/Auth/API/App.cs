@@ -12,13 +12,13 @@ namespace AppRopio.Base.Auth.API
 		{
             if (ApiSettings.DebugServiceEnabled)
 			{
-                Mvx.RegisterType<IAuthService>(() => new AuthServiceFake());
-                Mvx.RegisterType<IUserService>(() => new UserServiceFake());
+                Mvx.IoCProvider.RegisterType<IAuthService>(() => new AuthServiceFake());
+                Mvx.IoCProvider.RegisterType<IUserService>(() => new UserServiceFake());
             }
             else
             {
-                Mvx.RegisterType<IAuthService>(() => new AuthService());
-                Mvx.RegisterType<IUserService>(() => new UserService());
+                Mvx.IoCProvider.RegisterType<IAuthService>(() => new AuthService());
+                Mvx.IoCProvider.RegisterType<IUserService>(() => new UserService());
             }
 		}
 	}

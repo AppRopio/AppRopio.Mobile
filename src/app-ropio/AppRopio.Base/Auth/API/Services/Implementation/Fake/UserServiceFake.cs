@@ -8,7 +8,7 @@ namespace AppRopio.Base.Auth.API.Services.Implementation.Fake
 {
     public class UserServiceFake : IUserService
     {
-        public bool IsRussianCulture => Mvx.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
+        public bool IsRussianCulture => Mvx.IoCProvider.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
 
         public async Task ChangeUserData(Dictionary<string, object> fields)
         {

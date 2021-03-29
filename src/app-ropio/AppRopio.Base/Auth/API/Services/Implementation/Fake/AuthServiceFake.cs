@@ -13,7 +13,7 @@ namespace AppRopio.Base.Auth.API.Services.Implementation.Fake
 {
     public class AuthServiceFake : IAuthService
 	{
-        public bool IsRussianCulture => Mvx.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
+        public bool IsRussianCulture => Mvx.IoCProvider.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
         
 		private const string TOKEN = "auth_token_from_fake_service";
 
