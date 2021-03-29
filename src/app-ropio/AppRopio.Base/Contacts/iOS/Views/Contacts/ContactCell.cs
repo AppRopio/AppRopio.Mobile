@@ -5,7 +5,7 @@ using AppRopio.Base.iOS;
 using AppRopio.Models.Contacts.Responses;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using MvvmCross;
 using UIKit;
 
@@ -16,7 +16,7 @@ namespace AppRopio.Base.Contacts.iOS.Views.Contacts
 		public static readonly NSString Key = new NSString("ContactCell");
 		public static readonly UINib Nib;
 
-        protected ContactsThemeConfig ThemeConfig { get { return Mvx.Resolve<IContactsThemeConfigService>().ThemeConfig; } }
+        protected ContactsThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IContactsThemeConfigService>().ThemeConfig; } }
 
 		static ContactCell()
 		{

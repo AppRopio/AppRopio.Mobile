@@ -9,17 +9,17 @@ using MvvmCross.Plugin;
 
 namespace AppRopio.Base.Contacts.iOS
 {
-    public class Plugin : IMvxPlugin
+    [MvxPlugin]
+    [Preserve(AllMembers = true)]
+    public class Plugin : BasePlugin
     {
-        public void Load()
+        public override void Load()
         {
-            Mvx.RegisterSingleton<IContactsThemeConfigService>(() => new ContactsThemeConfigService());
+            Mvx.IoCProvider.RegisterSingleton<IContactsThemeConfigService>(() => new ContactsThemeConfigService());
 
-            var viewLookupService = Mvx.Resolve<IViewLookupService>();
+            var viewLookupService = Mvx.IoCProvider.Resolve<IViewLookupService>();
 
             viewLookupService.Register<IContactsViewModel, ContactsViewController>();
-
-
         }
     }
 }
