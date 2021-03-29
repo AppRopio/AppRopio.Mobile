@@ -11,6 +11,8 @@ using AppRopio.Base.Filters.Core.ViewModels.Sort.Services;
 using AppRopio.Base.Core.Extentions;
 using AppRopio.Base.Filters.Core.Models.Bundle;
 using System.Linq;
+using MvvmCross.Commands;
+using AppRopio.Base.Filters.Core.Services;
 
 namespace AppRopio.Base.Filters.Core.ViewModels.Sort
 {
@@ -40,7 +42,7 @@ namespace AppRopio.Base.Filters.Core.ViewModels.Sort
         {
             get
             {
-                return _cancelCommand ?? (_cancelCommand = new MvxCommand(OnCancelExecute));
+                return _cancelCommand ?? (_cancelCommand = new MvxAsyncCommand(OnCancelExecute));
             }
         }
 
@@ -80,7 +82,9 @@ namespace AppRopio.Base.Filters.Core.ViewModels.Sort
 
         #region Services
 
-        protected ISortVmService VmService { get { return Mvx.Resolve<ISortVmService>(); } }
+        protected ISortVmService VmService { get { return Mvx.IoCProvider.Resolve<ISortVmService>(); } }
+
+        protected IFiltersNavigationVmService NavigationVmService { get { return Mvx.IoCProvider.Resolve<IFiltersNavigationVmService>(); } }
 
         #endregion
 
@@ -108,7 +112,7 @@ namespace AppRopio.Base.Filters.Core.ViewModels.Sort
 
         private void OnItemSelected(ISortItemVM item)
         {
-            Close(this);
+            NavigationVmService.Close(this);
 
             var selectedItem = Items.FirstOrDefault(x => x.Selected);
             if (selectedItem != null && !selectedItem.Equals(item))
@@ -119,11 +123,11 @@ namespace AppRopio.Base.Filters.Core.ViewModels.Sort
             VmService.ChangeSortTypeTo(_categoryId, item.Sort);
         }
 
-        private void OnCancelExecute()
+        private async Task OnCancelExecute()
         {
             FireCancelCommandExecute();
 
-            Close(this);
+            await NavigationVmService.Close(this);
         }
 
         #endregion

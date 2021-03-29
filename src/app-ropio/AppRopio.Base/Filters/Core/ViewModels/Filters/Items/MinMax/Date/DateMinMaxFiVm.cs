@@ -1,8 +1,8 @@
 ﻿using System;
-using AppRopio.Models.Filters.Responses;
 using System.Globalization;
 using System.Windows.Input;
-using MvvmCross.ViewModels;
+using AppRopio.Models.Filters.Responses;
+using MvvmCross.Commands;
 
 namespace AppRopio.Base.Filters.Core.ViewModels.Filters.Items.MinMax.Date
 {
@@ -41,7 +41,7 @@ namespace AppRopio.Base.Filters.Core.ViewModels.Filters.Items.MinMax.Date
 
         #region Protected
 
-        protected virtual void OnMinValueChanged (DateTime? date)
+        protected virtual void OnMinValueChanged(DateTime? date)
         {
             if (date.HasValue)
                 Min = date.Value;

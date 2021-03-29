@@ -28,7 +28,7 @@ namespace AppRopio.Base.Filters.Core.ViewModels.Filters.Items.Selection
 
         #region Services
 
-        protected IFiltersNavigationVmService NavigationVmService { get { return Mvx.Resolve<IFiltersNavigationVmService>(); } }
+        protected IFiltersNavigationVmService NavigationVmService { get { return Mvx.IoCProvider.Resolve<IFiltersNavigationVmService>(); } }
 
         #endregion
 

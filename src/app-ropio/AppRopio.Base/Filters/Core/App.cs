@@ -16,17 +16,19 @@ namespace AppRopio.Base.Filters.Core
     {
         public override void Initialize()
         {
-            Mvx.RegisterType<IFiltersNavigationVmService>(() => new FiltersNavigationVmService());
+            new API.App().Initialize();
 
-            Mvx.RegisterSingleton<IFiltersConfigService>(() => new FiltersConfigService());
+            Mvx.IoCProvider.RegisterType<IFiltersNavigationVmService>(() => new FiltersNavigationVmService());
 
-            Mvx.RegisterSingleton<ISortVmService>(() => new SortVmService());
-            Mvx.RegisterSingleton<IFiltersVmService>(() => new FiltersVmService());
-            Mvx.RegisterSingleton<IFilterSelectionVmService>(() => new FilterSelectionVmService());
+            Mvx.IoCProvider.RegisterSingleton<IFiltersConfigService>(() => new FiltersConfigService());
+
+            Mvx.IoCProvider.RegisterSingleton<ISortVmService>(() => new SortVmService());
+            Mvx.IoCProvider.RegisterSingleton<IFiltersVmService>(() => new FiltersVmService());
+            Mvx.IoCProvider.RegisterSingleton<IFilterSelectionVmService>(() => new FilterSelectionVmService());
 
             #region VMs registration
 
-            var vmLookupService = Mvx.Resolve<IViewModelLookupService>();
+            var vmLookupService = Mvx.IoCProvider.Resolve<IViewModelLookupService>();
 
             vmLookupService.Register<ISortViewModel>(typeof(SortViewModel));
             vmLookupService.Register<IFiltersViewModel>(typeof(FiltersViewModel));

@@ -8,6 +8,7 @@ using AppRopio.Base.Core.ViewModels.Selection;
 using AppRopio.Base.Core.ViewModels.Selection.Items;
 using AppRopio.Base.Core.ViewModels.Selection.Services;
 using AppRopio.Base.Filters.Core.Models.Bundle;
+using AppRopio.Base.Filters.Core.Services;
 using AppRopio.Base.Filters.Core.ViewModels.Filters.Selection.Services;
 using AppRopio.Models.Filters.Responses;
 using MvvmCross;
@@ -34,7 +35,9 @@ namespace AppRopio.Base.Filters.Core.ViewModels.Filters.Selection
 
         #region Services
 
-        protected override IBaseSelectionVmService<FilterValue, ApplyedFilterValue> VmService => Mvx.Resolve<IFilterSelectionVmService>();
+        protected override IBaseSelectionVmService<FilterValue, ApplyedFilterValue> VmService => Mvx.IoCProvider.Resolve<IFilterSelectionVmService>();
+
+        protected IFiltersNavigationVmService NavigationVmService { get { return Mvx.IoCProvider.Resolve<IFiltersNavigationVmService>(); } }
 
         #endregion
 
@@ -84,11 +87,11 @@ namespace AppRopio.Base.Filters.Core.ViewModels.Filters.Selection
             Task.Run(BuildSelectedValues);
         }
 
-        protected override void OnApplyExecute()
+        protected override async Task OnApplyExecute()
         {
             (VmService as IFilterSelectionVmService).ChangeSelectedFiltersTo(_filterId, SelectedValues);
 
-            Close(this);
+            await NavigationVmService.Close(this);
         }
 
         protected override void OnClearExecute()

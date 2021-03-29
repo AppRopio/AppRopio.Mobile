@@ -1,9 +1,9 @@
-﻿using System;
+﻿using AppRopio.Base.Core.ViewModels.Services;
 using AppRopio.Base.Filters.Core.Models.Bundle;
 
 namespace AppRopio.Base.Filters.Core.Services
 {
-    public interface IFiltersNavigationVmService
+    public interface IFiltersNavigationVmService : IBaseVmNavigationService
     {
         void NavigateToFilters(FiltersBundle bundle);
 

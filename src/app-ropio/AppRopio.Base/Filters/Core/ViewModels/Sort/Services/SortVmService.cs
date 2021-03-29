@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -18,9 +18,9 @@ namespace AppRopio.Base.Filters.Core.ViewModels.Sort.Services
     {
         #region Services
 
-        protected IMvxMessenger Messenger { get { return Mvx.Resolve<IMvxMessenger>(); } }
+        protected IMvxMessenger Messenger { get { return Mvx.IoCProvider.Resolve<IMvxMessenger>(); } }
 
-        protected IFiltersService FiltersService { get { return Mvx.Resolve<IFiltersService>(); } }
+        protected IFiltersService FiltersService { get { return Mvx.IoCProvider.Resolve<IFiltersService>(); } }
 
         #endregion
 

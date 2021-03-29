@@ -15,6 +15,7 @@ using AppRopio.Base.Filters.Core.ViewModels.Filters.Services;
 using AppRopio.Models.Filters.Responses;
 using MvvmCross.ViewModels;
 using MvvmCross;
+using MvvmCross.Commands;
 
 namespace AppRopio.Base.Filters.Core.ViewModels.Filters
 {
@@ -42,7 +43,7 @@ namespace AppRopio.Base.Filters.Core.ViewModels.Filters
         {
             get
             {
-                return _applyCommand ?? (_applyCommand = new MvxCommand(OnApplyExecute));
+                return _applyCommand ?? (_applyCommand = new MvxAsyncCommand(OnApplyExecute));
             }
         }
 
@@ -51,7 +52,7 @@ namespace AppRopio.Base.Filters.Core.ViewModels.Filters
         {
             get
             {
-                return _clearCommand ?? (_clearCommand = new MvxCommand(OnClearExecute));
+                return _clearCommand ?? (_clearCommand = new MvxAsyncCommand(OnClearExecute));
             }
         }
 
@@ -61,7 +62,7 @@ namespace AppRopio.Base.Filters.Core.ViewModels.Filters
 
         protected List<ApplyedFilter> ApplyedFilters { get; set; }
 
-        protected FiltersConfig Config { get { return Mvx.Resolve<IFiltersConfigService>().Config; } }
+        protected FiltersConfig Config { get { return Mvx.IoCProvider.Resolve<IFiltersConfigService>().Config; } }
 
         private ObservableCollection<IFiltersItemVM> _items;
         public ObservableCollection<IFiltersItemVM> Items
@@ -83,9 +84,9 @@ namespace AppRopio.Base.Filters.Core.ViewModels.Filters
 
         #region Services
 
-        protected IFiltersVmService VmService { get { return Mvx.Resolve<IFiltersVmService>(); } }
+        protected IFiltersVmService VmService { get { return Mvx.IoCProvider.Resolve<IFiltersVmService>(); } }
 
-        protected IFiltersNavigationVmService NavigationVmService { get { return Mvx.Resolve<IFiltersNavigationVmService>(); } }
+        protected IFiltersNavigationVmService NavigationVmService { get { return Mvx.IoCProvider.Resolve<IFiltersNavigationVmService>(); } }
 
         #endregion
 
@@ -123,7 +124,7 @@ namespace AppRopio.Base.Filters.Core.ViewModels.Filters
 
         #region Protected
 
-        protected virtual void OnApplyExecute()
+        protected virtual async Task OnApplyExecute()
         {
             if (Items != null && Items.Any())
             {
@@ -135,10 +136,10 @@ namespace AppRopio.Base.Filters.Core.ViewModels.Filters
                 VmService.ChangeFiltersTo(_categoryId, ApplyedFilters);
             }
 
-            Close(this);
+            await NavigationVmService.Close(this);
         }
 
-        protected virtual void OnClearExecute()
+        protected virtual async Task OnClearExecute()
         {
             ApplyedFilters = new List<ApplyedFilter>();
 
@@ -150,7 +151,7 @@ namespace AppRopio.Base.Filters.Core.ViewModels.Filters
             {
                 VmService.ChangeFiltersTo(_categoryId, ApplyedFilters);
 
-                Close(this);
+                await NavigationVmService.Close(this);
             }
         }
 
