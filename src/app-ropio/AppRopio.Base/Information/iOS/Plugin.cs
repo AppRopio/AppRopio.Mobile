@@ -1,4 +1,5 @@
 ﻿using AppRopio.Base.Core.Services.ViewLookup;
+using AppRopio.Base.Information.Core;
 using AppRopio.Base.Information.Core.ViewModels.Information;
 using AppRopio.Base.Information.Core.ViewModels.InformationTextContent;
 using AppRopio.Base.Information.Core.ViewModels.InformationWebContent;
@@ -12,13 +13,17 @@ using MvvmCross.Plugin;
 
 namespace AppRopio.Base.Information.iOS
 {
-    public class Plugin : IMvxPlugin
+    [MvxPlugin]
+    [Preserve(AllMembers = true)]
+    public class Plugin : BasePlugin
     {
-        public void Load()
+        public override void Load()
         {
-            Mvx.RegisterSingleton<IInformationThemeConfigService>(() => new InformationThemeConfigService());
+            base.Load();
 
-            var viewLookupService = Mvx.Resolve<IViewLookupService>();
+            Mvx.IoCProvider.RegisterSingleton<IInformationThemeConfigService>(() => new InformationThemeConfigService());
+
+            var viewLookupService = Mvx.IoCProvider.Resolve<IViewLookupService>();
 
             viewLookupService.Register<IInformationViewModel, InformationViewController>();
             viewLookupService.Register<IInformationTextContentViewModel, InformationTextContentViewController>();

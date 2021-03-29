@@ -7,7 +7,7 @@ using AppRopio.Base.Information.iOS.Views.Cell;
 using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.Views;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using MvvmCross;
 using UIKit;
 using AppRopio.Base.Information.Core;
@@ -16,7 +16,7 @@ namespace AppRopio.Base.Information.iOS.Views
 {
     public partial class InformationViewController : CommonViewController<IInformationViewModel>
     {
-        protected InformationThemeConfig ThemeConfig { get { return Mvx.Resolve<IInformationThemeConfigService>().ThemeConfig; } }
+        protected InformationThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IInformationThemeConfigService>().ThemeConfig; } }
 
         public InformationViewController() 
             : base("InformationViewController", null)

@@ -5,7 +5,7 @@ using AppRopio.Base.iOS;
 using AppRopio.Models.Information.Responses;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using MvvmCross;
 using UIKit;
 
@@ -16,7 +16,7 @@ namespace AppRopio.Base.Information.iOS.Views.Cell
         public static readonly NSString Key = new NSString("ArticleCell");
         public static readonly UINib Nib;
 
-		protected InformationThemeConfig ThemeConfig { get { return Mvx.Resolve<IInformationThemeConfigService>().ThemeConfig; } }
+		protected InformationThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IInformationThemeConfigService>().ThemeConfig; } }
 
 		static ArticleCell()
         {
