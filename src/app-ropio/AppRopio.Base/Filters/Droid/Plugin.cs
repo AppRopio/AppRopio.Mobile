@@ -1,4 +1,5 @@
 ﻿using AppRopio.Base.Core.Services.ViewLookup;
+using AppRopio.Base.Filters.Core;
 using AppRopio.Base.Filters.Core.ViewModels.Filters;
 using AppRopio.Base.Filters.Core.ViewModels.Filters.Selection;
 using AppRopio.Base.Filters.Core.ViewModels.Sort;
@@ -10,11 +11,15 @@ using MvvmCross.Plugin;
 
 namespace AppRopio.Base.Filters.Droid
 {
-    public class Plugin : IMvxPlugin
+    [MvxPlugin]
+    [Preserve(AllMembers = true)]
+    public class Plugin : BasePlugin
     {
-        public void Load()
+        public override void Load()
         {
-            var viewLookupService = Mvx.Resolve<IViewLookupService>();
+            base.Load();
+
+            var viewLookupService = Mvx.IoCProvider.Resolve<IViewLookupService>();
 
             viewLookupService.Register<ISortViewModel, SortFragment>();
             viewLookupService.Register<IFiltersViewModel, FiltersFragment>();

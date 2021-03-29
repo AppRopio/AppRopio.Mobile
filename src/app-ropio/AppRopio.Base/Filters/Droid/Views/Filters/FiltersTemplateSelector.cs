@@ -7,6 +7,8 @@ namespace AppRopio.Base.Filters.Droid.Views.Filters
 {
     public class FiltersTemplateSelector : IARFlatGroupTemplateSelector
     {
+        public int ItemTemplateId { get; set; }
+
         public int GetHeaderViewType(object forItemObject)
         {
             throw new NotImplementedException();
