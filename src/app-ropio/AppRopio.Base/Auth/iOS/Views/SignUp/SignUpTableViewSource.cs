@@ -1,6 +1,6 @@
 ﻿using AppRopio.Base.Auth.Core.ViewModels.SignUp.Items;
 using Foundation;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using UIKit;
 namespace AppRopio.Base.Auth.iOS.Views.SignUp
 {

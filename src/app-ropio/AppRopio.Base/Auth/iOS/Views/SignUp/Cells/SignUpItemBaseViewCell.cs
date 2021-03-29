@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using AppRopio.Base.Auth.Core.ViewModels.SignUp.Items;
 using AppRopio.Base.Auth.iOS.Models;
 using AppRopio.Base.Auth.iOS.Services;
@@ -7,7 +7,7 @@ using AppRopio.Base.iOS.Models.ValueConverters;
 using AppRopio.Base.iOS.UIExtentions;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using MvvmCross;
 using UIKit;
 using AppRopio.Base.iOS.Controls;
@@ -16,7 +16,7 @@ namespace AppRopio.Base.Auth.iOS.Views.SignUp.Cells
 {
     public partial class SignUpItemBaseViewCell : MvxTableViewCell
     {
-        protected AuthThemeConfig ThemeConfig { get { return Mvx.Resolve<IAuthThemeConfigService>().ThemeConfig; } }
+        protected AuthThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IAuthThemeConfigService>().ThemeConfig; } }
 
         public static readonly NSString Key = new NSString("SignUpItemBaseViewCell");
         public static readonly UINib Nib = UINib.FromName("SignUpItemBaseViewCell", NSBundle.MainBundle);

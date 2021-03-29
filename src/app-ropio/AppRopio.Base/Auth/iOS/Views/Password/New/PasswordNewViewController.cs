@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using AppRopio.Base.Auth.Core.ViewModels.Password.New;
 using AppRopio.Base.Auth.iOS.Views._base;
 using AppRopio.Base.Core.Services.Localization;
@@ -26,7 +26,7 @@ namespace AppRopio.Base.Auth.iOS.Views.Password.New
 
 		#endregion
 
-        protected ILocalizationService LocalizationService => Mvx.Resolve<ILocalizationService>();
+        protected ILocalizationService LocalizationService => Mvx.IoCProvider.Resolve<ILocalizationService>();
 
 		#region Constructor
 

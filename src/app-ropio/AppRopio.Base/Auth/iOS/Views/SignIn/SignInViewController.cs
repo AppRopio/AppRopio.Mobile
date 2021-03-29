@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using AppRopio.Base.Auth.Core.ViewModels.SignIn;
 using AppRopio.Base.Auth.iOS.Views._base;
 using AppRopio.Base.iOS;
@@ -25,7 +25,7 @@ namespace AppRopio.Base.Auth.iOS.Views.SignIn
 
         #endregion
 
-        protected ILocalizationService LocalizationService => Mvx.Resolve<ILocalizationService>();
+        protected ILocalizationService LocalizationService => Mvx.IoCProvider.Resolve<ILocalizationService>();
 
         #region Constructor
 

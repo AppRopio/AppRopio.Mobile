@@ -24,9 +24,9 @@ namespace AppRopio.Base.Auth.iOS.Views._base
 
 		#region Properties
 
-		protected Models.AuthThemeConfig ThemeConfig { get { return Mvx.Resolve<IAuthThemeConfigService>().ThemeConfig; } }
+		protected Models.AuthThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IAuthThemeConfigService>().ThemeConfig; } }
 
-		protected AuthConfig Config { get { return Mvx.Resolve<IAuthConfigService>().Config; } }
+		protected AuthConfig Config { get { return Mvx.IoCProvider.Resolve<IAuthConfigService>().Config; } }
 
 		protected abstract string AccessoryButtonTitle { get; }
 

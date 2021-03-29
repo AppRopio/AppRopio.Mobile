@@ -14,7 +14,7 @@ namespace AppRopio.Base.Auth.iOS.Views.Thanks
 {
     public partial class ThanksViewController : CommonViewController<IThanksViewModel>
 	{
-		protected AuthThemeConfig ThemeConfig { get { return Mvx.Resolve<IAuthThemeConfigService>().ThemeConfig; } }
+		protected AuthThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IAuthThemeConfigService>().ThemeConfig; } }
 
 		public ThanksViewController() : base("ThanksViewController", null)
 		{
@@ -35,19 +35,19 @@ namespace AppRopio.Base.Auth.iOS.Views.Thanks
 		protected virtual void SetupTitleLabel(UILabel label)
 		{
 			label.SetupStyle(ThemeConfig.Title);
-            label.Text = Mvx.Resolve<ILocalizationService>().GetLocalizableString(AuthConst.RESX_NAME, "Thanks_Thanks");
+            label.Text = Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString(AuthConst.RESX_NAME, "Thanks_Thanks");
 		}
 
 		protected virtual void SetupDesriptionLabel(UILabel label)
 		{
 			label.SetupStyle(ThemeConfig.Description);
-            label.Text = Mvx.Resolve<ILocalizationService>().GetLocalizableString(AuthConst.RESX_NAME, "Thanks_Motivation");
+            label.Text = Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString(AuthConst.RESX_NAME, "Thanks_Motivation");
 		}
 
 		protected virtual void SetupDoneButton(UIButton button)
 		{
 			button.SetupStyle(ThemeConfig.Button);
-            button.WithTitleForAllStates(Mvx.Resolve<ILocalizationService>().GetLocalizableString(AuthConst.RESX_NAME, "Thanks_Start"));
+            button.WithTitleForAllStates(Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString(AuthConst.RESX_NAME, "Thanks_Start"));
 		}
 
 		#endregion

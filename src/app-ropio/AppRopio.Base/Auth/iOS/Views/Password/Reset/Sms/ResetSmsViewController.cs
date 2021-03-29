@@ -22,7 +22,7 @@ namespace AppRopio.Base.Auth.iOS.Views.Password.Reset.Sms
             }
         }
 
-        protected ILocalizationService LocalizationService => Mvx.Resolve<ILocalizationService>();
+        protected ILocalizationService LocalizationService => Mvx.IoCProvider.Resolve<ILocalizationService>();
 
         public ResetSmsViewController() 
             : base("ResetSmsViewController", null)

@@ -67,7 +67,7 @@ namespace AppRopio.Base.Auth.iOS
 			var login = new LoginManager();
 			login.LoginBehavior = LoginBehavior.SystemAccount;
 
-			var masterNavigationController = ((MvxIosViewPresenter)Mvx.Resolve<IMvxIosViewPresenter>()).MasterNavigationController;
+			var masterNavigationController = ((MvxIosViewPresenter)Mvx.IoCProvider.Resolve<IMvxIosViewPresenter>()).MasterNavigationController;
 			var targetVC = GetLastPresentedController(masterNavigationController);
 
 			var loginResult = await login.LogInWithReadPermissionsAsync(
@@ -175,7 +175,7 @@ namespace AppRopio.Base.Auth.iOS
 
 			public override void ShouldPresentViewController(UIViewController controller)
 			{
-				var masterNavigationController = ((MvxIosViewPresenter)Mvx.Resolve<IMvxIosViewPresenter>()).MasterNavigationController;
+				var masterNavigationController = ((MvxIosViewPresenter)Mvx.IoCProvider.Resolve<IMvxIosViewPresenter>()).MasterNavigationController;
 				var targetVC = GetLastPresentedController(masterNavigationController);
 				targetVC.PresentViewController(controller, true, null);
 			}

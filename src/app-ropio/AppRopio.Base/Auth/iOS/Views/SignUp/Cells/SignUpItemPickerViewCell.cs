@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Linq;
 using AppRopio.Base.Auth.Core.ViewModels.SignUp.Items;
 using AppRopio.Base.Auth.iOS.Models;
@@ -11,7 +11,7 @@ using CoreGraphics;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Binding.Extensions;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using MvvmCross;
 using UIKit;
 
@@ -19,7 +19,7 @@ namespace AppRopio.Base.Auth.iOS.Views.SignUp.Cells
 {
     public partial class SignUpItemPickerViewCell : MvxTableViewCell
     {
-        protected AuthThemeConfig ThemeConfig { get { return Mvx.Resolve<IAuthThemeConfigService>().ThemeConfig; } }
+        protected AuthThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IAuthThemeConfigService>().ThemeConfig; } }
 
         public static readonly NSString Key = new NSString("SignUpItemPickerViewCell");
         public static readonly UINib Nib = UINib.FromName("SignUpItemPickerViewCell", NSBundle.MainBundle);
@@ -51,7 +51,7 @@ namespace AppRopio.Base.Auth.iOS.Views.SignUp.Cells
 
         private class PickerViewModel : MvxPickerViewModel
         {
-            protected AuthThemeConfig ThemeConfig { get { return Mvx.Resolve<IAuthThemeConfigService>().ThemeConfig; } }
+            protected AuthThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IAuthThemeConfigService>().ThemeConfig; } }
 
             public PickerViewModel(UIPickerView pickerView)
                 : base(pickerView)
@@ -113,7 +113,7 @@ namespace AppRopio.Base.Auth.iOS.Views.SignUp.Cells
                     .WithTune(tune =>
                     {
                         tune.SetupStyle(ThemeConfig.TextButton);
-                        tune.SetTitle(Mvx.Resolve<ILocalizationService>().GetLocalizableString("Base", "Done"), UIControlState.Normal);
+                        tune.SetTitle(Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString("Base", "Done"), UIControlState.Normal);
                         tune.TouchUpInside += (sender, e) => TextField?.EndEditing(true);
                     }),
                     new UIView().WithFrame(0, 0, DeviceInfo.ScreenWidth, 1).WithBackground(Theme.ColorPalette.Separator.ToUIColor()),

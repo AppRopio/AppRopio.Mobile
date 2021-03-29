@@ -17,7 +17,7 @@ namespace AppRopio.Base.Auth.iOS.Views.Auth
 		}
 
 		protected AuthThemeConfig ThemeConfig
-		{ get { return Mvx.Resolve<IAuthThemeConfigService>().ThemeConfig; } }
+		{ get { return Mvx.IoCProvider.Resolve<IAuthThemeConfigService>().ThemeConfig; } }
 
 		#region Protected
 
