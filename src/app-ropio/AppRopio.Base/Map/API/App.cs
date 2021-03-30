@@ -11,9 +11,9 @@ namespace AppRopio.Base.Map.API
         public override void Initialize()
         {
             if (ApiSettings.DebugServiceEnabled)
-                Mvx.RegisterType<IPointsService>(() => new PointsFakeService());
+                Mvx.IoCProvider.RegisterType<IPointsService>(() => new PointsFakeService());
             else
-                Mvx.RegisterType<IPointsService>(() => new PointsService());
+                Mvx.IoCProvider.RegisterType<IPointsService>(() => new PointsService());
         }
     }
 }

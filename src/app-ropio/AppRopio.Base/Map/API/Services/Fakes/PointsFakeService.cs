@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AppRopio.Models.Base.Responses;
@@ -11,7 +11,7 @@ namespace AppRopio.Base.Map.API.Services.Fakes
 {
     public class PointsFakeService : IPointsService
     {
-        public bool IsRussianCulture => Mvx.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
+        public bool IsRussianCulture => Mvx.IoCProvider.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
 
         private List<Point> _points;
 
