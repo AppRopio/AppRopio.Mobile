@@ -16,9 +16,10 @@ using AppRopio.Base.Settings.Core.ViewModels.Items.Picker;
 using AppRopio.Base.Settings.Core.ViewModels.Items.Switch;
 using AppRopio.Base.Settings.Core.ViewModels.Messages;
 using AppRopio.Base.Settings.Core.ViewModels.Services;
-using MvvmCross.ViewModels;
 using MvvmCross;
+using MvvmCross.Commands;
 using MvvmCross.Plugin.Messenger;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.Base.Settings.Core.ViewModels.Settings
 {
@@ -28,9 +29,9 @@ namespace AppRopio.Base.Settings.Core.ViewModels.Settings
 
 		#region Services
 
-		protected ISettingsVmService VmService { get { return Mvx.Resolve<ISettingsVmService>(); } }
+		protected ISettingsVmService VmService { get { return Mvx.IoCProvider.Resolve<ISettingsVmService>(); } }
 
-        protected ISettingsVmNavigationService NavigationService => Mvx.Resolve<ISettingsVmNavigationService>();
+        protected ISettingsVmNavigationService NavigationService => Mvx.IoCProvider.Resolve<ISettingsVmNavigationService>();
 
         #endregion
 
@@ -48,7 +49,7 @@ namespace AppRopio.Base.Settings.Core.ViewModels.Settings
 
         #endregion
 
-        protected SettingsConfig Config { get { return Mvx.Resolve<ISettingsConfigService>().Config; } }
+        protected SettingsConfig Config { get { return Mvx.IoCProvider.Resolve<ISettingsConfigService>().Config; } }
 
         private List<ISettingsItemVm> _items;
         private CancellationTokenSource _notificationCTS;

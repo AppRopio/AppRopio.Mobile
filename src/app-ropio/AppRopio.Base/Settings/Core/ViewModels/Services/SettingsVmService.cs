@@ -21,9 +21,9 @@ namespace AppRopio.Base.Settings.Core.ViewModels.Services
     {
 		#region Services
 
-		protected ISettingsService ApiService { get { return Mvx.Resolve<ISettingsService>(); } }
+		protected ISettingsService ApiService { get { return Mvx.IoCProvider.Resolve<ISettingsService>(); } }
 
-		protected IMvxMessenger MessengerService { get { return Mvx.Resolve<IMvxMessenger>(); } }
+		protected IMvxMessenger MessengerService { get { return Mvx.IoCProvider.Resolve<IMvxMessenger>(); } }
 
 		#endregion
 
@@ -103,7 +103,7 @@ namespace AppRopio.Base.Settings.Core.ViewModels.Services
 
         public void ChangeSelectedRegion(IRegionItemVm region)
 		{
-            Mvx.Resolve<IRegionService>().ChangeSelectedRegion(region.Id, region.Title);
+            Mvx.IoCProvider.Resolve<IRegionService>().ChangeSelectedRegion(region.Id, region.Title);
 		}
 
         public async Task ChangeNotifications(bool enabled, CancellationToken cancellationToken)
@@ -111,9 +111,9 @@ namespace AppRopio.Base.Settings.Core.ViewModels.Services
 			try
 			{
                 if (enabled)
-                    await Mvx.Resolve<IPushService>().RegisterDevice(AppSettings.PushToken, cancellationToken);
+                    await Mvx.IoCProvider.Resolve<IPushService>().RegisterDevice(AppSettings.PushToken, cancellationToken);
                 else
-                    await Mvx.Resolve<IPushService>().RegisterDevice(string.Empty, cancellationToken);
+                    await Mvx.IoCProvider.Resolve<IPushService>().RegisterDevice(string.Empty, cancellationToken);
 			}
             catch (OperationCanceledException)
             {

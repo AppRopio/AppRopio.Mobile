@@ -8,9 +8,10 @@ using AppRopio.Base.Settings.Core.Models.Bundle;
 using AppRopio.Base.Settings.Core.ViewModels.Messages;
 using AppRopio.Base.Settings.Core.ViewModels.Regions.Items;
 using AppRopio.Base.Settings.Core.ViewModels.Services;
-using MvvmCross.ViewModels;
 using MvvmCross;
+using MvvmCross.Commands;
 using MvvmCross.Plugin.Messenger;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.Base.Settings.Core.ViewModels.Regions
 {
@@ -59,7 +60,7 @@ namespace AppRopio.Base.Settings.Core.ViewModels.Regions
 
         #region Services
 
-        protected ISettingsVmService VmService { get { return Mvx.Resolve<ISettingsVmService>(); } }
+        protected ISettingsVmService VmService { get { return Mvx.IoCProvider.Resolve<ISettingsVmService>(); } }
 
         #endregion
 

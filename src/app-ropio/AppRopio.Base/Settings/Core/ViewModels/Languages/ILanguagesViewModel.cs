@@ -16,7 +16,7 @@ using System.Collections.Generic;
 using AppRopio.Base.Core.ViewModels;
 using AppRopio.Base.Core.ViewModels.Search;
 using AppRopio.Base.Settings.Core.ViewModels.Languages.Items;
-using MvvmCross.ViewModels;
+using MvvmCross.Commands;
 
 namespace AppRopio.Base.Settings.Core.ViewModels.Languages
 {
