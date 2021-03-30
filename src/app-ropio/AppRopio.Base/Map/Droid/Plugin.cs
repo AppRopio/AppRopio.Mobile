@@ -1,4 +1,5 @@
 ﻿using AppRopio.Base.Core.Services.ViewLookup;
+using AppRopio.Base.Map.Core;
 using AppRopio.Base.Map.Core.ViewModels.Points;
 using AppRopio.Base.Map.Core.ViewModels.Points.List;
 using AppRopio.Base.Map.Core.ViewModels.Points.Map;
@@ -10,11 +11,15 @@ using MvvmCross.Plugin;
 
 namespace AppRopio.Base.Map.Droid
 {
-    public class Plugin : IMvxPlugin
+    [MvxPlugin]
+    [Preserve(AllMembers = true)]
+    public class Plugin : BasePlugin
     {
-        public void Load()
+        public override void Load()
         {
-            var viewLookupService = Mvx.Resolve<IViewLookupService>();
+            base.Load();
+
+            var viewLookupService = Mvx.IoCProvider.Resolve<IViewLookupService>();
             viewLookupService.Register<IPointsListViewModel>(typeof(PointsListFragment));
             viewLookupService.Register<IPointsMapViewModel>(typeof(PointsMapFragment));
             viewLookupService.Register<IPointAdditionalInfoVM>(typeof(PointAdditionalInfoFragment));
