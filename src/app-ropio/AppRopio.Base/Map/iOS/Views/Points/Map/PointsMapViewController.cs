@@ -22,8 +22,8 @@ namespace AppRopio.Base.Map.iOS.Views.Points.Map
         private nfloat _minInfoBlockTop;
         private nfloat _maxInfoBlockTop;
 
-        protected Models.PointsMap PointsMapTheme { get { return Mvx.Resolve<IMapThemeConfigService>().ThemeConfig.Points.Map; } }
-        protected Models.PointInfo InfoTheme { get { return PointsMapTheme.Info ?? Mvx.Resolve<IMapThemeConfigService>().ThemeConfig.Points.BasePointInfo; } }
+        protected Models.PointsMap PointsMapTheme { get { return Mvx.IoCProvider.Resolve<IMapThemeConfigService>().ThemeConfig.Points.Map; } }
+        protected Models.PointInfo InfoTheme { get { return PointsMapTheme.Info ?? Mvx.IoCProvider.Resolve<IMapThemeConfigService>().ThemeConfig.Points.BasePointInfo; } }
 
         public PointsMapViewController() 
             : base("PointsMapViewController", null)

@@ -5,7 +5,7 @@ using AppRopio.Base.Map.Core.ViewModels.Points.List.Items;
 using AppRopio.Base.Map.iOS.Services;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using MvvmCross;
 using UIKit;
 
@@ -13,8 +13,8 @@ namespace AppRopio.Base.Map.iOS.Views.Points.List.Cells
 {
     public partial class PointCell : MvxTableViewCell
     {
-        protected Models.PointCell CellTheme { get { return Mvx.Resolve<IMapThemeConfigService>().ThemeConfig.Points.List.Cell; } }
-        protected Models.PointInfo InfoTheme { get { return CellTheme.Info ?? Mvx.Resolve<IMapThemeConfigService>().ThemeConfig.Points.BasePointInfo; } }
+        protected Models.PointCell CellTheme { get { return Mvx.IoCProvider.Resolve<IMapThemeConfigService>().ThemeConfig.Points.List.Cell; } }
+        protected Models.PointInfo InfoTheme { get { return CellTheme.Info ?? Mvx.IoCProvider.Resolve<IMapThemeConfigService>().ThemeConfig.Points.BasePointInfo; } }
 
         public static readonly NSString Key = new NSString("PointCell");
         public static readonly UINib Nib = UINib.FromName("PointCell", NSBundle.MainBundle);

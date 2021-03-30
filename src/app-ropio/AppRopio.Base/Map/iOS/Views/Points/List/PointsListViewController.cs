@@ -21,7 +21,7 @@ namespace AppRopio.Base.Map.iOS.Views.Points.List
 
         private UIBarButtonItem _mapBarButton;
 
-        protected Models.PointsList PointsListTheme { get { return Mvx.Resolve<IMapThemeConfigService>().ThemeConfig.Points.List; } }
+        protected Models.PointsList PointsListTheme { get { return Mvx.IoCProvider.Resolve<IMapThemeConfigService>().ThemeConfig.Points.List; } }
 
         public PointsListViewController() 
             : base("PointsListViewController", null)

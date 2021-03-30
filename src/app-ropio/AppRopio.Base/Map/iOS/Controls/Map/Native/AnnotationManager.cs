@@ -3,12 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
-using MapKit;
-using MvvmCross.Binding;
-using MvvmCross.Binding.Attributes;
-using MvvmCross.Platform.Platform;
-using MvvmCross.WeakSubscription;
 using AppRopio.Base.Map.Core.ViewModels.Points.List.Items;
+using MapKit;
+using MvvmCross;
+using MvvmCross.Binding.Attributes;
+using MvvmCross.Logging;
+using MvvmCross.WeakSubscription;
 using UIKit;
 
 namespace AppRopio.Base.Map.iOS.Controls.Map.Native
@@ -138,7 +138,7 @@ namespace AppRopio.Base.Map.iOS.Controls.Map.Native
             }
             _itemsSource = value;
             if (_itemsSource != null && !(_itemsSource is IList))
-                MvxBindingTrace.Trace(MvxTraceLevel.Warning, "Binding to IEnumerable rather than IList - this can be inefficient, especially for large lists");
+                Mvx.IoCProvider.Resolve<IMvxLog>().Warn("Binding to IEnumerable rather than IList - this can be inefficient, especially for large lists");
 
             ReloadAllAnnotations();
 
