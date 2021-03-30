@@ -7,7 +7,7 @@ using AppRopio.Base.Settings.iOS.Services;
 using AppRopio.Models.Settings.Responses;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using MvvmCross;
 using UIKit;
 
@@ -18,7 +18,7 @@ namespace AppRopio.Base.Settings.iOS.Views.Regions.Cell
         public static readonly NSString Key = new NSString("RegionCell");
         public static readonly UINib Nib;
 
-		protected SettingsThemeConfig ThemeConfig { get { return Mvx.Resolve<ISettingsThemeConfigService>().ThemeConfig; } }
+		protected SettingsThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<ISettingsThemeConfigService>().ThemeConfig; } }
 
 		static RegionCell()
         {

@@ -6,7 +6,7 @@ using AppRopio.Base.Settings.iOS.Services;
 using AppRopio.Base.Settings.iOS.Views.Cells.Picker;
 using AppRopio.Base.Settings.iOS.Views.Cells.Switch;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using MvvmCross;
 using UIKit;
 using AppRopio.Base.Settings.Core;
@@ -15,7 +15,7 @@ namespace AppRopio.Base.Settings.iOS.Views.Settings
 {
     public partial class SettingsViewController : CommonViewController<ISettingsViewModel>
     {
-		protected SettingsThemeConfig ThemeConfig { get { return Mvx.Resolve<ISettingsThemeConfigService>().ThemeConfig; } }
+		protected SettingsThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<ISettingsThemeConfigService>().ThemeConfig; } }
 
 		public SettingsViewController() : base("SettingsViewController", null)
         {

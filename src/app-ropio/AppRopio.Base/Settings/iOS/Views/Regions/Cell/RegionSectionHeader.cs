@@ -14,7 +14,7 @@ namespace AppRopio.Base.Settings.iOS.Views.Regions.Cell
         public static readonly NSString Key = new NSString("RegionSectionHeader");
         public static readonly UINib Nib;
 
-		protected SettingsThemeConfig ThemeConfig { get { return Mvx.Resolve<ISettingsThemeConfigService>().ThemeConfig; } }
+		protected SettingsThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<ISettingsThemeConfigService>().ThemeConfig; } }
 
 		static RegionSectionHeader()
         {

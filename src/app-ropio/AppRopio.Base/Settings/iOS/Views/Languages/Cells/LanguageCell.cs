@@ -20,7 +20,7 @@ using AppRopio.Base.Settings.iOS.Models;
 using AppRopio.Base.Settings.iOS.Services;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using MvvmCross;
 using UIKit;
 
@@ -31,7 +31,7 @@ namespace AppRopio.Base.Settings.iOS.Views.Languages.Cells
         public static readonly NSString Key = new NSString("LanguageCell");
         public static readonly UINib Nib;
 
-        protected SettingsThemeConfig ThemeConfig { get { return Mvx.Resolve<ISettingsThemeConfigService>().ThemeConfig; } }
+        protected SettingsThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<ISettingsThemeConfigService>().ThemeConfig; } }
 
         static LanguageCell()
         {
