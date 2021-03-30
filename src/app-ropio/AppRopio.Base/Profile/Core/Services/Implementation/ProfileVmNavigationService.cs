@@ -10,7 +10,7 @@ namespace AppRopio.Base.Profile.Core.Services.Implementation
     {
         #region Services
 
-        protected IAuthNavigationVmService AuthNavigationVmService => Mvx.Resolve<IAuthNavigationVmService>();
+        protected IAuthNavigationVmService AuthNavigationVmService => Mvx.IoCProvider.Resolve<IAuthNavigationVmService>();
 
         #endregion
 
