@@ -12,9 +12,9 @@ namespace AppRopio.Base.Settings.API
         public override void Initialize()
         {
             if (ApiSettings.DebugServiceEnabled)
-                Mvx.RegisterType<ISettingsService>(() => new FakeSettingsService());
+                Mvx.IoCProvider.RegisterType<ISettingsService>(() => new FakeSettingsService());
             else
-                Mvx.RegisterType<ISettingsService>(() => new SettingsService());
+                Mvx.IoCProvider.RegisterType<ISettingsService>(() => new SettingsService());
         }
     }
 }

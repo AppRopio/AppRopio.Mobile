@@ -10,7 +10,7 @@ namespace AppRopio.Base.Settings.API.Services.Fakes
 {
     public class FakeSettingsService : ISettingsService
     {
-        public bool IsRussianCulture => Mvx.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
+        public bool IsRussianCulture => Mvx.IoCProvider.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
 
         private List<RegionGroup> _regions;
 
