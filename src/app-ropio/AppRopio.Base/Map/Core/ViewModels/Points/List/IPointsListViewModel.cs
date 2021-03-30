@@ -1,6 +1,6 @@
 using AppRopio.Base.Core.ViewModels;
 using AppRopio.Base.Core.ViewModels.Search;
-using MvvmCross.ViewModels;
+using MvvmCross.Commands;
 
 namespace AppRopio.Base.Map.Core.ViewModels.Points.List
 {

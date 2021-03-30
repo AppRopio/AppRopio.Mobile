@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using MvvmCross.ViewModels;
+using MvvmCross.Commands;
 
 namespace AppRopio.Base.Map.Core.ViewModels.Points.List
 {

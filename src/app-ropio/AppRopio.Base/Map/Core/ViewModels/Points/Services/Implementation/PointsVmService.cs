@@ -27,9 +27,9 @@ namespace AppRopio.Base.Map.Core.ViewModels.Points.Services.Implementation
 
         #region Services
 
-        protected IPointsService PointsService => Mvx.Resolve<IPointsService>();
+        protected IPointsService PointsService => Mvx.IoCProvider.Resolve<IPointsService>();
 
-        protected ILocationService LocationService => Mvx.Resolve<ILocationService>();
+        protected ILocationService LocationService => Mvx.IoCProvider.Resolve<ILocationService>();
 
         #endregion
 

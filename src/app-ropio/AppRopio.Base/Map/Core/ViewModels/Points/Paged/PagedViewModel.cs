@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using System.Windows.Input;
-using MvvmCross.ViewModels;
-using AppRopio.Base.Core.ViewModels;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using AppRopio.Base.Core.ViewModels;
+using MvvmCross.Commands;
 
 namespace AppRopio.Base.Map.Core.ViewModels.Points.Paged
 {

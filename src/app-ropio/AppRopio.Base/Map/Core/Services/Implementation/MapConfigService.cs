@@ -26,7 +26,7 @@ namespace AppRopio.Base.Map.Core.Services.Implementation
         private MapConfig LoadConfigFromJSON()
         {
             var path = Path.Combine(CoreConstants.CONFIGS_FOLDER, MapConstants.CONFIG_NAME);
-            var json = Mvx.Resolve<ISettingsService>().ReadStringFromFile(path);
+            var json = Mvx.IoCProvider.Resolve<ISettingsService>().ReadStringFromFile(path);
             return Newtonsoft.Json.JsonConvert.DeserializeObject<MapConfig>(json);
         }
 
