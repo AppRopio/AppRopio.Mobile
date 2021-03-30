@@ -4,7 +4,7 @@ using AppRopio.Base.Profile.Core.ViewModels.MenuHeader;
 using CoreGraphics;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using MvvmCross.ViewModels;
 using MvvmCross.Views;
 using MvvmCross.Platforms.Ios.Views;
@@ -13,6 +13,7 @@ using UIKit;
 using MvvmCross;
 using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.Profile.Core;
+using FFImageLoading.Cross;
 
 namespace AppRopio.Base.Profile.iOS.View.MenuHeader
 {
@@ -152,8 +153,10 @@ namespace AppRopio.Base.Profile.iOS.View.MenuHeader
 
         protected virtual void BindUserImage(UIImageView imageView, MvxFluentBindingDescriptionSet<ProfileMenuHeaderView, ProfileMenuHeaderViewModel> set)
         {
-            var imageLoader = new MvxImageViewLoader(() => imageView);
-            set.Bind(imageLoader).To(vm => vm.UserPhotoUrl);
+            if (imageView is MvxCachedImageView mvxImageView)
+            {
+                set.Bind(mvxImageView).For(i => i.ImagePath).To(vm => vm.UserPhotoUrl);
+            }
             set.Bind(imageView).For("Visibility").To(vm => vm.UserSignedIn).WithConversion("Visibility");
         }
 
