@@ -10,7 +10,7 @@ namespace AppRopio.Analytics.Firebase.Core
     {
         public override void Initialize()
         {
-            Mvx.RegisterSingleton<INotificationsSubscriber>(new NotificationsSubscriber());
+            Mvx.IoCProvider.RegisterSingleton<INotificationsSubscriber>(new NotificationsSubscriber());
         }
     }
 }
