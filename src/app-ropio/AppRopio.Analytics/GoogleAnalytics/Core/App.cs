@@ -9,9 +9,9 @@ namespace AppRopio.Analytics.GoogleAnalytics.Core
     {
         public override void Initialize()
         {
-            Mvx.RegisterSingleton<IGAConfigService>(new GAConfigService());
+            Mvx.IoCProvider.RegisterSingleton<IGAConfigService>(new GAConfigService());
 
-            Mvx.RegisterSingleton<INotificationsSubscriber>(new NotificationsSubscriber());
+            Mvx.IoCProvider.RegisterSingleton<INotificationsSubscriber>(new NotificationsSubscriber());
         }
     }
 }

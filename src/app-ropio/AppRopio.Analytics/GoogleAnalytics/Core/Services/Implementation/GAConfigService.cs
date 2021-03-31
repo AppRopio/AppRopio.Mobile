@@ -33,7 +33,7 @@ namespace AppRopio.Analytics.GoogleAnalytics.Core.Services.Implementation
         private GAConfig LoadConfigFromJSON()
         {
             var path = Path.Combine(CoreConstants.CONFIGS_FOLDER, SettingsName);
-            var json = Mvx.Resolve<ISettingsService>().ReadStringFromFile(path);
+            var json = Mvx.IoCProvider.Resolve<ISettingsService>().ReadStringFromFile(path);
             return Newtonsoft.Json.JsonConvert.DeserializeObject<GAConfig>(json);
         }
 

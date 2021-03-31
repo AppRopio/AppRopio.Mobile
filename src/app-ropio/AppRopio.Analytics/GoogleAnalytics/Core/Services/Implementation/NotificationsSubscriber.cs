@@ -21,9 +21,9 @@ namespace AppRopio.Analytics.GoogleAnalytics.Core.Services.Implementation
 
         #region Services
 
-        protected IMvxMessenger Messenger { get { return Mvx.Resolve<IMvxMessenger>(); } }
+        protected IMvxMessenger Messenger { get { return Mvx.IoCProvider.Resolve<IMvxMessenger>(); } }
 
-        protected IGoogleAnalytics GoogleAnalytics { get { return Mvx.CanResolve<IGoogleAnalytics>() ? Mvx.Resolve<IGoogleAnalytics>() : null; } }
+        protected IGoogleAnalytics GoogleAnalytics { get { return Mvx.IoCProvider.CanResolve<IGoogleAnalytics>() ? Mvx.IoCProvider.Resolve<IGoogleAnalytics>() : null; } }
 
         #endregion
         
@@ -31,7 +31,7 @@ namespace AppRopio.Analytics.GoogleAnalytics.Core.Services.Implementation
 
         public NotificationsSubscriber()
         {
-            Mvx.CallbackWhenRegistered<IMvxMessenger>(() =>
+            Mvx.IoCProvider.CallbackWhenRegistered<IMvxMessenger>(() =>
             {
                 _screenToken = Messenger.Subscribe<ScreenAnalyticsMessage>(HandleScreenNotification);
                 _eventToken = Messenger.Subscribe<EventAnalyticsMessage>(HandleEventNotification);
