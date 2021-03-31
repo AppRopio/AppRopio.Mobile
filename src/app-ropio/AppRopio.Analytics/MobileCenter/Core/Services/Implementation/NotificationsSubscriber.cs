@@ -21,9 +21,9 @@ namespace AppRopio.Analytics.MobileCenter.Core.Services.Implementation
 
         #region Services
 
-        protected IMvxMessenger Messenger { get { return Mvx.Resolve<IMvxMessenger>(); } }
+        protected IMvxMessenger Messenger { get { return Mvx.IoCProvider.Resolve<IMvxMessenger>(); } }
 
-        protected IMobileCenter MobileCenter { get { return Mvx.CanResolve<IMobileCenter>() ? Mvx.Resolve<IMobileCenter>() : null; } }
+        protected IMobileCenter MobileCenter { get { return Mvx.IoCProvider.CanResolve<IMobileCenter>() ? Mvx.IoCProvider.Resolve<IMobileCenter>() : null; } }
 
         #endregion
 
@@ -31,7 +31,7 @@ namespace AppRopio.Analytics.MobileCenter.Core.Services.Implementation
 
         public NotificationsSubscriber()
         {
-            Mvx.CallbackWhenRegistered<IMvxMessenger>(() =>
+            Mvx.IoCProvider.CallbackWhenRegistered<IMvxMessenger>(() =>
             {
                 _appToken = Messenger.Subscribe<AppAnalyticsMessage>(HandleAppNotification);
                 _screenToken = Messenger.Subscribe<ScreenAnalyticsMessage>(HandleScreenNotification);
@@ -49,7 +49,7 @@ namespace AppRopio.Analytics.MobileCenter.Core.Services.Implementation
             try
             {
                 if (MobileCenter == null)
-                    Mvx.CallbackWhenRegistered<IMobileCenter>(() => MobileCenter.TrackApp(msg.State, msg.Data));
+                    Mvx.IoCProvider.CallbackWhenRegistered<IMobileCenter>(() => MobileCenter.TrackApp(msg.State, msg.Data));
                 else
                     MobileCenter.TrackApp(msg.State, msg.Data);
             }
@@ -61,7 +61,7 @@ namespace AppRopio.Analytics.MobileCenter.Core.Services.Implementation
             try
             {
                 if (MobileCenter == null)
-                    Mvx.CallbackWhenRegistered<IMobileCenter>(() => MobileCenter.TrackScreen(msg.ScreenName, msg.ScreenState, msg.Data));
+                    Mvx.IoCProvider.CallbackWhenRegistered<IMobileCenter>(() => MobileCenter.TrackScreen(msg.ScreenName, msg.ScreenState, msg.Data));
                 else
                     MobileCenter.TrackScreen(msg.ScreenName, msg.ScreenState, msg.Data);
             }
@@ -73,7 +73,7 @@ namespace AppRopio.Analytics.MobileCenter.Core.Services.Implementation
             try
             {
                 if (MobileCenter == null)
-                    Mvx.CallbackWhenRegistered<IMobileCenter>(() => MobileCenter.TrackEvent(msg.Category, msg.Action, msg.Label, msg.Data));
+                    Mvx.IoCProvider.CallbackWhenRegistered<IMobileCenter>(() => MobileCenter.TrackEvent(msg.Category, msg.Action, msg.Label, msg.Data));
                 else
                     MobileCenter.TrackEvent(msg.Category, msg.Action, msg.Label, msg.Data);
             }
@@ -85,7 +85,7 @@ namespace AppRopio.Analytics.MobileCenter.Core.Services.Implementation
             try
             {
                 if (MobileCenter == null)
-                    Mvx.CallbackWhenRegistered<IMobileCenter>(() => MobileCenter.TrackException(msg.Message, msg.StackTrace, msg.Data));
+                    Mvx.IoCProvider.CallbackWhenRegistered<IMobileCenter>(() => MobileCenter.TrackException(msg.Message, msg.StackTrace, msg.Data));
                 else
                     MobileCenter.TrackException(msg.Message, msg.StackTrace, msg.Data);
             }

@@ -10,9 +10,9 @@ namespace AppRopio.Analytics.MobileCenter.Core
     {
         public override void Initialize()
         {
-            Mvx.RegisterSingleton<IMCConfigService>(new MCConfigService());
+            Mvx.IoCProvider.RegisterSingleton<IMCConfigService>(new MCConfigService());
 
-            Mvx.RegisterSingleton<INotificationsSubscriber>(new NotificationsSubscriber());
+            Mvx.IoCProvider.RegisterSingleton<INotificationsSubscriber>(new NotificationsSubscriber());
         }
     }
 }
