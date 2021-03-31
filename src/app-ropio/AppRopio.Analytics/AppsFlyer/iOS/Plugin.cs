@@ -1,21 +1,24 @@
-﻿using System;
-using MvvmCross.Plugin;
-using MvvmCross;
+﻿using AppRopio.Analytics.AppsFlyer.Core;
 using AppRopio.Analytics.AppsFlyer.Core.Services;
 using AppRopio.Analytics.AppsFlyer.iOS.Services;
-using Foundation;
-using System.Collections.Generic;
 using AppsFlyerXamarinBinding;
+using Foundation;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.Analytics.AppsFlyer.iOS
 {
-    public class Plugin : IMvxPlugin
+    [MvxPlugin]
+    [MvvmCross.Preserve(AllMembers = true)]
+    public class Plugin : BasePlugin
     {
         private static CustomAppsFlyerDelegate _trackerDelegate;
 
-        public void Load()
+        public override void Load()
         {
-            var config = Mvx.Resolve<IAFConfigService>().Config;
+            base.Load();
+
+            var config = Mvx.IoCProvider.Resolve<IAFConfigService>().Config;
             
             AppsFlyerTracker.SharedTracker().AppleAppID = config.AppId;
             AppsFlyerTracker.SharedTracker().AppsFlyerDevKey = config.DevKey;
@@ -25,7 +28,7 @@ namespace AppRopio.Analytics.AppsFlyer.iOS
             AppsFlyerTracker.SharedTracker().TrackAppLaunch();
             AppsFlyerTracker.SharedTracker().LoadConversionDataWithDelegate(_trackerDelegate);
             
-            Mvx.RegisterSingleton<IAppsFlyerService>(() => new AppsFlyerService());
+            Mvx.IoCProvider.RegisterSingleton<IAppsFlyerService>(() => new AppsFlyerService());
         }
 
         #region Delegate
@@ -74,8 +77,8 @@ namespace AppRopio.Analytics.AppsFlyer.iOS
 
                 //            if (_launched)
                 //            {
-                //                if (Mvx.CanResolve<IMvxMessenger>() && !AppSettings.FirstRun)
-                //                    Mvx.Resolve<IMvxMessenger>().Publish(new ProductDeeplinkMessage(this, productID));
+                //                if (Mvx.IoCProvider.CanResolve<IMvxMessenger>() && !AppSettings.FirstRun)
+                //                    Mvx.IoCProvider.Resolve<IMvxMessenger>().Publish(new ProductDeeplinkMessage(this, productID));
                 //                else
                 //                    LPSettings.DeeplinkProductId = productID;
                 //            }
