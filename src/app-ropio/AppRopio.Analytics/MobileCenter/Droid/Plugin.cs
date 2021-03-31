@@ -1,15 +1,19 @@
-﻿using System;
+﻿using AppRopio.Analytics.MobileCenter.Core;
 using AppRopio.Analytics.MobileCenter.Core.Services;
 using MvvmCross;
 using MvvmCross.Plugin;
 
 namespace AppRopio.Analytics.MobileCenter.Droid
 {
-    public class Plugin : IMvxPlugin
+    [MvxPlugin]
+    [Preserve(AllMembers = true)]
+    public class Plugin : BasePlugin
     {
-        public void Load()
+        public override void Load()
         {
-            Mvx.RegisterSingleton<IMobileCenter>(new Services.MobileCenter());
+            base.Load();
+
+            Mvx.IoCProvider.RegisterSingleton<IMobileCenter>(new Services.MobileCenter());
         }
     }
 }
