@@ -19,7 +19,7 @@ namespace AppRopio.Analytics.GoogleAnalytics.Droid.Services
 #endif
             gaInstance.SetLocalDispatchPeriod(5);
 
-            Tracker = gaInstance.NewTracker(Mvx.Resolve<IGAConfigService>().Config.AppId);
+            Tracker = gaInstance.NewTracker(Mvx.IoCProvider.Resolve<IGAConfigService>().Config.AppId);
             Tracker.EnableExceptionReporting(true);
             Tracker.EnableAdvertisingIdCollection(false);
             Tracker.EnableAutoActivityTracking(false);

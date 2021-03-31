@@ -1,15 +1,19 @@
-﻿using System;
+﻿using AppRopio.Analytics.GoogleAnalytics.Core;
 using AppRopio.Analytics.GoogleAnalytics.Core.Services;
 using MvvmCross;
 using MvvmCross.Plugin;
 
 namespace AppRopio.Analytics.GoogleAnalytics.Droid
 {
-    public class Plugin : IMvxPlugin
+    [MvxPlugin]
+    [Preserve(AllMembers = true)]
+    public class Plugin : BasePlugin
     {
-        public void Load()
+        public override void Load()
         {
-            Mvx.RegisterSingleton<IGoogleAnalytics>(() => new Services.GoogleAnalytics());
+            base.Load();
+
+            Mvx.IoCProvider.RegisterSingleton<IGoogleAnalytics>(() => new Services.GoogleAnalytics());
         }
     }
 }
