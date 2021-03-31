@@ -10,8 +10,8 @@ namespace AppRopio.Analytics.AppsFlyer.Core
     {
         public override void Initialize()
         {
-            Mvx.CallbackWhenRegistered<IMvxMessenger>(() => Mvx.RegisterSingleton<INotificationsSubscriber>(new NotificationsSubscriber()));
-            Mvx.RegisterSingleton<IAFConfigService>(new AFConfigService());
+            Mvx.IoCProvider.CallbackWhenRegistered<IMvxMessenger>(() => Mvx.IoCProvider.RegisterSingleton<INotificationsSubscriber>(new NotificationsSubscriber()));
+            Mvx.IoCProvider.RegisterSingleton<IAFConfigService>(new AFConfigService());
         }
     }
 }

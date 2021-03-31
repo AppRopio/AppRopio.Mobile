@@ -21,9 +21,9 @@ namespace AppRopio.Analytics.AppsFlyer.Core.Services.Implementation
 
         #region Services
 
-        protected IMvxMessenger Messenger { get { return Mvx.Resolve<IMvxMessenger>(); } }
+        protected IMvxMessenger Messenger { get { return Mvx.IoCProvider.Resolve<IMvxMessenger>(); } }
 
-        protected IAppsFlyerService AppsFlyer { get { return Mvx.Resolve<IAppsFlyerService>(); } }
+        protected IAppsFlyerService AppsFlyer { get { return Mvx.IoCProvider.Resolve<IAppsFlyerService>(); } }
 
         #endregion
 
@@ -31,7 +31,7 @@ namespace AppRopio.Analytics.AppsFlyer.Core.Services.Implementation
 
         public NotificationsSubscriber()
         {
-            Mvx.CallbackWhenRegistered<IMvxMessenger>(() =>
+            Mvx.IoCProvider.CallbackWhenRegistered<IMvxMessenger>(() =>
             {
                 _screenToken = Messenger.Subscribe<ScreenAnalyticsMessage>(HandleScreenNotification);
                 _eventToken = Messenger.Subscribe<EventAnalyticsMessage>(HandleEventNotification);
