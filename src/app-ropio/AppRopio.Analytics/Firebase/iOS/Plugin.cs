@@ -1,17 +1,20 @@
-﻿using System;
-using MvvmCross.Plugin;
-using MvvmCross;
+﻿using System.IO;
+using AppRopio.Analytics.Firebase.Core;
 using AppRopio.Analytics.Firebase.Core.Services;
 using AppRopio.Analytics.Firebase.iOS.Services;
-using System.IO;
 using Foundation;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.Analytics.Firebase.iOS
 {
-    public class Plugin : IMvxPlugin
+    [MvxPlugin]
+    [MvvmCross.Preserve(AllMembers = true)]
+    public class Plugin : BasePlugin
     {
-        public void Load()
+        public override void Load()
         {
+            base.Load();
             try
             {
                 string plistPath = Path.Combine(NSBundle.MainBundle.BundlePath, "GoogleService-Info.plist");
@@ -19,7 +22,7 @@ namespace AppRopio.Analytics.Firebase.iOS
             }
             catch {}
 
-            Mvx.RegisterSingleton<IFirebaseService>(() => new FirebaseService());
+            Mvx.IoCProvider.RegisterSingleton<IFirebaseService>(() => new FirebaseService());
         }
     }
 }
