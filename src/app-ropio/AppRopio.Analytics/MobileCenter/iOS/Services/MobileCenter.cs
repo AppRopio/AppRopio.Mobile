@@ -2,7 +2,7 @@
 using AppRopio.Analytics.MobileCenter.Core.Services;
 using AppRopio.Base.Core.Models.Analytics;
 using MvvmCross;
-using MvvmCross.Platform.Core;
+using MvvmCross.Base;
 
 namespace AppRopio.Analytics.MobileCenter.iOS.Services
 {
@@ -12,18 +12,18 @@ namespace AppRopio.Analytics.MobileCenter.iOS.Services
 
         public MobileCenter()
         {
-            Mvx.CallbackWhenRegistered<IMCConfigService>(service =>
+            Mvx.IoCProvider.CallbackWhenRegistered<IMCConfigService>(() =>
             {
-                Mvx.CallbackWhenRegistered<IMvxMainThreadDispatcher>(s => 
+                Mvx.IoCProvider.CallbackWhenRegistered<IMvxMainThreadAsyncDispatcher>(() => 
                 {
-                    s.RequestMainThreadAction(() => 
+                    Mvx.IoCProvider.Resolve<IMvxMainThreadAsyncDispatcher>().ExecuteOnMainThreadAsync(() => 
                     {
-                        Microsoft.AppCenter.AppCenter.Start(service.AppCenterKey_IOS,
+                        Microsoft.AppCenter.AppCenter.Start(Mvx.IoCProvider.Resolve<IMCConfigService>().AppCenterKey_IOS,
                                                             typeof(Microsoft.AppCenter.Analytics.Analytics), typeof(Microsoft.AppCenter.Crashes.Crashes));
 
                         Microsoft.AppCenter.Crashes.Crashes.GetErrorAttachments = (Microsoft.AppCenter.Crashes.ErrorReport report) =>
                         {
-                            var bytes = Mvx.Resolve<Base.Core.Services.Log.ILogService>().CachedLog();
+                            var bytes = Mvx.IoCProvider.Resolve<Base.Core.Services.Log.ILogService>().CachedLog();
                             return new Microsoft.AppCenter.Crashes.ErrorAttachmentLog[]
                             {
                                 Microsoft.AppCenter.Crashes.ErrorAttachmentLog.AttachmentWithBinary(bytes, "log.txt", "text")
