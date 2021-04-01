@@ -1,16 +1,20 @@
-﻿using System;
-using AppRopio.Base.Core.Services.ViewLookup;
+﻿using AppRopio.Base.Core.Services.ViewLookup;
+using AppRopio.Payments.YandexKassa.Core;
 using AppRopio.Payments.YandexKassa.Core.ViewModels.YandexKassa;
 using MvvmCross;
 using MvvmCross.Plugin;
 
 namespace AppRopio.Payments.YandexKassa.iOS
 {
-    public class Plugin : IMvxPlugin
+    [MvxPlugin]
+    [Preserve(AllMembers = true)]
+    public class Plugin : BasePlugin
     {
-        public void Load()
+        public override void Load()
         {
-            var viewLookupService = Mvx.Resolve<IViewLookupService>();
+            base.Load();
+
+            var viewLookupService = Mvx.IoCProvider.Resolve<IViewLookupService>();
 
             viewLookupService.Register<IYandexKassaViewModel, YandexKassaViewController>();
         }
