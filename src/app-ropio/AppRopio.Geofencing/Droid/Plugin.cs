@@ -1,4 +1,4 @@
-﻿using System;
+﻿using AppRopio.Geofencing.Core;
 using AppRopio.Geofencing.Core.Service;
 using AppRopio.Geofencing.Droid.Services;
 using MvvmCross;
@@ -6,13 +6,17 @@ using MvvmCross.Plugin;
 
 namespace AppRopio.Geofencing.Droid
 {
-    public class Plugin : IMvxPlugin
+    [MvxPlugin]
+    [Preserve(AllMembers = true)]
+    public class Plugin : BasePlugin
     {
-        public void Load()
+        public override void Load()
         {
-            Mvx.RegisterSingleton<IGeofencingService>(() => new GeofencingService());
+            base.Load();
 
-            Mvx.Resolve<IGeofencingService>().Start();
+            Mvx.IoCProvider.RegisterSingleton<IGeofencingService>(() => new GeofencingService());
+
+            Mvx.IoCProvider.Resolve<IGeofencingService>().Start();
         }
     }
 }
