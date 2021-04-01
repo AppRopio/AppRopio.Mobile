@@ -12,9 +12,9 @@ namespace AppRopio.Payments.API
         public override void Initialize()
         {
             if (ApiSettings.DebugServiceEnabled)
-                Mvx.RegisterSingleton<IPaymentService>(() => new PaymentFakeService());
+                Mvx.IoCProvider.RegisterSingleton<IPaymentService>(() => new PaymentFakeService());
             else
-                Mvx.RegisterSingleton<IPaymentService>(() => new PaymentService());
+                Mvx.IoCProvider.RegisterSingleton<IPaymentService>(() => new PaymentService());
         }
     }
 }
