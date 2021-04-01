@@ -489,10 +489,7 @@
       <Version>13.0.1</Version>
     </PackageReference>
     <PackageReference Include="PCLCrypto">
-      <Version>2.0.147</Version>
-    </PackageReference>
-    <PackageReference Include="PInvoke.NCrypt">
-      <Version>0.5.111</Version>
+      <Version>2.1.40-alpha</Version>
     </PackageReference>
     <PackageReference Include="Realm">
       <Version>3.2.1</Version>
