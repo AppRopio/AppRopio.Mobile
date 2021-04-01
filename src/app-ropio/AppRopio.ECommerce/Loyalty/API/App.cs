@@ -12,9 +12,9 @@ namespace AppRopio.ECommerce.Loyalty.API
         public override void Initialize()
         {
             if (ApiSettings.DebugServiceEnabled)
-                Mvx.RegisterSingleton<IPromoService>(() => new PromoFakeService());
+                Mvx.IoCProvider.RegisterSingleton<IPromoService>(() => new PromoFakeService());
             else
-                Mvx.RegisterSingleton<IPromoService>(() => new PromoService());
+                Mvx.IoCProvider.RegisterSingleton<IPromoService>(() => new PromoService());
         }
     }
 }
