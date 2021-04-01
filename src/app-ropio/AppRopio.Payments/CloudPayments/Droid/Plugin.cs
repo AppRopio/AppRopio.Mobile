@@ -1,5 +1,4 @@
-﻿using AppRopio.Base.Core.Services.ViewLookup;
-using AppRopio.Payments.CloudPayments.Core.Services;
+﻿using AppRopio.Payments.CloudPayments.Core;
 using AppRopio.Payments.CloudPayments.Droid.Services.Implementation;
 using AppRopio.Payments.Core.Services;
 using MvvmCross;
@@ -7,12 +6,16 @@ using MvvmCross.Plugin;
 
 namespace AppRopio.Payments.CloudPayments.Droid
 {
-    public class Plugin : IMvxPlugin
+    [MvxPlugin]
+    [Preserve(AllMembers = true)]
+    public class Plugin : BasePlugin
     {
-        public void Load()
+        public override void Load()
         {
-            //Mvx.RegisterSingleton<INativePaymentService>(() => new NativePaymentService());
-            Mvx.RegisterSingleton<IPayment3DSService>(() => new CloudPayments3DSService());
+            base.Load();
+
+            //Mvx.IoCProvider.RegisterSingleton<INativePaymentService>(() => new NativePaymentService());
+            Mvx.IoCProvider.RegisterSingleton<IPayment3DSService>(() => new CloudPayments3DSService());
         }
     }
 }
