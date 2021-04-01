@@ -1,25 +1,30 @@
 ﻿using System;
-using MvvmCross.Plugin;
+using AppRopio.Beacons.Core;
 using AppRopio.Beacons.Core.Services;
-using MvvmCross;
 using AppRopio.Beacons.iOS.Services;
-using MvvmCross.Platform.Platform;
+using MvvmCross;
+using MvvmCross.Logging;
+using MvvmCross.Plugin;
 
 namespace AppRopio.Beacons.iOS
 {
-    public class Plugin : IMvxPlugin
+    [MvxPlugin]
+    [Preserve(AllMembers = true)]
+    public class Plugin : BasePlugin
     {
-        public void Load()
+        public override void Load()
         {
-            Mvx.RegisterSingleton<IBeaconsScanService>(() => new BeaconsScanService());
+            base.Load();
+
+            Mvx.IoCProvider.RegisterSingleton<IBeaconsScanService>(() => new BeaconsScanService());
 
             try
             {
-                Mvx.Resolve<IBeaconsScanService>().Start();
+                Mvx.IoCProvider.Resolve<IBeaconsScanService>().Start();
             }
             catch (Exception ex)
             {
-                MvxTrace.TaggedTrace("Beacons", ex.BuildAllMessagesAndStackTrace());
+                Mvx.IoCProvider.Resolve<IMvxLog>().Trace($"Beacons: {ex.BuildAllMessagesAndStackTrace()}");
             }
         }
     }
