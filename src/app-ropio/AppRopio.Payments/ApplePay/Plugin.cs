@@ -1,13 +1,15 @@
-﻿using System;
+﻿using MvvmCross;
 using MvvmCross.Plugin;
 
 namespace AppRopio.Payments.ApplePay
 {
-	public class Plugin : IMvxPlugin
-	{
-		public void Load()
-		{
-
+    [MvxPlugin]
+    [Preserve(AllMembers = true)]
+    public class Plugin : BasePlugin
+    {
+        public override void Load()
+        {
+            base.Load();
 		}
 	}
 }

@@ -60,7 +60,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ApplePayService.cs" />
-    <Compile Include="PluginLoader.cs" />
+    <Compile Include="BasePlugin.cs" />
     <Compile Include="App.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Services\IApplePayConfigService.cs" />
