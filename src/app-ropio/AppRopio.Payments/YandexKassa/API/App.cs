@@ -9,7 +9,7 @@ namespace AppRopio.Payments.YandexKassa.API
 	{
 		public override void Initialize()
 		{
-			Mvx.RegisterType<IYandexKassaService>(() => new YandexKassaService());
+			Mvx.IoCProvider.RegisterType<IYandexKassaService>(() => new YandexKassaService());
 		}
 	}
 }
