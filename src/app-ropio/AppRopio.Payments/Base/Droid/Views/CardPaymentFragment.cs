@@ -25,7 +25,7 @@ namespace AppRopio.Payments.Droid.Views
 
             WebView = view.FindViewById<WebView>(Resource.Id.webView);
 
-            var threeDSService = Mvx.Resolve<IPayment3DSService>();
+            var threeDSService = Mvx.IoCProvider.Resolve<IPayment3DSService>();
             threeDSService.SetWebView(WebView);
         }
     }
