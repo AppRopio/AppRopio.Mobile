@@ -11,7 +11,7 @@ namespace AppRopio.Payments.Core.Services.Implementation
     {
         public virtual Task OrderPaid(string orderId)
         {
-            return Task.Run (() => Mvx.Resolve<IMvxMessenger>().Publish(new OrderPaidMessage(this, orderId)));
+            return Task.Run (() => Mvx.IoCProvider.Resolve<IMvxMessenger>().Publish(new OrderPaidMessage(this, orderId)));
         }
     }
 }

@@ -8,8 +8,9 @@ using AppRopio.Payments.Core.Bundle;
 using AppRopio.Payments.Core.Services;
 using AppRopio.Payments.Core.Utils;
 using AppRopio.Payments.Core.ViewModels.Services;
-using MvvmCross.ViewModels;
 using MvvmCross;
+using MvvmCross.Commands;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.Payments.Core.ViewModels
 {
@@ -97,9 +98,9 @@ namespace AppRopio.Payments.Core.ViewModels
 
         #region Services
 
-        protected ICardPaymentVmService VmService { get { return Mvx.Resolve<ICardPaymentVmService>(); } }
+        protected ICardPaymentVmService VmService { get { return Mvx.IoCProvider.Resolve<ICardPaymentVmService>(); } }
 
-        protected IPaymentsVmService PaymentsVmService { get { return Mvx.Resolve<IPaymentsVmService>(); } }
+        protected IPaymentsVmService PaymentsVmService { get { return Mvx.IoCProvider.Resolve<IPaymentsVmService>(); } }
 
         #endregion
 
