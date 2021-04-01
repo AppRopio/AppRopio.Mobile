@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using CoreLocation;
 using Foundation;
-using MvvmCross.Platform.Platform;
 using UIKit;
 
 namespace AppRopio.Geofencing.iOS.Utils
