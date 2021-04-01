@@ -9,7 +9,7 @@ namespace AppRopio.Payments.CloudPayments.API
     {
         public override void Initialize()
         {
-            Mvx.RegisterType<ICloudPaymentsService>(() => new CloudPaymentsService());
+            Mvx.IoCProvider.RegisterType<ICloudPaymentsService>(() => new CloudPaymentsService());
         }
     }
 }
