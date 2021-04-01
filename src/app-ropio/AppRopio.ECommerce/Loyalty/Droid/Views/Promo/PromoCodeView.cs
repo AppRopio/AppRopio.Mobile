@@ -115,7 +115,7 @@ namespace AppRopio.ECommerce.Loyalty.Droid.Views.Promo
                 var view = this.BindingInflate(Resource.Layout.app_loyalty_promocode, this, true);
 
                 var editText = view.FindViewById<EditText>(Resource.Id.app_loyalty_promocode_editText);
-                editText.SetOnKeyListener(new AROnEnterKeyListener(Mvx.Resolve<IMvxAndroidCurrentTopActivity>()?.Activity, HandleAction));
+                editText.SetOnKeyListener(new AROnEnterKeyListener(Mvx.IoCProvider.Resolve<IMvxAndroidCurrentTopActivity>()?.Activity, HandleAction));
                 editText.ClearFocus();
             }
 
