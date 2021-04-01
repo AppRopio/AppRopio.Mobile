@@ -12,19 +12,21 @@ namespace AppRopio.ECommerce.Loyalty.Core
     {
         public override void Initialize()
         {
-            Mvx.RegisterSingleton<ILoyaltyConfigService>(() => new LoyaltyConfigService());
-            Mvx.RegisterSingleton<IPromoVmService>(() => new PromoVmService());
+            new API.App().Initialize();
+
+            Mvx.IoCProvider.RegisterSingleton<ILoyaltyConfigService>(() => new LoyaltyConfigService());
+            Mvx.IoCProvider.RegisterSingleton<IPromoVmService>(() => new PromoVmService());
 
             #region VMs registration
 
-            var vmLookupService = Mvx.Resolve<IViewModelLookupService>();
+            var vmLookupService = Mvx.IoCProvider.Resolve<IViewModelLookupService>();
             vmLookupService.Register<IPromoCodeViewModel>(typeof(PromoCodeViewModel));
 
             #endregion
 
             #region RouterSubscriber registration
 
-            var routerService = Mvx.Resolve<IRouterService>();
+            var routerService = Mvx.IoCProvider.Resolve<IRouterService>();
 
             #endregion
         }

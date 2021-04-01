@@ -12,7 +12,7 @@ namespace AppRopio.ECommerce.Loyalty.Core.ViewModels.Promo.Services
         #region Services
 
         private IPromoService _apiService;
-        public IPromoService ApiService => _apiService ?? (_apiService = Mvx.Resolve<IPromoService>());
+        public IPromoService ApiService => _apiService ?? (_apiService = Mvx.IoCProvider.Resolve<IPromoService>());
 
         #endregion
 

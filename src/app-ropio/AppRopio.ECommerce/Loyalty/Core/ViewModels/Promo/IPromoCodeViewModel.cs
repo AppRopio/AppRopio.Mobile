@@ -1,4 +1,5 @@
 ﻿using AppRopio.ECommerce.Loyalty.Abstractions;
+using MvvmCross.Commands;
 using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Loyalty.Core.ViewModels.Promo

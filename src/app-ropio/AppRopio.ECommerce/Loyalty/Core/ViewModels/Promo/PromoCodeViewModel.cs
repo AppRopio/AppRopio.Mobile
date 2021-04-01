@@ -1,10 +1,11 @@
 ﻿using System;
-using MvvmCross.ViewModels;
-using MvvmCross.Plugin.Messenger;
 using System.Threading.Tasks;
+using AppRopio.Base.Core.ViewModels;
 using AppRopio.ECommerce.Loyalty.Core.ViewModels.Promo.Services;
 using MvvmCross;
-using AppRopio.Base.Core.ViewModels;
+using MvvmCross.Commands;
+using MvvmCross.Plugin.Messenger;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Loyalty.Core.ViewModels.Promo
 {
@@ -50,8 +51,7 @@ namespace AppRopio.ECommerce.Loyalty.Core.ViewModels.Promo
 
         #region Services
 
-        protected IPromoVmService VmService { get { return Mvx.Resolve<IPromoVmService>(); } }
-        protected IMvxMessenger Messenger { get { return Mvx.Resolve<IMvxMessenger>(); } }
+        protected IPromoVmService VmService { get { return Mvx.IoCProvider.Resolve<IPromoVmService>(); } }
 
         #endregion
 
