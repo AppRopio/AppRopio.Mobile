@@ -27,7 +27,7 @@ namespace AppRopio.Payments.Best2Pay.Core.Services.Implementation
 		private Best2PayConfig LoadConfigFromJSON()
 		{
             var path = Path.Combine(CoreConstants.CONFIGS_FOLDER, Best2PayConstants.CONFIG_NAME);
-			var json = Mvx.Resolve<ISettingsService>().ReadStringFromFile(path);
+			var json = Mvx.IoCProvider.Resolve<ISettingsService>().ReadStringFromFile(path);
             return Newtonsoft.Json.JsonConvert.DeserializeObject<Best2PayConfig>(json);
 		}
 

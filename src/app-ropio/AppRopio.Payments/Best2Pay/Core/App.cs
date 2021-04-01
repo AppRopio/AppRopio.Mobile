@@ -1,12 +1,11 @@
-﻿using System;
-using AppRopio.Base.Core.Services.Router;
+﻿using AppRopio.Base.Core.Services.Router;
 using AppRopio.Base.Core.Services.ViewModelLookup;
 using AppRopio.Payments.Best2Pay.Core.Services;
 using AppRopio.Payments.Best2Pay.Core.Services.Implementation;
 using AppRopio.Payments.Best2Pay.Core.ViewModels.Best2Pay;
 using AppRopio.Payments.Best2Pay.Core.ViewModels.Best2Pay.Services;
-using MvvmCross.ViewModels;
 using MvvmCross;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.Payments.Best2Pay.Core
 {
@@ -14,19 +13,23 @@ namespace AppRopio.Payments.Best2Pay.Core
 	{
 		public override void Initialize()
 		{
-            Mvx.RegisterSingleton<IBest2PayPaymentNavigationVmService>(() => new Best2PayPaymentNavigationVmService());
-            Mvx.RegisterSingleton<IBest2PayVmService>(() => new Best2PayVmService());
-            Mvx.RegisterSingleton<IBest2PayConfigService>(() => new Best2PayConfigService());
+            new API.App().Initialize();
+
+			new Payments.API.App().Initialize();
+
+			Mvx.IoCProvider.RegisterSingleton<IBest2PayPaymentNavigationVmService>(() => new Best2PayPaymentNavigationVmService());
+            Mvx.IoCProvider.RegisterSingleton<IBest2PayVmService>(() => new Best2PayVmService());
+            Mvx.IoCProvider.RegisterSingleton<IBest2PayConfigService>(() => new Best2PayConfigService());
 
 			#region VMs registration
 
-			var vmLookupService = Mvx.Resolve<IViewModelLookupService>();
+			var vmLookupService = Mvx.IoCProvider.Resolve<IViewModelLookupService>();
             vmLookupService.Register<IBest2PayViewModel, Best2PayViewModel>();
 
 			#endregion
 
 			//register start point for current navigation module
-			var routerService = Mvx.Resolve<IRouterService>();
+			var routerService = Mvx.IoCProvider.Resolve<IRouterService>();
 			routerService.Register<IBest2PayViewModel>(new Best2PayRouterSubscriber());
 		}
 	}

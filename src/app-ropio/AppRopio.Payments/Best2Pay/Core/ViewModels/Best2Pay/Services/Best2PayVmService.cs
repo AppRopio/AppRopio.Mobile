@@ -22,11 +22,11 @@ namespace AppRopio.Payments.Best2Pay.Core.ViewModels.Best2Pay.Services
 
         protected API.Best2Pay _best2Pay;
 
-		protected IPaymentService ApiService { get { return Mvx.Resolve<IPaymentService>(); } }
+		protected IPaymentService ApiService { get { return Mvx.IoCProvider.Resolve<IPaymentService>(); } }
 
-        protected Best2PayConfig Config { get { return Mvx.Resolve<IBest2PayConfigService>().Config; } }
+        protected Best2PayConfig Config { get { return Mvx.IoCProvider.Resolve<IBest2PayConfigService>().Config; } }
 
-        protected ILocalizationService LocalizationService { get { return Mvx.Resolve<ILocalizationService>(); } }
+        protected ILocalizationService LocalizationService { get { return Mvx.IoCProvider.Resolve<ILocalizationService>(); } }
 
         private string _forwardUrl;
         private string _forwardVerifyUrl;
@@ -34,7 +34,7 @@ namespace AppRopio.Payments.Best2Pay.Core.ViewModels.Best2Pay.Services
 
         public Best2PayVmService()
         {
-            var platform = Mvx.Resolve<IDeviceService>().Platform;
+            var platform = Mvx.IoCProvider.Resolve<IDeviceService>().Platform;
 
             _ePayment = Config.EPayment;
             _forwardUrl = platform == PlatformType.iPhone || platform == PlatformType.iPad ? @"https://best2pay.ru/mobileAPI/iOS" : @"https://best2pay.ru/mobileAPI/Android";
@@ -75,7 +75,7 @@ namespace AppRopio.Payments.Best2Pay.Core.ViewModels.Best2Pay.Services
                 phone = phone,
                 reference = orderId,
                 description = LocalizationService.GetLocalizableString(Best2PayConstants.RESX_NAME, "Payment_OrderNumber") + orderId,
-                deviceID = Mvx.Resolve<IDeviceService>().Token
+                deviceID = Mvx.IoCProvider.Resolve<IDeviceService>().Token
 			};
 
             _best2Pay.RegisterOrder(registerRequest, (r, e) =>

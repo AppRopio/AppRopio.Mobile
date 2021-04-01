@@ -12,7 +12,7 @@ namespace AppRopio.Payments.Best2Pay.Core.Services.Implementation
 			var paymentBundle = bundle as PaymentOrderBundle;
 			if (paymentBundle != null)
 			{
-				Mvx.Resolve<IBest2PayPaymentNavigationVmService>().NavigateToInAppPayment(paymentBundle);
+				Mvx.IoCProvider.Resolve<IBest2PayPaymentNavigationVmService>().NavigateToInAppPayment(paymentBundle);
 				return true;
 			}
 
