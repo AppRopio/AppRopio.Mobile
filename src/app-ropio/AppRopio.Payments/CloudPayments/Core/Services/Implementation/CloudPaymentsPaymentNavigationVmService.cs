@@ -1,4 +1,4 @@
-using AppRopio.Base.Core.ViewModels.Services;
+﻿using AppRopio.Base.Core.ViewModels.Services;
 using AppRopio.Models.Payments.Responses;
 using AppRopio.Payments.CloudPayments.Core.ViewModels.CloudPayments.Services;
 using AppRopio.Payments.Core.Bundle;
@@ -32,9 +32,9 @@ namespace AppRopio.Payments.CloudPayments.Core.Services.Implementation
 
         private async void ProcessNativePayment(PaymentOrderBundle bundle)
         {
-            var vmService = Mvx.Resolve<ICloudPaymentsVmService>();
-            var paymentsVmService = Mvx.Resolve<IPaymentsVmService>();
-            var nativePaymentService = Mvx.Resolve<INativePaymentService>();
+            var vmService = Mvx.IoCProvider.Resolve<ICloudPaymentsVmService>();
+            var paymentsVmService = Mvx.IoCProvider.Resolve<IPaymentsVmService>();
+            var nativePaymentService = Mvx.IoCProvider.Resolve<INativePaymentService>();
 
             var paymentInfo = await vmService.GetPaymentInfo(bundle.OrderId);
             var paymentToken = await nativePaymentService.Pay(paymentInfo);
