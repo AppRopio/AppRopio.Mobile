@@ -1,20 +1,25 @@
-﻿using MvvmCross;
+﻿using AppRopio.Base.Core.Services.ViewLookup;
+using AppRopio.ECommerce.Loyalty.Core;
+using AppRopio.ECommerce.Loyalty.Core.ViewModels.Promo;
 using AppRopio.ECommerce.Loyalty.iOS.Services;
 using AppRopio.ECommerce.Loyalty.iOS.Services.Implementation;
-using MvvmCross.Plugin;
-using AppRopio.Base.Core.Services.ViewLookup;
-using AppRopio.ECommerce.Loyalty.Core.ViewModels.Promo;
 using AppRopio.ECommerce.Loyalty.iOS.Views.Promo;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.ECommerce.Loyalty.iOS
 {
-    public class Plugin : IMvxPlugin
+    [MvxPlugin]
+    [Preserve(AllMembers = true)]
+    public class Plugin : BasePlugin
     {
-        public void Load()
+        public override void Load()
         {
-            Mvx.RegisterSingleton<ILoyaltyThemeConfigService>(() => new LoyaltyThemeConfigService());
+            base.Load();
 
-            var viewLookupService = Mvx.Resolve<IViewLookupService>();
+            Mvx.IoCProvider.RegisterSingleton<ILoyaltyThemeConfigService>(() => new LoyaltyThemeConfigService());
+
+            var viewLookupService = Mvx.IoCProvider.Resolve<IViewLookupService>();
             viewLookupService.Register<IPromoCodeViewModel>(typeof(PromoCodeView));
             viewLookupService.Register<PromoCodeViewModel>(typeof(PromoCodeView)); //для интеграции в другие модули
         }

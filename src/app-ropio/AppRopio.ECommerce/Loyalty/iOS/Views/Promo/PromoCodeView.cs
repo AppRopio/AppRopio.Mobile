@@ -10,7 +10,7 @@ using AppRopio.ECommerce.Loyalty.iOS.Services;
 using CoreGraphics;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using MvvmCross.ViewModels;
 using MvvmCross.Views;
 using MvvmCross.Platforms.Ios.Views;
@@ -27,7 +27,7 @@ namespace AppRopio.ECommerce.Loyalty.iOS.Views.Promo
         public static readonly NSString Key = new NSString("PromoCodeView");
         public static readonly UINib Nib = UINib.FromName("PromoCodeView", NSBundle.MainBundle);
 
-        protected Models.Promo PromoTheme { get { return Mvx.Resolve<ILoyaltyThemeConfigService>().ThemeConfig.Promo; } }
+        protected Models.Promo PromoTheme { get { return Mvx.IoCProvider.Resolve<ILoyaltyThemeConfigService>().ThemeConfig.Promo; } }
 
         #region Properties
 
@@ -53,7 +53,7 @@ namespace AppRopio.ECommerce.Loyalty.iOS.Views.Promo
 
         #endregion
 
-        protected ILocalizationService LocalizationService => Mvx.Resolve<ILocalizationService>();
+        protected ILocalizationService LocalizationService => Mvx.IoCProvider.Resolve<ILocalizationService>();
 
         #region Constructor
 
