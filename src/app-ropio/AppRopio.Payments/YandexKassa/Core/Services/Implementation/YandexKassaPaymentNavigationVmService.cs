@@ -35,9 +35,9 @@ namespace AppRopio.Payments.YandexKassa.Core.Services.Implementation
 
         private async void ProcessNativePayment(PaymentOrderBundle bundle)
         {
-            var vmService = Mvx.Resolve<IYandexKassaVmService>();
-            var paymentsVmService = Mvx.Resolve<IPaymentsVmService>();
-            var nativePaymentService = Mvx.Resolve<INativePaymentService>();
+            var vmService = Mvx.IoCProvider.Resolve<IYandexKassaVmService>();
+            var paymentsVmService = Mvx.IoCProvider.Resolve<IPaymentsVmService>();
+            var nativePaymentService = Mvx.IoCProvider.Resolve<INativePaymentService>();
 
             var paymentInfo = await vmService.GetPaymentInfo(bundle.OrderId);
             var paymentToken = await nativePaymentService.Pay(paymentInfo);

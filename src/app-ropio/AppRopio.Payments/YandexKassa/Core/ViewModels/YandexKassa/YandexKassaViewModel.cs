@@ -3,16 +3,16 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using AppRopio.Base.Core.Extentions;
 using AppRopio.Base.Core.Models.Navigation;
-using AppRopio.Base.Core.PresentationHints;
 using AppRopio.Base.Core.ViewModels;
-using AppRopio.Models.Basket.Responses.Enums;
+using AppRopio.Base.Core.ViewModels.Services;
 using AppRopio.Models.Payments.Responses;
 using AppRopio.Payments.Core.Bundle;
 using AppRopio.Payments.YandexKassa.Core.Models;
 using AppRopio.Payments.YandexKassa.Core.Services;
 using AppRopio.Payments.YandexKassa.Core.ViewModels.YandexKassa.Services;
-using MvvmCross.ViewModels;
 using MvvmCross;
+using MvvmCross.Commands;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.Payments.YandexKassa.Core.ViewModels.YandexKassa
 {
@@ -32,9 +32,11 @@ namespace AppRopio.Payments.YandexKassa.Core.ViewModels.YandexKassa
 
         #endregion
 
-        protected IYandexKassaVmService VmService { get { return Mvx.Resolve<IYandexKassaVmService>(); } }
+        protected IYandexKassaVmService VmService { get { return Mvx.IoCProvider.Resolve<IYandexKassaVmService>(); } }
 
-        protected YandexKassaConfig Config { get { return Mvx.Resolve<IYandexKassaConfigService>().Config; } }
+        protected IBaseVmNavigationService NavigationService { get { return Mvx.IoCProvider.Resolve<IBaseVmNavigationService>(); } }
+
+        protected YandexKassaConfig Config { get { return Mvx.IoCProvider.Resolve<IYandexKassaConfigService>().Config; } }
 
         protected string OrderId { get; set; }
 
@@ -140,7 +142,7 @@ namespace AppRopio.Payments.YandexKassa.Core.ViewModels.YandexKassa
         {
             UserDialogs.Error($"{LocalizationService.GetLocalizableString(YandexKassaConstants.RESX_NAME, "PaymentFailed_OrderNumber")}{OrderId}");
 
-            Close(this);
+            NavigationService.Close(this);
         }
     }
 }

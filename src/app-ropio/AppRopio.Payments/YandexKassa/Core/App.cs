@@ -13,20 +13,23 @@ namespace AppRopio.Payments.YandexKassa.Core
 	{
 		public override void Initialize()
 		{
-            Mvx.RegisterSingleton<IYandexKassaVmService>(() => new YandexKassaVmService());
-            Mvx.RegisterSingleton<IYandexKassaConfigService>(() => new YandexKassaConfigService());
-            Mvx.RegisterSingleton<IYandexKassaPaymentNavigationVmService>(() => new YandexKassaPaymentNavigationVmService());
+            Mvx.IoCProvider.RegisterSingleton<IYandexKassaVmService>(() => new YandexKassaVmService());
+            Mvx.IoCProvider.RegisterSingleton<IYandexKassaConfigService>(() => new YandexKassaConfigService());
+            Mvx.IoCProvider.RegisterSingleton<IYandexKassaPaymentNavigationVmService>(() => new YandexKassaPaymentNavigationVmService());
 
 			#region VMs registration
 
-			var vmLookupService = Mvx.Resolve<IViewModelLookupService>();
+			var vmLookupService = Mvx.IoCProvider.Resolve<IViewModelLookupService>();
 			vmLookupService.Register<IYandexKassaViewModel, YandexKassaViewModel>();
 
 			#endregion
 
 			//register start point for current navigation module
-			var routerService = Mvx.Resolve<IRouterService>();
+			var routerService = Mvx.IoCProvider.Resolve<IRouterService>();
 			routerService.Register<IYandexKassaViewModel>(new YandexKassaRouterSubscriber());
+
+			new API.App().Initialize();
+			new Payments.API.App().Initialize();
 		}
 	}
 }

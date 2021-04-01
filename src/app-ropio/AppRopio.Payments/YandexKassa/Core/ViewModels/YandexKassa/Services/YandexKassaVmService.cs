@@ -15,11 +15,11 @@ namespace AppRopio.Payments.YandexKassa.Core.ViewModels.YandexKassa.Services
 {
     public class YandexKassaVmService : BaseVmService, IYandexKassaVmService
     {
-        protected IPaymentService ApiService { get { return Mvx.Resolve<IPaymentService>(); } }
+        protected IPaymentService ApiService { get { return Mvx.IoCProvider.Resolve<IPaymentService>(); } }
 
-		protected IPaymentsVmService PaymentsVmService { get { return Mvx.Resolve<IPaymentsVmService>(); } }
+		protected IPaymentsVmService PaymentsVmService { get { return Mvx.IoCProvider.Resolve<IPaymentsVmService>(); } }
 
-		protected YandexKassaConfig Config { get { return Mvx.Resolve<IYandexKassaConfigService>().Config; } }
+		protected YandexKassaConfig Config { get { return Mvx.IoCProvider.Resolve<IYandexKassaConfigService>().Config; } }
 
 		public async Task<PaymentOrderInfo> GetPaymentInfo(string orderId)
 		{
@@ -78,7 +78,7 @@ namespace AppRopio.Payments.YandexKassa.Core.ViewModels.YandexKassa.Services
 
 		public async Task<bool> PayWithApplePay(string paymentData, decimal amount, string currency, string orderId)
 		{
-            var service = Mvx.Resolve<IYandexKassaService>();
+            var service = Mvx.IoCProvider.Resolve<IYandexKassaService>();
             await service.DsrpWallet(Config.ShopId, orderId, amount, currency, paymentData);
             return false;
 		}
