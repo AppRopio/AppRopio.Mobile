@@ -4,12 +4,13 @@ using System.Linq;
 using AltBeaconOrg.BoundBeacon;
 using AltBeaconOrg.BoundBeacon.Powersave;
 using AltBeaconOrg.BoundBeacon.Startup;
+using AltBeaconOrg.BoundBeacon.Utils;
 using Android.App;
 using Android.OS;
 using Android.Runtime;
-using MvvmCross.Platform.Platform;
-using Org.Altbeacon.Beacon.Utils;
 using AppRopio.Beacons.Core.Services.Implementation;
+using MvvmCross;
+using MvvmCross.Logging;
 
 namespace AppRopio.Beacons.Droid
 {
@@ -55,7 +56,7 @@ namespace AppRopio.Beacons.Droid
 
         public void StartRagingBeacons()
         {
-            MvxTrace.TaggedTrace(TAG, "StartRagingBeacons");
+            Mvx.IoCProvider.Resolve<IMvxLog>().Trace($"{TAG}: StartRagingBeacons");
 
             if (_rangeNotifier != null)
                 return;
@@ -144,12 +145,12 @@ namespace AppRopio.Beacons.Droid
 
         public virtual void DidDetermineStateForRegion(int state, AltBeaconOrg.BoundBeacon.Region region)
         {
-            MvxTrace.TaggedTrace(TAG, "DidDetermineStateForRegion {2}. State: {0}, SinceBoot: {1}", state, _haveDetectedBeaconsSinceBoot, region.UniqueId);
+            Mvx.IoCProvider.Resolve<IMvxLog>().Trace($"{TAG}: DidDetermineStateForRegion {region.UniqueId}. State: {state}, SinceBoot: {_haveDetectedBeaconsSinceBoot}");
         }
 
         public virtual void DidEnterRegion(AltBeaconOrg.BoundBeacon.Region region)
         {
-            MvxTrace.TaggedTrace(TAG, "DidEnterRegion {1}. SinceBoot: {0}", _haveDetectedBeaconsSinceBoot, region.UniqueId);
+            Mvx.IoCProvider.Resolve<IMvxLog>().Trace($"{TAG}: DidEnterRegion {region.UniqueId}. SinceBoot: {_haveDetectedBeaconsSinceBoot}");
 
             if (!_haveDetectedBeaconsSinceBoot)
                 _haveDetectedBeaconsSinceBoot = true;
@@ -157,7 +158,7 @@ namespace AppRopio.Beacons.Droid
 
         public virtual void DidExitRegion(AltBeaconOrg.BoundBeacon.Region region)
         {
-            MvxTrace.TaggedTrace(TAG, "DidExitRegion");
+            Mvx.IoCProvider.Resolve<IMvxLog>().Trace($"{TAG}: DidExitRegion");
         }
 
         #endregion
@@ -175,7 +176,7 @@ namespace AppRopio.Beacons.Droid
             _beaconManager.UpdateScanPeriods();
 
             _rangeNotifier.DidRangeBeaconsInRegionComplete += RangingBeaconsInRegion;
-            _beaconManager.SetRangeNotifier(_rangeNotifier);
+            _beaconManager.AddRangeNotifier(_rangeNotifier);
 
             _rangingRegion = new AltBeaconOrg.BoundBeacon.Region(BEACONS_REGION_HEADER, null, null, null);
             _beaconManager.StartRangingBeaconsInRegion(_rangingRegion);
@@ -187,7 +188,7 @@ namespace AppRopio.Beacons.Droid
 
         protected virtual async void RangingBeaconsInRegion(object sender, ICollection<AltBeaconOrg.BoundBeacon.Beacon> beacons)
         {
-            MvxTrace.TaggedTrace(TAG, "RangingBeaconsInRegion");
+            Mvx.IoCProvider.Resolve<IMvxLog>().Trace($"{TAG}: RangingBeaconsInRegion");
 
             if (beacons != null && beacons.Count > 0)
             {

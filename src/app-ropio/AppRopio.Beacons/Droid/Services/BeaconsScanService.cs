@@ -13,7 +13,7 @@ namespace AppRopio.Beacons.Droid.Services
 
         protected Activity TopActivity
         {
-            get { return Mvx.Resolve<IMvxAndroidCurrentTopActivity>().Activity; }
+            get { return Mvx.IoCProvider.Resolve<IMvxAndroidCurrentTopActivity>().Activity; }
         }
 
         #endregion
