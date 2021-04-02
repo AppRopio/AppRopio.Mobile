@@ -6,7 +6,7 @@ using AppRopio.ECommerce.Marked.API.Services;
 using AppRopio.ECommerce.Marked.Core.ViewModels.Marked;
 using AppRopio.ECommerce.Products.Core.Messages;
 using MvvmCross;
-using MvvmCross.Platform.Platform;
+using MvvmCross.Logging;
 using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.ECommerce.Marked.Core.Services.Implementation
@@ -17,16 +17,16 @@ namespace AppRopio.ECommerce.Marked.Core.Services.Implementation
         private MvxSubscriptionToken _cardToken;
 
         private IMarkedService _apiService;
-        protected IMarkedService ApiService => _apiService ?? (_apiService = Mvx.Resolve<IMarkedService>());
+        protected IMarkedService ApiService => _apiService ?? (_apiService = Mvx.IoCProvider.Resolve<IMarkedService>());
 
-        protected IMvxMessenger Messenger => Mvx.Resolve<IMvxMessenger>();
+        protected IMvxMessenger Messenger => Mvx.IoCProvider.Resolve<IMvxMessenger>();
 
         public MarkedObservableService()
         {
             _listToken = Messenger.Subscribe<ProductMarkedQuantityChangedMessage>(OnMarkedChanged);
             _cardToken = Messenger.Subscribe<ProductCardMarkedMessage>(OnMarkedChanged);
 
-            Mvx.CallbackWhenRegistered<IMarkedService>(() => OnMarkedChanged(null));
+            Mvx.IoCProvider.CallbackWhenRegistered<IMarkedService>(() => OnMarkedChanged(null));
         }
 
         private void OnMarkedChanged(MvxMessage msg)
@@ -36,14 +36,14 @@ namespace AppRopio.ECommerce.Marked.Core.Services.Implementation
                 try
                 {
                     var quantity = await ApiService.GetQuantity();
-                    if (Mvx.CanResolve<IMvxMessenger>() && Messenger.HasSubscriptionsFor<ModulesInteractionMessage<int>>())
+                    if (Mvx.IoCProvider.CanResolve<IMvxMessenger>() && Messenger.HasSubscriptionsFor<ModulesInteractionMessage<int>>())
                         Messenger.Publish(new ModulesInteractionMessage<int>(this, quantity) { Type = typeof(IMarkedViewModel) });
                     else
                     {
                         Timer timer = null;
                         timer = new Timer((state) =>
                         {
-                            if (timer != null && Mvx.CanResolve<IMvxMessenger>() && Messenger.HasSubscriptionsFor<ModulesInteractionMessage<int>>())
+                            if (timer != null && Mvx.IoCProvider.CanResolve<IMvxMessenger>() && Messenger.HasSubscriptionsFor<ModulesInteractionMessage<int>>())
                             {
                                 Messenger.Publish(new ModulesInteractionMessage<int>(this, quantity) { Type = typeof(IMarkedViewModel) });
                                 timer?.Dispose();
@@ -54,7 +54,7 @@ namespace AppRopio.ECommerce.Marked.Core.Services.Implementation
                 }
                 catch (Exception ex)
                 {
-                    MvxTrace.TaggedTrace(MvxTraceLevel.Warning, this.GetType().FullName, ex.BuildAllMessagesAndStackTrace());
+                    Mvx.IoCProvider.Resolve<IMvxLog>().Warn($"{this.GetType().FullName}: {ex.BuildAllMessagesAndStackTrace()}");
                 }
             });
         }

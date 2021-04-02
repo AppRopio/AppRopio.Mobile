@@ -15,7 +15,7 @@ namespace AppRopio.ECommerce.Marked.Core.ViewModels.Marked.Services
     {
 		#region Services
 
-		protected IMarkedService ApiService { get { return Mvx.Resolve<IMarkedService>(); } }
+		protected IMarkedService ApiService { get { return Mvx.IoCProvider.Resolve<IMarkedService>(); } }
 
         #endregion
 
