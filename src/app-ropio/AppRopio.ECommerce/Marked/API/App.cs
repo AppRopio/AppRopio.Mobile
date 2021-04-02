@@ -10,9 +10,9 @@ namespace AppRopio.ECommerce.Marked.API
         public override void Initialize()
         {
             if (ApiSettings.DebugServiceEnabled)
-                Mvx.RegisterType<IMarkedService>(() => new Services.Fakes.FakeMarkedSerivce());
+                Mvx.IoCProvider.RegisterType<IMarkedService>(() => new Services.Fakes.FakeMarkedSerivce());
             else
-                Mvx.RegisterType<IMarkedService>(() => new MarkedService());
+                Mvx.IoCProvider.RegisterType<IMarkedService>(() => new MarkedService());
         }
     }
 }

@@ -12,7 +12,7 @@ namespace AppRopio.ECommerce.Marked.API.Services.Fakes
 {
     public class FakeMarkedSerivce : IMarkedService
     {
-        public bool IsRussianCulture => Mvx.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
+        public bool IsRussianCulture => Mvx.IoCProvider.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
 
         public async Task<List<MarkedProduct>> GetMarkedProducts(int count, int offset = 0)
         {
