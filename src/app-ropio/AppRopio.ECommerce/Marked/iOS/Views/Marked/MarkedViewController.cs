@@ -33,7 +33,7 @@ namespace AppRopio.ECommerce.Marked.iOS.Views.Marked
 
         #region Protected
 
-        protected override ProductsThemeConfig ThemeConfig { get { return Mvx.Resolve<IMarkedThemeConfigService>().ThemeConfig; } }
+        protected override ProductsThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IMarkedThemeConfigService>().ThemeConfig; } }
 
         #region InitializationControls
 
