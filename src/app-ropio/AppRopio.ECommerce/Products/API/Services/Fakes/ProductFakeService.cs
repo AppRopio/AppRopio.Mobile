@@ -11,7 +11,7 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
 {
     public class ProductFakeService : IProductService
     {
-        public bool IsRussianCulture => Mvx.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
+        public bool IsRussianCulture => Mvx.IoCProvider.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
 
         List<Product> _products;
 

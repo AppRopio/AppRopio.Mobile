@@ -12,17 +12,17 @@ namespace AppRopio.ECommerce.Products.API
         {
             if (ApiSettings.DebugServiceEnabled)
             {
-                Mvx.RegisterType<IBannersService>(() => new BannersFakeService());
-                Mvx.RegisterType<ICategoriesService>(() => new CategoriesFakeService());
-                Mvx.RegisterType<IProductService>(() => new ProductFakeService());
-                Mvx.RegisterType<IContentSearchService>(() => new ContentSearchFakeService());
+                Mvx.IoCProvider.RegisterType<IBannersService>(() => new BannersFakeService());
+                Mvx.IoCProvider.RegisterType<ICategoriesService>(() => new CategoriesFakeService());
+                Mvx.IoCProvider.RegisterType<IProductService>(() => new ProductFakeService());
+                Mvx.IoCProvider.RegisterType<IContentSearchService>(() => new ContentSearchFakeService());
             }
             else
             {
-                Mvx.RegisterType<IBannersService>(() => new BannersService());
-                Mvx.RegisterType<ICategoriesService>(() => new CategoriesService());
-                Mvx.RegisterType<IProductService>(() => new ProductService());
-                Mvx.RegisterType<IContentSearchService>(() => new ContentSearchService());
+                Mvx.IoCProvider.RegisterType<IBannersService>(() => new BannersService());
+                Mvx.IoCProvider.RegisterType<ICategoriesService>(() => new CategoriesService());
+                Mvx.IoCProvider.RegisterType<IProductService>(() => new ProductService());
+                Mvx.IoCProvider.RegisterType<IContentSearchService>(() => new ContentSearchService());
             }
         }
     }

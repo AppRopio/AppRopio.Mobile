@@ -9,7 +9,7 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
 {
     public class ContentSearchFakeService : IContentSearchService
     {
-        public bool IsRussianCulture => Mvx.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
+        public bool IsRussianCulture => Mvx.IoCProvider.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
 
         public async Task<List<Autocomplete>> LoadAutocompletes(string searchText, CancellationToken token)
         {
