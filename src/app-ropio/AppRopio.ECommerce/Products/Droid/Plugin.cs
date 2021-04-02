@@ -1,4 +1,5 @@
 ﻿using AppRopio.Base.Core.Services.ViewLookup;
+using AppRopio.ECommerce.Products.Core;
 using AppRopio.ECommerce.Products.Core.Models;
 using AppRopio.ECommerce.Products.Core.Services;
 using AppRopio.ECommerce.Products.Core.ViewModels;
@@ -26,13 +27,17 @@ using MvvmCross.Plugin;
 
 namespace AppRopio.ECommerce.Products.Droid
 {
-    public class Plugin : IMvxPlugin
+    [MvxPlugin]
+    [Preserve(AllMembers = true)]
+    public class Plugin : BasePlugin
     {
-        public void Load()
+        public override void Load()
         {
-            var viewLookupService = Mvx.Resolve<IViewLookupService>();
+            base.Load();
 
-            var config = Mvx.Resolve<IProductConfigService>().Config;
+            var viewLookupService = Mvx.IoCProvider.Resolve<IViewLookupService>();
+
+            var config = Mvx.IoCProvider.Resolve<IProductConfigService>().Config;
             switch (config.CategoriesType)
             {
                 case CategoriesType.StepByStep:

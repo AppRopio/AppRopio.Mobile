@@ -8,6 +8,8 @@ namespace AppRopio.ECommerce.Products.Droid.Views.ProductCard
 {
     public class ProductCardTemplateSelector : IARFlatGroupTemplateSelector
     {
+        public int ItemTemplateId { get; set; }
+
         public virtual int GetFooterViewType(object forItemObject)
         {
             throw new System.NotImplementedException();

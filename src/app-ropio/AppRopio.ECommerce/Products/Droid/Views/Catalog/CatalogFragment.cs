@@ -80,8 +80,8 @@ namespace AppRopio.ECommerce.Products.Droid.Views.Catalog
         {
             if (!_headerInitialized)
             {
-                var config = Mvx.Resolve<IProductConfigService>().Config;
-                var viewLookupService = Mvx.Resolve<IViewLookupService>();
+                var config = Mvx.IoCProvider.Resolve<IProductConfigService>().Config;
+                var viewLookupService = Mvx.IoCProvider.Resolve<IViewLookupService>();
                 if (config.Header != null && viewLookupService.IsRegistered(config.Header.TypeName))
                 {
                     if (Activator.CreateInstance(viewLookupService.Resolve(config.Header.TypeName), Context) is IMvxAndroidView headerView)

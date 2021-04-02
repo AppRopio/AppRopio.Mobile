@@ -217,8 +217,8 @@ namespace AppRopio.ECommerce.Products.Droid.Views.ProductCard
 
         protected virtual void SetupBasketLayoutIfExist(FrameLayout basketLayout)
         {
-            var viewLookupService = Mvx.Resolve<IViewLookupService>();
-            var productConfigService = Mvx.Resolve<IProductConfigService>();
+            var viewLookupService = Mvx.IoCProvider.Resolve<IViewLookupService>();
+            var productConfigService = Mvx.IoCProvider.Resolve<IProductConfigService>();
 
             var config = productConfigService.Config;
 

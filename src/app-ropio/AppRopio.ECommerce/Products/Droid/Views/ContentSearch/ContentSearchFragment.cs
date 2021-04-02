@@ -73,7 +73,7 @@ namespace AppRopio.ECommerce.Products.Droid.Views.ContentSearch
 
         protected virtual void AddSearchContentFragment()
         {
-            var viewType = Mvx.Resolve<IViewLookupService>().Resolve<IContentSearchInternalViewModel>();
+            var viewType = Mvx.IoCProvider.Resolve<IViewLookupService>().Resolve<IContentSearchInternalViewModel>();
 
             var fragmentName = Java.Lang.Class.FromType(viewType).Name;
 
@@ -88,7 +88,7 @@ namespace AppRopio.ECommerce.Products.Droid.Views.ContentSearch
 
         protected virtual void RemoveSearchContentFragment()
         {
-            var viewType = Mvx.Resolve<IViewLookupService>().Resolve<IContentSearchInternalViewModel>();
+            var viewType = Mvx.IoCProvider.Resolve<IViewLookupService>().Resolve<IContentSearchInternalViewModel>();
 
             var fragmentName = Java.Lang.Class.FromType(viewType).Name;
 
