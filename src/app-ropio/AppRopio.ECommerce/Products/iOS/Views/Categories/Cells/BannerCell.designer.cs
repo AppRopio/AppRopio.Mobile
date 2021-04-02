@@ -14,7 +14,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Categories.Cells
     partial class BannerCell
     {
         [Outlet]
-        UIKit.UIImageView _image { get; set; }
+        FFImageLoading.Cross.MvxCachedImageView _image { get; set; }
 
         void ReleaseDesignerOutlets ()
         {

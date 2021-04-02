@@ -13,7 +13,7 @@ using AppRopio.ECommerce.Products.iOS.Views.Categories.Cells;
 using AppRopio.ECommerce.Products.iOS.Views.Categories.StepByStep.Cells;
 using AppRopio.ECommerce.Products.iOS.Views.Categories.SupplementaryView;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using MvvmCross.Platforms.Ios.Views;
 using MvvmCross;
 using UIKit;
@@ -63,10 +63,10 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Categories.StepByStep
             if (ViewModel == null)
                 return;
 
-            var config = Mvx.Resolve<IProductConfigService>().Config;
-            if (config.Basket?.CartIndicator != null && Mvx.Resolve<IViewLookupService>().IsRegistered(config.Basket?.CartIndicator.TypeName))
+            var config = Mvx.IoCProvider.Resolve<IProductConfigService>().Config;
+            if (config.Basket?.CartIndicator != null && Mvx.IoCProvider.Resolve<IViewLookupService>().IsRegistered(config.Basket?.CartIndicator.TypeName))
             {
-                var cartIndicatorView = ViewModel.CartIndicatorVM == null ? null : Mvx.Resolve<IMvxIosViewCreator>().CreateView(ViewModel.CartIndicatorVM) as UIView;
+                var cartIndicatorView = ViewModel.CartIndicatorVM == null ? null : Mvx.IoCProvider.Resolve<IMvxIosViewCreator>().CreateView(ViewModel.CartIndicatorVM) as UIView;
 
                 if (cartIndicatorView != null)
                 {

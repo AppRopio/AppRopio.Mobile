@@ -6,7 +6,7 @@ using AppRopio.ECommerce.Products.iOS.Models;
 using AppRopio.ECommerce.Products.iOS.Services;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using MvvmCross;
 using UIKit;
 
@@ -16,7 +16,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.Switch
     {
         public const float SWITCH_HEIGHT = 52;
 
-        protected ProductsThemeConfig ThemeConfig => Mvx.Resolve<IProductsThemeConfigService>().ThemeConfig;
+        protected ProductsThemeConfig ThemeConfig => Mvx.IoCProvider.Resolve<IProductsThemeConfigService>().ThemeConfig;
 
         public static readonly NSString Key = new NSString("PDSwitchCell");
         public static readonly UINib Nib;

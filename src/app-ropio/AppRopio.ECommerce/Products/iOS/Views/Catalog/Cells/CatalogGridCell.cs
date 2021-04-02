@@ -9,21 +9,22 @@ using AppRopio.ECommerce.Products.Core.Services;
 using AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Items;
 using AppRopio.ECommerce.Products.iOS.Models;
 using AppRopio.ECommerce.Products.iOS.Services;
+using FFImageLoading.Cross;
 using Foundation;
-using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Binding;
 using MvvmCross;
+using MvvmCross.Binding.BindingContext;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using UIKit;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
 {
     public partial class CatalogGridCell : MvxCollectionViewCell
     {
-        protected virtual ProductsConfig Config { get { return Mvx.Resolve<IProductConfigService>().Config; } }
+        protected virtual ProductsConfig Config { get { return Mvx.IoCProvider.Resolve<IProductConfigService>().Config; } }
 
-        protected virtual ProductsThemeConfig ThemeConfig { get { return Mvx.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
+        protected virtual ProductsThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
 
-        protected ILocalizationService LocalizationService => Mvx.Resolve<ILocalizationService>();
+        protected ILocalizationService LocalizationService => Mvx.IoCProvider.Resolve<ILocalizationService>();
 
         public static NSString Key = new NSString("CatalogGridCell");
         public static UINib Nib = UINib.FromName("CatalogGridCell", NSBundle.MainBundle);
@@ -150,13 +151,13 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
             if (image == null)
                 return;
 
-            var imageLoader = new MvxImageViewLoader(() => image)
+            if (image is MvxCachedImageView imageView)
             {
-                DefaultImagePath = $"res:{ThemeConfig.Products.ProductCell.Image.Path}",
-                ErrorImagePath = $"res:{ThemeConfig.Products.ProductCell.Image.Path}"
-            };
+                imageView.LoadingPlaceholderImagePath = $"res:{ThemeConfig.Products.ProductCell.Image.Path}";
+                imageView.ErrorPlaceholderImagePath = $"res:{ThemeConfig.Products.ProductCell.Image.Path}";
 
-            set.Bind(imageLoader).To(vm => vm.ImageUrl);
+                set.Bind(imageView).For(i => i.ImagePath).To(vm => vm.ImageUrl);
+            }
         }
 
         protected virtual void BindName(UILabel name, MvxFluentBindingDescriptionSet<CatalogGridCell, ICatalogItemVM> set)

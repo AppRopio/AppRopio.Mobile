@@ -9,7 +9,7 @@ using AppRopio.ECommerce.Products.iOS.Services;
 using CoreGraphics;
 using Foundation;
 using MvvmCross.Binding.Extensions;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using MvvmCross;
 using UIKit;
 
@@ -20,7 +20,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Categories.Cataloged.ViewSources
         private UIView _tabIndicator;
         private bool _manuallySelected;
 
-        protected ProductsThemeConfig ThemeConfig { get { return Mvx.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
+        protected ProductsThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
 
         private int _selectedIndex;
         public int SelectedIndex

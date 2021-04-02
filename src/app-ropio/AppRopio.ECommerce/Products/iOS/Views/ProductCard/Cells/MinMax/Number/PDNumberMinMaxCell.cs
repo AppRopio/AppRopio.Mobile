@@ -69,7 +69,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.MinMax.Number
         protected virtual void SetupFromLabel(UILabel fromLabel)
         {
             fromLabel.SetupStyle(ThemeConfig.ProductDetails.DetailsCell.MinMax.Label);
-            fromLabel.Text = Mvx.Resolve<ILocalizationService>().GetLocalizableString(ProductsConstants.RESX_NAME, "ProductCard_From");
+            fromLabel.Text = Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString(ProductsConstants.RESX_NAME, "ProductCard_From");
         }
 
         protected virtual void SetupFromField(UITextField fromField)
@@ -82,7 +82,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.MinMax.Number
         protected virtual void SetupToLabel(UILabel toLabel)
         {
             toLabel.SetupStyle(ThemeConfig.ProductDetails.DetailsCell.MinMax.Label);
-            toLabel.Text = Mvx.Resolve<ILocalizationService>().GetLocalizableString(ProductsConstants.RESX_NAME, "ProductCard_To");
+            toLabel.Text = Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString(ProductsConstants.RESX_NAME, "ProductCard_To");
         }
 
         protected virtual void SetupToField(UITextField toField)

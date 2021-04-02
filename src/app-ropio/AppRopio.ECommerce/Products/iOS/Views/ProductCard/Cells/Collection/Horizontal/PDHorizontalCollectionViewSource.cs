@@ -1,4 +1,4 @@
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.ViewSources;
 using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.Collection.Items;
@@ -14,7 +14,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.Collection.Hor
 {
     public class PDHorizontalCollectionViewSource : BaseCollectionViewSource
     {
-        protected ProductsThemeConfig ThemeConfig { get { return Mvx.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
+        protected ProductsThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
 
         public PDHorizontalCollectionViewSource(UICollectionView collectionView)
             : base(collectionView)

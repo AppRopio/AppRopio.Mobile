@@ -24,10 +24,10 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Categories.Cataloged
 
         protected void SetupBasketCartIndicator()
         {
-            var config = Mvx.Resolve<IProductConfigService>().Config;
-            if (config.Basket?.CartIndicator != null && Mvx.Resolve<IViewLookupService>().IsRegistered(config.Basket?.CartIndicator.TypeName))
+            var config = Mvx.IoCProvider.Resolve<IProductConfigService>().Config;
+            if (config.Basket?.CartIndicator != null && Mvx.IoCProvider.Resolve<IViewLookupService>().IsRegistered(config.Basket?.CartIndicator.TypeName))
             {
-                var cartIndicatorView = ViewModel.CartIndicatorVM == null ? null : Mvx.Resolve<IMvxIosViewCreator>().CreateView(ViewModel.CartIndicatorVM) as UIView;
+                var cartIndicatorView = ViewModel.CartIndicatorVM == null ? null : Mvx.IoCProvider.Resolve<IMvxIosViewCreator>().CreateView(ViewModel.CartIndicatorVM) as UIView;
 
                 if (cartIndicatorView != null)
                 {

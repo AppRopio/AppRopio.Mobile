@@ -13,13 +13,13 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Categories.StepByStep.Cells
 	partial class SSCategoryCell
 	{
 		[Outlet]
-		UIKit.UIImageView _backgroundImage { get; set; }
+		FFImageLoading.Cross.MvxCachedImageView _backgroundImage { get; set; }
 
 		[Outlet]
 		UIKit.UIView _gradientView { get; set; }
 
 		[Outlet]
-		UIKit.UIImageView _icon { get; set; }
+		FFImageLoading.Cross.MvxCachedImageView _icon { get; set; }
 
 		[Outlet]
 		AppRopio.Base.iOS.Controls.ARLabel _name { get; set; }

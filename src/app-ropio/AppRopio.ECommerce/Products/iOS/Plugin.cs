@@ -1,4 +1,5 @@
-using AppRopio.Base.Core.Services.ViewLookup;
+﻿using AppRopio.Base.Core.Services.ViewLookup;
+using AppRopio.ECommerce.Products.Core;
 using AppRopio.ECommerce.Products.Core.Models;
 using AppRopio.ECommerce.Products.Core.Services;
 using AppRopio.ECommerce.Products.Core.ViewModels;
@@ -25,19 +26,22 @@ using AppRopio.ECommerce.Products.iOS.Views.ProductTextContent;
 using AppRopio.ECommerce.Products.iOS.Views.ProductWebContent;
 using MvvmCross;
 using MvvmCross.Plugin;
-using AppRopio.Base.Core.Services.Localization;
 
 namespace AppRopio.ECommerce.Products.iOS
 {
-    public class Plugin : IMvxPlugin
+    [MvxPlugin]
+    [Preserve(AllMembers = true)]
+    public class Plugin : BasePlugin
     {
-        public void Load()
+        public override void Load()
         {
-            Mvx.RegisterSingleton<IProductsThemeConfigService>(() => new ProductsThemeConfigService());
+            base.Load();
 
-            var viewLookupService = Mvx.Resolve<IViewLookupService>();
+            Mvx.IoCProvider.RegisterSingleton<IProductsThemeConfigService>(() => new ProductsThemeConfigService());
 
-            var config = Mvx.Resolve<IProductConfigService>().Config;
+            var viewLookupService = Mvx.IoCProvider.Resolve<IViewLookupService>();
+
+            var config = Mvx.IoCProvider.Resolve<IProductConfigService>().Config;
             switch (config.CategoriesType)
             {
                 case CategoriesType.StepByStep:

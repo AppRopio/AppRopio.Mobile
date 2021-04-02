@@ -7,7 +7,7 @@ using AppRopio.ECommerce.Products.iOS.Services;
 using AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.Collection.Vertical.Cells;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using MvvmCross;
 using UIKit;
 
@@ -15,7 +15,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.Collection.Ver
 {
     public partial class PDVerticalCollectionCell : MvxTableViewCell
     {
-        protected ProductsThemeConfig ThemeConfig { get { return Mvx.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
+        protected ProductsThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
 
         public const float VERTICAL_COLLECTION_TITLE_HEIGHT = 44;
         public const float VERTICAL_COLLECTION_ITEM_HEIGHT = 44;

@@ -4,7 +4,7 @@ using AppRopio.ECommerce.Products.Core.ViewModels.Categories.Items;
 using AppRopio.ECommerce.Products.iOS.Models;
 using AppRopio.ECommerce.Products.iOS.Services;
 using Foundation;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using MvvmCross;
 using UIKit;
 
@@ -12,7 +12,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Categories.StepByStep
 {
     public class SSCategoriesTableViewSource : MvxSimpleTableViewSource
     {
-        protected virtual ProductsThemeConfig ThemeConfig { get { return Mvx.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
+        protected virtual ProductsThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
 
         public SSCategoriesTableViewSource(UITableView tableView, NSString key1, NSString key2)
             : base (tableView, key1, key2)

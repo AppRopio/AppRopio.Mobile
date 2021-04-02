@@ -7,12 +7,12 @@ using AppRopio.ECommerce.Products.iOS.Models;
 using AppRopio.ECommerce.Products.iOS.Services;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using MvvmCross.ViewModels;
 using MvvmCross.Views;
 using MvvmCross.Platforms.Ios.Views;
 using MvvmCross;
-using MvvmCross.Platform.Logging;
+using MvvmCross.Logging;
 using UIKit;
 using AppRopio.Base.Core.Services.Localization;
 using AppRopio.ECommerce.Products.Core;
@@ -31,7 +31,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Header
 
         #region Properties
 
-        protected ProductsThemeConfig ThemeConfig { get { return Mvx.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
+        protected ProductsThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
 
         protected bool IsBinded { get; set; }
 
@@ -39,7 +39,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Header
         {
             get
             {
-                return new NSString(Mvx.Resolve<IProductConfigService>().Config.Header?.TypeName ?? nameof(CatalogSortFiltersHeader));
+                return new NSString(Mvx.IoCProvider.Resolve<IProductConfigService>().Config.Header?.TypeName ?? nameof(CatalogSortFiltersHeader));
             }
         }
 
@@ -56,7 +56,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Header
                 ViewModel = (CatalogSortFiltersHeaderVM)((value as MvxViewModelInstanceRequest).ViewModelInstance);
                 DataContext = ViewModel;
 
-                Mvx.Resolve<IMvxLog>().Trace("CatalogSortFiltersHeader Request is set");
+                Mvx.IoCProvider.Resolve<IMvxLog>().Trace("CatalogSortFiltersHeader Request is set");
             }
         }
 
@@ -71,7 +71,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Header
             {
                 ViewModel = (CatalogSortFiltersHeaderVM)value;
 
-                Mvx.Resolve<IMvxLog>().Trace("CatalogSortFiltersHeader ViewModel is set");
+                Mvx.IoCProvider.Resolve<IMvxLog>().Trace("CatalogSortFiltersHeader ViewModel is set");
             }
         }
 
@@ -84,7 +84,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Header
             Initialize();
             this.DelayBind(OnBindContent);
 
-            Mvx.Resolve<IMvxLog>().Trace("CatalogSortFiltersHeader created");
+            Mvx.IoCProvider.Resolve<IMvxLog>().Trace("CatalogSortFiltersHeader created");
         }
 
         public CatalogSortFiltersHeader(IntPtr handle)
@@ -93,7 +93,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Header
             Initialize();
             this.DelayBind(OnBindContent);
 
-            Mvx.Resolve<IMvxLog>().Trace("CatalogSortFiltersHeader created with handle");
+            Mvx.IoCProvider.Resolve<IMvxLog>().Trace("CatalogSortFiltersHeader created with handle");
         }
 
         #endregion
@@ -107,7 +107,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Header
             SetupFiltersButton(
                 _filtersButton = new UIButton(UIButtonType.Custom)
                 .WithFrame(8, 8, (Frame.Width - 16 / 2) - 4, Frame.Height - 16)
-                .WithTitleForAllStates(Mvx.Resolve<ILocalizationService>().GetLocalizableString(ProductsConstants.RESX_NAME, "Catalog_Filters"))
+                .WithTitleForAllStates(Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString(ProductsConstants.RESX_NAME, "Catalog_Filters"))
             );
 
             _filtersButton.TranslatesAutoresizingMaskIntoConstraints = false;
@@ -116,7 +116,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Header
             SetupSortButton(
                 _sortButton = new UIButton(UIButtonType.Custom)
                 .WithFrame((Frame.Width / 2) + 4, 8, (Frame.Width - 16 / 2) - 4, Frame.Height - 16)
-                .WithTitleForAllStates(Mvx.Resolve<ILocalizationService>().GetLocalizableString(ProductsConstants.RESX_NAME, "Catalog_Sort"))
+                .WithTitleForAllStates(Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString(ProductsConstants.RESX_NAME, "Catalog_Sort"))
             );
 
             _sortButton.TranslatesAutoresizingMaskIntoConstraints = false;

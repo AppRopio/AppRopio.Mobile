@@ -3,7 +3,7 @@ using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.Collection.H
 using AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.Collection.Horizontal.Shops.Cells;
 using CoreGraphics;
 using Foundation;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using UIKit;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.Collection.Horizontal.Shops

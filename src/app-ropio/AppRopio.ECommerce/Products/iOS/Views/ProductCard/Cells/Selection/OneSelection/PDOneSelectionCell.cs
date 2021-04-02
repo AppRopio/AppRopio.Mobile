@@ -7,7 +7,7 @@ using AppRopio.ECommerce.Products.iOS.Models;
 using AppRopio.ECommerce.Products.iOS.Services;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using MvvmCross;
 using UIKit;
 
@@ -15,7 +15,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.Selection.OneS
 {
     public partial class PDOneSelectionCell : MvxTableViewCell
     {
-        protected ProductsThemeConfig ThemeConfig { get { return Mvx.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
+        protected ProductsThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
 
         public const float ONE_SELECTION_HEIGHT = 52;
         public const float ONE_SELECTION_CONTENT_HEIGHT = 20;

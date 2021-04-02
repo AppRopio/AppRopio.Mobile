@@ -2,17 +2,18 @@
 using AppRopio.Base.iOS;
 using AppRopio.ECommerce.Products.iOS.Models;
 using AppRopio.ECommerce.Products.iOS.Services;
+using FFImageLoading.Cross;
 using Foundation;
-using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Binding;
 using MvvmCross;
+using MvvmCross.Binding.BindingContext;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using UIKit;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.Images.Cells
 {
     public partial class ImageCollectionCell : MvxCollectionViewCell
     {
-        protected ProductsThemeConfig ThemeConfig => Mvx.Resolve<IProductsThemeConfigService>().ThemeConfig;
+        protected ProductsThemeConfig ThemeConfig => Mvx.IoCProvider.Resolve<IProductsThemeConfigService>().ThemeConfig;
 
         public static readonly NSString Key = new NSString("ImageCollectionCell");
         public static readonly UINib Nib;
@@ -54,13 +55,22 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.Images.Cells
 
         protected virtual void BindControls()
         {
-            var imageLoader = new MvxImageViewLoader(() => _image)
-            {
-                DefaultImagePath = $"res:{ThemeConfig.ProductDetails.Image.Path}",
-                ErrorImagePath = $"res:{ThemeConfig.ProductDetails.Image.Path}"
-            };
+            var set = this.CreateBindingSet<ImageCollectionCell, string>();
 
-            this.CreateBindingSet<ImageCollectionCell, string>().Bind(imageLoader).To(".").Apply();
+            BindImage(_image, set);
+
+            set.Apply();
+        }
+
+        protected virtual void BindImage(UIImageView image, MvxFluentBindingDescriptionSet<ImageCollectionCell, string> set)
+        {
+            if (image is MvxCachedImageView imageView)
+            {
+                imageView.LoadingPlaceholderImagePath = $"res:{ThemeConfig.ProductDetails.Image.Path}";
+                imageView.ErrorPlaceholderImagePath = $"res:{ThemeConfig.ProductDetails.Image.Path}";
+
+                set.Bind(imageView).For(i => i.ImagePath).To(".");
+            }
         }
 
         #endregion

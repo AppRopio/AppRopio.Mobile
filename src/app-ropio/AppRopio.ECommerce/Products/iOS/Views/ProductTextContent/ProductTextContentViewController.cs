@@ -11,7 +11,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ProductTextContent
 {
     public partial class ProductTextContentViewController : CommonViewController<IProductTextContentViewModel>
     {
-        protected ProductsThemeConfig ThemeConfig { get { return Mvx.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
+        protected ProductsThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
 
         public ProductTextContentViewController()
             : base("ProductTextContentViewController", null)

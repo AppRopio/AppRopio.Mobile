@@ -1,17 +1,18 @@
 ﻿using System;
 using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.Models.ThemeConfigs;
+using AppRopio.Base.iOS.UIExtentions;
 using AppRopio.ECommerce.Products.Core.ViewModels.Categories.Items;
 using AppRopio.ECommerce.Products.iOS.Models;
 using AppRopio.ECommerce.Products.iOS.Services;
 using CoreAnimation;
 using CoreGraphics;
+using FFImageLoading.Cross;
 using Foundation;
-using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Binding;
 using MvvmCross;
+using MvvmCross.Binding.BindingContext;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using UIKit;
-using AppRopio.Base.iOS.UIExtentions;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.Categories.StepByStep.Cells
 {
@@ -19,7 +20,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Categories.StepByStep.Cells
     {
         private CAGradientLayer _gradientLayer;
 
-        protected ProductsThemeConfig ThemeConfig { get { return Mvx.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
+        protected ProductsThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
 
         public static readonly NSString Key = new NSString("SSCategoryCell");
         public static readonly UINib Nib = UINib.FromName("SSCategoryCell", NSBundle.MainBundle);
@@ -110,13 +111,13 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Categories.StepByStep.Cells
             if (backgroundImage == null)
                 return;
 
-            var imageLoader = new MvxImageViewLoader(() => backgroundImage)
+            if (backgroundImage is MvxCachedImageView imageView)
             {
-                DefaultImagePath = $"res:{ThemeConfig.Categories.CategoryCell.BackgroundImage.Path}",
-                ErrorImagePath = $"res:{ThemeConfig.Categories.CategoryCell.BackgroundImage.Path}"
-            };
+                imageView.LoadingPlaceholderImagePath = $"res:{ThemeConfig.Categories.CategoryCell.BackgroundImage.Path}";
+                imageView.ErrorPlaceholderImagePath = $"res:{ThemeConfig.Categories.CategoryCell.BackgroundImage.Path}";
 
-            set.Bind(imageLoader).To(vm => vm.BackgroundImageUrl);
+                set.Bind(imageView).For(i => i.ImagePath).To(vm => vm.BackgroundImageUrl);
+            }
             set.Bind(backgroundImage).For("Visibility").To(vm => vm.BackgroundImageUrl).WithConversion("Visibility");
         }
 
@@ -125,13 +126,13 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Categories.StepByStep.Cells
             if (image == null)
                 return;
 
-            var imageLoader = new MvxImageViewLoader(() => image)
+            if (image is MvxCachedImageView imageView)
             {
-                DefaultImagePath = $"res:{ThemeConfig.Categories.CategoryCell.Icon.Path}",
-                ErrorImagePath = $"res:{ThemeConfig.Categories.CategoryCell.Icon.Path}"
-            };
+                imageView.LoadingPlaceholderImagePath = $"res:{ThemeConfig.Categories.CategoryCell.Icon.Path}";
+                imageView.ErrorPlaceholderImagePath = $"res:{ThemeConfig.Categories.CategoryCell.Icon.Path}";
 
-            set.Bind(imageLoader).To(vm => vm.IconUrl);
+                set.Bind(imageView).For(i => i.ImagePath).To(vm => vm.IconUrl);
+            }
             set.Bind(image).For("Visibility").To(vm => vm.IconUrl).WithConversion("Visibility");
         }
 

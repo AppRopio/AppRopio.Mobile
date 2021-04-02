@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using AppRopio.Base.iOS.ViewSources;
 using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items;
@@ -23,7 +23,7 @@ using AppRopio.Models.Products.Responses;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Binding.Extensions;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using UIKit;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.ViewSources

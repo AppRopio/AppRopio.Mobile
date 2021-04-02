@@ -4,7 +4,7 @@ using AppRopio.Base.iOS.UIExtentions;
 using AppRopio.ECommerce.Products.Core.ViewModels.Categories.Disabled;
 using AppRopio.ECommerce.Products.iOS.Views.Categories.Cells;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using UIKit;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.Categories.SupplementaryView

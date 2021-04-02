@@ -9,7 +9,7 @@ using AppRopio.ECommerce.Products.iOS.Services;
 using AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using MvvmCross;
 using UIKit;
 
@@ -17,7 +17,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.Collection.Hor
 {
     public partial class PDHorizontalProductsCollectionCell : MvxTableViewCell
     {
-        protected ProductsThemeConfig ThemeConfig { get { return Mvx.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
+        protected ProductsThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
 
         protected virtual ARLabel Name => _name;
         protected virtual UICollectionView CollectionView => _collectionView;

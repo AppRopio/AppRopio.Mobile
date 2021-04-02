@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using AppRopio.Base.Core.Services.ViewLookup;
 using AppRopio.Base.iOS;
@@ -36,7 +36,7 @@ using AppRopio.ECommerce.Products.iOS.Views.ProductCard.ViewSources;
 using AppRopio.Models.Products.Responses;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using MvvmCross.Platforms.Ios.Views;
 using MvvmCross.Platforms.Ios.Presenters;
 using MvvmCross;
@@ -84,9 +84,9 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard
 
         private UIButton _markButton;
 
-        protected ProductsThemeConfig ThemeConfig { get { return Mvx.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
+        protected ProductsThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
 
-        protected IMvxMessenger MessengerService { get { return Mvx.Resolve<IMvxMessenger>(); } }
+        protected IMvxMessenger MessengerService { get { return Mvx.IoCProvider.Resolve<IMvxMessenger>(); } }
 
         protected abstract UITableView TableView { get; }
 
@@ -139,10 +139,10 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard
 
         protected void SetupBasketView(UITableView tableView)
         {
-            var config = Mvx.Resolve<IProductConfigService>().Config;
-            if (config.Basket?.AddToCart != null && Mvx.Resolve<IViewLookupService>().IsRegistered(config.Basket?.AddToCart.TypeName))
+            var config = Mvx.IoCProvider.Resolve<IProductConfigService>().Config;
+            if (config.Basket?.AddToCart != null && Mvx.IoCProvider.Resolve<IViewLookupService>().IsRegistered(config.Basket?.AddToCart.TypeName))
             {
-                var basketView = ViewModel.BasketBlockViewModel == null ? null : Mvx.Resolve<IMvxIosViewCreator>().CreateView(ViewModel.BasketBlockViewModel) as UIView;
+                var basketView = ViewModel.BasketBlockViewModel == null ? null : Mvx.IoCProvider.Resolve<IMvxIosViewCreator>().CreateView(ViewModel.BasketBlockViewModel) as UIView;
                 if (basketView != null)
                 {
                     if (tableView != null)
@@ -444,7 +444,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard
         {
             if (NavigationController != null)
                 NavigationController.NavigationBar.SetupStyle(Theme.ControlPalette.NavigationBar);
-            else if (Mvx.Resolve<IMvxIosViewPresenter>() is MvxIosViewPresenter presenter)
+            else if (Mvx.IoCProvider.Resolve<IMvxIosViewPresenter>() is MvxIosViewPresenter presenter)
                 presenter.MasterNavigationController?.SetTranparentNavBar(false);
 
             base.ViewDidDisappear(animated);

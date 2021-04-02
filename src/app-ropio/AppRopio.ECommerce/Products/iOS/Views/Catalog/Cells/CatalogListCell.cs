@@ -1,8 +1,6 @@
 ﻿using System;
-using CoreAnimation;
-using CoreGraphics;
+using FFImageLoading.Cross;
 using Foundation;
-using MvvmCross.Platforms.Ios.Binding;
 using UIKit;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
@@ -36,13 +34,13 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
             if (image == null)
                 return;
 
-            var imageLoader = new MvxImageViewLoader(() => image)
+            if (image is MvxCachedImageView imageView)
             {
-                DefaultImagePath = $"res:{ThemeConfig.Products.ProductCell.Image.Path}",
-                ErrorImagePath = $"res:{ThemeConfig.Products.ProductCell.Image.Path}"
-            };
+                imageView.LoadingPlaceholderImagePath = $"res:{ThemeConfig.Products.ProductCell.Image.Path}";
+                imageView.ErrorPlaceholderImagePath = $"res:{ThemeConfig.Products.ProductCell.Image.Path}";
 
-            set.Bind(imageLoader).To(vm => vm.ImageUrl);
+                set.Bind(imageView).For(i => i.ImagePath).To(vm => vm.ImageUrl);
+            }
         }
     }
 }

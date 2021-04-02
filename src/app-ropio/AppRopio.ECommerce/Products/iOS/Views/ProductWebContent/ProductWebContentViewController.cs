@@ -12,7 +12,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ProductWebContent
 {
     public partial class ProductWebContentViewController : CommonViewController<IProductWebContentViewModel>
     {
-        protected ProductsThemeConfig ThemeConfig { get { return Mvx.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
+        protected ProductsThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
 
         public ProductWebContentViewController()
             : base("ProductWebContentViewController", null)

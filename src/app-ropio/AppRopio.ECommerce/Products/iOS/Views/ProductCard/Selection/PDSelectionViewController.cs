@@ -5,7 +5,7 @@ using AppRopio.ECommerce.Products.iOS.Models;
 using AppRopio.ECommerce.Products.iOS.Services;
 using AppRopio.ECommerce.Products.iOS.Views.ProductCard.Selection.Cells;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using MvvmCross;
 using UIKit;
 using AppRopio.ECommerce.Products.Core;
@@ -16,7 +16,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Selection
     {
         private UIBarButtonItem _clearBarButton { get; set; }
 
-        protected ProductsThemeConfig ThemeConfig { get { return Mvx.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
+        protected ProductsThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
 
         public PDSelectionViewController()
             : base("PDSelectionViewController", null)
