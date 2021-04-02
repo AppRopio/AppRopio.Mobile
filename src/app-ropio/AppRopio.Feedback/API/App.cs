@@ -11,9 +11,9 @@ namespace AppRopio.Feedback.API
         public override void Initialize()
         {
             if (ApiSettings.DebugServiceEnabled)
-                Mvx.RegisterType<IReviewsService>(() => new ReviewsFakeService());
+                Mvx.IoCProvider.RegisterType<IReviewsService>(() => new ReviewsFakeService());
             else
-                Mvx.RegisterType<IReviewsService>(() => new ReviewsService());
+                Mvx.IoCProvider.RegisterType<IReviewsService>(() => new ReviewsService());
         }
     }
 }

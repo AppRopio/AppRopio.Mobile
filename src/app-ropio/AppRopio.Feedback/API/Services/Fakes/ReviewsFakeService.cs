@@ -10,7 +10,7 @@ namespace AppRopio.Feedback.API.Services.Fakes
 {
     public class ReviewsFakeService : IReviewsService
     {
-        public bool IsRussianCulture => Mvx.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
+        public bool IsRussianCulture => Mvx.IoCProvider.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
 
         private List<Review> _reviews;
 
