@@ -15,7 +15,7 @@ namespace AppRopio.Feedback.iOS.Views.Reviews
 {
     public partial class ReviewsViewController : CommonViewController<IReviewsViewModel>
     {
-		protected FeedbackThemeConfig ThemeConfig { get { return Mvx.Resolve<IFeedbackThemeConfigService>().ThemeConfig; } }
+		protected FeedbackThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IFeedbackThemeConfigService>().ThemeConfig; } }
 
 		public ReviewsViewController() : base("ReviewsViewController", null)
         {

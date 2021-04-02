@@ -6,11 +6,12 @@ using AppRopio.Feedback.iOS.Models;
 using AppRopio.Feedback.iOS.Services;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using MvvmCross;
 using UIKit;
 using AppRopio.Base.Core;
 using AppRopio.Base.Core.Converters;
+using FFImageLoading.Cross;
 
 namespace AppRopio.Feedback.iOS.Views.MyReviews.Cell
 {
@@ -19,9 +20,7 @@ namespace AppRopio.Feedback.iOS.Views.MyReviews.Cell
         public static readonly NSString Key = new NSString("MyReviewCell");
         public static readonly UINib Nib;
 
-		protected MvxImageViewLoader _imageLoader;
-
-        protected FeedbackThemeConfig ThemeConfig { get { return Mvx.Resolve<IFeedbackThemeConfigService>().ThemeConfig; } }
+		protected FeedbackThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IFeedbackThemeConfigService>().ThemeConfig; } }
 
         static MyReviewCell()
         {
@@ -105,12 +104,13 @@ namespace AppRopio.Feedback.iOS.Views.MyReviews.Cell
 
 		protected virtual void BindImage(UIImageView image, MvxFluentBindingDescriptionSet<MyReviewCell, IReviewItemVm> set)
 		{
-			_imageLoader = new MvxImageViewLoader(() => image)
-			{
-                DefaultImagePath = $"res:{ThemeConfig.MyReviewCell.ProductImage.Path}",
-                ErrorImagePath = $"res:{ThemeConfig.MyReviewCell.ProductImage.Path}"
-			};
-			set.Bind(_imageLoader).To(vm => vm.ProductImageUrl);
+            if (image is MvxCachedImageView imageView)
+            {
+                imageView.LoadingPlaceholderImagePath = $"res:{ThemeConfig.MyReviewCell.ProductImage.Path}";
+                imageView.ErrorPlaceholderImagePath = $"res:{ThemeConfig.MyReviewCell.ProductImage.Path}";
+
+                set.Bind(imageView).For(i => i.ImagePath).To(vm => vm.ProductImageUrl);
+            }
         }
 
 		protected virtual void BindScore(UILabel score, UIView scoreContainer, MvxFluentBindingDescriptionSet<MyReviewCell, IReviewItemVm> set)

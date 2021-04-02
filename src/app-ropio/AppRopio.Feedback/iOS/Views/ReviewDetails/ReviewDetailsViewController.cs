@@ -1,25 +1,23 @@
-﻿using AppRopio.Base.iOS;
+﻿using AppRopio.Base.Core;
+using AppRopio.Base.Core.Converters;
+using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.UIExtentions;
 using AppRopio.Base.iOS.Views;
+using AppRopio.Feedback.Core;
 using AppRopio.Feedback.Core.ViewModels.ReviewDetails;
 using AppRopio.Feedback.iOS.Models;
 using AppRopio.Feedback.iOS.Services;
-using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Binding;
-using MvvmCross.Platforms.Ios.Views;
+using FFImageLoading.Cross;
 using MvvmCross;
+using MvvmCross.Binding.BindingContext;
+using MvvmCross.Platforms.Ios.Views;
 using UIKit;
-using AppRopio.Feedback.Core;
-using AppRopio.Base.Core;
-using AppRopio.Base.Core.Converters;
 
 namespace AppRopio.Feedback.iOS.Views.ReviewDetails
 {
     public partial class ReviewDetailsViewController : CommonViewController<IReviewDetailsViewModel>
     {
-		protected MvxImageViewLoader _imageLoader;
-
-		protected FeedbackThemeConfig ThemeConfig { get { return Mvx.Resolve<IFeedbackThemeConfigService>().ThemeConfig; } }
+		protected FeedbackThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IFeedbackThemeConfigService>().ThemeConfig; } }
 
 		public ReviewDetailsViewController() : base("ReviewDetailsViewController", null)
         {
@@ -58,7 +56,7 @@ namespace AppRopio.Feedback.iOS.Views.ReviewDetails
 
 		protected virtual void SetupScoreView(UIView containerView)
 		{
-			var scoreView = Mvx.Resolve<IMvxIosViewCreator>().CreateView(ViewModel.ScoreViewModel) as UIView;
+			var scoreView = Mvx.IoCProvider.Resolve<IMvxIosViewCreator>().CreateView(ViewModel.ScoreViewModel) as UIView;
 			if (scoreView != null)
 			{
 				scoreView.ChangeFrame(x: 0, y: containerView.Frame.Height / 2 - 10, h: 20);
@@ -85,12 +83,13 @@ namespace AppRopio.Feedback.iOS.Views.ReviewDetails
 
 		protected virtual void BindImage(UIImageView image, MvxFluentBindingDescriptionSet<ReviewDetailsViewController, IReviewDetailsViewModel> set)
 		{
-			_imageLoader = new MvxImageViewLoader(() => image)
-			{
-				DefaultImagePath = $"res:{ThemeConfig.ReviewDetails.ProductImage.Path}",
-				ErrorImagePath = $"res:{ThemeConfig.ReviewDetails.ProductImage.Path}"
-			};
-			set.Bind(_imageLoader).To(vm => vm.ProductImageUrl);
+            if (image is MvxCachedImageView imageView)
+            {
+                imageView.LoadingPlaceholderImagePath = $"res:{ThemeConfig.ReviewDetails.ProductImage.Path}";
+                imageView.ErrorPlaceholderImagePath = $"res:{ThemeConfig.ReviewDetails.ProductImage.Path}";
+
+                set.Bind(imageView).For(i => i.ImagePath).To(vm => vm.ProductImageUrl);
+            }
 		}
 
 		protected virtual void BindText(UILabel text, MvxFluentBindingDescriptionSet<ReviewDetailsViewController, IReviewDetailsViewModel> set)

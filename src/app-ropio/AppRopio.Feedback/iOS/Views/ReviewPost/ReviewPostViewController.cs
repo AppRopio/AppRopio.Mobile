@@ -9,7 +9,7 @@ using AppRopio.Feedback.iOS.Views.ReviewPost.Cell.Score;
 using AppRopio.Feedback.iOS.Views.ReviewPost.Cell.Text;
 using AppRopio.Feedback.iOS.Views.ReviewPost.Cell.TotalScore;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using MvvmCross;
 using UIKit;
 using AppRopio.Feedback.Core;
@@ -20,7 +20,7 @@ namespace AppRopio.Feedback.iOS.Views.ReviewPost
     {
         private UIButton _accessoryButton;
 
-		protected FeedbackThemeConfig ThemeConfig { get { return Mvx.Resolve<IFeedbackThemeConfigService>().ThemeConfig; } }
+		protected FeedbackThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IFeedbackThemeConfigService>().ThemeConfig; } }
 
 		public ReviewPostViewController() : base("ReviewPostViewController", null)
         {
