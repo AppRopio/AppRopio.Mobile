@@ -12,14 +12,15 @@
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
-using System;
-using MvvmCross.Droid.Support.V7.RecyclerView.ItemTemplates;
 using AppRopio.Feedback.Core.ViewModels.Items;
+using MvvmCross.Droid.Support.V7.RecyclerView.ItemTemplates;
 
 namespace AppRopio.Feedback.Droid.Views.ReviewPost
 {
     public class ReviewPostItemTemplateSelector : IMvxTemplateSelector
     {
+        public int ItemTemplateId { get; set; }
+
         public int GetItemLayoutId(int fromViewType)
         {
             return fromViewType;
