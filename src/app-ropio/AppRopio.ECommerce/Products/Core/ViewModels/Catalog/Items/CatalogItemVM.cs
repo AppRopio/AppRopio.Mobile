@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -12,8 +12,9 @@ using AppRopio.ECommerce.Products.Core.Models.Bundle;
 using AppRopio.ECommerce.Products.Core.Services;
 using AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Services;
 using AppRopio.Models.Products.Responses;
-using MvvmCross.ViewModels;
 using MvvmCross;
+using MvvmCross.Commands;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Items
 {
@@ -82,9 +83,9 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Items
 
         #region Services
 
-        protected ICatalogVmService VmService => Mvx.Resolve<ICatalogVmService>();
+        protected ICatalogVmService VmService => Mvx.IoCProvider.Resolve<ICatalogVmService>();
 
-        protected IProductConfigService ConfigService => Mvx.Resolve<IProductConfigService>();
+        protected IProductConfigService ConfigService => Mvx.IoCProvider.Resolve<IProductConfigService>();
 
         #endregion
 

@@ -7,7 +7,7 @@ using AppRopio.ECommerce.Products.Core.Services;
 using AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Items;
 using AppRopio.Models.Products.Responses;
 using MvvmCross;
-using MvvmCross.Platform.Platform;
+using MvvmCross.Logging;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.Collection.Horizontal.Products
 {
@@ -23,9 +23,9 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.Collecti
 
         #region Services
 
-        protected IProductService ApiService => Mvx.Resolve<IProductService>();
+        protected IProductService ApiService => Mvx.IoCProvider.Resolve<IProductService>();
 
-        protected IProductsNavigationVmService NavigationVmService => Mvx.Resolve<IProductsNavigationVmService>();
+        protected new IProductsNavigationVmService NavigationVmService => Mvx.IoCProvider.Resolve<IProductsNavigationVmService>();
 
         #endregion
 
@@ -60,7 +60,7 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.Collecti
             }
             catch (Exception ex)
             {
-                MvxTrace.Trace(MvxTraceLevel.Warning, this.GetType().FullName, ex.BuildAllMessagesAndStackTrace());
+                Mvx.IoCProvider.Resolve<IMvxLog>().Warn($"{this.GetType().FullName}: {ex.BuildAllMessagesAndStackTrace()}");
             }
 
             Loading = false;

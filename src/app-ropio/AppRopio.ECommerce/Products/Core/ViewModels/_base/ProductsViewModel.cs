@@ -1,10 +1,11 @@
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using AppRopio.Base.Core.Models.Bundle;
 using AppRopio.Base.Core.ViewModels;
 using AppRopio.ECommerce.Products.Core.Models;
 using AppRopio.ECommerce.Products.Core.Services;
-using MvvmCross.ViewModels;
 using MvvmCross;
+using MvvmCross.Commands;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels
 {
@@ -42,9 +43,9 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels
 
         #region Services
 
-        protected IProductsNavigationVmService NavigationVmService { get { return Mvx.Resolve<IProductsNavigationVmService>(); } }
+        protected new IProductsNavigationVmService NavigationVmService { get { return Mvx.IoCProvider.Resolve<IProductsNavigationVmService>(); } }
 
-        protected IProductConfigService ConfigService { get { return Mvx.Resolve<IProductConfigService>(); } }
+        protected IProductConfigService ConfigService { get { return Mvx.IoCProvider.Resolve<IProductConfigService>(); } }
 
         #endregion
 

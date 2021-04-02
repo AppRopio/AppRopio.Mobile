@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using AppRopio.Models.Products.Responses;
+using MvvmCross.Commands;
 using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.Collection

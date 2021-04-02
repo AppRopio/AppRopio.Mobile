@@ -3,8 +3,8 @@ using System.Threading.Tasks;
 using AppRopio.Base.API.Exceptions;
 using AppRopio.Base.Core.ViewModels.Services;
 using MvvmCross;
-using MvvmCross.Platform.Core;
-using Plugin.Share;
+using MvvmCross.Base;
+using Xamarin.Essentials;
 
 namespace AppRopio.ECommerce.Products.Core.Services.Implementation
 {
@@ -12,7 +12,7 @@ namespace AppRopio.ECommerce.Products.Core.Services.Implementation
     {
         #region Services
 
-        protected API.Services.IProductService ProductService { get { return Mvx.Resolve<API.Services.IProductService>(); } }
+        protected API.Services.IProductService ProductService { get { return Mvx.IoCProvider.Resolve<API.Services.IProductService>(); } }
 
         #endregion
 
@@ -26,8 +26,8 @@ namespace AppRopio.ECommerce.Products.Core.Services.Implementation
 
                 if (shareInfo != null)
                 {
-                    Mvx.Resolve<IMvxMainThreadDispatcher>().RequestMainThreadAction(() =>
-                       CrossShare.Current.Share(new Plugin.Share.Abstractions.ShareMessage { Title = shareInfo.Title, Text = shareInfo.Text, Url = shareInfo.Url })
+                    Mvx.IoCProvider.Resolve<IMvxMainThreadAsyncDispatcher>().ExecuteOnMainThreadAsync(() =>
+                       Share.RequestAsync(new ShareTextRequest() { Title = shareInfo.Title, Text = shareInfo.Text, Uri = shareInfo.Url })
                   );
                 }
             }

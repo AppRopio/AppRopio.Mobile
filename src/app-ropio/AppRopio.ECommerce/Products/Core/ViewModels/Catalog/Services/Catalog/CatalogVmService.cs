@@ -13,7 +13,7 @@ using AppRopio.Models.Filters.Responses;
 using AppRopio.Models.Products.Responses;
 using MvvmCross.ViewModels;
 using MvvmCross;
-using MvvmCross.Platform.Logging;
+using MvvmCross.Logging;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Services
 {
@@ -21,7 +21,7 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Services
     {
         #region Services
 
-        protected IProductService ProductService { get { return Mvx.Resolve<IProductService>(); } }
+        protected IProductService ProductService { get { return Mvx.IoCProvider.Resolve<IProductService>(); } }
 
         #endregion
 
@@ -71,7 +71,7 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Services
 
         public IMvxViewModel LoadHeaderVm()
         {
-            var config = Mvx.Resolve<IProductConfigService>().Config;
+            var config = Mvx.IoCProvider.Resolve<IProductConfigService>().Config;
 
             if (config.Header != null)
             {
@@ -86,17 +86,17 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Services
                     return headerInstance as IMvxViewModel;
                 }
 
-                Mvx.Resolve<IMvxLog>().Warn("CatalogVmService LoadHeaderVm headerType is null");
+                Mvx.IoCProvider.Resolve<IMvxLog>().Warn("CatalogVmService LoadHeaderVm headerType is null");
             }
 
-            Mvx.Resolve<IMvxLog>().Warn("CatalogVmService LoadHeaderVm return null");
+            Mvx.IoCProvider.Resolve<IMvxLog>().Warn("CatalogVmService LoadHeaderVm return null");
 
             return null;
         }
 
         public IMvxViewModel LoadItemBasketVm()
         {
-            var config = Mvx.Resolve<IProductConfigService>().Config;
+            var config = Mvx.IoCProvider.Resolve<IProductConfigService>().Config;
 
             try
             {
@@ -110,7 +110,7 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Services
 
                     if (basketType.GetTypeInfo().IsInterface)
                     {
-                        var viewModelType = Mvx.Resolve<IViewModelLookupService>().Resolve(basketType);
+                        var viewModelType = Mvx.IoCProvider.Resolve<IViewModelLookupService>().Resolve(basketType);
                         basketInstance = Activator.CreateInstance(viewModelType);
                     }
                     else

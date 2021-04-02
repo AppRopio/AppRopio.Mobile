@@ -27,7 +27,7 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.Selectio
 
         #region Services
 
-        protected IProductsNavigationVmService NavigationVmService { get { return Mvx.Resolve<IProductsNavigationVmService>(); } }
+        protected new IProductsNavigationVmService NavigationVmService { get { return Mvx.IoCProvider.Resolve<IProductsNavigationVmService>(); } }
 
         #endregion
 

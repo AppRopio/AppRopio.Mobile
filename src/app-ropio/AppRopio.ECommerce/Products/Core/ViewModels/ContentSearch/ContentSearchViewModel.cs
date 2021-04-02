@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -12,9 +11,9 @@ using AppRopio.ECommerce.Products.Core.ViewModels.ContentSearch.Items.Autocomple
 using AppRopio.ECommerce.Products.Core.ViewModels.ContentSearch.Items.Hint;
 using AppRopio.ECommerce.Products.Core.ViewModels.ContentSearch.Items.History;
 using AppRopio.ECommerce.Products.Core.ViewModels.ContentSearch.Services;
-using MvvmCross.ViewModels;
 using MvvmCross;
-using MvvmCross.Platform.Platform;
+using MvvmCross.Commands;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.ContentSearch
 {
@@ -182,7 +181,7 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ContentSearch
 
         #region Services
 
-        protected IContentSearchVmService VmService { get { return Mvx.Resolve<IContentSearchVmService>(); } }
+        protected IContentSearchVmService VmService { get { return Mvx.IoCProvider.Resolve<IContentSearchVmService>(); } }
 
         #endregion
 

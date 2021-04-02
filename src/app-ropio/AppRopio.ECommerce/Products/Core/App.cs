@@ -1,3 +1,4 @@
+﻿using AppRopio.Base.Core.Models.Navigation;
 using AppRopio.Base.Core.Services.Router;
 using AppRopio.Base.Core.Services.ViewModelLookup;
 using AppRopio.ECommerce.Products.Core.Services;
@@ -13,6 +14,7 @@ using AppRopio.ECommerce.Products.Core.ViewModels.Categories.Services.Banners;
 using AppRopio.ECommerce.Products.Core.ViewModels.ContentSearch;
 using AppRopio.ECommerce.Products.Core.ViewModels.ContentSearch.Services;
 using AppRopio.ECommerce.Products.Core.ViewModels.ContentSearch.Services.DataBase;
+using AppRopio.ECommerce.Products.Core.ViewModels.ModalProductCard;
 using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard;
 using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Selection;
 using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Selection.Services;
@@ -20,8 +22,7 @@ using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Services;
 using AppRopio.ECommerce.Products.Core.ViewModels.ProductTextContent;
 using AppRopio.ECommerce.Products.Core.ViewModels.ProductWebContent;
 using MvvmCross;
-using AppRopio.Base.Core.Models.Navigation;
-using AppRopio.ECommerce.Products.Core.ViewModels.ModalProductCard;
+using MvvmCross.IoC;
 
 namespace AppRopio.ECommerce.Products.Core
 {
@@ -29,29 +30,31 @@ namespace AppRopio.ECommerce.Products.Core
     {
         public override void Initialize()
         {
-            Mvx.RegisterSingleton<IProductConfigService>(() => new ProductConfigService());
+            new API.App().Initialize();
 
-            Mvx.RegisterType<IProductsNavigationVmService>(() => new ProductsNavigationVmService());
+            Mvx.IoCProvider.RegisterSingleton<IProductConfigService>(() => new ProductConfigService());
 
-            Mvx.LazyConstructAndRegisterSingleton<IProductsVmService, ProductsVmService>();
-            Mvx.LazyConstructAndRegisterSingleton<ICatalogVmService, CatalogVmService>();
-            Mvx.LazyConstructAndRegisterSingleton<IBannersVmService, BannersVmService>();
-            Mvx.LazyConstructAndRegisterSingleton<ICategoriesVmService, CategoriesVmService>();
-            Mvx.LazyConstructAndRegisterSingleton<IMarkProductVmService, MarkProductVmService>();
+            Mvx.IoCProvider.RegisterType<IProductsNavigationVmService>(() => new ProductsNavigationVmService());
 
-            Mvx.LazyConstructAndRegisterSingleton<IProductCardVmService, ProductCardVmService>();
-            Mvx.LazyConstructAndRegisterSingleton<IProductDetailsSelectionVmService, ProductDetailsSelectionVmService>();
-            Mvx.LazyConstructAndRegisterSingleton<IProductsShareVmService, ProductsShareVmService>();
-            Mvx.LazyConstructAndRegisterSingleton<IMarkProductVmService, MarkProductVmService>();
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IProductsVmService, ProductsVmService>();
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<ICatalogVmService, CatalogVmService>();
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IBannersVmService, BannersVmService>();
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<ICategoriesVmService, CategoriesVmService>();
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IMarkProductVmService, MarkProductVmService>();
 
-            Mvx.RegisterType<IHistorySearchDbService>(() => new HistorySearchDbService());
-            Mvx.LazyConstructAndRegisterSingleton<IContentSearchVmService, ContentSearchVmService>();
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IProductCardVmService, ProductCardVmService>();
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IProductDetailsSelectionVmService, ProductDetailsSelectionVmService>();
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IProductsShareVmService, ProductsShareVmService>();
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IMarkProductVmService, MarkProductVmService>();
+
+            Mvx.IoCProvider.RegisterType<IHistorySearchDbService>(() => new HistorySearchDbService());
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IContentSearchVmService, ContentSearchVmService>();
 
             #region VMs registration
 
-            var vmLookupService = Mvx.Resolve<IViewModelLookupService>();
+            var vmLookupService = Mvx.IoCProvider.Resolve<IViewModelLookupService>();
 
-            var config = Mvx.Resolve<IProductConfigService>().Config;
+            var config = Mvx.IoCProvider.Resolve<IProductConfigService>().Config;
             switch (config.CategoriesType)
             {
                 case Models.CategoriesType.StepByStep:
@@ -98,7 +101,7 @@ namespace AppRopio.ECommerce.Products.Core
 
             #region RouterSubscriber registration
 
-            var routerService = Mvx.Resolve<IRouterService>();
+            var routerService = Mvx.IoCProvider.Resolve<IRouterService>();
 
             routerService.Register<IProductsViewModel>(new ProductRouterSubscriber());
 

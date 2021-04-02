@@ -12,7 +12,7 @@ namespace AppRopio.ECommerce.Products.Core.Combiners
 {
     public class PriceVisibilityCommonValueCombiner : MvxValueCombiner
     {
-        private ProductsConfig _config => Mvx.Resolve<IProductConfigService>().Config;
+        private ProductsConfig _config => Mvx.IoCProvider.Resolve<IProductConfigService>().Config;
 
         public override bool TryGetValue(IEnumerable<IMvxSourceStep> steps, out object value) {
             var values = steps.ToList();

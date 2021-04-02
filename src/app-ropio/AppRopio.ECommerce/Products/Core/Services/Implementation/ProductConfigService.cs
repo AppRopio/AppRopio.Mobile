@@ -27,7 +27,7 @@ namespace AppRopio.ECommerce.Products.Core.Services.Implementation
         private ProductsConfig LoadConfigFromJSON()
         {
             var path = Path.Combine(CoreConstants.CONFIGS_FOLDER, ProductsConstants.CONFIG_NAME);
-            var json = Mvx.Resolve<ISettingsService>().ReadStringFromFile(path);
+            var json = Mvx.IoCProvider.Resolve<ISettingsService>().ReadStringFromFile(path);
             return Newtonsoft.Json.JsonConvert.DeserializeObject<ProductsConfig>(json);
         }
 

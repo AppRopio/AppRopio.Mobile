@@ -21,9 +21,9 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.Transiti
 
         public string Value { get; }
 
-        protected IProductsNavigationVmService NavigationVmService => Mvx.Resolve<IProductsNavigationVmService>();
+        protected new IProductsNavigationVmService NavigationVmService => Mvx.IoCProvider.Resolve<IProductsNavigationVmService>();
 
-        protected IProductConfigService ConfigService => Mvx.Resolve<IProductConfigService>();
+        protected IProductConfigService ConfigService => Mvx.IoCProvider.Resolve<IProductConfigService>();
 
         public TransitionPciVm(string groupId, string productId, ProductParameter parameter)
             : base(parameter)

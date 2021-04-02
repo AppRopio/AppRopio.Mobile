@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -16,7 +16,7 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Selection.Serv
     {
         #region Services
 
-        protected IMvxMessenger MessengerService { get { return Mvx.Resolve<IMvxMessenger>(); } }
+        protected IMvxMessenger MessengerService { get { return Mvx.IoCProvider.Resolve<IMvxMessenger>(); } }
 
         #endregion
 

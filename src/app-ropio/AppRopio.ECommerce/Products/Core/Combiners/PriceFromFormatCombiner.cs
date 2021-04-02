@@ -13,9 +13,9 @@ namespace AppRopio.ECommerce.Products.Core.Combiners
 {
     public class PriceFromFormatCombiner : MvxValueCombiner
     {
-        private ProductsConfig _config => Mvx.Resolve<IProductConfigService>().Config;
+        private ProductsConfig _config => Mvx.IoCProvider.Resolve<IProductConfigService>().Config;
 
-        private ILocalizationService _localizationService => Mvx.Resolve<ILocalizationService>();
+        private ILocalizationService _localizationService => Mvx.IoCProvider.Resolve<ILocalizationService>();
 
         public override bool TryGetValue(IEnumerable<IMvxSourceStep> steps, out object value)
         {

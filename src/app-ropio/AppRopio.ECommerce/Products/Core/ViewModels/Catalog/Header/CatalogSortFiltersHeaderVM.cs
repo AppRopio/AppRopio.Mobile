@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Input;
+using MvvmCross.Commands;
 using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Header

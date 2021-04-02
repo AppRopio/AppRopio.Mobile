@@ -11,8 +11,9 @@ using AppRopio.ECommerce.Products.Core.Services;
 using AppRopio.ECommerce.Products.Core.ViewModels.Catalog;
 using AppRopio.ECommerce.Products.Core.ViewModels.Categories.Items;
 using AppRopio.ECommerce.Products.Core.ViewModels.Categories.Services;
-using MvvmCross.ViewModels;
 using MvvmCross;
+using MvvmCross.Commands;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.Categories
 {
@@ -100,10 +101,10 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Categories
         #region Services
 
         private ICategoriesVmService _categoriesVmService;
-        public ICategoriesVmService CategoriesVmService => _categoriesVmService ?? (_categoriesVmService = Mvx.Resolve<ICategoriesVmService>());
+        public ICategoriesVmService CategoriesVmService => _categoriesVmService ?? (_categoriesVmService = Mvx.IoCProvider.Resolve<ICategoriesVmService>());
 
         private IProductsVmService _productsVmService;
-        public IProductsVmService ProductsVmService => _productsVmService ?? (_productsVmService = Mvx.Resolve<IProductsVmService>());
+        public IProductsVmService ProductsVmService => _productsVmService ?? (_productsVmService = Mvx.IoCProvider.Resolve<IProductsVmService>());
 
         #endregion
 

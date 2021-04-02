@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Linq;
 using System.Threading;
@@ -12,8 +12,9 @@ using AppRopio.ECommerce.Products.Core.Services;
 using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items;
 using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Services;
 using AppRopio.Models.Products.Responses;
-using MvvmCross.ViewModels;
 using MvvmCross;
+using MvvmCross.Commands;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard
 {
@@ -97,15 +98,15 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard
 
         #region Services
 
-        protected IProductCardVmService VmService => Mvx.Resolve<IProductCardVmService>();
+        protected IProductCardVmService VmService => Mvx.IoCProvider.Resolve<IProductCardVmService>();
 
-        protected IMarkProductVmService MarkProductVmService => Mvx.Resolve<IMarkProductVmService>();
+        protected IMarkProductVmService MarkProductVmService => Mvx.IoCProvider.Resolve<IMarkProductVmService>();
 
-        protected IProductsNavigationVmService NavigationVmService => Mvx.Resolve<IProductsNavigationVmService>();
+        protected new IProductsNavigationVmService NavigationVmService => Mvx.IoCProvider.Resolve<IProductsNavigationVmService>();
 
-        protected IProductsShareVmService ShareVmService => Mvx.Resolve<IProductsShareVmService>();
+        protected IProductsShareVmService ShareVmService => Mvx.IoCProvider.Resolve<IProductsShareVmService>();
 
-        protected IProductConfigService ConfigService => Mvx.Resolve<IProductConfigService>();
+        protected IProductConfigService ConfigService => Mvx.IoCProvider.Resolve<IProductConfigService>();
 
         #endregion
 

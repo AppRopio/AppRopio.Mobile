@@ -34,7 +34,7 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Selection
 
         #region Services
 
-        protected override IBaseSelectionVmService<ProductParameterValue, ApplyedProductParameterValue> VmService => Mvx.Resolve<IProductDetailsSelectionVmService>();
+        protected override IBaseSelectionVmService<ProductParameterValue, ApplyedProductParameterValue> VmService => Mvx.IoCProvider.Resolve<IProductDetailsSelectionVmService>();
 
         #endregion
 
@@ -84,11 +84,11 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Selection
             Task.Run(BuildSelectedValues);
         }
 
-        protected override void OnApplyExecute()
+        protected override async Task OnApplyExecute()
         {
             (VmService as IProductDetailsSelectionVmService).ChangeSelectedParameterValuesTo(_parameterId, SelectedValues);
 
-            Close(this);
+            await NavigationVmService.Close(this);
         }
 
         protected override void OnClearExecute()

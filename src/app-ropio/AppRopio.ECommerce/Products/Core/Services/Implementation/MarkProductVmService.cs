@@ -24,7 +24,7 @@ namespace AppRopio.ECommerce.Products.Core.Services.Implementation
 
         #region Services
 
-        protected IProductService ProductService { get { return Mvx.Resolve<IProductService>(); } }
+        protected IProductService ProductService { get { return Mvx.IoCProvider.Resolve<IProductService>(); } }
 
         #endregion
 

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -6,9 +6,10 @@ using AppRopio.ECommerce.Products.Core.Messages;
 using AppRopio.ECommerce.Products.Core.Services;
 using AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Items;
 using AppRopio.Models.Products.Responses;
-using MvvmCross.ViewModels;
 using MvvmCross;
+using MvvmCross.Commands;
 using MvvmCross.Plugin.Messenger;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.ShortInfo
 {
@@ -107,13 +108,13 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.ShortInf
 
                 Task.Run(async () =>
                 {
-                    var result = await Mvx.Resolve<IMarkProductVmService>().MarkProductAsFavorite(GroupId, ProductId, Marked);
+                    var result = await Mvx.IoCProvider.Resolve<IMarkProductVmService>().MarkProductAsFavorite(GroupId, ProductId, Marked);
                     if (!result)
                         InvokeOnMainThread(() => Marked = !Marked);
 
                     InvokeOnMainThread(() =>
                     {
-                        Mvx.Resolve<IMvxMessenger>().Publish(new ProductCardMarkedMessage(this, new Product { GroupId = GroupId, Id = ProductId }, Marked));
+                        Mvx.IoCProvider.Resolve<IMvxMessenger>().Publish(new ProductCardMarkedMessage(this, new Product { GroupId = GroupId, Id = ProductId }, Marked));
 
                         MarkedLoading = false;
                         //MarkCommand.RaiseCanExecuteChanged();
@@ -130,7 +131,7 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.ShortInf
 
             Task.Run(async () =>
             {
-                await Mvx.Resolve<IProductsShareVmService>().ShareProduct(GroupId, ProductId);
+                await Mvx.IoCProvider.Resolve<IProductsShareVmService>().ShareProduct(GroupId, ProductId);
 
                 InvokeOnMainThread(() =>
                 {

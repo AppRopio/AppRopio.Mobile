@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Reflection;
 using AppRopio.Base.Core.Models.Bundle;
 using AppRopio.Base.Core.ViewModels.Services;
@@ -19,7 +19,7 @@ namespace AppRopio.ECommerce.Products.Core.Services.Implementation
 {
     public class ProductsNavigationVmService : BaseVmNavigationService, IProductsNavigationVmService
     {
-        protected IFiltersNavigationVmService FiltersNavigationVmService { get { return Mvx.CanResolve<IFiltersNavigationVmService>() ? Mvx.Resolve<IFiltersNavigationVmService>() : null; } }
+        protected IFiltersNavigationVmService FiltersNavigationVmService { get { return Mvx.IoCProvider.CanResolve<IFiltersNavigationVmService>() ? Mvx.IoCProvider.Resolve<IFiltersNavigationVmService>() : null; } }
 
         public async void NavigateToContentSearch(BaseBundle bundle)
         {

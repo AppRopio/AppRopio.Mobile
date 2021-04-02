@@ -14,6 +14,7 @@ using AppRopio.ECommerce.Products.Core.ViewModels.Categories.Services;
 using AppRopio.ECommerce.Products.Core.ViewModels.Categories.Services.Banners;
 using MvvmCross.ViewModels;
 using MvvmCross;
+using MvvmCross.Commands;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.Categories
 {
@@ -106,13 +107,13 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Categories
         #region Services
 
         private ICategoriesVmService _categoriesVmService;
-        public ICategoriesVmService CategoriesVmService => _categoriesVmService ?? (_categoriesVmService = Mvx.Resolve<ICategoriesVmService>());
+        public ICategoriesVmService CategoriesVmService => _categoriesVmService ?? (_categoriesVmService = Mvx.IoCProvider.Resolve<ICategoriesVmService>());
 
         private IBannersVmService _bannersVmService;
-        public IBannersVmService BannersVmService => _bannersVmService ?? (_bannersVmService = Mvx.Resolve<IBannersVmService>());
+        public IBannersVmService BannersVmService => _bannersVmService ?? (_bannersVmService = Mvx.IoCProvider.Resolve<IBannersVmService>());
 
         private IProductsVmService _productsVmService;
-        public IProductsVmService ProductsVmService => _productsVmService ?? (_productsVmService = Mvx.Resolve<IProductsVmService>());
+        public IProductsVmService ProductsVmService => _productsVmService ?? (_productsVmService = Mvx.IoCProvider.Resolve<IProductsVmService>());
 
         #endregion
 

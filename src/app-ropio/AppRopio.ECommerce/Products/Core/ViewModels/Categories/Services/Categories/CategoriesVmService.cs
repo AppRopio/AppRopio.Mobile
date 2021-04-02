@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -16,7 +16,7 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Categories.Services
     {
         #region Services
 
-        protected ICategoriesService CategoriesService { get { return Mvx.Resolve<ICategoriesService>(); } }
+        protected ICategoriesService CategoriesService { get { return Mvx.IoCProvider.Resolve<ICategoriesService>(); } }
 
         #endregion
 

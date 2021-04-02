@@ -1,6 +1,8 @@
-﻿using System;
+﻿using System.Threading.Tasks;
+using AppRopio.Base.Core.ViewModels.Services;
 using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard;
-using MvvmCross.ViewModels;
+using MvvmCross;
+using MvvmCross.Commands;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.ModalProductCard
 {
@@ -13,7 +15,7 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ModalProductCard
         #region Commands
 
         private IMvxCommand _closeCommand;
-        public IMvxCommand CloseCommand => _closeCommand ?? (_closeCommand = new MvxCommand(OnCloseExecute));
+        public IMvxCommand CloseCommand => _closeCommand ?? (_closeCommand = new MvxAsyncCommand(OnCloseExecute));
 
         #endregion
 
@@ -51,9 +53,9 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ModalProductCard
 
         #endregion
 
-        protected virtual void OnCloseExecute()
+        protected virtual async Task OnCloseExecute()
         {
-            Close(this);
+            await NavigationVmService.Close(this);
         }
 
         #endregion

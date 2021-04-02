@@ -23,7 +23,7 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.Collecti
 
         public ProductDataType DataType { get; }
 
-        public ILocalizationService LocalizationService => Mvx.Resolve<ILocalizationService>();
+        public ILocalizationService LocalizationService => Mvx.IoCProvider.Resolve<ILocalizationService>();
 
         public ShopAvailabilityItemVM(ProductDataType dataType, Shop model)
         {

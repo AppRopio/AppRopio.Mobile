@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading;
@@ -19,9 +19,9 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ContentSearch.Services
     {
         #region Services
 
-        protected IHistorySearchDbService DbService { get { return Mvx.Resolve<IHistorySearchDbService>(); } }
+        protected IHistorySearchDbService DbService { get { return Mvx.IoCProvider.Resolve<IHistorySearchDbService>(); } }
 
-        protected IContentSearchService ApiService { get { return Mvx.Resolve<IContentSearchService>(); } }
+        protected IContentSearchService ApiService { get { return Mvx.IoCProvider.Resolve<IContentSearchService>(); } }
 
         #endregion
 
