@@ -7,8 +7,9 @@ using AppRopio.Base.Core.ViewModels;
 using AppRopio.Feedback.Core.Models.Bundle;
 using AppRopio.Feedback.Core.ViewModels.Items;
 using AppRopio.Feedback.Core.ViewModels.ReviewPost.Services;
-using MvvmCross.ViewModels;
 using MvvmCross;
+using MvvmCross.Commands;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.Feedback.Core.ViewModels.ReviewPost
 {
@@ -25,7 +26,7 @@ namespace AppRopio.Feedback.Core.ViewModels.ReviewPost
         {
             get
             {
-                return _postCommand ?? (_postCommand = new MvxCommand(OnPostReview));
+                return _postCommand ?? (_postCommand = new MvxAsyncCommand(OnPostReview));
             }
         }
 
@@ -62,7 +63,7 @@ namespace AppRopio.Feedback.Core.ViewModels.ReviewPost
 
         #region Services
 
-        protected IReviewPostVmService VmService { get { return Mvx.Resolve<IReviewPostVmService>(); } }
+        protected IReviewPostVmService VmService { get { return Mvx.IoCProvider.Resolve<IReviewPostVmService>(); } }
 
         #endregion
 
@@ -78,15 +79,15 @@ namespace AppRopio.Feedback.Core.ViewModels.ReviewPost
             Loading = false;
         }
 
-        protected virtual async void OnPostReview()
+        protected virtual async Task OnPostReview()
         {
             Loading = true;
 
             if (await VmService.PostReview(ReviewId, ProductGroupId, ProductId, ReviewItems.OfType<IReviewParameterItemVm>().ToList()))
             {
-                ChangePresentation(new NavigateToDefaultViewModelHint());
-
                 UserDialogs.Alert(LocalizationService.GetLocalizableString(FeedbackConstants.RESX_NAME, "ReviewPost_Sent"));
+
+                await NavigationVmService.ChangePresentation(new NavigateToDefaultViewModelHint());
             }
             else
             {

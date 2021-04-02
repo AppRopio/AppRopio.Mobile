@@ -19,7 +19,7 @@ namespace AppRopio.Feedback.Core.ViewModels.ReviewPost.Services
     {
         #region Services
 
-        protected IReviewsService ApiService { get { return Mvx.Resolve<IReviewsService>(); } }
+        protected IReviewsService ApiService { get { return Mvx.IoCProvider.Resolve<IReviewsService>(); } }
 
         #endregion
 

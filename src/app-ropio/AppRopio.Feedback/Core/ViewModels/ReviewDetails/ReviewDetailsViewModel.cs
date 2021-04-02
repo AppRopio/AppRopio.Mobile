@@ -6,8 +6,9 @@ using AppRopio.Base.Core.Models.Navigation;
 using AppRopio.Base.Core.ViewModels;
 using AppRopio.Feedback.Core.Models.Bundle;
 using AppRopio.Feedback.Core.ViewModels.ReviewDetails.Services;
-using MvvmCross.ViewModels;
 using MvvmCross;
+using MvvmCross.Commands;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.Feedback.Core.ViewModels.ReviewDetails
 {
@@ -42,7 +43,7 @@ namespace AppRopio.Feedback.Core.ViewModels.ReviewDetails
         {
             get
             {
-                return _deleteReviewCommand ?? (_deleteReviewCommand = new MvxCommand(OnDeleteReview));
+                return _deleteReviewCommand ?? (_deleteReviewCommand = new MvxAsyncCommand(OnDeleteReview));
             }
         }
 
@@ -101,7 +102,7 @@ namespace AppRopio.Feedback.Core.ViewModels.ReviewDetails
 
         #region Services
 
-        protected IReviewDetailsVmService VmService { get { return Mvx.Resolve<IReviewDetailsVmService>(); } }
+        protected IReviewDetailsVmService VmService { get { return Mvx.IoCProvider.Resolve<IReviewDetailsVmService>(); } }
 
         #endregion
 
@@ -134,7 +135,7 @@ namespace AppRopio.Feedback.Core.ViewModels.ReviewDetails
             VmService.NavigateToReviewApplication(ReviewDetails.Id, ReviewDetails.ProductGroupId, ReviewDetails.ProductId);
         }
 
-        protected virtual async void OnDeleteReview()
+        protected virtual async Task OnDeleteReview()
         {
             Loading = true;
 
@@ -142,7 +143,7 @@ namespace AppRopio.Feedback.Core.ViewModels.ReviewDetails
             {
                 UserDialogs.Alert(LocalizationService.GetLocalizableString(FeedbackConstants.RESX_NAME, "ReviewDetails_Removed"));
 
-                Close(this);
+                await NavigationVmService.Close(this);
             }
             else
             {

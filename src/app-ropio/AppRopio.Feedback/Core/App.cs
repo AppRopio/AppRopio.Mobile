@@ -13,8 +13,8 @@ using AppRopio.Feedback.Core.ViewModels.ReviewPost;
 using AppRopio.Feedback.Core.ViewModels.ReviewPost.Services;
 using AppRopio.Feedback.Core.ViewModels.Reviews;
 using AppRopio.Feedback.Core.ViewModels.Reviews.Services;
-using MvvmCross.ViewModels;
 using MvvmCross;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.Feedback.Core
 {
@@ -22,15 +22,17 @@ namespace AppRopio.Feedback.Core
 	{
 		public override void Initialize()
 		{
-            Mvx.RegisterSingleton<IMyReviewsVmService>(() => new MyReviewsVmService());
-            Mvx.RegisterSingleton<IReviewsVmService>(() => new ReviewsVmService());
-            Mvx.RegisterSingleton<IReviewDetailsVmService>(() => new ReviewDetailsVmService());
-            Mvx.RegisterSingleton<IReviewPostVmService>(() => new ReviewPostVmService());
-            Mvx.RegisterSingleton<IFeedbackNavigationVmService>(() => new FeedbackNavigationVmService());
+            new API.App().Initialize();
+
+            Mvx.IoCProvider.RegisterSingleton<IMyReviewsVmService>(() => new MyReviewsVmService());
+            Mvx.IoCProvider.RegisterSingleton<IReviewsVmService>(() => new ReviewsVmService());
+            Mvx.IoCProvider.RegisterSingleton<IReviewDetailsVmService>(() => new ReviewDetailsVmService());
+            Mvx.IoCProvider.RegisterSingleton<IReviewPostVmService>(() => new ReviewPostVmService());
+            Mvx.IoCProvider.RegisterSingleton<IFeedbackNavigationVmService>(() => new FeedbackNavigationVmService());
 
 			#region VMs registration
 
-			var vmLookupService = Mvx.Resolve<IViewModelLookupService>();
+			var vmLookupService = Mvx.IoCProvider.Resolve<IViewModelLookupService>();
             vmLookupService.Register<IMyReviewsViewModel, MyReviewsViewModel>();
             vmLookupService.Register<IReviewsViewModel, ReviewsViewModel>();
             vmLookupService.Register<IReviewDetailsViewModel, ReviewDetailsViewModel>();
@@ -43,7 +45,7 @@ namespace AppRopio.Feedback.Core
 			#endregion
 
 			//register start point for current navigation module
-			var routerService = Mvx.Resolve<IRouterService>();
+			var routerService = Mvx.IoCProvider.Resolve<IRouterService>();
             routerService.Register<IMyReviewsViewModel>(new FeedbackRouterSubscriber());
 		}
 	}

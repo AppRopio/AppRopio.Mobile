@@ -17,7 +17,7 @@ namespace AppRopio.Feedback.Core.ViewModels.Reviews.Services
     {
 		#region Services
 
-		protected IReviewsService ApiService { get { return Mvx.Resolve<IReviewsService>(); } }
+		protected IReviewsService ApiService { get { return Mvx.IoCProvider.Resolve<IReviewsService>(); } }
 
 		#endregion
 
@@ -45,14 +45,14 @@ namespace AppRopio.Feedback.Core.ViewModels.Reviews.Services
 
 		public void HandleItemSelection(IReviewItemVm item)
 		{
-			var navigationVmService = Mvx.Resolve<IFeedbackNavigationVmService>();
+			var navigationVmService = Mvx.IoCProvider.Resolve<IFeedbackNavigationVmService>();
             var bundle = new ReviewBundle(reviewId: item.Id, navigationType: NavigationType.Push);
 			navigationVmService.NavigateToReviewDetails(bundle);
 		}
 
 		public void NavigateToReviewApplication(string productGroupId, string productId)
 		{
-			var navigationVmService = Mvx.Resolve<IFeedbackNavigationVmService>();
+			var navigationVmService = Mvx.IoCProvider.Resolve<IFeedbackNavigationVmService>();
             var bundle = new ReviewBundle(reviewId: null, productGroupId: productGroupId, productId: productId, navigationType: NavigationType.Push);
 			navigationVmService.NavigateToReviewApplication(bundle);
 		}

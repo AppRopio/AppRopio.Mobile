@@ -1,7 +1,6 @@
 ﻿using System;
 using AppRopio.Base.Core.ViewModels;
-using AppRopio.Models.Feedback.Responses;
-using MvvmCross.ViewModels;
+using MvvmCross.Commands;
 
 namespace AppRopio.Feedback.Core.ViewModels.ReviewDetails
 {
