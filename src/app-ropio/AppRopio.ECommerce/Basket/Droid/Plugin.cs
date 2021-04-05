@@ -17,7 +17,8 @@ using AppRopio.ECommerce.Basket.Droid.Views.ProductCard;
 using MvvmCross;
 using MvvmCross.Plugin;
 
-namespace AppRopio.ECommerce.Basket.Droid {
+namespace AppRopio.ECommerce.Basket.Droid
+{
 	[MvxPlugin]
     [Preserve(AllMembers = true)]
     public class Plugin : BasePlugin

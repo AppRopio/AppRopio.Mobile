@@ -9,7 +9,8 @@ using MvvmCross.Binding.BindingContext;
 using MvvmCross.Platforms.Ios.Binding.Views;
 using UIKit;
 
-namespace AppRopio.ECommerce.Basket.iOS.Views.Basket.Cells {
+namespace AppRopio.ECommerce.Basket.iOS.Views.Basket.Cells
+{
 	public partial class BasketCell : MvxTableViewCell
     {
         protected Models.BasketCell CellTheme { get { return Mvx.IoCProvider.Resolve<IBasketThemeConfigService>().ThemeConfig.Basket.Cell; } }

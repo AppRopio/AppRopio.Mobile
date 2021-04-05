@@ -8,7 +8,8 @@ using CoreGraphics;
 using MvvmCross.Platforms.Ios.Binding.Views;
 using UIKit;
 
-namespace AppRopio.ECommerce.Basket.iOS.Controls {
+namespace AppRopio.ECommerce.Basket.iOS.Controls
+{
 	public class DeliveryTimePickerViewModel : MvxPickerViewModel
     {
         private UIPickerView _pickerView;

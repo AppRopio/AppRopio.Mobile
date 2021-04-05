@@ -23,7 +23,8 @@ using AppRopio.ECommerce.Basket.iOS.Views.ProductCard;
 using MvvmCross;
 using MvvmCross.Plugin;
 
-namespace AppRopio.ECommerce.Basket.iOS {
+namespace AppRopio.ECommerce.Basket.iOS
+{
 	[MvxPlugin]
     [Preserve(AllMembers = true)]
     public class Plugin : BasePlugin

@@ -10,7 +10,8 @@ using MvvmCross.Binding.Extensions;
 using MvvmCross.Logging;
 using MvvmCross.WeakSubscription;
 
-namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Delivery.Map {
+namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Delivery.Map
+{
 	public abstract class MvxAnnotationManager
     {
         private IEnumerable _itemsSource;
