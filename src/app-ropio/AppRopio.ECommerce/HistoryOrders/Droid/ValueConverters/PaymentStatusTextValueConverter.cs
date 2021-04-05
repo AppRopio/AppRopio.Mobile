@@ -14,9 +14,9 @@ namespace AppRopio.ECommerce.HistoryOrders.Droid.ValueConverters
             switch (value)
             {
                 case PaymentStatus.Paid:
-                    return Mvx.Resolve<ILocalizationService>().GetLocalizableString(HistoryOrdersConstants.RESX_NAME, "Status_Paid");
+                    return Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString(HistoryOrdersConstants.RESX_NAME, "Status_Paid");
                 case PaymentStatus.NotPaid:
-                    return Mvx.Resolve<ILocalizationService>().GetLocalizableString(HistoryOrdersConstants.RESX_NAME, "Status_NotPaid");
+                    return Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString(HistoryOrdersConstants.RESX_NAME, "Status_NotPaid");
                 default:
                     return string.Empty;
             }
