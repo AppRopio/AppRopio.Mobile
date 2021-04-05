@@ -1,30 +1,17 @@
 using AppRopio.Base.iOS;
 using AppRopio.Navigation.Menu.iOS;
-using AppRopio.Navigation.Menu.iOS.Navigation;
 using AppRopio_Test.Views;
 using Foundation;
-using MvvmCross.Platforms.Ios.Core;
-using MvvmCross.Platforms.Ios.Presenters;
 using UIKit;
 
 namespace AppRopio.Test.iOS
 {
-    // The UIApplicationDelegate for the application. This class is responsible for launching the
-    // User Interface of the application, as well as listening (and optionally responding) to application events from iOS.
-    [Register("AppDelegate")]
-    public class AppDelegate : ARApplicationDelegate
+	// The UIApplicationDelegate for the application. This class is responsible for launching the
+	// User Interface of the application, as well as listening (and optionally responding) to application events from iOS.
+	[Register("AppDelegate")]
+    public class AppDelegate : ARApplicationDelegate<MenuSetup>
     {
         public UIWindow DemoWindow { get; private set; }
-
-        protected override MvxAsyncIosSetup CreateSetup(IMvxApplicationDelegate appDelegate, MvxIosViewPresenter presenter)
-        {
-            return new MenuSetup(appDelegate, presenter);
-        }
-
-        protected override MvxIosViewPresenter CreatePresenter(IMvxApplicationDelegate appDelegate, UIWindow window)
-        {
-            return new MenuNavigationPresenter(appDelegate, window);
-        }
 
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
