@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -20,7 +20,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Services.Implementatio
         #region Services
 
         private IOrderService _apiService;
-        public IOrderService ApiService => _apiService ?? (_apiService = Mvx.Resolve<IOrderService>());
+        public IOrderService ApiService => _apiService ?? (_apiService = Mvx.IoCProvider.Resolve<IOrderService>());
 
         #endregion
 

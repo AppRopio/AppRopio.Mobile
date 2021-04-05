@@ -1,4 +1,4 @@
-﻿using System;
+﻿using MvvmCross.Commands;
 using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.CartIndicator

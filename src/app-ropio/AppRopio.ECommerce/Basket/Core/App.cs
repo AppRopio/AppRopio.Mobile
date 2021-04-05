@@ -1,4 +1,4 @@
-using AppRopio.Base.Core.Services.Router;
+﻿using AppRopio.Base.Core.Services.Router;
 using AppRopio.Base.Core.Services.ViewModelLookup;
 using AppRopio.ECommerce.Basket.Core.Services;
 using AppRopio.ECommerce.Basket.Core.Services.Implementation;
@@ -19,6 +19,7 @@ using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Thanks;
 using AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard;
 using AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard.Services;
 using MvvmCross;
+using MvvmCross.IoC;
 using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.ECommerce.Basket.Core
@@ -27,23 +28,25 @@ namespace AppRopio.ECommerce.Basket.Core
     {
         public override void Initialize()
         {
-            Mvx.CallbackWhenRegistered<IMvxMessenger>(() => Mvx.RegisterSingleton<IBasketObservableService>(new BasketObservableService()));
+            new API.App().Initialize();
 
-            Mvx.RegisterSingleton<IBasketConfigService>(() => new BasketConfigService());
-            Mvx.RegisterSingleton<IBasketItemVmService>(() => new BasketItemVmService());
-            Mvx.RegisterSingleton<IBasketVmService>(() => new BasketVmService());
-            Mvx.RegisterSingleton<IOrderVmService>(() => new OrderVmService());
-            Mvx.RegisterSingleton<IUserVmService>(() => new UserVmService());
-            Mvx.RegisterSingleton<IDeliveryVmService>(() => new DeliveryVmService());
-            Mvx.RegisterSingleton<IBasketNavigationVmService>(() => new BasketNavigationVmService());
+            Mvx.IoCProvider.CallbackWhenRegistered<IMvxMessenger>(() => Mvx.IoCProvider.RegisterSingleton<IBasketObservableService>(new BasketObservableService()));
 
-            Mvx.LazyConstructAndRegisterSingleton<IBasketProductCardVmService, BasketProductCardVmService>();
-            Mvx.LazyConstructAndRegisterSingleton<IProductQuantityVmService, ProductQuantityVmService>();
-            Mvx.LazyConstructAndRegisterSingleton<IProductDeleteVmService, ProductDeleteVmService>();
+            Mvx.IoCProvider.RegisterSingleton<IBasketConfigService>(() => new BasketConfigService());
+            Mvx.IoCProvider.RegisterSingleton<IBasketItemVmService>(() => new BasketItemVmService());
+            Mvx.IoCProvider.RegisterSingleton<IBasketVmService>(() => new BasketVmService());
+            Mvx.IoCProvider.RegisterSingleton<IOrderVmService>(() => new OrderVmService());
+            Mvx.IoCProvider.RegisterSingleton<IUserVmService>(() => new UserVmService());
+            Mvx.IoCProvider.RegisterSingleton<IDeliveryVmService>(() => new DeliveryVmService());
+            Mvx.IoCProvider.RegisterSingleton<IBasketNavigationVmService>(() => new BasketNavigationVmService());
+
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IBasketProductCardVmService, BasketProductCardVmService>();
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IProductQuantityVmService, ProductQuantityVmService>();
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IProductDeleteVmService, ProductDeleteVmService>();
 
             #region VMs registration
 
-            var vmLookupService = Mvx.Resolve<IViewModelLookupService>();
+            var vmLookupService = Mvx.IoCProvider.Resolve<IViewModelLookupService>();
             vmLookupService.Register<IBasketViewModel, BasketViewModel>();
             vmLookupService.Register<IDeliveryViewModel, DeliveryViewModel>();
             vmLookupService.Register<IDeliveryOnPointVM, DeliveryOnPointVM>();
@@ -58,7 +61,7 @@ namespace AppRopio.ECommerce.Basket.Core
             vmLookupService.Register<IThanksViewModel, ThanksViewModel>();
             vmLookupService.Register<IOrderFieldAutocompleteVM, OrderFieldAutocompleteVM>();
 
-            var orderType = Mvx.Resolve<IBasketConfigService>().Config.OrderViewType;
+            var orderType = Mvx.IoCProvider.Resolve<IBasketConfigService>().Config.OrderViewType;
             switch (orderType)
             {
                 case Enums.OrderViewType.Full:
@@ -74,7 +77,7 @@ namespace AppRopio.ECommerce.Basket.Core
 
             #region RouterSubscriber registration
 
-            var routerService = Mvx.Resolve<IRouterService>();
+            var routerService = Mvx.IoCProvider.Resolve<IRouterService>();
 
             routerService.Register<IBasketViewModel>(new BasketRouterSubscriber());
 

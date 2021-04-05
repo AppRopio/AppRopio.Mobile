@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.Core.Services.UserDialogs;
 using AppRopio.ECommerce.Basket.Core.Messages;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Items.Services;
 using AppRopio.Models.Basket.Responses.Basket;
 using AppRopio.Models.Products.Responses;
-using MvvmCross.ViewModels;
 using MvvmCross;
+using MvvmCross.Commands;
 using MvvmCross.Plugin.Messenger;
-using AppRopio.Base.Core.Services.Localization;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Items
 {
@@ -28,7 +29,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Items
         {
             get
             {
-                return _incCommand ?? (_incCommand = new MvxCommand(() => OnIncrementExecute()));
+                return _incCommand ?? (_incCommand = new MvxAsyncCommand(OnIncrementExecute));
             }
         }
 
@@ -37,7 +38,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Items
         {
             get
             {
-                return _decCommand ?? (_decCommand = new MvxCommand(() => OnDecrementExecute()));
+                return _decCommand ?? (_decCommand = new MvxAsyncCommand(OnDecrementExecute));
             }
         }
 
@@ -175,7 +176,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Items
 
         #region Services
 
-        protected IBasketItemVmService VmService { get { return Mvx.Resolve<IBasketItemVmService>(); } }
+        protected IBasketItemVmService VmService { get { return Mvx.IoCProvider.Resolve<IBasketItemVmService>(); } }
 
         #endregion
 
@@ -217,10 +218,10 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Items
                 {
                     Quantity = quantityResponse.Quantity;
 
-                    Mvx.Resolve<IMvxMessenger>().Publish(new ProductQuantityChangedMessage(this));
+                    Mvx.IoCProvider.Resolve<IMvxMessenger>().Publish(new ProductQuantityChangedMessage(this));
 
                     if (!string.IsNullOrEmpty(quantityResponse.Error))
-                        await Mvx.Resolve<IUserDialogs>().Alert(quantityResponse.Error);
+                        await Mvx.IoCProvider.Resolve<IUserDialogs>().Alert(quantityResponse.Error);
                 }
             }
             catch (OperationCanceledException)
@@ -248,7 +249,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Items
         {
             if ((Quantity - UnitStep <= 0))
             {
-                if (await Mvx.Resolve<IUserDialogs>().Confirm($"{Mvx.Resolve<ILocalizationService>().GetLocalizableString(BasketConstants.RESX_NAME, "Basket_Delete")} \"{Name}\"?", Mvx.Resolve<ILocalizationService>().GetLocalizableString(BasketConstants.RESX_NAME, "Basket_DeleteYes")))
+                if (await Mvx.IoCProvider.Resolve<IUserDialogs>().Confirm($"{Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString(BasketConstants.RESX_NAME, "Basket_Delete")} \"{Name}\"?", Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString(BasketConstants.RESX_NAME, "Basket_DeleteYes")))
                     OnDeleteExecute();
                 return;
             }

@@ -1,17 +1,17 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
+using AppRopio.Base.Core.Extentions;
 using AppRopio.Base.Core.Models.Navigation;
 using AppRopio.Base.Core.ViewModels;
-using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items;
-using MvvmCross.ViewModels;
-using AppRopio.ECommerce.Basket.Core.Models.Bundle;
-using AppRopio.Base.Core.Extentions;
-using AppRopio.Models.Basket.Responses.Order;
-using System.Collections.Generic;
-using MvvmCross;
 using AppRopio.ECommerce.Basket.Core.Messages.Autocomplete;
-using System.Threading.Tasks;
+using AppRopio.ECommerce.Basket.Core.Models.Bundle;
+using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Services;
+using AppRopio.Models.Basket.Responses.Order;
+using MvvmCross;
+using MvvmCross.Commands;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order
 {
@@ -26,13 +26,13 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order
         #region Commands
 
         private IMvxCommand _valueChangedCommand;
-        public IMvxCommand ValueChangedCommand => _valueChangedCommand ?? (_valueChangedCommand = new MvxCommand(OnValueChangedExecute));
+        public IMvxCommand ValueChangedCommand => _valueChangedCommand ?? (_valueChangedCommand = new MvxAsyncCommand(OnValueChangedExecute));
 
         private IMvxCommand _selectionChangedCommand;
         public IMvxCommand SelectionChangedCommand => _selectionChangedCommand ?? (_selectionChangedCommand = new MvxCommand<IOrderFieldAutocompleteItemVM>(OnSelectionChangedExecute));
 
         private IMvxCommand _applyCommand;
-        public IMvxCommand ApplyCommand => _applyCommand ?? (_applyCommand = new MvxCommand(OnApplyExecute));
+        public IMvxCommand ApplyCommand => _applyCommand ?? (_applyCommand = new MvxAsyncCommand(OnApplyExecute));
 
         #endregion
 
@@ -56,7 +56,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order
 
         #region Services
 
-        protected IOrderVmService OrderVmService => Mvx.Resolve<IOrderVmService>();
+        protected IOrderVmService OrderVmService => Mvx.IoCProvider.Resolve<IOrderVmService>();
 
         #endregion
 
@@ -108,9 +108,9 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order
             InvokeOnMainThread(() => Items = items);
         }
 
-        protected virtual void OnValueChangedExecute()
+        protected virtual async Task OnValueChangedExecute()
         {
-            LoadContent();
+            await LoadContent();
         }
 
         protected virtual void OnSelectionChangedExecute(IOrderFieldAutocompleteItemVM autocompleteItem)
@@ -118,10 +118,10 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order
             OrderFieldItem.Value = autocompleteItem.Value;
         }
 
-        protected virtual void OnApplyExecute()
+        protected virtual async Task OnApplyExecute()
         {
             //Messenger.Publish(new AutocompleteApplyMessage(this) { FieldId = OrderFieldItem.Id, FieldValue = OrderFieldItem.Value });
-            Close(this);
+            await NavigationVmService.Close(this);
         }
 
         #endregion

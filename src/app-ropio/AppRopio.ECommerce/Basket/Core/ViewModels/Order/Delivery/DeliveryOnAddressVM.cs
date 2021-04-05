@@ -43,7 +43,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery
 
         #region Services
 
-        protected ILocationService LocationService => Mvx.Resolve<ILocationService>();
+        protected ILocationService LocationService => Mvx.IoCProvider.Resolve<ILocationService>();
 
         #endregion
 

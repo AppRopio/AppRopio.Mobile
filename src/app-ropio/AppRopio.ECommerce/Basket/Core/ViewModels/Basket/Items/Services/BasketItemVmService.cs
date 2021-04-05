@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
@@ -22,7 +22,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Items.Services
 
         #region Services
 
-        protected IProductQuantityVmService QuantityVmService => Mvx.Resolve<IProductQuantityVmService>();
+        protected IProductQuantityVmService QuantityVmService => Mvx.IoCProvider.Resolve<IProductQuantityVmService>();
 
         #endregion
 
@@ -39,7 +39,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Items.Services
             {
                 try
                 {
-                    Mvx.Resolve<IMvxMessenger>().Publish(new ItemDeletedMessage(this) { Id = id });
+                    Mvx.IoCProvider.Resolve<IMvxMessenger>().Publish(new ItemDeletedMessage(this) { Id = id });
                     //вызов метода API происходит при обработке сообщения,
                     //т.к. удаление ячейки происходит из VM экрана
 

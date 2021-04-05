@@ -1,17 +1,18 @@
-using System;
+﻿using System;
 using System.Windows.Input;
 using AppRopio.Base.Core.Models.Navigation;
+using AppRopio.Base.Core.Services.Analytics;
+using AppRopio.Base.Core.Services.Launcher;
+using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.Core.Services.UserDialogs;
 using AppRopio.ECommerce.Basket.Core.Models.Bundle;
 using AppRopio.ECommerce.Basket.Core.Services;
 using AppRopio.Models.Base.Responses;
 using AppRopio.Models.Basket.Responses.Order;
-using MvvmCross.ViewModels;
 using MvvmCross;
-using Plugin.ExternalMaps;
-using Plugin.Messaging;
-using AppRopio.Base.Core.Services.Analytics;
-using AppRopio.Base.Core.Services.Localization;
+using MvvmCross.Commands;
+using MvvmCross.ViewModels;
+using Xamarin.Essentials;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery.Items
 {
@@ -101,7 +102,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery.Items
 
         public DeliveryPointItemVM(DeliveryPoint model)
         {
-            var orderType = Mvx.Resolve<IBasketConfigService>().Config.OrderViewType;
+            var orderType = Mvx.IoCProvider.Resolve<IBasketConfigService>().Config.OrderViewType;
             _bundle = new DeliveryPointBundle(model, orderType == Enums.OrderViewType.Partial ? NavigationType.PresentModal : NavigationType.Push);
 
             if (model == null)
@@ -147,28 +148,24 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery.Items
 
         protected virtual async void OnCallExecute()
         {
-            if (Mvx.CanResolve<IAnalyticsNotifyingService>())
-                Mvx.Resolve<IAnalyticsNotifyingService>().NotifyEventIsHandled("order", "order_delivery_pickup_item_button");
+            if (Mvx.IoCProvider.CanResolve<IAnalyticsNotifyingService>())
+                Mvx.IoCProvider.Resolve<IAnalyticsNotifyingService>().NotifyEventIsHandled("order", "order_delivery_pickup_item_button");
 
-            if (await Mvx.Resolve<IUserDialogs>().Confirm($"{Mvx.Resolve<ILocalizationService>().GetLocalizableString(BasketConstants.RESX_NAME, "DeliveryPoint_MakeCallText")} {Phone}?", Mvx.Resolve<ILocalizationService>().GetLocalizableString(BasketConstants.RESX_NAME, "DeliveryPoint_MakeCall"))
-                        && CrossMessaging.Current.PhoneDialer.CanMakePhoneCall)
+            if (await Mvx.IoCProvider.Resolve<IUserDialogs>().Confirm($"{Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString(BasketConstants.RESX_NAME, "DeliveryPoint_MakeCallText")} {Phone}?", Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString(BasketConstants.RESX_NAME, "DeliveryPoint_MakeCall")))
             {
-                CrossMessaging.Current.PhoneDialer.MakePhoneCall(Phone, Name); 
-            }
-            else
-            {
-                await Mvx.Resolve<IUserDialogs>().Alert(Mvx.Resolve<ILocalizationService>().GetLocalizableString(BasketConstants.RESX_NAME, "DeliveryPoint_CallError"));
+                if (!await Mvx.IoCProvider.Resolve<ILauncherService>().LaunchPhone(Phone))
+                    await Mvx.IoCProvider.Resolve<IUserDialogs>().Alert(Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString(BasketConstants.RESX_NAME, "DeliveryPoint_CallError"));
             }
         }
 
         protected virtual void OnAdditionalInfoExecute()
         {
-            Mvx.Resolve<IBasketNavigationVmService>().NavigateToDeliveryPointAdditionalInfo(_bundle);
+            Mvx.IoCProvider.Resolve<IBasketNavigationVmService>().NavigateToDeliveryPointAdditionalInfo(_bundle);
         }
 
         protected virtual void OnMapExecute()
         {
-            Mvx.Resolve<IBasketNavigationVmService>().NavigateToDeliveryPointOnMap(_bundle);
+            Mvx.IoCProvider.Resolve<IBasketNavigationVmService>().NavigateToDeliveryPointOnMap(_bundle);
         }
 
         protected virtual void OnRouteExecute()
@@ -178,9 +175,19 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery.Items
 
             InvokeOnMainThread(async () =>
             {
-                var success = await CrossExternalMaps.Current.NavigateTo(Name, Coordinates.Latitude, Coordinates.Longitude);
-                if (!success)
-                    await Mvx.Resolve<IUserDialogs>().Alert(Mvx.Resolve<ILocalizationService>().GetLocalizableString(BasketConstants.RESX_NAME, "DeliveryPoint_RouteError"));
+                try
+                {
+                    var options = new MapLaunchOptions()
+                    {
+                        Name = Name,
+                        NavigationMode = NavigationMode.Driving
+                    };
+                    await Map.OpenAsync(Coordinates.Latitude, Coordinates.Longitude, options);
+                }
+                catch
+                {
+                    await Mvx.IoCProvider.Resolve<IUserDialogs>().Alert(Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString(BasketConstants.RESX_NAME, "DeliveryPoint_RouteError"));
+                }
             });
         }
 

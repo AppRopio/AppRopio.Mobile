@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using AppRopio.Base.Core.ViewModels;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items;
-using MvvmCross.ViewModels;
+using MvvmCross.Commands;
+
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order
 {
     public interface IOrderFieldAutocompleteVM : IBaseViewModel

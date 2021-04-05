@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using System.Windows.Input;
+using AppRopio.Base.Core;
 using AppRopio.Base.Core.Extentions;
 using AppRopio.Base.Core.Models.Navigation;
 using AppRopio.Base.Core.ViewModels;
@@ -7,10 +8,10 @@ using AppRopio.ECommerce.Basket.Core.Messages.Order;
 using AppRopio.ECommerce.Basket.Core.Models.Bundle;
 using AppRopio.ECommerce.Basket.Core.Services;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Services;
-using MvvmCross.ViewModels;
 using MvvmCross;
+using MvvmCross.Commands;
 using MvvmCross.Plugin.Messenger;
-using AppRopio.Base.Core;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery
 {
@@ -27,7 +28,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery
         {
             get
             {
-                return _closeCommand ?? (_closeCommand = new MvxCommand(() => Close(this)));
+                return _closeCommand ?? (_closeCommand = new MvxAsyncCommand(OnCloseExecute));
             }
         }
 
@@ -36,7 +37,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery
         {
             get
             {
-                return _nextCommand ?? (_nextCommand = new MvxCommand(OnNext));
+                return _nextCommand ?? (_nextCommand = new MvxAsyncCommand(OnNextExecute));
             }
         }
 
@@ -94,8 +95,8 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery
 
         #region Services
 
-        protected IDeliveryVmService DeliveryVmService { get { return Mvx.Resolve<IDeliveryVmService>(); } }
-        protected IBasketNavigationVmService NavigationVmService { get { return Mvx.Resolve<IBasketNavigationVmService>(); } }
+        protected IDeliveryVmService DeliveryVmService { get { return Mvx.IoCProvider.Resolve<IDeliveryVmService>(); } }
+        protected new IBasketNavigationVmService NavigationVmService { get { return Mvx.IoCProvider.Resolve<IBasketNavigationVmService>(); } }
 
         #endregion
 
@@ -133,35 +134,37 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery
 
         protected abstract Task<bool> ValidateAndSaveInput();
 
-        protected virtual void OnNext()
+        protected virtual async Task OnNextExecute()
         {
-            Task.Run(async () =>
-            {
-                if (!await ValidateAndSaveInput())
-                    return;
+            if (!await ValidateAndSaveInput())
+                return;
                 
-                var oldDeliveyPrice = DeliveryPrice;
-                DeliveryPrice = await DeliveryVmService.LoadDeliveryPrice(DeliveryId);
+            var oldDeliveyPrice = DeliveryPrice;
+            DeliveryPrice = await DeliveryVmService.LoadDeliveryPrice(DeliveryId);
 
-                Mvx.Resolve<IMvxMessenger>().Publish(new DeliveryConfirmedMessage(this)
-                {
-                    DeliveryId = DeliveryId,
-                    DeliveryPrice = DeliveryPrice
-                });
-
-                if (DeliveryPrice.HasValue && oldDeliveyPrice != DeliveryPrice)
-                {
-                    if (VmNavigationType == NavigationType.PresentModal)
-                        await UserDialogs.Alert($"{LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Order_DeliveryPriceAlert")} {DeliveryPrice.Value.ToString($"# ### ##0.## {AppSettings.SettingsCulture.NumberFormat.CurrencySymbol}").Trim()}");
-                    else
-                        await UserDialogs.Confirm($"{LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Order_DeliveryPriceAlert")} {DeliveryPrice.Value.ToString($"# ### ##0.## {AppSettings.SettingsCulture.NumberFormat.CurrencySymbol}").Trim()}", LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Order_AlertOk"));
-                }
-
-                if (VmNavigationType == NavigationType.PresentModal)
-                    Close(this);
-                else
-                    NavigationVmService.NavigateToPayment(new PaymentBundle(DeliveryId, NavigationType.PresentModal));
+            Mvx.IoCProvider.Resolve<IMvxMessenger>().Publish(new DeliveryConfirmedMessage(this)
+            {
+                DeliveryId = DeliveryId,
+                DeliveryPrice = DeliveryPrice
             });
+
+            if (DeliveryPrice.HasValue && oldDeliveyPrice != DeliveryPrice)
+            {
+                if (VmNavigationType == NavigationType.PresentModal)
+                    await UserDialogs.Alert($"{LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Order_DeliveryPriceAlert")} {DeliveryPrice.Value.ToString($"# ### ##0.## {AppSettings.SettingsCulture.NumberFormat.CurrencySymbol}").Trim()}");
+                else
+                    await UserDialogs.Confirm($"{LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Order_DeliveryPriceAlert")} {DeliveryPrice.Value.ToString($"# ### ##0.## {AppSettings.SettingsCulture.NumberFormat.CurrencySymbol}").Trim()}", LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Order_AlertOk"));
+            }
+
+            if (VmNavigationType == NavigationType.PresentModal)
+                await NavigationVmService.Close(this);
+            else
+                NavigationVmService.NavigateToPayment(new PaymentBundle(DeliveryId, NavigationType.PresentModal));
+        }
+
+        protected virtual async Task OnCloseExecute()
+        {
+            await NavigationVmService.Close(this);
         }
 
         #endregion

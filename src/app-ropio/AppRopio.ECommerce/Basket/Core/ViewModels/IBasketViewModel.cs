@@ -2,6 +2,7 @@
 using System.Windows.Input;
 using AppRopio.Base.Core.ViewModels;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Items;
+using MvvmCross.Commands;
 using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels

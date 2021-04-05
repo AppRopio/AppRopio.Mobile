@@ -13,7 +13,7 @@ namespace AppRopio.ECommerce.Basket.Core.Services.Implementation
         #region Services
 
         private IBasketService _apiService;
-        public IBasketService ApiService => _apiService ?? (_apiService = Mvx.Resolve<IBasketService>());
+        public IBasketService ApiService => _apiService ?? (_apiService = Mvx.IoCProvider.Resolve<IBasketService>());
 
         #endregion
 
@@ -25,7 +25,7 @@ namespace AppRopio.ECommerce.Basket.Core.Services.Implementation
 
             try
             {
-                await Mvx.Resolve<ITasksQueueService>().Append(() => ApiService.DeleteBasketProduct(productId));
+                await Mvx.IoCProvider.Resolve<ITasksQueueService>().Append(() => ApiService.DeleteBasketProduct(productId));
                 result = true;
             }
             catch (ConnectionException ex)

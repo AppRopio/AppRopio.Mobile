@@ -22,7 +22,7 @@ namespace AppRopio.ECommerce.Basket.Core.Services.Implementation
         #region Services
 
         private IBasketService _apiService;
-        public IBasketService ApiService => _apiService ?? (_apiService = Mvx.Resolve<IBasketService>());
+        public IBasketService ApiService => _apiService ?? (_apiService = Mvx.IoCProvider.Resolve<IBasketService>());
 
         #endregion
 
@@ -37,7 +37,7 @@ namespace AppRopio.ECommerce.Basket.Core.Services.Implementation
 
                 _quantityCTSs[id] = new CancellationTokenSource();
 
-                quantityResponse = await Mvx.Resolve<ITasksQueueService>()
+                quantityResponse = await Mvx.IoCProvider.Resolve<ITasksQueueService>()
                                             .Append(() => ApiService.ChangeQuantity(id, quantity, _quantityCTSs[id].Token), _quantityCTSs[id].Token);
             }
             catch (OperationCanceledException)

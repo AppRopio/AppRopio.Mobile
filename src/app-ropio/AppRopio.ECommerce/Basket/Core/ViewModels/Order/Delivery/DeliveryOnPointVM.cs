@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using AppRopio.Base.Core.ViewModels.Search;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery.Items;
-using MvvmCross.ViewModels;
+using MvvmCross.Commands;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery
 {
@@ -168,11 +168,11 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery
             return isValid;
         }
 
-        protected override void OnNext()
+        protected override Task OnNextExecute()
         {
             AnalyticsNotifyingService.NotifyEventIsHandled("order", "order_delivery_pickup_confirmed_button");
 
-            base.OnNext();
+            return base.OnNextExecute();
         }
 
         #endregion

@@ -14,9 +14,10 @@ using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items.Delivery;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Services;
 using AppRopio.Payments.Core.Bundle;
 using AppRopio.Payments.Core.Messages;
-using MvvmCross.ViewModels;
 using MvvmCross;
+using MvvmCross.Commands;
 using MvvmCross.Plugin.Messenger;
+using MvvmCross.ViewModels;
 using PaymentModel = AppRopio.Models.Basket.Responses.Order.Payment;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
@@ -40,7 +41,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
 		{
 			get
 			{
-                return _selectionChangedCommand ?? (_selectionChangedCommand = new MvxCommand<IDeliveryTypeItemVM>(OnDeliveryChanged));
+                return _selectionChangedCommand ?? (_selectionChangedCommand = new MvxAsyncCommand<IDeliveryTypeItemVM>(OnDeliveryChanged));
 			}
 		}
 
@@ -49,12 +50,12 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
         {
             get
             {
-                return _applyDeliveryTimeCommand ?? (_applyDeliveryTimeCommand = new MvxCommand<IDeliveryTimeItemVM>(OnDeliveryTimeApply));
+                return _applyDeliveryTimeCommand ?? (_applyDeliveryTimeCommand = new MvxAsyncCommand<IDeliveryTimeItemVM>(OnDeliveryTimeApply));
             }
         }
 
         private IMvxCommand _nextCommand;
-        public IMvxCommand NextCommand => _nextCommand ?? (_nextCommand = new MvxCommand(OnNextExecute));
+        public IMvxCommand NextCommand => _nextCommand ?? (_nextCommand = new MvxAsyncCommand(OnNextExecute));
 
         #endregion
 
@@ -219,9 +220,9 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
 
         #region Services
 
-        protected IOrderVmService OrderVmService { get { return Mvx.Resolve<IOrderVmService>(); } }
-        protected IDeliveryVmService DeliveryVmService { get { return Mvx.Resolve<IDeliveryVmService>(); } }
-        protected IBasketNavigationVmService NavigationVmService { get { return Mvx.Resolve<IBasketNavigationVmService>(); } }
+        protected IOrderVmService OrderVmService { get { return Mvx.IoCProvider.Resolve<IOrderVmService>(); } }
+        protected IDeliveryVmService DeliveryVmService { get { return Mvx.IoCProvider.Resolve<IDeliveryVmService>(); } }
+        protected new IBasketNavigationVmService NavigationVmService { get { return Mvx.IoCProvider.Resolve<IBasketNavigationVmService>(); } }
 
         #endregion
 
@@ -271,7 +272,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
             {
                 SendAnalyticsData(orderID);
 
-                ChangePresentation(new Base.Core.PresentationHints.NavigateToDefaultViewModelHint());
+                await NavigationVmService.ChangePresentation(new Base.Core.PresentationHints.NavigateToDefaultViewModelHint());
 
                 NavigationVmService.NavigateToThanks(new ThanksBundle(orderID, NavigationType.PresentModal));
 
@@ -349,43 +350,40 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
             CanGoNext = true;
         }
 
-        protected virtual void OnDeliveryTimeApply(IDeliveryTimeItemVM deliveryTime)
+        protected virtual async Task OnDeliveryTimeApply(IDeliveryTimeItemVM deliveryTime)
         {
             if (deliveryTime == null)
                 return;
 
             SelectedDeliveryTime = deliveryTime;
 
-            Task.Run(async () =>
+            if (!await DeliveryVmService.ConfirmDeliveryTime(deliveryTime.Id))
             {
-                if (!await DeliveryVmService.ConfirmDeliveryTime(deliveryTime.Id))
-                {
-                    var selectedItem = Items.First(x => x is IDeliveryTypeItemVM delivery && delivery.IsSelected) as IDeliveryTypeItemVM;
-                    LoadDeliveryTime(selectedItem.Id);
-                    return;
-                }
+                var selectedItem = Items.First(x => x is IDeliveryTypeItemVM delivery && delivery.IsSelected) as IDeliveryTypeItemVM;
+                await LoadDeliveryTime(selectedItem.Id);
+                return;
+            }
 
-                InvokeOnMainThread(() =>
-                {
-                    SelectedDeliveryTime = deliveryTime;
-                    CanGoNext = true;
-                });
+            InvokeOnMainThread(() =>
+            {
+                SelectedDeliveryTime = deliveryTime;
+                CanGoNext = true;
             });
         }
 
-        protected async void OnNextExecute()
+        protected virtual async Task OnNextExecute()
         {
             if (!Items.IsNullOrEmpty() && !Items.Any(x => x is IDeliveryTypeItemVM deliveryItem && deliveryItem.IsSelected))
             {
                 CanGoNext = true;
-                UserDialogs.Error(LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Error_Delivery_Text").ToString());
+                await UserDialogs.Error(LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Error_Delivery_Text").ToString());
                 return;
             }
 
             if (IsShowDeliveryTimePicker && !DaysItems.IsNullOrEmpty() && SelectedDeliveryTime == null)
             {
                 CanGoNext = true;
-                UserDialogs.Error(LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Error_Delivery_Time_Text").ToString());
+                await UserDialogs.Error(LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Error_Delivery_Time_Text").ToString());
                 return;
             }
 
@@ -450,10 +448,10 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
             Loading = false;
         }
 
-        public virtual void OnDeliveryChanged(IDeliveryTypeItemVM deliveryItem)
+        public virtual async Task OnDeliveryChanged(IDeliveryTypeItemVM deliveryItem)
         {
             if (!deliveryItem.Message.IsNullOrEmpty())
-                UserDialogs.Alert(deliveryItem.Message);
+                await UserDialogs.Alert(deliveryItem.Message);
 
             if (deliveryItem.NotAvailable)
                 return;
@@ -465,15 +463,12 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
                 NavigationVmService.NavigateToDelivery(new DeliveryBundle(deliveryItem.Id, deliveryItem.Type, BasketAmount, NavigationType.PresentModal));
             else
             {
-                Task.Run(async () =>
-                {
-                    Loading = true;
+                Loading = true;
 
-                    if (await DeliveryVmService.ValidateAndSaveDelivery(deliveryItem.Id))
-                        OnDeliveryConfirmed(new DeliveryConfirmedMessage(this) { DeliveryId = deliveryItem.Id, DeliveryPrice = deliveryItem.Price });
+                if (await DeliveryVmService.ValidateAndSaveDelivery(deliveryItem.Id))
+                    OnDeliveryConfirmed(new DeliveryConfirmedMessage(this) { DeliveryId = deliveryItem.Id, DeliveryPrice = deliveryItem.Price });
 
-                    Loading = false;
-                });
+                Loading = false;
             }
         }
 

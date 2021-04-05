@@ -1,10 +1,10 @@
-﻿using System;
+﻿using System.Threading.Tasks;
 using System.Windows.Input;
 using AppRopio.Base.Core.Extentions;
-using AppRopio.Base.Core.Models.Bundle;
 using AppRopio.Base.Core.Models.Navigation;
 using AppRopio.Base.Core.ViewModels;
 using AppRopio.ECommerce.Basket.Core.Models.Bundle;
+using MvvmCross.Commands;
 using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Thanks
@@ -18,7 +18,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Thanks
 		{
 			get
 			{
-                return _goToCatalogCommand ?? (_goToCatalogCommand = new MvxCommand(OnClose));
+                return _goToCatalogCommand ?? (_goToCatalogCommand = new MvxAsyncCommand(OnCloseExecute));
 			}
 		}
 
@@ -27,7 +27,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Thanks
 		{
 			get
 			{
-                return _closeCommand ?? (_closeCommand = new MvxCommand(OnClose));
+                return _closeCommand ?? (_closeCommand = new MvxAsyncCommand(OnCloseExecute));
 			}
 		}
 
@@ -65,9 +65,9 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Thanks
 
 		#endregion
 
-        protected virtual void OnClose()
+        protected virtual async Task OnCloseExecute()
         {
-            Close(this);
+            await NavigationVmService.Close(this);
         }
 	}
 }

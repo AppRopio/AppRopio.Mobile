@@ -15,9 +15,10 @@ using AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Items;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Services;
 using AppRopio.ECommerce.Loyalty.Abstractions;
 using AppRopio.ECommerce.Products.Core.Models.Bundle;
-using MvvmCross.ViewModels;
 using MvvmCross;
+using MvvmCross.Commands;
 using MvvmCross.Plugin.Messenger;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Basket
 {
@@ -62,7 +63,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Basket
         {
             get
             {
-                return _nextCommand ?? (_nextCommand = new MvxCommand(OnNextExecute, () => !AmountLoading));
+                return _nextCommand ?? (_nextCommand = new MvxAsyncCommand(OnNextExecute, () => !AmountLoading));
             }
         }
 
@@ -147,8 +148,8 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Basket
 
         #region Services
 
-        protected IBasketVmService VmService { get { return Mvx.Resolve<IBasketVmService>(); } }
-        protected IBasketNavigationVmService NavigationVmService { get { return Mvx.Resolve<IBasketNavigationVmService>(); } }
+        protected IBasketVmService VmService { get { return Mvx.IoCProvider.Resolve<IBasketVmService>(); } }
+        protected new IBasketNavigationVmService NavigationVmService { get { return Mvx.IoCProvider.Resolve<IBasketNavigationVmService>(); } }
 
         #endregion
 
@@ -267,7 +268,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Basket
             NavigationVmService.NavigateToProduct(new ProductCardBundle(item.GroupId, item.ProductId, NavigationType.DoublePush));
         }
 
-        protected virtual async void OnNextExecute()
+        protected virtual async Task OnNextExecute()
         {
             if (!CanGoNext || AmountLoading)
                 return;

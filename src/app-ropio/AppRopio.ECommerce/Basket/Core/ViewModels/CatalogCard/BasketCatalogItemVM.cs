@@ -21,10 +21,10 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.CatalogCard
 
         protected override string AnalyticsPrefix => "catalog_item";
 
-        protected override void OnBuyCommandExecute()
+        protected override async Task OnBuyCommandExecute()
         {
             if (Quantity == default(float)) {
-                base.OnBuyCommandExecute();
+                await base.OnBuyCommandExecute();
             } else if (IncrementCommand != null && IncrementCommand.CanExecute()) {
                 IncrementCommand.Execute();
             }
@@ -42,7 +42,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.CatalogCard
         public BasketCatalogItemVM()
         {
             //init here so the value gets assigned on the catalog loading instead of on accessing (post-loading)
-            ActionText = Mvx.Resolve<ILocalizationService>().GetLocalizableString(BasketConstants.RESX_NAME, "BasketCatalogCard_AddToBasket");
+            ActionText = Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString(BasketConstants.RESX_NAME, "BasketCatalogCard_AddToBasket");
         }
     }
 }
