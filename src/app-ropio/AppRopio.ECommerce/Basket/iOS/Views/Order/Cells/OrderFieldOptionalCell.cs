@@ -2,7 +2,7 @@
 
 using Foundation;
 using UIKit;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using MvvmCross;
 using AppRopio.ECommerce.Basket.iOS.Services;
 using MvvmCross.Binding.BindingContext;

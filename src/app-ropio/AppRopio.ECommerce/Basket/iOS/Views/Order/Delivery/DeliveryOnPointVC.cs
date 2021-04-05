@@ -12,7 +12,7 @@ using AppRopio.ECommerce.Basket.iOS.Services;
 using AppRopio.ECommerce.Basket.iOS.Views.Order.Delivery.Cells;
 using CoreGraphics;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using MvvmCross;
 using UIKit;
 
@@ -22,8 +22,8 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Delivery
     {
         private UIView _navBarBack;
         private UIBarButtonItem _closeButton;
-        protected Models.DeliveryOnPointList DeliveryOnPointListTheme { get { return Mvx.Resolve<IBasketThemeConfigService>().ThemeConfig.Order.DeliveryInfo.OnPoint.List; } }
-        protected OrderViewType OrderViewType { get { return Mvx.Resolve<IBasketConfigService>().Config.OrderViewType; } }
+        protected Models.DeliveryOnPointList DeliveryOnPointListTheme { get { return Mvx.IoCProvider.Resolve<IBasketThemeConfigService>().ThemeConfig.Order.DeliveryInfo.OnPoint.List; } }
+        protected OrderViewType OrderViewType { get { return Mvx.IoCProvider.Resolve<IBasketConfigService>().Config.OrderViewType; } }
 
         public DeliveryOnPointVC() : base("DeliveryOnPointVC", null)
         {

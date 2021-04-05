@@ -20,7 +20,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Basket
 {
     public partial class BasketViewController : CommonViewController<IBasketViewModel>
     {
-        protected Models.Basket BasketTheme { get { return Mvx.Resolve<IBasketThemeConfigService>().ThemeConfig.Basket; } }
+        protected Models.Basket BasketTheme { get { return Mvx.IoCProvider.Resolve<IBasketThemeConfigService>().ThemeConfig.Basket; } }
 
         public BasketViewController()
             : base("BasketViewController", null)
@@ -104,10 +104,10 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Basket
 
         protected virtual void ResolveAndSetupLoyalty(UIView loyaltyWrapper)
         {
-            var config = Mvx.Resolve<IBasketConfigService>().Config;
-            if (config.Loyalty != null && Mvx.Resolve<IViewLookupService>().IsRegistered(config.Loyalty.TypeName))
+            var config = Mvx.IoCProvider.Resolve<IBasketConfigService>().Config;
+            if (config.Loyalty != null && Mvx.IoCProvider.Resolve<IViewLookupService>().IsRegistered(config.Loyalty.TypeName))
             {
-                var loyaltyView = ViewModel.LoyaltyVm == null ? null : Mvx.Resolve<IMvxIosViewCreator>().CreateView(ViewModel.LoyaltyVm) as UIView;
+                var loyaltyView = ViewModel.LoyaltyVm == null ? null : Mvx.IoCProvider.Resolve<IMvxIosViewCreator>().CreateView(ViewModel.LoyaltyVm) as UIView;
                 if (loyaltyView != null)
                 {
                     loyaltyWrapper.Hidden = false;

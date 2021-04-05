@@ -1,4 +1,5 @@
 using AppRopio.Base.Core.Services.ViewLookup;
+using AppRopio.ECommerce.Basket.Core;
 using AppRopio.ECommerce.Basket.Core.Services;
 using AppRopio.ECommerce.Basket.Core.ViewModels;
 using AppRopio.ECommerce.Basket.Core.ViewModels.CartIndicator;
@@ -22,15 +23,18 @@ using AppRopio.ECommerce.Basket.iOS.Views.ProductCard;
 using MvvmCross;
 using MvvmCross.Plugin;
 
-namespace AppRopio.ECommerce.Basket.iOS
-{
-    public class Plugin : IMvxPlugin
+namespace AppRopio.ECommerce.Basket.iOS {
+	[MvxPlugin]
+    [Preserve(AllMembers = true)]
+    public class Plugin : BasePlugin
     {
-        public void Load()
+        public override void Load()
         {
-            Mvx.RegisterSingleton<IBasketThemeConfigService>(() => new BasketThemeConfigService());
+            base.Load();
 
-            var viewLookupService = Mvx.Resolve<IViewLookupService>();
+            Mvx.IoCProvider.RegisterSingleton<IBasketThemeConfigService>(() => new BasketThemeConfigService());
+
+            var viewLookupService = Mvx.IoCProvider.Resolve<IViewLookupService>();
             viewLookupService.Register<IBasketViewModel>(typeof(BasketViewController));
             viewLookupService.Register<IDeliveryViewModel>(typeof(DeliveryTypesViewController));
             viewLookupService.Register<IDeliveryOnPointVM>(typeof(DeliveryOnPointVC));
@@ -44,7 +48,7 @@ namespace AppRopio.ECommerce.Basket.iOS
             viewLookupService.Register<IBasketProductCardViewModel, BasketProductCardView>();
             viewLookupService.Register<IBasketCartIndicatorViewModel, BasketCartIndicatorView>();
 
-            var orderType = Mvx.Resolve<IBasketConfigService>().Config.OrderViewType;
+            var orderType = Mvx.IoCProvider.Resolve<IBasketConfigService>().Config.OrderViewType;
             switch (orderType)
             {
                 case Core.Enums.OrderViewType.Full:

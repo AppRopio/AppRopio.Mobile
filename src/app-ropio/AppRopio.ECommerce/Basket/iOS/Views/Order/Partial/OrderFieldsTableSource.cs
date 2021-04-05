@@ -5,7 +5,7 @@ using AppRopio.ECommerce.Basket.iOS.Services;
 using AppRopio.ECommerce.Basket.iOS.Views.Order.Cells;
 using Foundation;
 using MvvmCross.Binding.Extensions;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using MvvmCross;
 using UIKit;
 using AppRopio.Base.iOS.UIExtentions;
@@ -28,8 +28,8 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Partial
 
         #region Properties
 
-        protected Models.Order OrderTheme => Mvx.Resolve<IBasketThemeConfigService>().ThemeConfig.Order;
-        protected Models.OrderFieldCell UserCellTheme => OrderTheme.UserInfo.Cell ?? Mvx.Resolve<IBasketThemeConfigService>().ThemeConfig.Order.BaseOrderFieldCell;
+        protected Models.Order OrderTheme => Mvx.IoCProvider.Resolve<IBasketThemeConfigService>().ThemeConfig.Order;
+        protected Models.OrderFieldCell UserCellTheme => OrderTheme.UserInfo.Cell ?? Mvx.IoCProvider.Resolve<IBasketThemeConfigService>().ThemeConfig.Order.BaseOrderFieldCell;
 
         protected Collection<IOrderFieldsGroupVM> GroupItemsSource => ItemsSource as Collection<IOrderFieldsGroupVM>;
         protected Collection<IOrderFieldItemVM> FieldItemsSource => ItemsSource as Collection<IOrderFieldItemVM>;

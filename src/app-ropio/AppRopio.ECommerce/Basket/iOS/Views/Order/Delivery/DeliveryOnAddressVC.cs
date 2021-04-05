@@ -11,7 +11,7 @@ using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery;
 using AppRopio.ECommerce.Basket.iOS.Services;
 using AppRopio.ECommerce.Basket.iOS.Views.Order.Partial;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using MvvmCross;
 using UIKit;
 
@@ -22,9 +22,9 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Delivery
         private UIBarButtonItem _closeButton;
         private UIButton _accessoryNextButton;
 
-        protected Models.DeliveryOnAddress DeliveryOnAddressTheme { get { return Mvx.Resolve<IBasketThemeConfigService>().ThemeConfig.Order.DeliveryInfo.OnAddress; } }
-        protected Models.OrderFieldCell CellTheme { get { return DeliveryOnAddressTheme.Cell ?? Mvx.Resolve<IBasketThemeConfigService>().ThemeConfig.Order.BaseOrderFieldCell; } }
-        protected OrderViewType OrderViewType { get { return Mvx.Resolve<IBasketConfigService>().Config.OrderViewType; } }
+        protected Models.DeliveryOnAddress DeliveryOnAddressTheme { get { return Mvx.IoCProvider.Resolve<IBasketThemeConfigService>().ThemeConfig.Order.DeliveryInfo.OnAddress; } }
+        protected Models.OrderFieldCell CellTheme { get { return DeliveryOnAddressTheme.Cell ?? Mvx.IoCProvider.Resolve<IBasketThemeConfigService>().ThemeConfig.Order.BaseOrderFieldCell; } }
+        protected OrderViewType OrderViewType { get { return Mvx.IoCProvider.Resolve<IBasketConfigService>().Config.OrderViewType; } }
 
         public DeliveryOnAddressVC() : base("DeliveryOnAddressVC", null)
         {

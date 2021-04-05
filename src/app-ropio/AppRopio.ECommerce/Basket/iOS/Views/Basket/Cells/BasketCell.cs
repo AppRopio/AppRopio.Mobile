@@ -2,17 +2,17 @@ using System;
 using AppRopio.Base.iOS;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Items;
 using AppRopio.ECommerce.Basket.iOS.Services;
+using FFImageLoading.Cross;
 using Foundation;
-using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Binding;
 using MvvmCross;
+using MvvmCross.Binding.BindingContext;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using UIKit;
 
-namespace AppRopio.ECommerce.Basket.iOS.Views.Basket.Cells
-{
-    public partial class BasketCell : MvxTableViewCell
+namespace AppRopio.ECommerce.Basket.iOS.Views.Basket.Cells {
+	public partial class BasketCell : MvxTableViewCell
     {
-        protected Models.BasketCell CellTheme { get { return Mvx.Resolve<IBasketThemeConfigService>().ThemeConfig.Basket.Cell; } }
+        protected Models.BasketCell CellTheme { get { return Mvx.IoCProvider.Resolve<IBasketThemeConfigService>().ThemeConfig.Basket.Cell; } }
         
         public static readonly NSString Key = new NSString("BasketCell");
         public static readonly UINib Nib = UINib.FromName("BasketCell", NSBundle.MainBundle);
@@ -96,11 +96,12 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Basket.Cells
             set.Apply();
         }
 
-        protected virtual void BindImageView(UIImageView imageView, MvxFluentBindingDescriptionSet<BasketCell, IBasketItemVM> set)
+        protected virtual void BindImageView(UIImageView image, MvxFluentBindingDescriptionSet<BasketCell, IBasketItemVM> set)
         {
-            var imageLoader = new MvxImageViewLoader(() => imageView);
-
-            set.Bind(imageLoader).To(vm => vm.ImageUrl);
+            if (image is MvxCachedImageView imageView)
+            {
+                set.Bind(imageView).For(i => i.ImagePath).To(vm => vm.ImageUrl);
+            }
         }
 
         protected virtual void BindTitleLabel(UILabel titleLabel, MvxFluentBindingDescriptionSet<BasketCell, IBasketItemVM> set)

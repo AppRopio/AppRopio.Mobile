@@ -5,7 +5,7 @@ using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial;
 using AppRopio.ECommerce.Basket.iOS.Services;
 using AppRopio.ECommerce.Basket.iOS.Views.Order.Cells;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using MvvmCross;
 using UIKit;
 
@@ -13,8 +13,8 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Partial
 {
     public partial class UserViewController : CommonViewController<IUserViewModel>
     {
-        protected Models.Order OrderTheme { get { return Mvx.Resolve<IBasketThemeConfigService>().ThemeConfig.Order; } }
-        protected Models.OrderFieldCell CellTheme { get { return OrderTheme.UserInfo.Cell ?? Mvx.Resolve<IBasketThemeConfigService>().ThemeConfig.Order.BaseOrderFieldCell; } }
+        protected Models.Order OrderTheme { get { return Mvx.IoCProvider.Resolve<IBasketThemeConfigService>().ThemeConfig.Order; } }
+        protected Models.OrderFieldCell CellTheme { get { return OrderTheme.UserInfo.Cell ?? Mvx.IoCProvider.Resolve<IBasketThemeConfigService>().ThemeConfig.Order.BaseOrderFieldCell; } }
 
         public UserViewController()
             : base("UserViewController", null)

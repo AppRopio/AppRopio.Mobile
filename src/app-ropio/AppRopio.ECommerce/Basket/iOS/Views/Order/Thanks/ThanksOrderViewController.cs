@@ -13,7 +13,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Thanks
 {
     public partial class ThanksOrderViewController : CommonViewController<IThanksViewModel>
     {
-		protected BasketThemeConfig Theme { get { return Mvx.Resolve<IBasketThemeConfigService>().ThemeConfig; } }
+		protected BasketThemeConfig Theme { get { return Mvx.IoCProvider.Resolve<IBasketThemeConfigService>().ThemeConfig; } }
 
 		public ThanksOrderViewController() : base("ThanksOrderViewController", null)
         {

@@ -10,7 +10,7 @@ using AppRopio.ECommerce.Basket.iOS.Services;
 using AppRopio.ECommerce.Basket.iOS.Views.Order.Cells;
 using Foundation;
 using MvvmCross.Binding.Extensions;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using MvvmCross.ViewModels;
 using MvvmCross;
 using MvvmCross.WeakSubscription;
@@ -40,9 +40,9 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Full
 
         #region Properties
 
-        protected Models.Order OrderTheme => Mvx.Resolve<IBasketThemeConfigService>().ThemeConfig.Order;
+        protected Models.Order OrderTheme => Mvx.IoCProvider.Resolve<IBasketThemeConfigService>().ThemeConfig.Order;
 
-        protected Models.OrderFieldCell UserCellTheme => OrderTheme.UserInfo.Cell ?? Mvx.Resolve<IBasketThemeConfigService>().ThemeConfig.Order.BaseOrderFieldCell;
+        protected Models.OrderFieldCell UserCellTheme => OrderTheme.UserInfo.Cell ?? Mvx.IoCProvider.Resolve<IBasketThemeConfigService>().ThemeConfig.Order.BaseOrderFieldCell;
 
         protected Models.DeliveryTypeCell DeliveryCellTheme => OrderTheme.DeliveryInfo.Cell;
 
@@ -181,7 +181,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Full
         {
             var headerView = tableView.DequeueReusableHeaderFooterView(SectionHeader.Key) as SectionHeader;
 
-            headerView.Title = (section == (Sections - 1) ? Mvx.Resolve<ILocalizationService>().GetLocalizableString(BasketConstants.RESX_NAME, "Order_DeliveryTypeHeader") : (ItemsSource.ElementAt((int)section) as IOrderFieldsGroupVM).Name);
+            headerView.Title = (section == (Sections - 1) ? Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString(BasketConstants.RESX_NAME, "Order_DeliveryTypeHeader") : (ItemsSource.ElementAt((int)section) as IOrderFieldsGroupVM).Name);
 
             return headerView;
         }

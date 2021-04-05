@@ -1,17 +1,15 @@
 ﻿using System;
-using MvvmCross.Platforms.Ios.Binding;
-using UIKit;
 using System.Collections.ObjectModel;
-using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items.Delivery;
 using System.Linq;
-using CoreGraphics;
 using AppRopio.Base.iOS;
-using AppRopio.Base.iOS.UIExtentions;
+using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items.Delivery;
 using AppRopio.ECommerce.Basket.iOS.Models;
+using CoreGraphics;
+using MvvmCross.Platforms.Ios.Binding.Views;
+using UIKit;
 
-namespace AppRopio.ECommerce.Basket.iOS.Controls
-{
-    public class DeliveryTimePickerViewModel : MvxPickerViewModel
+namespace AppRopio.ECommerce.Basket.iOS.Controls {
+	public class DeliveryTimePickerViewModel : MvxPickerViewModel
     {
         private UIPickerView _pickerView;
 

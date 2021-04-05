@@ -3,7 +3,7 @@ using AppRopio.ECommerce.Basket.Core.ViewModels.CartIndicator;
 using AppRopio.ECommerce.Basket.iOS.Models;
 using AppRopio.ECommerce.Basket.iOS.Services;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using MvvmCross.ViewModels;
 using MvvmCross.Views;
 using MvvmCross.Platforms.Ios.Views;
@@ -27,7 +27,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.CartIndicator
 
         #region Properties
 
-        protected BasketThemeConfig ThemeConfig { get { return Mvx.Resolve<IBasketThemeConfigService>().ThemeConfig; } }
+        protected BasketThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IBasketThemeConfigService>().ThemeConfig; } }
 
         IMvxViewModel IMvxView.ViewModel
         {

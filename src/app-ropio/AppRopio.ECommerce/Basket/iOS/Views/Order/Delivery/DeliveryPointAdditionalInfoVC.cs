@@ -15,8 +15,8 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Delivery
     {
         private UIBarButtonItem _closeButton;
 
-        protected Models.DeliveryOnPointMap MapTheme { get { return Mvx.Resolve<IBasketThemeConfigService>().ThemeConfig.Order.DeliveryInfo.OnPoint.Map; } }
-        protected Models.DeliveryPointInfo InfoTheme { get { return MapTheme.Info ?? Mvx.Resolve<IBasketThemeConfigService>().ThemeConfig.Order.DeliveryInfo.OnPoint.BaseDeliveryPointInfo; } }
+        protected Models.DeliveryOnPointMap MapTheme { get { return Mvx.IoCProvider.Resolve<IBasketThemeConfigService>().ThemeConfig.Order.DeliveryInfo.OnPoint.Map; } }
+        protected Models.DeliveryPointInfo InfoTheme { get { return MapTheme.Info ?? Mvx.IoCProvider.Resolve<IBasketThemeConfigService>().ThemeConfig.Order.DeliveryInfo.OnPoint.BaseDeliveryPointInfo; } }
 
         public DeliveryPointAdditionalInfoVC() : base("DeliveryPointAdditionalInfoVC", null)
         {

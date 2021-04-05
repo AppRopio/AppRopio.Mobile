@@ -9,7 +9,7 @@ using AppRopio.Base.iOS;
 using CoreAnimation;
 using CoreGraphics;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using System;
 using AppRopio.ECommerce.Basket.Core;
 
@@ -17,7 +17,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Payment
 {
     public partial class PaymentViewController : CommonViewController<IPaymentViewModel>
     {
-        protected Models.Payments PaymentsTheme { get { return Mvx.Resolve<IBasketThemeConfigService>().ThemeConfig.Order.Payments; } }
+        protected Models.Payments PaymentsTheme { get { return Mvx.IoCProvider.Resolve<IBasketThemeConfigService>().ThemeConfig.Order.Payments; } }
 
         protected NSLayoutConstraint ContainerViewTopConstraint { get { return _containerViewTopConstraint; } }
         protected NSLayoutConstraint ContainerViewHeightConstraint { get { return _containerViewHeightConstraint; } }
