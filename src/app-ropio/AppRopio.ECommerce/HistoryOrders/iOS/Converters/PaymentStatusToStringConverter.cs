@@ -10,7 +10,7 @@ namespace AppRopio.ECommerce.HistoryOrders.iOS.Converters
 {
     public class PaymentStatusToStringConverter : MvxValueConverter<PaymentStatus, string>
     {
-        protected ILocalizationService LocalizationService => Mvx.Resolve<ILocalizationService>();
+        protected ILocalizationService LocalizationService => Mvx.IoCProvider.Resolve<ILocalizationService>();
         
         protected override string Convert(PaymentStatus value, Type targetType, object parameter, CultureInfo culture)
 		{

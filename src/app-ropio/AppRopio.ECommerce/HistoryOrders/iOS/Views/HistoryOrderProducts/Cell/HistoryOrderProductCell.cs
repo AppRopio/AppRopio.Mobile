@@ -1,28 +1,27 @@
 ﻿using System;
 using AppRopio.Base.Core.Converters;
+using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.UIExtentions;
+using AppRopio.ECommerce.HistoryOrders.Core;
 using AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrderProducts.Items;
 using AppRopio.ECommerce.HistoryOrders.iOS.Models;
 using AppRopio.ECommerce.HistoryOrders.iOS.Services;
+using FFImageLoading.Cross;
 using Foundation;
-using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Binding;
 using MvvmCross;
+using MvvmCross.Binding.BindingContext;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using UIKit;
-using AppRopio.Base.Core.Services.Localization;
-using AppRopio.ECommerce.HistoryOrders.Core;
 
 namespace AppRopio.ECommerce.HistoryOrders.iOS.Views.HistoryOrders
 {
-    public partial class HistoryOrderProductCell : MvxTableViewCell
+	public partial class HistoryOrderProductCell : MvxTableViewCell
     {
         public static readonly NSString Key = new NSString("HistoryOrderProductCell");
         public static readonly UINib Nib;
 
-        protected MvxImageViewLoader _imageLoader;
-
-		protected HistoryOrdersThemeConfig ThemeConfig { get { return Mvx.Resolve<IHistoryOrdersThemeConfigService>().ThemeConfig; } }
+		protected HistoryOrdersThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IHistoryOrdersThemeConfigService>().ThemeConfig; } }
 
 		static HistoryOrderProductCell()
         {
@@ -101,7 +100,7 @@ namespace AppRopio.ECommerce.HistoryOrders.iOS.Views.HistoryOrders
 
 		protected virtual void BindAmount(UILabel amount, MvxFluentBindingDescriptionSet<HistoryOrderProductCell, IHistoryOrderProductItemVM> set)
 		{
-            set.Bind(amount).To(vm => vm.Amount).WithConversion("StringFormat", $"{{0}} {Mvx.Resolve<ILocalizationService>().GetLocalizableString(HistoryOrdersConstants.RESX_NAME, "HistoryOrderProducts_Pieces")}");
+            set.Bind(amount).To(vm => vm.Amount).WithConversion("StringFormat", $"{{0}} {Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString(HistoryOrdersConstants.RESX_NAME, "HistoryOrderProducts_Pieces")}");
 		}
 
 		protected virtual void BindPrice(UILabel price, MvxFluentBindingDescriptionSet<HistoryOrderProductCell, IHistoryOrderProductItemVM> set)
@@ -111,12 +110,13 @@ namespace AppRopio.ECommerce.HistoryOrders.iOS.Views.HistoryOrders
 
 		protected virtual void BindImage(UIImageView image, MvxFluentBindingDescriptionSet<HistoryOrderProductCell, IHistoryOrderProductItemVM> set)
 		{
-			_imageLoader = new MvxImageViewLoader(() => image)
+            if (image is MvxCachedImageView imageView)
             {
-                DefaultImagePath = $"res:{ThemeConfig.HistoryOrderItemCell.Image.Path}",
-                ErrorImagePath = $"res:{ThemeConfig.HistoryOrderItemCell.Image.Path}"
-            };
-            set.Bind(_imageLoader).To(vm => vm.ImageUrl);
+                imageView.LoadingPlaceholderImagePath = $"res:{ThemeConfig.HistoryOrderItemCell.Image.Path}";
+                imageView.ErrorPlaceholderImagePath = $"res:{ThemeConfig.HistoryOrderItemCell.Image.Path}";
+
+                set.Bind(imageView).For(i => i.ImagePath).To(vm => vm.ImageUrl);
+            }
 		}
 
 		protected virtual void BindIsAvailable(MvxFluentBindingDescriptionSet<HistoryOrderProductCell, IHistoryOrderProductItemVM> set)

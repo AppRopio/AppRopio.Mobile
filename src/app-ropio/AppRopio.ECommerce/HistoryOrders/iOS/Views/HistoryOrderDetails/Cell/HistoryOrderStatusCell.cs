@@ -4,7 +4,7 @@ using AppRopio.ECommerce.HistoryOrders.iOS.Models;
 using AppRopio.ECommerce.HistoryOrders.iOS.Services;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Binding;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using MvvmCross;
 using UIKit;
 
@@ -15,7 +15,7 @@ namespace AppRopio.ECommerce.HistoryOrders.iOS.Views.HistoryOrders
         public static readonly NSString Key = new NSString("HistoryOrderStatusCell");
         public static readonly UINib Nib;
 
-		protected HistoryOrdersThemeConfig ThemeConfig { get { return Mvx.Resolve<IHistoryOrdersThemeConfigService>().ThemeConfig; } }
+		protected HistoryOrdersThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IHistoryOrdersThemeConfigService>().ThemeConfig; } }
 
 		static HistoryOrderStatusCell()
         {

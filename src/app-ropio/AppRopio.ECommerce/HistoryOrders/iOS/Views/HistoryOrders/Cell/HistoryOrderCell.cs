@@ -1,28 +1,27 @@
 ﻿using System;
+using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.UIExtentions;
+using AppRopio.ECommerce.HistoryOrders.Core;
 using AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrders;
 using AppRopio.ECommerce.HistoryOrders.iOS.Converters;
 using AppRopio.ECommerce.HistoryOrders.iOS.Models;
 using AppRopio.ECommerce.HistoryOrders.iOS.Services;
+using FFImageLoading.Cross;
 using Foundation;
-using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Binding;
 using MvvmCross;
+using MvvmCross.Binding.BindingContext;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using UIKit;
-using AppRopio.Base.Core.Services.Localization;
-using AppRopio.ECommerce.HistoryOrders.Core;
 
 namespace AppRopio.ECommerce.HistoryOrders.iOS.Views.HistoryOrders
 {
-    public partial class HistoryOrderCell : MvxTableViewCell
+	public partial class HistoryOrderCell : MvxTableViewCell
     {
         public static readonly NSString Key = new NSString("HistoryOrderCell");
         public static readonly UINib Nib;
 
-        protected MvxImageViewLoader _imageLoader;
-
-		protected HistoryOrdersThemeConfig ThemeConfig { get { return Mvx.Resolve<IHistoryOrdersThemeConfigService>().ThemeConfig; } }
+		protected HistoryOrdersThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IHistoryOrdersThemeConfigService>().ThemeConfig; } }
 
 		static HistoryOrderCell()
         {
@@ -124,17 +123,18 @@ namespace AppRopio.ECommerce.HistoryOrders.iOS.Views.HistoryOrders
 
 		protected virtual void BindItemsCount(UILabel itemsCount, MvxFluentBindingDescriptionSet<HistoryOrderCell, IHistoryOrderItemVM> set)
 		{
-            set.Bind(itemsCount).To(vm => vm.ItemsCount).WithConversion("StringFormat", $"{Mvx.Resolve<ILocalizationService>().GetLocalizableString(HistoryOrdersConstants.RESX_NAME, "History_OrderList")} ({{0}})");
+            set.Bind(itemsCount).To(vm => vm.ItemsCount).WithConversion("StringFormat", $"{Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString(HistoryOrdersConstants.RESX_NAME, "History_OrderList")} ({{0}})");
 		}
 
         protected virtual void BindOrderImage(UIImageView image, MvxFluentBindingDescriptionSet<HistoryOrderCell, IHistoryOrderItemVM> set)
 		{
-            _imageLoader = new MvxImageViewLoader(() => image)
+            if (image is MvxCachedImageView imageView)
             {
-                DefaultImagePath = $"res:{ThemeConfig.HistoryOrderCell.Image.Path}",
-                ErrorImagePath = $"res:{ThemeConfig.HistoryOrderCell.Image.Path}"
-            };
-            set.Bind(_imageLoader).To(vm => vm.ImageUrl);
+                imageView.LoadingPlaceholderImagePath = $"res:{ThemeConfig.HistoryOrderCell.Image.Path}";
+                imageView.ErrorPlaceholderImagePath = $"res:{ThemeConfig.HistoryOrderCell.Image.Path}";
+
+                set.Bind(imageView).For(i => i.ImagePath).To(vm => vm.ImageUrl);
+            }
 		}
 
 		protected virtual void BindPaymentStatus(UILabel paymentStatus, MvxFluentBindingDescriptionSet<HistoryOrderCell, IHistoryOrderItemVM> set)
