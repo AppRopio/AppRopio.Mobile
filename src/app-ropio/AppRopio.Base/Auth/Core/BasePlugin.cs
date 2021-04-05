@@ -6,7 +6,8 @@ namespace AppRopio.Base.Auth.Core
 {
     public abstract class BasePlugin : IMvxPlugin
     {
-        public virtual void Load() {
+        public virtual void Load()
+        {
             new App().Initialize();
 
             Mvx.IoCProvider.Resolve<IMvxLog>().Info("Auth plugin is loaded");

@@ -7,6 +7,7 @@ using AppRopio.Base.Core.Services.Device;
 using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.Core.Services.UserDialogs;
 using AppRopio.Base.Core.Services.ViewModelLookup;
+using AppRopio.Base.Core.ViewModels.Services;
 using MvvmCross;
 using MvvmCross.Logging;
 using MvvmCross.Plugin.Messenger;
@@ -106,6 +107,8 @@ namespace AppRopio.Base.Core.ViewModels
         protected IMvxMessenger Messenger => Mvx.IoCProvider.Resolve<IMvxMessenger>();
 
         protected ILocalizationService LocalizationService => Mvx.IoCProvider.Resolve<ILocalizationService>();
+
+        protected IBaseVmNavigationService NavigationVmService => Mvx.IoCProvider.Resolve<IBaseVmNavigationService>();
 
         #endregion
 

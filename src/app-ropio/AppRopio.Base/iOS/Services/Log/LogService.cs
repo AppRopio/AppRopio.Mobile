@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using AppRopio.Base.Core.Services.Log;
 using Foundation;
-using System.Linq;
-using System.Threading;
 
 namespace AppRopio.Base.iOS.Services.Log
 {
@@ -22,8 +22,6 @@ namespace AppRopio.Base.iOS.Services.Log
         private string _folderName = NSBundle.MainBundle.InfoDictionary["CFBundleIdentifier"]?.ToString();
 
         private Queue<byte[]> _logQueue = new Queue<byte[]>();
-
-        private Task _lastWriteTask;
 
         private CancellationTokenSource _writeCTS;
 

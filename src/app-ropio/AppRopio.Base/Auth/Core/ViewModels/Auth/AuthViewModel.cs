@@ -73,7 +73,7 @@ namespace AppRopio.Base.Auth.Core.ViewModels.Auth
 
 		protected IAuthVmService SocialService { get { return Mvx.IoCProvider.Resolve<IAuthVmService>(); } }
 
-		protected IAuthNavigationVmService NavigationVmService { get { return Mvx.IoCProvider.Resolve<IAuthNavigationVmService>(); } }
+		protected new IAuthNavigationVmService NavigationVmService { get { return Mvx.IoCProvider.Resolve<IAuthNavigationVmService>(); } }
 
 		public string SignInText => LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "Auth_SignIn");
 

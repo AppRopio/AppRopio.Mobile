@@ -39,8 +39,6 @@ namespace AppRopio.Base.Auth.iOS.Views.Password.Reset.Main
 
         #endregion
 
-        protected ILocalizationService LocalizationService => Mvx.IoCProvider.Resolve<ILocalizationService>();
-
         #region Constructor
 
         public ResetPasswordViewController() : base("ResetPasswordViewController", null)

@@ -84,7 +84,7 @@ namespace AppRopio.Base.Filters.Core.ViewModels.Sort
 
         protected ISortVmService VmService { get { return Mvx.IoCProvider.Resolve<ISortVmService>(); } }
 
-        protected IFiltersNavigationVmService NavigationVmService { get { return Mvx.IoCProvider.Resolve<IFiltersNavigationVmService>(); } }
+        protected new IFiltersNavigationVmService NavigationVmService { get { return Mvx.IoCProvider.Resolve<IFiltersNavigationVmService>(); } }
 
         #endregion
 

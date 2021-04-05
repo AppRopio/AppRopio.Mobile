@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 using AppRopio.Base.Core.Extentions;
 using AppRopio.Base.Core.Services.ViewModelLookup;
@@ -78,7 +79,7 @@ namespace AppRopio.Base.Core.ViewModels.Services
 
         #region Public
 
-        public async void NavigateTo(string deeplink)
+        public async Task NavigateTo(string deeplink)
         {
             if (!deeplink.IsNullOrEmtpy())
             {
@@ -96,6 +97,16 @@ namespace AppRopio.Base.Core.ViewModels.Services
                     } 
                 }
             }
+        }
+
+        public async Task ChangePresentation(MvxPresentationHint hint)
+        {
+            await MvxNavigationService.ChangePresentation(hint);
+        }
+
+        public async Task Close(IMvxViewModel viewModel)
+        {
+            await MvxNavigationService.Close(viewModel);
         }
 
         #endregion

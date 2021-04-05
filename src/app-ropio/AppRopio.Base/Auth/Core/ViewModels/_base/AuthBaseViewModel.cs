@@ -39,7 +39,7 @@ namespace AppRopio.Base.Auth.Core.ViewModels._base
 
 		#region Services
 
-		protected IAuthNavigationVmService NavigationVmService { get { return Mvx.IoCProvider.Resolve<IAuthNavigationVmService>(); } }
+		protected new IAuthNavigationVmService NavigationVmService { get { return Mvx.IoCProvider.Resolve<IAuthNavigationVmService>(); } }
 
 		#endregion
 

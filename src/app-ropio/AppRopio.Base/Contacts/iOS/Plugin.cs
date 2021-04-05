@@ -15,6 +15,8 @@ namespace AppRopio.Base.Contacts.iOS
     {
         public override void Load()
         {
+            base.Load();
+
             Mvx.IoCProvider.RegisterSingleton<IContactsThemeConfigService>(() => new ContactsThemeConfigService());
 
             var viewLookupService = Mvx.IoCProvider.Resolve<IViewLookupService>();

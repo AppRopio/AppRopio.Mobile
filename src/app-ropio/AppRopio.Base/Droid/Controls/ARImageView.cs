@@ -110,7 +110,7 @@ namespace AppRopio.Base.Droid.Controls
                         {
                             Glide
                                .With(this.Context)
-                                .Load(new URL(value))
+                                .Load(new URI(value))
                                 .Apply(GetRequestOptions())
                                 .Into(this);
                         }

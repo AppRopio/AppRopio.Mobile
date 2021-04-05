@@ -33,7 +33,7 @@ namespace AppRopio.Base.Core.ViewModels.Selection
         {
             get
             {
-                return _applyCommand ?? (_applyCommand = new MvxCommand(OnApplyExecute));
+                return _applyCommand ?? (_applyCommand = new MvxAsyncCommand(OnApplyExecute));
             }
         }
 
@@ -96,7 +96,7 @@ namespace AppRopio.Base.Core.ViewModels.Selection
 
         protected abstract void OnItemSelected(ISelectionItemVM item);
 
-        protected abstract void OnApplyExecute();
+        protected abstract Task OnApplyExecute();
 
         protected abstract void OnClearExecute();
 

@@ -16,7 +16,8 @@ using System;
 using System.Threading.Tasks;
 using Android.Content;
 using AppRopio.Base.Core.Services.Launcher;
-
+using MvvmCross;
+using MvvmCross.Logging;
 using Xamarin.Essentials;
 
 namespace AppRopio.Base.Droid.Services.Launcher
@@ -33,21 +34,49 @@ namespace AppRopio.Base.Droid.Services.Launcher
             return Task.CompletedTask;
         }
 
-        public Task LaunchEmail(string email)
+        public async Task<bool> LaunchEmail(string email)
         {
-            return Email.ComposeAsync(email, "");
+            try
+            {
+                await Email.ComposeAsync(string.Empty, string.Empty, email);
+                return true;
+            }
+            catch (Exception exception)
+            {
+                Mvx.IoCProvider.Resolve<IMvxLog>().Warn(exception + "\n" + exception.StackTrace);
+            }
+
+            return false;
         }
 
-        public Task LaunchPhone(string phoneNumber)
+        public Task<bool> LaunchPhone(string phoneNumber)
         {
-            PhoneDialer.Open(phoneNumber);
+            try
+            {
+                PhoneDialer.Open(phoneNumber);
+                return Task.FromResult(true);
+            }
+            catch (Exception exception)
+            {
+                Mvx.IoCProvider.Resolve<IMvxLog>().Warn(exception + "\n" + exception.StackTrace);
+            }
 
-            return Task.CompletedTask;
+            return Task.FromResult(false);
         }
 
-        public async Task LaunchUri(string uri)
+        public async Task<bool> LaunchUri(string uri)
         {
-            await Browser.OpenAsync(uri);
+            try
+            {
+                await Browser.OpenAsync(uri);
+                return true;
+            }
+            catch (Exception exception)
+            {
+                Mvx.IoCProvider.Resolve<IMvxLog>().Warn(exception + "\n" + exception.StackTrace);
+            }
+
+            return false;
         }
     }
 }

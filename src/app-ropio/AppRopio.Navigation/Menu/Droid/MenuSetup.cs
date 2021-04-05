@@ -12,12 +12,6 @@ namespace AppRopio.Navigation.Menu.Droid
 {
     public class MenuSetup : BaseAndroidSetup
     {
-        protected MenuSetup()
-            : base()
-        {
-            
-        }
-
         protected override IMvxApplication CreateApp()
         {
             return new Core.App();
