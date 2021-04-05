@@ -44,8 +44,8 @@ namespace AppRopio.ECommerce.Basket.Droid.Views.Basket
 
         protected virtual void SetupLoyaltyViewIfExist(LinearLayout basketButtonLayout)
         {
-            var viewLookupService = Mvx.Resolve<IViewLookupService>();
-            var productConfigService = Mvx.Resolve<IBasketConfigService>();
+            var viewLookupService = Mvx.IoCProvider.Resolve<IViewLookupService>();
+            var productConfigService = Mvx.IoCProvider.Resolve<IBasketConfigService>();
 
             var config = productConfigService.Config;
 
@@ -86,7 +86,7 @@ namespace AppRopio.ECommerce.Basket.Droid.Views.Basket
             public void OnClick(View v)
             {
                 var popupMenu = new Android.Support.V7.Widget.PopupMenu(_context, v);
-                popupMenu.Menu.Add(0, 0, 0, new Java.Lang.String(Mvx.Resolve<ILocalizationService>().GetLocalizableString(BasketConstants.RESX_NAME, "Basket_DeleteItem")));
+                popupMenu.Menu.Add(0, 0, 0, new Java.Lang.String(Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString(BasketConstants.RESX_NAME, "Basket_DeleteItem")));
                 popupMenu.SetOnMenuItemClickListener(this);
                 popupMenu.Show();
             }

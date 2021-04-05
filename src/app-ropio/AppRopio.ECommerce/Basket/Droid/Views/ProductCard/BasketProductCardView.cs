@@ -88,7 +88,7 @@ namespace AppRopio.ECommerce.Basket.Droid.Views.ProductCard
                 var view = this.BindingInflate(Resource.Layout.app_basket_productCardView, null, false);
 
                 var editText = view.FindViewById<EditText>(Resource.Id.app_basket_productCardView_editText);
-                editText.SetOnKeyListener(new AROnEnterKeyListener(Mvx.Resolve<IMvxAndroidCurrentTopActivity>()?.Activity, HandleAction));
+                editText.SetOnKeyListener(new AROnEnterKeyListener(Mvx.IoCProvider.Resolve<IMvxAndroidCurrentTopActivity>()?.Activity, HandleAction));
                 editText.ClearFocus();
 
                 AddView(view);
