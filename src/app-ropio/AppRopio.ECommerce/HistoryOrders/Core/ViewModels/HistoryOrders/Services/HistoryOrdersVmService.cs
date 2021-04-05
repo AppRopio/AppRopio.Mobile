@@ -16,7 +16,7 @@ namespace AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrders.Service
     {
 		#region Services
 
-		protected IHistoryOrdersService ApiService { get { return Mvx.Resolve<IHistoryOrdersService>(); } }
+		protected IHistoryOrdersService ApiService { get { return Mvx.IoCProvider.Resolve<IHistoryOrdersService>(); } }
 
 		#endregion
 		
@@ -44,7 +44,7 @@ namespace AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrders.Service
 
         public void HandleOrderSelection(IHistoryOrderItemVM item)
 		{
-			var historyOrdersNavigationVmService = Mvx.Resolve<IHistoryOrdersNavigationVmService>();
+			var historyOrdersNavigationVmService = Mvx.IoCProvider.Resolve<IHistoryOrdersNavigationVmService>();
             var orderBundle = new HistoryOrderBundle(item.OrderId, item.OrderNumber, item.TotalPrice, item.ItemsCount, NavigationType.Push);
             historyOrdersNavigationVmService.NavigateToOrder(orderBundle);
 		}

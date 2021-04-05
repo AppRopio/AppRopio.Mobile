@@ -4,18 +4,18 @@ using AppRopio.Base.Core.Extentions;
 using AppRopio.Base.Core.Models.Bundle;
 using AppRopio.Base.Core.Models.Navigation;
 using AppRopio.Base.Core.ViewModels;
+using AppRopio.ECommerce.Basket.Core.Messages;
 using AppRopio.ECommerce.HistoryOrders.Core.Models.Bundle;
 using AppRopio.ECommerce.HistoryOrders.Core.Services;
 using AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrders.Services;
-using AppRopio.Models.Basket.Responses.Order;
 using AppRopio.Models.HistoryOrders.Responses;
-using MvvmCross.ViewModels;
 using MvvmCross;
-using AppRopio.ECommerce.Basket.Core.Messages;
+using MvvmCross.Commands;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrders
 {
-    public class HistoryOrderDetailsViewModel : BaseViewModel, IHistoryOrderDetailsViewModel
+	public class HistoryOrderDetailsViewModel : BaseViewModel, IHistoryOrderDetailsViewModel
     {
         #region Commands
 
@@ -85,7 +85,7 @@ namespace AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrders
 
         #region Services
 
-        protected IHistoryOrderDetailsVmService VmService { get { return Mvx.Resolve<IHistoryOrderDetailsVmService>(); } }
+        protected IHistoryOrderDetailsVmService VmService { get { return Mvx.IoCProvider.Resolve<IHistoryOrderDetailsVmService>(); } }
 
         #endregion
 
@@ -149,7 +149,7 @@ namespace AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrders
                 
                 if (await UserDialogs.Confirm(response.Message, LocalizationService.GetLocalizableString(HistoryOrdersConstants.RESX_NAME, "HistoryOrderDetails_ToBasket")))
                 {
-                    var historyOrdersNavigationVmService = Mvx.Resolve<IHistoryOrdersNavigationVmService>();
+                    var historyOrdersNavigationVmService = Mvx.IoCProvider.Resolve<IHistoryOrdersNavigationVmService>();
                     historyOrdersNavigationVmService.NavigateToBasket(new BaseBundle(NavigationType.Push));
                 }
             }

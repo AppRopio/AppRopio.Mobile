@@ -21,7 +21,7 @@ namespace AppRopio.ECommerce.HistoryOrders.Core.Services.Implementation
 
 		public void NavigateToBasket(BaseBundle bundle)
 		{
-            var config = Mvx.Resolve<IHistoryOrdersConfigService>().Config;
+            var config = Mvx.IoCProvider.Resolve<IHistoryOrdersConfigService>().Config;
 			if (config.Basket != null)
 			{
 				var assembly = Assembly.Load(new AssemblyName(config.Basket.AssemblyName));

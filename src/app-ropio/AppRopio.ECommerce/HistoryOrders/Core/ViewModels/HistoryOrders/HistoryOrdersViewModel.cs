@@ -5,12 +5,13 @@ using AppRopio.Base.Core.Models.Bundle;
 using AppRopio.Base.Core.Models.Navigation;
 using AppRopio.Base.Core.ViewModels;
 using AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrders.Services;
-using MvvmCross.ViewModels;
 using MvvmCross;
+using MvvmCross.Commands;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrders
 {
-    public class HistoryOrdersViewModel : RefreshViewModel, IHistoryOrdersViewModel
+	public class HistoryOrdersViewModel : RefreshViewModel, IHistoryOrdersViewModel
     {
         protected int LOADING_ORDERS_COUNT = 10;
 
@@ -44,7 +45,7 @@ namespace AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrders
 
 		#region Services
 
-		protected IHistoryOrdersVmService VmService { get { return Mvx.Resolve<IHistoryOrdersVmService>(); } }
+		protected IHistoryOrdersVmService VmService { get { return Mvx.IoCProvider.Resolve<IHistoryOrdersVmService>(); } }
 
         #endregion
 
