@@ -1,6 +1,7 @@
 ﻿using AppRopio.Analytics.AppsFlyer.Core;
 using AppRopio.Analytics.AppsFlyer.Core.Services;
 using AppRopio.Analytics.AppsFlyer.iOS.Services;
+using AppRopio.Base.Core.Plugins;
 using AppsFlyerXamarinBinding;
 using Foundation;
 using MvvmCross;
@@ -10,8 +11,10 @@ namespace AppRopio.Analytics.AppsFlyer.iOS
 {
     [MvxPlugin]
     [MvvmCross.Preserve(AllMembers = true)]
-    public class Plugin : BasePlugin
+    public class Plugin : BasePlugin<App>
     {
+		protected override string Name => "AppsFlyer";
+
         private static CustomAppsFlyerDelegate _trackerDelegate;
 
         public override void Load()

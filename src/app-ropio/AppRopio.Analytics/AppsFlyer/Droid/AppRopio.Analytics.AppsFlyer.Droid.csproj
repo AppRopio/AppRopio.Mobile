@@ -64,6 +64,10 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\AppRopio.Base\Core\AppRopio.Base.Core.csproj">
+      <Project>{ea6d5113-1e80-494b-886d-3d7fdfa04e99}</Project>
+      <Name>AppRopio.Base.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Core\AppRopio.Analytics.AppsFlyer.Core.csproj">
       <Project>{FF262391-8114-4461-B2BD-4110535579A9}</Project>
       <Name>AppRopio.Analytics.AppsFlyer.Core</Name>

@@ -1,3 +1,4 @@
+using AppRopio.Base.Core.Plugins;
 using AppRopio.Base.Core.Services.ViewLookup;
 using AppRopio.ECommerce.Basket.Core;
 using AppRopio.ECommerce.Basket.Core.Services;
@@ -27,8 +28,10 @@ namespace AppRopio.ECommerce.Basket.iOS
 {
 	[MvxPlugin]
     [Preserve(AllMembers = true)]
-    public class Plugin : BasePlugin
+    public class Plugin : BasePlugin<App>
     {
+		protected override string Name => "Basket";
+
         public override void Load()
         {
             base.Load();

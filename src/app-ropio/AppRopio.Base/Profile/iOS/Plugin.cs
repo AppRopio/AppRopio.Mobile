@@ -1,4 +1,5 @@
-﻿using AppRopio.Base.Core.Services.ViewLookup;
+﻿using AppRopio.Base.Core.Plugins;
+using AppRopio.Base.Core.Services.ViewLookup;
 using AppRopio.Base.Profile.Core;
 using AppRopio.Base.Profile.Core.ViewModels.MenuHeader;
 using AppRopio.Base.Profile.iOS.View.MenuHeader;
@@ -9,8 +10,10 @@ namespace AppRopio.Base.Profile.iOS
 {
     [MvxPlugin]
     [Preserve(AllMembers = true)]
-    public class Plugin : BasePlugin
+    public class Plugin : BasePlugin<App>
     {
+		protected override string Name => "Profile";
+
         public override void Load()
         {
             base.Load();

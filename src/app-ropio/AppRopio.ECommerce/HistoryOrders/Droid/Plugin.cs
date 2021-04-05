@@ -1,4 +1,5 @@
-﻿using AppRopio.Base.Core.Services.ViewLookup;
+﻿using AppRopio.Base.Core.Plugins;
+using AppRopio.Base.Core.Services.ViewLookup;
 using AppRopio.ECommerce.HistoryOrders.Core;
 using AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrders;
 using AppRopio.ECommerce.HistoryOrders.Droid.Views.HistoryOrderDetails;
@@ -11,8 +12,10 @@ namespace AppRopio.ECommerce.HistoryOrders.Droid
 {
 	[MvxPlugin]
     [Preserve(AllMembers = true)]
-    public class Plugin : BasePlugin
+    public class Plugin : BasePlugin<App>
     {
+		protected override string Name => "HistoryOrders";
+
         public override void Load()
         {
             base.Load();

@@ -1,4 +1,5 @@
-﻿using AppRopio.Base.Core.Services.ViewLookup;
+﻿using AppRopio.Base.Core.Plugins;
+using AppRopio.Base.Core.Services.ViewLookup;
 using AppRopio.Feedback.Core;
 using AppRopio.Feedback.Core.ViewModels.MyReviews;
 using AppRopio.Feedback.Core.ViewModels.ReviewDetails;
@@ -16,8 +17,10 @@ namespace AppRopio.Feedback.Droid
 {
     [MvxPlugin]
     [Preserve(AllMembers = true)]
-    public class Plugin : BasePlugin
+    public class Plugin : BasePlugin<App>
     {
+		protected override string Name => "Feedback";
+
         public override void Load()
         {
             base.Load();

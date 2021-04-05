@@ -1,4 +1,5 @@
-﻿using AppRopio.Geofencing.Core;
+﻿using AppRopio.Base.Core.Plugins;
+using AppRopio.Geofencing.Core;
 using AppRopio.Geofencing.Core.Service;
 using AppRopio.Geofencing.Droid.Services;
 using MvvmCross;
@@ -8,8 +9,10 @@ namespace AppRopio.Geofencing.Droid
 {
     [MvxPlugin]
     [Preserve(AllMembers = true)]
-    public class Plugin : BasePlugin
+    public class Plugin : BasePlugin<App>
     {
+		protected override string Name => "Geofencing";
+
         public override void Load()
         {
             base.Load();

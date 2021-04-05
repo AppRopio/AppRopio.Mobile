@@ -1,4 +1,5 @@
-﻿using AppRopio.Base.Core.Services.ViewLookup;
+﻿using AppRopio.Base.Core.Plugins;
+using AppRopio.Base.Core.Services.ViewLookup;
 using AppRopio.Payments.CloudPayments.Core;
 using AppRopio.Payments.CloudPayments.iOS.Services.Implementation;
 using AppRopio.Payments.Core.Services;
@@ -9,8 +10,10 @@ namespace AppRopio.Payments.CloudPayments.iOS
 {
     [MvxPlugin]
     [Preserve(AllMembers = true)]
-    public class Plugin : BasePlugin
+    public class Plugin : BasePlugin<App>
     {
+		protected override string Name => "CloudPayments";
+
         public override void Load()
         {
             base.Load();

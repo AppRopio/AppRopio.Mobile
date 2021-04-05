@@ -1,4 +1,5 @@
-﻿using AppRopio.Base.Core.Services.ViewLookup;
+﻿using AppRopio.Base.Core.Plugins;
+using AppRopio.Base.Core.Services.ViewLookup;
 using AppRopio.Payments.YandexKassa.Core;
 using AppRopio.Payments.YandexKassa.Core.ViewModels.YandexKassa;
 using MvvmCross;
@@ -8,8 +9,10 @@ namespace AppRopio.Payments.YandexKassa.iOS
 {
     [MvxPlugin]
     [Preserve(AllMembers = true)]
-    public class Plugin : BasePlugin
+    public class Plugin : BasePlugin<App>
     {
+		protected override string Name => "YandexKassa";
+
         public override void Load()
         {
             base.Load();

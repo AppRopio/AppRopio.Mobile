@@ -3,6 +3,7 @@ using Android.App;
 using AppRopio.Analytics.AppsFlyer.Core;
 using AppRopio.Analytics.AppsFlyer.Core.Services;
 using AppRopio.Analytics.AppsFlyer.Droid.Services;
+using AppRopio.Base.Core.Plugins;
 using Com.Appsflyer;
 using MvvmCross;
 using MvvmCross.Base;
@@ -14,8 +15,10 @@ namespace AppRopio.Analytics.AppsFlyer.Droid
 {
     [MvxPlugin]
     [Preserve(AllMembers = true)]
-    public class Plugin : BasePlugin
+    public class Plugin : BasePlugin<App>
     {
+		protected override string Name => "AppsFlyer";
+
         private static CustomAppsFlyerConversionDelegate _trackerDelegate;
 
         protected Activity CurrentActivity {

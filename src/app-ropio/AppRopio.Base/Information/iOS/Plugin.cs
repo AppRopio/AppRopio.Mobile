@@ -1,4 +1,5 @@
-﻿using AppRopio.Base.Core.Services.ViewLookup;
+﻿using AppRopio.Base.Core.Plugins;
+using AppRopio.Base.Core.Services.ViewLookup;
 using AppRopio.Base.Information.Core;
 using AppRopio.Base.Information.Core.ViewModels.Information;
 using AppRopio.Base.Information.Core.ViewModels.InformationTextContent;
@@ -15,8 +16,10 @@ namespace AppRopio.Base.Information.iOS
 {
     [MvxPlugin]
     [Preserve(AllMembers = true)]
-    public class Plugin : BasePlugin
+    public class Plugin : BasePlugin<App>
     {
+		protected override string Name => "Information";
+
         public override void Load()
         {
             base.Load();

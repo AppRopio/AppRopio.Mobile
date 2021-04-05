@@ -12,6 +12,7 @@
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
+using AppRopio.Base.Core.Plugins;
 using AppRopio.Base.Core.Services.ViewLookup;
 using AppRopio.Base.Information.Core;
 using AppRopio.Base.Information.Core.ViewModels.Information;
@@ -27,11 +28,14 @@ namespace AppRopio.Base.Information.Droid
 {
     [MvxPlugin]
     [Preserve(AllMembers = true)]
-    public class Plugin : BasePlugin
+    public class Plugin : BasePlugin<App>
     {
+		protected override string Name => "Information";
+
         public override void Load()
         {
             base.Load();
+
             var viewLookupService = Mvx.IoCProvider.Resolve<IViewLookupService>();
 
             viewLookupService.Register<IInformationViewModel, InformationFragment>();

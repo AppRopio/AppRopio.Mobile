@@ -1,4 +1,5 @@
-﻿using AppRopio.Base.Core.Services.ViewLookup;
+﻿using AppRopio.Base.Core.Plugins;
+using AppRopio.Base.Core.Services.ViewLookup;
 using AppRopio.Base.Filters.Core;
 using AppRopio.Base.Filters.Core.ViewModels.Filters;
 using AppRopio.Base.Filters.Core.ViewModels.Filters.Selection;
@@ -13,8 +14,10 @@ namespace AppRopio.Base.Filters.Droid
 {
     [MvxPlugin]
     [Preserve(AllMembers = true)]
-    public class Plugin : BasePlugin
+    public class Plugin : BasePlugin<App>
     {
+		protected override string Name => "Filters";
+
         public override void Load()
         {
             base.Load();

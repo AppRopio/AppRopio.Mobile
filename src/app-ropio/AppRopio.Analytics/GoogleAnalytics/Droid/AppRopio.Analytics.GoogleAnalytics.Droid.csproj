@@ -61,6 +61,10 @@
     <AndroidResource Include="Resources\values\Strings.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\AppRopio.Base\Core\AppRopio.Base.Core.csproj">
+      <Project>{ea6d5113-1e80-494b-886d-3d7fdfa04e99}</Project>
+      <Name>AppRopio.Base.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Core\AppRopio.Analytics.GoogleAnalytics.Core.csproj">
       <Project>{2A27A987-3DCD-4474-961C-06000D14CF40}</Project>
       <Name>AppRopio.Analytics.GoogleAnalytics.Core</Name>

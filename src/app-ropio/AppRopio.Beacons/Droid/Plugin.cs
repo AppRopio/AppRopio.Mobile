@@ -1,4 +1,5 @@
 ﻿using System;
+using AppRopio.Base.Core.Plugins;
 using AppRopio.Beacons.Core;
 using AppRopio.Beacons.Core.Services;
 using AppRopio.Beacons.Droid.Services;
@@ -10,8 +11,10 @@ namespace AppRopio.Beacons.Droid
 {
     [MvxPlugin]
     [Preserve(AllMembers = true)]
-    public class Plugin : BasePlugin
+    public class Plugin : BasePlugin<App>
     {
+		protected override string Name => "Beacons";
+
         public override void Load()
         {
             base.Load();

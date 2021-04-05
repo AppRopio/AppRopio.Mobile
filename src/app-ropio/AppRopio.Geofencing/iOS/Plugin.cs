@@ -1,4 +1,5 @@
 ﻿using System;
+using AppRopio.Base.Core.Plugins;
 using AppRopio.Geofencing.Core;
 using AppRopio.Geofencing.Core.Service;
 using AppRopio.Geofencing.iOS.Services;
@@ -10,8 +11,10 @@ namespace AppRopio.Geofencing.iOS
 {
     [MvxPlugin]
     [Preserve(AllMembers = true)]
-    public class Plugin : BasePlugin
+    public class Plugin : BasePlugin<App>
     {
+		protected override string Name => "Geofencing";
+
         public override void Load()
         {
             base.Load();

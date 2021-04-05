@@ -1,4 +1,5 @@
-﻿using AppRopio.Base.Core.Services.ViewLookup;
+﻿using AppRopio.Base.Core.Plugins;
+using AppRopio.Base.Core.Services.ViewLookup;
 using AppRopio.Payments.Core;
 using AppRopio.Payments.Core.ViewModels;
 using AppRopio.Payments.Droid.Views;
@@ -9,8 +10,10 @@ namespace AppRopio.Payments.Droid
 {
     [MvxPlugin]
     [Preserve(AllMembers = true)]
-    public class Plugin : BasePlugin
+    public class Plugin : BasePlugin<App>
     {
+		protected override string Name => "Payments";
+
         public override void Load()
         {
             base.Load();

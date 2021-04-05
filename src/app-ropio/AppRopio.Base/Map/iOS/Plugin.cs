@@ -1,4 +1,5 @@
-﻿using AppRopio.Base.Core.Services.ViewLookup;
+﻿using AppRopio.Base.Core.Plugins;
+using AppRopio.Base.Core.Services.ViewLookup;
 using AppRopio.Base.Map.Core;
 using AppRopio.Base.Map.Core.ViewModels.Points;
 using AppRopio.Base.Map.Core.ViewModels.Points.List;
@@ -15,8 +16,10 @@ namespace AppRopio.Base.Map.iOS
 {
     [MvxPlugin]
     [Preserve(AllMembers = true)]
-    public class Plugin : BasePlugin
+    public class Plugin : BasePlugin<App>
     {
+		protected override string Name => "Map";
+
         public override void Load()
         {
             base.Load();

@@ -8,6 +8,7 @@ using AppRopio.Base.Auth.Core.ViewModels.SignIn;
 using AppRopio.Base.Auth.Core.ViewModels.SignUp;
 using AppRopio.Base.Auth.Core.ViewModels.Thanks;
 using AppRopio.Base.Auth.Droid.Services.Implementation;
+using AppRopio.Base.Core.Plugins;
 using AppRopio.Base.Core.Services.ViewLookup;
 using MvvmCross;
 using MvvmCross.Plugin;
@@ -16,9 +17,11 @@ namespace AppRopio.Base.Auth.Droid
 {
     [MvxPlugin]
     [Preserve(AllMembers = true)]
-    public class Plugin : BasePlugin
+    public class Plugin : BasePlugin<App>
     {
-        public override void Load()
+		protected override string Name => "Auth";
+
+		public override void Load()
         {
             base.Load();
 

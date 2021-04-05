@@ -60,6 +60,10 @@
     <Compile Include="Services\FirebaseService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\AppRopio.Base\Core\AppRopio.Base.Core.csproj">
+      <Project>{ea6d5113-1e80-494b-886d-3d7fdfa04e99}</Project>
+      <Name>AppRopio.Base.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Core\AppRopio.Analytics.Firebase.Core.csproj">
       <Project>{4DF16D5C-5EF7-44B9-AD83-C737EA2BF38D}</Project>
       <Name>AppRopio.Analytics.Firebase.Core</Name>

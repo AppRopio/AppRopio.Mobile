@@ -1,4 +1,5 @@
-﻿using AppRopio.Base.Core.Services.ViewLookup;
+﻿using AppRopio.Base.Core.Plugins;
+using AppRopio.Base.Core.Services.ViewLookup;
 using AppRopio.ECommerce.Loyalty.Core;
 using AppRopio.ECommerce.Loyalty.Core.ViewModels.Promo;
 using AppRopio.ECommerce.Loyalty.Droid.Views.Promo;
@@ -9,8 +10,10 @@ namespace AppRopio.ECommerce.Loyalty.Droid
 {
     [MvxPlugin]
     [Preserve(AllMembers = true)]
-    public class Plugin : BasePlugin
+    public class Plugin : BasePlugin<App>
     {
+		protected override string Name => "Loyalty";
+
         public override void Load()
         {
             base.Load();

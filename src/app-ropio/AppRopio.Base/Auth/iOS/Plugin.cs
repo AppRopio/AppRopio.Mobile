@@ -16,6 +16,7 @@ using AppRopio.Base.Auth.iOS.Views.Password.Reset.Sms;
 using AppRopio.Base.Auth.iOS.Views.SignIn;
 using AppRopio.Base.Auth.iOS.Views.SignUp;
 using AppRopio.Base.Auth.iOS.Views.Thanks;
+using AppRopio.Base.Core.Plugins;
 using AppRopio.Base.Core.Services.ViewLookup;
 using MvvmCross;
 using MvvmCross.Plugin;
@@ -24,8 +25,10 @@ namespace AppRopio.Base.Auth.iOS
 {
     [MvxPlugin]
     [Preserve(AllMembers = true)]
-    public class Plugin : BasePlugin
+    public class Plugin : BasePlugin<App>
     {
+		protected override string Name => "Auth";
+
         public override void Load()
         {
             base.Load();
