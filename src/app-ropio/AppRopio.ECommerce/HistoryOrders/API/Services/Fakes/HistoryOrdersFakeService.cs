@@ -10,7 +10,7 @@ namespace AppRopio.ECommerce.HistoryOrders.API.Services.Fakes
 {
     public class HistoryOrdersFakeService : IHistoryOrdersService
     {
-        public bool IsRussianCulture => Mvx.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
+        public bool IsRussianCulture => Mvx.IoCProvider.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
 
         public async Task<List<HistoryOrder>> GetOrders(int count, int offset = 0)
         {
