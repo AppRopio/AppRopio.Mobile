@@ -73,34 +73,7 @@
     <Compile Include="SplashActivity.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="Application.cs" />
-    <Compile Include="Bootstrap\AppRopio_ProductsPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\AppRopio_BasketPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\AppRopio_FiltersPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\AppRopio_MobileCenterBootstrap.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
-    <Compile Include="Bootstrap\AppRopio_MarkedPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\AppRopio_HistoryOrdersPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\AppRopio_MapPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\AppRopio_InformationPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\AppRopio_ContactsPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\AppRopio_SettingsPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\AppRopio_AppsFlyerPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\AppRopio_FirebaseAnalyticsPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\AppRopio_GoogleAnalyticsPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\AppRopio_LoyaltyPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\AppRopio_FeedbackPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\AppRopio_AuthPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\AppRopio_CloudPaymentsPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\AppRopio_PaymentsPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\ColorPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
-    <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\NetworkPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\VisibilityPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\JsonPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\DownloadCachePluginBootstrap.cs" />
-    <Compile Include="Bootstrap\AppRopio_Best2PayPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\AppRopio_YandexKassaPluginBootstrap.cs" />
     <Compile Include="LocalizationResx\Auth.Designer.cs">
       <DependentUpon>Auth.resx</DependentUpon>
     </Compile>
