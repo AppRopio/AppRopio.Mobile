@@ -7,7 +7,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>AppRopio.Navigation.Menu.Droid</RootNamespace>
     <AssemblyName>AppRopio.Navigation.Menu.Droid</AssemblyName>
-    <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v10.0</TargetFrameworkVersion>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>

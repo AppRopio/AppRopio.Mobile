@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>AppRopio.Payments.Best2Pay.Droid</RootNamespace>
     <AssemblyName>AppRopio.Payments.Best2Pay.Droid</AssemblyName>
-    <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v10.0</TargetFrameworkVersion>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
