@@ -121,6 +121,10 @@ namespace AppRopio.Base.Droid
 
 		protected override void InitializeFirstChance()
         {
+            App.Initialize();
+
+            base.InitializeFirstChance();
+
             InitalizeExceptionHandler();
 
             Mvx.IoCProvider.RegisterSingleton<ISettingsService>(() => new SettingsService());
@@ -139,8 +143,6 @@ namespace AppRopio.Base.Droid
 
             var localizationService = SetupLocalizationService();
             Mvx.IoCProvider.RegisterSingleton<ILocalizationService>(localizationService);
-
-            App.Initialize();
         }
 
         private ILocalizationService SetupLocalizationService()
@@ -150,9 +152,6 @@ namespace AppRopio.Base.Droid
 
         protected override IMvxViewsContainer InitializeViewLookup(IDictionary<Type, Type> viewModelViewLookup)
         {
-            if (viewModelViewLookup == null)
-                return null;
-
             var viewLookupService = Mvx.IoCProvider.Resolve<IViewLookupService>();
             if (viewLookupService == null)
                 return null;
@@ -162,12 +161,16 @@ namespace AppRopio.Base.Droid
                 return null;
 
             var container = Mvx.IoCProvider.Resolve<IMvxViewsContainer>();
-            container.AddAll(viewModelViewLookup);
             container.AddSecondary(new ARViewFinder(viewLookupService, viewModelLookupService));
             return container;
         }
 
-        protected override void InitializeLastChance()
+		protected override IDictionary<Type, Type> InitializeLookupDictionary()
+        {
+			return null;
+		}
+
+		protected override void InitializeLastChance()
         {
             base.InitializeLastChance();
 

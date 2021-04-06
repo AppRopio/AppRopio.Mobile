@@ -87,7 +87,8 @@ namespace AppRopio.Base.Core.Services.LogProvider
                     System.Console.WriteLine(formattedMessage);
                 }
 
-                Mvx.IoCProvider.Resolve<ILogService>()?.Write(Encoding.UTF8.GetBytes(formattedMessage));
+                if (Mvx.IoCProvider.CanResolve<ILogService>())
+                    Mvx.IoCProvider.Resolve<ILogService>().Write(Encoding.UTF8.GetBytes(formattedMessage));
             }
         }
     }

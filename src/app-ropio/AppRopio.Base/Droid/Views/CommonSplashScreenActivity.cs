@@ -18,9 +18,12 @@ namespace AppRopio.Base.Droid.Views
         protected override void OnCreate(Android.OS.Bundle bundle)
         {
 #if DEBUG
-            Mvx.IoCProvider.Resolve<IMvxLog>().Info($"{this.GetType().FullName}: Ellapsed milliseconds after Application OnCreate {Base.Core.ServicesDebug.StartupTimerService.Instance.EllapsedMilliseconds()}");
+            long millseconds = Base.Core.ServicesDebug.StartupTimerService.Instance.EllapsedMilliseconds();
 #endif
             base.OnCreate(bundle);
+#if DEBUG
+            Mvx.IoCProvider.Resolve<IMvxLog>().Info($"{this.GetType().FullName}: Ellapsed milliseconds after Application OnCreate {millseconds}");
+#endif
 
             var statusBarColor = new TypedValue();
             Theme.ResolveAttribute(Android.Resource.Attribute.StatusBarColor, statusBarColor, true);
