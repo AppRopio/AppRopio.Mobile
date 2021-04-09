@@ -15,7 +15,7 @@ namespace AppRopio.Base.iOS.UIExtentions
         public static bool Is_iPhone6Plus = Device.IsPhone && ScreenMaxLength == 736.0f;
         public static bool Is_iPhoneX = Device.IsPhone
                                     && UIDevice.CurrentDevice.CheckSystemVersion(11, 0)
-                                    && (UIApplication.SharedApplication?.Delegate?.GetWindow()?.SafeAreaInsets.Top is nfloat top)
+                                    && (UIApplication.SharedApplication?.Windows?[0]?.SafeAreaInsets.Top is nfloat top)
                                     && top > 24.0f;
 	}
 }

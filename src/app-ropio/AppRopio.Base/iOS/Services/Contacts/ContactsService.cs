@@ -87,7 +87,7 @@ namespace AppRopio.Base.iOS.Services.Contacts
                 var hasPermission = await PermissionsService.CheckPermission(new Xamarin.Essentials.Permissions.ContactsRead(), true, _permissionMessage);
                 if (!hasPermission)
                 {
-                    tcs.TrySetCanceled();
+                    tcs.TrySetResult(null);
                     return;
                 }
 

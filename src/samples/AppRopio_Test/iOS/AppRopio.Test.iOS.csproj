@@ -317,6 +317,7 @@
     <Compile Include="LocalizationResx\YandexKassa.ru.Designer.cs">
       <DependentUpon>YandexKassa.ru.resx</DependentUpon>
     </Compile>
+    <Compile Include="Setup.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Settings\Configs\Menu.json" />

@@ -374,7 +374,10 @@ namespace AppRopio.Navigation.Menu.iOS.Navigation
                 MenuNavigationController.View.BackgroundColor = UIColor.Red;
                 MasterNavigationController = MenuNavigationController.TopNavigationController;
 
-                var viewModel = Mvx.IoCProvider.Resolve<IMvxViewModelLoader>().LoadViewModel(request, null);
+                var viewModel = request is MvxViewModelInstanceRequest instanceRequest ?
+                    instanceRequest.ViewModelInstance
+                                :
+                            Mvx.IoCProvider.Resolve<IMvxViewModelLoader>().LoadViewModel(request, null);
                 var viewController = this.CreateViewControllerFor(request);
                 viewController.ViewModel = viewModel;
 

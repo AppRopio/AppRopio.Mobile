@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using System.Threading.Tasks;
 using AppRopio.Base.Core;
 using AppRopio.Base.Core.Services.Analytics;
 using AppRopio.Base.Core.Services.Push;
@@ -8,16 +9,20 @@ using AppRopio.Base.iOS.UIExtentions;
 using Foundation;
 using MvvmCross;
 using MvvmCross.Core;
+using MvvmCross.IoC;
 using MvvmCross.Logging;
 using MvvmCross.Platforms.Ios.Core;
+using MvvmCross.ViewModels;
 using UIKit;
 using UserNotifications;
 using WebKit;
 
 namespace AppRopio.Base.iOS
 {
-    public abstract class ARApplicationDelegate<TMvxSetup> : MvxApplicationDelegate, IUNUserNotificationCenterDelegate where TMvxSetup : MvxIosSetup, new()
+    public abstract class ARApplicationDelegate : MvxApplicationDelegate, IUNUserNotificationCenterDelegate
     {
+        private TaskCompletionSource<bool> _loaderLoadedTCS;
+
         #region Properties
 
         protected NSDictionary NotificationUserInfo { get; private set; }
@@ -53,26 +58,18 @@ namespace AppRopio.Base.iOS
 
         #endregion
 
-        public ARApplicationDelegate() : base()
-        {
-            MvxSetup.RegisterSetupType<TMvxSetup>(GetType().Assembly);
-        }
-
         #region Lifecycle
 
         #region Init
 
-        protected virtual UIWindow CreateWindow()
-        {
-            return new UIWindow(UIScreen.MainScreen.Bounds);
-        }
-
         protected virtual UIViewController ConstructDefaultViCo()
         {
+            _loaderLoadedTCS = new TaskCompletionSource<bool>();
+
             var viewController = new UIViewController();
             viewController.View.BackgroundColor = (UIColor)Theme.ColorPalette.Accent;
 
-            var webView = new WKWebView(new CoreGraphics.CGRect(0, 0, DeviceInfo.ScreenWidth, DeviceInfo.ScreenHeight), new WKWebViewConfiguration() {
+            var webView = new BindableWebView(new CoreGraphics.CGRect(0, 0, DeviceInfo.ScreenWidth, DeviceInfo.ScreenHeight), new WKWebViewConfiguration() {
                 AllowsInlineMediaPlayback = true,
                 DataDetectorTypes = WKDataDetectorTypes.All
             });
@@ -82,34 +79,82 @@ namespace AppRopio.Base.iOS
             webView.ScrollView.ScrollEnabled = false;
             webView.ScrollView.UserInteractionEnabled = false;
             webView.UserInteractionEnabled = false;
+            webView.LoadFinished += (sender, ev) =>
+            {
+                _loaderLoadedTCS.TrySetResult(true);
+            };
 
-            var path = NSBundle.MainBundle.PathForResource("loader", "html");
-            webView.LoadRequest(NSUrlRequest.FromUrl(NSUrl.FromString(path)));
+            var path = NSBundle.MainBundle.GetUrlForResource("loader", "html");
+            webView.LoadFileUrl(path, path);
 
             viewController.View.AddSubview(webView);
 
             return viewController;
         }
 
+        protected override void RunAppStart(object hint = null)
+        {
+            if (Initialized)
+                return;
+
+            MvxIosSetupSingleton.Instance.PlatformSetup<MvxIosSetup>().StateChanged += (sender, ev) =>
+            {
+                if (ev.SetupState != MvxSetup.MvxSetupState.Initialized)
+                    return;
+
+                Mvx.IoCProvider.CallbackWhenRegistered<IMvxAppStart>(startup =>
+                {
+                    if (!startup.IsStarted)
+                    {
+                        Task.Run(async () =>
+                        {
+                            await startup.StartAsync(GetAppStartHint(hint));
+
+                            InvokeOnMainThread(() =>
+                            {
+                                RequestNotificationAuthorization();
+
+                                Initialized = true;
+
+                                OnInitialized?.Invoke();
+                            });
+#if DEBUG
+                            System.Diagnostics.Debug.WriteLine($"Ellapsed milliseconds after MvvmCross setup {Base.Core.ServicesDebug.StartupTimerService.Instance.EllapsedMilliseconds()}");
+                            Base.Core.ServicesDebug.StartupTimerService.Instance.StopTimer();
+#endif
+                        });
+                    }
+                });
+            };
+        }
+
         #endregion
 
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
-            Window = CreateWindow();
+            Window = new UIWindow(UIScreen.MainScreen.Bounds);
 
             Window.RootViewController = ConstructDefaultViCo();
+
+            Window.MakeKeyAndVisible();
+
+            Task.Run(async () =>
+            {
+                if (_loaderLoadedTCS != null)
+                    await _loaderLoadedTCS.Task;
+
+                base.FinishedLaunching(application, launchOptions);
+            })
+            .ContinueWith((task) =>
+            {
+#if DEBUG
+                System.Diagnostics.Debug.WriteLine(task.Exception);
+#endif
+            }, TaskContinuationOptions.None);
 #if DEBUG
             System.Diagnostics.Debug.WriteLine($"AppRopio.Test.iOS.AppDelegate:Diagnostic: Ellapsed milliseconds in the end of FinishedLaunching {Base.Core.ServicesDebug.StartupTimerService.Instance.EllapsedMilliseconds()}");
 #endif
-            RequestNotificationAuthorization();
-
-            bool finishedLaunching = base.FinishedLaunching(application, launchOptions);
-
-            Initialized = true;
-
-            OnInitialized?.Invoke();
-
-            return finishedLaunching;
+            return true;
         }
 
         public override void OnActivated(UIApplication application)

@@ -1,21 +1,19 @@
 using AppRopio.Base.iOS;
-using AppRopio.Navigation.Menu.iOS;
 using AppRopio_Test.Views;
 using Foundation;
 using UIKit;
 
 namespace AppRopio.Test.iOS
 {
-	// The UIApplicationDelegate for the application. This class is responsible for launching the
-	// User Interface of the application, as well as listening (and optionally responding) to application events from iOS.
-	[Register("AppDelegate")]
-    public class AppDelegate : ARApplicationDelegate<MenuSetup>
+    // The UIApplicationDelegate for the application. This class is responsible for launching the
+    // User Interface of the application, as well as listening (and optionally responding) to application events from iOS.
+    [Register("AppDelegate")]
+    public class AppDelegate : ARApplicationDelegate
     {
         public UIWindow DemoWindow { get; private set; }
 
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
-            DemoWindow = CreateWindow();
             DemoWindow = new UIWindow(UIScreen.MainScreen.Bounds) 
             {
                 RootViewController = new DemoViewController(() => 

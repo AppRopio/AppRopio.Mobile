@@ -42,7 +42,10 @@ namespace AppRopio.Base.iOS.Services.Permissions
 
                 if (status != PermissionStatus.Granted)
                 {
-                    status = await permission.RequestAsync();
+                    await Mvx.IoCProvider.Resolve<IMvxMainThreadAsyncDispatcher>().ExecuteOnMainThreadAsync(async () =>
+                    {
+                        status = await permission.RequestAsync();
+                    });
                 }
 
                 return (status == PermissionStatus.Granted);

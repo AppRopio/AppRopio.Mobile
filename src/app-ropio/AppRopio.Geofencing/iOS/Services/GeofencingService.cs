@@ -6,6 +6,7 @@ using AppRopio.Geofencing.Core.Service.Implementation;
 using AppRopio.Geofencing.iOS.Providers;
 using AppRopio.Geofencing.iOS.Utils;
 using MvvmCross;
+using MvvmCross.Base;
 using MvvmCross.Logging;
 
 namespace AppRopio.Geofencing.iOS.Services
@@ -71,7 +72,7 @@ namespace AppRopio.Geofencing.iOS.Services
 			var tcs = new TaskCompletionSource<bool>();
 			bool result = false;
 
-			UIKit.UIApplication.SharedApplication.InvokeOnMainThread(async () =>
+			Mvx.IoCProvider.Resolve<IMvxMainThreadAsyncDispatcher>().ExecuteOnMainThreadAsync(async () =>
 			{
 				result = await GeofencingUtil.RequestPermissionAsync();
 

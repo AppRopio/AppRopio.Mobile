@@ -11,7 +11,7 @@ using MvvmCross.ViewModels;
 
 namespace AppRopio.Navigation.Menu.iOS
 {
-    public class MenuSetup : BaseIosSetup
+    public abstract class MenuSetup : BaseIosSetup
     {
         protected override IMvxApplication CreateApp()
         {

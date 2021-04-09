@@ -100,5 +100,7 @@
 	<string>Дадим выбрать любой номер телефона, при оформлении заказа ;)</string>
 	<key>CFBundleVersion</key>
 	<string>0</string>
+	<key>CFBundleDisplayName</key>
+	<string>AppRopio</string>
 </dict>
 </plist>

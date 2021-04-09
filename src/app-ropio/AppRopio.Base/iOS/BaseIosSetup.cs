@@ -39,6 +39,8 @@ namespace AppRopio.Base.iOS
 {
     public abstract class BaseIosSetup : MvxIosSetup
     {
+        private readonly TaskCompletionSource<bool> _initializePrimaryTCS = new TaskCompletionSource<bool>();
+
         #region Private
 
         private void InitalizeExceptionHandler()
@@ -142,11 +144,13 @@ namespace AppRopio.Base.iOS
             return localizationService;
         }
 
+        protected override IDictionary<Type, Type> InitializeLookupDictionary()
+        {
+            return null;
+        }
+
         protected override IMvxViewsContainer InitializeViewLookup(IDictionary<Type, Type> viewModelViewLookup)
         {
-            if (viewModelViewLookup == null)
-                return null;
-
             var viewLookupService = Mvx.IoCProvider.Resolve<IViewLookupService>();
             if (viewLookupService == null)
                 return null;
@@ -156,9 +160,23 @@ namespace AppRopio.Base.iOS
                 return null;
 
             var container = Mvx.IoCProvider.Resolve<IMvxViewsContainer>();
-            container.AddAll(viewModelViewLookup);
             container.AddSecondary(new ARViewFinder(viewLookupService, viewModelLookupService));
             return container;
+        }
+
+        public override void InitializePrimary()
+        {
+            UIApplication.SharedApplication.BeginInvokeOnMainThread(() =>
+            {
+                base.InitializePrimary();
+                _initializePrimaryTCS.TrySetResult(true);
+            });
+        }
+
+        public override async void InitializeSecondary()
+        {
+            await _initializePrimaryTCS.Task;
+            base.InitializeSecondary();
         }
 
         protected override void InitializeLastChance()
@@ -202,6 +220,19 @@ namespace AppRopio.Base.iOS
             assemblyList.Add(Assembly.GetAssembly((typeof(BaseIosSetup))));
 
             return assemblyList;
+        }
+
+        protected abstract IEnumerable<Type> GetPluginTypes();
+
+        public override IEnumerable<Assembly> GetPluginAssemblies()
+        {
+            var assemblies = base.GetPluginAssemblies();
+            var pluginTypes = GetPluginTypes();
+
+            if (!pluginTypes.IsNullOrEmpty())
+                assemblies.Concat(pluginTypes.Select(t => t.Assembly));
+
+            return assemblies;
         }
 
         protected override IEnumerable<Assembly> GetBootstrapOwningAssemblies()

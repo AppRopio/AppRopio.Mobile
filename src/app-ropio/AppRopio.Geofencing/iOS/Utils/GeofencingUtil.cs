@@ -4,7 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using CoreLocation;
 using Foundation;
-using UIKit;
+using MvvmCross;
+using MvvmCross.Base;
 
 namespace AppRopio.Geofencing.iOS.Utils
 {
@@ -27,7 +28,7 @@ namespace AppRopio.Geofencing.iOS.Utils
 
         public static Task<bool> RequestPermissionAsync()
         {
-            var tcs = new TaskCompletionSource<bool>();
+			var tcs = new TaskCompletionSource<bool>();
 
 			EventHandler<CLAuthorizationChangedEventArgs> handler = null;
 
@@ -50,7 +51,7 @@ namespace AppRopio.Geofencing.iOS.Utils
 			if (CLLocationManager.Status == CLAuthorizationStatus.NotDetermined)
 			{
 				_locationManager.AuthorizationChanged += handler;
-				UIApplication.SharedApplication.InvokeOnMainThread(() =>
+				Mvx.IoCProvider.Resolve<IMvxMainThreadAsyncDispatcher>().ExecuteOnMainThreadAsync(() =>
 				{
 					_locationManager.RequestAlwaysAuthorization();
 				});
@@ -97,7 +98,7 @@ namespace AppRopio.Geofencing.iOS.Utils
 
 				tcs.TrySetResult(new CLLocation());
 			};
-			UIApplication.SharedApplication.InvokeOnMainThread(() =>
+			Mvx.IoCProvider.Resolve<IMvxMainThreadAsyncDispatcher>().ExecuteOnMainThreadAsync(() =>
 			{
 				_locationManager.DistanceFilter = 0;
 				_locationManager.DesiredAccuracy = CLLocation.AccuracyBest;
@@ -105,7 +106,6 @@ namespace AppRopio.Geofencing.iOS.Utils
 				_locationManager.Failed += failedHandler;
 
 				_locationManager.RequestLocation();
-
 			});
 
 			if (_locationManager.Location != null)
