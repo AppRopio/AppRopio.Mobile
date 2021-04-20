@@ -15,11 +15,10 @@ namespace AppRopio.ECommerce.Marked.iOS.Views.Marked
 {
     public partial class MarkedViewController : CatalogViewController<IMarkedViewModel>
     {
-        protected override UICollectionView CollectionView => _collectionView;
-
         protected override NSLayoutConstraint CollectionViewTopConstraint => _collectionViewTopConstraint;
         protected override NSLayoutConstraint CollectionViewBottomConstraint => _collectionViewBottomConstraint;
 
+        protected override UICollectionView CollectionView => _collectionView;
         protected override UIView EmptyView => _emptyView;
         protected override UIImageView EmptyImage => _emptyImage;
         protected override AppRopio.Base.iOS.Controls.ARLabel EmptyTitle => _emptyTitle;

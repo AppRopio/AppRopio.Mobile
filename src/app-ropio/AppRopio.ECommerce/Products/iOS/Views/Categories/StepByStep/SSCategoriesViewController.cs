@@ -32,6 +32,20 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Categories.StepByStep
 
         #region InitializationControls
 
+        protected virtual void SetupSearchViewForScrollView(UIView searchView, UIScrollView scrollView)
+        {
+            if (Config.SearchType == SearchType.Bar)
+            {
+                searchView.RemoveFromSuperview();
+                searchView.ChangeFrame(0.0f, -56.0f, DeviceInfo.ScreenWidth, 56.0f);
+                searchView.TranslatesAutoresizingMaskIntoConstraints = true;
+
+                var insets = scrollView.ContentInset;
+                scrollView.ContentInset = insets.ChangeInsets(t: insets.Top + 56.0f);
+                scrollView.AddSubview(searchView);
+            }
+        }
+
         protected virtual void SetupTopCollection(UICollectionView topCollection)
         {
             topCollection.RegisterNibForCell(BannerCell.Nib, BannerCell.Key);
@@ -41,7 +55,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Categories.StepByStep
             flowLayout.ScrollDirection = UICollectionViewScrollDirection.Horizontal;
         }
 
-        protected virtual void SetupTableView(UITableView tableView)
+        protected virtual void SetupTableView(UITableView tableView, UIView searchView)
         {
             tableView.RegisterNibForCellReuse(SSCategoryCell.Nib, SSCategoryCell.Key);
 
@@ -84,7 +98,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Categories.StepByStep
             }
         }
 
-        protected virtual void SetupCollectionView(UICollectionView collectionView)
+        protected virtual void SetupCollectionView(UICollectionView collectionView, UIView searchView)
         {
             var flowLayout = (collectionView.CollectionViewLayout as UICollectionViewFlowLayout);
 
@@ -127,8 +141,26 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Categories.StepByStep
             tableView.Source = dataSource;
             tableView.ReloadData();
 
-            set.Bind(tableView).For(v => v.TableHeaderView).To(vm => vm.TopBanners.Count).WithConversion("SizeVisibility", new SizeVisibilityParameter { View = tableView.TableHeaderView, MinimumHeight = () => 0 });
-            set.Bind(tableView).For(v => v.TableFooterView).To(vm => vm.BottomBanners.Count).WithConversion("SizeVisibility", new SizeVisibilityParameter { View = tableView.TableFooterView, MinimumHeight = () => 0 });
+            set.Bind(tableView)
+                .For(v => v.TableHeaderView)
+                .To(vm => vm.TopBanners.Count)
+                .WithConversion(
+                    "SizeVisibility",
+                    new SizeVisibilityParameter() {
+                        View = tableView.TableHeaderView,
+                        MinimumHeight = () => 0
+                    }
+                );
+            set.Bind(tableView)
+                .For(v => v.TableFooterView)
+                .To(vm => vm.BottomBanners.Count)
+                .WithConversion(
+                    "SizeVisibility",
+                    new SizeVisibilityParameter() {
+                        View = tableView.TableFooterView,
+                        MinimumHeight = () => 0
+                    }
+                );
         }
 
         protected virtual void BindBottomCollection(UICollectionView bottomCollection, MvxFluentBindingDescriptionSet<SSCategoriesViewController, ISSCategoriesViewModel> set)
@@ -205,13 +237,15 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Categories.StepByStep
             {
                 _collectionView.RemoveFromSuperview();
                 SetupTopCollection(_topCollection);
-                SetupTableView(_tableView);
+                SetupTableView(_tableView, _searchView);
                 SetupBottomCollection(_bottomCollection);
+                SetupSearchViewForScrollView(_searchView, _tableView);
             }
             else
             {
                 _tableView.RemoveFromSuperview();
-                SetupCollectionView(_collectionView);
+                SetupCollectionView(_collectionView, _searchView);
+                SetupSearchViewForScrollView(_searchView, _collectionView);
             }
             SetupSearchBar(_searchBar);
             SetupStackView(_stackView);
@@ -244,7 +278,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Categories.StepByStep
 
         protected virtual void SetupStackView(UIStackView stackView)
         {
-            stackView.LayoutMarginsRelativeArrangement = true;
+//            stackView.LayoutMarginsRelativeArrangement = true;
         }
 
         protected virtual void BindSearchView(UIView searchView, MvxFluentBindingDescriptionSet<SSCategoriesViewController, ISSCategoriesViewModel> set)

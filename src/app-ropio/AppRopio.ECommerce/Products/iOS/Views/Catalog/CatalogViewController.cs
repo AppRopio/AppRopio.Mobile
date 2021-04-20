@@ -52,6 +52,17 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog
             base.CleanUp();
         }
 
+        protected virtual void SetupSearchView(UIView searchView)
+        {
+            if (Config.SearchType == SearchType.Bar)
+            {
+                searchView.RemoveFromSuperview();
+                searchView.ChangeFrame(0.0f, 44.0f + DeviceInfo.SafeAreaInsets.Top, DeviceInfo.ScreenWidth, 56.0f);
+                searchView.TranslatesAutoresizingMaskIntoConstraints = true;
+                View.AddSubview(searchView);
+            }
+        }
+
         protected virtual void SetupSearchBar(UISearchBar searchBar)
         {
             searchBar.SetupStyle(ThemeConfig.ContentSearch.SearchBar);
@@ -59,12 +70,13 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog
 
         protected virtual void SetupStackView(UIStackView stackView)
         {
-            stackView.LayoutMarginsRelativeArrangement = true;
+            stackView.Hidden = true;
         }
 
         protected override void InitializeControls()
         {
             base.InitializeControls();
+            SetupSearchView(_searchView);
             SetupSearchBar(_searchBar);
             SetupStackView(_stackView);
         }

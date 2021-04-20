@@ -63,10 +63,10 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Categories.Cataloged
             //NOTE: it's very important to add page view controller as child before invoke any View methods and properties
             AddChildViewController(_pageViewController);
 
-            _pageViewController.View.Frame = new CoreGraphics.CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height);
+            _pageViewController.View.Frame = new CoreGraphics.CGRect(0, DeviceInfo.SafeAreaInsets.Top, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height - DeviceInfo.SafeAreaInsets.Top);
             _pageViewController.ViewModel = ViewModel;
 
-            View.Frame = new CoreGraphics.CGRect(0, -64, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height + 64);
+            View.Frame = new CoreGraphics.CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height);
             View.AddSubview(_pageViewController.View);
         }
 
@@ -88,13 +88,6 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Categories.Cataloged
             base.ViewWillAppear(animated);
         }
 
-        public override void ViewDidAppear(bool animated)
-        {
-            base.ViewDidAppear(animated);
-
-            _pageViewController.View.ChangeFrame(y: 64);
-        }
-
         public override void ViewWillDisappear(bool animated)
         {
             _pageViewController.ViewWillDisappear(animated);
@@ -111,10 +104,10 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Categories.Cataloged
                 var heightContraint = View.Constraints.FirstOrDefault(x => x.FirstAttribute == NSLayoutAttribute.Height);
 
                 if (topConstraint != null)
-                    topConstraint.Constant = -64;
+                    topConstraint.Constant = 0;
 
                 if (midYConstraint != null)
-                    midYConstraint.Constant = (UIScreen.MainScreen.Bounds.Height / 2) - 64;
+                    midYConstraint.Constant = (UIScreen.MainScreen.Bounds.Height / 2);
 
                 if (heightContraint != null)
                     heightContraint.Constant = UIScreen.MainScreen.Bounds.Height;
@@ -122,7 +115,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Categories.Cataloged
 
             base.ViewWillLayoutSubviews();
 
-            View.Frame = new CoreGraphics.CGRect(0, -64, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height + 64);
+            View.Frame = new CoreGraphics.CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height);
         }
 
         #endregion
