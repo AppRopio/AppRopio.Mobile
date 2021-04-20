@@ -114,6 +114,8 @@ namespace AppRopio.Base.iOS
 
         protected override void InitializeFirstChance()
         {
+            base.InitializeFirstChance();
+
             InitalizeExceptionHandler();
 
             Mvx.IoCProvider.RegisterSingleton<ISettingsService>(() => new SettingsService());
