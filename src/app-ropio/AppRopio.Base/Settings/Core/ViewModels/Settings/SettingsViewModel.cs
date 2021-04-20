@@ -102,7 +102,11 @@ namespace AppRopio.Base.Settings.Core.ViewModels.Settings
         {
 			var elements = Config.Elements;
 
-            var region = await VmService.LoadRegion(AppSettings.RegionID);
+            var region = await VmService.LoadRegion(AppSettings.RegionID ?? AppSettings.DefaultRegionID);
+
+            //TODO: show some dialog
+            if (region == null)
+                return;
 
 			Items = elements.Select(e =>
 			{

@@ -1,4 +1,5 @@
-﻿using AppRopio.Base.Core.Services.Router;
+﻿using System.Threading.Tasks;
+using AppRopio.Base.Core.Services.Router;
 using AppRopio.Base.Core.Services.ViewModelLookup;
 using AppRopio.Base.Settings.Core.Services;
 using AppRopio.Base.Settings.Core.Services.Implementation;
@@ -6,8 +7,9 @@ using AppRopio.Base.Settings.Core.ViewModels.Languages;
 using AppRopio.Base.Settings.Core.ViewModels.Regions;
 using AppRopio.Base.Settings.Core.ViewModels.Services;
 using AppRopio.Base.Settings.Core.ViewModels.Settings;
-using MvvmCross.ViewModels;
 using MvvmCross;
+using MvvmCross.IoC;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.Base.Settings.Core
 {
@@ -35,6 +37,15 @@ namespace AppRopio.Base.Settings.Core
 			//register start point for current navigation module
 			var routerService = Mvx.IoCProvider.Resolve<IRouterService>();
 			routerService.Register<ISettingsViewModel>(new SettingsRouterSubscriber());
+
+			Mvx.IoCProvider.CallbackWhenRegistered<IMvxAppStart>(startup =>
+			{
+				Task.Run(() =>
+				{
+					while (!startup.IsStarted);
+					Mvx.IoCProvider.Resolve<IRegionService>().CheckRegion();
+				});
+			});
 		}
 	}
 }
