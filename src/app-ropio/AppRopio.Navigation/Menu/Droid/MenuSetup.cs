@@ -10,7 +10,7 @@ using MvvmCross.ViewModels;
 
 namespace AppRopio.Navigation.Menu.Droid
 {
-    public class MenuSetup : BaseAndroidSetup
+    public abstract class MenuSetup : BaseAndroidSetup
     {
         protected override IMvxApplication CreateApp()
         {

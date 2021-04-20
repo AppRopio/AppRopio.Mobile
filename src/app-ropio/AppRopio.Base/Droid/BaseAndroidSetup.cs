@@ -240,6 +240,19 @@ namespace AppRopio.Base.Droid
             return assemblyList;
         }
 
+        protected abstract IEnumerable<Type> GetPluginTypes();
+
+        public override IEnumerable<Assembly> GetPluginAssemblies()
+        {
+            var assemblies = base.GetPluginAssemblies();
+            var pluginTypes = GetPluginTypes();
+
+            if (!pluginTypes.IsNullOrEmpty())
+                assemblies.Concat(pluginTypes.Select(t => t.Assembly));
+
+            return assemblies;
+        }
+
         protected override IEnumerable<Assembly> GetBootstrapOwningAssemblies()
         {
             var result = base.GetBootstrapOwningAssemblies();
