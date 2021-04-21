@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:MvxBind="Visibility Visibility(HistoryVisible)">
-    <MvvmCross.Platforms.Android.Binding.MvxListView
+    <mvvmcross.platforms.android.binding.views.MvxListView
         style="@style/app_products_contentsearch_history_items"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
