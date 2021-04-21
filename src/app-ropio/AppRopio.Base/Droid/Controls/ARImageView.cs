@@ -8,14 +8,13 @@ using Android.Util;
 using Android.Widget;
 using Bumptech.Glide;
 using Bumptech.Glide.Request;
-using Java.Net;
 using MvvmCross;
 using MvvmCross.Logging;
 using Base64Decoder = Android.Util.Base64;
 
 namespace AppRopio.Base.Droid.Controls
 {
-	[Register("appropio.base.droid.controls.ARImageView")]
+    [Register("appropio.base.droid.controls.ARImageView")]
     public class ARImageView : ImageView
     {
         enum DownScaleType
@@ -110,7 +109,7 @@ namespace AppRopio.Base.Droid.Controls
                         {
                             Glide
                                .With(this.Context)
-                                .Load(new URI(value))
+                                .Load(Android.Net.Uri.Parse(value))
                                 .Apply(GetRequestOptions())
                                 .Into(this);
                         }
