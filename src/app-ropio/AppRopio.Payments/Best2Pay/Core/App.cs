@@ -17,7 +17,8 @@ namespace AppRopio.Payments.Best2Pay.Core
 
 			new Payments.API.App().Initialize();
 
-			Mvx.IoCProvider.RegisterSingleton<IBest2PayPaymentNavigationVmService>(() => new Best2PayPaymentNavigationVmService());
+			Mvx.IoCProvider.RegisterType<IBest2PayPaymentNavigationVmService>(() => new Best2PayPaymentNavigationVmService());
+
             Mvx.IoCProvider.RegisterSingleton<IBest2PayVmService>(() => new Best2PayVmService());
             Mvx.IoCProvider.RegisterSingleton<IBest2PayConfigService>(() => new Best2PayConfigService());
 

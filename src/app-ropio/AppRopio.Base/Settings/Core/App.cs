@@ -22,7 +22,8 @@ namespace AppRopio.Base.Settings.Core
 			Mvx.IoCProvider.RegisterSingleton<ISettingsVmService>(() => new SettingsVmService());
             Mvx.IoCProvider.RegisterSingleton<ISettingsConfigService>(() => new SettingsConfigService());
             Mvx.IoCProvider.RegisterSingleton<IRegionService>(() => new RegionService());
-            Mvx.IoCProvider.RegisterSingleton<ISettingsVmNavigationService>(new SettingsVmNavigationService());
+
+            Mvx.IoCProvider.RegisterType<ISettingsVmNavigationService>(() => new SettingsVmNavigationService());
 
 			#region VMs registration
 

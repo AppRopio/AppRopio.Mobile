@@ -16,7 +16,8 @@ namespace AppRopio.Payments.CloudPayments.Core
 
             new AppRopio.Payments.API.App().Initialize();
 
-			Mvx.IoCProvider.RegisterSingleton<ICloudPaymentsPaymentNavigationVmService>(() => new CloudPaymentsPaymentNavigationVmService());
+			Mvx.IoCProvider.RegisterType<ICloudPaymentsPaymentNavigationVmService>(() => new CloudPaymentsPaymentNavigationVmService());
+
 			Mvx.IoCProvider.RegisterSingleton<ICloudPaymentsConfigService>(() => new CloudPaymentsConfigService());
 
 			#region VMs registration

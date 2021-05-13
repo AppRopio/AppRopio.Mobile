@@ -21,12 +21,12 @@ namespace AppRopio.Base.Core
             (new API.App()).Initialize();
 
             Mvx.IoCProvider.RegisterType<IBaseVmNavigationService>(() => new BaseVmNavigationService());
+            Mvx.IoCProvider.RegisterType<IPushNotificationsService>(() => new PushNotificationsService());
 
             Mvx.IoCProvider.RegisterSingleton<IAnalyticsNotifyingService>(() => new AnalyticsNotifyingService());
             Mvx.IoCProvider.RegisterSingleton<IViewLookupService>(() => new ViewLookupService());
             Mvx.IoCProvider.RegisterSingleton<IViewModelLookupService>(() => new ViewModelLookupService());
             Mvx.IoCProvider.RegisterSingleton<IRouterService>(() => new RouterService());
-            Mvx.IoCProvider.RegisterSingleton<IPushNotificationsService>(() => new PushNotificationsService());
             Mvx.IoCProvider.RegisterSingleton<ILocationService>(() => new LocationService());
             Mvx.IoCProvider.RegisterSingleton<ITasksQueueService>(() => new TasksQueueService());
 

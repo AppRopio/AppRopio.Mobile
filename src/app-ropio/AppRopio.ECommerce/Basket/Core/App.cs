@@ -38,7 +38,8 @@ namespace AppRopio.ECommerce.Basket.Core
             Mvx.IoCProvider.RegisterSingleton<IOrderVmService>(() => new OrderVmService());
             Mvx.IoCProvider.RegisterSingleton<IUserVmService>(() => new UserVmService());
             Mvx.IoCProvider.RegisterSingleton<IDeliveryVmService>(() => new DeliveryVmService());
-            Mvx.IoCProvider.RegisterSingleton<IBasketNavigationVmService>(() => new BasketNavigationVmService());
+
+            Mvx.IoCProvider.RegisterType<IBasketNavigationVmService>(() => new BasketNavigationVmService());
 
             Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IBasketProductCardVmService, BasketProductCardVmService>();
             Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IProductQuantityVmService, ProductQuantityVmService>();

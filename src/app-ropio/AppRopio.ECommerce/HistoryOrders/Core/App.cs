@@ -49,7 +49,7 @@ namespace AppRopio.ECommerce.HistoryOrders.Core
 
             Mvx.IoCProvider.RegisterSingleton<IHistoryOrderDetailsVmService>(() => new HistoryOrderDetailsVmService());
 
-            Mvx.IoCProvider.RegisterSingleton<IHistoryOrdersNavigationVmService>(() => new HistoryOrdersNavigationVmService());
+            Mvx.IoCProvider.RegisterType<IHistoryOrdersNavigationVmService>(() => new HistoryOrdersNavigationVmService());
 
 			#region VMs registration
 

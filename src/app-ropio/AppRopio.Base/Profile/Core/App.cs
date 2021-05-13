@@ -12,7 +12,7 @@ namespace AppRopio.Base.Profile.Core
 		{
 			new API.App().Initialize();
 
-			Mvx.IoCProvider.RegisterSingleton<IProfileVmNavigationService>(new ProfileVmNavigationService());
+			Mvx.IoCProvider.RegisterType<IProfileVmNavigationService>(() => new ProfileVmNavigationService());
             
 			#region VMs registration
 

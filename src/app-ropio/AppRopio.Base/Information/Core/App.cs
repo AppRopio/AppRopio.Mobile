@@ -18,7 +18,8 @@ namespace AppRopio.Base.Information.Core
             new API.App().Initialize();
 
 			Mvx.IoCProvider.RegisterSingleton<IInformationVmService>(() => new InformationVmService());
-            Mvx.IoCProvider.RegisterSingleton<IInformationNavigationVmService>(() => new InformationNavigationVmService());
+
+            Mvx.IoCProvider.RegisterType<IInformationNavigationVmService>(() => new InformationNavigationVmService());
 
 			#region VMs registration
 

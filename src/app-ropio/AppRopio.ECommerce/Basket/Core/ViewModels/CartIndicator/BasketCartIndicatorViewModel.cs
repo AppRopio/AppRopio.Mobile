@@ -52,8 +52,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.CartIndicator
         private IBasketService _apiService;
         public IBasketService ApiService => _apiService ?? (_apiService = Mvx.IoCProvider.Resolve<IBasketService>());
 
-        private IBasketNavigationVmService _navigationVmService;
-        public new IBasketNavigationVmService NavigationVmService => _navigationVmService ?? (_navigationVmService = Mvx.IoCProvider.Resolve<IBasketNavigationVmService>());
+        public new IBasketNavigationVmService NavigationVmService => Mvx.IoCProvider.Resolve<IBasketNavigationVmService>();
 
         #endregion
 

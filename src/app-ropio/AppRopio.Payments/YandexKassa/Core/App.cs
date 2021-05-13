@@ -15,7 +15,8 @@ namespace AppRopio.Payments.YandexKassa.Core
 		{
             Mvx.IoCProvider.RegisterSingleton<IYandexKassaVmService>(() => new YandexKassaVmService());
             Mvx.IoCProvider.RegisterSingleton<IYandexKassaConfigService>(() => new YandexKassaConfigService());
-            Mvx.IoCProvider.RegisterSingleton<IYandexKassaPaymentNavigationVmService>(() => new YandexKassaPaymentNavigationVmService());
+
+            Mvx.IoCProvider.RegisterType<IYandexKassaPaymentNavigationVmService>(() => new YandexKassaPaymentNavigationVmService());
 
 			#region VMs registration
 
