@@ -230,7 +230,7 @@ namespace AppRopio.Base.iOS
             var vmLS = Mvx.IoCProvider.Resolve<IViewModelLookupService>();
             if (vmLS.IsRegisteredDeeplink(deeplink))
             {
-                Mvx.IoCProvider.CallbackWhenRegistered<IPushNotificationsService>(() => Mvx.IoCProvider.Resolve<IPushNotificationsService>().NavigateTo(deeplink));
+                Mvx.IoCProvider.CallbackWhenRegistered<IPushNotificationsService>(service => service.NavigateTo(deeplink));
             }
             else if (!Initialized)
             {
@@ -238,7 +238,7 @@ namespace AppRopio.Base.iOS
                     {
                         vmLS.CallbackWhenDeeplinkRegistered(deeplink, type =>
                         {
-                            InvokeOnMainThread(() => Mvx.IoCProvider.CallbackWhenRegistered<IPushNotificationsService>(() => Mvx.IoCProvider.Resolve<IPushNotificationsService>().NavigateTo(deeplink)));
+                            InvokeOnMainThread(() => Mvx.IoCProvider.CallbackWhenRegistered<IPushNotificationsService>(service => service.NavigateTo(deeplink)));
                         });
                     };
             }
@@ -252,12 +252,12 @@ namespace AppRopio.Base.iOS
 
             Mvx.IoCProvider.Resolve<IMvxLog>().Trace($"\nPush token: {token}\n");
 
-            Mvx.IoCProvider.CallbackWhenRegistered<IPushNotificationsService>(async () =>
+            Mvx.IoCProvider.CallbackWhenRegistered<IPushNotificationsService>(async service =>
             {
                 try
                 {
                     AppSettings.PushToken = token;
-                    await Mvx.IoCProvider.Resolve<IPushNotificationsService>().RegisterDeviceForPushNotificatons(token);
+                    await service.RegisterDeviceForPushNotificatons(token);
                 }
                 catch { }
             });

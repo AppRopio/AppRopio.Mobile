@@ -13,6 +13,7 @@ using AppRopio.Base.Core.Services.ViewModelLookup;
 using AppRopio.Base.Droid.Navigation;
 using MvvmCross;
 using MvvmCross.Droid.Support.V7.AppCompat;
+using MvvmCross.IoC;
 using MvvmCross.Logging;
 using MvvmCross.Platforms.Android.Binding.BindingContext;
 using MvvmCross.Platforms.Android.Presenters;
@@ -217,9 +218,9 @@ namespace AppRopio.Base.Droid.Views
 
                 System.Diagnostics.Debug.WriteLine(message: $"Deeplink was registered", category: PackageName);
 
-                Mvx.IoCProvider.CallbackWhenRegistered<IPushNotificationsService>(() =>
+                Mvx.IoCProvider.CallbackWhenRegistered<IPushNotificationsService>(service =>
                 {
-                    Mvx.IoCProvider.Resolve<IPushNotificationsService>().NavigateTo(deeplink: deeplink);
+                    service.NavigateTo(deeplink: deeplink);
                 });
             }
         }
