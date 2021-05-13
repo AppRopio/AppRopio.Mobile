@@ -228,11 +228,11 @@ namespace AppRopio.Base.iOS
 
         public override IEnumerable<Assembly> GetPluginAssemblies()
         {
-            var assemblies = base.GetPluginAssemblies();
+            var assemblies = base.GetPluginAssemblies().ToList();
             var pluginTypes = GetPluginTypes();
 
             if (!pluginTypes.IsNullOrEmpty())
-                assemblies.Concat(pluginTypes.Select(t => t.Assembly));
+                assemblies.AddRange(pluginTypes.Select(t => t.Assembly));
 
             return assemblies;
         }
