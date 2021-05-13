@@ -1,18 +1,19 @@
 ﻿using System;
+using System.Globalization;
 using AppRopio.Base.Core.Converters;
 using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.Models.ThemeConfigs;
 using AppRopio.Base.iOS.UIExtentions;
+using AppRopio.Base.iOS.ValueConverters;
 using AppRopio.Navigation.Menu.Core.ViewModels.Items;
 using AppRopio.Navigation.Menu.iOS.Services;
+using FFImageLoading.Cross;
 using Foundation;
+using MvvmCross;
+using MvvmCross.Base;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Platforms.Ios.Binding.Views;
-using MvvmCross;
 using UIKit;
-using AppRopio.Base.iOS.ValueConverters;
-using System.Globalization;
-using FFImageLoading.Cross;
 
 namespace AppRopio.Navigation.Menu.iOS.Views
 {
@@ -85,7 +86,10 @@ namespace AppRopio.Navigation.Menu.iOS.Views
             {
                 imageView.OnFinish += (sender, ev) =>
                 {
-                    icon.Image = (UIKit.UIImage)new ColorMaskValueConverter().Convert(icon, typeof(UIImageView), ThemeConfig.Name.TextColor.ToUIColor(), CultureInfo.CurrentUICulture);
+                    Mvx.IoCProvider.Resolve<IMvxMainThreadAsyncDispatcher>().ExecuteOnMainThreadAsync(() =>
+                    {
+                        icon.Image = (UIKit.UIImage)new ColorMaskValueConverter().Convert(icon, typeof(UIImageView), ThemeConfig.Name.TextColor.ToUIColor(), CultureInfo.CurrentUICulture);
+                    });
                 };
                 set.Bind(imageView).For(i => i.ImagePath).To(vm => vm.Icon);
             }
