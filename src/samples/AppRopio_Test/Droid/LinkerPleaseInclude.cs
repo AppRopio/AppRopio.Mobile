@@ -2,6 +2,7 @@
 using System.Collections.Specialized;
 using System.Windows.Input;
 using Android.App;
+using Android.Runtime;
 using Android.Support.Design.Widget;
 using Android.Support.V7.Widget;
 using Android.Views;
@@ -16,6 +17,7 @@ namespace AppRopio.Test.Droid
 {
     // This class is never actually executed, but when Xamarin linking is enabled it does how to ensure types and properties
     // are preserved in the deployed app
+    [Preserve(AllMembers = true)]
     public class LinkerPleaseInclude
     {
         public void Include(Button button)
