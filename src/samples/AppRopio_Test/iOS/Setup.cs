@@ -39,7 +39,6 @@ namespace AppRopio.Test.iOS
                 typeof(AppRopio.Geofencing.iOS.Plugin),
                 typeof(AppRopio.Feedback.iOS.Plugin),
                 typeof(AppRopio.ECommerce.Basket.iOS.Plugin),
-                typeof(AppRopio.ECommerce.Basket.iOS.Plugin),
                 typeof(AppRopio.ECommerce.Products.iOS.Plugin),
                 typeof(AppRopio.ECommerce.Marked.iOS.Plugin),
                 typeof(AppRopio.ECommerce.Loyalty.iOS.Plugin),
