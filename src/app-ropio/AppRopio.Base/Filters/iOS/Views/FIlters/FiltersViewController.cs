@@ -121,6 +121,7 @@ namespace AppRopio.Base.Filters.iOS.Views.Filters
         {
             set.Bind(applyBtn).To(vm => vm.ApplyCommand);
             set.Bind(applyBtn).For("Title").To(vm => vm.ApplyTitle);
+            set.Bind(applyBtn).For("HighlightedTitle").To(vm => vm.ApplyTitle);
         }
 
         #endregion

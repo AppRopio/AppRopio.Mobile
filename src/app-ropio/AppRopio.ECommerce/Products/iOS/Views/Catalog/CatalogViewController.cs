@@ -282,6 +282,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog
 
             set.Bind(goToButton).To(vm => vm.CatalogCommand);
             set.Bind(goToButton).For("Title").To(vm => vm.CatalogTitle);
+            set.Bind(goToButton).For("HighlightedTitle").To(vm => vm.CatalogTitle);
 
             set.Bind(emptyTitle).To(vm => vm.NoResultsTitle);
             set.Bind(emptyText).To(vm => vm.NoResultsText);
