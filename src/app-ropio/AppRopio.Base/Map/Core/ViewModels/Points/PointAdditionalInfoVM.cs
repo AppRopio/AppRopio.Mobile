@@ -2,10 +2,8 @@
 using System.Windows.Input;
 using AppRopio.Base.Core.Extentions;
 using AppRopio.Base.Core.ViewModels;
-using AppRopio.Base.Core.ViewModels.Services;
 using AppRopio.Base.Map.Core.Models.Bundle;
 using AppRopio.Base.Map.Core.ViewModels.Points.List.Items;
-using MvvmCross;
 using MvvmCross.Commands;
 using MvvmCross.ViewModels;
 
@@ -87,7 +85,7 @@ namespace AppRopio.Base.Map.Core.ViewModels.Points
 
         protected virtual async Task OnCloseExecute()
         {
-            await Mvx.IoCProvider.Resolve<IBaseVmNavigationService>().Close(this);
+            await NavigationVmService.Close(this);
         }
 
         #endregion

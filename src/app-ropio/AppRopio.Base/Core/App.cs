@@ -7,6 +7,7 @@ using AppRopio.Base.Core.Services.Router;
 using AppRopio.Base.Core.Services.TasksQueue;
 using AppRopio.Base.Core.Services.ViewLookup;
 using AppRopio.Base.Core.Services.ViewModelLookup;
+using AppRopio.Base.Core.ViewModels.Services;
 using MvvmCross;
 using MvvmCross.Logging;
 using MvvmCross.Plugin.Messenger;
@@ -18,6 +19,8 @@ namespace AppRopio.Base.Core
         public static void Initialize()
         {
             (new API.App()).Initialize();
+
+            Mvx.IoCProvider.RegisterType<IBaseVmNavigationService>(() => new BaseVmNavigationService());
 
             Mvx.IoCProvider.RegisterSingleton<IAnalyticsNotifyingService>(() => new AnalyticsNotifyingService());
             Mvx.IoCProvider.RegisterSingleton<IViewLookupService>(() => new ViewLookupService());

@@ -130,7 +130,7 @@ namespace AppRopio.Base.Settings.Core.ViewModels.Languages
 
             Loading = false;
 
-            Mvx.IoCProvider.Resolve<IBaseVmNavigationService>().Close(this);
+            NavigationVmService.Close(this);
         }
 
         #region Search
