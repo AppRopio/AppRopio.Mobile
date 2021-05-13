@@ -31,6 +31,8 @@ namespace AppRopio.Base.Droid.Adapters
 
     public delegate void TuneViewHolderOnBindDelegate(bool first, bool last, RecyclerView.ViewHolder viewHolder);
 
+    public delegate void TuneViewHolderOnRecycledDelegate(RecyclerView.ViewHolder viewHolder);
+
     public class ARFlatGroupAdapter : RecyclerView.Adapter, IMvxRecyclerAdapter
     {
         #region Fields
@@ -71,6 +73,8 @@ namespace AppRopio.Base.Droid.Adapters
         public TuneViewHolderOnBindDelegate TuneSectionFooterOnBind { get; set; }
 
         public TuneViewHolderOnCreateDelegate TuneViewHolderOnCreate { get; set; }
+
+        public TuneViewHolderOnRecycledDelegate TuneViewHolderOnRecycled { get; set; }
 
         public ICommand SectionClick
         {
@@ -634,13 +638,18 @@ namespace AppRopio.Base.Droid.Adapters
         {
             base.OnViewRecycled(holder);
 
-            if (holder is IMvxRecyclerViewHolder viewHolder)
+            if (holder is IMvxRecyclerViewHolder mvxViewHolder)
             {
-                viewHolder.Click -= OnSectionViewClick;
-                viewHolder.LongClick -= OnSectionViewLongClick;
-                viewHolder.Click -= OnItemViewClick;
-                viewHolder.LongClick -= OnItemViewLongClick;
-                viewHolder.OnViewRecycled();
+                mvxViewHolder.Click -= OnSectionViewClick;
+                mvxViewHolder.LongClick -= OnSectionViewLongClick;
+                mvxViewHolder.Click -= OnItemViewClick;
+                mvxViewHolder.LongClick -= OnItemViewLongClick;
+                mvxViewHolder.OnViewRecycled();
+            }
+
+            if (holder is RecyclerView.ViewHolder viewHolder)
+            {
+                TuneViewHolderOnRecycled?.Invoke(viewHolder);
             }
         }
 
