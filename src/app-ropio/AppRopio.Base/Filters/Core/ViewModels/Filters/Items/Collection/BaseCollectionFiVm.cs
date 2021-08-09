@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using AppRopio.Models.Filters.Responses;
 using System.Collections.ObjectModel;
-using AppRopio.Base.Filters.Core.ViewModels.Filters.Items.Collection.Items;
-using System.Windows.Input;
-using MvvmCross.Core.ViewModels;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Threading;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using AppRopio.Base.Filters.Core.ViewModels.Filters.Items.Collection.Items;
+using AppRopio.Models.Filters.Responses;
+using MvvmCross.Commands;
 
 namespace AppRopio.Base.Filters.Core.ViewModels.Filters.Items.Collection
 {

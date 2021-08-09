@@ -9,8 +9,8 @@ using AppRopio.Base.Settings.iOS.Services;
 using AppRopio.Base.Settings.iOS.Views.Regions.Cell;
 using CoreGraphics;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding.Views;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.Base.Settings.iOS.Views.Regions
@@ -20,7 +20,7 @@ namespace AppRopio.Base.Settings.iOS.Views.Regions
         private BindableSearchBar _searchBar;
         private BindableSearchController _searchController;
 
-		protected SettingsThemeConfig ThemeConfig { get { return Mvx.Resolve<ISettingsThemeConfigService>().ThemeConfig; } }
+		protected SettingsThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<ISettingsThemeConfigService>().ThemeConfig; } }
 
 		public RegionsViewController() 
             : base("RegionsViewController", null)

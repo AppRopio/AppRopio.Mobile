@@ -8,19 +8,19 @@ using Android.OS;
 using Android.Runtime;
 using Android.Support.V7.Widget;
 using Android.Views;
-using MvvmCross.Binding;
+using MvvmCross;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.Droid.BindingContext;
-using MvvmCross.Binding.ExtensionMethods;
+using MvvmCross.Binding.Extensions;
 using MvvmCross.Droid.Support.V7.RecyclerView;
 using MvvmCross.Droid.Support.V7.RecyclerView.ItemTemplates;
-using MvvmCross.Platform.Platform;
-using MvvmCross.Platform.WeakSubscription;
+using MvvmCross.Logging;
+using MvvmCross.Platforms.Android.Binding.BindingContext;
+using MvvmCross.WeakSubscription;
 
 #pragma warning disable CS0618
 namespace AppRopio.Base.Droid.Adapters
 {
-    public interface IARFlatGroupTemplateSelector : IMvxTemplateSelector
+	public interface IARFlatGroupTemplateSelector : IMvxTemplateSelector
     {
         int GetHeaderViewType(object forItemObject);
 
@@ -30,6 +30,8 @@ namespace AppRopio.Base.Droid.Adapters
     public delegate void TuneViewHolderOnCreateDelegate(RecyclerView.ViewHolder viewHolder, int viewType);
 
     public delegate void TuneViewHolderOnBindDelegate(bool first, bool last, RecyclerView.ViewHolder viewHolder);
+
+    public delegate void TuneViewHolderOnRecycledDelegate(RecyclerView.ViewHolder viewHolder);
 
     public class ARFlatGroupAdapter : RecyclerView.Adapter, IMvxRecyclerAdapter
     {
@@ -72,6 +74,8 @@ namespace AppRopio.Base.Droid.Adapters
 
         public TuneViewHolderOnCreateDelegate TuneViewHolderOnCreate { get; set; }
 
+        public TuneViewHolderOnRecycledDelegate TuneViewHolderOnRecycled { get; set; }
+
         public ICommand SectionClick
         {
             get
@@ -87,7 +91,7 @@ namespace AppRopio.Base.Droid.Adapters
 
                 if (_sectionClick != null)
                 {
-                    MvxTrace.Warning("Changing ItemClick may cause inconsistencies where some items still call the old command.");
+                    Mvx.IoCProvider.Resolve<IMvxLog>().Warn("Changing SectionClick may cause inconsistencies where some items still call the old command.");
                 }
 
                 _sectionClick = value;
@@ -109,7 +113,7 @@ namespace AppRopio.Base.Droid.Adapters
 
                 if (_sectionLongClick != null)
                 {
-                    MvxTrace.Warning("Changing ItemLongClick may cause inconsistencies where some items still call the old command.");
+                    Mvx.IoCProvider.Resolve<IMvxLog>().Warn("Changing SectionLongClick may cause inconsistencies where some items still call the old command.");
                 }
 
                 _sectionLongClick = value;
@@ -187,7 +191,7 @@ namespace AppRopio.Base.Droid.Adapters
 
                 if (_itemClick != null)
                 {
-                    MvxTrace.Warning("Changing ItemClick may cause inconsistencies where some items still call the old command.");
+                    Mvx.IoCProvider.Resolve<IMvxLog>().Warn("Changing ItemClick may cause inconsistencies where some items still call the old command.");
                 }
 
                 _itemClick = value;
@@ -209,7 +213,7 @@ namespace AppRopio.Base.Droid.Adapters
 
                 if (_itemLongClick != null)
                 {
-                    MvxTrace.Warning("Changing ItemLongClick may cause inconsistencies where some items still call the old command.");
+                    Mvx.IoCProvider.Resolve<IMvxLog>().Warn("Changing ItemLongClick may cause inconsistencies where some items still call the old command.");
                 }
 
                 _itemLongClick = value;
@@ -332,8 +336,7 @@ namespace AppRopio.Base.Droid.Adapters
 
             if (_itemsSource != null && !(_itemsSource is IList))
             {
-                MvxBindingTrace.Trace(MvxTraceLevel.Warning,
-                    "Binding to IEnumerable rather than IList - this can be inefficient, especially for large lists");
+                Mvx.IoCProvider.Resolve<IMvxLog>().Warn("Binding to IEnumerable rather than IList - this can be inefficient, especially for large lists");
             }
 
             var newObservable = _itemsSource as INotifyCollectionChanged;
@@ -389,9 +392,7 @@ namespace AppRopio.Base.Droid.Adapters
             }
             catch (Exception exception)
             {
-                MvxTrace.Warning(
-                    "Exception masked during Adapter RealNotifyDataSetChanged {0}. Are you trying to update your collection from a background task? See http://goo.gl/0nW0L6",
-                    exception.BuildAllMessagesAndStackTrace());
+                Mvx.IoCProvider.Resolve<IMvxLog>().Warn($"Exception masked during Adapter RealNotifyDataSetChanged {exception.BuildAllMessagesAndStackTrace()}. Are you trying to update your collection from a background task? See http://goo.gl/0nW0L6");
             }
         }
 
@@ -504,11 +505,15 @@ namespace AppRopio.Base.Droid.Adapters
         {
             var dataContext = GetItem(position);
 
-            if (holder is IMvxRecyclerViewHolder mvxHolder)
-                mvxHolder.DataContext = dataContext;
+            bool sectionHeader = IsSectionHeaderPosition(position);
+            bool sectionFooter = IsSectionFooterPosition(position);
 
-            var sectionHeader = IsSectionHeaderPosition(position);
-            var sectionFooter = IsSectionFooterPosition(position);
+            if (holder is IMvxRecyclerViewHolder viewHolder)
+            {
+                viewHolder.DataContext = dataContext;
+
+                AttachClickListeners(viewHolder, sectionHeader || sectionFooter);
+            }
 
             if (sectionHeader && TuneSectionHeaderOnBind != null)
             {
@@ -536,24 +541,69 @@ namespace AppRopio.Base.Droid.Adapters
             }
         }
 
+        private void AttachClickListeners(IMvxRecyclerViewHolder viewHolder, bool isSection)
+        {
+            if (!isSection)
+            {
+                viewHolder.Click -= OnItemViewClick;
+                viewHolder.LongClick -= OnItemViewLongClick;
+                viewHolder.Click += OnItemViewClick;
+                viewHolder.LongClick += OnItemViewLongClick;
+			}
+            else
+            {
+                viewHolder.Click -= OnSectionViewClick;
+                viewHolder.LongClick -= OnSectionViewLongClick;
+                viewHolder.Click += OnSectionViewClick;
+                viewHolder.LongClick += OnSectionViewLongClick;
+			}
+        }
+
+        protected virtual void OnSectionViewClick(object sender, EventArgs ev)
+        {
+            if (sender is IMvxRecyclerViewHolder holder)
+            {
+                ExecuteCommandOnItem(SectionClick, holder.DataContext);
+            }
+        }
+
+        protected virtual void OnSectionViewLongClick(object sender, EventArgs ev)
+        {
+            if (sender is IMvxRecyclerViewHolder holder)
+            {
+                ExecuteCommandOnItem(SectionLongClick, holder.DataContext);
+            }
+        }
+
+        protected virtual void OnItemViewClick(object sender, EventArgs ev)
+        {
+            if (sender is IMvxRecyclerViewHolder holder)
+            {
+                ExecuteCommandOnItem(ItemClick, holder.DataContext);
+            }
+        }
+
+        protected virtual void OnItemViewLongClick(object sender, EventArgs ev)
+        {
+            if (sender is IMvxRecyclerViewHolder holder)
+            {
+                ExecuteCommandOnItem(ItemLongClick, holder.DataContext);
+            }
+        }
+
+        protected virtual void ExecuteCommandOnItem(ICommand command, object itemDataContext)
+        {
+            if (command?.CanExecute(itemDataContext) == true && itemDataContext != null)
+            {
+                command.Execute(itemDataContext);
+            }
+        }
+
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
         {
             var itemBindingContext = new MvxAndroidBindingContext(parent.Context, _bindingContext.LayoutInflaterHolder);
 
             var vh = new MvxRecyclerViewHolder(InflateViewForHolder(parent, viewType, itemBindingContext), itemBindingContext);
-
-            bool isHeader = IsSectionHeaderViewType(viewType);
-            bool isFooter = IsSectionFooterViewType(viewType);
-            if (isHeader || isFooter)
-            {
-                vh.Click = SectionClick;
-                vh.LongClick = SectionLongClick;
-            }
-            else
-            {
-                vh.Click = ItemClick;
-                vh.LongClick = ItemLongClick;
-            }
 
             TuneViewHolderOnCreate?.Invoke(vh, viewType);
 
@@ -588,8 +638,19 @@ namespace AppRopio.Base.Droid.Adapters
         {
             base.OnViewRecycled(holder);
 
-            var viewHolder = (IMvxRecyclerViewHolder)holder;
-            viewHolder.OnViewRecycled();
+            if (holder is IMvxRecyclerViewHolder mvxViewHolder)
+            {
+                mvxViewHolder.Click -= OnSectionViewClick;
+                mvxViewHolder.LongClick -= OnSectionViewLongClick;
+                mvxViewHolder.Click -= OnItemViewClick;
+                mvxViewHolder.LongClick -= OnItemViewLongClick;
+                mvxViewHolder.OnViewRecycled();
+            }
+
+            if (holder is RecyclerView.ViewHolder viewHolder)
+            {
+                TuneViewHolderOnRecycled?.Invoke(viewHolder);
+            }
         }
 
         #endregion

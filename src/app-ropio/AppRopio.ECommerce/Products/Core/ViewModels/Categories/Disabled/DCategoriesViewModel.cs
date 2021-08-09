@@ -5,8 +5,8 @@ using AppRopio.ECommerce.Products.Core.Models;
 using AppRopio.ECommerce.Products.Core.ViewModels.Catalog;
 using AppRopio.ECommerce.Products.Core.ViewModels.Categories.Items.Banners;
 using AppRopio.ECommerce.Products.Core.ViewModels.Categories.Services.Banners;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross;
+using MvvmCross.Commands;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.Categories.Disabled
 {
@@ -64,7 +64,7 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Categories.Disabled
         #region Services
 
         private IBannersVmService _bannersVmService;
-        public IBannersVmService BannersVmService => _bannersVmService ?? (_bannersVmService = Mvx.Resolve<IBannersVmService>());
+        public IBannersVmService BannersVmService => _bannersVmService ?? (_bannersVmService = Mvx.IoCProvider.Resolve<IBannersVmService>());
 
         #endregion
 

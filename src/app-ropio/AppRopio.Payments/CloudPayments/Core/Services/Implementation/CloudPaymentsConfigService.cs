@@ -3,7 +3,7 @@ using System.IO;
 using AppRopio.Base.Core;
 using AppRopio.Base.Core.Services.Settings;
 using AppRopio.Payments.CloudPayments.Core.Models;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Payments.CloudPayments.Core.Services.Implementation
 {
@@ -27,7 +27,7 @@ namespace AppRopio.Payments.CloudPayments.Core.Services.Implementation
         private CloudPaymentsConfig LoadConfigFromJSON()
         {
             var path = Path.Combine(CoreConstants.CONFIGS_FOLDER, CloudPaymentsConstants.CONFIG_NAME);
-            var json = Mvx.Resolve<ISettingsService>().ReadStringFromFile(path);
+            var json = Mvx.IoCProvider.Resolve<ISettingsService>().ReadStringFromFile(path);
             return Newtonsoft.Json.JsonConvert.DeserializeObject<CloudPaymentsConfig>(json);
         }
 

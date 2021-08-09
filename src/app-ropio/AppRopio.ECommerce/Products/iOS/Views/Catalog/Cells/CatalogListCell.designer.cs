@@ -13,7 +13,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
 	partial class CatalogListCell
 	{
 		[Outlet]
-		UIKit.UIImageView _image { get; set; }
+		FFImageLoading.Cross.MvxCachedImageView _image { get; set; }
 
 		[Outlet]
 		UIKit.UIButton _markButton { get; set; }

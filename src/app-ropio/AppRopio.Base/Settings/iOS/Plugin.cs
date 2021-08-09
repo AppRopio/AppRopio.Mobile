@@ -1,4 +1,6 @@
-﻿using AppRopio.Base.Core.Services.ViewLookup;
+﻿using AppRopio.Base.Core.Plugins;
+using AppRopio.Base.Core.Services.ViewLookup;
+using AppRopio.Base.Settings.Core;
 using AppRopio.Base.Settings.Core.ViewModels.Languages;
 using AppRopio.Base.Settings.Core.ViewModels.Regions;
 using AppRopio.Base.Settings.Core.ViewModels.Settings;
@@ -7,18 +9,24 @@ using AppRopio.Base.Settings.iOS.Services.Implementation;
 using AppRopio.Base.Settings.iOS.Views.Languages;
 using AppRopio.Base.Settings.iOS.Views.Regions;
 using AppRopio.Base.Settings.iOS.Views.Settings;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.Base.Settings.iOS
 {
-    public class Plugin : IMvxPlugin
-	{
-		public void Load()
-		{
-			Mvx.RegisterSingleton<ISettingsThemeConfigService>(() => new SettingsThemeConfigService());
+    [MvxPlugin]
+    [Preserve(AllMembers = true)]
+    public class Plugin : BasePlugin<App>
+    {
+		protected override string Name => "Settings";
 
-			var viewLookupService = Mvx.Resolve<IViewLookupService>();
+        public override void Load()
+        {
+            base.Load();
+
+			Mvx.IoCProvider.RegisterSingleton<ISettingsThemeConfigService>(() => new SettingsThemeConfigService());
+
+			var viewLookupService = Mvx.IoCProvider.Resolve<IViewLookupService>();
 
 			viewLookupService.Register<ISettingsViewModel, SettingsViewController>();
             viewLookupService.Register<IRegionsViewModel, RegionsViewController>();

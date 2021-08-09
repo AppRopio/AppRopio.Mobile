@@ -21,7 +21,7 @@
                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xmz-gE-3m4">
                         <rect key="frame" x="0.0" y="0.0" width="415" height="93"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yFN-qe-ybV">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yFN-qe-ybV" customClass="MvxCachedImageView">
                                 <rect key="frame" x="16" y="12" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="4Io-eN-msG"/>

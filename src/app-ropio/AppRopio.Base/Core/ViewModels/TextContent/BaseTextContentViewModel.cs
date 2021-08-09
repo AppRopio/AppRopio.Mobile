@@ -28,7 +28,7 @@ namespace AppRopio.Base.Core.ViewModels.TextContent
 
         #region Init
 
-        public override void Prepare(MvvmCross.Core.ViewModels.IMvxBundle parameters)
+        public override void Prepare(MvvmCross.ViewModels.IMvxBundle parameters)
         {
             var textContentBundle = parameters.ReadAs<BaseTextContentBundle>();
             this.InitFromBundle(textContentBundle);

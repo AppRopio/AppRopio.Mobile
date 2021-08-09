@@ -5,7 +5,7 @@ using System.Net.Http;
 using System.Windows.Input;
 using CoreGraphics;
 using Foundation;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.Commands;
 using UIKit;
 using WebKit;
 
@@ -49,7 +49,7 @@ namespace AppRopio.Base.iOS
         }
 
         private string _url;
-        public string Url
+        public new string Url
         {
             get
             {
@@ -110,6 +110,7 @@ namespace AppRopio.Base.iOS
         {
             NavigationDelegate = new BindableNavigationDelegate();
             LoadFinished += HandleLoadFinished;
+            ShouldStartLoad = OnShouldStartLoad;
         }
 
         private bool OnShouldStartLoad(WKWebView webView, NSUrlRequest request)
@@ -134,7 +135,7 @@ namespace AppRopio.Base.iOS
             }
 
             public override void DidFailNavigation(WKWebView webView, WKNavigation navigation, NSError error)
-                {
+            {
                 (webView as BindableWebView).LoadError?.Invoke(webView, new WKWebErrorArgs(error));
             }
 

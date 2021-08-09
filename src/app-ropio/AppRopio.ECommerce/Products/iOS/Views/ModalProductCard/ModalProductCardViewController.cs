@@ -161,7 +161,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ModalProductCard
             _previousScrollViewYOffset = scrollOffset;
         }
 
-        protected override MvvmCross.Binding.iOS.Views.MvxTableViewSource SetupTableViewDataSource(UITableView tableView)
+        protected override MvvmCross.Platforms.Ios.Binding.Views.MvxTableViewSource SetupTableViewDataSource(UITableView tableView)
         {
             var dataSource = base.SetupTableViewDataSource(tableView) as ScrolledEventsTableViewSource;
             dataSource.OnScrolled += DataSource_OnScrolled;

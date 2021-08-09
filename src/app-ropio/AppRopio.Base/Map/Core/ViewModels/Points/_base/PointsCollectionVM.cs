@@ -2,16 +2,17 @@
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using AppRopio.Base.Core.ViewModels;
-using AppRopio.Base.Map.Core.Messages.Points;
-using AppRopio.Base.Map.Core.ViewModels.Points.List.Items;
-using AppRopio.Base.Map.Core.ViewModels.Points.Services;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
 using AppRopio.Base.Core.Extentions;
 using AppRopio.Base.Core.Models.Bundle;
+using AppRopio.Base.Core.ViewModels;
+using AppRopio.Base.Map.Core.Messages.Points;
 using AppRopio.Base.Map.Core.Services;
+using AppRopio.Base.Map.Core.ViewModels.Points.List.Items;
+using AppRopio.Base.Map.Core.ViewModels.Points.Services;
+using MvvmCross;
+using MvvmCross.Commands;
+using MvvmCross.Plugin.Messenger;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.Base.Map.Core.ViewModels.Points
 {
@@ -67,10 +68,10 @@ namespace AppRopio.Base.Map.Core.ViewModels.Points
         #region Services
 
         private IPointsVmService _vmService;
-        public IPointsVmService VmService => _vmService ?? (_vmService = Mvx.Resolve<IPointsVmService>());
+        public IPointsVmService VmService => _vmService ?? (_vmService = Mvx.IoCProvider.Resolve<IPointsVmService>());
 
         private IMapNavigationVmService _navigationVmService;
-        public IMapNavigationVmService NavigationVmService => _navigationVmService ?? (_navigationVmService = Mvx.Resolve<IMapNavigationVmService>());
+        public IMapNavigationVmService NavigationVmService => _navigationVmService ?? (_navigationVmService = Mvx.IoCProvider.Resolve<IMapNavigationVmService>());
 
         #endregion
 
@@ -89,7 +90,7 @@ namespace AppRopio.Base.Map.Core.ViewModels.Points
         {
             if (_itemSelectedToken != null)
             {
-                Mvx.Resolve<IMvxMessenger>().Unsubscribe<ItemSelectedMessage>(_itemSelectedToken);
+                Mvx.IoCProvider.Resolve<IMvxMessenger>().Unsubscribe<ItemSelectedMessage>(_itemSelectedToken);
                 _itemSelectedToken = null;
             }
         }
@@ -157,7 +158,7 @@ namespace AppRopio.Base.Map.Core.ViewModels.Points
 
         public override Task Initialize()
         {
-            _itemSelectedToken = Mvx.Resolve<IMvxMessenger>().Subscribe<ItemSelectedMessage>(OnItemSelectedMessage);
+            _itemSelectedToken = Mvx.IoCProvider.Resolve<IMvxMessenger>().Subscribe<ItemSelectedMessage>(OnItemSelectedMessage);
 
             return LoadContent();
         }

@@ -1,18 +1,15 @@
-using System;
+﻿using System;
+using AppRopio.Base.Auth.Core;
 using AppRopio.Base.Auth.Core.ViewModels.Password.New;
 using AppRopio.Base.Auth.iOS.Views._base;
-using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.UIExtentions;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platform;
 using UIKit;
-using AppRopio.Base.Auth.Core.Models.Config;
-using AppRopio.Base.Auth.Core;
 
 namespace AppRopio.Base.Auth.iOS.Views.Password.New
 {
-	public partial class PasswordNewViewController : AuthBaseViewController<IPasswordNewViewModel>
+    public partial class PasswordNewViewController : AuthBaseViewController<IPasswordNewViewModel>
 	{
 		#region Properties
 
@@ -25,8 +22,6 @@ namespace AppRopio.Base.Auth.iOS.Views.Password.New
 		}
 
 		#endregion
-
-        protected ILocalizationService LocalizationService => Mvx.Resolve<ILocalizationService>();
 
 		#region Constructor
 

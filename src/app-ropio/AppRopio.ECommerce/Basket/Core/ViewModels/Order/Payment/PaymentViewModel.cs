@@ -10,8 +10,9 @@ using AppRopio.ECommerce.Basket.Core.Models.Bundle;
 using AppRopio.ECommerce.Basket.Core.Services;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Payment.Items;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Services;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross;
+using MvvmCross.Commands;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Payment
 {
@@ -30,7 +31,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Payment
         {
             get
             {
-                return _selectionChangedCommand ?? (_selectionChangedCommand = new MvxCommand<IPaymentItemVM>(OnItemSelected));
+                return _selectionChangedCommand ?? (_selectionChangedCommand = new MvxAsyncCommand<IPaymentItemVM>(OnItemSelected));
             }
         }
 
@@ -39,7 +40,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Payment
         {
             get
             {
-                return _cancelCommand ?? (_cancelCommand = new MvxCommand(OnCancelExecute));
+                return _cancelCommand ?? (_cancelCommand = new MvxAsyncCommand(OnCancelExecute));
             }
         }
 
@@ -65,9 +66,9 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Payment
 
         #region Services
 
-        protected IOrderVmService OrderVmService { get { return Mvx.Resolve<IOrderVmService>(); } }
+        protected IOrderVmService OrderVmService { get { return Mvx.IoCProvider.Resolve<IOrderVmService>(); } }
 
-        protected IBasketNavigationVmService NavigationVmService => Mvx.Resolve<IBasketNavigationVmService>();
+        protected new IBasketNavigationVmService NavigationVmService => Mvx.IoCProvider.Resolve<IBasketNavigationVmService>();
 
         #endregion
 
@@ -92,12 +93,12 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Payment
             Items = items;
         }
 
-        private void OnItemSelected(IPaymentItemVM item)
+        protected virtual async Task OnItemSelected(IPaymentItemVM item)
         {
             Items.ForEach(x => x.IsSelected = false);
             item.IsSelected = true;
 
-            Close(this);
+            await NavigationVmService.Close(this);
 
             Messenger.Publish(new PaymentSelectedMessage(this, item.Payment));
         }
@@ -124,11 +125,11 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Payment
 
         #endregion
 
-        protected virtual void OnCancelExecute()
+        protected virtual async Task OnCancelExecute()
         {
             Messenger.Publish(new OrderProcessingMessage(this, false));
 
-            Close(this);
+            await NavigationVmService.Close(this);
         }
 
         #endregion

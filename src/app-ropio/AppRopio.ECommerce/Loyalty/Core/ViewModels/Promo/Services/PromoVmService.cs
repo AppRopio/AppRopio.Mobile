@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using AppRopio.Base.API.Exceptions;
 using AppRopio.Base.Core.ViewModels.Services;
-using MvvmCross.Platform;
+using MvvmCross;
 using AppRopio.ECommerce.Loyalty.API.Services;
 
 namespace AppRopio.ECommerce.Loyalty.Core.ViewModels.Promo.Services
@@ -12,7 +12,7 @@ namespace AppRopio.ECommerce.Loyalty.Core.ViewModels.Promo.Services
         #region Services
 
         private IPromoService _apiService;
-        public IPromoService ApiService => _apiService ?? (_apiService = Mvx.Resolve<IPromoService>());
+        public IPromoService ApiService => _apiService ?? (_apiService = Mvx.IoCProvider.Resolve<IPromoService>());
 
         #endregion
 

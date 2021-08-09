@@ -9,8 +9,8 @@ using AppRopio.Base.Settings.API.Services;
 using AppRopio.Base.Settings.Core.Models;
 using AppRopio.Base.Settings.Core.Models.Bundle;
 using AppRopio.Base.Settings.Core.ViewModels.Messages;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.Base.Settings.Core.Services.Implementation
 {
@@ -18,11 +18,11 @@ namespace AppRopio.Base.Settings.Core.Services.Implementation
     {
         #region Services
 
-        protected ISettingsService ApiService { get { return Mvx.Resolve<ISettingsService>(); } }
+        protected ISettingsService ApiService { get { return Mvx.IoCProvider.Resolve<ISettingsService>(); } }
 
-        protected ISettingsVmNavigationService NavigationService => Mvx.Resolve<ISettingsVmNavigationService>();
+        protected ISettingsVmNavigationService NavigationService => Mvx.IoCProvider.Resolve<ISettingsVmNavigationService>();
 
-        protected ILocalizationService LocalizationService => Mvx.Resolve<ILocalizationService>();
+        protected ILocalizationService LocalizationService => Mvx.IoCProvider.Resolve<ILocalizationService>();
 
         #endregion
 
@@ -63,7 +63,7 @@ namespace AppRopio.Base.Settings.Core.Services.Implementation
         {
             AppSettings.RegionID = regionId;
 
-            Mvx.Resolve<IMvxMessenger>().Publish(new SettingsReloadMessage(this, SettingsElementType.Region, regionId, regionTitle));
+            Mvx.IoCProvider.Resolve<IMvxMessenger>().Publish(new SettingsReloadMessage(this, SettingsElementType.Region, regionId, regionTitle));
         }
     }
 }

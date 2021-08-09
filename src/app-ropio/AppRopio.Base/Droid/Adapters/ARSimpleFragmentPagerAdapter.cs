@@ -8,10 +8,10 @@ using Android.Views;
 using AppRopio.Base.Droid.Listeners;
 using AppRopio.Base.Droid.Views;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 using MvvmCross.Droid.Support.V4;
-using MvvmCross.Platform.Exceptions;
-using MvvmCross.Binding.Droid.BindingContext;
+using MvvmCross.Exceptions;
+using MvvmCross.Platforms.Android.Binding.BindingContext;
 
 namespace AppRopio.Base.Droid.Adapters
 {

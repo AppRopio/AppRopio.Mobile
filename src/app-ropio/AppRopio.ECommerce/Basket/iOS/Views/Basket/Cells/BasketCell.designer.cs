@@ -16,7 +16,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Basket.Cells
 		UIKit.UIButton _decButton { get; set; }
 
 		[Outlet]
-		UIKit.UIImageView _imageView { get; set; }
+		FFImageLoading.Cross.MvxCachedImageView _imageView { get; set; }
 
 		[Outlet]
 		UIKit.UIButton _incButton { get; set; }

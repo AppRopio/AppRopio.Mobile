@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using AppRopio.Base.Core.Models.Navigation;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 using AppRopio.Base.Core.Attributes;
 
 namespace AppRopio.Base.Core.Models.Bundle

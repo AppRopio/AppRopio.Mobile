@@ -6,8 +6,8 @@ using AppRopio.Base.Core.Services.ViewModelLookup;
 using AppRopio.Base.Core.ViewModels.Services;
 using AppRopio.Navigation.Menu.Core.Services;
 using AppRopio.Navigation.Menu.Core.ViewModels.Items;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 using AppRopio.Base.Core.Services.Localization;
 
 namespace AppRopio.Navigation.Menu.Core.ViewModels.Services
@@ -42,7 +42,7 @@ namespace AppRopio.Navigation.Menu.Core.ViewModels.Services
 
         public Type DefaultViewModelType()
         {
-            var config = Mvx.Resolve<IMenuConfigService>().Config;
+            var config = Mvx.IoCProvider.Resolve<IMenuConfigService>().Config;
 
             var items = config.Sections.SelectMany(section => section.Items);
 
@@ -52,12 +52,12 @@ namespace AppRopio.Navigation.Menu.Core.ViewModels.Services
 
             var strType = MenuSettings.FirstLaunch ? (config.FirstLaunchType ?? defaultType) : defaultType;
 
-            return Mvx.Resolve<IViewModelLookupService>().Resolve(strType);
+            return Mvx.IoCProvider.Resolve<IViewModelLookupService>().Resolve(strType);
         }
 
         public IMvxViewModel LoadHeaderVmIfExist()
         {
-            var config = Mvx.Resolve<IMenuConfigService>().Config;
+            var config = Mvx.IoCProvider.Resolve<IMenuConfigService>().Config;
 
             if (config.Header != null)
             {
@@ -75,7 +75,7 @@ namespace AppRopio.Navigation.Menu.Core.ViewModels.Services
 
         public ICollection<IMenuItemVM> LoadItemsFromConfigJSON()
         {
-            var config = Mvx.Resolve<IMenuConfigService>().Config;
+            var config = Mvx.IoCProvider.Resolve<IMenuConfigService>().Config;
 
             var items = config.Sections.SelectMany(section => section.Items);
 
@@ -84,7 +84,7 @@ namespace AppRopio.Navigation.Menu.Core.ViewModels.Services
 
         public IMvxViewModel LoadFooterVmIfExist()
         {
-            var config = Mvx.Resolve<IMenuConfigService>().Config;
+            var config = Mvx.IoCProvider.Resolve<IMenuConfigService>().Config;
 
             if (config.Footer != null)
             {

@@ -4,9 +4,9 @@ using AppRopio.Base.iOS.UIExtentions;
 using AppRopio.ECommerce.Basket.iOS.Services;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.ExtensionMethods;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Binding.Extensions;
+using MvvmCross.Platforms.Ios.Binding.Views;
+using MvvmCross;
 using UIKit;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items;
 using AppRopio.Base.Core.Converters;
@@ -49,7 +49,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Cells
 
         private class PickerViewModel : MvxPickerViewModel
         {
-            protected Models.OrderFieldCell CellTheme { get { return Mvx.Resolve<IBasketThemeConfigService>().ThemeConfig.Order.BaseOrderFieldCell; } }
+            protected Models.OrderFieldCell CellTheme { get { return Mvx.IoCProvider.Resolve<IBasketThemeConfigService>().ThemeConfig.Order.BaseOrderFieldCell; } }
 
             public PickerViewModel(UIPickerView pickerView)
                 : base(pickerView)

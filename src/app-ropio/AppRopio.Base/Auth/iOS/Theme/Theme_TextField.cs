@@ -1,6 +1,6 @@
 ﻿using AppRopio.Base.Auth.iOS.Services;
 using AppRopio.Base.iOS.UIExtentions;
-using MvvmCross.Platform;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.Base.iOS
@@ -12,7 +12,7 @@ namespace AppRopio.Base.iOS
 		{
 			UIImageView eyeImage = new UIImageView();
 
-			eyeImage.SetupStyle(Mvx.Resolve<IAuthThemeConfigService>().ThemeConfig.SecureTextImage);
+			eyeImage.SetupStyle(Mvx.IoCProvider.Resolve<IAuthThemeConfigService>().ThemeConfig.SecureTextImage);
 
 			eyeImage.ChangeFrame(0, 0, size, size);
 			eyeImage.ContentMode = UIViewContentMode.Center;

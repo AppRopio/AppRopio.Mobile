@@ -1,5 +1,5 @@
 ﻿using System;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross.Plugin.Messenger;
 namespace AppRopio.ECommerce.Products.Core.Messages
 {
     public class ProductMarkedQuantityChangedMessage : MvxMessage

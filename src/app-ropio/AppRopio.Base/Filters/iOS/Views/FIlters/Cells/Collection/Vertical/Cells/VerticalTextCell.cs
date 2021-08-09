@@ -1,14 +1,14 @@
 ﻿using System;
 
 using Foundation;
-using MvvmCross.Binding.iOS.Views;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using UIKit;
 using MvvmCross.Binding.BindingContext;
 using AppRopio.Base.Filters.Core.ViewModels.Filters.Items.Collection.Items;
 using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.UIExtentions;
 using AppRopio.Base.Filters.iOS.Models;
-using MvvmCross.Platform;
+using MvvmCross;
 using AppRopio.Base.Filters.iOS.Services;
 using AppRopio.Base.Core.Converters;
 
@@ -16,7 +16,7 @@ namespace AppRopio.Base.Filters.iOS.Views.Filters.Cells.Collection.Vertical.Cell
 {
     public partial class VerticalTextCell : MvxCollectionViewCell
     {
-        protected FiltersThemeConfig ThemeConfig { get { return Mvx.Resolve<IFiltersThemeConfigService>().ThemeConfig; } }
+        protected FiltersThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IFiltersThemeConfigService>().ThemeConfig; } }
 
         public static readonly NSString Key = new NSString("VerticalTextCell");
         public static readonly UINib Nib;

@@ -3,8 +3,8 @@ using AppRopio.Base.Core.Services.Localization;
 using AppRopio.ECommerce.Basket.Core;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Items;
 using Foundation;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding.Views;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.ECommerce.Basket.iOS.Views.Basket
@@ -32,7 +32,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Basket
 
         public override UITableViewRowAction[] EditActionsForRow(UITableView tableView, NSIndexPath indexPath)
         {
-            var action = UITableViewRowAction.Create(UITableViewRowActionStyle.Destructive, Mvx.Resolve<ILocalizationService>().GetLocalizableString(BasketConstants.RESX_NAME, "Basket_DeleteItem"), (rowAction, inPath) => 
+            var action = UITableViewRowAction.Create(UITableViewRowActionStyle.Destructive, Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString(BasketConstants.RESX_NAME, "Basket_DeleteItem"), (rowAction, inPath) => 
             {
                 CommitEditingStyle(tableView, UITableViewCellEditingStyle.Delete, inPath);
             });

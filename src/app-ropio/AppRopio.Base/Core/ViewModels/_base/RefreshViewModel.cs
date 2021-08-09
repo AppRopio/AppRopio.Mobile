@@ -1,10 +1,9 @@
-﻿using System;
-using System.Threading.Tasks;
-using MvvmCross.Core.ViewModels;
+﻿using System.Threading.Tasks;
+using MvvmCross.Commands;
 
 namespace AppRopio.Base.Core.ViewModels
 {
-    public abstract class RefreshViewModel : LoadMoreViewModel, IRefreshViewModel
+	public abstract class RefreshViewModel : LoadMoreViewModel, IRefreshViewModel
     {
         #region Fields
 

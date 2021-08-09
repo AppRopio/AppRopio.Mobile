@@ -7,8 +7,9 @@ using AppRopio.Base.Core.ViewModels;
 using AppRopio.Feedback.Core.Models.Bundle;
 using AppRopio.Feedback.Core.ViewModels.Reviews.Items;
 using AppRopio.Feedback.Core.ViewModels.Reviews.Services;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross;
+using MvvmCross.Commands;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.Feedback.Core.ViewModels.Reviews
 {
@@ -67,7 +68,7 @@ namespace AppRopio.Feedback.Core.ViewModels.Reviews
 
         #region Services
 
-        protected IReviewsVmService VmService { get { return Mvx.Resolve<IReviewsVmService>(); } }
+        protected IReviewsVmService VmService { get { return Mvx.IoCProvider.Resolve<IReviewsVmService>(); } }
 
         #endregion
 
@@ -82,7 +83,7 @@ namespace AppRopio.Feedback.Core.ViewModels.Reviews
 
             Loading = false;
 
-            CanPostReview = Mvx.CanResolve<ISessionService>() ? Mvx.Resolve<ISessionService>().Alive : false;
+            CanPostReview = Mvx.IoCProvider.CanResolve<ISessionService>() ? Mvx.IoCProvider.Resolve<ISessionService>().Alive : false;
 #if DEBUG
             CanPostReview = true;
 #endif

@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using AppRopio.Base.Core.Models.Bundle;
 using AppRopio.Base.Core.Models.Config;
 using AppRopio.Base.Core.Services.Router;
@@ -16,8 +16,8 @@ using AppRopio.ECommerce.Products.Core.Services;
 using AppRopio.Models.Basket.Responses.Enums;
 using AppRopio.Models.Payments.Responses;
 using AppRopio.Payments.Core.Bundle;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Platform;
+using MvvmCross;
+using MvvmCross.Logging;
 
 namespace AppRopio.ECommerce.Basket.Core.Services.Implementation
 {
@@ -25,7 +25,7 @@ namespace AppRopio.ECommerce.Basket.Core.Services.Implementation
     {
         #region Services
 
-        protected IProductsNavigationVmService ProductNavigationVmService => Mvx.Resolve<IProductsNavigationVmService>();
+        protected IProductsNavigationVmService ProductNavigationVmService => Mvx.IoCProvider.Resolve<IProductsNavigationVmService>();
 
         #endregion
 
@@ -103,13 +103,13 @@ namespace AppRopio.ECommerce.Basket.Core.Services.Implementation
 
 		public void NavigateToInAppPayment(PaymentOrderBundle bundle)
 		{
-            var config = Mvx.Resolve<IBasketConfigService>().Config;
+            var config = Mvx.IoCProvider.Resolve<IBasketConfigService>().Config;
             if (config.InAppPayments != null)
 			{
                 var type = GetPaymentModuleType(bundle, config.InAppPayments);
 
-                if (!Mvx.Resolve<IRouterService>().NavigatedTo(type, bundle))
-                    MvxTrace.Trace(MvxTraceLevel.Error, this.GetType().FullName, $"Can't navigate to ViewModel of type {type}");
+                if (!Mvx.IoCProvider.Resolve<IRouterService>().NavigatedTo(type, bundle))
+                    Mvx.IoCProvider.Resolve<IMvxLog>().Error($"{this.GetType().FullName}: Can't navigate to ViewModel of type {type}");
 			}
 		}
 

@@ -1,6 +1,6 @@
 ﻿using System;
 using AppRopio.Models.Filters.Responses;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.Base.Filters.Core.ViewModels.Sort.Items
 {

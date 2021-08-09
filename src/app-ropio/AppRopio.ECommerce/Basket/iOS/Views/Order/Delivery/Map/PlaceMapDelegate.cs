@@ -4,7 +4,7 @@ using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery.Items;
 using AppRopio.ECommerce.Basket.iOS.Services;
 using CoreGraphics;
 using MapKit;
-using MvvmCross.Platform;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Delivery.Map
@@ -12,7 +12,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Delivery.Map
     public class PlaceMapDelegate<T> : MKMapViewDelegate
         where T : IHasCoordinates
     {
-        public Image PinImage { get { return Mvx.Resolve<IBasketThemeConfigService>().ThemeConfig.Order.DeliveryInfo.OnPoint.Map.PinImage; } }
+        public Image PinImage { get { return Mvx.IoCProvider.Resolve<IBasketThemeConfigService>().ThemeConfig.Order.DeliveryInfo.OnPoint.Map.PinImage; } }
 
         public T SelectedItem { get; set; }
         public Action<T> OnItemSelected;

@@ -8,38 +8,38 @@ using System.Threading.Tasks;
 using AppRopio.Base.API.Exceptions;
 using AppRopio.Base.API.Helpers;
 using AppRopio.Base.API.Models;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Platform;
+using MvvmCross;
+using MvvmCross.Logging;
 using Newtonsoft.Json;
 
 namespace AppRopio.Base.API.Services
 {
-    /// <summary>
-    /// Базовый класс для сервисов API
-    /// </summary>
-    public abstract class BaseService
+	/// <summary>
+	/// Базовый класс для сервисов API
+	/// </summary>
+	public abstract class BaseService
     {
         private static readonly Stopwatch _stopWatch = new Stopwatch();
 
         private Lazy<IConnectionService> _lazyConnectionService;
-        private Lazy<IMvxTrace> _lazyTrace;
+        private Lazy<IMvxLog> _lazyLog;
 
         private IConnectionService _connectionService;
         protected IConnectionService ConnectionService => _lazyConnectionService.Value;
 
-        private IMvxTrace _trace;
-        protected IMvxTrace Trace => _lazyTrace.Value;
+        private IMvxLog _log;
+        protected IMvxLog Log => _lazyLog.Value;
 
         protected BaseService()
         {
-            _lazyConnectionService = new Lazy<IConnectionService>(() => _connectionService ?? Mvx.Resolve<IConnectionService>());
-            _lazyTrace = new Lazy<IMvxTrace>(() => _trace ?? Mvx.Resolve<IMvxTrace>());
+            _lazyConnectionService = new Lazy<IConnectionService>(() => _connectionService ?? Mvx.IoCProvider.Resolve<IConnectionService>());
+            _lazyLog = new Lazy<IMvxLog>(() => _log ?? Mvx.IoCProvider.Resolve<IMvxLog>());
         }
 
-        protected BaseService(IConnectionService connectionService, IMvxTrace trace) : this()
+        protected BaseService(IConnectionService connectionService, IMvxLog log) : this()
         {
             _connectionService = connectionService;
-            _trace = trace;
+            _log = log;
         }
 
         private static string DecodeEncodedNonAsciiCharacters(string value)
@@ -88,7 +88,7 @@ namespace AppRopio.Base.API.Services
             formatedOutput += $"## Response headers{Environment.NewLine}```{Environment.NewLine}{JsonConvert.SerializeObject(responseHeaders)}{Environment.NewLine}```{Environment.NewLine}";
             formatedOutput += $"## Response message{Environment.NewLine}```{Environment.NewLine}{responseMessage}{Environment.NewLine}```{Environment.NewLine}{Environment.NewLine}";
 
-            Trace.Trace(MvxTraceLevel.Diagnostic, $"{GetType().FullName}", formatedOutput);
+            Log.Info($"{GetType().FullName}: {formatedOutput}");
         }
 
         /// <summary>

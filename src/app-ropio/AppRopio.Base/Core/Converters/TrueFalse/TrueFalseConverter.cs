@@ -1,5 +1,5 @@
 ﻿using System;
-using MvvmCross.Platform.Converters;
+using MvvmCross.Converters;
 
 namespace AppRopio.Base.Core.Converters
 {

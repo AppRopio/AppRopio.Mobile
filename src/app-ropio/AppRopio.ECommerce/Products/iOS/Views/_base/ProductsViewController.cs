@@ -9,7 +9,7 @@ using AppRopio.ECommerce.Products.Core.Services;
 using AppRopio.ECommerce.Products.Core.ViewModels;
 using AppRopio.ECommerce.Products.iOS.Models;
 using AppRopio.ECommerce.Products.iOS.Services;
-using MvvmCross.Platform;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.ECommerce.Products.iOS.Views
@@ -17,8 +17,8 @@ namespace AppRopio.ECommerce.Products.iOS.Views
     public abstract class ProductsViewController<T> : CommonViewController<T>
         where T : class, IProductsViewModel
     {
-        protected virtual ProductsThemeConfig ThemeConfig { get { return Mvx.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
-        protected virtual ProductsConfig Config { get { return Mvx.Resolve<IProductConfigService>().Config; } }
+        protected virtual ProductsThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
+        protected virtual ProductsConfig Config { get { return Mvx.IoCProvider.Resolve<IProductConfigService>().Config; } }
 
         protected ProductsViewController()
         {

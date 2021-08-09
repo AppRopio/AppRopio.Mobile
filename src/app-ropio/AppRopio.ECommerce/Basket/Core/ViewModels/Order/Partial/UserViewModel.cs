@@ -7,8 +7,9 @@ using AppRopio.ECommerce.Basket.Core.Models.Bundle;
 using AppRopio.ECommerce.Basket.Core.Services;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Services;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross;
+using MvvmCross.Commands;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
 {
@@ -25,7 +26,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
         {
             get
             {
-                return _nextCommand ?? (_nextCommand = new MvxCommand(OnNextExecute, () => !Loading));
+                return _nextCommand ?? (_nextCommand = new MvxAsyncCommand(OnNextExecute, () => !Loading));
             }
         }
 
@@ -84,8 +85,8 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
 
         #region Services
 
-        protected IUserVmService UserVmService { get { return Mvx.Resolve<IUserVmService>(); } }
-        protected IBasketNavigationVmService NavigationVmService { get { return Mvx.Resolve<IBasketNavigationVmService>(); } }
+        protected IUserVmService UserVmService { get { return Mvx.IoCProvider.Resolve<IUserVmService>(); } }
+        protected new IBasketNavigationVmService NavigationVmService { get { return Mvx.IoCProvider.Resolve<IBasketNavigationVmService>(); } }
 
         #endregion
 
@@ -104,15 +105,12 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
 
         #region Protected
 
-        protected virtual void OnNextExecute()
+        protected virtual async Task OnNextExecute()
         {
-            Task.Run(async () =>
-            {
-                if (!await ValidateAndSaveInput(Items))
-                    return;
+            if (!await ValidateAndSaveInput(Items))
+                return;
 
-                NavigationVmService.NavigateToDeliveryTypes(new BasketBundle(NavigationType.Push, BasketAmount));
-            });
+            NavigationVmService.NavigateToDeliveryTypes(new BasketBundle(NavigationType.Push, BasketAmount));
         }
 
         public override void Prepare(IMvxBundle parameters)

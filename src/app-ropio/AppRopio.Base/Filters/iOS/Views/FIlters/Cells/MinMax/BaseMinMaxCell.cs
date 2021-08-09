@@ -2,8 +2,8 @@
 using AppRopio.Base.Filters.iOS.Models;
 using AppRopio.Base.Filters.iOS.Services;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding.Views;
+using MvvmCross;
 using UIKit;
 using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.UIExtentions;
@@ -17,7 +17,7 @@ namespace AppRopio.Base.Filters.iOS.Views.Filters.Cells.MinMax
         protected UIButton _hideFromButton;
         protected UIButton _hideToButton;
 
-        protected FiltersThemeConfig ThemeConfig { get { return Mvx.Resolve<IFiltersThemeConfigService>().ThemeConfig; } }
+        protected FiltersThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IFiltersThemeConfigService>().ThemeConfig; } }
 
         public const float MIN_MAX_HEIGHT = 82;
 

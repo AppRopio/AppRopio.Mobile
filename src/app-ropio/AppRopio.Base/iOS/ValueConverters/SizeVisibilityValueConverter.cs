@@ -2,7 +2,7 @@
 using System.Linq;
 using AppRopio.Base.iOS.Models.ValueConverters;
 using AppRopio.Base.iOS.UIExtentions;
-using MvvmCross.Platform.Converters;
+using MvvmCross.Converters;
 using UIKit;
 
 namespace AppRopio.Base.iOS.ValueConverters

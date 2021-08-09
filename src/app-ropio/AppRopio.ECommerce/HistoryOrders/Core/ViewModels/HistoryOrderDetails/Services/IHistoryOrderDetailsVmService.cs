@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrderProducts.Items;
 using AppRopio.Models.HistoryOrders.Responses;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrders.Services
 {

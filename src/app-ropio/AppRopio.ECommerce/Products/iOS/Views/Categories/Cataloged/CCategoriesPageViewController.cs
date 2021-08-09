@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Linq;
 using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.UIExtentions;
 using AppRopio.Base.iOS.Views;
 using AppRopio.Base.iOS.Views.PageViewController.Delegate;
+using AppRopio.ECommerce.Products.Core;
 using AppRopio.ECommerce.Products.Core.ViewModels.Categories;
 using AppRopio.ECommerce.Products.iOS.Models;
 using AppRopio.ECommerce.Products.iOS.Services;
@@ -10,11 +12,9 @@ using AppRopio.ECommerce.Products.iOS.Views.Categories.Cataloged.Cells;
 using AppRopio.ECommerce.Products.iOS.Views.Categories.Cataloged.ViewSources;
 using CoreGraphics;
 using Foundation;
+using MvvmCross;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platform;
 using UIKit;
-using System.Linq;
-using AppRopio.ECommerce.Products.Core;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.Categories.Cataloged
 {
@@ -24,7 +24,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Categories.Cataloged
 
         protected UICollectionView _collectionView;
 
-        protected ProductsThemeConfig ThemeConfig { get { return Mvx.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
+        protected ProductsThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
 
         public CCategoriesPageViewController()
             : base(UIPageViewControllerTransitionStyle.Scroll, UIPageViewControllerNavigationOrientation.Horizontal, UIPageViewControllerSpineLocation.None)
@@ -95,7 +95,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Categories.Cataloged
             this.AutomaticallyAdjustsScrollViewInsets = false;
 
             SetupCategoriesCollection(_collectionView = new UICollectionView(
-                new CGRect(0, DeviceInfo.ScreenHeight - (nfloat)ThemeConfig.Categories.TabCell.Size.Height, DeviceInfo.ScreenWidth, (nfloat)ThemeConfig.Categories.TabCell.Size.Height),
+                new CGRect(0, DeviceInfo.ScreenHeight - (nfloat)ThemeConfig.Categories.TabCell.Size.Height - DeviceInfo.SafeAreaInsets.Bottom - DeviceInfo.SafeAreaInsets.Top, DeviceInfo.ScreenWidth, (nfloat)ThemeConfig.Categories.TabCell.Size.Height),
                 new UICollectionViewFlowLayout
                 {
                     EstimatedItemSize = new CGSize((nfloat)ThemeConfig.Categories.TabCell.Size.Width, (nfloat)ThemeConfig.Categories.TabCell.Size.Height),

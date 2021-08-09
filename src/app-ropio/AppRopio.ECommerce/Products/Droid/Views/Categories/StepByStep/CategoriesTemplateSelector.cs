@@ -7,6 +7,8 @@ namespace AppRopio.ECommerce.Products.Droid.Views.Categories.StepByStep
     {
         private CollectionType _collectionType;
 
+        public int ItemTemplateId { get; set; }
+
         public CategoriesTemplateSelector(CollectionType collectionType)
         {
             _collectionType = collectionType;

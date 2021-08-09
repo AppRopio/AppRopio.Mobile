@@ -1,4 +1,5 @@
-﻿using AppRopio.Base.Auth.Core.Services;
+﻿using AppRopio.Base.Auth.Core;
+using AppRopio.Base.Auth.Core.Services;
 using AppRopio.Base.Auth.Core.ViewModels.Auth;
 using AppRopio.Base.Auth.Core.ViewModels.Password.New;
 using AppRopio.Base.Auth.Core.ViewModels.Password.Reset.Main;
@@ -15,17 +16,24 @@ using AppRopio.Base.Auth.iOS.Views.Password.Reset.Sms;
 using AppRopio.Base.Auth.iOS.Views.SignIn;
 using AppRopio.Base.Auth.iOS.Views.SignUp;
 using AppRopio.Base.Auth.iOS.Views.Thanks;
+using AppRopio.Base.Core.Plugins;
 using AppRopio.Base.Core.Services.ViewLookup;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.Base.Auth.iOS
 {
-    public class Plugin : IMvxPlugin
+    [MvxPlugin]
+    [Preserve(AllMembers = true)]
+    public class Plugin : BasePlugin<App>
     {
-        public void Load()
+		protected override string Name => "Auth";
+
+        public override void Load()
         {
-            var viewLookupService = Mvx.Resolve<IViewLookupService>();
+            base.Load();
+
+            var viewLookupService = Mvx.IoCProvider.Resolve<IViewLookupService>();
 
             viewLookupService.Register<IAuthViewModel, AuthViewController>();
             viewLookupService.Register<ISignInViewModel, SignInViewController>();
@@ -35,8 +43,8 @@ namespace AppRopio.Base.Auth.iOS
             viewLookupService.Register<IPasswordNewViewModel, PasswordNewViewController>();
             viewLookupService.Register<IThanksViewModel, ThanksViewController>();
 
-            Mvx.RegisterSingleton<IOAuthService>(() => new OAuthService());
-            Mvx.RegisterSingleton<IAuthThemeConfigService>(() => new AuthThemeConfigService());
+            Mvx.IoCProvider.RegisterSingleton<IOAuthService>(() => new OAuthService());
+            Mvx.IoCProvider.RegisterSingleton<IAuthThemeConfigService>(() => new AuthThemeConfigService());
         }
     }
 }

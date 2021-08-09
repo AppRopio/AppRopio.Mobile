@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using AppRopio.Base.Core.Extentions;
 using AppRopio.Base.Core.Models.Navigation;
 using AppRopio.Base.Core.ViewModels;
@@ -7,8 +6,9 @@ using AppRopio.Models.Payments.Responses;
 using AppRopio.Payments.Best2Pay.Core.ViewModels.Best2Pay.Services;
 using AppRopio.Payments.Core.Bundle;
 using AppRopio.Payments.Core.Services;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross;
+using MvvmCross.Commands;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.Payments.Best2Pay.Core.ViewModels.Best2Pay
 {
@@ -42,9 +42,9 @@ namespace AppRopio.Payments.Best2Pay.Core.ViewModels.Best2Pay
 
 		#region Services
 
-		protected IBest2PayVmService VmService { get { return Mvx.Resolve<IBest2PayVmService>(); } }
+		protected IBest2PayVmService VmService { get { return Mvx.IoCProvider.Resolve<IBest2PayVmService>(); } }
 
-		protected IPaymentsVmService PaymentsVmService { get { return Mvx.Resolve<IPaymentsVmService>(); } }
+		protected IPaymentsVmService PaymentsVmService { get { return Mvx.IoCProvider.Resolve<IPaymentsVmService>(); } }
 
         #endregion
 

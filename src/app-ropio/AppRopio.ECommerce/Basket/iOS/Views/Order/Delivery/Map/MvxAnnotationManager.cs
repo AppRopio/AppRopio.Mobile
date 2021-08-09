@@ -4,15 +4,15 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
 using MapKit;
-using MvvmCross.Binding;
-using MvvmCross.Platform.Platform;
-using MvvmCross.Platform.WeakSubscription;
+using MvvmCross;
 using MvvmCross.Binding.Attributes;
-using MvvmCross.Binding.ExtensionMethods;
+using MvvmCross.Binding.Extensions;
+using MvvmCross.Logging;
+using MvvmCross.WeakSubscription;
 
 namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Delivery.Map
 {
-    public abstract class MvxAnnotationManager
+	public abstract class MvxAnnotationManager
     {
         private IEnumerable _itemsSource;
         private IDisposable _subscription;
@@ -50,8 +50,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Delivery.Map
             }
             _itemsSource = value;
             if (_itemsSource != null && !(_itemsSource is IList))
-                MvxBindingTrace.Trace(MvxTraceLevel.Warning,
-                    "Binding to IEnumerable rather than IList - this can be inefficient, especially for large lists");
+                Mvx.IoCProvider.Resolve<IMvxLog>().Warn("Binding to IEnumerable rather than IList - this can be inefficient, especially for large lists");
 
             ReloadAllAnnotations();
 

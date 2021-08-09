@@ -20,6 +20,8 @@ namespace AppRopio.Base.Settings.Droid.Views.Settings
 {
     public class SettingsTemplateSelector : IMvxTemplateSelector
     {
+        public int ItemTemplateId { get; set; }
+
         public int GetItemViewType(object forItemObject)
         {
             var itemVm = forItemObject as ISettingsItemVm;

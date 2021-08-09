@@ -1,4 +1,6 @@
-﻿using AppRopio.Base.Core.Services.ViewLookup;
+﻿using AppRopio.Base.Core.Plugins;
+using AppRopio.Base.Core.Services.ViewLookup;
+using AppRopio.ECommerce.Products.Core;
 using AppRopio.ECommerce.Products.Core.Models;
 using AppRopio.ECommerce.Products.Core.Services;
 using AppRopio.ECommerce.Products.Core.ViewModels;
@@ -21,18 +23,24 @@ using AppRopio.ECommerce.Products.Droid.Views.ProductCard;
 using AppRopio.ECommerce.Products.Droid.Views.ProductCard.Selection;
 using AppRopio.ECommerce.Products.Droid.Views.ProductTextContent;
 using AppRopio.ECommerce.Products.Droid.Views.ProductWebContent;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.ECommerce.Products.Droid
 {
-    public class Plugin : IMvxPlugin
+    [MvxPlugin]
+    [Preserve(AllMembers = true)]
+    public class Plugin : BasePlugin<App>
     {
-        public void Load()
-        {
-            var viewLookupService = Mvx.Resolve<IViewLookupService>();
+		protected override string Name => "Products";
 
-            var config = Mvx.Resolve<IProductConfigService>().Config;
+        public override void Load()
+        {
+            base.Load();
+
+            var viewLookupService = Mvx.IoCProvider.Resolve<IViewLookupService>();
+
+            var config = Mvx.IoCProvider.Resolve<IProductConfigService>().Config;
             switch (config.CategoriesType)
             {
                 case CategoriesType.StepByStep:

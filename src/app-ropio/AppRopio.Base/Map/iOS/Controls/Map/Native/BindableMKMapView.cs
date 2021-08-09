@@ -1,15 +1,15 @@
-﻿using MapKit;
-using AppRopio.Base.Map.Core.ViewModels.Points.List.Items;
-using System;
-using System.Windows.Input;
-using Foundation;
-using System.ComponentModel;
-using CoreGraphics;
+﻿using System;
 using System.Collections.ObjectModel;
-using CoreLocation;
+using System.ComponentModel;
 using System.Linq;
-using MvvmCross.Binding;
-using MvvmCross.Platform.Platform;
+using System.Windows.Input;
+using AppRopio.Base.Map.Core.ViewModels.Points.List.Items;
+using CoreGraphics;
+using CoreLocation;
+using Foundation;
+using MapKit;
+using MvvmCross;
+using MvvmCross.Logging;
 
 namespace AppRopio.Base.Map.iOS.Controls.Map.Native
 {
@@ -146,7 +146,7 @@ namespace AppRopio.Base.Map.iOS.Controls.Map.Native
             }
             catch (Exception ex)
             {
-                MvxBindingTrace.Trace(MvxTraceLevel.Error, ex.ToString());
+                Mvx.IoCProvider.Resolve<IMvxLog>().Error(ex.ToString());
             }
         }
 

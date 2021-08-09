@@ -3,7 +3,7 @@ using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using AppRopio.Base.Filters.Core.ViewModels.Sort.Items;
 using AppRopio.Models.Filters.Responses;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.Base.Filters.Core.ViewModels.Sort.Services
 {

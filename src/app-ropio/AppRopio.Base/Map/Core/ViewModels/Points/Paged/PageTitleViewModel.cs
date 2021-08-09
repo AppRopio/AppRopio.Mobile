@@ -1,4 +1,4 @@
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.Base.Map.Core.ViewModels.Points.Paged
 {

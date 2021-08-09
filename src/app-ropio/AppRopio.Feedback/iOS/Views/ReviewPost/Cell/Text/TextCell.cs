@@ -6,8 +6,8 @@ using AppRopio.Feedback.iOS.Services;
 using Foundation;
 using MvvmCross.Binding;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding.Views;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.Feedback.iOS.Views.ReviewPost.Cell.Text
@@ -17,7 +17,7 @@ namespace AppRopio.Feedback.iOS.Views.ReviewPost.Cell.Text
         public static readonly NSString Key = new NSString("TextCell");
         public static readonly UINib Nib;
 
-		protected FeedbackThemeConfig ThemeConfig { get { return Mvx.Resolve<IFeedbackThemeConfigService>().ThemeConfig; } }
+		protected FeedbackThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IFeedbackThemeConfigService>().ThemeConfig; } }
 
         public UIView FieldInputAccessoryView { get; set; }
 

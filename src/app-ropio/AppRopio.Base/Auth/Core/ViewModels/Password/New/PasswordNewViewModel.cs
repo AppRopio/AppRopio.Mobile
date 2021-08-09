@@ -1,14 +1,15 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using AppRopio.Base.Auth.Core.ViewModels._base;
 using AppRopio.Base.Auth.Core.ViewModels.Password.New.Services;
 using AppRopio.Base.Core.PresentationHints;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross;
+using MvvmCross.Commands;
 
 namespace AppRopio.Base.Auth.Core.ViewModels.Password.New
 {
-	public class PasswordNewViewModel : AuthBaseViewModel, IPasswordNewViewModel
+    public class PasswordNewViewModel : AuthBaseViewModel, IPasswordNewViewModel
 	{
 		#region Commands
 
@@ -17,7 +18,7 @@ namespace AppRopio.Base.Auth.Core.ViewModels.Password.New
 		{
 			get
 			{
-				return _doneCommand ?? (_doneCommand = new MvxCommand(OnDoneExecute));
+				return _doneCommand ?? (_doneCommand = new MvxAsyncCommand(OnDoneExecute));
 			}
 		}
 
@@ -60,7 +61,7 @@ namespace AppRopio.Base.Auth.Core.ViewModels.Password.New
 		#region Services
 
 		private IPasswordNewVmService _passwordNewVmService;
-		protected IPasswordNewVmService PasswordNewVmService { get { return _passwordNewVmService ?? (_passwordNewVmService = Mvx.Resolve<IPasswordNewVmService>()); } }
+		protected IPasswordNewVmService PasswordNewVmService { get { return _passwordNewVmService ?? (_passwordNewVmService = Mvx.IoCProvider.Resolve<IPasswordNewVmService>()); } }
 
 		#endregion
 
@@ -71,14 +72,14 @@ namespace AppRopio.Base.Auth.Core.ViewModels.Password.New
 			return !Password.IsNullOrEmtpy() && Password == PasswordConfirm;
 		}
 
-		protected virtual async void OnDoneExecute()
+		protected virtual async Task OnDoneExecute()
 		{
 			if (IsViewModelPropertiesValid())
 			{
 				Loading = true;
 				if (await PasswordNewVmService.SetNewPassword(Password, OnUnbindCTS))
 				{
-					ChangePresentation(new NavigateToDefaultViewModelHint());
+					await NavigationVmService.ChangePresentation(new NavigateToDefaultViewModelHint());
 				}
 				Loading = false;
 			}

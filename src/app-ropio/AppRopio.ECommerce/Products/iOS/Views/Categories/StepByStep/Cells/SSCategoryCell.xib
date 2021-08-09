@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="179.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gyJ-Bj-Mrb">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gyJ-Bj-Mrb" customClass="MvxCachedImageView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="gyJ-Bj-Mrb" secondAttribute="height" multiplier="16:9" id="lav-Po-uiu"/>
@@ -32,7 +32,7 @@
                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yYg-hN-kOi">
                         <rect key="frame" x="0.0" y="128" width="320" height="51.5"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h3a-Nx-Amn">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h3a-Nx-Amn" customClass="MvxCachedImageView">
                                 <rect key="frame" x="0.0" y="0.0" width="51.5" height="51.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="h3a-Nx-Amn" secondAttribute="height" multiplier="1:1" id="VJf-HJ-Qrm"/>

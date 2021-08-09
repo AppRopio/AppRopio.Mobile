@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using AppRopio.Models.Filters.Responses;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 using Newtonsoft.Json;
 using System;
 using AppRopio.Base.Core.Models.Bundle;

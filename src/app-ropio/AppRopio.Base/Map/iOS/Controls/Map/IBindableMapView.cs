@@ -2,7 +2,7 @@
 using AppRopio.Base.Map.Core.ViewModels.Points.List.Items;
 using System.Windows.Input;
 using System.Collections.ObjectModel;
-using MvvmCross.Core.Views;
+using MvvmCross.Views;
 
 namespace AppRopio.Base.Map.iOS.Controls.Map
 {

@@ -19,8 +19,8 @@ using AppRopio.Feedback.Core;
 using Android.Views;
 using Android.OS;
 using AppRopio.Feedback.Droid.Views.Score;
-using MvvmCross.Binding.Droid.BindingContext;
-using MvvmCross.Droid.Views;
+using MvvmCross.Platforms.Android.Binding.BindingContext;
+using MvvmCross.Platforms.Android.Views;
 using Android.Widget;
 
 namespace AppRopio.Feedback.Droid.Views.ReviewDetails

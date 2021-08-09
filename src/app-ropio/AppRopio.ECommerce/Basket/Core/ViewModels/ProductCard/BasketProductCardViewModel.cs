@@ -10,9 +10,9 @@ using AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard.Services;
 using AppRopio.ECommerce.Products.Core.Messages;
 using AppRopio.ECommerce.Products.Core.Models.Bundle;
 using AppRopio.Models.Products.Responses;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross;
+using MvvmCross.Commands;
+using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard
 {
@@ -27,7 +27,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard
         #region Commands
 
         private IMvxCommand _buyCommand;
-        public IMvxCommand BuyCommand => _buyCommand ?? (_buyCommand = new MvxCommand(OnBuyCommandExecute, OnBuyCommandCanExecute));
+        public IMvxCommand BuyCommand => _buyCommand ?? (_buyCommand = new MvxAsyncCommand(OnBuyCommandExecute, OnBuyCommandCanExecute));
 
         private IMvxCommand _incrementCommand;
         public IMvxCommand IncrementCommand => _incrementCommand ?? (_incrementCommand = new MvxAsyncCommand(OnIncrementExecute, () => !BasketLoading && !ReloadingByParameter && !QuantityLoading));
@@ -36,7 +36,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard
         public IMvxCommand DecrementCommand => _decrementCommand ?? (_decrementCommand = new MvxAsyncCommand(OnDecrementExecute, () => !BasketLoading && !ReloadingByParameter && !QuantityLoading));
 
         private IMvxCommand _quantityChangedCommand;
-        public IMvxCommand QuantityChangedCommand => _quantityChangedCommand ?? (_quantityChangedCommand = new MvxCommand(OnQuantityChangedExecute, () => !BasketLoading && !ReloadingByParameter && !QuantityLoading));
+        public IMvxCommand QuantityChangedCommand => _quantityChangedCommand ?? (_quantityChangedCommand = new MvxAsyncCommand(OnQuantityChangedExecute, () => !BasketLoading && !ReloadingByParameter && !QuantityLoading));
 
         #endregion
 
@@ -113,13 +113,13 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard
 
         #region Services
 
-        protected IProductQuantityVmService ProductQuantityVmService => Mvx.Resolve<IProductQuantityVmService>();
+        protected IProductQuantityVmService ProductQuantityVmService => Mvx.IoCProvider.Resolve<IProductQuantityVmService>();
 
-        protected IProductDeleteVmService ProductDeleteVmService => Mvx.Resolve<IProductDeleteVmService>();
+        protected IProductDeleteVmService ProductDeleteVmService => Mvx.IoCProvider.Resolve<IProductDeleteVmService>();
 
-        protected IBasketProductCardVmService VmService => Mvx.Resolve<IBasketProductCardVmService>();
+        protected IBasketProductCardVmService VmService => Mvx.IoCProvider.Resolve<IBasketProductCardVmService>();
 
-        protected IBasketNavigationVmService NavigationVmService => Mvx.Resolve<IBasketNavigationVmService>();
+        protected new IBasketNavigationVmService NavigationVmService => Mvx.IoCProvider.Resolve<IBasketNavigationVmService>();
 
         #endregion
 
@@ -236,7 +236,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard
 
         #region Init
 
-        public override void Prepare(MvvmCross.Core.ViewModels.IMvxBundle parameter)
+        public override void Prepare(MvvmCross.ViewModels.IMvxBundle parameter)
         {
             var productCardBundle = parameter.ReadAs<ProductCardBundle>();
             this.InitFromBundle(productCardBundle);
@@ -271,7 +271,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard
             }
         }
 
-        protected virtual void OnBuyCommandExecute()
+        protected virtual async Task OnBuyCommandExecute()
         {
             if (Model == null)
                 return;
@@ -282,35 +282,32 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard
 
             AnalyticsNotifyingService.NotifyEventIsHandled("catalog", AnalyticsPrefix + "_basket_button", Model.Id);
 
-            Task.Run(async () =>
+            var result = await VmService.AddProductToBasket(Model.GroupId, Model.Id);
+
+            InvokeOnMainThread(() =>
             {
-                var result = await VmService.AddProductToBasket(Model.GroupId, Model.Id);
-
-                InvokeOnMainThread(() =>
-                {
-                    BasketLoading = false;
-
-                    if (result)
-                    {
-                        BasketVisible = false;
-
-                        Quantity = Model.UnitStep;
-
-                        UnitStepVisible = true;
-
-                        AnalyticsNotifyingService.NotifyEventIsHandled("catalog", AnalyticsPrefix + "_added_to_basket", Model.Id);
-                    }
-
-                    RaiseCommandsCanExecuteChanged();
-                });
+                BasketLoading = false;
 
                 if (result)
                 {
-                    Messenger.Publish(new ProductAddToBasketMessage(this, Model.Id));
+                    BasketVisible = false;
 
-                    await OnProductAdded();
+                    Quantity = Model.UnitStep;
+
+                    UnitStepVisible = true;
+
+                    AnalyticsNotifyingService.NotifyEventIsHandled("catalog", AnalyticsPrefix + "_added_to_basket", Model.Id);
                 }
+
+                RaiseCommandsCanExecuteChanged();
             });
+
+            if (result)
+            {
+                Messenger.Publish(new ProductAddToBasketMessage(this, Model.Id));
+
+                await OnProductAdded();
+            }
         }
 
         protected virtual async Task OnIncrementExecute()
@@ -344,7 +341,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard
             await OnQuantityChanged();
         }
 
-        protected virtual async void OnQuantityChangedExecute()
+        protected virtual async Task OnQuantityChangedExecute()
         {
             if (Model == null)
                 return;

@@ -1,11 +1,11 @@
-using System;
+﻿using System;
 using AppRopio.Base.Auth.Core.ViewModels.Password.Reset.Main;
 using AppRopio.Base.Auth.iOS.Views._base;
 using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.UIExtentions;
 using MvvmCross.Binding.BindingContext;
 using UIKit;
-using MvvmCross.Platform;
+using MvvmCross;
 using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.Auth.Core;
 
@@ -38,8 +38,6 @@ namespace AppRopio.Base.Auth.iOS.Views.Password.Reset.Main
         }
 
         #endregion
-
-        protected ILocalizationService LocalizationService => Mvx.Resolve<ILocalizationService>();
 
         #region Constructor
 

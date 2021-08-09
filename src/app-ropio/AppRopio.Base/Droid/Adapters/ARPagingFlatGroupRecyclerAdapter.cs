@@ -1,9 +1,9 @@
 ﻿using System;
 using Android.Runtime;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.Droid.BindingContext;
+using MvvmCross.Platforms.Android.Binding.BindingContext;
 using AppRopio.Base.Core.ViewModels;
-using MvvmCross.Binding.ExtensionMethods;
+using MvvmCross.Binding.Extensions;
 
 namespace AppRopio.Base.Droid.Adapters
 {

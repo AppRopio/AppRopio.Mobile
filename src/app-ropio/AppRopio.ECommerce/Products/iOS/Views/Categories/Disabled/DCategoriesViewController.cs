@@ -5,7 +5,7 @@ using AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells;
 using AppRopio.ECommerce.Products.iOS.Views.Catalog.Header;
 using AppRopio.ECommerce.Products.iOS.Views.Categories.SupplementaryView;
 using AppRopio.ECommerce.Products.iOS.Views.Categories.Disabled.ViewSources;
-using MvvmCross.Platform;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.Categories.Disabled
@@ -44,7 +44,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Categories.Disabled
 
         protected override Base.iOS.ViewSources.BaseCollectionViewSource SetupCollectionDataSource(UICollectionView collectionView)
         {
-            var config = Mvx.Resolve<IProductConfigService>().Config;
+            var config = Mvx.IoCProvider.Resolve<IProductConfigService>().Config;
             var dataSource = new DCategoriesCollectionViewSource(collectionView, CatalogGridCell.Key, ViewModel, ViewModel.HeaderVm)
             {
                 BannersHeaderReuseID = BannersSupplementaryView.ReuseIdentifierString_Header,

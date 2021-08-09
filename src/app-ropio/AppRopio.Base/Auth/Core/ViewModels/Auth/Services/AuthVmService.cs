@@ -8,8 +8,8 @@ using AppRopio.Base.Auth.Core.Models.OAuth;
 using AppRopio.Base.Auth.Core.Services;
 using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.Core.ViewModels.Services;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.Base.Auth.Core.ViewModels.Auth.Services
 {
@@ -17,11 +17,11 @@ namespace AppRopio.Base.Auth.Core.ViewModels.Auth.Services
     {
         #region Services
 
-        protected IOAuthService OAuthService { get { return Mvx.Resolve<IOAuthService>(); } }
+        protected IOAuthService OAuthService { get { return Mvx.IoCProvider.Resolve<IOAuthService>(); } }
 
-        protected IAuthService AuthService { get { return Mvx.Resolve<IAuthService>(); } }
+        protected IAuthService AuthService { get { return Mvx.IoCProvider.Resolve<IAuthService>(); } }
 
-        protected IUserService UserService { get { return Mvx.Resolve<IUserService>(); } }
+        protected IUserService UserService { get { return Mvx.IoCProvider.Resolve<IUserService>(); } }
 
         #endregion
 
@@ -30,14 +30,14 @@ namespace AppRopio.Base.Auth.Core.ViewModels.Auth.Services
         protected virtual async Task<bool> OnSignInBySocial(string socialToken, OAuthType socialType, CancellationTokenSource cts)
         {
             if (socialToken.IsNullOrEmtpy())
-                throw new Exception(Mvx.Resolve<ILocalizationService>().GetLocalizableString(AuthConst.RESX_NAME, "Auth_Social_NoAccess"));
+                throw new Exception(Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString(AuthConst.RESX_NAME, "Auth_Social_NoAccess"));
             try
             {
                 var token = await AuthService.SocialSignIn(socialToken, socialType.GetSocialType(), cts);
 
                 AuthSettings.Token = token;
 
-                return await Mvx.Resolve<ISessionService>().StartByToken(token);
+                return await Mvx.IoCProvider.Resolve<ISessionService>().StartByToken(token);
             }
             catch (ConnectionException ex)
             {
@@ -45,7 +45,7 @@ namespace AppRopio.Base.Auth.Core.ViewModels.Auth.Services
             }
             catch (Exception ex)
             {
-                OnException(ex, Mvx.Resolve<ILocalizationService>().GetLocalizableString(AuthConst.RESX_NAME, "Auth_Social_Failed"));
+                OnException(ex, Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString(AuthConst.RESX_NAME, "Auth_Social_Failed"));
             }
 
             return false;
@@ -63,8 +63,8 @@ namespace AppRopio.Base.Auth.Core.ViewModels.Auth.Services
 
                 if (await OnSignInBySocial(socialToken, socialType, cts))
                 {
-                    await UserDialogs.Alert(Mvx.Resolve<ILocalizationService>().GetLocalizableString(AuthConst.RESX_NAME, "Auth_Social_Success"));
-                    ChangePresentation(new Base.Core.PresentationHints.NavigateToDefaultViewModelHint());
+                    await UserDialogs.Alert(Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString(AuthConst.RESX_NAME, "Auth_Social_Success"));
+                    await Mvx.IoCProvider.Resolve<IAuthNavigationVmService>().ChangePresentation(new Base.Core.PresentationHints.NavigateToDefaultViewModelHint());
                 }
             }
             catch (OperationCanceledException)

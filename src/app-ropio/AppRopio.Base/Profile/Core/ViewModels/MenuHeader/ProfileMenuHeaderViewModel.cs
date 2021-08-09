@@ -7,11 +7,10 @@ using AppRopio.Base.Core.Models.Navigation;
 using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.Core.ViewModels;
 using AppRopio.Base.Profile.Core.Services;
-using AppRopio.Base.Profile.Core.ViewModels.Profile;
 using AppRopio.Models.Auth.Responses;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross;
+using MvvmCross.Commands;
+using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.Base.Profile.Core.ViewModels.MenuHeader
 {
@@ -25,7 +24,7 @@ namespace AppRopio.Base.Profile.Core.ViewModels.MenuHeader
 
         private MvxSubscriptionToken _languageToken;
 
-        protected IProfileVmNavigationService NavigationVmService { get { return Mvx.Resolve<IProfileVmNavigationService>(); } }
+        protected IProfileVmNavigationService NavigationVmService { get { return Mvx.IoCProvider.Resolve<IProfileVmNavigationService>(); } }
 
         #endregion
 
@@ -86,9 +85,9 @@ namespace AppRopio.Base.Profile.Core.ViewModels.MenuHeader
             }
         }
 
-        public string SignIn => Mvx.Resolve<ILocalizationService>().GetLocalizableString(ProfileConstants.RESX_NAME, "SignIn");
+        public string SignIn => Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString(ProfileConstants.RESX_NAME, "SignIn");
 
-        public string Help => Mvx.Resolve<ILocalizationService>().GetLocalizableString(ProfileConstants.RESX_NAME, "Help");
+        public string Help => Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString(ProfileConstants.RESX_NAME, "Help");
 
         #endregion
 
@@ -100,18 +99,18 @@ namespace AppRopio.Base.Profile.Core.ViewModels.MenuHeader
 
         public ProfileMenuHeaderViewModel()
         {
-            Mvx.CallbackWhenRegistered<IMvxMessenger>(service =>
+            Mvx.IoCProvider.CallbackWhenRegistered<IMvxMessenger>(() =>
             {
-                _userTypeChangedSubscriptionToken = service.Subscribe<UserTypeChangedMessage>(OnUserTypeChanged);
-                _userInfoChangedSubscriptionToken = service.Subscribe<UserInfoChangedMessage>(OnUserInfoChanged);
-                _languageToken = service.Subscribe<LanguageChangedMessage>(OnLanguageChanged);
+                _userTypeChangedSubscriptionToken = Messenger.Subscribe<UserTypeChangedMessage>(OnUserTypeChanged);
+                _userInfoChangedSubscriptionToken = Messenger.Subscribe<UserInfoChangedMessage>(OnUserInfoChanged);
+                _languageToken = Messenger.Subscribe<LanguageChangedMessage>(OnLanguageChanged);
             });
 
-            Mvx.CallbackWhenRegistered<ISessionService>(() =>
+            Mvx.IoCProvider.CallbackWhenRegistered<ISessionService>(() =>
             {
-                UserSignedIn = Mvx.Resolve<ISessionService>().Alive;
+                UserSignedIn = Mvx.IoCProvider.Resolve<ISessionService>().Alive;
                 if (UserSignedIn)
-                    OnCurrentProfileChanged(Mvx.Resolve<ISessionService>().GetUser());
+                    OnCurrentProfileChanged(Mvx.IoCProvider.Resolve<ISessionService>().GetUser());
             });
 
             TrackInAnalytics = false;

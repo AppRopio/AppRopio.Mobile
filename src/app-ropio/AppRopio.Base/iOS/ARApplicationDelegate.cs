@@ -7,11 +7,12 @@ using AppRopio.Base.Core.Services.Push;
 using AppRopio.Base.Core.Services.ViewModelLookup;
 using AppRopio.Base.iOS.UIExtentions;
 using Foundation;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.iOS.Platform;
-using MvvmCross.iOS.Views.Presenters;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Platform;
+using MvvmCross;
+using MvvmCross.Core;
+using MvvmCross.IoC;
+using MvvmCross.Logging;
+using MvvmCross.Platforms.Ios.Core;
+using MvvmCross.ViewModels;
 using UIKit;
 using UserNotifications;
 using WebKit;
@@ -20,6 +21,8 @@ namespace AppRopio.Base.iOS
 {
     public abstract class ARApplicationDelegate : MvxApplicationDelegate, IUNUserNotificationCenterDelegate
     {
+        private TaskCompletionSource<bool> _loaderLoadedTCS;
+
         #region Properties
 
         protected NSDictionary NotificationUserInfo { get; private set; }
@@ -44,7 +47,7 @@ namespace AppRopio.Base.iOS
             {
                 try
                 {
-                    return Mvx.Resolve<IAnalyticsNotifyingService>();
+                    return Mvx.IoCProvider.Resolve<IAnalyticsNotifyingService>();
                 }
                 catch
                 {
@@ -59,21 +62,14 @@ namespace AppRopio.Base.iOS
 
         #region Init
 
-        protected abstract MvxAsyncIosSetup CreateSetup(IMvxApplicationDelegate appDelegate, MvxIosViewPresenter presenter);
-
-        protected abstract MvxIosViewPresenter CreatePresenter(IMvxApplicationDelegate appDelegate, UIWindow window);
-
-        protected virtual UIWindow CreateWindow()
-        {
-            return new UIWindow(UIScreen.MainScreen.Bounds);
-        }
-
         protected virtual UIViewController ConstructDefaultViCo()
         {
+            _loaderLoadedTCS = new TaskCompletionSource<bool>();
+
             var viewController = new UIViewController();
             viewController.View.BackgroundColor = (UIColor)Theme.ColorPalette.Accent;
 
-            var webView = new WKWebView(new CoreGraphics.CGRect(0, 0, DeviceInfo.ScreenWidth, DeviceInfo.ScreenHeight), new WKWebViewConfiguration() {
+            var webView = new BindableWebView(new CoreGraphics.CGRect(0, 0, DeviceInfo.ScreenWidth, DeviceInfo.ScreenHeight), new WKWebViewConfiguration() {
                 AllowsInlineMediaPlayback = true,
                 DataDetectorTypes = WKDataDetectorTypes.All
             });
@@ -83,66 +79,81 @@ namespace AppRopio.Base.iOS
             webView.ScrollView.ScrollEnabled = false;
             webView.ScrollView.UserInteractionEnabled = false;
             webView.UserInteractionEnabled = false;
+            webView.LoadFinished += (sender, ev) =>
+            {
+                _loaderLoadedTCS.TrySetResult(true);
+            };
 
-            var path = NSBundle.MainBundle.PathForResource("loader", "html");
-            webView.LoadRequest(NSUrlRequest.FromUrl(NSUrl.FromString(path)));
+            var path = NSBundle.MainBundle.GetUrlForResource("loader", "html");
+            webView.LoadFileUrl(path, path);
 
             viewController.View.AddSubview(webView);
 
             return viewController;
         }
 
-        protected virtual void StartMvvmCross(MvxIosViewPresenter presenter, MvxAsyncIosSetup setup)
+        protected override void RunAppStart(object hint = null)
         {
-            Task.Run(async () =>
+            if (Initialized)
+                return;
+
+            MvxIosSetupSingleton.Instance.PlatformSetup<MvxIosSetup>().StateChanged += (sender, ev) =>
             {
-                try
+                if (ev.SetupState != MvxSetup.MvxSetupState.Initialized)
+                    return;
+
+                Mvx.IoCProvider.CallbackWhenRegistered<IMvxAppStart>(startup =>
                 {
-                    await setup.InitializeAsync();
-
-                    var startup = Mvx.Resolve<IMvxAppStart>();
-
-                    InvokeOnMainThread(() =>
+                    if (!startup.IsStarted)
                     {
-                        startup.Start();
+                        Task.Run(async () =>
+                        {
+                            await startup.StartAsync(GetAppStartHint(hint));
 
-                        RequestNotificationAuthorization();
+                            InvokeOnMainThread(() =>
+                            {
+                                RequestNotificationAuthorization();
 
-                        Initialized = true;
+                                Initialized = true;
 
-                        OnInitialized?.Invoke();
-                    });
+                                OnInitialized?.Invoke();
+                            });
 #if DEBUG
-                    MvxTrace.TaggedTrace(MvxTraceLevel.Diagnostic, this.GetType().FullName, $"Ellapsed milliseconds after MvvmCross setup {Base.Core.ServicesDebug.StartupTimerService.Instance.EllapsedMilliseconds()}");
-                    Base.Core.ServicesDebug.StartupTimerService.Instance.StopTimer();
+                            System.Diagnostics.Debug.WriteLine($"Ellapsed milliseconds after MvvmCross setup {Base.Core.ServicesDebug.StartupTimerService.Instance.EllapsedMilliseconds()}");
+                            Base.Core.ServicesDebug.StartupTimerService.Instance.StopTimer();
 #endif
-                }
-                catch (Exception ex)
-                {
-                    MvxTrace.TaggedTrace(MvxTraceLevel.Error, this.GetType().FullName, ex.BuildAllMessagesAndStackTrace());
-                }
-            });
+                        });
+                    }
+                });
+            };
         }
 
         #endregion
 
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
-            Window = CreateWindow();
-
-            var presenter = CreatePresenter(this, Window);
-
-            var setup = CreateSetup(this, presenter);
-
-            StartMvvmCross(presenter, setup);
+            Window = new UIWindow(UIScreen.MainScreen.Bounds);
 
             Window.RootViewController = ConstructDefaultViCo();
 
             Window.MakeKeyAndVisible();
+
+            Task.Run(async () =>
+            {
+                if (_loaderLoadedTCS != null)
+                    await _loaderLoadedTCS.Task;
+
+                base.FinishedLaunching(application, launchOptions);
+            })
+            .ContinueWith((task) =>
+            {
+#if DEBUG
+                System.Diagnostics.Debug.WriteLine(task.Exception);
+#endif
+            }, TaskContinuationOptions.None);
 #if DEBUG
             System.Diagnostics.Debug.WriteLine($"AppRopio.Test.iOS.AppDelegate:Diagnostic: Ellapsed milliseconds in the end of FinishedLaunching {Base.Core.ServicesDebug.StartupTimerService.Instance.EllapsedMilliseconds()}");
 #endif
-
             return true;
         }
 
@@ -205,10 +216,10 @@ namespace AppRopio.Base.iOS
                 {
                     var deeplink = userInfo.ValueForKey(deeplinkKey).ToString();
 
-                    if (Mvx.CanResolve<IViewModelLookupService>())
+                    if (Mvx.IoCProvider.CanResolve<IViewModelLookupService>())
                         NavigateToDeeplinkFromPush(userInfo, deeplink);
                     else
-                        Mvx.CallbackWhenRegistered<IViewModelLookupService>(() => NavigateToDeeplinkFromPush(userInfo, deeplink));
+                        Mvx.IoCProvider.CallbackWhenRegistered<IViewModelLookupService>(() => NavigateToDeeplinkFromPush(userInfo, deeplink));
                 }
             }
             catch { }
@@ -216,10 +227,10 @@ namespace AppRopio.Base.iOS
 
         protected virtual void NavigateToDeeplinkFromPush(NSDictionary userInfo, string deeplink)
         {
-            var vmLS = Mvx.Resolve<IViewModelLookupService>();
+            var vmLS = Mvx.IoCProvider.Resolve<IViewModelLookupService>();
             if (vmLS.IsRegisteredDeeplink(deeplink))
             {
-                Mvx.CallbackWhenRegistered<IPushNotificationsService>(service => service.NavigateTo(deeplink));
+                Mvx.IoCProvider.CallbackWhenRegistered<IPushNotificationsService>(service => service.NavigateTo(deeplink));
             }
             else if (!Initialized)
             {
@@ -227,7 +238,7 @@ namespace AppRopio.Base.iOS
                     {
                         vmLS.CallbackWhenDeeplinkRegistered(deeplink, type =>
                         {
-                            InvokeOnMainThread(() => Mvx.CallbackWhenRegistered<IPushNotificationsService>(service => service.NavigateTo(deeplink)));
+                            InvokeOnMainThread(() => Mvx.IoCProvider.CallbackWhenRegistered<IPushNotificationsService>(service => service.NavigateTo(deeplink)));
                         });
                     };
             }
@@ -239,9 +250,9 @@ namespace AppRopio.Base.iOS
             Marshal.Copy(deviceToken.Bytes, result, 0, (int)deviceToken.Length);
             var token = BitConverter.ToString(result).Replace("-", "");
 
-            MvxTrace.Trace($"\nPush token: {token}\n");
+            Mvx.IoCProvider.Resolve<IMvxLog>().Trace($"\nPush token: {token}\n");
 
-            Mvx.CallbackWhenRegistered<IPushNotificationsService>(async service =>
+            Mvx.IoCProvider.CallbackWhenRegistered<IPushNotificationsService>(async service =>
             {
                 try
                 {
@@ -254,7 +265,7 @@ namespace AppRopio.Base.iOS
 
         public override void FailedToRegisterForRemoteNotifications(UIApplication application, NSError error)
         {
-            MvxTrace.Trace($"\nRegister for remote notifications failed: {error.ToString()}\n");
+            Mvx.IoCProvider.Resolve<IMvxLog>().Trace($"\nRegister for remote notifications failed: {error.ToString()}\n");
         }
 
         //Handling Action Responses

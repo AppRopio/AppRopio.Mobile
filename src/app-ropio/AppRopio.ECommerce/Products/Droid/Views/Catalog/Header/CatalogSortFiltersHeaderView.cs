@@ -5,10 +5,10 @@ using Android.Views;
 using Android.Widget;
 using AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Header;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.Droid.BindingContext;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Core.Views;
-using MvvmCross.Droid.Views;
+using MvvmCross.Platforms.Android.Binding.BindingContext;
+using MvvmCross.ViewModels;
+using MvvmCross.Views;
+using MvvmCross.Platforms.Android.Views;
 
 namespace AppRopio.ECommerce.Products.Droid.Views.Catalog.Header
 {

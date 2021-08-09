@@ -1,25 +1,33 @@
 ﻿using System;
-using MvvmCross.Platform.Plugins;
+using AppRopio.Base.Core.Plugins;
+using AppRopio.Geofencing.Core;
 using AppRopio.Geofencing.Core.Service;
-using MvvmCross.Platform;
 using AppRopio.Geofencing.iOS.Services;
-using MvvmCross.Platform.Platform;
+using MvvmCross;
+using MvvmCross.Logging;
+using MvvmCross.Plugin;
 
 namespace AppRopio.Geofencing.iOS
 {
-    public class Plugin : IMvxPlugin
+    [MvxPlugin]
+    [Preserve(AllMembers = true)]
+    public class Plugin : BasePlugin<App>
     {
-        public void Load()
+		protected override string Name => "Geofencing";
+
+        public override void Load()
         {
-            Mvx.RegisterSingleton<IGeofencingService>(() => new GeofencingService());
+            base.Load();
+
+            Mvx.IoCProvider.RegisterSingleton<IGeofencingService>(() => new GeofencingService());
 
             try
             {
-                Mvx.Resolve<IGeofencingService>().Start();
+                Mvx.IoCProvider.Resolve<IGeofencingService>().Start();
             }
             catch (Exception ex)
             {
-                MvxTrace.TaggedTrace("Geofencing", ex.BuildAllMessagesAndStackTrace());
+                Mvx.IoCProvider.Resolve<IMvxLog>().Trace($"Geofencing: {ex.BuildAllMessagesAndStackTrace()}");
             }
         }
     }

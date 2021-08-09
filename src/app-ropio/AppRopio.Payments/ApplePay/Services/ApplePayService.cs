@@ -6,7 +6,7 @@ using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Models.Payments.Responses;
 using AppRopio.Payments.ApplePay.Models;
 using Foundation;
-using MvvmCross.Platform;
+using MvvmCross;
 using Newtonsoft.Json;
 using PassKit;
 
@@ -17,7 +17,7 @@ namespace AppRopio.Payments.ApplePay.Services
         private TaskCompletionSource<string> _tcs;
         private Action<PKPaymentAuthorizationStatus> _completion;
 
-        protected ApplePayConfig Config { get { return Mvx.Resolve<IApplePayConfigService>().Config; } }
+        protected ApplePayConfig Config { get { return Mvx.IoCProvider.Resolve<IApplePayConfigService>().Config; } }
 
         public Task<string> Pay(PaymentOrderInfo info, Action authorizationCallback = null)
         {
@@ -45,7 +45,7 @@ namespace AppRopio.Payments.ApplePay.Services
             //добавляем итоговую стоимость
             paymentItems.Add(new PKPaymentSummaryItem()
             {
-                Label = Mvx.Resolve<ILocalizationService>().GetLocalizableString(ApplePayConstants.RESX_NAME, "Payment_Sum"),
+                Label = Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString(ApplePayConstants.RESX_NAME, "Payment_Sum"),
                 Amount = new NSDecimalNumber(info.Amount.ToString())
             });
 

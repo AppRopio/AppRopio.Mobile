@@ -5,8 +5,7 @@ using AppRopio.Base.API.Exceptions;
 using AppRopio.Base.Auth.API.Services;
 using AppRopio.Base.Auth.Core.Services;
 using AppRopio.Base.Core.ViewModels.Services;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Core;
+using MvvmCross;
 
 namespace AppRopio.Base.Auth.Core.ViewModels.SignIn.Services
 {
@@ -15,7 +14,7 @@ namespace AppRopio.Base.Auth.Core.ViewModels.SignIn.Services
 
         #region Services
 
-        protected IAuthService AuthService { get { return Mvx.Resolve<IAuthService>(); } }
+        protected IAuthService AuthService { get { return Mvx.IoCProvider.Resolve<IAuthService>(); } }
 
         #endregion
 
@@ -27,7 +26,7 @@ namespace AppRopio.Base.Auth.Core.ViewModels.SignIn.Services
             {
                 var token = await AuthService.SignIn(identifier, password, cts);
 
-                return await Mvx.Resolve<ISessionService>().StartByToken(token);
+                return await Mvx.IoCProvider.Resolve<ISessionService>().StartByToken(token);
             }
             catch (ConnectionException ex)
             {

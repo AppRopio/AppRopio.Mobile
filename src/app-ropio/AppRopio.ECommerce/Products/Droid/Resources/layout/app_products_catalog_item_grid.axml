@@ -20,7 +20,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintDimensionRatio="1:1"
             app:MvxBind="ImageUrl ImageUrl" />
-        <mvvmcross.binding.droid.views.MvxLinearLayout
+        <mvvmcross.platforms.android.binding.views.MvxLinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@+id/app_products_catalog_item_image"

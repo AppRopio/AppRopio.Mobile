@@ -6,8 +6,8 @@ using AppRopio.Base.Information.Core.ViewModels.Information;
 using AppRopio.Base.Information.Core.ViewModels.Information.Services;
 using AppRopio.Base.Information.Core.ViewModels.InformationTextContent;
 using AppRopio.Base.Information.Core.ViewModels.InformationWebContent;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.Base.Information.Core
 {
@@ -15,12 +15,15 @@ namespace AppRopio.Base.Information.Core
 	{
 		public override void Initialize()
 		{
-			Mvx.RegisterSingleton<IInformationVmService>(() => new InformationVmService());
-            Mvx.RegisterSingleton<IInformationNavigationVmService>(() => new InformationNavigationVmService());
+            new API.App().Initialize();
+
+			Mvx.IoCProvider.RegisterSingleton<IInformationVmService>(() => new InformationVmService());
+
+            Mvx.IoCProvider.RegisterType<IInformationNavigationVmService>(() => new InformationNavigationVmService());
 
 			#region VMs registration
 
-			var vmLookupService = Mvx.Resolve<IViewModelLookupService>();
+			var vmLookupService = Mvx.IoCProvider.Resolve<IViewModelLookupService>();
 
 			vmLookupService.Register<IInformationViewModel, InformationViewModel>();
             vmLookupService.Register<IInformationTextContentViewModel, InformationTextContentViewModel>();
@@ -29,7 +32,7 @@ namespace AppRopio.Base.Information.Core
 			#endregion
 
 			//register start point for current navigation module
-			var routerService = Mvx.Resolve<IRouterService>();
+			var routerService = Mvx.IoCProvider.Resolve<IRouterService>();
 			routerService.Register<IInformationViewModel>(new InformationRouterSubscriber());
 		}
 	}

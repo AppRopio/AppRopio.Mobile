@@ -1,7 +1,7 @@
 ﻿using System;
 using AppRopio.Base.Core.Services.Router;
 using AppRopio.Payments.Core.Bundle;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Payments.YandexKassa.Core.Services.Implementation
 {
@@ -12,7 +12,7 @@ namespace AppRopio.Payments.YandexKassa.Core.Services.Implementation
     		var paymentBundle = bundle as PaymentOrderBundle;
     		if (paymentBundle != null)
     		{
-    			Mvx.Resolve<IYandexKassaPaymentNavigationVmService>().NavigateToInAppPayment(paymentBundle);
+    			Mvx.IoCProvider.Resolve<IYandexKassaPaymentNavigationVmService>().NavigateToInAppPayment(paymentBundle);
     			return true;
     		}
 

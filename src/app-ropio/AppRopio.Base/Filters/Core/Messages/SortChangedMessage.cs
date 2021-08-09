@@ -1,5 +1,5 @@
 ﻿using System;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross.Plugin.Messenger;
 using AppRopio.Models.Filters.Responses;
 
 namespace AppRopio.Base.Filters.Core.Messages

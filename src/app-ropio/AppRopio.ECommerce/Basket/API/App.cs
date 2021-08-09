@@ -2,25 +2,25 @@
 using AppRopio.ECommerce.Basket.API.Services;
 using AppRopio.ECommerce.Basket.API.Services.Fake;
 using AppRopio.ECommerce.Basket.API.Services.Implementation;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.Basket.API
 {
-    public class App : MvvmCross.Core.ViewModels.MvxApplication
+    public class App : MvvmCross.ViewModels.MvxApplication
     {
         public override void Initialize()
         {
             if (ApiSettings.DebugServiceEnabled)
             {
-                Mvx.RegisterType<IBasketService>(() => new BasketFakeService());
-                Mvx.RegisterType<IOrderService>(() => new OrderFakeService());
-                Mvx.RegisterType<IDeliveryService>(() => new DeliveryFakeService());
+                Mvx.IoCProvider.RegisterType<IBasketService>(() => new BasketFakeService());
+                Mvx.IoCProvider.RegisterType<IOrderService>(() => new OrderFakeService());
+                Mvx.IoCProvider.RegisterType<IDeliveryService>(() => new DeliveryFakeService());
             }
             else
             {
-                Mvx.RegisterType<IBasketService>(() => new BasketService());
-                Mvx.RegisterType<IOrderService>(() => new OrderService());
-                Mvx.RegisterType<IDeliveryService>(() => new DeliveryService());
+                Mvx.IoCProvider.RegisterType<IBasketService>(() => new BasketService());
+                Mvx.IoCProvider.RegisterType<IOrderService>(() => new OrderService());
+                Mvx.IoCProvider.RegisterType<IDeliveryService>(() => new DeliveryService());
             }
         }
     }

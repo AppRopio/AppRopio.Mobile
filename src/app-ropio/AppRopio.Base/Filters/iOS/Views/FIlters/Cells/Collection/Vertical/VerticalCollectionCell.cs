@@ -7,15 +7,15 @@ using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.UIExtentions;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding.Views;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.Base.Filters.iOS.Views.Filters.Cells.Collection.Vertical
 {
     public partial class VerticalCollectionCell : MvxTableViewCell
     {
-        protected FiltersThemeConfig ThemeConfig { get { return Mvx.Resolve<IFiltersThemeConfigService>().ThemeConfig; } }
+        protected FiltersThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IFiltersThemeConfigService>().ThemeConfig; } }
 
         public const float VERTICAL_COLLECTION_TITLE_HEIGHT = 44;
         public const float VERTICAL_COLLECTION_ITEM_HEIGHT = 44;

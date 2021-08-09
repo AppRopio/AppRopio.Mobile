@@ -3,7 +3,7 @@ using AppRopio.Base.Settings.Core.Models;
 using AppRopio.Base.Settings.Core.ViewModels.Items;
 using AppRopio.Base.Settings.iOS.Views.Cells.Picker;
 using AppRopio.Base.Settings.iOS.Views.Cells.Switch;
-using MvvmCross.Binding.iOS.Views;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using UIKit;
 
 namespace AppRopio.Base.Settings.iOS.Views.Settings

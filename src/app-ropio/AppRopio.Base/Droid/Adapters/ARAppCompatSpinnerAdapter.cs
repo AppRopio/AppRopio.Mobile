@@ -3,13 +3,13 @@ using Android.Content;
 using Android.Graphics;
 using Android.Runtime;
 using Android.Util;
-using MvvmCross.Binding.Droid.BindingContext;
-using MvvmCross.Binding.Droid.Views;
-using MvvmCross.Binding.ExtensionMethods;
+using MvvmCross.Binding.Extensions;
+using MvvmCross.Platforms.Android.Binding.BindingContext;
+using MvvmCross.Platforms.Android.Binding.Views;
 
 namespace AppRopio.Base.Droid.Adapters
 {
-    public class ARAppCompatSpinnerAdapter : MvxAdapter
+	public class ARAppCompatSpinnerAdapter : MvxAdapter
     {
         private bool dropDownWidthCalculated = false;
 

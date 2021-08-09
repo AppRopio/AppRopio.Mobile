@@ -7,8 +7,8 @@ using AppRopio.Base.Settings.iOS.Models;
 using AppRopio.Base.Settings.iOS.Services;
 using AppRopio.Base.Settings.iOS.Views.Regions.Cell;
 using Foundation;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding.Views;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.Base.Settings.iOS.Views.Regions
@@ -17,7 +17,7 @@ namespace AppRopio.Base.Settings.iOS.Views.Regions
     {
         protected Collection<IRegionGroupItemVm> GroupItemsSource => ItemsSource as Collection<IRegionGroupItemVm>;
 
-		protected SettingsThemeConfig ThemeConfig { get { return Mvx.Resolve<ISettingsThemeConfigService>().ThemeConfig; } }
+		protected SettingsThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<ISettingsThemeConfigService>().ThemeConfig; } }
 
 		#region Constructor
 

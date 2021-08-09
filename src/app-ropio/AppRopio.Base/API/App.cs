@@ -1,7 +1,7 @@
 ﻿using AppRopio.Base.API.Services;
 using AppRopio.Base.API.Services.Implementations;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.Base.API
 {
@@ -9,8 +9,8 @@ namespace AppRopio.Base.API
     {
         public override void Initialize()
         {
-            Mvx.RegisterType<IErrorService, ErrorService>();
-            Mvx.RegisterType<IPushService, PushService>();
+            Mvx.IoCProvider.RegisterType<IErrorService, ErrorService>();
+            Mvx.IoCProvider.RegisterType<IPushService, PushService>();
         }
     }
 }

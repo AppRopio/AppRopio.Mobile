@@ -16,6 +16,9 @@ using System;
 using System.Threading.Tasks;
 using Android.Content;
 using AppRopio.Base.Core.Services.Launcher;
+using MvvmCross;
+using MvvmCross.Logging;
+using Xamarin.Essentials;
 
 namespace AppRopio.Base.Droid.Services.Launcher
 {
@@ -26,30 +29,54 @@ namespace AppRopio.Base.Droid.Services.Launcher
             String map = "http://maps.google.co.in/maps?q=" + Uri.EscapeUriString(address); 
             Intent i = new Intent(Intent.ActionView, Android.Net.Uri.Parse(map));
 
-            Plugin.CurrentActivity.CrossCurrentActivity.Current.Activity.StartActivity(i);
+            Platform.CurrentActivity.StartActivity(i);
 
             return Task.CompletedTask;
         }
 
-        public Task LaunchEmail(string email)
+        public async Task<bool> LaunchEmail(string email)
         {
-            if (Plugin.Messaging.CrossMessaging.Current.EmailMessenger.CanSendEmail)
-                Plugin.Messaging.CrossMessaging.Current.EmailMessenger.SendEmail(email);
+            try
+            {
+                await Email.ComposeAsync(string.Empty, string.Empty, email);
+                return true;
+            }
+            catch (Exception exception)
+            {
+                Mvx.IoCProvider.Resolve<IMvxLog>().Warn(exception + "\n" + exception.StackTrace);
+            }
 
-            return Task.CompletedTask;
+            return false;
         }
 
-        public Task LaunchPhone(string phoneNumber)
+        public Task<bool> LaunchPhone(string phoneNumber)
         {
-            if (Plugin.Messaging.CrossMessaging.Current.PhoneDialer.CanMakePhoneCall)
-                Plugin.Messaging.CrossMessaging.Current.PhoneDialer.MakePhoneCall(phoneNumber);
+            try
+            {
+                PhoneDialer.Open(phoneNumber);
+                return Task.FromResult(true);
+            }
+            catch (Exception exception)
+            {
+                Mvx.IoCProvider.Resolve<IMvxLog>().Warn(exception + "\n" + exception.StackTrace);
+            }
 
-            return Task.CompletedTask;
+            return Task.FromResult(false);
         }
 
-        public async Task LaunchUri(string uri)
+        public async Task<bool> LaunchUri(string uri)
         {
-            await Plugin.Share.CrossShare.Current.OpenBrowser(uri);
+            try
+            {
+                await Browser.OpenAsync(uri);
+                return true;
+            }
+            catch (Exception exception)
+            {
+                Mvx.IoCProvider.Resolve<IMvxLog>().Warn(exception + "\n" + exception.StackTrace);
+            }
+
+            return false;
         }
     }
 }

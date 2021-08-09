@@ -4,8 +4,7 @@ using System.Threading.Tasks;
 using AppRopio.Base.API.Exceptions;
 using AppRopio.Base.Auth.API.Services;
 using AppRopio.Base.Core.ViewModels.Services;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Core;
+using MvvmCross;
 
 namespace AppRopio.Base.Auth.Core.ViewModels.Password.New.Services
 {
@@ -14,7 +13,7 @@ namespace AppRopio.Base.Auth.Core.ViewModels.Password.New.Services
 
         #region Services
 
-        protected IAuthService AuthService { get { return Mvx.Resolve<IAuthService>(); } }
+        protected IAuthService AuthService { get { return Mvx.IoCProvider.Resolve<IAuthService>(); } }
 
         #endregion
 

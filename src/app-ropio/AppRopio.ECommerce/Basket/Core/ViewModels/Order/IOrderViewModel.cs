@@ -1,5 +1,5 @@
 ﻿using AppRopio.Base.Core.ViewModels;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.Commands;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order
 {

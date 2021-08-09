@@ -2,7 +2,7 @@
 using AppRopio.Base.Core;
 using AppRopio.Base.Core.Services.Settings;
 using AppRopio.ECommerce.Basket.Core.Models;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.Basket.Core.Services.Implementation
 {
@@ -26,7 +26,7 @@ namespace AppRopio.ECommerce.Basket.Core.Services.Implementation
         private BasketConfig LoadConfigFromJSON()
         {
             var path = Path.Combine(CoreConstants.CONFIGS_FOLDER, BasketConstants.CONFIG_NAME);
-            var json = Mvx.Resolve<ISettingsService>().ReadStringFromFile(path);
+            var json = Mvx.IoCProvider.Resolve<ISettingsService>().ReadStringFromFile(path);
             return Newtonsoft.Json.JsonConvert.DeserializeObject<BasketConfig>(json);
         }
 

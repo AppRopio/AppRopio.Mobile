@@ -1,13 +1,12 @@
-﻿using System;
-using AppRopio.Base.Core.Services.Router;
+﻿using AppRopio.Base.Core.Services.Router;
 using AppRopio.Base.Core.Services.ViewModelLookup;
 using AppRopio.ECommerce.Marked.Core.Services;
 using AppRopio.ECommerce.Marked.Core.Services.Implementation;
 using AppRopio.ECommerce.Marked.Core.ViewModels.Marked;
 using AppRopio.ECommerce.Marked.Core.ViewModels.Marked.Services;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Marked.Core
 {
@@ -15,22 +14,24 @@ namespace AppRopio.ECommerce.Marked.Core
     {
         public override void Initialize()
         {
-            Mvx.CallbackWhenRegistered<IMvxMessenger>(() => Mvx.RegisterSingleton<IMarkedObservableService>(new MarkedObservableService()));
+			new API.App().Initialize();
 
-            Mvx.RegisterSingleton<IMarkedConfigService>(() => new MarkedConfigService());
+            Mvx.IoCProvider.CallbackWhenRegistered<IMvxMessenger>(() => Mvx.IoCProvider.RegisterSingleton<IMarkedObservableService>(new MarkedObservableService()));
 
-            Mvx.RegisterSingleton<IMarkedVmService>(() => new MarkedVmService());
+            Mvx.IoCProvider.RegisterSingleton<IMarkedConfigService>(() => new MarkedConfigService());
+
+            Mvx.IoCProvider.RegisterSingleton<IMarkedVmService>(() => new MarkedVmService());
 
             #region VMs registration
 
-            var vmLookupService = Mvx.Resolve<IViewModelLookupService>();
+            var vmLookupService = Mvx.IoCProvider.Resolve<IViewModelLookupService>();
 
             vmLookupService.Register<IMarkedViewModel, MarkedViewModel>();
 
             #endregion
 
             //register start point for current navigation module
-            var routerService = Mvx.Resolve<IRouterService>();
+            var routerService = Mvx.IoCProvider.Resolve<IRouterService>();
             routerService.Register<IMarkedViewModel>(new MarkedRouterSubscriber());
         }
     }

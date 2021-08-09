@@ -10,7 +10,7 @@ using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.MinMax.Date;
 using CoreGraphics;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platform;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.MinMax.Date
@@ -75,7 +75,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.MinMax.Date
         protected virtual void SetupFromLabel(UILabel fromLabel)
         {
             fromLabel.SetupStyle(ThemeConfig.ProductDetails.DetailsCell.MinMax.Label);
-            fromLabel.Text = Mvx.Resolve<ILocalizationService>().GetLocalizableString(ProductsConstants.RESX_NAME, "ProductCard_From");
+            fromLabel.Text = Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString(ProductsConstants.RESX_NAME, "ProductCard_From");
         }
 
         protected virtual void SetupFromField(UITextField fromField)
@@ -93,7 +93,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.MinMax.Date
         protected virtual void SetupToLabel(UILabel toLabel)
         {
             toLabel.SetupStyle(ThemeConfig.ProductDetails.DetailsCell.MinMax.Label);
-            toLabel.Text = Mvx.Resolve<ILocalizationService>().GetLocalizableString(ProductsConstants.RESX_NAME, "ProductCard_To");
+            toLabel.Text = Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString(ProductsConstants.RESX_NAME, "ProductCard_To");
         }
 
         protected virtual void SetupToField(UITextField toField)
@@ -138,7 +138,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.MinMax.Date
                     .WithTune(tune =>
                     {
                         tune.SetupStyle(ThemeConfig.ProductDetails.DetailsCell.MinMax.DoneButton);
-                        tune.SetTitle(Mvx.Resolve<ILocalizationService>().GetLocalizableString(ProductsConstants.RESX_NAME, "ProductCard_Done"), UIControlState.Normal);
+                        tune.SetTitle(Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString(ProductsConstants.RESX_NAME, "ProductCard_Done"), UIControlState.Normal);
                         tune.TouchUpInside += (sender, e) => textField.EndEditing(true);
                     }),
                     new UIView().WithFrame(0, 0, DeviceInfo.ScreenWidth, 1).WithBackground(Theme.ColorPalette.Separator.ToUIColor()),

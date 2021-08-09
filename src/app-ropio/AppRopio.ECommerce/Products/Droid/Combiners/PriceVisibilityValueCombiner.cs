@@ -6,15 +6,15 @@ using AppRopio.ECommerce.Products.Core.Combiners;
 using AppRopio.ECommerce.Products.Core.Models;
 using AppRopio.ECommerce.Products.Core.Services;
 using MvvmCross.Binding.Bindings.SourceSteps;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Converters;
-using MvvmCross.Platform.UI;
+using MvvmCross;
+using MvvmCross.Converters;
+using MvvmCross.UI;
 
 namespace AppRopio.ECommerce.Products.Droid.Combiners
 {
     public class OldPriceVisibilityValueCombiner : PriceVisibilityCommonValueCombiner
     {
-        private ProductsConfig _config => Mvx.Resolve<IProductConfigService>().Config;
+        private ProductsConfig _config => Mvx.IoCProvider.Resolve<IProductConfigService>().Config;
 
         public override bool TryGetValue(IEnumerable<IMvxSourceStep> steps, out object value) {
             var ret = base.TryGetValue(steps, out value);
@@ -36,7 +36,7 @@ namespace AppRopio.ECommerce.Products.Droid.Combiners
 
     public class PriceVisibilityValueCombiner : OldPriceVisibilityValueCombiner
     {
-        private ProductsConfig _config => Mvx.Resolve<IProductConfigService>().Config;
+        private ProductsConfig _config => Mvx.IoCProvider.Resolve<IProductConfigService>().Config;
 
         public override bool TryGetValue(IEnumerable<IMvxSourceStep> steps, out object value) {
             if (_config.PriceType == PriceType.FromTo) {
@@ -49,7 +49,7 @@ namespace AppRopio.ECommerce.Products.Droid.Combiners
 
     public class MaxPriceVisibilityValueConverter : MvxValueConverter<string, ViewStates>
     {
-        private ProductsConfig _config => Mvx.Resolve<IProductConfigService>().Config;
+        private ProductsConfig _config => Mvx.IoCProvider.Resolve<IProductConfigService>().Config;
 
         protected override ViewStates Convert(string value, Type targetType, object parameter, CultureInfo culture) {
             if (!(_config.PriceType == PriceType.To || _config.PriceType == PriceType.FromTo))

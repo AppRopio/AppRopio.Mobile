@@ -2,8 +2,8 @@ using System;
 using AppRopio.Base.Map.Core.ViewModels.Points.List.Items;
 using CoreLocation;
 using MapKit;
-using MvvmCross.Binding;
-using MvvmCross.Platform.Platform;
+using MvvmCross;
+using MvvmCross.Logging;
 
 namespace AppRopio.Base.Map.iOS.Controls.Map.Native
 {
@@ -25,7 +25,7 @@ namespace AppRopio.Base.Map.iOS.Controls.Map.Native
             }
             catch (Exception ex)
             {
-                MvxBindingTrace.Trace(MvxTraceLevel.Error, ex.ToString());
+                Mvx.IoCProvider.Resolve<IMvxLog>().Error(ex.ToString());
             }
         }
 

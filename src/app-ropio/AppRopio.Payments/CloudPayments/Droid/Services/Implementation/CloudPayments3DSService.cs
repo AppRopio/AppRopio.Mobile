@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Android.Runtime;
 using Android.Webkit;
 using AppRopio.Payments.Core.Services;
-using MvvmCross.Binding.ExtensionMethods;
+using MvvmCross.Binding.Extensions;
 
 namespace AppRopio.Payments.CloudPayments.Droid.Services.Implementation
 {

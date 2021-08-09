@@ -4,7 +4,7 @@ using UIKit;
 using AppRopio.Base.iOS.Helpers;
 using System.Linq;
 using AppRopio.Base.iOS.UIExtentions;
-using MvvmCross.Platform;
+using MvvmCross;
 using AppRopio.Base.Core.Services.Localization;
 
 namespace AppRopio.Base.iOS
@@ -47,7 +47,7 @@ namespace AppRopio.Base.iOS
                 searchTextField.Font = (UIFont)model.TextField.Font;
                 searchTextField.TextColor = (UIColor)model.TextField.TextColor;
                 searchTextField.TintColor = (UIColor)model.TextField.TintColor;
-                searchTextField.AttributedPlaceholder = new NSMutableAttributedString(Mvx.Resolve<ILocalizationService>().GetLocalizableString("Base", "Search"), (UIFont)model.TextField.Placeholder.Font, (UIColor)model.TextField.Placeholder.TextColor);
+                searchTextField.AttributedPlaceholder = new NSMutableAttributedString(Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString("Base", "Search"), (UIFont)model.TextField.Placeholder.Font, (UIColor)model.TextField.Placeholder.TextColor);
             }
         }
     }

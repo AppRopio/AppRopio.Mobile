@@ -3,7 +3,7 @@ using AppRopio.Base.iOS;
 using AppRopio.Base.Settings.iOS.Models;
 using AppRopio.Base.Settings.iOS.Services;
 using Foundation;
-using MvvmCross.Platform;
+using MvvmCross;
 using UIKit;
 using AppRopio.Base.iOS.UIExtentions;
 
@@ -14,7 +14,7 @@ namespace AppRopio.Base.Settings.iOS.Views.Regions.Cell
         public static readonly NSString Key = new NSString("RegionSectionHeader");
         public static readonly UINib Nib;
 
-		protected SettingsThemeConfig ThemeConfig { get { return Mvx.Resolve<ISettingsThemeConfigService>().ThemeConfig; } }
+		protected SettingsThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<ISettingsThemeConfigService>().ThemeConfig; } }
 
 		static RegionSectionHeader()
         {

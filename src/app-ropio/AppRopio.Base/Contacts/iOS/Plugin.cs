@@ -3,23 +3,28 @@ using AppRopio.Base.Contacts.Core.ViewModels.Contacts;
 using AppRopio.Base.Contacts.iOS.Services;
 using AppRopio.Base.Contacts.iOS.Services.Implementation;
 using AppRopio.Base.Contacts.iOS.Views.Contacts;
+using AppRopio.Base.Core.Plugins;
 using AppRopio.Base.Core.Services.ViewLookup;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.Base.Contacts.iOS
 {
-    public class Plugin : IMvxPlugin
+    [MvxPlugin]
+    [Preserve(AllMembers = true)]
+    public class Plugin : BasePlugin<App>
     {
-        public void Load()
-        {
-            Mvx.RegisterSingleton<IContactsThemeConfigService>(() => new ContactsThemeConfigService());
+		protected override string Name => "Contacts";
 
-            var viewLookupService = Mvx.Resolve<IViewLookupService>();
+        public override void Load()
+        {
+            base.Load();
+
+            Mvx.IoCProvider.RegisterSingleton<IContactsThemeConfigService>(() => new ContactsThemeConfigService());
+
+            var viewLookupService = Mvx.IoCProvider.Resolve<IViewLookupService>();
 
             viewLookupService.Register<IContactsViewModel, ContactsViewController>();
-
-
         }
     }
 }

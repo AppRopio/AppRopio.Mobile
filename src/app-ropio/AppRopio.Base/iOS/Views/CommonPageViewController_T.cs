@@ -1,8 +1,8 @@
 ﻿using System;
 using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.iOS.Views.PageViewController;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.Base.iOS.Views
@@ -10,7 +10,7 @@ namespace AppRopio.Base.iOS.Views
     public abstract class CommonPageViewController<T> : MvxPageViewController<T>, IUnbindable
         where T : class, IMvxViewModel
     {
-        protected ILocalizationService LocalizationService => Mvx.Resolve<ILocalizationService>();
+        protected ILocalizationService LocalizationService => Mvx.IoCProvider.Resolve<ILocalizationService>();
 
         protected CommonPageViewController(
             UIPageViewControllerTransitionStyle style = UIPageViewControllerTransitionStyle.Scroll,

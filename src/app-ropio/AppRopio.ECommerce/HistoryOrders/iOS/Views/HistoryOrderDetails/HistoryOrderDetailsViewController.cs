@@ -5,8 +5,8 @@ using AppRopio.ECommerce.HistoryOrders.iOS.Converters;
 using AppRopio.ECommerce.HistoryOrders.iOS.Models;
 using AppRopio.ECommerce.HistoryOrders.iOS.Services;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding.Views;
+using MvvmCross;
 using UIKit;
 using AppRopio.Base.iOS;
 using AppRopio.Base.Core.Services.Localization;
@@ -27,7 +27,7 @@ namespace AppRopio.ECommerce.HistoryOrders.iOS.Views.HistoryOrders
             }
         }
 
-		protected HistoryOrdersThemeConfig ThemeConfig { get { return Mvx.Resolve<IHistoryOrdersThemeConfigService>().ThemeConfig; } }
+		protected HistoryOrdersThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IHistoryOrdersThemeConfigService>().ThemeConfig; } }
 
         public HistoryOrderDetailsViewController() 
             : base("HistoryOrderDetailsViewController", null)

@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using AppRopio.Base.API.Services;
 using AppRopio.Base.Core;
 using AppRopio.Models.Geofencing.Responses;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Geofencing.Core.Service.Implementation
 {
@@ -17,7 +17,7 @@ namespace AppRopio.Geofencing.Core.Service.Implementation
         {
             get
             {
-                return Mvx.CanResolve<API.Services.IAreaService>() ? (_apiService = Mvx.Resolve<API.Services.IAreaService>()) : (_apiService = new API.Services.Implementation.AreaService(ConnectionService));
+                return Mvx.IoCProvider.CanResolve<API.Services.IAreaService>() ? (_apiService = Mvx.IoCProvider.Resolve<API.Services.IAreaService>()) : (_apiService = new API.Services.Implementation.AreaService(ConnectionService));
             }
         }
 
@@ -26,14 +26,14 @@ namespace AppRopio.Geofencing.Core.Service.Implementation
         {
             get
             {
-                return Mvx.CanResolve<IConnectionService>() ?
-                          (_connectionService = Mvx.Resolve<IConnectionService>())
+                return Mvx.IoCProvider.CanResolve<IConnectionService>() ?
+                          (_connectionService = Mvx.IoCProvider.Resolve<IConnectionService>())
                               :
                           (_connectionService = new ConnectionService
                           {
                               ErrorWhenConnectionFailed = AppSettings.ErrorWhenConnectionFailed,
                               ErrorWhenTaskCanceled = AppSettings.ErrorWhenTaskCanceled,
-                              //IsConnectionAvailable = () => Task<bool>.Factory.StartNew(() => Mvx.Resolve<IMvxReachability>().IsHostReachable(AppSettings.Host)),
+                              //IsConnectionAvailable = () => Task<bool>.Factory.StartNew(() => Mvx.IoCProvider.Resolve<IMvxReachability>().IsHostReachable(AppSettings.Host)),
                               RequestTimeoutInSeconds = AppSettings.RequestTimeoutInSeconds,
                               BaseUrl = new Uri(AppSettings.Host)
                           });
@@ -45,7 +45,7 @@ namespace AppRopio.Geofencing.Core.Service.Implementation
         {
             get
             {
-                return Mvx.CanResolve<IAreaService>() ? (_instance = Mvx.Resolve<IAreaService>()) : (_instance = new AreaService());
+                return Mvx.IoCProvider.CanResolve<IAreaService>() ? (_instance = Mvx.IoCProvider.Resolve<IAreaService>()) : (_instance = new AreaService());
             }
         }
 

@@ -1,8 +1,9 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
+using AppRopio.Base.API.Exceptions;
 using AppRopio.Base.Core.ViewModels.Services;
 using AppRopio.Base.Filters.API;
 using AppRopio.Base.Filters.Core.Messages;
@@ -17,12 +18,10 @@ using AppRopio.Base.Filters.Core.ViewModels.Filters.Items.Picker;
 using AppRopio.Base.Filters.Core.ViewModels.Filters.Items.Selection;
 using AppRopio.Base.Filters.Core.ViewModels.Filters.Items.Selection.MultiSelection;
 using AppRopio.Base.Filters.Core.ViewModels.Filters.Items.Selection.OneSelection;
-using AppRopio.Models.Filters.Responses;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Platform;
-using MvvmCross.Plugins.Messenger;
 using AppRopio.Base.Filters.Core.ViewModels.Filters.Items.Switch;
-using AppRopio.Base.API.Exceptions;
+using AppRopio.Models.Filters.Responses;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 
 #pragma warning disable IDE0004 // Remove Unnecessary Cast
 
@@ -32,9 +31,9 @@ namespace AppRopio.Base.Filters.Core.ViewModels.Filters.Services
     {
         #region Services
 
-        protected IFiltersService FiltersService { get { return Mvx.Resolve<IFiltersService>(); } }
+        protected IFiltersService FiltersService { get { return Mvx.IoCProvider.Resolve<IFiltersService>(); } }
 
-        protected IMvxMessenger MessengerService { get { return Mvx.Resolve<IMvxMessenger>(); } }
+        protected IMvxMessenger MessengerService { get { return Mvx.IoCProvider.Resolve<IMvxMessenger>(); } }
 
         #endregion
 

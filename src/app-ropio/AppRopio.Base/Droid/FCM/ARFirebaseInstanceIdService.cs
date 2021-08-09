@@ -20,12 +20,13 @@ using Android.Util;
 using AppRopio.Base.Core;
 using AppRopio.Base.Core.Services.Push;
 using Firebase.Iid;
-using MvvmCross.Platform;
+using MvvmCross;
+using MvvmCross.IoC;
 using Firebase.Messaging;
 
 namespace AppRopio.Base.Droid.FCM
 {
-    [Preserve(AllMembers = true)]
+    [MvvmCross.Preserve(AllMembers = true)]
     [Service]
     [IntentFilter(new string[] { "com.google.firebase.INSTANCE_ID_EVENT" })]
     public class ARFirebaseInstanceIdService : FirebaseInstanceIdService
@@ -53,7 +54,7 @@ namespace AppRopio.Base.Droid.FCM
 
             System.Diagnostics.Debug.WriteLine(message: $"Push token refresh: {token}", category: PackageName);
 
-            Mvx.CallbackWhenRegistered<IPushNotificationsService>(async service =>
+            Mvx.IoCProvider.CallbackWhenRegistered<IPushNotificationsService>(async service =>
             {
                 try
                 {

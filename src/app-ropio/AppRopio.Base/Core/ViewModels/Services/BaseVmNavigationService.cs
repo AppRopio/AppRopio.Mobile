@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 using AppRopio.Base.Core.Extentions;
 using AppRopio.Base.Core.Services.ViewModelLookup;
-using MvvmCross.Core.Navigation;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
-using System.Threading.Tasks;
-using MvvmCross.Platform.Platform;
+using MvvmCross;
+using MvvmCross.Logging;
+using MvvmCross.Navigation;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.Base.Core.ViewModels.Services
 {
@@ -14,9 +15,9 @@ namespace AppRopio.Base.Core.ViewModels.Services
     {
         #region Services
 
-        protected IViewModelLookupService LookupService { get { return Mvx.Resolve<IViewModelLookupService>(); } }
+        protected IViewModelLookupService LookupService { get { return Mvx.IoCProvider.Resolve<IViewModelLookupService>(); } }
 
-        protected IMvxNavigationService MvxNavigationService => Mvx.Resolve<IMvxNavigationService>();
+        protected IMvxNavigationService MvxNavigationService => Mvx.IoCProvider.Resolve<IMvxNavigationService>();
 
         #endregion
 
@@ -44,7 +45,7 @@ namespace AppRopio.Base.Core.ViewModels.Services
                 }
                 catch (Exception ex)
                 {
-                    MvxTrace.Error(ex.BuildAllMessagesAndStackTrace());
+                    Mvx.IoCProvider.Resolve<IMvxLog>().Error(ex.BuildAllMessagesAndStackTrace());
                 }
         }
 
@@ -57,7 +58,7 @@ namespace AppRopio.Base.Core.ViewModels.Services
                 }
                 catch (Exception ex)
                 {
-                    MvxTrace.Error(ex.BuildAllMessagesAndStackTrace());
+                    Mvx.IoCProvider.Resolve<IMvxLog>().Error(ex.BuildAllMessagesAndStackTrace());
                 }
         }
 
@@ -70,7 +71,7 @@ namespace AppRopio.Base.Core.ViewModels.Services
                 }
                 catch (Exception ex)
                 {
-                    MvxTrace.Error(ex.BuildAllMessagesAndStackTrace());
+                    Mvx.IoCProvider.Resolve<IMvxLog>().Error(ex.BuildAllMessagesAndStackTrace());
                 }
         }
 
@@ -78,7 +79,7 @@ namespace AppRopio.Base.Core.ViewModels.Services
 
         #region Public
 
-        public async void NavigateTo(string deeplink)
+        public async Task NavigateTo(string deeplink)
         {
             if (!deeplink.IsNullOrEmtpy())
             {
@@ -92,10 +93,20 @@ namespace AppRopio.Base.Core.ViewModels.Services
                     }
                     catch (Exception ex)
                     {
-                        MvxTrace.Error(ex.BuildAllMessagesAndStackTrace());
+                        Mvx.IoCProvider.Resolve<IMvxLog>().Error(ex.BuildAllMessagesAndStackTrace());
                     } 
                 }
             }
+        }
+
+        public async Task ChangePresentation(MvxPresentationHint hint)
+        {
+            await MvxNavigationService.ChangePresentation(hint);
+        }
+
+        public async Task Close(IMvxViewModel viewModel)
+        {
+            await MvxNavigationService.Close(viewModel);
         }
 
         #endregion

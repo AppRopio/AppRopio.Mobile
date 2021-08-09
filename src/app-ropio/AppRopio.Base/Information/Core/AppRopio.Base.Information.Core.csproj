@@ -2,18 +2,14 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
-
   <ItemGroup>
-    <PackageReference Include="MvvmCross" Version="5.7.0"  />
-    <PackageReference Include="MvvmCross.Binding" Version="5.7.0"  />
-    <PackageReference Include="MvvmCross.Core" Version="5.7.0"  />
-    <PackageReference Include="MvvmCross.Platform" Version="5.7.0"  />
+    <PackageReference Include="MvvmCross" Version="6.4.2" />
   </ItemGroup>
     
   <ItemGroup>
-    <ProjectReference Include="..\..\Core\AppRopio.Base.Core.csproj"/>
-    <ProjectReference Include="..\..\API\AppRopio.Base.API.csproj"/>
-    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Information\AppRopio.Models.Information.csproj"/>
-    <ProjectReference Include="..\API\AppRopio.Base.Information.API.csproj"/>
+    <ProjectReference Include="..\..\Core\AppRopio.Base.Core.csproj" />
+    <ProjectReference Include="..\..\API\AppRopio.Base.API.csproj" />
+    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Information\AppRopio.Models.Information.csproj" />
+    <ProjectReference Include="..\API\AppRopio.Base.Information.API.csproj" />
   </ItemGroup>
 </Project>

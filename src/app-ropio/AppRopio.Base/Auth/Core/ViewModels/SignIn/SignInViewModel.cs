@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using AppRopio.Base.Auth.Core.Formatters;
 using AppRopio.Base.Auth.Core.ViewModels._base;
@@ -6,12 +7,13 @@ using AppRopio.Base.Auth.Core.ViewModels.SignIn.Services;
 using AppRopio.Base.Core.Models.Bundle;
 using AppRopio.Base.Core.Models.Navigation;
 using AppRopio.Base.Core.PresentationHints;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross;
+using MvvmCross.Commands;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.Base.Auth.Core.ViewModels.SignIn
 {
-	public class SignInViewModel : AuthBaseViewModel, ISignInViewModel
+    public class SignInViewModel : AuthBaseViewModel, ISignInViewModel
 	{
 		#region Commands
 
@@ -29,7 +31,7 @@ namespace AppRopio.Base.Auth.Core.ViewModels.SignIn
 		{
 			get
 			{
-				return _signInCommand ?? (_signInCommand = new MvxCommand(SignInExecute));
+				return _signInCommand ?? (_signInCommand = new MvxAsyncCommand(SignInExecute));
 			}
 		}
 
@@ -38,7 +40,7 @@ namespace AppRopio.Base.Auth.Core.ViewModels.SignIn
 		{
 			get
 			{
-				return _skipCommand ?? (_skipCommand = new MvxCommand(SkipExecute));
+				return _skipCommand ?? (_skipCommand = new MvxAsyncCommand(SkipExecute));
 			}
 		}
 
@@ -95,7 +97,7 @@ namespace AppRopio.Base.Auth.Core.ViewModels.SignIn
 		#region Services
 
 		private ISignInVmService _signInService;
-		protected ISignInVmService SignInService { get { return _signInService ?? (_signInService = Mvx.Resolve<ISignInVmService>()); } }
+		protected ISignInVmService SignInService { get { return _signInService ?? (_signInService = Mvx.IoCProvider.Resolve<ISignInVmService>()); } }
 
 		#endregion
 
@@ -125,19 +127,19 @@ namespace AppRopio.Base.Auth.Core.ViewModels.SignIn
 							  );
 		}
 
-		protected async virtual void SignInExecute()
+		protected async virtual Task SignInExecute()
 		{
 			Loading = true;
 
 			if (await SignInService.SignIn(Identity, Password, OnUnbindCTS))
-				InvokeOnMainThread(() => ChangePresentation(new NavigateToDefaultViewModelHint()));
+				InvokeOnMainThread(() => NavigationVmService.ChangePresentation(new NavigateToDefaultViewModelHint()));
 
 			Loading = false;
 		}
 
-		protected virtual void SkipExecute()
+		protected virtual async Task SkipExecute()
 		{
-			Close(this);
+			await NavigationVmService.Close(this);
 		}
 
 		protected virtual void OnRecoveryPassExecute()

@@ -38,7 +38,7 @@
                                 <constraint firstAttribute="height" constant="1" id="7xo-db-4H6"/>
                             </constraints>
                         </view>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SRX-ep-0K6">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SRX-ep-0K6" customClass="MvxCachedImageView">
                             <rect key="frame" x="16" y="7.5" width="56" height="56"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="56" id="peA-9T-bhI"/>

@@ -1,7 +1,7 @@
 ﻿{
     "categoriesType": 3,
     "productCardNavigationType": 1,
-    "searchType": 1,
+    "searchType": 2,
     "priceType" : 3,
     "basket": {
         "addToCart": {

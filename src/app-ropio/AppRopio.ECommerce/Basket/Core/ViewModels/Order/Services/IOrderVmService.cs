@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Payment.Items;
 using OrderModel = AppRopio.Models.Basket.Responses.Order.Order;
 using AppRopio.Models.Basket.Responses.Order;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items;
 using System.Collections.Generic;
 

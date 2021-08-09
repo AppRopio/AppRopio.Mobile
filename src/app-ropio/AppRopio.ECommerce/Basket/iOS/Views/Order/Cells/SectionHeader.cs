@@ -3,14 +3,14 @@ using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.UIExtentions;
 using AppRopio.ECommerce.Basket.iOS.Services;
 using Foundation;
-using MvvmCross.Platform;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Cells
 {
     public partial class SectionHeader : UITableViewHeaderFooterView
     {
-        protected iOS.Models.Order ThemeConfig => Mvx.Resolve<IBasketThemeConfigService>().ThemeConfig.Order;
+        protected iOS.Models.Order ThemeConfig => Mvx.IoCProvider.Resolve<IBasketThemeConfigService>().ThemeConfig.Order;
         
         public static readonly NSString Key = new NSString("SectionHeader");
         public static readonly UINib Nib = UINib.FromName("SectionHeader", NSBundle.MainBundle);

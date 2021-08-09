@@ -7,6 +7,8 @@ namespace AppRopio.ECommerce.Products.Droid.Views.Categories.Disabled
     {
         private CollectionType _collectionType;
 
+        public int ItemTemplateId { get; set; }
+
         public DCatalogTemplateSelector(CollectionType collectionType)
         {
             _collectionType = collectionType;

@@ -3,8 +3,8 @@ using AppRopio.Base.iOS;
 using AppRopio.ECommerce.Basket.iOS.Services;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding.Views;
+using MvvmCross;
 using UIKit;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items;
 
@@ -12,7 +12,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Cells
 {
     public partial class OrderFieldAutocompleteCell : MvxTableViewCell
     {
-        protected Models.AutocompleteCell CellTheme { get { return Mvx.Resolve<IBasketThemeConfigService>().ThemeConfig.Order.AutocompleteCell; } }
+        protected Models.AutocompleteCell CellTheme { get { return Mvx.IoCProvider.Resolve<IBasketThemeConfigService>().ThemeConfig.Order.AutocompleteCell; } }
 
         public static readonly NSString Key = new NSString("OrderFieldAutocompleteCell");
         public static readonly UINib Nib = UINib.FromName("OrderFieldAutocompleteCell", NSBundle.MainBundle);

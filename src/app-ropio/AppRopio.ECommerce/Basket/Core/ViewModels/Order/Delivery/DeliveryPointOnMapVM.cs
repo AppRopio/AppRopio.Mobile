@@ -1,9 +1,11 @@
-﻿using System.Windows.Input;
+﻿using System.Threading.Tasks;
+using System.Windows.Input;
 using AppRopio.Base.Core.Extentions;
 using AppRopio.Base.Core.ViewModels;
 using AppRopio.ECommerce.Basket.Core.Models.Bundle;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery.Items;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.Commands;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery
 {
@@ -20,7 +22,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery
         {
             get
             {
-                return _closeCommand ?? (_closeCommand = new MvxCommand(() => Close(this)));
+                return _closeCommand ?? (_closeCommand = new MvxAsyncCommand(OnCloseExecute));
             }
         }
 
@@ -74,6 +76,11 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery
         {
             Item = new DeliveryPointItemVM(deliveryPointBundle);
             VmNavigationType = deliveryPointBundle.NavigationType;
+        }
+
+        protected virtual async Task OnCloseExecute()
+        {
+            await NavigationVmService.Close(this);
         }
 
         #endregion

@@ -1,9 +1,9 @@
 ﻿using AppRopio.Base.Auth.Core.Messages.Registration;
 using AppRopio.Base.Auth.Core.Models.Registration;
 using AppRopio.Models.Auth.Enums;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross.ViewModels;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 using AppRopio.Base.Core.Services.Localization;
 using System;
 
@@ -77,7 +77,7 @@ namespace AppRopio.Base.Auth.Core.ViewModels.SignUp.Items
 			{
 				_value = value;
 				RaisePropertyChanged(() => Value);
-				Mvx.Resolve<IMvxMessenger>().Publish(new RegistrationItemTextChangedMessage(this));
+				Mvx.IoCProvider.Resolve<IMvxMessenger>().Publish(new RegistrationItemTextChangedMessage(this));
 				if (Invalid)
 					Invalid = false;
 			}
@@ -113,7 +113,7 @@ namespace AppRopio.Base.Auth.Core.ViewModels.SignUp.Items
 		{
 			RegistrationField = field;
             Type = field.Type;
-            Placeholder = Mvx.Resolve<ILocalizationService>().GetLocalizableString(AuthConst.RESX_NAME, $"{field.Type.ToString().ToFirstCharLowercase()}{field.Id}_placeholder");
+            Placeholder = Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString(AuthConst.RESX_NAME, $"{field.Type.ToString().ToFirstCharLowercase()}{field.Id}_placeholder");
 		}
 
 		#endregion

@@ -1,6 +1,6 @@
 ﻿using System.Net.Http;
 using AppRopio.Base.Core.ViewModels;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.Commands;
 
 namespace AppRopio.Payments.YandexKassa.Core.ViewModels.YandexKassa
 {

@@ -7,8 +7,8 @@ using AppRopio.Feedback.iOS.Services;
 using CoreGraphics;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding.Views;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.Feedback.iOS.Views.ReviewPost.Cell.TotalScore
@@ -20,7 +20,7 @@ namespace AppRopio.Feedback.iOS.Views.ReviewPost.Cell.TotalScore
 
         private UIView _activeView;
 
-        protected FeedbackThemeConfig ThemeConfig { get { return Mvx.Resolve<IFeedbackThemeConfigService>().ThemeConfig; } }
+        protected FeedbackThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IFeedbackThemeConfigService>().ThemeConfig; } }
 
         static TotalScoreCell()
         {

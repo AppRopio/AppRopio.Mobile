@@ -4,14 +4,14 @@ using System.Threading.Tasks;
 using AppRopio.Base.API.Services;
 using AppRopio.Models.Information.Enums;
 using AppRopio.Models.Information.Responses;
-using MvvmCross.Platform;
+using MvvmCross;
 using Newtonsoft.Json;
 
 namespace AppRopio.Base.Information.API.Services.Fakes
 {
     public class FakeInformationService : IInformationService
     {
-        public bool IsRussianCulture => Mvx.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
+        public bool IsRussianCulture => Mvx.IoCProvider.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
 
         private Dictionary<string, ArticleInfo> _fullArticles = new Dictionary<string, ArticleInfo>()
         {

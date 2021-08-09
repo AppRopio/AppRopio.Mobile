@@ -3,7 +3,7 @@ using Android.Gms.Analytics;
 using AppRopio.Analytics.GoogleAnalytics.Core.Services;
 using Android.App;
 using Android.Gms.Analytics.Ecommerce;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Analytics.GoogleAnalytics.Droid.Services
 {
@@ -19,7 +19,7 @@ namespace AppRopio.Analytics.GoogleAnalytics.Droid.Services
 #endif
             gaInstance.SetLocalDispatchPeriod(5);
 
-            Tracker = gaInstance.NewTracker(Mvx.Resolve<IGAConfigService>().Config.AppId);
+            Tracker = gaInstance.NewTracker(Mvx.IoCProvider.Resolve<IGAConfigService>().Config.AppId);
             Tracker.EnableExceptionReporting(true);
             Tracker.EnableAdvertisingIdCollection(false);
             Tracker.EnableAutoActivityTracking(false);

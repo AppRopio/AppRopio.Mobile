@@ -7,8 +7,8 @@ using AppRopio.ECommerce.Products.iOS.Models;
 using AppRopio.ECommerce.Products.iOS.Services;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding.Views;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.Selection.MultiSelection.Cells
@@ -18,7 +18,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.Selection.Mult
         public const float HORIZONTAL_MARGINS = 30;
         public const float LABEL_HEIGHT = 20;
 
-        protected ProductsThemeConfig ThemeConfig { get { return Mvx.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
+        protected ProductsThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
 
         public static readonly NSString Key = new NSString("PDMultiSelectionTextCell");
         public static readonly UINib Nib;

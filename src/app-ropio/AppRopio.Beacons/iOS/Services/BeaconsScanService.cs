@@ -1,18 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using AppRopio.Base.Core.Services.Device;
 using AppRopio.Beacons.Core.Services;
+using AppRopio.Beacons.Core.Services.Implementation;
 using AppRopio.Beacons.iOS.Models;
+using AppRopio.Beacons.iOS.Util;
 using CoreBluetooth;
 using CoreFoundation;
 using CoreLocation;
 using Foundation;
-using AppRopio.Beacons.Core.Services.Implementation;
-using MvvmCross.Platform.Platform;
-using AppRopio.Beacons.iOS.Util;
+using MvvmCross;
+using MvvmCross.Logging;
 using Newtonsoft.Json;
-using MvvmCross.Platform;
-using AppRopio.Base.Core.Services.Device;
 
 namespace AppRopio.Beacons.iOS.Services
 {
@@ -42,7 +41,7 @@ namespace AppRopio.Beacons.iOS.Services
 
         public BeaconsScanService()
         {
-            BEACONS_REGION_HEADER = $"beacons_{Mvx.Resolve<IDeviceService>().PackageName}";
+            BEACONS_REGION_HEADER = $"beacons_{Mvx.IoCProvider.Resolve<IDeviceService>().PackageName}";
 
             beacon_operations_queue = new DispatchQueue("beacon_operations_queue");
 
@@ -90,7 +89,7 @@ namespace AppRopio.Beacons.iOS.Services
                 _locationMgr.StartMonitoring(clBeaconRegion);
                 _locationMgr.StartRangingBeacons(clBeaconRegion);
 
-                MvxTrace.TaggedTrace(MvxTraceLevel.Diagnostic, "Beacons", "Start monitoring " + JsonConvert.SerializeObject(ibeacon));
+                Mvx.IoCProvider.Resolve<IMvxLog>().Info("Beacons: Start monitoring " + JsonConvert.SerializeObject(ibeacon));
             }
         }
 
@@ -116,20 +115,20 @@ namespace AppRopio.Beacons.iOS.Services
 
         private void HandleDidDetermineState(object sender, CLRegionStateDeterminedEventArgs e)
         {
-            MvxTrace.TaggedTrace(MvxTraceLevel.Diagnostic, "Beacons", "HandleDidDetermineState");
+            Mvx.IoCProvider.Resolve<IMvxLog>().Info("Beacons: HandleDidDetermineState");
             if (e.State == CLRegionState.Inside)
             {
                 if (!_regionsCache.ContainsKey(e.Region.Identifier))
                     _regionsCache.Add(e.Region.Identifier, false);
 
-                MvxTrace.TaggedTrace(MvxTraceLevel.Diagnostic, "Beacons", $"Inside region {e.Region.Identifier}");
+                Mvx.IoCProvider.Resolve<IMvxLog>().Info($"Beacons: Inside region {e.Region.Identifier}");
             }
             else if (e.State == CLRegionState.Outside)
             {
                 if (_regionsCache.ContainsKey(e.Region.Identifier))
                     _regionsCache.Remove(e.Region.Identifier);
 
-                MvxTrace.TaggedTrace(MvxTraceLevel.Diagnostic, "Beacons", $"Outside region {e.Region.Identifier}");
+                Mvx.IoCProvider.Resolve<IMvxLog>().Info($"Beacons: Outside region {e.Region.Identifier}");
             }
         }
 
@@ -137,7 +136,7 @@ namespace AppRopio.Beacons.iOS.Services
         {
             if (_regionsCache.ContainsKey(e.Region.Identifier) && !_regionsCache[e.Region.Identifier])
             {
-                MvxTrace.TaggedTrace(MvxTraceLevel.Diagnostic, "Beacons", $"Did range region {e.Region.Identifier}");
+                Mvx.IoCProvider.Resolve<IMvxLog>().Info($"Beacons: Did range region {e.Region.Identifier}");
 
                 _regionsCache[e.Region.Identifier] = true;
 
@@ -154,7 +153,7 @@ namespace AppRopio.Beacons.iOS.Services
 
         private async Task SendBeaconChangeProximity(string uuid, int major, int minor)
         {
-            MvxTrace.TaggedTrace(MvxTraceLevel.Diagnostic, "Beacons", $"Founded Beacon {uuid}:{major}:{minor}");
+            Mvx.IoCProvider.Resolve<IMvxLog>().Info($"Beacons: Founded Beacon {uuid}:{major}:{minor}");
             await BeaconsService.Instance.ActivateiBeacon(uuid, major, minor);
         }
 
@@ -256,7 +255,7 @@ namespace AppRopio.Beacons.iOS.Services
                 }
                 else
                 {
-                    MvxTrace.TaggedTrace(MvxTraceLevel.Diagnostic, "Beacons", "Unable to find service data; can't process Eddystone");
+                    Mvx.IoCProvider.Resolve<IMvxLog>().Info("Beacons: Unable to find service data; can't process Eddystone");
                 }
             }
             else
@@ -272,11 +271,11 @@ namespace AppRopio.Beacons.iOS.Services
             if (_centralManager.State != CBCentralManagerState.PoweredOn)
             {
                 _shouldBeScanning = true;
-                MvxTrace.TaggedTrace(MvxTraceLevel.Diagnostic, "Beacons", $"CentralManager state is {_centralManager.State}, cannot start scan");
+                Mvx.IoCProvider.Resolve<IMvxLog>().Info($"Beacons: CentralManager state is {_centralManager.State}, cannot start scan");
             }
             else
             {
-                MvxTrace.TaggedTrace(MvxTraceLevel.Diagnostic, "Beacons", "Starting to scan for Eddystones");
+                Mvx.IoCProvider.Resolve<IMvxLog>().Info("Beacons: Starting to scan for Eddystones");
 
                 var peripheralUuids = new List<CBUUID>();
                 peripheralUuids.Add(CBUUID.FromString("FEAA")); //eddystone service id

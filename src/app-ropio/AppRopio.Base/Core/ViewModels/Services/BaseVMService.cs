@@ -2,17 +2,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using AppRopio.Base.API.Exceptions;
+using AppRopio.Base.Core.Messages.Localization;
 using AppRopio.Base.Core.Services.Analytics;
 using AppRopio.Base.Core.Services.UserDialogs;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Platform;
-using MvvmCross.Plugins.Messenger;
-using AppRopio.Base.Core.Messages.Localization;
+using MvvmCross;
+using MvvmCross.Logging;
+using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.Base.Core.ViewModels.Services
 {
-    public class BaseVmService : MvxNavigatingObject, IDisposable
+	public class BaseVmService : IDisposable
     {
         #region Fields
 
@@ -30,9 +29,9 @@ namespace AppRopio.Base.Core.ViewModels.Services
 
         #region Services
 
-        protected IUserDialogs UserDialogs => Mvx.Resolve<IUserDialogs>();
+        protected IUserDialogs UserDialogs => Mvx.IoCProvider.Resolve<IUserDialogs>();
 
-        protected IAnalyticsNotifyingService AnalyticsNotifyingService => Mvx.Resolve<IAnalyticsNotifyingService>();
+        protected IAnalyticsNotifyingService AnalyticsNotifyingService => Mvx.IoCProvider.Resolve<IAnalyticsNotifyingService>();
 
         #endregion
 
@@ -45,9 +44,9 @@ namespace AppRopio.Base.Core.ViewModels.Services
 
             CachedObjects = new Dictionary<string, IEnumerable>();
 
-            Mvx.CallbackWhenRegistered<IMvxMessenger>(service =>
+            Mvx.IoCProvider.CallbackWhenRegistered<IMvxMessenger>(() =>
             {
-                _languageToken = service.Subscribe<LanguageChangedMessage>(OnLanguageChanged);
+                _languageToken = Mvx.IoCProvider.Resolve<IMvxMessenger>().Subscribe<LanguageChangedMessage>(OnLanguageChanged);
             });
         }
 
@@ -71,7 +70,7 @@ namespace AppRopio.Base.Core.ViewModels.Services
                 UserDialogs.Error(message);
 
             if (ex != null)
-                MvxTrace.TaggedTrace(MvxTraceLevel.Error, this.GetType().FullName, ex?.BuildAllMessagesAndStackTrace() ?? string.Empty);
+                Mvx.IoCProvider.Resolve<IMvxLog>().Error($"{this.GetType().FullName}: {ex?.BuildAllMessagesAndStackTrace() ?? string.Empty}");
             if (ex != null || message != null)
                 AnalyticsNotifyingService.NotifyExceptionHandled(message ?? string.Empty, ex?.BuildAllMessagesAndStackTrace() ?? string.Empty, false);
         }
@@ -89,10 +88,10 @@ namespace AppRopio.Base.Core.ViewModels.Services
                 await UserDialogs.Error(contentAsString ?? requestResult.Exception?.Message);
             }
 
-            MvxTrace.TaggedTrace(MvxTraceLevel.Warning, this.GetType().FullName, Newtonsoft.Json.JsonConvert.SerializeObject(requestResult, Newtonsoft.Json.Formatting.Indented));
+            Mvx.IoCProvider.Resolve<IMvxLog>().Warn($"{this.GetType().FullName}: {Newtonsoft.Json.JsonConvert.SerializeObject(requestResult, Newtonsoft.Json.Formatting.Indented)}");
 
             if (ex != null)
-                MvxTrace.TaggedTrace(MvxTraceLevel.Warning, this.GetType().FullName, ex.BuildAllMessagesAndStackTrace());
+                Mvx.IoCProvider.Resolve<IMvxLog>().Warn($"{this.GetType().FullName}: {ex.BuildAllMessagesAndStackTrace()}");
         }
 
         protected virtual void Dispose(bool disposing)

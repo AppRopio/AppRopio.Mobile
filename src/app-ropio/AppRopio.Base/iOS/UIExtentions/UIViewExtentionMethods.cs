@@ -48,19 +48,6 @@ namespace AppRopio.Base.iOS.UIExtentions
             return self;
         }
 
-        public static UIView FindFirstResponder(this UIView view)
-        {
-            if (view.IsFirstResponder)
-                return view;
-            foreach (UIView subView in view.Subviews)
-            {
-                var firstResponder = subView.FindFirstResponder();
-                if (firstResponder != null)
-                    return firstResponder;
-            }
-            return null;
-        }
-
         public static CGPoint GetAbsolutePositionIn(this UIView subview, UIView view)
         {
             if (subview == null)

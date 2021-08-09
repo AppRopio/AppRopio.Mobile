@@ -6,8 +6,8 @@ using AppRopio.ECommerce.Products.iOS.Models;
 using AppRopio.ECommerce.Products.iOS.Services;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding.Views;
+using MvvmCross;
 using UIKit;
 using AppRopio.Base.Core.ViewModels.Selection.Items;
 
@@ -15,7 +15,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Selection.Cells
 {
     public partial class PDSelectionCell : MvxTableViewCell
     {
-        protected ProductsThemeConfig ThemeConfig { get { return Mvx.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
+        protected ProductsThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
 
         public static readonly NSString Key = new NSString("SelectionCell");
         public static readonly UINib Nib;

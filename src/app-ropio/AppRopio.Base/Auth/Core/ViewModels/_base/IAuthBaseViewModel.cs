@@ -1,5 +1,5 @@
 ﻿using System;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 namespace AppRopio.Base.Auth.Core.ViewModels._base
 {
 	public interface IAuthBaseViewModel : IMvxViewModel

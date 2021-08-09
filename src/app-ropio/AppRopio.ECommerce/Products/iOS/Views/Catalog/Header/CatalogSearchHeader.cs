@@ -1,15 +1,15 @@
-using System;
+﻿using System;
 using AppRopio.Base.iOS;
 using AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Header;
 using AppRopio.ECommerce.Products.iOS.Models;
 using AppRopio.ECommerce.Products.iOS.Services;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Core.Views;
-using MvvmCross.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding.Views;
+using MvvmCross.ViewModels;
+using MvvmCross.Views;
+using MvvmCross.Platforms.Ios.Views;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Header
@@ -24,7 +24,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Header
 
         #region Properties
 
-        protected ProductsThemeConfig ThemeConfig { get { return Mvx.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
+        protected ProductsThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
 
         public static readonly string ReuseIdentifierString = "CATALOG_SEARCH_HEADER";
 

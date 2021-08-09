@@ -1,10 +1,9 @@
-﻿using System;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Droid.Views;
+﻿using MvvmCross.Platforms.Android.Presenters;
+using MvvmCross.Platforms.Android.Views;
 
 namespace AppRopio.Base.Droid.Navigation
 {
-    public interface ICommonAndroidViewPresenter : IMvxAndroidViewPresenter, IMvxMultipleViewModelCache
+	public interface ICommonAndroidViewPresenter : IMvxAndroidViewPresenter, IMvxMultipleViewModelCache
     {
         bool CanPop();
 

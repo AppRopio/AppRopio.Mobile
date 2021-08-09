@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.Images
 {

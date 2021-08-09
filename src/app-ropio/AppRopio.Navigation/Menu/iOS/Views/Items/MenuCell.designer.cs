@@ -19,7 +19,7 @@ namespace AppRopio.Navigation.Menu.iOS.Views
 		UIKit.UIView _badgeView { get; set; }
 
 		[Outlet]
-		UIKit.UIImageView _icon { get; set; }
+		FFImageLoading.Cross.MvxCachedImageView _icon { get; set; }
 
 		[Outlet]
 		UIKit.NSLayoutConstraint _stackViewLeftConstraint { get; set; }

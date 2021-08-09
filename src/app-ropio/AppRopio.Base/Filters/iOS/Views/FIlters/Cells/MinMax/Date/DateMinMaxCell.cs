@@ -9,7 +9,7 @@ using AppRopio.Base.iOS.UIExtentions;
 using CoreGraphics;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platform;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.Base.Filters.iOS.Views.Filters.Cells.MinMax.Date
@@ -135,7 +135,7 @@ namespace AppRopio.Base.Filters.iOS.Views.Filters.Cells.MinMax.Date
                     .WithTune(tune =>
                     {
                         tune.SetupStyle(ThemeConfig.Filters.FiltersCell.MinMax.DoneButton);
-                        tune.SetTitle(Mvx.Resolve<ILocalizationService>().GetLocalizableString("Base", "Done"), UIControlState.Normal);
+                        tune.SetTitle(Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString("Base", "Done"), UIControlState.Normal);
                         tune.TouchUpInside += (sender, e) => textField.EndEditing(true);
                     }),
                     new UIView().WithFrame(0, 0, DeviceInfo.ScreenWidth, 1).WithBackground(Theme.ColorPalette.Separator.ToUIColor()),

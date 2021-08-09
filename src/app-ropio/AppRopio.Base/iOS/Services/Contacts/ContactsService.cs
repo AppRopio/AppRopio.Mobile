@@ -9,17 +9,16 @@ using AppRopio.Base.Core.Services.Permissions;
 using Contacts;
 using ContactsUI;
 using Foundation;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Core;
-using Plugin.Permissions.Abstractions;
+using MvvmCross;
+using MvvmCross.Base;
 using UIKit;
 
 namespace AppRopio.Base.iOS.Services.Contacts
 {
     public class ContactsService : IContactsService
     {
-        private readonly string _permissionMessage = Mvx.Resolve<ILocalizationService>().GetLocalizableString("Base", "Permissions_Contacts_AccessDenied");
-        protected IPermissionsService PermissionsService => Mvx.Resolve<IPermissionsService>();
+        private readonly string _permissionMessage = Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString("Base", "Permissions_Contacts_AccessDenied");
+        protected IPermissionsService PermissionsService => Mvx.IoCProvider.Resolve<IPermissionsService>();
 
         protected UIViewController GetPresentedViewController()
         {
@@ -44,7 +43,7 @@ namespace AppRopio.Base.iOS.Services.Contacts
 
             Task.Run(async () =>
             {
-                var hasPermission = await PermissionsService.CheckPermission(Permission.Contacts, true, _permissionMessage);
+                var hasPermission = await PermissionsService.CheckPermission(new Xamarin.Essentials.Permissions.ContactsRead(), true, _permissionMessage);
                 if (!hasPermission)
                 {
                     tcs.TrySetCanceled();
@@ -70,7 +69,7 @@ namespace AppRopio.Base.iOS.Services.Contacts
                     });
                 };
 
-                Mvx.Resolve<IMvxMainThreadDispatcher>().RequestMainThreadAction(() =>
+                Mvx.IoCProvider.Resolve<IMvxMainThreadAsyncDispatcher>().ExecuteOnMainThreadAsync(() =>
                 {
                     GetPresentedViewController().PresentViewController(picker, true, null);
                 });
@@ -85,10 +84,10 @@ namespace AppRopio.Base.iOS.Services.Contacts
 
             Task.Run(async () =>
             {
-                var hasPermission = await PermissionsService.CheckPermission(Permission.Contacts, true, _permissionMessage);
+                var hasPermission = await PermissionsService.CheckPermission(new Xamarin.Essentials.Permissions.ContactsRead(), true, _permissionMessage);
                 if (!hasPermission)
                 {
-                    tcs.TrySetCanceled();
+                    tcs.TrySetResult(null);
                     return;
                 }
 
@@ -114,7 +113,7 @@ namespace AppRopio.Base.iOS.Services.Contacts
                     tcs.TrySetResult((phone == null) ? null : new Phone { FullValue = phone });
                 };
 
-                Mvx.Resolve<IMvxMainThreadDispatcher>().RequestMainThreadAction(() =>
+                Mvx.IoCProvider.Resolve<IMvxMainThreadAsyncDispatcher>().ExecuteOnMainThreadAsync(() =>
                 {
                     GetPresentedViewController().PresentViewController(picker, true, null);
                 });
@@ -129,7 +128,7 @@ namespace AppRopio.Base.iOS.Services.Contacts
 
             Task.Run(async () =>
             {
-                var hasPermission = await PermissionsService.CheckPermission(Permission.Contacts, true, _permissionMessage);
+                var hasPermission = await PermissionsService.CheckPermission(new Xamarin.Essentials.Permissions.ContactsRead(), true, _permissionMessage);
                 if (!hasPermission)
                 {
                     tcs.TrySetCanceled();
@@ -158,7 +157,7 @@ namespace AppRopio.Base.iOS.Services.Contacts
                     tcs.TrySetResult((email == null) ? null : new Email { FullValue = email });
                 };
 
-                Mvx.Resolve<IMvxMainThreadDispatcher>().RequestMainThreadAction(() =>
+                Mvx.IoCProvider.Resolve<IMvxMainThreadAsyncDispatcher>().ExecuteOnMainThreadAsync(() =>
                 {
                     GetPresentedViewController().PresentViewController(picker, true, null);
                 });

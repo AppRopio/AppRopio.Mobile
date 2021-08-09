@@ -14,8 +14,8 @@
 //    limitations under the License.
 using System;
 using AppRopio.Base.Core.Services.Localization;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Converters;
+using MvvmCross;
+using MvvmCross.Converters;
 
 namespace AppRopio.Base.Droid.Converters
 {
@@ -24,9 +24,9 @@ namespace AppRopio.Base.Droid.Converters
         protected override string Convert(string value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             return parameter == null ?
-                Mvx.Resolve<ILocalizationService>().GetLocalizableString(null, value)
+                Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString(null, value)
                        :
-                Mvx.Resolve<ILocalizationService>().GetLocalizableString(parameter as string, value);
+                Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString(parameter as string, value);
         }
     }
 }

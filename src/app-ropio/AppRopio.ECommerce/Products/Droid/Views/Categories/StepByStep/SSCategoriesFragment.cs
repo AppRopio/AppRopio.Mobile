@@ -10,7 +10,7 @@ using AppRopio.Base.Droid.Controls;
 using AppRopio.ECommerce.Products.Core.Models;
 using AppRopio.ECommerce.Products.Core.ViewModels.Categories;
 using AppRopio.ECommerce.Products.Core.ViewModels.Categories.Items;
-using MvvmCross.Binding.Droid.BindingContext;
+using MvvmCross.Platforms.Android.Binding.BindingContext;
 using MvvmCross.Droid.Support.V7.RecyclerView;
 
 namespace AppRopio.ECommerce.Products.Droid.Views.Categories.StepByStep

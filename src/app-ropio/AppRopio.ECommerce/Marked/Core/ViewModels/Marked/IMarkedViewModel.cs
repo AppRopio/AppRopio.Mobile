@@ -1,5 +1,5 @@
 ﻿using AppRopio.ECommerce.Products.Core.ViewModels.Catalog;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Marked.Core.ViewModels.Marked
 {

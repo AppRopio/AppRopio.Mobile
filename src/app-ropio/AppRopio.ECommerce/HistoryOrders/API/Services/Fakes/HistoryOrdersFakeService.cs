@@ -4,13 +4,13 @@ using AppRopio.Base.API.Services;
 using AppRopio.Models.Base.Responses;
 using AppRopio.Models.HistoryOrders.Responses;
 using AppRopio.Models.Payments.Responses;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.HistoryOrders.API.Services.Fakes
 {
     public class HistoryOrdersFakeService : IHistoryOrdersService
     {
-        public bool IsRussianCulture => Mvx.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
+        public bool IsRussianCulture => Mvx.IoCProvider.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
 
         public async Task<List<HistoryOrder>> GetOrders(int count, int offset = 0)
         {

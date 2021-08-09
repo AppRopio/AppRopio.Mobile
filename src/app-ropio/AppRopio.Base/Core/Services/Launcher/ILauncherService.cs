@@ -5,11 +5,11 @@ namespace AppRopio.Base.Core.Services.Launcher
 {
     public interface ILauncherService
     {
-        Task LaunchPhone(string phoneNumber);
+        Task<bool> LaunchPhone(string phoneNumber);
 
-        Task LaunchUri(string uri);
+        Task<bool> LaunchUri(string uri);
 
-        Task LaunchEmail(string email);
+        Task<bool> LaunchEmail(string email);
 
         Task LaunchAddress(string address);
     }

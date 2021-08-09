@@ -11,8 +11,8 @@ using AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrderProducts.Item
 using AppRopio.ECommerce.Products.Core.Models.Bundle;
 using AppRopio.ECommerce.Products.Core.Services;
 using AppRopio.Models.HistoryOrders.Responses;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrders.Services
 {
@@ -20,7 +20,7 @@ namespace AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrders.Service
     {
 		#region Services
 
-		protected IHistoryOrdersService ApiService { get { return Mvx.Resolve<IHistoryOrdersService>(); } }
+		protected IHistoryOrdersService ApiService { get { return Mvx.IoCProvider.Resolve<IHistoryOrdersService>(); } }
 
 		#endregion
 		
@@ -89,7 +89,7 @@ namespace AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrders.Service
 
 		public void NavigateToProducts(string orderId)
 		{
-			var ordersHistoryNavigationVmService = Mvx.Resolve<IHistoryOrdersNavigationVmService>();
+			var ordersHistoryNavigationVmService = Mvx.IoCProvider.Resolve<IHistoryOrdersNavigationVmService>();
 			var orderBundle = new HistoryOrderBundle(orderId, NavigationType.Push);
             ordersHistoryNavigationVmService.NavigateToOrderProducts(orderBundle);
 		}
@@ -99,7 +99,7 @@ namespace AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrders.Service
             if (!product.IsAvailable)
                 return;
             
-			var productsNavigationVmService = Mvx.Resolve<IProductsNavigationVmService>();
+			var productsNavigationVmService = Mvx.IoCProvider.Resolve<IProductsNavigationVmService>();
             var productBundle = new ProductCardBundle(product.GroupId, product.ProductId, NavigationType.Push);
             productsNavigationVmService.NavigateToProduct(productBundle);
 		}

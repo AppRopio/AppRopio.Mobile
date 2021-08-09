@@ -2,17 +2,22 @@
 using System.Collections.Specialized;
 using System.Windows.Input;
 using Android.App;
+using Android.Runtime;
+using Android.Support.Design.Widget;
+using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Core.Navigation;
-using MvvmCross.Core.ViewModels;
 using MvvmCross.Droid.Support.V7.AppCompat.EventSource;
+using MvvmCross.Droid.Support.V7.RecyclerView;
+using MvvmCross.Navigation;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.Test.Droid
 {
     // This class is never actually executed, but when Xamarin linking is enabled it does how to ensure types and properties
     // are preserved in the deployed app
+    [Preserve(AllMembers = true)]
     public class LinkerPleaseInclude
     {
         public void Include(Button button)
@@ -33,6 +38,11 @@ namespace AppRopio.Test.Droid
         public void Include(View view)
         {
             view.Click += (s, e) => view.ContentDescription = view.ContentDescription + "";
+        }
+
+        public void Include(TextInputLayout layout)
+        {
+            layout.Hint = "" + layout.Hint;
         }
 
         public void Include(TextView text)
@@ -86,9 +96,9 @@ namespace AppRopio.Test.Droid
             command.CanExecuteChanged += (s, e) => { if (command.CanExecute(null)) command.Execute(null); };
         }
 
-        public void Include(MvvmCross.Platform.IoC.MvxPropertyInjector injector)
+        public void Include(MvvmCross.IoC.MvxPropertyInjector injector)
         {
-            injector = new MvvmCross.Platform.IoC.MvxPropertyInjector();
+            injector = new MvvmCross.IoC.MvxPropertyInjector();
         }
         public void Include(System.ComponentModel.INotifyPropertyChanged changed)
         {
@@ -107,6 +117,14 @@ namespace AppRopio.Test.Droid
         public void Include(MvxNavigationService service, IMvxViewModelLoader loader)
         {
             service = new MvxNavigationService(null, loader);
+        }
+
+        public void Include(RecyclerView.ViewHolder vh, MvxRecyclerView list)
+        {
+            vh.ItemView.Click += (sender, args) => { };
+            vh.ItemView.LongClick += (sender, args) => { };
+            list.ItemsSource = null;
+            list.Click += (sender, args) => { };
         }
 
         public void Include(ConsoleColor color)

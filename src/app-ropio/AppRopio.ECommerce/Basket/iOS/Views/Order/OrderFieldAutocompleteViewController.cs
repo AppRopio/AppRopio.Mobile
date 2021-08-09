@@ -2,10 +2,10 @@
 using AppRopio.Base.iOS.Views;
 using UIKit;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order;
-using MvvmCross.Platform;
+using MvvmCross;
 using AppRopio.ECommerce.Basket.iOS.Services;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using AppRopio.Base.iOS;
 using AppRopio.ECommerce.Basket.iOS.Views.Order.Cells;
 using AppRopio.Models.Basket.Responses.Enums;
@@ -19,8 +19,8 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order
 {
     public partial class OrderFieldAutocompleteViewController : CommonViewController<IOrderFieldAutocompleteVM>
     {
-        protected Models.OrderFieldCell FieldTheme { get { return Mvx.Resolve<IBasketThemeConfigService>().ThemeConfig.Order.BaseOrderFieldCell; } }
-        protected Models.AutocompleteCell CellTheme { get { return Mvx.Resolve<IBasketThemeConfigService>().ThemeConfig.Order.AutocompleteCell; } }
+        protected Models.OrderFieldCell FieldTheme { get { return Mvx.IoCProvider.Resolve<IBasketThemeConfigService>().ThemeConfig.Order.BaseOrderFieldCell; } }
+        protected Models.AutocompleteCell CellTheme { get { return Mvx.IoCProvider.Resolve<IBasketThemeConfigService>().ThemeConfig.Order.AutocompleteCell; } }
 
         private PhoneFormatter _phoneFormatter;
 

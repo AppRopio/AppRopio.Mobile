@@ -4,20 +4,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MvvmCross" Version="5.7.0"  />
-    <PackageReference Include="MvvmCross.Binding" Version="5.7.0"  />
-    <PackageReference Include="MvvmCross.Core" Version="5.7.0"  />
-    <PackageReference Include="MvvmCross.Platform" Version="5.7.0"  />
-    <PackageReference Include="MvvmCross.Plugin.Messenger" Version="5.7.0"  />
-    <PackageReference Include="MvvmCross.Plugin.Share" Version="5.7.0"  />
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2"  />
-    <PackageReference Include="Xam.Plugins.Settings" Version="3.1.1"  />
+    <PackageReference Include="MvvmCross" Version="6.4.2" />
+    <PackageReference Include="MvvmCross.Plugin.Messenger" Version="6.4.2" />
+    <PackageReference Include="MvvmCross.Plugin.Share" Version="6.4.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.4.0" />
   </ItemGroup>
     
   <ItemGroup>
-    <ProjectReference Include="..\API\AppRopio.Base.Auth.API.csproj"/>
-    <ProjectReference Include="..\..\Core\AppRopio.Base.Core.csproj"/>
-    <ProjectReference Include="..\..\API\AppRopio.Base.API.csproj"/>
-    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Auth\AppRopio.Models.Auth.csproj"/>
+    <ProjectReference Include="..\API\AppRopio.Base.Auth.API.csproj" />
+    <ProjectReference Include="..\..\Core\AppRopio.Base.Core.csproj" />
+    <ProjectReference Include="..\..\API\AppRopio.Base.API.csproj" />
+    <ProjectReference Include="..\..\..\..\appropio.models\src\AppRopio.Models.Auth\AppRopio.Models.Auth.csproj" />
   </ItemGroup>
 </Project>

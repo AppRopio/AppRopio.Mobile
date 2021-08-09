@@ -7,6 +7,8 @@ namespace AppRopio.ECommerce.Products.Droid.Views.Catalog
     {
         private CollectionType _collectionType;
 
+        public int ItemTemplateId { get; set; }
+
         public CatalogTemplateSelector(CollectionType collectionType)
         {
             _collectionType = collectionType;

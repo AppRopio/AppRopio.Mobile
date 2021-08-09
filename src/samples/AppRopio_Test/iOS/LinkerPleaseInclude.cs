@@ -3,16 +3,16 @@ using System.Collections.Specialized;
 using System.Windows.Input;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.iOS.Views;
-using MvvmCross.Platform.WeakSubscription;
+using MvvmCross.Platforms.Ios.Views;
+using MvvmCross.ViewModels;
+using MvvmCross.WeakSubscription;
 using UIKit;
 
 namespace AppRopio.Test.iOS
 {
-    // This class is never actually executed, but when Xamarin linking is enabled it does how to ensure types and properties
-    // are preserved in the deployed app
-    [Foundation.Preserve(AllMembers = true)]
+	// This class is never actually executed, but when Xamarin linking is enabled it does how to ensure types and properties
+	// are preserved in the deployed app
+	[Foundation.Preserve(AllMembers = true)]
     public class LinkerPleaseInclude
     {
         public void Include(ConsoleColor color)
@@ -142,9 +142,9 @@ namespace AppRopio.Test.iOS
             command.CanExecuteChanged += (s, e) => { if (command.CanExecute(null)) command.Execute(null); };
         }
 
-        public void Include(MvvmCross.Platform.IoC.MvxPropertyInjector injector)
+        public void Include(MvvmCross.IoC.MvxPropertyInjector injector)
         {
-            injector = new MvvmCross.Platform.IoC.MvxPropertyInjector();
+            injector = new MvvmCross.IoC.MvxPropertyInjector();
         }
 
         public void Include(System.ComponentModel.INotifyPropertyChanged changed)
@@ -181,6 +181,11 @@ namespace AppRopio.Test.iOS
         {
             searchBar.TextChanged += (sender, e) => { };
             searchBar.WeakSubscribe<UISearchBar, UISearchBarTextChangedEventArgs>(nameof(searchBar.TextChanged), null);
+        }
+
+        public void Include(Firebase.Analytics.Analytics analytics)
+        {
+            Firebase.Core.App.Configure();
         }
     }
 }

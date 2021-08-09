@@ -5,8 +5,9 @@ using AppRopio.Base.Core.Models.Navigation;
 using AppRopio.Base.Core.ViewModels;
 using AppRopio.Base.Information.Core.ViewModels.Information.Services;
 using AppRopio.Models.Information.Responses;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
+using MvvmCross.Commands;
 
 namespace AppRopio.Base.Information.Core.ViewModels.Information
 {
@@ -25,7 +26,7 @@ namespace AppRopio.Base.Information.Core.ViewModels.Information
 
 		#region Services
 
-		protected IInformationVmService VmService { get { return Mvx.Resolve<IInformationVmService>(); } }
+		protected IInformationVmService VmService { get { return Mvx.IoCProvider.Resolve<IInformationVmService>(); } }
 
 		#endregion
 

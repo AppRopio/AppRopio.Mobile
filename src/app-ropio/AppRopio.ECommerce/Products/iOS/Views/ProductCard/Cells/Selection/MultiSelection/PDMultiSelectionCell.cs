@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.Helpers;
 using AppRopio.Base.iOS.UIExtentions;
@@ -6,8 +6,8 @@ using AppRopio.ECommerce.Products.iOS.Models;
 using AppRopio.ECommerce.Products.iOS.Services;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding.Views;
+using MvvmCross;
 using UIKit;
 using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.Selection.MultiSelection;
 using AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.Selection.MultiSelection.Cells;
@@ -16,7 +16,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.Selection.Mult
 {
     public partial class PDMultiSelectionCell : MvxTableViewCell
     {
-        protected ProductsThemeConfig ThemeConfig => Mvx.Resolve<IProductsThemeConfigService>().ThemeConfig;
+        protected ProductsThemeConfig ThemeConfig => Mvx.IoCProvider.Resolve<IProductsThemeConfigService>().ThemeConfig;
 
         public const float MULTY_SELECTION_TITLE_HEIGHT = 52;
         public const float MULTY_SELECTION_CONTENT_HEIGHT = 30;

@@ -10,8 +10,8 @@ using AppRopio.ECommerce.HistoryOrders.Core.Services;
 using AppRopio.ECommerce.HistoryOrders.Core.Services.Implementation;
 using AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrders;
 using AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrders.Services;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.HistoryOrders.Core
 {
@@ -22,14 +22,14 @@ namespace AppRopio.ECommerce.HistoryOrders.Core
         {
             get
             {
-                return _connectionService ?? (Mvx.CanResolve<IConnectionService>() ?
-                          (_connectionService = Mvx.Resolve<IConnectionService>())
+                return _connectionService ?? (Mvx.IoCProvider.CanResolve<IConnectionService>() ?
+                          (_connectionService = Mvx.IoCProvider.Resolve<IConnectionService>())
                               :
                           (_connectionService = new ConnectionService
                           {
                               ErrorWhenConnectionFailed = AppSettings.ErrorWhenConnectionFailed,
                               ErrorWhenTaskCanceled = AppSettings.ErrorWhenTaskCanceled,
-                              IsConnectionAvailable = () => Task<bool>.Factory.StartNew(() => true),//Mvx.Resolve<IMvxReachability>().IsHostReachable(AppSettings.Host)),
+                              IsConnectionAvailable = () => Task<bool>.Factory.StartNew(() => true),//Mvx.IoCProvider.Resolve<IMvxReachability>().IsHostReachable(AppSettings.Host)),
                               RequestTimeoutInSeconds = AppSettings.RequestTimeoutInSeconds,
                               BaseUrl = new Uri(AppSettings.Host)
                           }));
@@ -39,21 +39,21 @@ namespace AppRopio.ECommerce.HistoryOrders.Core
         public override void Initialize()
 		{
             if (ApiSettings.DebugServiceEnabled)
-                Mvx.RegisterType<IHistoryOrdersService>(() => new API.Services.Fakes.HistoryOrdersFakeService());
+                Mvx.IoCProvider.RegisterType<IHistoryOrdersService>(() => new API.Services.Fakes.HistoryOrdersFakeService());
             else
-                Mvx.RegisterType<IHistoryOrdersService>(() => new API.Services.Implementation.HistoryOrdersService(ConnectionService));
+                Mvx.IoCProvider.RegisterType<IHistoryOrdersService>(() => new API.Services.Implementation.HistoryOrdersService(ConnectionService));
 
-            Mvx.RegisterSingleton<IHistoryOrdersConfigService>(() => new HistoryOrdersConfigService());
+            Mvx.IoCProvider.RegisterSingleton<IHistoryOrdersConfigService>(() => new HistoryOrdersConfigService());
 
-			Mvx.RegisterSingleton<IHistoryOrdersVmService>(() => new HistoryOrdersVmService());
+			Mvx.IoCProvider.RegisterSingleton<IHistoryOrdersVmService>(() => new HistoryOrdersVmService());
 
-            Mvx.RegisterSingleton<IHistoryOrderDetailsVmService>(() => new HistoryOrderDetailsVmService());
+            Mvx.IoCProvider.RegisterSingleton<IHistoryOrderDetailsVmService>(() => new HistoryOrderDetailsVmService());
 
-            Mvx.RegisterSingleton<IHistoryOrdersNavigationVmService>(() => new HistoryOrdersNavigationVmService());
+            Mvx.IoCProvider.RegisterType<IHistoryOrdersNavigationVmService>(() => new HistoryOrdersNavigationVmService());
 
 			#region VMs registration
 
-			var vmLookupService = Mvx.Resolve<IViewModelLookupService>();
+			var vmLookupService = Mvx.IoCProvider.Resolve<IViewModelLookupService>();
 
 			vmLookupService.Register<IHistoryOrdersViewModel, HistoryOrdersViewModel>();
             vmLookupService.Register<IHistoryOrderDetailsViewModel, HistoryOrderDetailsViewModel>();
@@ -62,7 +62,7 @@ namespace AppRopio.ECommerce.HistoryOrders.Core
 			#endregion
 
 			//register start point for current navigation module
-			var routerService = Mvx.Resolve<IRouterService>();
+			var routerService = Mvx.IoCProvider.Resolve<IRouterService>();
 			routerService.Register<IHistoryOrdersViewModel>(new HistoryOrdersRouterSubscriber());
         }
 	}

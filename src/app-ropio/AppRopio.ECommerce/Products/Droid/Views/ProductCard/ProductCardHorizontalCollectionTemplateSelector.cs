@@ -6,6 +6,8 @@ namespace AppRopio.ECommerce.Products.Droid.Views.ProductCard
 {
     public class ProductCardHorizontalCollectionTemplateSelector : IMvxTemplateSelector
     {
+        public int ItemTemplateId { get; set; }
+
         public int GetItemViewType(object forItemObject)
         {
             var itemVm = forItemObject as CollectionItemVM;

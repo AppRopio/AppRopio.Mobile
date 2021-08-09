@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
 using AppRopio.Base.Core.ViewModels.Services;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 using AppRopio.Payments.Core.Messages;
 
 namespace AppRopio.Payments.Core.Services.Implementation
@@ -11,7 +11,7 @@ namespace AppRopio.Payments.Core.Services.Implementation
     {
         public virtual Task OrderPaid(string orderId)
         {
-            return Task.Run (() => Mvx.Resolve<IMvxMessenger>().Publish(new OrderPaidMessage(this, orderId)));
+            return Task.Run (() => Mvx.IoCProvider.Resolve<IMvxMessenger>().Publish(new OrderPaidMessage(this, orderId)));
         }
     }
 }

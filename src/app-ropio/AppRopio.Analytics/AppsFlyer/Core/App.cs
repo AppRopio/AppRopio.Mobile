@@ -1,8 +1,8 @@
-﻿using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+﻿using MvvmCross.ViewModels;
+using MvvmCross;
 using AppRopio.Analytics.AppsFlyer.Core.Services.Implementation;
 using AppRopio.Analytics.AppsFlyer.Core.Services;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.Analytics.AppsFlyer.Core
 {
@@ -10,8 +10,8 @@ namespace AppRopio.Analytics.AppsFlyer.Core
     {
         public override void Initialize()
         {
-            Mvx.CallbackWhenRegistered<IMvxMessenger>(() => Mvx.RegisterSingleton<INotificationsSubscriber>(new NotificationsSubscriber()));
-            Mvx.RegisterSingleton<IAFConfigService>(new AFConfigService());
+            Mvx.IoCProvider.CallbackWhenRegistered<IMvxMessenger>(() => Mvx.IoCProvider.RegisterSingleton<INotificationsSubscriber>(new NotificationsSubscriber()));
+            Mvx.IoCProvider.RegisterSingleton<IAFConfigService>(new AFConfigService());
         }
     }
 }

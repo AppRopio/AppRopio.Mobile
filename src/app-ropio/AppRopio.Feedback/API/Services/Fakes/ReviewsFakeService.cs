@@ -4,13 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using AppRopio.Base.API.Services;
 using AppRopio.Models.Feedback.Responses;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Feedback.API.Services.Fakes
 {
     public class ReviewsFakeService : IReviewsService
     {
-        public bool IsRussianCulture => Mvx.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
+        public bool IsRussianCulture => Mvx.IoCProvider.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
 
         private List<Review> _reviews;
 

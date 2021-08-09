@@ -1,15 +1,21 @@
-﻿using System;
+﻿using AppRopio.Analytics.Firebase.Core;
 using AppRopio.Analytics.Firebase.Core.Services;
 using AppRopio.Analytics.Firebase.Droid.Services;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using AppRopio.Base.Core.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.Analytics.Firebase.Droid
 {
-    public class Plugin : IMvxPlugin
+    [MvxPlugin]
+    [Preserve(AllMembers = true)]
+    public class Plugin : BasePlugin<App>
     {
-        public void Load()
+		protected override string Name => "Firebase analytics";
+
+        public override void Load()
         {
+            base.Load();
             try
             {
                 //string plistPath = Path.Combine(NSBundle.MainBundle.BundlePath, "GoogleService-Info.plist");
@@ -17,7 +23,7 @@ namespace AppRopio.Analytics.Firebase.Droid
             }
             catch { }
 
-            Mvx.RegisterSingleton<IFirebaseService>(() => new FirebaseService());
+            Mvx.IoCProvider.RegisterSingleton<IFirebaseService>(() => new FirebaseService());
         }
     }
 }

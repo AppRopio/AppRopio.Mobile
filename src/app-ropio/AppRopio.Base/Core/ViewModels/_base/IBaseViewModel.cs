@@ -1,4 +1,4 @@
-﻿using MvvmCross.Core.ViewModels;
+﻿using MvvmCross.ViewModels;
 using AppRopio.Base.Core.Models.Navigation;
 
 namespace AppRopio.Base.Core.ViewModels

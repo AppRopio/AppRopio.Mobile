@@ -7,9 +7,9 @@ using System.Windows.Input;
 using AppRopio.ECommerce.Products.Core.Messages;
 using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.Picker.Items;
 using AppRopio.Models.Products.Responses;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross;
+using MvvmCross.Commands;
+using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.Picker
 {
@@ -83,7 +83,7 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.Picker
 
         #region Services
 
-        protected IMvxMessenger MessengerService { get { return Mvx.Resolve<IMvxMessenger>(); } }
+        protected IMvxMessenger MessengerService { get { return Mvx.IoCProvider.Resolve<IMvxMessenger>(); } }
 
         #endregion
 

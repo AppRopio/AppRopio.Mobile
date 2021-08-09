@@ -4,7 +4,7 @@ using AppRopio.ECommerce.Products.Core.ViewModels.ProductWebContent;
 using AppRopio.ECommerce.Products.iOS.Models;
 using AppRopio.ECommerce.Products.iOS.Services;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platform;
+using MvvmCross;
 using UIKit;
 using AppRopio.Base.iOS;
 
@@ -12,7 +12,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ProductWebContent
 {
     public partial class ProductWebContentViewController : CommonViewController<IProductWebContentViewModel>
     {
-        protected ProductsThemeConfig ThemeConfig { get { return Mvx.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
+        protected ProductsThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
 
         public ProductWebContentViewController()
             : base("ProductWebContentViewController", null)

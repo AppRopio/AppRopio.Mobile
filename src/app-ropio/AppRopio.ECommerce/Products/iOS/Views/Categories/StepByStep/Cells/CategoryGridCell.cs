@@ -7,10 +7,11 @@ using AppRopio.ECommerce.Products.iOS.Models;
 using AppRopio.ECommerce.Products.iOS.Services;
 using CoreAnimation;
 using CoreGraphics;
+using FFImageLoading.Cross;
 using Foundation;
+using MvvmCross;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using UIKit;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.Categories.StepByStep.Cells
@@ -19,7 +20,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Categories.StepByStep.Cells
     {
         private CAGradientLayer _gradientLayer;
 
-        protected virtual ProductsThemeConfig ThemeConfig { get { return Mvx.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
+        protected virtual ProductsThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
 
         public static readonly NSString Key = new NSString("CategoryGridCell");
         public static readonly UINib Nib;
@@ -122,9 +123,10 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Categories.StepByStep.Cells
             if (backgroundImage == null)
                 return;
 
-            var imageLoader = new MvxImageViewLoader(() => backgroundImage);
-
-            set.Bind(imageLoader).To(vm => vm.BackgroundImageUrl);
+            if (backgroundImage is MvxCachedImageView imageView)
+            {
+               set.Bind(imageView).For(i => i.ImagePath).To(vm => vm.BackgroundImageUrl);
+            }
         }
 
         protected virtual void BindImage(UIImageView image, MvxFluentBindingDescriptionSet<CategoryGridCell, ICategoriesItemVM> set)
@@ -132,13 +134,13 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Categories.StepByStep.Cells
             if (image == null)
                 return;
 
-            var imageLoader = new MvxImageViewLoader(() => image)
+            if (image is MvxCachedImageView imageView)
             {
-                DefaultImagePath = $"res:{ThemeConfig.Categories.CategoryCell.Icon.Path}",
-                ErrorImagePath = $"res:{ThemeConfig.Categories.CategoryCell.Icon.Path}"
-            };
+                imageView.LoadingPlaceholderImagePath = $"res:{ThemeConfig.Categories.CategoryCell.Icon.Path}";
+                imageView.ErrorPlaceholderImagePath = $"res:{ThemeConfig.Categories.CategoryCell.Icon.Path}";
 
-            set.Bind(imageLoader).To(vm => vm.IconUrl);
+                set.Bind(imageView).For(i => i.ImagePath).To(vm => vm.IconUrl);
+            }
             set.Bind(image).For("Visibility").To(vm => vm.IconUrl).WithConversion("Visibility");
         }
 

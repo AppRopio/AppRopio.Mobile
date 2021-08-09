@@ -5,7 +5,7 @@ using AppRopio.Base.Droid.Views;
 using AppRopio.Payments.Core;
 using AppRopio.Payments.Core.Services;
 using AppRopio.Payments.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Payments.Droid.Views
 {
@@ -25,7 +25,7 @@ namespace AppRopio.Payments.Droid.Views
 
             WebView = view.FindViewById<WebView>(Resource.Id.webView);
 
-            var threeDSService = Mvx.Resolve<IPayment3DSService>();
+            var threeDSService = Mvx.IoCProvider.Resolve<IPayment3DSService>();
             threeDSService.SetWebView(WebView);
         }
     }

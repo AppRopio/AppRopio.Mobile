@@ -1,5 +1,5 @@
 ﻿using System;
-using MvvmCross.Platform.Converters;
+using MvvmCross.Converters;
 using UIKit;
 using AppRopio.Base.iOS.UIExtentions;
 namespace AppRopio.Base.iOS.ValueConverters

@@ -2,11 +2,11 @@
 using UIKit;
 using AppRopio.Base.iOS.Views;
 using AppRopio.Base.Contacts.Core.ViewModels.Contacts;
-using MvvmCross.Binding.iOS.Views;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using MvvmCross.Binding.BindingContext;
 using AppRopio.Base.Contacts.iOS.Models;
 using AppRopio.Base.Contacts.iOS.Services;
-using MvvmCross.Platform;
+using MvvmCross;
 using AppRopio.Base.Core;
 using AppRopio.Base.iOS;
 using AppRopio.Base.Core.Services.Localization;
@@ -32,7 +32,7 @@ namespace AppRopio.Base.Contacts.iOS.Views.Contacts
 
 		#region Protected
 
-		protected ContactsThemeConfig ThemeConfig { get { return Mvx.Resolve<IContactsThemeConfigService>().ThemeConfig; } }
+		protected ContactsThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IContactsThemeConfigService>().ThemeConfig; } }
 
 		#region InitializationControls
 

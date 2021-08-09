@@ -81,7 +81,8 @@
                         horizontalHuggingPriority                ="251"
                         verticalHuggingPriority                  ="251"
                         translatesAutoresizingMaskIntoConstraints="NO"
-                        id                                       ="Tkq-dj-zOM">
+                        id                                       ="Tkq-dj-zOM"
+						customClass                              ="MvxCachedImageView">
                         <rect
                             key   ="frame"
                             x     ="24"

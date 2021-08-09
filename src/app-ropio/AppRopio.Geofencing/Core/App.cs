@@ -2,8 +2,8 @@
 using AppRopio.Base.API;
 using AppRopio.Base.API.Services;
 using AppRopio.Base.Core;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.Geofencing.Core
 {
@@ -14,14 +14,14 @@ namespace AppRopio.Geofencing.Core
         {
             get
             {
-                return Mvx.CanResolve<IConnectionService>() ?
-                          (_connectionService = Mvx.Resolve<IConnectionService>())
+                return Mvx.IoCProvider.CanResolve<IConnectionService>() ?
+                          (_connectionService = Mvx.IoCProvider.Resolve<IConnectionService>())
                               :
                           (_connectionService = new ConnectionService
                           {
                               ErrorWhenConnectionFailed = AppSettings.ErrorWhenConnectionFailed,
                               ErrorWhenTaskCanceled = AppSettings.ErrorWhenTaskCanceled,
-                              //IsConnectionAvailable = () => Task<bool>.Factory.StartNew(() => Mvx.Resolve<IMvxReachability>().IsHostReachable(AppSettings.Host)),
+                              //IsConnectionAvailable = () => Task<bool>.Factory.StartNew(() => Mvx.IoCProvider.Resolve<IMvxReachability>().IsHostReachable(AppSettings.Host)),
                               RequestTimeoutInSeconds = AppSettings.RequestTimeoutInSeconds,
                               BaseUrl = new Uri(AppSettings.Host)
                           });
@@ -31,9 +31,9 @@ namespace AppRopio.Geofencing.Core
         public override void Initialize()
         {
             if (ApiSettings.DebugServiceEnabled)
-                Mvx.RegisterSingleton<API.Services.IAreaService>(new API.Services.Fakes.AreaService(ConnectionService));
+                Mvx.IoCProvider.RegisterSingleton<API.Services.IAreaService>(new API.Services.Fakes.AreaService(ConnectionService));
             else
-                Mvx.RegisterSingleton<API.Services.IAreaService>(new API.Services.Implementation.AreaService(ConnectionService));
+                Mvx.IoCProvider.RegisterSingleton<API.Services.IAreaService>(new API.Services.Implementation.AreaService(ConnectionService));
         }
     }
 }

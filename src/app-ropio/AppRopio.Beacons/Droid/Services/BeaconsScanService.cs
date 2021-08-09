@@ -2,8 +2,8 @@
 using System.Threading.Tasks;
 using Android.App;
 using AppRopio.Beacons.Core.Services;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Droid.Platform;
+using MvvmCross;
+using MvvmCross.Platforms.Android;
 
 namespace AppRopio.Beacons.Droid.Services
 {
@@ -13,7 +13,7 @@ namespace AppRopio.Beacons.Droid.Services
 
         protected Activity TopActivity
         {
-            get { return Mvx.Resolve<IMvxAndroidCurrentTopActivity>().Activity; }
+            get { return Mvx.IoCProvider.Resolve<IMvxAndroidCurrentTopActivity>().Activity; }
         }
 
         #endregion

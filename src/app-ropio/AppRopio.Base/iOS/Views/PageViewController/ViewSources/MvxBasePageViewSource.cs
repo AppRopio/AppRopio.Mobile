@@ -1,6 +1,7 @@
 ﻿using System;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Exceptions;
+using MvvmCross;
+using MvvmCross.Exceptions;
+using MvvmCross.Logging;
 using UIKit;
 
 namespace AppRopio.Base.iOS.Views.PageViewController.ViewSources
@@ -31,7 +32,7 @@ namespace AppRopio.Base.iOS.Views.PageViewController.ViewSources
             }
             catch (Exception exception)
             {
-                Mvx.Warning("Exception masked during PageView SetViewControllers {0}", exception.ToLongString());
+                Mvx.IoCProvider.Resolve<IMvxLog>().Warn($"Exception masked during PageView SetViewControllers {exception.ToLongString()}");
             }
         }
 

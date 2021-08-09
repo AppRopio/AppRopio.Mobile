@@ -7,11 +7,11 @@ using AppRopio.ECommerce.Basket.iOS.Services;
 using CoreGraphics;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Core.Views;
-using MvvmCross.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding.Views;
+using MvvmCross.ViewModels;
+using MvvmCross.Views;
+using MvvmCross.Platforms.Ios.Views;
+using MvvmCross;
 using ObjCRuntime;
 using UIKit;
 using AppRopio.Base.Core.Services.Localization;
@@ -36,7 +36,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.ProductCard
 
         #region Properties
 
-        protected BasketThemeConfig ThemeConfig { get { return Mvx.Resolve<IBasketThemeConfigService>().ThemeConfig; } }
+        protected BasketThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IBasketThemeConfigService>().ThemeConfig; } }
 
         IMvxViewModel IMvxView.ViewModel
         {
@@ -67,7 +67,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.ProductCard
 
         public IBasketProductCardViewModel ViewModel { get; set; }
 
-        protected ILocalizationService LocalizationService => Mvx.Resolve<ILocalizationService>();
+        protected ILocalizationService LocalizationService => Mvx.IoCProvider.Resolve<ILocalizationService>();
 
         #endregion
 

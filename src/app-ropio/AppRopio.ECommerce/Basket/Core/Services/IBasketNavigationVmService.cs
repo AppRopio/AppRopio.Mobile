@@ -1,11 +1,12 @@
 using AppRopio.Base.Core.Models.Bundle;
+using AppRopio.Base.Core.ViewModels.Services;
 using AppRopio.ECommerce.Basket.Core.Models.Bundle;
 using AppRopio.ECommerce.Products.Core.Models.Bundle;
 using AppRopio.Payments.Core.Bundle;
 
 namespace AppRopio.ECommerce.Basket.Core.Services
 {
-    public interface IBasketNavigationVmService
+    public interface IBasketNavigationVmService : IBaseVmNavigationService
     {
         void NavigateToProduct(ProductCardBundle bundle);
 

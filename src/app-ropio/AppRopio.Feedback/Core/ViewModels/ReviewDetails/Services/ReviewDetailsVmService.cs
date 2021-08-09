@@ -8,8 +8,7 @@ using AppRopio.ECommerce.Products.Core.Services;
 using AppRopio.Feedback.API.Services;
 using AppRopio.Feedback.Core.Models.Bundle;
 using AppRopio.Feedback.Core.Services;
-using AppRopio.Feedback.Core.ViewModels.ReviewPost;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Feedback.Core.ViewModels.ReviewDetails.Services
 {
@@ -17,7 +16,7 @@ namespace AppRopio.Feedback.Core.ViewModels.ReviewDetails.Services
     {
 		#region Services
 
-		protected IReviewsService ApiService { get { return Mvx.Resolve<IReviewsService>(); } }
+		protected IReviewsService ApiService { get { return Mvx.IoCProvider.Resolve<IReviewsService>(); } }
 
 		#endregion
 
@@ -63,14 +62,14 @@ namespace AppRopio.Feedback.Core.ViewModels.ReviewDetails.Services
 
 		public void NavigateToProduct(string productId, string groupId)
 		{
-			var productsNavigationVmService = Mvx.Resolve<IProductsNavigationVmService>();
+			var productsNavigationVmService = Mvx.IoCProvider.Resolve<IProductsNavigationVmService>();
             var productBundle = new ProductCardBundle(groupId, productId, NavigationType.Push);
 			productsNavigationVmService.NavigateToProduct(productBundle);
 		}
 
         public void NavigateToReviewApplication(string reviewId, string productGroupId, string productId)
 		{
-            var navigationVmService = Mvx.Resolve<IFeedbackNavigationVmService>();
+            var navigationVmService = Mvx.IoCProvider.Resolve<IFeedbackNavigationVmService>();
             var bundle = new ReviewBundle(reviewId: reviewId, productGroupId: productGroupId, productId: productId, navigationType: NavigationType.Push);
             navigationVmService.NavigateToReviewApplication(bundle);
 		}
