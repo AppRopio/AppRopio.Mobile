@@ -1,16 +1,16 @@
-using System;
+﻿using System;
 using System.Linq;
 using CoreGraphics;
 using Foundation;
 using UIKit;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.iOS.Views;
+using MvvmCross.ViewModels;
+using MvvmCross.Platforms.Ios.Views;
 using MvvmCross.Binding.BindingContext;
 using AppRopio.Base.Core.ViewModels;
 using AppRopio.Base.iOS.UIExtentions;
 using AppRopio.Base.iOS.Models.ThemeConfigs;
 using AppRopio.Base.Core.Services.Localization;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Base.iOS.Views
 {
@@ -53,7 +53,7 @@ namespace AppRopio.Base.iOS.Views
             }
         }
 
-        protected ILocalizationService LocalizationService => Mvx.Resolve<ILocalizationService>();
+        protected ILocalizationService LocalizationService => Mvx.IoCProvider.Resolve<ILocalizationService>();
 
         protected CommonViewController()
         {
@@ -255,7 +255,7 @@ namespace AppRopio.Base.iOS.Views
                 toolbar.Translucent = true;
                 toolbar.SizeToFit();
 
-                var doneButton = new UIBarButtonItem(Mvx.Resolve<ILocalizationService>().GetLocalizableString("Base", "Done"), UIBarButtonItemStyle.Done, null);
+                var doneButton = new UIBarButtonItem(Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString("Base", "Done"), UIBarButtonItemStyle.Done, null);
                 toolbar.SetItems(new UIBarButtonItem[] { new UIBarButtonItem(UIBarButtonSystemItem.FlexibleSpace), doneButton }, false);
 
                 var textField = allFields[i] as UITextField;

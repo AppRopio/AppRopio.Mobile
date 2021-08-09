@@ -1,17 +1,15 @@
 ﻿using Android.App;
 using Android.Content;
 using Android.Content.PM;
-using Android.Runtime;
 using Android.Support.V4.Widget;
 using Android.Views;
 using AppRopio.Base.Core.Models.Bundle;
 using AppRopio.Navigation.Menu.Core.Models;
 using AppRopio.Navigation.Menu.Core.Services;
 using AppRopio.Navigation.Menu.Core.ViewModels;
-using MvvmCross.Core.Navigation;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
-using Plugin.Permissions;
+using MvvmCross;
+using MvvmCross.Navigation;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.Navigation.Menu.Droid.Views
 {
@@ -24,7 +22,7 @@ namespace AppRopio.Navigation.Menu.Droid.Views
     {
         #region Properties
 
-        protected MenuConfig Config => Mvx.Resolve<IMenuConfigService>().Config;
+        protected MenuConfig Config => Mvx.IoCProvider.Resolve<IMenuConfigService>().Config;
 
         #endregion
 
@@ -42,9 +40,9 @@ namespace AppRopio.Navigation.Menu.Droid.Views
 
         protected override void InitStartPage()
         {
-            Mvx.CallbackWhenRegistered<IMvxNavigationService>(async service => 
+            Mvx.IoCProvider.CallbackWhenRegistered<IMvxNavigationService>(async () => 
             {
-                await service.Navigate(ViewModel.DefaultViewModel, ((IMvxBundle)new BaseBundle(Base.Core.Models.Navigation.NavigationType.ClearAndPush)), null);
+                await Mvx.IoCProvider.Resolve<IMvxNavigationService>().Navigate(ViewModel.DefaultViewModel, ((IMvxBundle)new BaseBundle(Base.Core.Models.Navigation.NavigationType.ClearAndPush)), null);
             });
         }
 
@@ -54,7 +52,7 @@ namespace AppRopio.Navigation.Menu.Droid.Views
 
             //bool vkResult;
             //var task = VKSdk.OnActivityResultAsync(requestCode, resultCode, data, out vkResult);
-            //var oauthService = Mvx.Resolve<IOAuthService>() as OAuthService;
+            //var oauthService = Mvx.IoCProvider.Resolve<IOAuthService>() as OAuthService;
             //if (!vkResult)
             //{
             //	base.OnActivityResult(requestCode, resultCode, data);
@@ -77,13 +75,6 @@ namespace AppRopio.Navigation.Menu.Droid.Views
         }
 
         #endregion
-
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
-        {
-            PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-
-            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-        }
 
         public void LockDrawer()
         {

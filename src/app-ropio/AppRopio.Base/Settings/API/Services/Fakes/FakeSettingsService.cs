@@ -4,13 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using AppRopio.Base.API.Services;
 using AppRopio.Models.Settings.Responses;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Base.Settings.API.Services.Fakes
 {
     public class FakeSettingsService : ISettingsService
     {
-        public bool IsRussianCulture => Mvx.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
+        public bool IsRussianCulture => Mvx.IoCProvider.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
 
         private List<RegionGroup> _regions;
 

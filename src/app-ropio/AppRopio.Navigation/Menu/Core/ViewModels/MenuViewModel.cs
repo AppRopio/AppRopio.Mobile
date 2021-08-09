@@ -10,9 +10,11 @@ using AppRopio.Base.Core.Services.Router;
 using AppRopio.Base.Core.ViewModels;
 using AppRopio.Navigation.Menu.Core.ViewModels.Items;
 using AppRopio.Navigation.Menu.Core.ViewModels.Services;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross.ViewModels;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
+using MvvmCross.Commands;
+using MvvmCross.Logging;
 
 namespace AppRopio.Navigation.Menu.Core.ViewModels
 {
@@ -96,9 +98,9 @@ namespace AppRopio.Navigation.Menu.Core.ViewModels
         #region Services
 
         private IMenuVmService _menuService;
-        protected IMenuVmService MenuService { get { return _menuService ?? (_menuService = Mvx.Resolve<IMenuVmService>()); } }
+        protected IMenuVmService MenuService { get { return _menuService ?? (_menuService = Mvx.IoCProvider.Resolve<IMenuVmService>()); } }
 
-        protected IRouterService RouterService { get { return Mvx.Resolve<IRouterService>(); } }
+        protected IRouterService RouterService { get { return Mvx.IoCProvider.Resolve<IRouterService>(); } }
 
         #endregion
 
@@ -134,15 +136,15 @@ namespace AppRopio.Navigation.Menu.Core.ViewModels
             }
             catch (UnauthorizedAccessException ex)
             {
-                MvxTrace.Trace(MvvmCross.Platform.Platform.MvxTraceLevel.Error, "MenuViewModel: ", ex.Message);
+                Log.Error($"MenuViewModel: {ex.Message}");
             }
             catch (FileNotFoundException ex)
             {
-                MvxTrace.Trace(MvvmCross.Platform.Platform.MvxTraceLevel.Error, "MenuViewModel: ", ex.Message);
+                Log.Error($"MenuViewModel: {ex.Message}");
             }
             catch
             {
-                MvxTrace.Trace(MvvmCross.Platform.Platform.MvxTraceLevel.Error, "MenuViewModel: ", "Can't load header vm");
+                Log.Error("MenuViewModel: Can't load header vm");
             }
         }
 
@@ -155,15 +157,15 @@ namespace AppRopio.Navigation.Menu.Core.ViewModels
             }
             catch (UnauthorizedAccessException ex)
             {
-                MvxTrace.Trace(MvvmCross.Platform.Platform.MvxTraceLevel.Error, "MenuViewModel: ", ex.Message);
+                Log.Error($"MenuViewModel: {ex.Message}");
             }
             catch (FileNotFoundException ex)
             {
-                MvxTrace.Trace(MvvmCross.Platform.Platform.MvxTraceLevel.Error, "MenuViewModel: ", ex.Message);
+                Log.Error($"MenuViewModel: {ex.Message}");
             }
             catch (Exception ex)
             {
-                MvxTrace.Trace(MvvmCross.Platform.Platform.MvxTraceLevel.Error, "MenuViewModel: ", $"Can't load menu items\n{ex.BuildAllMessagesAndStackTrace()}");
+                Log.Error($"MenuViewModel: Can't load menu items\n{ex.BuildAllMessagesAndStackTrace()}");
             }
         }
 
@@ -177,15 +179,15 @@ namespace AppRopio.Navigation.Menu.Core.ViewModels
             }
             catch (UnauthorizedAccessException ex)
             {
-                MvxTrace.Trace(MvvmCross.Platform.Platform.MvxTraceLevel.Error, "MenuViewModel: ", ex.Message);
+                Log.Error($"MenuViewModel: {ex.Message}");
             }
             catch (FileNotFoundException ex)
             {
-                MvxTrace.Trace(MvvmCross.Platform.Platform.MvxTraceLevel.Error, "MenuViewModel: ", ex.Message);
+                Log.Error($"MenuViewModel: {ex.Message}");
             }
             catch
             {
-                MvxTrace.Trace(MvvmCross.Platform.Platform.MvxTraceLevel.Error, "MenuViewModel: ", "Can't load footer vm");
+                Log.Error("MenuViewModel: Can't load footer vm");
             }
         }
 
@@ -198,7 +200,7 @@ namespace AppRopio.Navigation.Menu.Core.ViewModels
             AnalyticsNotifyingService.NotifyEventIsHandled("menu", "menu_item_selected", item.Type);
 
             if (!RouterService.NavigatedTo(item.Type, new BaseBundle(NavigationType.ClearAndPush)))
-                MvxTrace.Trace(MvvmCross.Platform.Platform.MvxTraceLevel.Error, "Menu", $"Can't navigate to ViewModel of type {item.Type}");
+                Log.Error($"MenuViewModel: Can't navigate to ViewModel of type {item.Type}");
         }
 
         protected void OnLanguageChanged(LanguageChangedMessage obj)

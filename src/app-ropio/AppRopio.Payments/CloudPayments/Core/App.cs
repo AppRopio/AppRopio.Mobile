@@ -2,10 +2,9 @@
 using AppRopio.Base.Core.Services.ViewModelLookup;
 using AppRopio.Payments.CloudPayments.Core.Services;
 using AppRopio.Payments.CloudPayments.Core.Services.Implementation;
-using AppRopio.Payments.Core.ViewModels;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
 using AppRopio.Payments.CloudPayments.Core.ViewModels.CloudPayments.Services;
+using MvvmCross;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.Payments.CloudPayments.Core
 {
@@ -13,17 +12,22 @@ namespace AppRopio.Payments.CloudPayments.Core
     {
 		public override void Initialize()
 		{
-            Mvx.RegisterSingleton<ICloudPaymentsPaymentNavigationVmService>(() => new CloudPaymentsPaymentNavigationVmService());
-			Mvx.RegisterSingleton<ICloudPaymentsConfigService>(() => new CloudPaymentsConfigService());
+            new API.App().Initialize();
+
+            new AppRopio.Payments.API.App().Initialize();
+
+			Mvx.IoCProvider.RegisterType<ICloudPaymentsPaymentNavigationVmService>(() => new CloudPaymentsPaymentNavigationVmService());
+
+			Mvx.IoCProvider.RegisterSingleton<ICloudPaymentsConfigService>(() => new CloudPaymentsConfigService());
 
 			#region VMs registration
 
-			var vmLookupService = Mvx.Resolve<IViewModelLookupService>();
+			var vmLookupService = Mvx.IoCProvider.Resolve<IViewModelLookupService>();
 
 			#endregion
 
 			//register start point for current navigation module
-			var routerService = Mvx.Resolve<IRouterService>();
+			var routerService = Mvx.IoCProvider.Resolve<IRouterService>();
             routerService.Register<ICloudPaymentsVmService>(new CloudPaymentsRouterSubscriber());
 		}
     }

@@ -1,7 +1,7 @@
 ﻿using System;
 using AppRopio.Base.Core.Messages.Analytics;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.Analytics.Firebase.Core.Services.Implementation
 {
@@ -21,9 +21,9 @@ namespace AppRopio.Analytics.Firebase.Core.Services.Implementation
 
         #region Services
 
-        protected IMvxMessenger Messenger { get { return Mvx.Resolve<IMvxMessenger>(); } }
+        protected IMvxMessenger Messenger { get { return Mvx.IoCProvider.Resolve<IMvxMessenger>(); } }
 
-        protected IFirebaseService Firebase { get { return Mvx.CanResolve<IFirebaseService>() ? Mvx.Resolve<IFirebaseService>() : null; } }
+        protected IFirebaseService Firebase { get { return Mvx.IoCProvider.CanResolve<IFirebaseService>() ? Mvx.IoCProvider.Resolve<IFirebaseService>() : null; } }
 
         #endregion
 
@@ -31,7 +31,7 @@ namespace AppRopio.Analytics.Firebase.Core.Services.Implementation
 
         public NotificationsSubscriber()
         {
-            Mvx.CallbackWhenRegistered<IMvxMessenger>(() =>
+            Mvx.IoCProvider.CallbackWhenRegistered<IMvxMessenger>(() =>
             {
                 _screenToken = Messenger.Subscribe<ScreenAnalyticsMessage>(HandleScreenNotification);
                 _eventToken = Messenger.Subscribe<EventAnalyticsMessage>(HandleEventNotification);

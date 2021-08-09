@@ -1,11 +1,13 @@
 ﻿using System;
+using System.Linq;
+using System.Threading.Tasks;
 using AppRopio.Geofencing.Core.Service;
+using AppRopio.Geofencing.Core.Service.Implementation;
 using AppRopio.Geofencing.iOS.Providers;
 using AppRopio.Geofencing.iOS.Utils;
-using System.Threading.Tasks;
-using MvvmCross.Platform.Platform;
-using AppRopio.Geofencing.Core.Service.Implementation;
-using System.Linq;
+using MvvmCross;
+using MvvmCross.Base;
+using MvvmCross.Logging;
 
 namespace AppRopio.Geofencing.iOS.Services
 {
@@ -27,7 +29,7 @@ namespace AppRopio.Geofencing.iOS.Services
             }
             catch (Exception ex)
             {
-                MvxTrace.TaggedTrace(MvxTraceLevel.Error, "Geofencing", ex.BuildAllMessagesAndStackTrace());
+                Mvx.IoCProvider.Resolve<IMvxLog>().Error($"Geofencing: {ex.BuildAllMessagesAndStackTrace()}");
             }
         }
 
@@ -42,7 +44,7 @@ namespace AppRopio.Geofencing.iOS.Services
 
             try
             {
-                MvxTrace.TaggedTrace(MvxTraceLevel.Diagnostic, "Geofencing", "Setup regions");
+                Mvx.IoCProvider.Resolve<IMvxLog>().Info("Geofencing: Setup regions");
 
                 var response = await AreaService.Instance.LoadAreasByUserLocation(location.Coordinate.Latitude, location.Coordinate.Longitude);
 
@@ -55,7 +57,7 @@ namespace AppRopio.Geofencing.iOS.Services
             }
             catch (Exception ex)
             {
-                MvxTrace.TaggedTrace(MvxTraceLevel.Error, "Geofencing", ex.BuildAllMessagesAndStackTrace());
+                Mvx.IoCProvider.Resolve<IMvxLog>().Error($"Geofencing: {ex.BuildAllMessagesAndStackTrace()}");
             }
         }
 
@@ -65,12 +67,12 @@ namespace AppRopio.Geofencing.iOS.Services
 
         public Task<bool> Start()
         {
-            MvxTrace.TaggedTrace(MvxTraceLevel.Diagnostic, "Geofencing", "Start");
+            Mvx.IoCProvider.Resolve<IMvxLog>().Info("Geofencing: Start");
 
 			var tcs = new TaskCompletionSource<bool>();
 			bool result = false;
 
-			UIKit.UIApplication.SharedApplication.InvokeOnMainThread(async () =>
+			Mvx.IoCProvider.Resolve<IMvxMainThreadAsyncDispatcher>().ExecuteOnMainThreadAsync(async () =>
 			{
 				result = await GeofencingUtil.RequestPermissionAsync();
 
@@ -91,7 +93,7 @@ namespace AppRopio.Geofencing.iOS.Services
 
         public async Task Stop()
         {
-            MvxTrace.TaggedTrace(MvxTraceLevel.Error, "Geofencing", "Stop");
+            Mvx.IoCProvider.Resolve<IMvxLog>().Info("Geofencing: Stop");
 
             var result = await GeofencingUtil.RequestPermissionAsync();
 

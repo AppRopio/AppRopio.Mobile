@@ -11,8 +11,8 @@ using AppRopio.ECommerce.Products.Core.ViewModels.Catalog;
 using AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells;
 using CoreGraphics;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Views;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.Catalog
@@ -52,6 +52,17 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog
             base.CleanUp();
         }
 
+        protected virtual void SetupSearchView(UIView searchView)
+        {
+            if (Config.SearchType == SearchType.Bar)
+            {
+                searchView.RemoveFromSuperview();
+                searchView.ChangeFrame(0.0f, 44.0f + DeviceInfo.SafeAreaInsets.Top, DeviceInfo.ScreenWidth, 56.0f);
+                searchView.TranslatesAutoresizingMaskIntoConstraints = true;
+                View.AddSubview(searchView);
+            }
+        }
+
         protected virtual void SetupSearchBar(UISearchBar searchBar)
         {
             searchBar.SetupStyle(ThemeConfig.ContentSearch.SearchBar);
@@ -59,12 +70,13 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog
 
         protected virtual void SetupStackView(UIStackView stackView)
         {
-            stackView.LayoutMarginsRelativeArrangement = true;
+            stackView.Hidden = true;
         }
 
         protected override void InitializeControls()
         {
             base.InitializeControls();
+            SetupSearchView(_searchView);
             SetupSearchBar(_searchBar);
             SetupStackView(_stackView);
         }
@@ -146,9 +158,9 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog
                         (nfloat)ThemeConfig.Products.ProductCell.Size.Height :
                         (width + 115.0f));
 
-                var config = Mvx.Resolve<IProductConfigService>().Config;
+                var config = Mvx.IoCProvider.Resolve<IProductConfigService>().Config;
                 if (config.Basket?.ItemAddToCart != null
-                    && Mvx.Resolve<IViewModelLookupService>().IsRegistered(config.Basket?.ItemAddToCart.TypeName)) {
+                    && Mvx.IoCProvider.Resolve<IViewModelLookupService>().IsRegistered(config.Basket?.ItemAddToCart.TypeName)) {
                     height += ThemeConfig.Products.ProductCell.ActionButtonHeight;
                 }
 
@@ -177,10 +189,10 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog
 
         protected void SetupCollectionHeader(UICollectionView collectionView)
         {
-            var config = Mvx.Resolve<IProductConfigService>().Config;
-            if (config.Header != null && Mvx.Resolve<IViewLookupService>().IsRegistered(config.Header.TypeName))
+            var config = Mvx.IoCProvider.Resolve<IProductConfigService>().Config;
+            if (config.Header != null && Mvx.IoCProvider.Resolve<IViewLookupService>().IsRegistered(config.Header.TypeName))
             {
-                var type = Mvx.Resolve<IViewLookupService>().Resolve(config.Header.TypeName);
+                var type = Mvx.IoCProvider.Resolve<IViewLookupService>().Resolve(config.Header.TypeName);
                 collectionView.RegisterClassForSupplementaryView(type, UICollectionElementKindSection.Header, config.Header.TypeName);
             }
             else
@@ -212,10 +224,10 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog
 
         protected void SetupBasketCartIndicator()
         {
-            var config = Mvx.Resolve<IProductConfigService>().Config;
-            if (config.Basket?.CartIndicator != null && Mvx.Resolve<IViewLookupService>().IsRegistered(config.Basket?.CartIndicator.TypeName))
+            var config = Mvx.IoCProvider.Resolve<IProductConfigService>().Config;
+            if (config.Basket?.CartIndicator != null && Mvx.IoCProvider.Resolve<IViewLookupService>().IsRegistered(config.Basket?.CartIndicator.TypeName))
             {
-                var cartIndicatorView = ViewModel.CartIndicatorVM == null ? null : Mvx.Resolve<IMvxIosViewCreator>().CreateView(ViewModel.CartIndicatorVM) as UIView;
+                var cartIndicatorView = ViewModel.CartIndicatorVM == null ? null : Mvx.IoCProvider.Resolve<IMvxIosViewCreator>().CreateView(ViewModel.CartIndicatorVM) as UIView;
 
                 if (cartIndicatorView != null)
                 {
@@ -251,7 +263,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog
 
         protected virtual BaseCollectionViewSource SetupCollectionDataSource(UICollectionView collectionView)
         {
-            var config = Mvx.Resolve<IProductConfigService>().Config;
+            var config = Mvx.IoCProvider.Resolve<IProductConfigService>().Config;
 
             var dataSource = new SupplementaryCollectionViewSource(
                 collectionView,
@@ -270,6 +282,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog
 
             set.Bind(goToButton).To(vm => vm.CatalogCommand);
             set.Bind(goToButton).For("Title").To(vm => vm.CatalogTitle);
+            set.Bind(goToButton).For("HighlightedTitle").To(vm => vm.CatalogTitle);
 
             set.Bind(emptyTitle).To(vm => vm.NoResultsTitle);
             set.Bind(emptyText).To(vm => vm.NoResultsText);

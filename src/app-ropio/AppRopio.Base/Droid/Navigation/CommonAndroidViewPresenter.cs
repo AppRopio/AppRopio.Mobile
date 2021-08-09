@@ -9,18 +9,19 @@ using AppRopio.Base.Core.Models.Navigation;
 using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.Core.ViewModels;
 using AppRopio.Base.Droid.Views;
-using MvvmCross.Core.ViewModels;
+using MvvmCross;
+using MvvmCross.Base;
 using MvvmCross.Droid.Support.V4;
 using MvvmCross.Droid.Support.V7.AppCompat;
-using MvvmCross.Droid.Views;
-using MvvmCross.Droid.Views.Attributes;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Core;
-using MvvmCross.Platform.Platform;
+using MvvmCross.Logging;
+using MvvmCross.Platforms.Android.Presenters.Attributes;
+using MvvmCross.Platforms.Android.Views;
+using MvvmCross.Presenters.Attributes;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.Base.Droid.Navigation
 {
-    public class CommonAndroidViewPresenter : MvxAppCompatViewPresenter, ICommonAndroidViewPresenter
+	public class CommonAndroidViewPresenter : MvxAppCompatViewPresenter, ICommonAndroidViewPresenter
     {
         #region Fields
 
@@ -68,7 +69,7 @@ namespace AppRopio.Base.Droid.Navigation
 
         protected virtual MvxFragmentPresentationAttribute DeqeueFragmentAttributeIfExist(string fragmentName)
         {
-            var attribute = PresentationAttributesCache.LastOrDefault(x => FragmentJavaName(x.ViewType) == fragmentName);
+            var attribute = PresentationAttributesCache.LastOrDefault(x => x.ViewType.FragmentJavaName() == fragmentName);
 
             if (attribute != null)
                 PresentationAttributesCache.Remove(attribute);
@@ -93,7 +94,7 @@ namespace AppRopio.Base.Droid.Navigation
 
         protected virtual void RemoveFragmentFromBackStack(MvxFragmentPresentationAttribute fragmentAttribute)
         {
-            var fragmentName = FragmentJavaName(fragmentAttribute.ViewType);
+            var fragmentName = fragmentAttribute.ViewType.FragmentJavaName();
             var existCache = FragmentsBackStack.FirstOrDefault(x => x.Key == fragmentName);
             if (existCache != null)
             {
@@ -135,7 +136,7 @@ namespace AppRopio.Base.Droid.Navigation
                 catch (Exception ex)
                 {
 #pragma warning disable CS0618 // Type or member is obsolete
-                    MvxTrace.Trace(() => ex.BuildAllMessagesAndStackTrace());
+                    Mvx.IoCProvider.Resolve<IMvxLog>().Trace(ex.BuildAllMessagesAndStackTrace());
 #pragma warning restore CS0618 // Type or member is obsolete
                 }
             });
@@ -215,7 +216,7 @@ namespace AppRopio.Base.Droid.Navigation
             var newFragment = fragmentManager.FindFragmentByTag(fragmentTag);
             if (newFragment != null)
             {
-                OnBeforeFragmentChanging(fragmentTransaction, newFragment, fragmentAttribute);
+                OnBeforeFragmentChanging(fragmentTransaction, newFragment, fragmentAttribute, request);
 
                 if (newFragment.IsDetached)
                 {
@@ -227,7 +228,7 @@ namespace AppRopio.Base.Droid.Navigation
 
                     fragmentTransaction.Attach(newFragment);
 
-                    OnFragmentChanging(fragmentTransaction, newFragment, fragmentAttribute);
+                    OnFragmentChanging(fragmentTransaction, newFragment, fragmentAttribute, request);
                 }
             }
             else if (fragmentAttribute != null)
@@ -242,11 +243,11 @@ namespace AppRopio.Base.Droid.Navigation
 
                 if (fragmentView != null)
                 {
-                    OnBeforeFragmentChanging(fragmentTransaction, fragmentView, fragmentAttribute);
+                    OnBeforeFragmentChanging(fragmentTransaction, fragmentView, fragmentAttribute, request);
 
                     fragmentTransaction.Add(fragmentAttribute.FragmentContentId, fragmentView, fragmentTag);
 
-                    OnFragmentChanging(fragmentTransaction, fragmentView, fragmentAttribute);
+                    OnFragmentChanging(fragmentTransaction, fragmentView, fragmentAttribute, request);
                 }
             }
         }
@@ -323,7 +324,7 @@ namespace AppRopio.Base.Droid.Navigation
                 }
             }
 
-            var fragmentName = FragmentJavaName(attribute.ViewType);
+            var fragmentName = attribute.ViewType.FragmentJavaName();
 
             IMvxViewModel viewModel = null;
             // MvxNavigationService provides an already instantiated ViewModel here
@@ -382,7 +383,7 @@ namespace AppRopio.Base.Droid.Navigation
                 if (!fragmentTransaction.IsEmpty)
                     fragmentTransaction.CommitNow();
 
-                OnFragmentChanged(fragmentTransaction, null, attribute);
+                OnFragmentChanged(fragmentTransaction, null, attribute, request);
             }
         }
 
@@ -393,7 +394,7 @@ namespace AppRopio.Base.Droid.Navigation
 
         protected override bool TryPerformCloseFragmentTransaction(FragmentManager fragmentManager, MvxFragmentPresentationAttribute fragmentAttribute)
         {
-            var fragmentName = FragmentJavaName(fragmentAttribute.ViewType);
+            var fragmentName = fragmentAttribute.ViewType.FragmentJavaName();
 
             var fragmentTransaction = fragmentManager.BeginTransaction();
 
@@ -410,13 +411,13 @@ namespace AppRopio.Base.Droid.Navigation
             return true;
         }
 
-        protected override void OnBeforeFragmentChanging(FragmentTransaction ft, Fragment fragment, MvxFragmentPresentationAttribute attribute)
+        protected override void OnBeforeFragmentChanging(FragmentTransaction ft, Fragment fragment, MvxFragmentPresentationAttribute attribute, MvxViewModelRequest request)
         {
             if (attribute != null)
             {
-                if (attribute.SharedElements != null)
+                if (CurrentActivity is IMvxAndroidSharedElements sharedElementsActivity)
                 {
-                    foreach (var item in attribute.SharedElements)
+                    foreach (var item in sharedElementsActivity.FetchSharedElementsToAnimate(attribute, request))
                     {
                         string name = item.Key;
                         if (string.IsNullOrEmpty(name))
@@ -440,17 +441,17 @@ namespace AppRopio.Base.Droid.Navigation
 
         #region Public
 
-        public override MvvmCross.Core.Views.MvxBasePresentationAttribute GetPresentationAttribute(Type viewModelType)
+        public override MvxBasePresentationAttribute GetPresentationAttribute(MvxViewModelRequest request)
         {
-            return base.GetPresentationAttribute(viewModelType);
+            return base.GetPresentationAttribute(request);
         }
 
-        public override MvvmCross.Core.Views.MvxBasePresentationAttribute CreatePresentationAttribute(Type viewModelType, Type viewType)
+        public override MvxBasePresentationAttribute CreatePresentationAttribute(Type viewModelType, Type viewType)
         {
             if (viewType.IsSubclassOf(typeof(Fragment)))
             {
 #pragma warning disable CS0618 // Type or member is obsolete
-                MvxTrace.Trace("PresentationAttribute not found for {0}. Assuming Fragment presentation", viewType.Name);
+                Mvx.IoCProvider.Resolve<IMvxLog>().Trace($"PresentationAttribute not found for {viewType.Name}. Assuming Fragment presentation");
 #pragma warning restore CS0618 // Type or member is obsolete
                 return DeqeueFragmentAttributeIfExist(viewType) ?? new MvxFragmentPresentationAttribute(GetCurrentActivityViewModelType(), ContentLayoutId) { ViewType = viewType, ViewModelType = viewModelType };
             }
@@ -495,7 +496,7 @@ namespace AppRopio.Base.Droid.Navigation
                 else
                 {
                     LastBackClick = new Java.Util.Date();
-                    (CurrentActivity as ICommonActivity)?.ShowToast(Mvx.Resolve<ILocalizationService>().GetLocalizableString("Base", "Hint_CloseApp"));
+                    (CurrentActivity as ICommonActivity)?.ShowToast(Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString("Base", "Hint_CloseApp"));
                 }
             }
         }

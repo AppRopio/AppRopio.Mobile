@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+using AppRopio.Base.Core.Models.Bundle;
 using AppRopio.Base.Core.Models.Navigation;
 using AppRopio.Base.Core.PresentationHints;
 using AppRopio.Base.Core.ViewModels;
@@ -11,17 +13,16 @@ using AppRopio.Base.iOS.Views;
 using AppRopio.Navigation.Menu.Core.ViewModels.Services;
 using AppRopio.Navigation.Menu.iOS.Models;
 using AppRopio.Navigation.Menu.iOS.Services;
+using MvvmCross;
+using MvvmCross.Base;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.iOS.Platform;
-using MvvmCross.iOS.Views;
-using MvvmCross.iOS.Views.Presenters;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Core;
-using MvvmCross.Platform.iOS.Views;
+using MvvmCross.Navigation;
+using MvvmCross.Platforms.Ios.Core;
+using MvvmCross.Platforms.Ios.Presenters;
+using MvvmCross.Platforms.Ios.Views;
+using MvvmCross.Platforms.Ios.Views.Base;
+using MvvmCross.ViewModels;
 using UIKit;
-using MvvmCross.Core.Navigation;
-using AppRopio.Base.Core.Models.Bundle;
 
 namespace AppRopio.Navigation.Menu.iOS.Navigation
 {
@@ -31,7 +32,7 @@ namespace AppRopio.Navigation.Menu.iOS.Navigation
 
         protected List<MvxViewModelRequest> _scheduledViewControllers;
 
-        protected MenuThemeConfig ThemeConfig { get { return Mvx.Resolve<IMenuThemeConfigService>().ThemeConfig; } }
+        protected MenuThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IMenuThemeConfigService>().ThemeConfig; } }
 
         public MenuNavigationController MenuNavigationController { get; set; }
 
@@ -179,7 +180,7 @@ namespace AppRopio.Navigation.Menu.iOS.Navigation
             viewModel = request is MvxViewModelInstanceRequest instanceRequest ?
                 (IBaseViewModel)instanceRequest.ViewModelInstance
                             :
-                        (IBaseViewModel)Mvx.Resolve<IMvxViewModelLoader>().LoadViewModel(request, null);
+                        (IBaseViewModel)Mvx.IoCProvider.Resolve<IMvxViewModelLoader>().LoadViewModel(request, null);
 
             var view = this.CreateViewControllerFor(request);
             view.ViewModel = viewModel;
@@ -363,7 +364,7 @@ namespace AppRopio.Navigation.Menu.iOS.Navigation
 
         #region MvxIosViewPresenter implementation
 
-        public override void Show(MvxViewModelRequest request)
+        public override Task<bool> Show(MvxViewModelRequest request)
         {
             if (MasterNavigationController == null)
             {
@@ -373,7 +374,10 @@ namespace AppRopio.Navigation.Menu.iOS.Navigation
                 MenuNavigationController.View.BackgroundColor = UIColor.Red;
                 MasterNavigationController = MenuNavigationController.TopNavigationController;
 
-                var viewModel = Mvx.Resolve<IMvxViewModelLoader>().LoadViewModel(request, null);
+                var viewModel = request is MvxViewModelInstanceRequest instanceRequest ?
+                    instanceRequest.ViewModelInstance
+                                :
+                            Mvx.IoCProvider.Resolve<IMvxViewModelLoader>().LoadViewModel(request, null);
                 var viewController = this.CreateViewControllerFor(request);
                 viewController.ViewModel = viewModel;
 
@@ -384,14 +388,14 @@ namespace AppRopio.Navigation.Menu.iOS.Navigation
                 else
                     _scheduledViewControllers.Add(request);
 
-                return;
+                return Task.FromResult(true);
             }
 
             if (MenuNavigationController.LeftMenuNavigationController.ChildViewControllers.IsNullOrEmpty())
             {
                 _scheduledViewControllers.Add(request);
 
-                return;
+                return Task.FromResult(true);
             }
 
             ShowViewController(request);
@@ -401,16 +405,19 @@ namespace AppRopio.Navigation.Menu.iOS.Navigation
                 _scheduledViewControllers.ForEach(ShowViewController);
                 _scheduledViewControllers = new List<MvxViewModelRequest>();
             }
+
+            return Task.FromResult(true);
         }
 
-        public override void Close(IMvxViewModel viewModel)
+        public override Task<bool> Close(IMvxViewModel viewModel)
         {
             var navigationType = ((IBaseViewModel)viewModel)?.VmNavigationType ?? NavigationType.None;
 
             if (navigationType == NavigationType.None)
             {
                 MenuNavigationController.HideMenu();
-                return;
+
+                return Task.FromResult(true);
             }
 
             if (navigationType == NavigationType.Push)
@@ -433,20 +440,22 @@ namespace AppRopio.Navigation.Menu.iOS.Navigation
             }
 
             ((IBaseViewModel)viewModel)?.Unbind();
+
+            return Task.FromResult(true);
         }
 
-        public override void ChangePresentation(MvxPresentationHint hint)
+        public override Task<bool> ChangePresentation(MvxPresentationHint hint)
         {
             if (hint is NavigateToDefaultViewModelHint)
             {
-                Mvx.CallbackWhenRegistered<IMvxNavigationService>(async service =>
+                Mvx.IoCProvider.CallbackWhenRegistered<IMvxNavigationService>(async () =>
                 {
-                    await service.Navigate(Mvx.Resolve<IMenuVmService>().DefaultViewModelType(), ((IMvxBundle)new BaseBundle(NavigationType.ClearAndPush)), null);
+                    await Mvx.IoCProvider.Resolve<IMvxNavigationService>().Navigate(Mvx.IoCProvider.Resolve<IMenuVmService>().DefaultViewModelType(), ((IMvxBundle)new BaseBundle(NavigationType.ClearAndPush)), null);
                 });
-                return;
+                return Task.FromResult(true);
             }
 
-            base.ChangePresentation(hint);
+            return base.ChangePresentation(hint);
         }
 
         #endregion

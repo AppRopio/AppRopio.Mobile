@@ -1,5 +1,5 @@
 ﻿using System;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross.Plugin.Messenger;
 using AppRopio.Models.Basket.Responses.Order;
 
 namespace AppRopio.ECommerce.Basket.Core.Messages

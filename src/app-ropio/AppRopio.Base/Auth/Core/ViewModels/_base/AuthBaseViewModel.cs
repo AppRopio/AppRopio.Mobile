@@ -3,8 +3,8 @@ using AppRopio.Base.Auth.Core.Services;
 using AppRopio.Base.Core.Extentions;
 using AppRopio.Base.Core.Models.Bundle;
 using AppRopio.Base.Core.ViewModels;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.Base.Auth.Core.ViewModels._base
 {
@@ -12,7 +12,7 @@ namespace AppRopio.Base.Auth.Core.ViewModels._base
 	{
 		#region Fields
 
-		protected AuthConfig Config { get { return Mvx.Resolve<IAuthConfigService>().Config; } }
+		protected AuthConfig Config { get { return Mvx.IoCProvider.Resolve<IAuthConfigService>().Config; } }
 
 		#endregion
 
@@ -39,7 +39,7 @@ namespace AppRopio.Base.Auth.Core.ViewModels._base
 
 		#region Services
 
-		protected IAuthNavigationVmService NavigationVmService { get { return Mvx.Resolve<IAuthNavigationVmService>(); } }
+		protected new IAuthNavigationVmService NavigationVmService { get { return Mvx.IoCProvider.Resolve<IAuthNavigationVmService>(); } }
 
 		#endregion
 

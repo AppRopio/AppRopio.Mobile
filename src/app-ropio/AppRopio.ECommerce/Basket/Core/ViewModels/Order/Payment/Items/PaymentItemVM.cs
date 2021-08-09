@@ -1,5 +1,5 @@
 ﻿using System;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 using PaymentModel = AppRopio.Models.Basket.Responses.Order.Payment;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Payment.Items

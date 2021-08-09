@@ -12,19 +12,19 @@ using AppRopio.Payments.CloudPayments.Core.Services;
 using AppRopio.Payments.Core.Models;
 using AppRopio.Payments.Core.Services;
 using AppRopio.Payments.Core.ViewModels.Services;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Payments.CloudPayments.Core.ViewModels.CloudPayments.Services
 {
     public class CloudPaymentsVmService : BaseVmService, ICloudPaymentsVmService, ICardPaymentVmService
     {
-        protected ICloudPaymentsService Service { get { return Mvx.Resolve<ICloudPaymentsService>(); } }
+        protected ICloudPaymentsService Service { get { return Mvx.IoCProvider.Resolve<ICloudPaymentsService>(); } }
 
-		protected IPaymentService ApiService { get { return Mvx.Resolve<IPaymentService>(); } }
+		protected IPaymentService ApiService { get { return Mvx.IoCProvider.Resolve<IPaymentService>(); } }
 
-        protected CloudPaymentsConfig Config { get { return Mvx.Resolve<ICloudPaymentsConfigService>().Config; } }
+        protected CloudPaymentsConfig Config { get { return Mvx.IoCProvider.Resolve<ICloudPaymentsConfigService>().Config; } }
 
-        protected IPayment3DSService ThreeDSService { get { return Mvx.Resolve<IPayment3DSService>(); } }
+        protected IPayment3DSService ThreeDSService { get { return Mvx.IoCProvider.Resolve<IPayment3DSService>(); } }
 
         public async Task<PaymentOrderInfo> GetPaymentInfo(string orderId)
         {

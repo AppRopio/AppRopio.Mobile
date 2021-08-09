@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -7,13 +7,13 @@ using AppRopio.Base.API.Services;
 using AppRopio.Models.Base.Responses;
 using AppRopio.Models.Basket.Responses.Basket;
 using AppRopio.Models.Products.Responses;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.Basket.API.Services.Fake
 {
     public class BasketFakeService : IBasketService
     {
-        public bool IsRussianCulture => Mvx.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
+        public bool IsRussianCulture => Mvx.IoCProvider.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
 
         private BasketModel _basket;
 

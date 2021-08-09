@@ -20,9 +20,10 @@ using AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Header;
 using AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Items;
 using AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Services;
 using AppRopio.Models.Filters.Responses;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross;
+using MvvmCross.Commands;
+using MvvmCross.Plugin.Messenger;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.Catalog
 {
@@ -211,16 +212,16 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Catalog
 
         #region Services
 
-        protected ICatalogVmService VmService { get { return Mvx.Resolve<ICatalogVmService>(); } }
+        protected ICatalogVmService VmService { get { return Mvx.IoCProvider.Resolve<ICatalogVmService>(); } }
 
-        protected IMarkProductVmService MarkProductVmService { get { return Mvx.Resolve<IMarkProductVmService>(); } }
+        protected IMarkProductVmService MarkProductVmService { get { return Mvx.IoCProvider.Resolve<IMarkProductVmService>(); } }
 
-        protected IProductsNavigationVmService NavigationVmService { get { return Mvx.Resolve<IProductsNavigationVmService>(); } }
+        protected new IProductsNavigationVmService NavigationVmService { get { return Mvx.IoCProvider.Resolve<IProductsNavigationVmService>(); } }
 
         private IProductsVmService _productsVmService;
-        public IProductsVmService ProductsVmService => _productsVmService ?? (_productsVmService = Mvx.Resolve<IProductsVmService>());
+        public IProductsVmService ProductsVmService => _productsVmService ?? (_productsVmService = Mvx.IoCProvider.Resolve<IProductsVmService>());
 
-        protected IProductConfigService ConfigService { get { return Mvx.Resolve<IProductConfigService>(); } }
+        protected IProductConfigService ConfigService { get { return Mvx.IoCProvider.Resolve<IProductConfigService>(); } }
 
         #endregion
 

@@ -5,8 +5,8 @@ using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items;
 using AppRopio.ECommerce.Basket.iOS.Services;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding.Views;
+using MvvmCross;
 using ObjCRuntime;
 using UIKit;
 using AppRopio.ECommerce.Basket.Core.Models;
@@ -17,7 +17,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Cells
 {
     public partial class DeliveryTypeCell : MvxTableViewCell
     {
-        protected Models.DeliveryTypeCell CellTheme { get { return Mvx.Resolve<IBasketThemeConfigService>().ThemeConfig.Order.DeliveryInfo.Cell; } }
+        protected Models.DeliveryTypeCell CellTheme { get { return Mvx.IoCProvider.Resolve<IBasketThemeConfigService>().ThemeConfig.Order.DeliveryInfo.Cell; } }
 
         public static readonly NSString Key = new NSString("DeliveryTypeCell");
         public static readonly UINib Nib = UINib.FromName("DeliveryTypeCell", NSBundle.MainBundle);
@@ -51,13 +51,13 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Cells
         protected virtual void SetupCheckImageView(UIImageView checkImageView)
         {
             checkImageView.SetupStyle(CellTheme.CheckImage);
-            checkImageView.Hidden = (Mvx.Resolve<IBasketConfigService>().Config.OrderViewType == Core.Enums.OrderViewType.Partial);
+            checkImageView.Hidden = (Mvx.IoCProvider.Resolve<IBasketConfigService>().Config.OrderViewType == Core.Enums.OrderViewType.Partial);
         }
 
         protected virtual void SetupDisclosureImageView(UIImageView disclosureImageView)
         {
             disclosureImageView.SetupStyle(CellTheme.DisclosureImage);
-            disclosureImageView.Hidden = (Mvx.Resolve<IBasketConfigService>().Config.OrderViewType == Core.Enums.OrderViewType.Full);
+            disclosureImageView.Hidden = (Mvx.IoCProvider.Resolve<IBasketConfigService>().Config.OrderViewType == Core.Enums.OrderViewType.Full);
         }
 
         /// <summary>

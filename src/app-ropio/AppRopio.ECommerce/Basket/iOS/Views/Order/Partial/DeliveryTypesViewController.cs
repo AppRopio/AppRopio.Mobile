@@ -5,15 +5,15 @@ using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial;
 using AppRopio.ECommerce.Basket.iOS.Services;
 using AppRopio.ECommerce.Basket.iOS.Views.Order.Cells;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding.Views;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Partial
 {
     public partial class DeliveryTypesViewController : CommonViewController<IDeliveryViewModel>
     {
-        protected Models.Order OrderTheme { get { return Mvx.Resolve<IBasketThemeConfigService>().ThemeConfig.Order; } }
+        protected Models.Order OrderTheme { get { return Mvx.IoCProvider.Resolve<IBasketThemeConfigService>().ThemeConfig.Order; } }
 
         public DeliveryTypesViewController()
             : base("DeliveryTypesViewController", null)

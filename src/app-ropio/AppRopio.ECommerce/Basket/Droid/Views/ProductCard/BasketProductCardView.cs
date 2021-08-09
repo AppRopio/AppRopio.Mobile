@@ -4,14 +4,14 @@ using Android.Views;
 using Android.Widget;
 using AppRopio.ECommerce.Basket.Core.ViewModels.CartIndicator;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.Droid.BindingContext;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Core.Views;
-using MvvmCross.Droid.Views;
+using MvvmCross.Platforms.Android.Binding.BindingContext;
+using MvvmCross.ViewModels;
+using MvvmCross.Views;
+using MvvmCross.Platforms.Android.Views;
 using AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard;
 using AppRopio.Base.Droid.Listeners;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Droid.Platform;
+using MvvmCross;
+using MvvmCross.Platforms.Android;
 
 namespace AppRopio.ECommerce.Basket.Droid.Views.ProductCard
 {
@@ -88,7 +88,7 @@ namespace AppRopio.ECommerce.Basket.Droid.Views.ProductCard
                 var view = this.BindingInflate(Resource.Layout.app_basket_productCardView, null, false);
 
                 var editText = view.FindViewById<EditText>(Resource.Id.app_basket_productCardView_editText);
-                editText.SetOnKeyListener(new AROnEnterKeyListener(Mvx.Resolve<IMvxAndroidCurrentTopActivity>()?.Activity, HandleAction));
+                editText.SetOnKeyListener(new AROnEnterKeyListener(Mvx.IoCProvider.Resolve<IMvxAndroidCurrentTopActivity>()?.Activity, HandleAction));
                 editText.ClearFocus();
 
                 AddView(view);

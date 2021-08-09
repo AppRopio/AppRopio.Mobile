@@ -2,14 +2,14 @@
 using AppRopio.Base.Map.Core.ViewModels.Points.List.Items;
 using AppRopio.Models.Map.Responses;
 using AppRopio.Base.Map.API.Services;
-using MvvmCross.Platform;
+using MvvmCross;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using AppRopio.Base.API.Exceptions;
 using AppRopio.Base.Core.ViewModels.Services;
 using System.Linq;
 using AppRopio.Models.Base.Responses;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 using AppRopio.Base.Core.Services.Location;
 
 namespace AppRopio.Base.Map.Core.ViewModels.Points.Services.Implementation
@@ -27,9 +27,9 @@ namespace AppRopio.Base.Map.Core.ViewModels.Points.Services.Implementation
 
         #region Services
 
-        protected IPointsService PointsService => Mvx.Resolve<IPointsService>();
+        protected IPointsService PointsService => Mvx.IoCProvider.Resolve<IPointsService>();
 
-        protected ILocationService LocationService => Mvx.Resolve<ILocationService>();
+        protected ILocationService LocationService => Mvx.IoCProvider.Resolve<ILocationService>();
 
         #endregion
 

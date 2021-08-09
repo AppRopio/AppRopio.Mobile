@@ -1,8 +1,8 @@
 ﻿using System;
 using AppRopio.Base.Core.Services.Settings;
 using System.IO;
-using MvvmCross.Platform;
-using MvvmCross.Core.Views;
+using MvvmCross;
+using MvvmCross.Views;
 
 namespace AppRopio.Base.iOS.Services.Settings
 {

@@ -1,4 +1,6 @@
-﻿using AppRopio.Base.Core.Services.ViewLookup;
+﻿using AppRopio.Base.Core.Plugins;
+using AppRopio.Base.Core.Services.ViewLookup;
+using AppRopio.Base.Information.Core;
 using AppRopio.Base.Information.Core.ViewModels.Information;
 using AppRopio.Base.Information.Core.ViewModels.InformationTextContent;
 using AppRopio.Base.Information.Core.ViewModels.InformationWebContent;
@@ -7,18 +9,24 @@ using AppRopio.Base.Information.iOS.Services.Implementation;
 using AppRopio.Base.Information.iOS.Views;
 using AppRopio.Base.Information.iOS.Views.InformationTextContent;
 using AppRopio.Base.Information.iOS.Views.InformationWebContent;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.Base.Information.iOS
 {
-    public class Plugin : IMvxPlugin
+    [MvxPlugin]
+    [Preserve(AllMembers = true)]
+    public class Plugin : BasePlugin<App>
     {
-        public void Load()
-        {
-            Mvx.RegisterSingleton<IInformationThemeConfigService>(() => new InformationThemeConfigService());
+		protected override string Name => "Information";
 
-            var viewLookupService = Mvx.Resolve<IViewLookupService>();
+        public override void Load()
+        {
+            base.Load();
+
+            Mvx.IoCProvider.RegisterSingleton<IInformationThemeConfigService>(() => new InformationThemeConfigService());
+
+            var viewLookupService = Mvx.IoCProvider.Resolve<IViewLookupService>();
 
             viewLookupService.Register<IInformationViewModel, InformationViewController>();
             viewLookupService.Register<IInformationTextContentViewModel, InformationTextContentViewController>();

@@ -29,8 +29,10 @@ using AppRopio.Base.Settings.Core.Models.Bundle;
 using AppRopio.Base.Settings.Core.Services;
 using AppRopio.Base.Settings.Core.ViewModels.Languages.Items;
 using AppRopio.Base.Settings.Core.ViewModels.Messages;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
+using MvvmCross.Commands;
+using AppRopio.Base.Core.ViewModels.Services;
 
 namespace AppRopio.Base.Settings.Core.ViewModels.Languages
 {
@@ -57,9 +59,9 @@ namespace AppRopio.Base.Settings.Core.ViewModels.Languages
 
         #region Services
 
-        protected SettingsConfig SettingsConfig { get { return Mvx.Resolve<ISettingsConfigService>().Config; } }
+        protected SettingsConfig SettingsConfig { get { return Mvx.IoCProvider.Resolve<ISettingsConfigService>().Config; } }
 
-        protected AppConfig AppConfig { get { return Mvx.Resolve<AppConfig>(); } }
+        protected AppConfig AppConfig { get { return Mvx.IoCProvider.Resolve<AppConfig>(); } }
 
         public ILangItemVM SelectedLanguage { get; private set; }
 
@@ -118,9 +120,9 @@ namespace AppRopio.Base.Settings.Core.ViewModels.Languages
 
             AppSettings.SettingsCulture = item.Culture;
 
-            Mvx.Resolve<ILocalizationService>().SetCurrentUICulture(item.Culture);
+            Mvx.IoCProvider.Resolve<ILocalizationService>().SetCurrentUICulture(item.Culture);
 
-            Mvx.Resolve<IConnectionService>().Headers["Accept-Language"] = item.Culture.Name;
+            Mvx.IoCProvider.Resolve<IConnectionService>().Headers["Accept-Language"] = item.Culture.Name;
 
             Messenger.Publish(new SettingsReloadMessage(this, SettingsElementType.Language, item.Culture.Name, item.Culture.NativeName.ToFirstCharUppercase()));
 
@@ -128,7 +130,7 @@ namespace AppRopio.Base.Settings.Core.ViewModels.Languages
 
             Loading = false;
 
-            Close(this);
+            NavigationVmService.Close(this);
         }
 
         #region Search

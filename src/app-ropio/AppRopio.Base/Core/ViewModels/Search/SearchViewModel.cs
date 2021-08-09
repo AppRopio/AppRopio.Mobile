@@ -1,6 +1,5 @@
-﻿using System;
-using System.Windows.Input;
-using MvvmCross.Core.ViewModels;
+﻿using System.Windows.Input;
+using MvvmCross.Commands;
 
 namespace AppRopio.Base.Core.ViewModels.Search
 {

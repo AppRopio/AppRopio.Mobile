@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using AppRopio.Base.iOS.Views.PageViewController;
+using System.Reflection;
 using AppRopio.Base.iOS.Views.PageViewController.ViewSources;
-using MvvmCross.Core.Platform;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Core;
+using MvvmCross.Platforms.Ios.Views;
+using MvvmCross.ViewModels;
 using UIKit;
 
 namespace AppRopio.Base.iOS.UIExtentions
 {
-    public static class MvxPageViewExtensionMethods
+    public static class MvxPageViewExtensions
     {
 
         public static UIViewController CreateViewController<T>(this MvxPageViewSource self, object parameterValuesObject, int pageIndex = -1)
@@ -40,7 +39,7 @@ namespace AppRopio.Base.iOS.UIExtentions
 
         private static void SetPageIndexForController(UIViewController referenceViewController, int index)
         {
-            var mvxPageView = referenceViewController as IMvxPageViewController;
+            var mvxPageView = referenceViewController as Views.PageViewController.IMvxPageViewController;
             if (mvxPageView != null)
             {
                 var prop = mvxPageView.GetType().GetProperty("PageIndex", BindingFlags.Public | BindingFlags.Instance);

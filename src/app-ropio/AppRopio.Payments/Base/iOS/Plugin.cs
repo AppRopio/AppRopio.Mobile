@@ -1,21 +1,28 @@
-﻿using System;
+﻿using AppRopio.Base.Core.Plugins;
 using AppRopio.Base.Core.Services.ViewLookup;
 using AppRopio.Payments.CloudPayments.iOS.View;
+using AppRopio.Payments.Core;
 using AppRopio.Payments.Core.ViewModels;
 using AppRopio.Payments.iOS.Services;
 using AppRopio.Payments.iOS.Services.Implementation;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.Payments.iOS
 {
-    public class Plugin : IMvxPlugin
+    [MvxPlugin]
+    [Preserve(AllMembers = true)]
+    public class Plugin : BasePlugin<App>
     {
-        public void Load()
-        {
-            Mvx.RegisterSingleton<IPaymentsThemeConfigService>(() => new PaymentsThemeConfigService());
+		protected override string Name => "Payments";
 
-            var viewLookupService = Mvx.Resolve<IViewLookupService>();
+        public override void Load()
+        {
+            base.Load();
+
+            Mvx.IoCProvider.RegisterSingleton<IPaymentsThemeConfigService>(() => new PaymentsThemeConfigService());
+
+            var viewLookupService = Mvx.IoCProvider.Resolve<IViewLookupService>();
 
             viewLookupService.Register<ICardPaymentViewModel, CardPaymentViewController>();
         }

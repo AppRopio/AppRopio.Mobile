@@ -84,7 +84,8 @@
 								horizontalHuggingPriority                ="251"
 								verticalHuggingPriority                  ="251"
 								translatesAutoresizingMaskIntoConstraints="NO"
-								id                                       ="eYf-1z-5Ks">
+								id                                       ="eYf-1z-5Ks"
+                                customClass                              ="MvxCachedImageView">
 								<rect
 									key   ="frame"
 									x     ="0.0"

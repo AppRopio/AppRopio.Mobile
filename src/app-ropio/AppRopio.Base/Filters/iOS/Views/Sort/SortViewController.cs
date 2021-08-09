@@ -9,8 +9,8 @@ using AppRopio.Base.iOS.Views;
 using CoreAnimation;
 using CoreGraphics;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding.Views;
+using MvvmCross;
 using UIKit;
 using AppRopio.Base.Core.Services.Location;
 using AppRopio.Base.Core.Services.Localization;
@@ -20,7 +20,7 @@ namespace AppRopio.Base.Filters.iOS.Views.Sort
 {
     public partial class SortViewController : CommonViewController<ISortViewModel>
     {
-        protected FiltersThemeConfig ThemeConfig { get { return Mvx.Resolve<IFiltersThemeConfigService>().ThemeConfig; } }
+        protected FiltersThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IFiltersThemeConfigService>().ThemeConfig; } }
 
         protected NSLayoutConstraint ContainerViewTopConstraint { get { return _containerViewTopConstraint; } }
         protected NSLayoutConstraint ContainerViewHeightConstraint { get { return _containerViewHeightConstraint; } }

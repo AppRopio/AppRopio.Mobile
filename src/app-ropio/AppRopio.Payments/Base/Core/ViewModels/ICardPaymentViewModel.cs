@@ -1,7 +1,5 @@
-﻿using System;
-using AppRopio.Base.Core.ViewModels;
-using AppRopio.Payments.Core.Services;
-using MvvmCross.Core.ViewModels;
+﻿using AppRopio.Base.Core.ViewModels;
+using MvvmCross.Commands;
 
 namespace AppRopio.Payments.Core.ViewModels
 {

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Android.App;
 using Android.Content;
 using Android.Graphics;
 using Android.OS;
@@ -12,18 +11,18 @@ using AppRopio.Base.Core.Extentions;
 using AppRopio.Base.Core.Services.Push;
 using AppRopio.Base.Core.Services.ViewModelLookup;
 using AppRopio.Base.Droid.Navigation;
-using MvvmCross.Binding.Droid.BindingContext;
-using MvvmCross.Core.ViewModels;
+using MvvmCross;
 using MvvmCross.Droid.Support.V7.AppCompat;
-using MvvmCross.Droid.Views;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Platform;
-using Plugin.Permissions;
-using Plugin.Permissions.Abstractions;
+using MvvmCross.IoC;
+using MvvmCross.Logging;
+using MvvmCross.Platforms.Android.Binding.BindingContext;
+using MvvmCross.Platforms.Android.Presenters;
+using MvvmCross.ViewModels;
+using Xamarin.Essentials;
 
 namespace AppRopio.Base.Droid.Views
 {
-    public abstract class CommonActivity<TViewModel> : MvxAppCompatActivity<TViewModel>, ICommonActivity
+	public abstract class CommonActivity<TViewModel> : MvxAppCompatActivity<TViewModel>, ICommonActivity
         where TViewModel : class, IMvxViewModel
     {
         #region Fields
@@ -39,7 +38,7 @@ namespace AppRopio.Base.Droid.Views
         private ICommonAndroidViewPresenter _customPresenter;
         protected ICommonAndroidViewPresenter CommonPresenter
         {
-            get { return _customPresenter ?? (_customPresenter = Mvx.Resolve<IMvxAndroidViewPresenter>() as ICommonAndroidViewPresenter); }
+            get { return _customPresenter ?? (_customPresenter = Mvx.IoCProvider.Resolve<IMvxAndroidViewPresenter>() as ICommonAndroidViewPresenter); }
         }
 
         protected Color BackgroundColor { get; private set; }
@@ -158,6 +157,8 @@ namespace AppRopio.Base.Droid.Views
 
             base.OnCreate(bundle);
 
+            Platform.Init(this, bundle);
+
             if (_notifyIntent == null)
                 _notifyIntent = Intent;
 
@@ -200,7 +201,7 @@ namespace AppRopio.Base.Droid.Views
 
                     System.Diagnostics.Debug.WriteLine(message: $"Try navigate to deeplink {deeplink}", category: PackageName);
 
-                    Mvx.CallbackWhenRegistered<IViewModelLookupService>(service => NavigateToDeeplinkFromPush(service, deeplink));
+                    Mvx.IoCProvider.CallbackWhenRegistered<IViewModelLookupService>(() => NavigateToDeeplinkFromPush(Mvx.IoCProvider.Resolve<IViewModelLookupService>(), deeplink));
                 }
             }
 
@@ -217,7 +218,7 @@ namespace AppRopio.Base.Droid.Views
 
                 System.Diagnostics.Debug.WriteLine(message: $"Deeplink was registered", category: PackageName);
 
-                Mvx.CallbackWhenRegistered<IPushNotificationsService>(service =>
+                Mvx.IoCProvider.CallbackWhenRegistered<IPushNotificationsService>(service =>
                 {
                     service.NavigateTo(deeplink: deeplink);
                 });
@@ -243,6 +244,13 @@ namespace AppRopio.Base.Droid.Views
             base.OnNewIntent(intent);
         }
 
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Android.Content.PM.Permission[] grantResults)
+        {
+            Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+
+            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
         #endregion
 
         #region Public
@@ -251,24 +259,16 @@ namespace AppRopio.Base.Droid.Views
         {
             try
             {
-                var statusLocation = await CrossPermissions.Current.CheckPermissionStatusAsync(Plugin.Permissions.Abstractions.Permission.Location);
+                var statusLocation = await Permissions.CheckStatusAsync<Permissions.LocationWhenInUse>();
+
                 if (statusLocation != PermissionStatus.Granted)
                 {
-                    var result = await CrossPermissions.Current.RequestPermissionsAsync(new[] { Plugin.Permissions.Abstractions.Permission.Location });
-                    if (result.ContainsKey(Plugin.Permissions.Abstractions.Permission.Location))
-                    {
-
-                        statusLocation = result[Plugin.Permissions.Abstractions.Permission.Location];
-                    }
-                    else
-                    {
-                        statusLocation = PermissionStatus.Unknown;
-                    }
+                    statusLocation = await Permissions.RequestAsync<Permissions.LocationWhenInUse>();
                 }
             }
             catch (Exception ex)
             {
-                MvxTrace.Trace(MvxTraceLevel.Diagnostic, "MainActivity: Request permission exception: " + ex);
+                Mvx.IoCProvider.Resolve<IMvxLog>().Info("MainActivity: Request permission exception: " + ex);
             }
         }
 

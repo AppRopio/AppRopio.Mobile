@@ -3,7 +3,7 @@ using System.IO;
 using AppRopio.Base.Core;
 using AppRopio.Base.Core.Services.Settings;
 using AppRopio.Base.iOS.Models.ThemeConfigs;
-using MvvmCross.Platform;
+using MvvmCross;
 using Newtonsoft.Json;
 
 namespace AppRopio.Base.iOS

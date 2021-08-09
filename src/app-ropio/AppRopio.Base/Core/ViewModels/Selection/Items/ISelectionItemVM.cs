@@ -1,5 +1,5 @@
 ﻿using System;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 namespace AppRopio.Base.Core.ViewModels.Selection.Items
 {
     public interface ISelectionItemVM : IMvxViewModel

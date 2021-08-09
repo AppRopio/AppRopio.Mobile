@@ -3,8 +3,8 @@ using System.Reflection;
 using System.Threading.Tasks;
 using AppRopio.Base.Core.Services.ViewModelLookup;
 using AppRopio.Base.Core.ViewModels.Services;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.Products.Core.Services.Implementation
 {
@@ -23,7 +23,7 @@ namespace AppRopio.ECommerce.Products.Core.Services.Implementation
             if (BasketCartIndicatorVm != null)
                 return BasketCartIndicatorVm;
 
-            var config = Mvx.Resolve<IProductConfigService>().Config;
+            var config = Mvx.IoCProvider.Resolve<IProductConfigService>().Config;
 
             try
             {
@@ -37,7 +37,7 @@ namespace AppRopio.ECommerce.Products.Core.Services.Implementation
 
                     if (basketType.GetTypeInfo().IsInterface)
                     {
-                        var vmLookupService = Mvx.Resolve<IViewModelLookupService>();
+                        var vmLookupService = Mvx.IoCProvider.Resolve<IViewModelLookupService>();
                         if (vmLookupService.IsRegistered(basketType))
                         {
                             var viewModelType = vmLookupService.Resolve(basketType);

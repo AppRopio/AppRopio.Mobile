@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using AppRopio.Models.HistoryOrders.Responses;
-using MvvmCross.Platform.Converters;
+using MvvmCross.Converters;
 using UIKit;
 
 namespace AppRopio.ECommerce.HistoryOrders.iOS.Converters

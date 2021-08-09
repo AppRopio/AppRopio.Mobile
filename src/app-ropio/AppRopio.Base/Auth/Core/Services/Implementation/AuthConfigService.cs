@@ -2,7 +2,7 @@
 using AppRopio.Base.Auth.Core.Models.Config;
 using AppRopio.Base.Core;
 using AppRopio.Base.Core.Services.Settings;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Base.Auth.Core.Services.Implementation
 {
@@ -37,7 +37,7 @@ namespace AppRopio.Base.Auth.Core.Services.Implementation
         private AuthConfig LoadConfigFromJSON()
         {
             var path = Path.Combine(CoreConstants.CONFIGS_FOLDER, SettingsName);
-            var json = Mvx.Resolve<ISettingsService>().ReadStringFromFile(path);
+            var json = Mvx.IoCProvider.Resolve<ISettingsService>().ReadStringFromFile(path);
             return Newtonsoft.Json.JsonConvert.DeserializeObject<AuthConfig>(json);
         }
 

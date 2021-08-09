@@ -1,17 +1,19 @@
 ﻿using System;
+using System.Globalization;
 using AppRopio.Base.Core.Converters;
 using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.Models.ThemeConfigs;
 using AppRopio.Base.iOS.UIExtentions;
+using AppRopio.Base.iOS.ValueConverters;
 using AppRopio.Navigation.Menu.Core.ViewModels.Items;
 using AppRopio.Navigation.Menu.iOS.Services;
+using FFImageLoading.Cross;
 using Foundation;
+using MvvmCross;
+using MvvmCross.Base;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using UIKit;
-using AppRopio.Base.iOS.ValueConverters;
-using System.Globalization;
 
 namespace AppRopio.Navigation.Menu.iOS.Views
 {
@@ -25,7 +27,7 @@ namespace AppRopio.Navigation.Menu.iOS.Views
         protected MenuCell(IntPtr handle)
             : base(handle)
         {
-            ThemeConfig = Mvx.Resolve<IMenuThemeConfigService>().ThemeConfig.LeftViewController.MenuTable.MenuCell;
+            ThemeConfig = Mvx.IoCProvider.Resolve<IMenuThemeConfigService>().ThemeConfig.LeftViewController.MenuTable.MenuCell;
 
             this.DelayBind(() =>
             {
@@ -80,12 +82,22 @@ namespace AppRopio.Navigation.Menu.iOS.Views
 
         protected virtual void BindIcon(UIImageView icon, NSLayoutConstraint stackViewLeftConstraint, MvxFluentBindingDescriptionSet<MenuCell, MenuItemVM> set)
         {
-            var imageLoader = new MvxImageViewLoader(() => icon, () =>
+            if (icon is MvxCachedImageView imageView)
+            {
+                imageView.OnFinish += (sender, ev) =>
+                {
+                    Mvx.IoCProvider.Resolve<IMvxMainThreadAsyncDispatcher>().ExecuteOnMainThreadAsync(() =>
+                    {
+                        icon.Image = (UIKit.UIImage)new ColorMaskValueConverter().Convert(icon, typeof(UIImageView), ThemeConfig.Name.TextColor.ToUIColor(), CultureInfo.CurrentUICulture);
+                    });
+                };
+                set.Bind(imageView).For(i => i.ImagePath).To(vm => vm.Icon);
+            }
+            else
             {
                 icon.Image = (UIKit.UIImage)new ColorMaskValueConverter().Convert(icon, typeof(UIImageView), ThemeConfig.Name.TextColor.ToUIColor(), CultureInfo.CurrentUICulture);
-            });
+            }
 
-            set.Bind(imageLoader).For(i => i.ImageUrl).To(vm => vm.Icon);
             set.Bind(icon).For("Visibility").To(vm => vm.Icon).WithConversion("Visibility");
             set.Bind(stackViewLeftConstraint).For(c => c.Constant).To(vm => vm.HasIcon).WithConversion("TrueFalse", new TrueFalseParameter { True = (nfloat)0.0f, False = (nfloat)16.0f });
         }

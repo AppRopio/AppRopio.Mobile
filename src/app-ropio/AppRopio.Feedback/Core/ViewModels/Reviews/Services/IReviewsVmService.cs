@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 using AppRopio.Feedback.Core.ViewModels.Reviews.Items;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.Feedback.Core.ViewModels.Reviews.Services
 {

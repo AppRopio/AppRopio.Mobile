@@ -18,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="148" height="263"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G6d-pv-M26">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G6d-pv-M26" customClass="MvxCachedImageView">
                         <rect key="frame" x="0.0" y="0.0" width="148" height="148"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="G6d-pv-M26" secondAttribute="height" multiplier="1:1" id="ayb-g2-5j9"/>

@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 using AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Items;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Marked.Core.ViewModels.Marked.Services
 {

@@ -5,9 +5,10 @@ using AppRopio.Base.Core.Services.Contacts;
 using AppRopio.ECommerce.Basket.Core.Messages.Autocomplete;
 using AppRopio.Models.Basket.Responses.Enums;
 using AppRopio.Models.Basket.Responses.Order;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross;
+using MvvmCross.Commands;
+using MvvmCross.Plugin.Messenger;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items
 {
@@ -83,7 +84,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items
         #region Commands
 
         private IMvxCommand _actionCommand;
-        public IMvxCommand ActionCommand => _actionCommand ?? (_actionCommand = new MvxCommand(OnActionExecute));
+        public IMvxCommand ActionCommand => _actionCommand ?? (_actionCommand = new MvxAsyncCommand(OnActionExecute));
 
         private IMvxCommand _autocompleteCommand;
         public IMvxCommand AutocompleteCommand => _autocompleteCommand ?? (_autocompleteCommand = new MvxCommand(OnAutocompleteExecute));
@@ -116,17 +117,14 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items
 
         #region Protected
 
-        protected virtual void OnActionExecute()
+        protected virtual async Task OnActionExecute()
         {
             switch (Type)
             {
                 case OrderFieldType.Phone:
-                    Task.Run(async () =>
-                    {
-                        var phone = await Mvx.Resolve<IContactsService>().SelectPhone();
-                        if (phone != null)
-                            InvokeOnMainThread(() => Value = phone.FullValue);
-                    });
+                    var phone = await Mvx.IoCProvider.Resolve<IContactsService>().SelectPhone();
+                    if (phone != null)
+                        InvokeOnMainThread(() => Value = phone.FullValue);
                     break;
                 default:
                     break;
@@ -144,7 +142,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items
                 else
                 {
                     InAutocompleteMode = true;
-                    Mvx.Resolve<IMvxMessenger>().Publish(new AutocompleteStartMessage(this) { FieldId = Id, FieldValue = Value });
+                    Mvx.IoCProvider.Resolve<IMvxMessenger>().Publish(new AutocompleteStartMessage(this) { FieldId = Id, FieldValue = Value });
                 }
             }
         }

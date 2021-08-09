@@ -13,9 +13,9 @@ using AppRopio.ECommerce.Basket.API.Services;
 using AppRopio.ECommerce.Basket.Core.Services;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Items;
 using AppRopio.Models.Basket.Responses.Basket;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Platform;
+using MvvmCross;
+using MvvmCross.Logging;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Services
 {
@@ -41,9 +41,9 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Services
         #region Services
 
         private IProductDeleteVmService _deleteVmService;
-        public IProductDeleteVmService DeleteVmService => _deleteVmService ?? (_deleteVmService = Mvx.Resolve<IProductDeleteVmService>());
+        public IProductDeleteVmService DeleteVmService => _deleteVmService ?? (_deleteVmService = Mvx.IoCProvider.Resolve<IProductDeleteVmService>());
 
-        public IBasketService ApiService => Mvx.Resolve<IBasketService>();
+        public IBasketService ApiService => Mvx.IoCProvider.Resolve<IBasketService>();
 
         #endregion
 
@@ -72,12 +72,12 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Services
 
             try
             {
-                var isNeedToLoad = await Mvx.Resolve<ITasksQueueService>()
+                var isNeedToLoad = await Mvx.IoCProvider.Resolve<ITasksQueueService>()
                                             .Append(() => ApiService
                                                     .IsNeedToLoad(basketVersionId, _basketCTS.Token), _basketCTS.Token);
                 if (isNeedToLoad)
                 {
-                    LoadedBasket = await Mvx.Resolve<ITasksQueueService>()
+                    LoadedBasket = await Mvx.IoCProvider.Resolve<ITasksQueueService>()
                                           .Append(() => ApiService
                                                   .GetBasket(_basketCTS.Token), _basketCTS.Token);
 
@@ -110,7 +110,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Services
 
         public IMvxViewModel LoadLoyaltyVmIfExist()
         {
-            var config = Mvx.Resolve<IBasketConfigService>().Config;
+            var config = Mvx.IoCProvider.Resolve<IBasketConfigService>().Config;
 
             if (config.Loyalty != null)
             {
@@ -126,15 +126,15 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Services
                 }
                 catch (UnauthorizedAccessException ex)
                 {
-                    MvxTrace.Trace(MvxTraceLevel.Error, $"{nameof(BasketVmService)}: ", ex.Message);
+                    Mvx.IoCProvider.Resolve<IMvxLog>().Error($"{nameof(BasketVmService)}: {ex.Message}");
                 }
                 catch (FileNotFoundException ex)
                 {
-                    MvxTrace.Trace(MvxTraceLevel.Error, $"{nameof(BasketVmService)}: ", ex.Message);
+                    Mvx.IoCProvider.Resolve<IMvxLog>().Error($"{nameof(BasketVmService)}: {ex.Message}");
                 }
                 catch
                 {
-                    MvxTrace.Trace(MvxTraceLevel.Error, $"{nameof(BasketVmService)}: ", "Can't load loyalty vm");
+                    Mvx.IoCProvider.Resolve<IMvxLog>().Error($"{nameof(BasketVmService)}: Can't load loyalty vm");
                 }
             }
 
@@ -152,7 +152,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Services
                 isValid = validity.IsValid;
 
                 if (!isValid)
-                    UserDialogs.Error(validity.NotValidMessage);
+                    await UserDialogs.Error(validity.NotValidMessage);
             }
             catch (ConnectionException ex)
             {
@@ -180,7 +180,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Services
 
                 _basketAmountCTS = new CancellationTokenSource();
 
-                amountResponse = await Mvx.Resolve<ITasksQueueService>()
+                amountResponse = await Mvx.IoCProvider.Resolve<ITasksQueueService>()
                                           .Append(() => ApiService.GetBasketSummaryAmount(_basketAmountCTS.Token), _basketAmountCTS.Token);
             }
             catch (OperationCanceledException)

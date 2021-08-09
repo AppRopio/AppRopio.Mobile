@@ -9,27 +9,34 @@ namespace AppRopio.Base.iOS.Services.Launcher
 {
     public class LauncherService : ILauncherService
 	{
-		public Task LaunchEmail(string email)
+		public Task<bool> LaunchEmail(string email)
 		{
 			var url = new NSUrl("mailto:" + email);
 
-            if (UIApplication.SharedApplication.CanOpenUrl(url))
-    			UIApplication.SharedApplication.OpenUrl(url);
+			if (UIApplication.SharedApplication.CanOpenUrl(url)) {
+				UIApplication.SharedApplication.OpenUrl(url);
 
-			return Task.CompletedTask;
+				return Task.FromResult(true);
+			}
+
+			return Task.FromResult(false);
 		}
 
-		public Task LaunchPhone(string phoneNumber)
+		public Task<bool> LaunchPhone(string phoneNumber)
 		{
 			var url = new NSUrl("tel:" + phoneNumber);
 
             if (UIApplication.SharedApplication.CanOpenUrl(url))
-    			UIApplication.SharedApplication.OpenUrl(url);
+			{
+				UIApplication.SharedApplication.OpenUrl(url);
 
-			return Task.CompletedTask;
+				return Task.FromResult(true);
+			}
+
+			return Task.FromResult(false);
 		}
 
-		public Task LaunchUri(string uri)
+		public Task<bool> LaunchUri(string uri)
 		{
 			var url = new NSUrl(uri);
            
@@ -42,9 +49,11 @@ namespace AppRopio.Base.iOS.Services.Launcher
                 {
                     rootVC.PresentViewController(safariVC, true, null);
                 }
-            }
 
-			return Task.CompletedTask;
+				return Task.FromResult(true);
+			}
+
+			return Task.FromResult(false);
 		}
 
 		public Task LaunchAddress(string address)

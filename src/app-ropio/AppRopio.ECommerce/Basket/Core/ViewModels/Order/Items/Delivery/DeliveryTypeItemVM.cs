@@ -1,6 +1,6 @@
 using System;
 using AppRopio.Models.Basket.Responses.Enums;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 using DeliveryModel = AppRopio.Models.Basket.Responses.Order.Delivery;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items.Delivery

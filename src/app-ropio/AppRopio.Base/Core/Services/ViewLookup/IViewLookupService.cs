@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
-using MvvmCross.Core.Views;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.Views;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.Base.Core.Services.ViewLookup
 {

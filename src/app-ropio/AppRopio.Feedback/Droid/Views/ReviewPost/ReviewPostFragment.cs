@@ -22,7 +22,7 @@ using AppRopio.Feedback.Core.ViewModels.Items;
 using AppRopio.Feedback.Core.ViewModels.Items.Score;
 using AppRopio.Feedback.Core.ViewModels.Items.TotalScore;
 using AppRopio.Feedback.Core.ViewModels.ReviewPost;
-using MvvmCross.Binding.Droid.BindingContext;
+using MvvmCross.Platforms.Android.Binding.BindingContext;
 using MvvmCross.Droid.Support.V7.RecyclerView;
 
 namespace AppRopio.Feedback.Droid.Views.ReviewPost

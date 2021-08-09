@@ -3,7 +3,7 @@ using Android.Content;
 using Android.Runtime;
 using Android.Util;
 using AppRopio.Base.Droid.Adapters;
-using MvvmCross.Binding.Droid.Views;
+using MvvmCross.Platforms.Android.Binding.Views;
 
 using MvvmCross.Droid.Support.V7.AppCompat.Widget;
 using System.Windows.Input;

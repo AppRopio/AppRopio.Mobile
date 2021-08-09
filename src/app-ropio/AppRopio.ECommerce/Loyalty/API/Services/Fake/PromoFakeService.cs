@@ -1,13 +1,13 @@
 ﻿using System.Threading.Tasks;
 using AppRopio.Base.API.Services;
 using AppRopio.Models.Loyalty.Responses;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.Loyalty.API.Services.Fake
 {
     public class PromoFakeService : IPromoService
     {
-        public bool IsRussianCulture => Mvx.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
+        public bool IsRussianCulture => Mvx.IoCProvider.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
 
         public async Task<PromocodeApplied> ApplyPromoCode(string code)
         {

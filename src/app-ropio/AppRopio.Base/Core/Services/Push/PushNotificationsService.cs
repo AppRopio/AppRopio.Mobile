@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using AppRopio.Base.API.Services;
 using AppRopio.Base.Core.ViewModels.Services;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Base.Core.Services.Push
 {
@@ -9,7 +9,7 @@ namespace AppRopio.Base.Core.Services.Push
     {
         #region Services
 
-        protected IPushService PushService { get { return Mvx.Resolve<IPushService>(); } }
+        protected IPushService PushService { get { return Mvx.IoCProvider.Resolve<IPushService>(); } }
 
         #endregion
 

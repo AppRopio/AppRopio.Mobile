@@ -5,8 +5,8 @@ using AppRopio.ECommerce.Products.iOS.Models;
 using AppRopio.ECommerce.Products.iOS.Services;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding.Views;
+using MvvmCross;
 using UIKit;
 using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.Multiline;
 using CoreGraphics;
@@ -22,7 +22,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.MultilineText
         {
             get
             {
-                return Mvx.Resolve<IProductsThemeConfigService>().ThemeConfig;
+                return Mvx.IoCProvider.Resolve<IProductsThemeConfigService>().ThemeConfig;
             }
         }
 
@@ -100,7 +100,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.MultilineText
         {
             var label = new AppRopio.Base.iOS.Controls.ARLabel { Frame = new CGRect(16, 52, DeviceInfo.ScreenWidth - 32, 0), Text = text, Lines = 0 };
 
-            label.SetupStyle(Mvx.Resolve<IProductsThemeConfigService>().ThemeConfig.ProductDetails.DetailsCell.MultiLineText.Value);
+            label.SetupStyle(Mvx.IoCProvider.Resolve<IProductsThemeConfigService>().ThemeConfig.ProductDetails.DetailsCell.MultiLineText.Value);
 
             label.SizeToFit();
 

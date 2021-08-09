@@ -3,13 +3,13 @@ using System.Threading;
 using System.Threading.Tasks;
 using AppRopio.Base.API.Services;
 using AppRopio.Models.Products.Responses;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.Products.API.Services.Fakes
 {
     public class ContentSearchFakeService : IContentSearchService
     {
-        public bool IsRussianCulture => Mvx.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
+        public bool IsRussianCulture => Mvx.IoCProvider.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
 
         public async Task<List<Autocomplete>> LoadAutocompletes(string searchText, CancellationToken token)
         {

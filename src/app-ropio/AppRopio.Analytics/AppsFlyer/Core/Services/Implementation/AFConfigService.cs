@@ -3,7 +3,7 @@ using System.IO;
 using AppRopio.Analytics.AppsFlyer.Core.Models.Config;
 using AppRopio.Base.Core;
 using AppRopio.Base.Core.Services.Settings;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Analytics.AppsFlyer.Core.Services.Implementation
 {
@@ -33,7 +33,7 @@ namespace AppRopio.Analytics.AppsFlyer.Core.Services.Implementation
         private AFConfig LoadConfigFromJSON()
         {
             var path = Path.Combine(CoreConstants.CONFIGS_FOLDER, SettingsName);
-            var json = Mvx.Resolve<ISettingsService>().ReadStringFromFile(path);
+            var json = Mvx.IoCProvider.Resolve<ISettingsService>().ReadStringFromFile(path);
             return Newtonsoft.Json.JsonConvert.DeserializeObject<AFConfig>(json);
         }
 

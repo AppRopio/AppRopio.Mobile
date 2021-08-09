@@ -1,7 +1,7 @@
 ﻿using System;
 using AppRopio.Payments.ApplePay.Services;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.Payments.ApplePay
 {
@@ -9,7 +9,7 @@ namespace AppRopio.Payments.ApplePay
 	{
 		public override void Initialize()
 		{
-			Mvx.RegisterSingleton<IApplePayConfigService>(() => new ApplePayConfigService());
+			Mvx.IoCProvider.RegisterSingleton<IApplePayConfigService>(() => new ApplePayConfigService());
 		}
 	}
 }

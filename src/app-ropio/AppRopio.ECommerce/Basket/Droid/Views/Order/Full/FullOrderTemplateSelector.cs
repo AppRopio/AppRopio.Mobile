@@ -6,6 +6,8 @@ namespace AppRopio.ECommerce.Basket.Droid.Views.Order.Full
 {
     public class FullOrderTemplateSelector : IARFlatGroupTemplateSelector
     {
+        public int ItemTemplateId { get; set; }
+
         public int GetFooterViewType(object forItemObject)
         {
             return forItemObject is IDeliveryTypeItemVM ? Resource.Layout.app_basket_full_order_deliveryTime_footer : Resource.Layout.app_basket_full_order_footer;

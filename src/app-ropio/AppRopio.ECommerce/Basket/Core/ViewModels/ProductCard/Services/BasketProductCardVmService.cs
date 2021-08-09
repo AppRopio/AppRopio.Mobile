@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using AppRopio.Base.API.Exceptions;
 using AppRopio.Base.Core.ViewModels.Services;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard.Services
 {
@@ -10,7 +10,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard.Services
     {
         #region Services
 
-        protected API.Services.IBasketService ApiService => Mvx.Resolve<API.Services.IBasketService>();
+        protected API.Services.IBasketService ApiService => Mvx.IoCProvider.Resolve<API.Services.IBasketService>();
 
         #endregion
 

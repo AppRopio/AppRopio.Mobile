@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using AppRopio.Navigation.Menu.Core.ViewModels.Items;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 using System;
 
 namespace AppRopio.Navigation.Menu.Core.ViewModels.Services

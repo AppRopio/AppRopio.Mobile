@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.Base.Core.Messsages.DataBase
 {

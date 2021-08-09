@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using AppRopio.Base.Auth.Core.Models.Registration;
-using MvvmCross.Platform;
+using MvvmCross;
 using AppRopio.Base.Core.Services.Localization;
 using System.Linq;
 using System;
@@ -29,7 +29,7 @@ namespace AppRopio.Base.Auth.Core.ViewModels.SignUp.Items
 
 		public SignUpItemPickerViewModel(RegistrationField field) : base(field)
 		{
-            Items = Mvx.Resolve<ILocalizationService>()
+            Items = Mvx.IoCProvider.Resolve<ILocalizationService>()
                        .GetLocalizableString(AuthConst.RESX_NAME, $"{field.Type.ToString().ToFirstCharLowercase()}{field.Id}_values")
                        .Split(',')
                        .ToList();

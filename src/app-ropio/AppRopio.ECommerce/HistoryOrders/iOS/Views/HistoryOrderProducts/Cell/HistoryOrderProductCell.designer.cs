@@ -22,7 +22,7 @@ namespace AppRopio.ECommerce.HistoryOrders.iOS.Views.HistoryOrders
 		UIKit.UIView BadgeView { get; set; }
 
 		[Outlet]
-		UIKit.UIImageView ItemImageView { get; set; }
+		FFImageLoading.Cross.MvxCachedImageView ItemImageView { get; set; }
 
 		[Outlet]
 		UIKit.UIView OverlayView { get; set; }

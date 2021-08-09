@@ -1,5 +1,5 @@
-﻿using System;
-using MvvmCross.Core.ViewModels;
+﻿using MvvmCross.Commands;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.CartIndicator
 {

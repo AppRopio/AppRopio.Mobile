@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -6,13 +6,13 @@ using AppRopio.Base.API.Services;
 using AppRopio.Models.Base.Responses;
 using AppRopio.Models.Basket.Responses.Enums;
 using AppRopio.Models.Basket.Responses.Order;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.Basket.API.Services.Fake
 {
     public class DeliveryFakeService : IDeliveryService
     {
-        public bool IsRussianCulture => Mvx.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
+        public bool IsRussianCulture => Mvx.IoCProvider.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
 
         private List<Delivery> _deliveries;
 

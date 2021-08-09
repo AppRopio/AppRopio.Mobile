@@ -1,18 +1,24 @@
-﻿using AppRopio.Base.Core.Services.ViewLookup;
-using AppRopio.Payments.CloudPayments.Core.Services;
+﻿using AppRopio.Base.Core.Plugins;
+using AppRopio.Payments.CloudPayments.Core;
 using AppRopio.Payments.CloudPayments.Droid.Services.Implementation;
 using AppRopio.Payments.Core.Services;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.Payments.CloudPayments.Droid
 {
-    public class Plugin : IMvxPlugin
+    [MvxPlugin]
+    [Preserve(AllMembers = true)]
+    public class Plugin : BasePlugin<App>
     {
-        public void Load()
+		protected override string Name => "CloudPayments";
+
+        public override void Load()
         {
-            //Mvx.RegisterSingleton<INativePaymentService>(() => new NativePaymentService());
-            Mvx.RegisterSingleton<IPayment3DSService>(() => new CloudPayments3DSService());
+            base.Load();
+
+            //Mvx.IoCProvider.RegisterSingleton<INativePaymentService>(() => new NativePaymentService());
+            Mvx.IoCProvider.RegisterSingleton<IPayment3DSService>(() => new CloudPayments3DSService());
         }
     }
 }

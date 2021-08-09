@@ -6,10 +6,10 @@ using Android.Graphics.Drawables;
 using Android.Runtime;
 using Android.Util;
 using Android.Widget;
-using Com.Bumptech.Glide;
-using Com.Bumptech.Glide.Request;
-using Java.Net;
-using MvvmCross.Platform.Platform;
+using Bumptech.Glide;
+using Bumptech.Glide.Request;
+using MvvmCross;
+using MvvmCross.Logging;
 using Base64Decoder = Android.Util.Base64;
 
 namespace AppRopio.Base.Droid.Controls
@@ -100,7 +100,7 @@ namespace AppRopio.Base.Droid.Controls
                             Glide
                               .With(this.Context)
                               .Load(resId)
-                              .Apply(GetRequestOptions().DontAnimate())
+                              .Apply(GetRequestOptions(true))
                               .Into(this);
                     }
                     else
@@ -109,13 +109,13 @@ namespace AppRopio.Base.Droid.Controls
                         {
                             Glide
                                .With(this.Context)
-                                .Load(new URL(value))
+                                .Load(Android.Net.Uri.Parse(value))
                                 .Apply(GetRequestOptions())
                                 .Into(this);
                         }
                         catch (Exception ex)
                         {
-                            MvxTrace.Trace(() => $"[ARImageView] Error while loading url: {value}; Message {ex.BuildAllMessagesAndStackTrace()}");
+                            Mvx.IoCProvider.Resolve<IMvxLog>().Trace($"[ARImageView] Error while loading url: {value}; Message {ex.BuildAllMessagesAndStackTrace()}");
                         }
                     }
                 }
@@ -162,14 +162,13 @@ namespace AppRopio.Base.Droid.Controls
                                         .Load(imageArray)
                                         .Apply
                                         (
-                                            GetRequestOptions()
-                                            .DontAnimate()
+                                            GetRequestOptions(true)
                                         )
                                             .Into(this);
                                 }
                                 catch (Exception ex)
                                 {
-                                    MvxTrace.Trace(() => $"[ARImageView] Error while loading base64 image; Message {ex.BuildAllMessagesAndStackTrace()}");
+                                    Mvx.IoCProvider.Resolve<IMvxLog>().Trace($"[ARImageView] Error while loading base64 image; Message {ex.BuildAllMessagesAndStackTrace()}");
                                 }
                         }, null);
                     });
@@ -192,7 +191,7 @@ namespace AppRopio.Base.Droid.Controls
                     Glide
                         .With(this.Context)
                         .Load(value)
-                        .Apply(GetRequestOptions().DontAnimate())
+                        .Apply(GetRequestOptions(true))
                         .Into(this);
             }
         }
@@ -217,7 +216,7 @@ namespace AppRopio.Base.Droid.Controls
             }
             catch (Exception ex)
             {
-                MvxTrace.Trace(() => $"[ARImageView] Fail to get ResourceId from string:{url}");
+                Mvx.IoCProvider.Resolve<IMvxLog>().Trace($"[ARImageView] Fail to get ResourceId from string:{url}");
 
                 return -1;
             }
@@ -228,9 +227,9 @@ namespace AppRopio.Base.Droid.Controls
             return url.StartsWith("res:", StringComparison.InvariantCultureIgnoreCase);
         }
 
-        private RequestOptions GetRequestOptions()
+        private RequestOptions GetRequestOptions(bool noAnimation = false)
         {
-            var options = new RequestOptions();
+            var options = !noAnimation ? new RequestOptions() : RequestOptions.NoAnimation();
 
             if (placeholder != null)
                 options = options.Placeholder(placeholder);

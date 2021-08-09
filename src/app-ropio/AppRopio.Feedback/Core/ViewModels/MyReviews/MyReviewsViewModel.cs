@@ -6,8 +6,9 @@ using AppRopio.Base.Core.Models.Navigation;
 using AppRopio.Base.Core.ViewModels;
 using AppRopio.Feedback.Core.ViewModels.MyReviews.Services;
 using AppRopio.Feedback.Core.ViewModels.Reviews.Items;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross;
+using MvvmCross.Commands;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.Feedback.Core.ViewModels.MyReviews
 {
@@ -45,7 +46,7 @@ namespace AppRopio.Feedback.Core.ViewModels.MyReviews
 
         #region Services
 
-        protected IMyReviewsVmService VmService { get { return Mvx.Resolve<IMyReviewsVmService>(); } }
+        protected IMyReviewsVmService VmService { get { return Mvx.IoCProvider.Resolve<IMyReviewsVmService>(); } }
 
         #endregion
 

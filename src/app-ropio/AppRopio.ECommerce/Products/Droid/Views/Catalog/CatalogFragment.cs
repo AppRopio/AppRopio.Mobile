@@ -8,10 +8,10 @@ using AppRopio.ECommerce.Products.Core.Services;
 using AppRopio.ECommerce.Products.Core.ViewModels.Catalog;
 using AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Items;
 using AppRopio.ECommerce.Products.Core.Models;
-using MvvmCross.Binding.Droid.BindingContext;
+using MvvmCross.Platforms.Android.Binding.BindingContext;
 using MvvmCross.Droid.Support.V7.RecyclerView;
-using MvvmCross.Droid.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Android.Views;
+using MvvmCross;
 using Android.Widget;
 using MvvmCross.Binding.BindingContext;
 using AppRopio.ECommerce.Products.Core.Combiners;
@@ -80,8 +80,8 @@ namespace AppRopio.ECommerce.Products.Droid.Views.Catalog
         {
             if (!_headerInitialized)
             {
-                var config = Mvx.Resolve<IProductConfigService>().Config;
-                var viewLookupService = Mvx.Resolve<IViewLookupService>();
+                var config = Mvx.IoCProvider.Resolve<IProductConfigService>().Config;
+                var viewLookupService = Mvx.IoCProvider.Resolve<IViewLookupService>();
                 if (config.Header != null && viewLookupService.IsRegistered(config.Header.TypeName))
                 {
                     if (Activator.CreateInstance(viewLookupService.Resolve(config.Header.TypeName), Context) is IMvxAndroidView headerView)

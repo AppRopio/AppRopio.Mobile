@@ -18,6 +18,8 @@ namespace AppRopio.Base.Settings.Droid.Views.Regions
 {
     public class RegionsTemplateSelector : IARFlatGroupTemplateSelector
     {
+        public int ItemTemplateId { get; set; }
+
         public virtual int GetFooterViewType(object forItemObject)
         {
             throw new System.NotImplementedException();

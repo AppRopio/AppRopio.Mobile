@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 using AppRopio.Models.Products.Responses;
 using AppRopio.ECommerce.Products.Core.Services;
 using AppRopio.ECommerce.Products.Core.Messages;
@@ -27,7 +27,7 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.Selectio
 
         #region Services
 
-        protected IProductsNavigationVmService NavigationVmService { get { return Mvx.Resolve<IProductsNavigationVmService>(); } }
+        protected new IProductsNavigationVmService NavigationVmService { get { return Mvx.IoCProvider.Resolve<IProductsNavigationVmService>(); } }
 
         #endregion
 

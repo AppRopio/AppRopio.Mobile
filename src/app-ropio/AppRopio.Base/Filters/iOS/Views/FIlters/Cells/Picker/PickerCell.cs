@@ -4,12 +4,12 @@ using AppRopio.Base.Filters.iOS.Models;
 using AppRopio.Base.Filters.iOS.Services;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding.Views;
+using MvvmCross;
 using UIKit;
 using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.UIExtentions;
-using MvvmCross.Binding.ExtensionMethods;
+using MvvmCross.Binding.Extensions;
 using AppRopio.Base.Filters.Core.ViewModels.Filters.Items.Picker.Items;
 using AppRopio.Base.Core.Converters;
 
@@ -19,7 +19,7 @@ namespace AppRopio.Base.Filters.iOS.Views.Filters.Cells.Picker
     {
         private UIPickerView _valuePicker;
 
-        protected FiltersThemeConfig ThemeConfig { get { return Mvx.Resolve<IFiltersThemeConfigService>().ThemeConfig; } }
+        protected FiltersThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IFiltersThemeConfigService>().ThemeConfig; } }
 
         public const float PICKER_TITLE_HEIGHT = 52;
         public const float PICKER_CONTENT_HEIGHT = 220;
@@ -46,7 +46,7 @@ namespace AppRopio.Base.Filters.iOS.Views.Filters.Cells.Picker
 
         private class PickerViewModel : MvxPickerViewModel
         {
-            protected FiltersThemeConfig ThemeConfig { get { return Mvx.Resolve<IFiltersThemeConfigService>().ThemeConfig; } }
+            protected FiltersThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IFiltersThemeConfigService>().ThemeConfig; } }
 
             public PickerViewModel(UIPickerView pickerView)
                 : base(pickerView)

@@ -1,4 +1,4 @@
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 using AppRopio.Base.Filters.Core.ViewModels.Filters.Items.Selection.MultiSelection.Items;
 using AppRopio.Base.Filters.iOS.Models;
 using AppRopio.Base.Filters.iOS.Services;
@@ -7,14 +7,14 @@ using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.ViewSources;
 using CoreGraphics;
 using Foundation;
-using MvvmCross.Platform;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.Base.Filters.iOS.Views.Filters.Cells.Selection.MultiSelection
 {
     public class FiltersMultiSelectionCollectionViewSource : BaseCollectionViewSource
     {
-        protected FiltersThemeConfig ThemeConfig { get { return Mvx.Resolve<IFiltersThemeConfigService>().ThemeConfig; } }
+        protected FiltersThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IFiltersThemeConfigService>().ThemeConfig; } }
 
         public FiltersMultiSelectionCollectionViewSource(UICollectionView collectionView, NSString defaultIdentifier)
             : base(collectionView, defaultIdentifier)

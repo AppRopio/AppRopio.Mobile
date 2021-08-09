@@ -1,23 +1,24 @@
 ﻿using System;
 using System.Text.RegularExpressions;
+using AppRopio.Base.Auth.Core;
 using AppRopio.Base.Auth.Core.ViewModels.SignUp;
 using AppRopio.Base.Auth.Core.ViewModels.SignUp.Items;
 using AppRopio.Base.Auth.iOS.Views._base;
 using AppRopio.Base.Auth.iOS.Views.SignUp.Cells;
+using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.UIExtentions;
 using AppRopio.Models.Auth.Enums;
 using Foundation;
+using MvvmCross;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Logging;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using UIKit;
-using AppRopio.Base.Core.Services.Localization;
-using AppRopio.Base.Auth.Core;
 
 namespace AppRopio.Base.Auth.iOS.Views.SignUp
 {
-	public partial class SignUpViewController : AuthBaseViewController<ISignUpViewModel>
+    public partial class SignUpViewController : AuthBaseViewController<ISignUpViewModel>
 	{
 		#region Properties
 
@@ -108,7 +109,7 @@ namespace AppRopio.Base.Auth.iOS.Views.SignUp
 
 		protected virtual void SetLegalText(UITextView textView)
 		{
-            var legalText = Mvx.Resolve<ILocalizationService>().GetLocalizableString(AuthConst.RESX_NAME, "TermsText");
+            var legalText = Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString(AuthConst.RESX_NAME, "TermsText");
 
 			string pattern = @"(\[.*\])";
 			Regex regex = new Regex(pattern);
@@ -174,7 +175,7 @@ namespace AppRopio.Base.Auth.iOS.Views.SignUp
 		protected virtual void SetupTitleLabel(UILabel label)
 		{
 			label.SetupStyle(ThemeConfig.Title);
-            label.Text = Mvx.Resolve<ILocalizationService>().GetLocalizableString(AuthConst.RESX_NAME, "SignUp_Join");
+            label.Text = Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString(AuthConst.RESX_NAME, "SignUp_Join");
 		}
 
 		protected virtual void RegisterTableCells(UITableView tableView)
@@ -240,7 +241,7 @@ namespace AppRopio.Base.Auth.iOS.Views.SignUp
 		{
 			base.InitializeControls();
 
-            Title = Mvx.Resolve<ILocalizationService>().GetLocalizableString(AuthConst.RESX_NAME, "SignUp_Title");
+            Title = Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString(AuthConst.RESX_NAME, "SignUp_Title");
 
 			SetupImage(_iconImage);
 
@@ -323,7 +324,7 @@ namespace AppRopio.Base.Auth.iOS.Views.SignUp
 			}
 			catch (Exception ex)
 			{
-				Mvx.Resolve<MvvmCross.Platform.Platform.IMvxTrace>().Trace(MvvmCross.Platform.Platform.MvxTraceLevel.Error, $"{GetType().FullName}\n", ex.StackTrace);
+				Mvx.IoCProvider.Resolve<IMvxLog>().Trace($"{GetType().FullName}:\n{ex.StackTrace}");
 			}
 
 		}

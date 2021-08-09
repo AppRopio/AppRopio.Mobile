@@ -4,12 +4,9 @@ using System.Linq;
 using Android.App;
 using Android.Content;
 using Android.Gms.Location;
-using Android.Gms.Tasks;
-using Android.Graphics;
-using Android.Support.V4.App;
-using MvvmCross.Platform.Platform;
-using Android.Support.V4.Content;
 using AppRopio.Geofencing.Core.Service.Implementation;
+using MvvmCross;
+using MvvmCross.Logging;
 
 namespace AppRopio.Geofencing.Droid.Services
 {
@@ -23,7 +20,7 @@ namespace AppRopio.Geofencing.Droid.Services
         public GeofenceTransitionsIntentService()
             : base(TAG)
         {
-            MvxTrace.TaggedTrace(TAG, "GeofenceTransitionsIntentService started");
+            Mvx.IoCProvider.Resolve<IMvxLog>().Trace($"{TAG}: GeofenceTransitionsIntentService started");
         }
 
         protected override void OnHandleIntent(Intent intent)
@@ -31,13 +28,13 @@ namespace AppRopio.Geofencing.Droid.Services
             if (intent == null)
                 return;
 
-            MvxTrace.TaggedTrace(TAG, "GeofenceTransitionsIntentService handle intent");
+            Mvx.IoCProvider.Resolve<IMvxLog>().Trace($"{TAG}: GeofenceTransitionsIntentService handle intent");
 
             var geofencingEvent = GeofencingEvent.FromIntent(intent);
             if (geofencingEvent.HasError)
             {
                 var errorMessage = GeofenceErrorMessages.GetErrorString(this, geofencingEvent.ErrorCode);
-                MvxTrace.TaggedError(TAG, errorMessage);
+                Mvx.IoCProvider.Resolve<IMvxLog>().Error($"{TAG}: {errorMessage}");
                 return;
             }
 
@@ -53,7 +50,7 @@ namespace AppRopio.Geofencing.Droid.Services
             else
             {
                 // Log the error.
-                MvxTrace.TaggedError(TAG, GetString(Resource.String.geofence_transition_invalid_type, new[] { new Java.Lang.Integer(geofenceTransition) }));
+                Mvx.IoCProvider.Resolve<IMvxLog>().Error($"{TAG}: " + GetString(Resource.String.geofence_transition_invalid_type, new[] { new Java.Lang.Integer(geofenceTransition) }));
             }
         }
 
@@ -61,7 +58,7 @@ namespace AppRopio.Geofencing.Droid.Services
         {
             if (geofencesIds == null || !geofencesIds.Any())
             {
-                MvxTrace.TaggedError(TAG, string.Format("geofencesIds is null or empty"));
+                Mvx.IoCProvider.Resolve<IMvxLog>().Error($"{TAG}: geofencesIds is null or empty");
                 return;
             }
 
@@ -70,11 +67,11 @@ namespace AppRopio.Geofencing.Droid.Services
                 foreach (var id in geofencesIds)
                     await AreaService.Instance.ActivateRegionBy(id);
 
-                MvxTrace.TaggedTrace(TAG, string.Format("Regions activated"));
+                Mvx.IoCProvider.Resolve<IMvxLog>().Trace($"{TAG}: Regions activated");
             }
             catch (Exception ex)
             {
-                MvxTrace.TaggedError(TAG, ex.BuildAllMessagesAndStackTrace());
+                Mvx.IoCProvider.Resolve<IMvxLog>().Error($"{TAG}: {ex.BuildAllMessagesAndStackTrace()}");
             }
         }
 
@@ -84,7 +81,7 @@ namespace AppRopio.Geofencing.Droid.Services
 
             var triggeringGeofencesIdsList = triggeringGeofences.Select(x => x.RequestId).ToArray();
 
-            MvxTrace.TaggedTrace(TAG, geofenceTransitionString + ": " + string.Join(", ", triggeringGeofencesIdsList));
+            Mvx.IoCProvider.Resolve<IMvxLog>().Trace($"{TAG}: " + geofenceTransitionString + ": " + string.Join(", ", triggeringGeofencesIdsList));
 
             return triggeringGeofencesIdsList;
         }

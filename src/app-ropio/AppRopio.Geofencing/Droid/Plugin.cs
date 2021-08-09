@@ -1,18 +1,25 @@
-﻿using System;
+﻿using AppRopio.Base.Core.Plugins;
+using AppRopio.Geofencing.Core;
 using AppRopio.Geofencing.Core.Service;
 using AppRopio.Geofencing.Droid.Services;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.Geofencing.Droid
 {
-    public class Plugin : IMvxPlugin
+    [MvxPlugin]
+    [Preserve(AllMembers = true)]
+    public class Plugin : BasePlugin<App>
     {
-        public void Load()
-        {
-            Mvx.RegisterSingleton<IGeofencingService>(() => new GeofencingService());
+		protected override string Name => "Geofencing";
 
-            Mvx.Resolve<IGeofencingService>().Start();
+        public override void Load()
+        {
+            base.Load();
+
+            Mvx.IoCProvider.RegisterSingleton<IGeofencingService>(() => new GeofencingService());
+
+            Mvx.IoCProvider.Resolve<IGeofencingService>().Start();
         }
     }
 }

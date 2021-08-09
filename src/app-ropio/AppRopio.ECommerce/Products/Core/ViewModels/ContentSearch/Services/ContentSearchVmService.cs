@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading;
@@ -11,7 +11,7 @@ using AppRopio.ECommerce.Products.Core.ViewModels.ContentSearch.Items.Hint;
 using AppRopio.ECommerce.Products.Core.ViewModels.ContentSearch.Items.History;
 using AppRopio.ECommerce.Products.Core.ViewModels.ContentSearch.Services.DataBase;
 using AppRopio.Models.Products.Responses;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.ContentSearch.Services
 {
@@ -19,9 +19,9 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ContentSearch.Services
     {
         #region Services
 
-        protected IHistorySearchDbService DbService { get { return Mvx.Resolve<IHistorySearchDbService>(); } }
+        protected IHistorySearchDbService DbService { get { return Mvx.IoCProvider.Resolve<IHistorySearchDbService>(); } }
 
-        protected IContentSearchService ApiService { get { return Mvx.Resolve<IContentSearchService>(); } }
+        protected IContentSearchService ApiService { get { return Mvx.IoCProvider.Resolve<IContentSearchService>(); } }
 
         #endregion
 

@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="146"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tat-GP-nno">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tat-GP-nno" customClass="MvxCachedImageView">
                         <rect key="frame" x="0.0" y="0.0" width="146" height="146"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="tat-GP-nno" secondAttribute="height" multiplier="1:1" id="m5s-9S-eeC"/>

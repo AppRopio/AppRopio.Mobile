@@ -13,9 +13,10 @@ using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items.Delivery;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Services;
 using AppRopio.Payments.Core.Messages;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross;
+using MvvmCross.Commands;
+using MvvmCross.Plugin.Messenger;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Full
 {
@@ -45,7 +46,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Full
         {
             get
             {
-                return _nextCommand ?? (_nextCommand = new MvxCommand(OnNextExecute, () => !Loading));
+                return _nextCommand ?? (_nextCommand = new MvxAsyncCommand(OnNextExecute, () => !Loading));
             }
         }
 
@@ -91,13 +92,13 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Full
 
         #region Services
 
-        protected IOrderVmService OrderVmService => Mvx.Resolve<IOrderVmService>();
+        protected IOrderVmService OrderVmService => Mvx.IoCProvider.Resolve<IOrderVmService>();
 
-        protected IDeliveryVmService DeliveryVmService => Mvx.Resolve<IDeliveryVmService>();
+        protected IDeliveryVmService DeliveryVmService => Mvx.IoCProvider.Resolve<IDeliveryVmService>();
 
-        protected IUserVmService UserVmService => Mvx.Resolve<IUserVmService>();
+        protected IUserVmService UserVmService => Mvx.IoCProvider.Resolve<IUserVmService>();
 
-        protected IBasketNavigationVmService NavigationVmService => Mvx.Resolve<IBasketNavigationVmService>();
+        protected new IBasketNavigationVmService NavigationVmService => Mvx.IoCProvider.Resolve<IBasketNavigationVmService>();
 
         decimal IOrderViewModel.BasketAmount => DeliveryViewModel.BasketAmount;
 
@@ -146,7 +147,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Full
             {
                 SendAnalyticsData(orderID);
 
-                ChangePresentation(new Base.Core.PresentationHints.NavigateToDefaultViewModelHint());
+                await NavigationVmService.ChangePresentation(new Base.Core.PresentationHints.NavigateToDefaultViewModelHint());
 
                 NavigationVmService.NavigateToThanks(new ThanksBundle(orderID, NavigationType.PresentModal));
 
@@ -222,7 +223,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Full
             DeliveryViewModel.PropertyChanged += DeliveryViewModel_PropertyChanged;
         }
 
-        protected async void OnNextExecute()
+        protected virtual async Task OnNextExecute()
         {
             if (!CanGoNext)
                 return;

@@ -4,34 +4,33 @@ using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.Core.Services.Permissions;
 using AppRopio.Base.Core.Services.UserDialogs;
 using Foundation;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Core;
-using MvvmCross.Platform.Platform;
-using Plugin.Permissions;
-using Plugin.Permissions.Abstractions;
+using MvvmCross;
+using MvvmCross.Base;
+using MvvmCross.Logging;
 using UIKit;
+using Xamarin.Essentials;
 
 namespace AppRopio.Base.iOS.Services.Permissions
 {
     public class PermissionsService : IPermissionsService
     {
-        protected IUserDialogs UserDialogs => Mvx.Resolve<IUserDialogs>();
+        protected IUserDialogs UserDialogs => Mvx.IoCProvider.Resolve<IUserDialogs>();
 
         #region IPermissionsService implementation
 
-        public async Task<bool> CheckPermission(Permission permission, bool goToSettingsAlert = false, string goToSettingsMessage = null)
+        public async Task<bool> CheckPermission(Xamarin.Essentials.Permissions.BasePermission permission, bool goToSettingsAlert = false, string goToSettingsMessage = null)
         {
             try
             {
-                var status = await CrossPermissions.Current.CheckPermissionStatusAsync(permission);
+                var status = await permission.CheckStatusAsync();
                 if (status == PermissionStatus.Denied)
                 {
                     if (goToSettingsAlert)
                     {
-                        var result = await UserDialogs.Confirm(goToSettingsMessage ?? Mvx.Resolve<ILocalizationService>().GetLocalizableString("Base", "Permissions_Request"), Mvx.Resolve<ILocalizationService>().GetLocalizableString("Base", "Permissions_Go"));
+                        var result = await UserDialogs.Confirm(goToSettingsMessage ?? Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString("Base", "Permissions_Request"), Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString("Base", "Permissions_Go"));
                         if (result)
                         {
-                            Mvx.Resolve<IMvxMainThreadDispatcher>().RequestMainThreadAction(() =>
+                            Mvx.IoCProvider.Resolve<IMvxMainThreadAsyncDispatcher>().ExecuteOnMainThreadAsync(() =>
                             {
                                 UIApplication.SharedApplication.OpenUrl(new NSUrl(UIApplication.OpenSettingsUrlString));
                             });
@@ -43,16 +42,17 @@ namespace AppRopio.Base.iOS.Services.Permissions
 
                 if (status != PermissionStatus.Granted)
                 {
-                    var results = await CrossPermissions.Current.RequestPermissionsAsync(permission);
-                    if (results.ContainsKey(permission))
-                        status = results[permission];
+                    await Mvx.IoCProvider.Resolve<IMvxMainThreadAsyncDispatcher>().ExecuteOnMainThreadAsync(async () =>
+                    {
+                        status = await permission.RequestAsync();
+                    });
                 }
 
                 return (status == PermissionStatus.Granted);
             }
             catch (Exception ex)
             {
-                MvxTrace.TaggedTrace(MvxTraceLevel.Error, nameof(PermissionsService), () => ex.BuildAllMessagesAndStackTrace());
+                Mvx.IoCProvider.Resolve<IMvxLog>().Error($"{nameof(PermissionsService)}: {ex.BuildAllMessagesAndStackTrace()}");
                 return false;
             }
         }

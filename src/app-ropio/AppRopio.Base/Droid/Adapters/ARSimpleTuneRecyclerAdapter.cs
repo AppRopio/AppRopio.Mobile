@@ -1,10 +1,10 @@
 ﻿using System;
 using MvvmCross.Droid.Support.V7.RecyclerView;
-using MvvmCross.Binding.Droid.BindingContext;
+using MvvmCross.Platforms.Android.Binding.BindingContext;
 using Android.Runtime;
 using Android.Support.V7.Widget;
 using Android.Views;
-using MvvmCross.Binding.ExtensionMethods;
+using MvvmCross.Binding.Extensions;
 
 namespace AppRopio.Base.Droid.Adapters
 {

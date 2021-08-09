@@ -36,7 +36,7 @@ namespace AppRopio.Feedback.iOS.Views.ReviewDetails
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIImageView ProductImageView { get; set; }
+        FFImageLoading.Cross.MvxCachedImageView ProductImageView { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]

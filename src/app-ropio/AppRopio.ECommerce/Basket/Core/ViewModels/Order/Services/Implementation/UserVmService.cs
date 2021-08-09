@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,8 +7,8 @@ using AppRopio.Base.Core.ViewModels.Services;
 using AppRopio.ECommerce.Basket.API.Services;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items;
 using AppRopio.Models.Basket.Responses.Order;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Services.Implementation
 {
@@ -31,7 +31,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Services.Implementatio
 
             try
             {
-                var userFieldsGroups = await Mvx.Resolve<IOrderService>().GetUserFieldsGroups();
+                var userFieldsGroups = await Mvx.IoCProvider.Resolve<IOrderService>().GetUserFieldsGroups();
                 source = new MvxObservableCollection<IOrderFieldsGroupVM>(userFieldsGroups.Select(SetupOrderFieldsGroup));
             }
             catch (ConnectionException ex)
@@ -54,7 +54,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Services.Implementatio
             {
                 var fields = fieldsGroups.SelectMany(x => x.Items);
 
-                var validation = await Mvx.Resolve<IOrderService>().ConfirmUser(fields.ToDictionary(x => x.Id, x => x.Value));
+                var validation = await Mvx.IoCProvider.Resolve<IOrderService>().ConfirmUser(fields.ToDictionary(x => x.Id, x => x.Value));
 
                 if (validation == null || (validation.NotValidFields.IsNullOrEmpty() && validation.Error.IsNullOrEmtpy()))
                     result = true;
@@ -67,7 +67,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Services.Implementatio
                     }
 
                     if (!validation.Error.IsNullOrEmpty())
-                        UserDialogs.Error(validation.Error);
+                        await UserDialogs.Error(validation.Error);
                 }
             }
             catch (ConnectionException ex)

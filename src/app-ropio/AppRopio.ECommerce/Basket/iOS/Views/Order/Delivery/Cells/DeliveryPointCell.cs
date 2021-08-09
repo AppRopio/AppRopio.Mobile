@@ -4,16 +4,16 @@ using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery.Items;
 using AppRopio.ECommerce.Basket.iOS.Services;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding.Views;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Delivery.Cells
 {
     public partial class DeliveryPointCell : MvxTableViewCell
     {
-        protected Models.DeliveryPointCell CellTheme { get { return Mvx.Resolve<IBasketThemeConfigService>().ThemeConfig.Order.DeliveryInfo.OnPoint.List.Cell; } }
-        protected Models.DeliveryPointInfo InfoTheme { get { return CellTheme.Info ?? Mvx.Resolve<IBasketThemeConfigService>().ThemeConfig.Order.DeliveryInfo.OnPoint.BaseDeliveryPointInfo; } }
+        protected Models.DeliveryPointCell CellTheme { get { return Mvx.IoCProvider.Resolve<IBasketThemeConfigService>().ThemeConfig.Order.DeliveryInfo.OnPoint.List.Cell; } }
+        protected Models.DeliveryPointInfo InfoTheme { get { return CellTheme.Info ?? Mvx.IoCProvider.Resolve<IBasketThemeConfigService>().ThemeConfig.Order.DeliveryInfo.OnPoint.BaseDeliveryPointInfo; } }
 
         public static readonly NSString Key = new NSString("DeliveryPointCell");
         public static readonly UINib Nib = UINib.FromName("DeliveryPointCell", NSBundle.MainBundle);

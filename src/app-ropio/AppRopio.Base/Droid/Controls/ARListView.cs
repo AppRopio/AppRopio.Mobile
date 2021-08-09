@@ -5,9 +5,9 @@ using Android.Runtime;
 using Android.Util;
 using Android.Views;
 using AppRopio.Base.Droid.Adapters;
-using MvvmCross.Binding.Droid.BindingContext;
-using MvvmCross.Binding.Droid.Views;
-using MvvmCross.Binding.ExtensionMethods;
+using MvvmCross.Platforms.Android.Binding.BindingContext;
+using MvvmCross.Platforms.Android.Binding.Views;
+using MvvmCross.Binding.Extensions;
 using Android.Widget;
 
 namespace AppRopio.Base.Droid.Controls

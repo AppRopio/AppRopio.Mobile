@@ -1,9 +1,8 @@
-﻿using System;
-using MvvmCross.Core.ViewModels;
+﻿using MvvmCross.Commands;
 
 namespace AppRopio.Base.Core.ViewModels
 {
-    public interface IRefreshViewModel : ILoadMoreViewModel
+	public interface IRefreshViewModel : ILoadMoreViewModel
     {
         IMvxCommand ReloadCommand { get; }
 

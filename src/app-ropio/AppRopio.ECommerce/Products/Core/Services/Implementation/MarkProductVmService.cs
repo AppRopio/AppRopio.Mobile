@@ -6,7 +6,7 @@ using AppRopio.Base.API.Exceptions;
 using AppRopio.Base.Core.ViewModels.Services;
 using AppRopio.ECommerce.Products.API.Services;
 using AppRopio.ECommerce.Products.Core.Messages;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.Products.Core.Services.Implementation
 {
@@ -24,7 +24,7 @@ namespace AppRopio.ECommerce.Products.Core.Services.Implementation
 
         #region Services
 
-        protected IProductService ProductService { get { return Mvx.Resolve<IProductService>(); } }
+        protected IProductService ProductService { get { return Mvx.IoCProvider.Resolve<IProductService>(); } }
 
         #endregion
 

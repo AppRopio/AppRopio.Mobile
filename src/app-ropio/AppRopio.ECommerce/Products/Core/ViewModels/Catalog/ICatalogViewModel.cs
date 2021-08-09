@@ -1,8 +1,9 @@
 using System.Windows.Input;
+using AppRopio.Base.Core.ViewModels;
 using AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Items;
 using AppRopio.ECommerce.Products.Core.ViewModels.ContentSearch;
-using MvvmCross.Core.ViewModels;
-using AppRopio.Base.Core.ViewModels;
+using MvvmCross.Commands;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.Catalog
 {

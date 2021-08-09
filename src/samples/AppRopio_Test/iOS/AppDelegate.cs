@@ -1,10 +1,6 @@
 using AppRopio.Base.iOS;
-using AppRopio.Navigation.Menu.iOS;
-using AppRopio.Navigation.Menu.iOS.Navigation;
 using AppRopio_Test.Views;
 using Foundation;
-using MvvmCross.iOS.Platform;
-using MvvmCross.iOS.Views.Presenters;
 using UIKit;
 
 namespace AppRopio.Test.iOS
@@ -16,19 +12,8 @@ namespace AppRopio.Test.iOS
     {
         public UIWindow DemoWindow { get; private set; }
 
-        protected override MvxAsyncIosSetup CreateSetup(IMvxApplicationDelegate appDelegate, MvxIosViewPresenter presenter)
-        {
-            return new MenuSetup(appDelegate, presenter);
-        }
-
-        protected override MvxIosViewPresenter CreatePresenter(IMvxApplicationDelegate appDelegate, UIWindow window)
-        {
-            return new MenuNavigationPresenter(appDelegate, window);
-        }
-
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
-            DemoWindow = CreateWindow();
             DemoWindow = new UIWindow(UIScreen.MainScreen.Bounds) 
             {
                 RootViewController = new DemoViewController(() => 

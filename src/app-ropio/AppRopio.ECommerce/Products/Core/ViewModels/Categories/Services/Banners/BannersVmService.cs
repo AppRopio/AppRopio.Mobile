@@ -8,8 +8,7 @@ using AppRopio.Base.Core.ViewModels.Services;
 using AppRopio.ECommerce.Products.API.Services;
 using AppRopio.ECommerce.Products.Core.ViewModels.Categories.Items.Banners;
 using AppRopio.Models.Products.Responses;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Platform;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.Categories.Services.Banners
 {
@@ -23,7 +22,7 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.Categories.Services.Banner
 
         #region Services
 
-        protected IBannersService BannersService { get { return Mvx.Resolve<IBannersService>(); } }
+        protected IBannersService BannersService { get { return Mvx.IoCProvider.Resolve<IBannersService>(); } }
 
         #endregion
 

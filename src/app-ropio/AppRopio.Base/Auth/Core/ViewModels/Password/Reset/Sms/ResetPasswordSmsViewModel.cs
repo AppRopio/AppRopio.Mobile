@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using AppRopio.Base.Auth.Core.Formatters;
 using AppRopio.Base.Auth.Core.Models.Bundle;
@@ -7,12 +8,13 @@ using AppRopio.Base.Auth.Core.ViewModels.Password.Reset.Sms.Services;
 using AppRopio.Base.Core.Extentions;
 using AppRopio.Base.Core.Models.Bundle;
 using AppRopio.Base.Core.Models.Navigation;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross;
+using MvvmCross.Commands;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.Base.Auth.Core.ViewModels.Password.Reset.Sms
 {
-	public class ResetPasswordSmsViewModel : AuthBaseViewModel, IResetPasswordSmsViewModel
+    public class ResetPasswordSmsViewModel : AuthBaseViewModel, IResetPasswordSmsViewModel
 	{
 		#region Fields
 
@@ -27,7 +29,7 @@ namespace AppRopio.Base.Auth.Core.ViewModels.Password.Reset.Sms
 		{
 			get
 			{
-				return _validateCodeCmd ?? (_validateCodeCmd = new MvxCommand(OnValidateCodeExecute));
+				return _validateCodeCmd ?? (_validateCodeCmd = new MvxAsyncCommand(OnValidateCodeExecute));
 			}
 		}
 
@@ -36,7 +38,7 @@ namespace AppRopio.Base.Auth.Core.ViewModels.Password.Reset.Sms
 		{
 			get
 			{
-				return _resendCodeCmd ?? (_resendCodeCmd = new MvxCommand(OnResendExecute));
+				return _resendCodeCmd ?? (_resendCodeCmd = new MvxAsyncCommand(OnResendExecute));
 			}
 		}
 
@@ -73,7 +75,7 @@ namespace AppRopio.Base.Auth.Core.ViewModels.Password.Reset.Sms
 		#region Services
 
 		private IResetPasswordSmsVmService _resetSmsVmService;
-		protected IResetPasswordSmsVmService ResetSmsVmService { get { return _resetSmsVmService ?? (_resetSmsVmService = Mvx.Resolve<IResetPasswordSmsVmService>()); } }
+		protected IResetPasswordSmsVmService ResetSmsVmService { get { return _resetSmsVmService ?? (_resetSmsVmService = Mvx.IoCProvider.Resolve<IResetPasswordSmsVmService>()); } }
 
 		#endregion
 
@@ -116,7 +118,7 @@ namespace AppRopio.Base.Auth.Core.ViewModels.Password.Reset.Sms
 			return !VerifyCode.IsNullOrEmtpy();
 		}
 
-		protected virtual async void OnValidateCodeExecute()
+		protected virtual async Task OnValidateCodeExecute()
 		{
 			Loading = true;
 			if (await ResetSmsVmService.VerifyCode(VerifyCode, OnUnbindCTS))
@@ -128,7 +130,7 @@ namespace AppRopio.Base.Auth.Core.ViewModels.Password.Reset.Sms
 
 		}
 
-		protected virtual async void OnResendExecute()
+		protected virtual async Task OnResendExecute()
 		{
 			Loading = true;
 			await ResetSmsVmService.ResendCode(OnUnbindCTS);

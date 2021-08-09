@@ -1,6 +1,6 @@
 ﻿using AppRopio.Base.Auth.Core.Models.Registration;
 using AppRopio.Models.Auth.Enums;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.Base.Auth.Core.ViewModels.SignUp.Items
 {

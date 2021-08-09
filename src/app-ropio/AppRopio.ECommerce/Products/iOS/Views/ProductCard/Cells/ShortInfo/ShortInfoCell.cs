@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using AppRopio.Base.Core.Combiners;
 using AppRopio.Base.Core.Converters;
 using AppRopio.Base.iOS;
@@ -11,17 +11,17 @@ using AppRopio.ECommerce.Products.iOS.Services;
 using AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding.Views;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.ShortInfo
 {
     public partial class ShortInfoCell : MvxTableViewCell
     {
-        protected ProductsConfig Config { get { return Mvx.Resolve<IProductConfigService>().Config; } }
+        protected ProductsConfig Config { get { return Mvx.IoCProvider.Resolve<IProductConfigService>().Config; } }
 
-        protected ProductsThemeConfig ThemeConfig => Mvx.Resolve<IProductsThemeConfigService>().ThemeConfig;
+        protected ProductsThemeConfig ThemeConfig => Mvx.IoCProvider.Resolve<IProductsThemeConfigService>().ThemeConfig;
 
         public static readonly NSString Key = new NSString("ShortInfoCell");
         public static readonly UINib Nib;

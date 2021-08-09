@@ -1,4 +1,6 @@
+using AppRopio.Base.Core.Plugins;
 using AppRopio.Base.Core.Services.ViewLookup;
+using AppRopio.ECommerce.Basket.Core;
 using AppRopio.ECommerce.Basket.Core.Services;
 using AppRopio.ECommerce.Basket.Core.ViewModels;
 using AppRopio.ECommerce.Basket.Core.ViewModels.CartIndicator;
@@ -19,18 +21,24 @@ using AppRopio.ECommerce.Basket.iOS.Views.Order.Partial;
 using AppRopio.ECommerce.Basket.iOS.Views.Order.Payment;
 using AppRopio.ECommerce.Basket.iOS.Views.Order.Thanks;
 using AppRopio.ECommerce.Basket.iOS.Views.ProductCard;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.ECommerce.Basket.iOS
 {
-    public class Plugin : IMvxPlugin
+	[MvxPlugin]
+    [Preserve(AllMembers = true)]
+    public class Plugin : BasePlugin<App>
     {
-        public void Load()
-        {
-            Mvx.RegisterSingleton<IBasketThemeConfigService>(() => new BasketThemeConfigService());
+		protected override string Name => "Basket";
 
-            var viewLookupService = Mvx.Resolve<IViewLookupService>();
+        public override void Load()
+        {
+            base.Load();
+
+            Mvx.IoCProvider.RegisterSingleton<IBasketThemeConfigService>(() => new BasketThemeConfigService());
+
+            var viewLookupService = Mvx.IoCProvider.Resolve<IViewLookupService>();
             viewLookupService.Register<IBasketViewModel>(typeof(BasketViewController));
             viewLookupService.Register<IDeliveryViewModel>(typeof(DeliveryTypesViewController));
             viewLookupService.Register<IDeliveryOnPointVM>(typeof(DeliveryOnPointVC));
@@ -44,7 +52,7 @@ namespace AppRopio.ECommerce.Basket.iOS
             viewLookupService.Register<IBasketProductCardViewModel, BasketProductCardView>();
             viewLookupService.Register<IBasketCartIndicatorViewModel, BasketCartIndicatorView>();
 
-            var orderType = Mvx.Resolve<IBasketConfigService>().Config.OrderViewType;
+            var orderType = Mvx.IoCProvider.Resolve<IBasketConfigService>().Config.OrderViewType;
             switch (orderType)
             {
                 case Core.Enums.OrderViewType.Full:

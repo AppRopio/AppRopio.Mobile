@@ -8,9 +8,9 @@ using AppRopio.ECommerce.Products.iOS.Models;
 using AppRopio.ECommerce.Products.iOS.Services;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.ExtensionMethods;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Binding.Extensions;
+using MvvmCross.Platforms.Ios.Binding.Views;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.Picker
@@ -19,7 +19,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.Picker
     {
         private UIPickerView _valuePicker;
 
-        protected ProductsThemeConfig ThemeConfig { get { return Mvx.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
+        protected ProductsThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
 
         public const float PICKER_TITLE_HEIGHT = 52;
         public const float PICKER_CONTENT_HEIGHT = 220;
@@ -46,7 +46,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.Picker
 
         private class PickerViewModel : MvxPickerViewModel
         {
-            protected ProductsThemeConfig ThemeConfig { get { return Mvx.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
+            protected ProductsThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
 
             public PickerViewModel(UIPickerView pickerView)
                 : base(pickerView)

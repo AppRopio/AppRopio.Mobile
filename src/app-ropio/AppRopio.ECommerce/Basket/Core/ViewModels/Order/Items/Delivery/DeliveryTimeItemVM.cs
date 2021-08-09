@@ -1,5 +1,5 @@
 ﻿using System;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 using AppRopio.Models.Basket.Responses.Order;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items.Delivery

@@ -1,15 +1,15 @@
 ﻿using System;
 using AppRopio.Payments.YandexKassa.API.Services;
 using AppRopio.Payments.YandexKassa.API.Services.Implementation;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Payments.YandexKassa.API
 {
-	public class App : MvvmCross.Core.ViewModels.MvxApplication
+	public class App : MvvmCross.ViewModels.MvxApplication
 	{
 		public override void Initialize()
 		{
-			Mvx.RegisterType<IYandexKassaService>(() => new YandexKassaService());
+			Mvx.IoCProvider.RegisterType<IYandexKassaService>(() => new YandexKassaService());
 		}
 	}
 }

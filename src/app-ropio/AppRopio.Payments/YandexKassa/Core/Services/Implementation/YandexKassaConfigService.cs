@@ -3,7 +3,7 @@ using System.IO;
 using AppRopio.Base.Core;
 using AppRopio.Base.Core.Services.Settings;
 using AppRopio.Payments.YandexKassa.Core.Models;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Payments.YandexKassa.Core.Services.Implementation
 {
@@ -27,7 +27,7 @@ namespace AppRopio.Payments.YandexKassa.Core.Services.Implementation
 		private YandexKassaConfig LoadConfigFromJSON()
 		{
 			var path = Path.Combine(CoreConstants.CONFIGS_FOLDER, YandexKassaConstants.CONFIG_NAME);
-			var json = Mvx.Resolve<ISettingsService>().ReadStringFromFile(path);
+			var json = Mvx.IoCProvider.Resolve<ISettingsService>().ReadStringFromFile(path);
 			return Newtonsoft.Json.JsonConvert.DeserializeObject<YandexKassaConfig>(json);
 		}
 

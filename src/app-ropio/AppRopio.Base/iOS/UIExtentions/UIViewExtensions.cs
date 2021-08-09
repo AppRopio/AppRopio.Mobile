@@ -1,7 +1,7 @@
 ﻿using System;
 using UIKit;
 using CoreGraphics;
-using MvvmCross.Binding.ExtensionMethods;
+using MvvmCross.Binding.Extensions;
 
 namespace AppRopio.Base.iOS.UIExtentions
 {
@@ -102,9 +102,23 @@ namespace AppRopio.Base.iOS.UIExtentions
 
         #endregion
 
-		#region Change frame
+        #region Change insets
 
-		public static void ChangeFrame(this UIView control, nfloat? x = null, nfloat? y = null, nfloat? w = null, nfloat? h = null)
+		public static UIEdgeInsets ChangeInsets(this ref UIEdgeInsets insets, nfloat? t = null, nfloat? l = null, nfloat? b = null, nfloat? r = null)
+		{
+			t = t ?? insets.Top;
+			l = l ?? insets.Left;
+			b = b ?? insets.Bottom;
+			r = r ?? insets.Right;
+
+			return (insets = new UIEdgeInsets(t.Value, l.Value, b.Value, r.Value));
+        }
+
+        #endregion
+
+        #region Change frame
+
+        public static void ChangeFrame(this UIView control, nfloat? x = null, nfloat? y = null, nfloat? w = null, nfloat? h = null)
 		{
 			x = x ?? control.Frame.X;
 			y = y ?? control.Frame.Y;

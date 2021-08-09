@@ -133,7 +133,9 @@ namespace AppRopio.ECommerce.Basket.Droid.Views.Order.Delivery
 
         private class DeliveryOnAddressTemplateSelector : IARFlatGroupTemplateSelector
         {
-            public int GetFooterViewType(object forItemObject)
+			public int ItemTemplateId { get; set; }
+
+			public int GetFooterViewType(object forItemObject)
             {
                 return Resource.Layout.app_basket_full_order_footer;
             }

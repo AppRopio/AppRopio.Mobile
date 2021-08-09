@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Specialized;
-using System.ComponentModel;
-using MvvmCross.Binding.Attributes;
-using MvvmCross.Binding.ExtensionMethods;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Core.Views;
-using MvvmCross.Platform.WeakSubscription;
-using UIKit;
-using MvvmCross.Platform.Platform;
 using System.Windows.Input;
+using MvvmCross;
+using MvvmCross.Binding.Attributes;
+using MvvmCross.Binding.Extensions;
+using MvvmCross.Logging;
+using MvvmCross.ViewModels;
+using MvvmCross.Views;
+using MvvmCross.WeakSubscription;
+using UIKit;
 
 namespace AppRopio.Base.iOS.Views.PageViewController.ViewSources
 {
@@ -44,7 +44,7 @@ namespace AppRopio.Base.iOS.Views.PageViewController.ViewSources
                         }
                         catch (Exception exception)
                         {
-                            MvxTrace.TaggedTrace(MvxTraceLevel.Error, this.GetType().FullName, exception.BuildAllMessagesAndStackTrace());
+                            Mvx.IoCProvider.Resolve<IMvxLog>().Error($"{this.GetType().FullName}: {exception.BuildAllMessagesAndStackTrace()}");
                         }
                     }
 

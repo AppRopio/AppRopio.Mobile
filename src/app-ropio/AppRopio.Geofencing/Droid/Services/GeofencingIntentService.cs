@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Android.App;
 using Android.Content;
 using Android.Gms.Common.Apis;
 using Android.Gms.Location;
 using Android.OS;
-using Java.Lang;
-using MvvmCross.Platform.Platform;
 using AppRopio.Geofencing.Core.Service.Implementation;
 using AppRopio.Models.Geofencing.Responses;
+using Java.Lang;
+using MvvmCross;
+using MvvmCross.Logging;
 
 [assembly: UsesPermission(Name = "android.permission.INTERNET")]
 [assembly: UsesPermission(Name = "android.permission.WAKE_LOCK")]
@@ -62,7 +62,7 @@ namespace AppRopio.Geofencing.Droid.Services
             base.OnCreate();
 
             BuildGoogleApiClient();
-            MvxTrace.TaggedTrace(TAG, "Created");
+            Mvx.IoCProvider.Resolve<IMvxLog>().Trace($"{TAG}: Created");
         }
 
         public override ComponentName StartService(Intent service)
@@ -77,7 +77,7 @@ namespace AppRopio.Geofencing.Droid.Services
                 SystemClock.CurrentThreadTimeMillis() + 1000,
                 restartServicePendingIntent);
 
-            MvxTrace.TaggedTrace(TAG, "StartService");
+            Mvx.IoCProvider.Resolve<IMvxLog>().Trace($"{TAG}: StartService");
 
             return base.StartService(service);
         }
@@ -99,7 +99,7 @@ namespace AppRopio.Geofencing.Droid.Services
                 SystemClock.CurrentThreadTimeMillis() + 1000,
                 restartServicePendingIntent);
 
-            MvxTrace.TaggedTrace(TAG, "Start after removed");
+            Mvx.IoCProvider.Resolve<IMvxLog>().Trace($"{TAG}: Start after removed");
         }
 
         public override void OnDestroy()
@@ -126,12 +126,12 @@ namespace AppRopio.Geofencing.Droid.Services
         {
             LocationServices.FusedLocationApi.RequestLocationUpdates(_googleApiClient, GetLocationRequest(), this);
 
-            MvxTrace.TaggedTrace(TAG, "GoogleApiClient connected");
+            Mvx.IoCProvider.Resolve<IMvxLog>().Trace($"{TAG}: GoogleApiClient connected");
         }
 
         public void OnConnectionSuspended(int cause)
         {
-            MvxTrace.TaggedTrace(TAG, string.Format("GoogleApiClient OnConnectionSuspended {0}", cause));
+            Mvx.IoCProvider.Resolve<IMvxLog>().Trace($"{TAG}: GoogleApiClient OnConnectionSuspended {cause}");
         }
 
         #endregion
@@ -140,7 +140,7 @@ namespace AppRopio.Geofencing.Droid.Services
 
         public void OnConnectionFailed(global::Android.Gms.Common.ConnectionResult result)
         {
-            MvxTrace.TaggedTrace(TAG, string.Format("GoogleApiClient OnConnectionFailed {0} {1}", result.ErrorCode, result.ErrorMessage));
+            Mvx.IoCProvider.Resolve<IMvxLog>().Trace($"{TAG}: GoogleApiClient OnConnectionFailed {result.ErrorCode} {result.ErrorMessage}");
         }
 
         #endregion
@@ -154,7 +154,7 @@ namespace AppRopio.Geofencing.Droid.Services
             
             UpdateRegions(location);
 
-            MvxTrace.TaggedTrace(TAG, string.Format("OnLocationChanged Lat {0} : Long {1} – Accuracy {2} : Speed {3}", location.Latitude, location.Longitude, location.Accuracy, location.Speed));
+            Mvx.IoCProvider.Resolve<IMvxLog>().Trace($"{TAG}: OnLocationChanged Lat {location.Latitude} : Long {location.Longitude} – Accuracy {location.Accuracy} : Speed {location.Speed}");
         }
 
         #endregion
@@ -171,7 +171,7 @@ namespace AppRopio.Geofencing.Droid.Services
 
             _geofenceList = new List<IGeofence>();
 
-            MvxTrace.TaggedTrace(TAG, "Service been destroyed");
+            Mvx.IoCProvider.Resolve<IMvxLog>().Trace($"{TAG}: Service been destroyed");
         }
 
         private async void UpdateRegions(global::Android.Locations.Location location)
@@ -188,11 +188,11 @@ namespace AppRopio.Geofencing.Droid.Services
                 RemoveGeofencesHandler();
                 AddGeofencesHandler();
 
-                MvxTrace.TaggedTrace(TAG, string.Format("Regions loaded {0}", _regionsModels.Count));
+                Mvx.IoCProvider.Resolve<IMvxLog>().Trace($"{TAG}: Regions loaded {_regionsModels.Count}");
             }
             catch (System.Exception ex)
             {
-                MvxTrace.TaggedError(TAG, string.Format("Error when update regions {0}", ex.InnerException?.Message));
+                Mvx.IoCProvider.Resolve<IMvxLog>().Error($"{TAG}: Error when update regions {ex.InnerException?.Message}");
             }
         }
 
@@ -211,7 +211,7 @@ namespace AppRopio.Geofencing.Droid.Services
                 );
             }
 
-            MvxTrace.TaggedTrace(TAG, string.Format("GeofenceList Populated – Count {0}", _geofenceList.Count));
+            Mvx.IoCProvider.Resolve<IMvxLog>().Trace($"{TAG}: GeofenceList Populated – Count {_geofenceList.Count}");
         }
 
         private void BuildGoogleApiClient()
@@ -264,11 +264,11 @@ namespace AppRopio.Geofencing.Droid.Services
         private void HandleResult(Statuses status, string message)
         {
             if (status.IsSuccess)
-                MvxTrace.TaggedTrace(TAG, message);
+                Mvx.IoCProvider.Resolve<IMvxLog>().Trace($"{TAG}: {message}");
             else
             {
                 var errorMessage = GeofenceErrorMessages.GetErrorString(Application.Context, status.StatusCode);
-                MvxTrace.TaggedError(TAG, errorMessage);
+                Mvx.IoCProvider.Resolve<IMvxLog>().Error($"{TAG}: {errorMessage}");
             }
         }
 
@@ -304,8 +304,8 @@ namespace AppRopio.Geofencing.Droid.Services
 
         private void LogSecurityException(SecurityException securityException)
         {
-            MvxTrace.TaggedError(TAG, "Invalid location permission. " +
-                "You need to use ACCESS_FINE_LOCATION with geofences", securityException);
+            Mvx.IoCProvider.Resolve<IMvxLog>().Error($"{TAG}: Invalid location permission. " +
+                "You need to use ACCESS_FINE_LOCATION with geofences\n" + securityException);
         }
 
         #endregion
@@ -325,8 +325,8 @@ namespace AppRopio.Geofencing.Droid.Services
                     AlarmType.RtcWakeup,
                     SystemClock.CurrentThreadTimeMillis() + 1000,
                     restartServicePendingIntent);
-                
-                MvxTrace.TaggedTrace(TAG, "Start after boot completed");
+
+                Mvx.IoCProvider.Resolve<IMvxLog>().Trace($"{TAG}: Start after boot completed");
             }
         }
     }

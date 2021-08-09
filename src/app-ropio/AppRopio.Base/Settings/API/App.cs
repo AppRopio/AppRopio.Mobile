@@ -3,18 +3,18 @@ using AppRopio.Base.API;
 using AppRopio.Base.Settings.API.Services;
 using AppRopio.Base.Settings.API.Services.Fakes;
 using AppRopio.Base.Settings.API.Services.Implementation;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Base.Settings.API
 {
-    public class App : MvvmCross.Core.ViewModels.MvxApplication
+    public class App : MvvmCross.ViewModels.MvxApplication
     {
         public override void Initialize()
         {
             if (ApiSettings.DebugServiceEnabled)
-                Mvx.RegisterType<ISettingsService>(() => new FakeSettingsService());
+                Mvx.IoCProvider.RegisterType<ISettingsService>(() => new FakeSettingsService());
             else
-                Mvx.RegisterType<ISettingsService>(() => new SettingsService());
+                Mvx.IoCProvider.RegisterType<ISettingsService>(() => new SettingsService());
         }
     }
 }

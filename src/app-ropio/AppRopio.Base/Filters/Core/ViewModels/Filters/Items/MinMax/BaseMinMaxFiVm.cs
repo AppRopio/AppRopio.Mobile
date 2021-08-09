@@ -1,8 +1,8 @@
 ﻿using System;
-using AppRopio.Models.Filters.Responses;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using MvvmCross.Core.ViewModels;
+using AppRopio.Models.Filters.Responses;
+using MvvmCross.Commands;
 
 namespace AppRopio.Base.Filters.Core.ViewModels.Filters.Items.MinMax
 {

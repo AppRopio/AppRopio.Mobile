@@ -9,13 +9,13 @@ using AppRopio.Navigation.Menu.iOS.Navigation;
 using AppRopio.Navigation.Menu.iOS.Services;
 using CoreGraphics;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.iOS.Views;
-using MvvmCross.iOS.Views.Presenters;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding.Views;
+using MvvmCross.ViewModels;
+using MvvmCross.Platforms.Ios.Views;
+using MvvmCross.Platforms.Ios.Presenters;
+using MvvmCross;
 using UIKit;
-using MvvmCross.Core.Navigation;
+using MvvmCross.Navigation;
 using AppRopio.Base.Core.Models.Bundle;
 using AppRopio.Base.Core.Models.Navigation;
 
@@ -25,17 +25,17 @@ namespace AppRopio.Navigation.Menu.iOS.Views
     {
         protected UITableView _menuTableView;
 
-        protected MenuNavigationPresenter NavigationPresenter { get { return Mvx.Resolve<IMvxIosViewPresenter>() as MenuNavigationPresenter; } }
+        protected MenuNavigationPresenter NavigationPresenter { get { return Mvx.IoCProvider.Resolve<IMvxIosViewPresenter>() as MenuNavigationPresenter; } }
 
-        protected MenuThemeConfig ThemeConfig { get { return Mvx.Resolve<IMenuThemeConfigService>().ThemeConfig; } }
+        protected MenuThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IMenuThemeConfigService>().ThemeConfig; } }
 
         #region Protected
 
         protected void ResolveTableViewHeader(MenuConfig config, UITableView tableView)
         {
-            if (config.Header != null && Mvx.Resolve<IViewLookupService>().IsRegistered(config.Header.TypeName))
+            if (config.Header != null && Mvx.IoCProvider.Resolve<IViewLookupService>().IsRegistered(config.Header.TypeName))
             {
-                var headerView = ViewModel.HeaderVm == null ? null : Mvx.Resolve<IMvxIosViewCreator>().CreateView(ViewModel.HeaderVm) as UIView;
+                var headerView = ViewModel.HeaderVm == null ? null : Mvx.IoCProvider.Resolve<IMvxIosViewCreator>().CreateView(ViewModel.HeaderVm) as UIView;
                 if (headerView != null)
                     tableView.TableHeaderView = headerView;
             }
@@ -60,9 +60,9 @@ namespace AppRopio.Navigation.Menu.iOS.Views
 
         protected void ResolveTableViewFooter(MenuConfig config, UITableView tableView)
         {
-            if (config.Footer != null && Mvx.Resolve<IViewLookupService>().IsRegistered(config.Footer.TypeName))
+            if (config.Footer != null && Mvx.IoCProvider.Resolve<IViewLookupService>().IsRegistered(config.Footer.TypeName))
             {
-                var footerView = ViewModel.FooterVm == null ? null : Mvx.Resolve<IMvxIosViewCreator>().CreateView(ViewModel.FooterVm) as UIView;
+                var footerView = ViewModel.FooterVm == null ? null : Mvx.IoCProvider.Resolve<IMvxIosViewCreator>().CreateView(ViewModel.FooterVm) as UIView;
                 if (footerView != null)
                     tableView.TableFooterView = footerView;
             }
@@ -89,7 +89,7 @@ namespace AppRopio.Navigation.Menu.iOS.Views
 
         protected virtual void SetupTableViewHeaderAndFooter(UITableView tableView)
         {
-            var config = Mvx.Resolve<IMenuConfigService>().Config;
+            var config = Mvx.IoCProvider.Resolve<IMenuConfigService>().Config;
 
             ResolveTableViewHeader(config, tableView);
 
@@ -141,9 +141,9 @@ namespace AppRopio.Navigation.Menu.iOS.Views
 
             set.Apply();
 
-            Mvx.CallbackWhenRegistered<IMvxNavigationService>(async service =>
+            Mvx.IoCProvider.CallbackWhenRegistered<IMvxNavigationService>(async () =>
             {
-                await service.Navigate(ViewModel.DefaultViewModel, ((IMvxBundle)new BaseBundle(NavigationType.ClearAndPush)), null);
+                await Mvx.IoCProvider.Resolve<IMvxNavigationService>().Navigate(ViewModel.DefaultViewModel, ((IMvxBundle)new BaseBundle(NavigationType.ClearAndPush)), null);
             });
         }
 

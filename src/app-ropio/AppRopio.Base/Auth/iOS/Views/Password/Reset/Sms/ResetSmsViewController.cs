@@ -1,14 +1,12 @@
 ﻿using System;
+using AppRopio.Base.Auth.Core;
 using AppRopio.Base.Auth.Core.ViewModels.Password.Reset.Sms;
 using AppRopio.Base.Auth.iOS.Views._base;
-using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.UIExtentions;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platform;
 using UIKit;
-using AppRopio.Base.Auth.Core;
 
 namespace AppRopio.Base.Auth.iOS.Views.Password.Reset.Sms
 {
@@ -21,8 +19,6 @@ namespace AppRopio.Base.Auth.iOS.Views.Password.Reset.Sms
                 return LocalizationService.GetLocalizableString(AuthConst.RESX_NAME, "Password_Sms_ConfirmCode");
             }
         }
-
-        protected ILocalizationService LocalizationService => Mvx.Resolve<ILocalizationService>();
 
         public ResetSmsViewController() 
             : base("ResetSmsViewController", null)

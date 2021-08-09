@@ -2,16 +2,16 @@
 using System.Runtime.CompilerServices;
 using CoreGraphics;
 using Foundation;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Logging;
+using MvvmCross;
+using MvvmCross.Logging;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using UIKit;
 
 namespace AppRopio.Base.iOS.ViewSources
 {
     public class SupplementaryCollectionViewSource : BaseCollectionViewSource
     {
-        IMvxLog mvxLog;
+        private readonly IMvxLog mvxLog;
 
         protected readonly object _headerDataContext;
         protected readonly object _footerDataContext;
@@ -25,22 +25,22 @@ namespace AppRopio.Base.iOS.ViewSources
             _footerDataContext = footerVm;
             _headerDataContext = headerVm;
 
-            mvxLog = Mvx.Resolve<IMvxLog>();
+            mvxLog = Mvx.IoCProvider.Resolve<IMvxLog>();
         }
 
         protected virtual void SetupReusableView(UICollectionReusableView reusableView, NSString elementKind, NSIndexPath indexPath, object mvxViewModel)
         {
-            Mvx.Resolve<IMvxLog>().Trace($"SetupReusableView started {elementKind} {indexPath}");
+            Mvx.IoCProvider.Resolve<IMvxLog>().Trace($"SetupReusableView started {elementKind} {indexPath}");
 
             if (reusableView is IMvxBindable mvxIosView)
             {
-                Mvx.Resolve<IMvxLog>().Trace($"SetupReusableView in process {elementKind} {indexPath}");
+                Mvx.IoCProvider.Resolve<IMvxLog>().Trace($"SetupReusableView in process {elementKind} {indexPath}");
                 mvxIosView.DataContext = mvxViewModel;
             }
             else
-                Mvx.Resolve<IMvxLog>().Warn($"SetupReusableView is not IMvxBindable {elementKind} {indexPath}");
+                Mvx.IoCProvider.Resolve<IMvxLog>().Warn($"SetupReusableView is not IMvxBindable {elementKind} {indexPath}");
 
-            Mvx.Resolve<IMvxLog>().Trace($"SetupReusableView ended {elementKind} {indexPath}");
+            Mvx.IoCProvider.Resolve<IMvxLog>().Trace($"SetupReusableView ended {elementKind} {indexPath}");
         }
 
         [Export("collectionView:layout:referenceSizeForHeaderInSection:"), CompilerGenerated]

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
 using AppRopio.Base.API.Exceptions;
@@ -9,8 +9,8 @@ using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items.Delivery;
 using AppRopio.Models.Base.Responses;
 using AppRopio.Models.Basket.Responses.Order;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 using DeliveryModel = AppRopio.Models.Basket.Responses.Order.Delivery;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Services.Implementation
@@ -43,7 +43,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Services.Implementatio
 
         #region Services
 
-        protected IDeliveryService DeliveryService => Mvx.Resolve<IDeliveryService>();
+        protected IDeliveryService DeliveryService => Mvx.IoCProvider.Resolve<IDeliveryService>();
 
         #endregion
 
@@ -131,7 +131,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Services.Implementatio
                     }
 
                     if (!validation.Error.IsNullOrEmpty())
-                        UserDialogs.Error(validation.Error);
+                        await UserDialogs.Error(validation.Error);
                 }
             }
             catch (ConnectionException ex)
@@ -210,7 +210,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Services.Implementatio
             var result = false;
             try
             {
-                await Mvx.Resolve<IDeliveryService>().ConfirmDeliveryTime(deliveryTimeId);
+                await Mvx.IoCProvider.Resolve<IDeliveryService>().ConfirmDeliveryTime(deliveryTimeId);
                 result = true;
             }
             catch (ConnectionException ex)
@@ -229,7 +229,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Services.Implementatio
             var result = false;
             try
             {
-                await Mvx.Resolve<IDeliveryService>().ConfirmDelivery(id);
+                await Mvx.IoCProvider.Resolve<IDeliveryService>().ConfirmDelivery(id);
                 result = true;
             }
             catch (ConnectionException ex)

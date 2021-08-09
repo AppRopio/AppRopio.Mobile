@@ -32,7 +32,7 @@ namespace AppRopio.Base.Profile.iOS.View.MenuHeader
 
 
 		[Outlet]
-		UIKit.UIImageView _userPhoto { get; set; }
+		FFImageLoading.Cross.MvxCachedImageView _userPhoto { get; set; }
 
 		void ReleaseDesignerOutlets()
 		{

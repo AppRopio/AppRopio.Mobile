@@ -4,7 +4,7 @@ using AppRopio.Base.iOS.Views;
 using AppRopio.Base.Map.Core.ViewModels.Points;
 using AppRopio.Base.Map.iOS.Services;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platform;
+using MvvmCross;
 using UIKit;
 using AppRopio.Base.Map.Core;
 
@@ -14,8 +14,8 @@ namespace AppRopio.Base.Map.iOS.Views.Points
     {
         private UIBarButtonItem _closeButton;
 
-        protected Models.AdditionalInfo AdditionalInfoTheme { get { return Mvx.Resolve<IMapThemeConfigService>().ThemeConfig.Points.AdditionalInfo; } }
-        protected Models.PointInfo InfoTheme { get { return AdditionalInfoTheme.Info ?? Mvx.Resolve<IMapThemeConfigService>().ThemeConfig.Points.BasePointInfo; } }
+        protected Models.AdditionalInfo AdditionalInfoTheme { get { return Mvx.IoCProvider.Resolve<IMapThemeConfigService>().ThemeConfig.Points.AdditionalInfo; } }
+        protected Models.PointInfo InfoTheme { get { return AdditionalInfoTheme.Info ?? Mvx.IoCProvider.Resolve<IMapThemeConfigService>().ThemeConfig.Points.BasePointInfo; } }
 
         public PointAdditionalInfoVC() 
             : base("PointAdditionalInfoVC", null)

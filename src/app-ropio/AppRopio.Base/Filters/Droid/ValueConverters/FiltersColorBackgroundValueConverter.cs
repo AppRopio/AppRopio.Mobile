@@ -2,7 +2,7 @@
 using Android.App;
 using Android.Graphics;
 using Android.Graphics.Drawables;
-using MvvmCross.Platform.Converters;
+using MvvmCross.Converters;
 
 namespace AppRopio.Base.Filters.Droid.ValueConverters
 {

@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using AppRopio.Base.API.Services;
 using AppRopio.Base.Core;
 using AppRopio.Models.Beacons.Responses;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Beacons.Core.Services.Implementation
 {
@@ -16,7 +16,7 @@ namespace AppRopio.Beacons.Core.Services.Implementation
         {
             get
             {
-                return Mvx.CanResolve<API.Services.IBeaconsService>() ? (_apiService = Mvx.Resolve<API.Services.IBeaconsService>()) : (_apiService = new API.Services.Implementation.BeaconsService(ConnectionService));
+                return Mvx.IoCProvider.CanResolve<API.Services.IBeaconsService>() ? (_apiService = Mvx.IoCProvider.Resolve<API.Services.IBeaconsService>()) : (_apiService = new API.Services.Implementation.BeaconsService(ConnectionService));
             }
         }
 
@@ -25,14 +25,14 @@ namespace AppRopio.Beacons.Core.Services.Implementation
         {
             get
             {
-                return Mvx.CanResolve<IConnectionService>() ?
-                          (_connectionService = Mvx.Resolve<IConnectionService>())
+                return Mvx.IoCProvider.CanResolve<IConnectionService>() ?
+                          (_connectionService = Mvx.IoCProvider.Resolve<IConnectionService>())
                               :
                           (_connectionService = new ConnectionService
                           {
                               ErrorWhenConnectionFailed = AppSettings.ErrorWhenConnectionFailed,
                               ErrorWhenTaskCanceled = AppSettings.ErrorWhenTaskCanceled,
-                              //IsConnectionAvailable = () => Task<bool>.Factory.StartNew(() => Mvx.Resolve<IMvxReachability>().IsHostReachable(AppSettings.Host)),
+                              //IsConnectionAvailable = () => Task<bool>.Factory.StartNew(() => Mvx.IoCProvider.Resolve<IMvxReachability>().IsHostReachable(AppSettings.Host)),
                               RequestTimeoutInSeconds = AppSettings.RequestTimeoutInSeconds,
                               BaseUrl = new Uri(AppSettings.Host)
                           });
@@ -44,7 +44,7 @@ namespace AppRopio.Beacons.Core.Services.Implementation
         {
             get
             {
-                return Mvx.CanResolve<IBeaconsService>() ? (_instance = Mvx.Resolve<IBeaconsService>()) : (_instance = new BeaconsService());
+                return Mvx.IoCProvider.CanResolve<IBeaconsService>() ? (_instance = Mvx.IoCProvider.Resolve<IBeaconsService>()) : (_instance = new BeaconsService());
             }
         }
 

@@ -8,18 +8,18 @@ using AppRopio.Base.iOS.Controls;
 using AppRopio.Base.iOS.UIExtentions;
 using CoreGraphics;
 using Foundation;
+using MvvmCross;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.ExtensionMethods;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
-using MvvmCross.Platform.iOS;
+using MvvmCross.Binding.Extensions;
+using MvvmCross.Platforms.Ios;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using UIKit;
 
 namespace AppRopio.Base.Auth.iOS.Views.SignUp.Cells
 {
     public partial class SignUpItemDatePickerViewCell : MvxTableViewCell
     {
-        protected AuthThemeConfig ThemeConfig { get { return Mvx.Resolve<IAuthThemeConfigService>().ThemeConfig; } }
+        protected AuthThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IAuthThemeConfigService>().ThemeConfig; } }
 
         public static readonly NSString Key = new NSString("SignUpItemDatePickerViewCell");
         public static readonly UINib Nib = UINib.FromName("SignUpItemDatePickerViewCell", NSBundle.MainBundle);
@@ -51,7 +51,7 @@ namespace AppRopio.Base.Auth.iOS.Views.SignUp.Cells
 
         private class PickerViewModel : MvxPickerViewModel
         {
-            protected AuthThemeConfig ThemeConfig { get { return Mvx.Resolve<IAuthThemeConfigService>().ThemeConfig; } }
+            protected AuthThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IAuthThemeConfigService>().ThemeConfig; } }
 
             public PickerViewModel(UIPickerView pickerView)
                 : base(pickerView)
@@ -132,7 +132,7 @@ namespace AppRopio.Base.Auth.iOS.Views.SignUp.Cells
                     .WithTune(tune =>
                     {
                         tune.SetupStyle(ThemeConfig.TextButton);
-                        tune.SetTitle(Mvx.Resolve<ILocalizationService>().GetLocalizableString("Base", "Done"), UIControlState.Normal);
+                        tune.SetTitle(Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString("Base", "Done"), UIControlState.Normal);
                         tune.TouchUpInside += (sender, e) => textField.EndEditing(true);
                     }),
                     new UIView().WithFrame(0, 0, DeviceInfo.ScreenWidth, 1).WithBackground(Theme.ColorPalette.Separator.ToUIColor()),

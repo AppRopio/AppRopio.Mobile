@@ -2,18 +2,18 @@
 using AppRopio.Feedback.API.Services;
 using AppRopio.Feedback.API.Services.Fakes;
 using AppRopio.Feedback.API.Services.Implementation;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Feedback.API
 {
-    public class App : MvvmCross.Core.ViewModels.MvxApplication
+    public class App : MvvmCross.ViewModels.MvxApplication
     {
         public override void Initialize()
         {
             if (ApiSettings.DebugServiceEnabled)
-                Mvx.RegisterType<IReviewsService>(() => new ReviewsFakeService());
+                Mvx.IoCProvider.RegisterType<IReviewsService>(() => new ReviewsFakeService());
             else
-                Mvx.RegisterType<IReviewsService>(() => new ReviewsService());
+                Mvx.IoCProvider.RegisterType<IReviewsService>(() => new ReviewsService());
         }
     }
 }

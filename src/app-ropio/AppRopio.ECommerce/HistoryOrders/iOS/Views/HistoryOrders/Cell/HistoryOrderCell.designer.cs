@@ -30,7 +30,7 @@ namespace AppRopio.ECommerce.HistoryOrders.iOS.Views.HistoryOrders
 
 
         [Outlet]
-        UIKit.UIImageView OrderImageView { get; set; }
+        FFImageLoading.Cross.MvxCachedImageView OrderImageView { get; set; }
 
 
         [Outlet]

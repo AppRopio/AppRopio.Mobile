@@ -1,4 +1,6 @@
-﻿using AppRopio.Base.Core.Services.ViewLookup;
+﻿using AppRopio.Base.Core.Plugins;
+using AppRopio.Base.Core.Services.ViewLookup;
+using AppRopio.ECommerce.Basket.Core;
 using AppRopio.ECommerce.Basket.Core.ViewModels;
 using AppRopio.ECommerce.Basket.Core.ViewModels.CartIndicator;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order;
@@ -13,16 +15,22 @@ using AppRopio.ECommerce.Basket.Droid.Views.Order.Full;
 using AppRopio.ECommerce.Basket.Droid.Views.Order.Payment;
 using AppRopio.ECommerce.Basket.Droid.Views.Order.Thanks;
 using AppRopio.ECommerce.Basket.Droid.Views.ProductCard;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.ECommerce.Basket.Droid
 {
-    public class Plugin: IMvxPlugin
+	[MvxPlugin]
+    [Preserve(AllMembers = true)]
+    public class Plugin : BasePlugin<App>
     {
-        public void Load()
+		protected override string Name => "Basket";
+
+        public override void Load()
         {
-            var viewLookupService = Mvx.Resolve<IViewLookupService>();
+            base.Load();
+
+            var viewLookupService = Mvx.IoCProvider.Resolve<IViewLookupService>();
             viewLookupService.Register<IBasketViewModel, BasketFragment>();
             //viewLookupService.Register<IDeliveryViewModel>(typeof(DeliveryTypesViewController));
             viewLookupService.Register<IDeliveryOnAddressVM>(typeof(DeliveryOnAddressFragment));

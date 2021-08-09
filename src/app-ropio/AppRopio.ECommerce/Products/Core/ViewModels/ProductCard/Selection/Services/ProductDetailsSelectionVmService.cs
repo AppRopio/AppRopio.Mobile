@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -7,8 +7,8 @@ using AppRopio.Base.Core.ViewModels.Selection.Items;
 using AppRopio.Base.Core.ViewModels.Services;
 using AppRopio.ECommerce.Products.Core.Messages;
 using AppRopio.Models.Products.Responses;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Selection.Services
 {
@@ -16,7 +16,7 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Selection.Serv
     {
         #region Services
 
-        protected IMvxMessenger MessengerService { get { return Mvx.Resolve<IMvxMessenger>(); } }
+        protected IMvxMessenger MessengerService { get { return Mvx.IoCProvider.Resolve<IMvxMessenger>(); } }
 
         #endregion
 

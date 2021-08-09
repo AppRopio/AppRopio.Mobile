@@ -7,11 +7,11 @@ using AppRopio.Feedback.iOS.Models;
 using AppRopio.Feedback.iOS.Services;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Core.Views;
-using MvvmCross.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding.Views;
+using MvvmCross.ViewModels;
+using MvvmCross.Views;
+using MvvmCross.Platforms.Ios.Views;
+using MvvmCross;
 using ObjCRuntime;
 using UIKit;
 
@@ -19,7 +19,7 @@ namespace AppRopio.Feedback.iOS.Views.ReviewDetails
 {
     public partial class ScoreView : MvxView, IMvxIosView<IScoreViewModel>
     {
-		protected FeedbackThemeConfig ThemeConfig { get { return Mvx.Resolve<IFeedbackThemeConfigService>().ThemeConfig; } }
+		protected FeedbackThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IFeedbackThemeConfigService>().ThemeConfig; } }
 
 		IMvxViewModel IMvxView.ViewModel
 		{

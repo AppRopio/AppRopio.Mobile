@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using AppRopio.Models.Basket.Responses.Enums;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.Commands;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items
 {

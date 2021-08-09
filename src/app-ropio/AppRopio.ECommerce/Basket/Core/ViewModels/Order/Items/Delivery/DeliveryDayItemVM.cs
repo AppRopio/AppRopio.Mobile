@@ -1,5 +1,5 @@
 ﻿using System;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 using System.Collections.Generic;
 using AppRopio.Models.Basket.Responses.Order;
 using System.Linq;

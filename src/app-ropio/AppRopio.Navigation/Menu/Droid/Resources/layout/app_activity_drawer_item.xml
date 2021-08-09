@@ -7,7 +7,7 @@
     <android.support.constraint.ConstraintLayout
         android:layout_height="match_parent"
         android:layout_width="match_parent">
-        <mvvmcross.binding.droid.views.MvxImageView
+        <appropio.base.droid.controls.ARImageView
             android:id="@+id/app_navigation_view_item_icon"
             android:layout_height="match_parent"
             android:layout_width="0dp"

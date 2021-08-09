@@ -3,7 +3,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using CoreLocation;
 using Foundation;
-using MvvmCross.Platform.Platform;
+using MvvmCross;
+using MvvmCross.Logging;
 
 namespace AppRopio.Beacons.iOS.Util
 {
@@ -31,7 +32,7 @@ namespace AppRopio.Beacons.iOS.Util
             EventHandler<CLAuthorizationChangedEventArgs> handler = null;
             handler = (object sender, CLAuthorizationChangedEventArgs e) =>
             {
-                MvxTrace.Trace("CLAuthorizarion status changed: " + e.Status);
+                Mvx.IoCProvider.Resolve<IMvxLog>().Trace("CLAuthorizarion status changed: " + e.Status);
 
                 if (e.Status == CLAuthorizationStatus.AuthorizedAlways)
                 {
@@ -60,7 +61,7 @@ namespace AppRopio.Beacons.iOS.Util
 
             handler = (object sender, CLLocationsUpdatedEventArgs e) =>
             {
-                MvxTrace.Trace("UpdatedLocations: " + e.Locations.FirstOrDefault());
+                Mvx.IoCProvider.Resolve<IMvxLog>().Trace("UpdatedLocations: " + e.Locations.FirstOrDefault());
 
                 _locationManager.LocationsUpdated -= handler;
                 _locationManager.Failed -= failedHandler;
@@ -72,7 +73,7 @@ namespace AppRopio.Beacons.iOS.Util
 
             failedHandler = (object sender, NSErrorEventArgs e) =>
             {
-                MvxTrace.Trace("Failed to get location: " + e.Error);
+                Mvx.IoCProvider.Resolve<IMvxLog>().Trace("Failed to get location: " + e.Error);
 
                 _locationManager.LocationsUpdated -= handler;
                 _locationManager.Failed -= failedHandler;

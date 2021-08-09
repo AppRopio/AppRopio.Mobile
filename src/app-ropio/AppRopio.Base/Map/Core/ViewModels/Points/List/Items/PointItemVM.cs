@@ -1,16 +1,17 @@
-using System;
-using MvvmCross.Core.ViewModels;
-using AppRopio.Models.Map.Responses;
-using MvvmCross.Platform;
-using AppRopio.Base.Map.Core.Models.Bundle;
-using AppRopio.Base.Core.Models.Navigation;
-using AppRopio.Models.Base.Responses;
+﻿using System;
 using System.Windows.Input;
-using Plugin.Messaging;
-using AppRopio.Base.Core.Services.UserDialogs;
-using Plugin.ExternalMaps;
-using AppRopio.Base.Map.Core.Services;
+using AppRopio.Base.Core.Models.Navigation;
+using AppRopio.Base.Core.Services.Launcher;
 using AppRopio.Base.Core.Services.Localization;
+using AppRopio.Base.Core.Services.UserDialogs;
+using AppRopio.Base.Map.Core.Models.Bundle;
+using AppRopio.Base.Map.Core.Services;
+using AppRopio.Models.Base.Responses;
+using AppRopio.Models.Map.Responses;
+using MvvmCross;
+using MvvmCross.Commands;
+using MvvmCross.ViewModels;
+using Xamarin.Essentials;
 
 namespace AppRopio.Base.Map.Core.ViewModels.Points.List.Items
 {
@@ -89,7 +90,9 @@ namespace AppRopio.Base.Map.Core.ViewModels.Points.List.Items
 
         #region Services
 
-        protected ILocalizationService LocalizationService => Mvx.Resolve<ILocalizationService>();
+        protected ILocalizationService LocalizationService => Mvx.IoCProvider.Resolve<ILocalizationService>();
+
+        protected ILauncherService LauncherService => Mvx.IoCProvider.Resolve<ILauncherService>();
 
         #endregion
 
@@ -145,19 +148,19 @@ namespace AppRopio.Base.Map.Core.ViewModels.Points.List.Items
             if (Phone.IsNullOrEmtpy())
                 return;
 
-            if (!CrossMessaging.Current.PhoneDialer.CanMakePhoneCall)
+            if (await Mvx.IoCProvider.Resolve<IUserDialogs>().Confirm($"{LocalizationService.GetLocalizableString(MapConstants.RESX_NAME, "List_CallTo")} {Phone}?", LocalizationService.GetLocalizableString(MapConstants.RESX_NAME, "List_Call")))
             {
-                await Mvx.Resolve<IUserDialogs>().Alert(LocalizationService.GetLocalizableString(MapConstants.RESX_NAME, "List_CallError"));
-                return;
+                if (!await LauncherService.LaunchPhone(Phone))
+                {
+                    await Mvx.IoCProvider.Resolve<IUserDialogs>().Alert(LocalizationService.GetLocalizableString(MapConstants.RESX_NAME, "List_CallError"));
+                    return;
+                }
             }
-
-            if (await Mvx.Resolve<IUserDialogs>().Confirm($"{LocalizationService.GetLocalizableString(MapConstants.RESX_NAME, "List_CallTo")} {Phone}?", LocalizationService.GetLocalizableString(MapConstants.RESX_NAME, "List_Call")))
-                CrossMessaging.Current.PhoneDialer.MakePhoneCall(Phone, Name);
         }
 
         protected virtual void OnAdditionalInfoExecute()
         {
-            Mvx.Resolve<IMapNavigationVmService>().NavigateToPointAdditionalInfo(_bundle);
+            Mvx.IoCProvider.Resolve<IMapNavigationVmService>().NavigateToPointAdditionalInfo(_bundle);
         }
 
         protected virtual void OnRouteExecute()
@@ -167,9 +170,19 @@ namespace AppRopio.Base.Map.Core.ViewModels.Points.List.Items
 
             InvokeOnMainThread(async () =>
             {
-                var success = await CrossExternalMaps.Current.NavigateTo(Name, Coordinates.Latitude, Coordinates.Longitude);
-                if (!success)
-                    await Mvx.Resolve<IUserDialogs>().Alert(LocalizationService.GetLocalizableString(MapConstants.RESX_NAME, "List_RouteError"));
+                try
+                {
+                    var options = new MapLaunchOptions()
+                    {
+                        Name = Name,
+                        NavigationMode = NavigationMode.Driving
+                    };
+                    await Xamarin.Essentials.Map.OpenAsync(Coordinates.Latitude, Coordinates.Longitude, options);
+                }
+                catch
+                {
+                    await Mvx.IoCProvider.Resolve<IUserDialogs>().Alert(LocalizationService.GetLocalizableString(MapConstants.RESX_NAME, "List_RouteError"));
+                }
             });
         }
 

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using AppRopio.Base.Core.Messsages.DataBase;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 using Realms;
 
 namespace AppRopio.Base.Core.Services.DataBase
@@ -93,9 +93,9 @@ namespace AppRopio.Base.Core.Services.DataBase
             }
 
             if (existsDbo != null)
-                Mvx.Resolve<IMvxMessenger>().Publish(new DataBaseUpdatedMessage<TModel>(this, new List<TModel> { model }));
+                Mvx.IoCProvider.Resolve<IMvxMessenger>().Publish(new DataBaseUpdatedMessage<TModel>(this, new List<TModel> { model }));
             else
-                Mvx.Resolve<IMvxMessenger>().Publish(new DataBaseAddedMessage<TModel>(this, new List<TModel> { model }));
+                Mvx.IoCProvider.Resolve<IMvxMessenger>().Publish(new DataBaseAddedMessage<TModel>(this, new List<TModel> { model }));
             //});
         }
 
@@ -126,9 +126,9 @@ namespace AppRopio.Base.Core.Services.DataBase
             }
 
             if (update)
-                Mvx.Resolve<IMvxMessenger>().Publish(new DataBaseUpdatedMessage<TModel>(this, models.ToList()));
+                Mvx.IoCProvider.Resolve<IMvxMessenger>().Publish(new DataBaseUpdatedMessage<TModel>(this, models.ToList()));
             else
-                Mvx.Resolve<IMvxMessenger>().Publish(new DataBaseAddedMessage<TModel>(this, models.ToList()));
+                Mvx.IoCProvider.Resolve<IMvxMessenger>().Publish(new DataBaseAddedMessage<TModel>(this, models.ToList()));
             //});
         }
 
@@ -266,7 +266,7 @@ namespace AppRopio.Base.Core.Services.DataBase
                 }
             }
 
-            Mvx.Resolve<IMvxMessenger>().Publish(new DataBaseRemovedMessage<TModel>(this, new List<TModel> { ConvertFromDBO(deletedItem) }));
+            Mvx.IoCProvider.Resolve<IMvxMessenger>().Publish(new DataBaseRemovedMessage<TModel>(this, new List<TModel> { ConvertFromDBO(deletedItem) }));
             //});
         }
 
@@ -291,7 +291,7 @@ namespace AppRopio.Base.Core.Services.DataBase
                 }
             }
 
-            Mvx.Resolve<IMvxMessenger>().Publish(new DataBaseRemovedMessage<TModel>(this, deletedItems));
+            Mvx.IoCProvider.Resolve<IMvxMessenger>().Publish(new DataBaseRemovedMessage<TModel>(this, deletedItems));
             //});
         }
 
@@ -316,7 +316,7 @@ namespace AppRopio.Base.Core.Services.DataBase
                 }
             }
 
-            Mvx.Resolve<IMvxMessenger>().Publish(new DataBaseRemovedMessage<TModel>(this, deletedItems));
+            Mvx.IoCProvider.Resolve<IMvxMessenger>().Publish(new DataBaseRemovedMessage<TModel>(this, deletedItems));
             //});
         }
 

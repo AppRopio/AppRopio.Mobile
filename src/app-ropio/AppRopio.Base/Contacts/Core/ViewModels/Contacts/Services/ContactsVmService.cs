@@ -4,14 +4,13 @@ using System.Threading.Tasks;
 using AppRopio.Base.API.Exceptions;
 using AppRopio.Base.Contacts.API.Services;
 using AppRopio.Base.Core.Services.Launcher;
+using AppRopio.Base.Core.Services.Localization;
 using AppRopio.Base.Core.Services.Location;
 using AppRopio.Base.Core.Services.UserDialogs;
 using AppRopio.Base.Core.ViewModels.Services;
 using AppRopio.Models.Contacts.Enums;
 using AppRopio.Models.Contacts.Responses;
-using MvvmCross.Platform;
-using Plugin.Messaging;
-using AppRopio.Base.Core.Services.Localization;
+using MvvmCross;
 
 namespace AppRopio.Base.Contacts.Core.ViewModels.Contacts.Services
 {
@@ -19,11 +18,11 @@ namespace AppRopio.Base.Contacts.Core.ViewModels.Contacts.Services
     {
         #region Services
 
-        protected IContactsService ApiService => Mvx.Resolve<IContactsService>();
+        protected IContactsService ApiService => Mvx.IoCProvider.Resolve<IContactsService>();
 
-        protected ILocationService LocationService => Mvx.Resolve<ILocationService>();
+        protected ILocationService LocationService => Mvx.IoCProvider.Resolve<ILocationService>();
 
-        protected ILocalizationService LocalizationService => Mvx.Resolve<ILocalizationService>();
+        protected ILocalizationService LocalizationService => Mvx.IoCProvider.Resolve<ILocalizationService>();
 
         #endregion
 
@@ -53,22 +52,18 @@ namespace AppRopio.Base.Contacts.Core.ViewModels.Contacts.Services
 
         public async Task HandleContactSelection(ListResponseItem contact)
         {
-            var launcher = Mvx.Resolve<ILauncherService>();
-            var userDialogs = Mvx.Resolve<IUserDialogs>();
+            var launcher = Mvx.IoCProvider.Resolve<ILauncherService>();
+            var userDialogs = Mvx.IoCProvider.Resolve<IUserDialogs>();
 
             switch (contact.Type)
             {
                 case ContactTypes.Email:
-                    if (CrossMessaging.Current.EmailMessenger.CanSendEmail)
-                        CrossMessaging.Current.EmailMessenger.SendEmail(contact.Value);
+                    await launcher.LaunchEmail(contact.Value);
                     break;
 
                 case ContactTypes.Phone:
-                    if (await userDialogs.Confirm($"{LocalizationService.GetLocalizableString(ContactsConstants.RESX_NAME, "CallTo")} {contact.DisplayValue}?", LocalizationService.GetLocalizableString(ContactsConstants.RESX_NAME, "MakeCall"))
-                        && CrossMessaging.Current.PhoneDialer.CanMakePhoneCall)
-                    {
-                        CrossMessaging.Current.PhoneDialer.MakePhoneCall(contact.DisplayValue);
-                    }
+                    if (await userDialogs.Confirm($"{LocalizationService.GetLocalizableString(ContactsConstants.RESX_NAME, "CallTo")} {contact.DisplayValue}?", LocalizationService.GetLocalizableString(ContactsConstants.RESX_NAME, "MakeCall")))
+                        await launcher.LaunchPhone(contact.DisplayValue);
                     break;
 
                 case ContactTypes.Url:

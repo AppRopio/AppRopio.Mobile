@@ -7,7 +7,7 @@ using AppRopio.Base.Core.Models.Bundle;
 using AppRopio.Base.Core.Models.Navigation;
 using AppRopio.ECommerce.Products.Core.Services;
 using AppRopio.Models.Products.Responses;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.Transition
 {
@@ -21,9 +21,9 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.Transiti
 
         public string Value { get; }
 
-        protected IProductsNavigationVmService NavigationVmService => Mvx.Resolve<IProductsNavigationVmService>();
+        protected new IProductsNavigationVmService NavigationVmService => Mvx.IoCProvider.Resolve<IProductsNavigationVmService>();
 
-        protected IProductConfigService ConfigService => Mvx.Resolve<IProductConfigService>();
+        protected IProductConfigService ConfigService => Mvx.IoCProvider.Resolve<IProductConfigService>();
 
         public TransitionPciVm(string groupId, string productId, ProductParameter parameter)
             : base(parameter)

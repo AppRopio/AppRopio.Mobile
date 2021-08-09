@@ -1,4 +1,5 @@
-﻿using AppRopio.Base.Core.Services.Router;
+﻿using System.Threading.Tasks;
+using AppRopio.Base.Core.Services.Router;
 using AppRopio.Base.Core.Services.ViewModelLookup;
 using AppRopio.Base.Settings.Core.Services;
 using AppRopio.Base.Settings.Core.Services.Implementation;
@@ -6,8 +7,9 @@ using AppRopio.Base.Settings.Core.ViewModels.Languages;
 using AppRopio.Base.Settings.Core.ViewModels.Regions;
 using AppRopio.Base.Settings.Core.ViewModels.Services;
 using AppRopio.Base.Settings.Core.ViewModels.Settings;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross;
+using MvvmCross.IoC;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.Base.Settings.Core
 {
@@ -15,14 +17,17 @@ namespace AppRopio.Base.Settings.Core
 	{
 		public override void Initialize()
 		{
-			Mvx.RegisterSingleton<ISettingsVmService>(() => new SettingsVmService());
-            Mvx.RegisterSingleton<ISettingsConfigService>(() => new SettingsConfigService());
-            Mvx.RegisterSingleton<IRegionService>(() => new RegionService());
-            Mvx.RegisterSingleton<ISettingsVmNavigationService>(new SettingsVmNavigationService());
+            new API.App().Initialize();
+
+			Mvx.IoCProvider.RegisterSingleton<ISettingsVmService>(() => new SettingsVmService());
+            Mvx.IoCProvider.RegisterSingleton<ISettingsConfigService>(() => new SettingsConfigService());
+            Mvx.IoCProvider.RegisterSingleton<IRegionService>(() => new RegionService());
+
+            Mvx.IoCProvider.RegisterType<ISettingsVmNavigationService>(() => new SettingsVmNavigationService());
 
 			#region VMs registration
 
-			var vmLookupService = Mvx.Resolve<IViewModelLookupService>();
+			var vmLookupService = Mvx.IoCProvider.Resolve<IViewModelLookupService>();
 
 			vmLookupService.Register<ISettingsViewModel, SettingsViewModel>();
 			vmLookupService.Register<IRegionsViewModel, RegionsViewModel>();
@@ -31,8 +36,17 @@ namespace AppRopio.Base.Settings.Core
 			#endregion
 
 			//register start point for current navigation module
-			var routerService = Mvx.Resolve<IRouterService>();
+			var routerService = Mvx.IoCProvider.Resolve<IRouterService>();
 			routerService.Register<ISettingsViewModel>(new SettingsRouterSubscriber());
+
+			Mvx.IoCProvider.CallbackWhenRegistered<IMvxAppStart>(startup =>
+			{
+				Task.Run(() =>
+				{
+					while (!startup.IsStarted);
+					Mvx.IoCProvider.Resolve<IRegionService>().CheckRegion();
+				});
+			});
 		}
 	}
 }

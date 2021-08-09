@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Globalization;
 using Android.Views;
-using MvvmCross.Platform.Converters;
-using MvvmCross.Platform.UI;
+using MvvmCross.Converters;
+using MvvmCross.UI;
 
 namespace AppRopio.Base.Droid.Converters
 {

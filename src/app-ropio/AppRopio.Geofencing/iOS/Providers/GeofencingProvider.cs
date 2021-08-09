@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using AppRopio.Base.Core.Services.Device;
 using AppRopio.Geofencing.iOS.Utils;
 using CoreLocation;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Platform;
-using AppRopio.Base.Core.Services.Device;
+using MvvmCross;
+using MvvmCross.Logging;
 
 namespace AppRopio.Geofencing.iOS.Providers
 {
-	public class GeofencingProvider
+    public class GeofencingProvider
 	{
 		private static string GEO_REGION_HEADER = "geo_";
 		private static string USER_REGION_HEADER = "userGeo_";
@@ -25,8 +25,8 @@ namespace AppRopio.Geofencing.iOS.Providers
 		static GeofencingProvider()
 		{
 			_locationManager = GeofencingUtil.LocationManager;
-			GEO_REGION_HEADER = $"geo_{Mvx.Resolve<IDeviceService>().PackageName}.";
-			USER_REGION_HEADER = $"userGeo_{Mvx.Resolve<IDeviceService>().PackageName}";
+			GEO_REGION_HEADER = $"geo_{Mvx.IoCProvider.Resolve<IDeviceService>().PackageName}.";
+			USER_REGION_HEADER = $"userGeo_{Mvx.IoCProvider.Resolve<IDeviceService>().PackageName}";
 		}
 
 		public static void InitGeoFencing()
@@ -74,7 +74,7 @@ namespace AppRopio.Geofencing.iOS.Providers
 
 		private static void LocationManager_RegionEntered(object sender, CLRegionEventArgs e)
 		{
-			MvxTrace.TaggedTrace("Geofencing", "Entered region " + e.Region.Identifier);
+			Mvx.IoCProvider.Resolve<IMvxLog>().Trace("Geofencing: Entered region " + e.Region.Identifier);
 
 			if (e.Region.Identifier == USER_REGION_HEADER)
 				return;
@@ -89,7 +89,7 @@ namespace AppRopio.Geofencing.iOS.Providers
 
 		private static void LocationManager_RegionLeft(object sender, CLRegionEventArgs e)
 		{
-			MvxTrace.TaggedTrace("Geofencing", "Left region " + e.Region.Identifier);
+			Mvx.IoCProvider.Resolve<IMvxLog>().Trace("Geofencing: Left region " + e.Region.Identifier);
 
 			if (e.Region.Identifier == USER_REGION_HEADER)
 			{

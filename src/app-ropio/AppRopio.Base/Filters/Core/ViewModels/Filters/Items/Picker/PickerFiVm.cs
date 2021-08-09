@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -6,10 +7,9 @@ using System.Windows.Input;
 using AppRopio.Base.Filters.Core.ViewModels.Filters.Items.Picker.Items;
 using AppRopio.Base.Filters.Core.ViewModels.Filters.Messages;
 using AppRopio.Models.Filters.Responses;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
-using System;
+using MvvmCross;
+using MvvmCross.Commands;
+using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.Base.Filters.Core.ViewModels.Filters.Items.Picker
 {
@@ -87,7 +87,7 @@ namespace AppRopio.Base.Filters.Core.ViewModels.Filters.Items.Picker
 
         #region Services
 
-        protected IMvxMessenger MessengerService { get { return Mvx.Resolve<IMvxMessenger>(); } }
+        protected IMvxMessenger MessengerService { get { return Mvx.IoCProvider.Resolve<IMvxMessenger>(); } }
 
         #endregion
 

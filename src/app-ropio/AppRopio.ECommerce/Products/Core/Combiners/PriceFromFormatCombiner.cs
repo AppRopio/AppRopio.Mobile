@@ -5,7 +5,7 @@ using MvvmCross.Binding.Bindings.SourceSteps;
 using MvvmCross.Binding.Combiners;
 using AppRopio.Base.Core.Converters;
 using AppRopio.ECommerce.Products.Core.Models;
-using MvvmCross.Platform;
+using MvvmCross;
 using AppRopio.ECommerce.Products.Core.Services;
 using AppRopio.Base.Core.Services.Localization;
 
@@ -13,9 +13,9 @@ namespace AppRopio.ECommerce.Products.Core.Combiners
 {
     public class PriceFromFormatCombiner : MvxValueCombiner
     {
-        private ProductsConfig _config => Mvx.Resolve<IProductConfigService>().Config;
+        private ProductsConfig _config => Mvx.IoCProvider.Resolve<IProductConfigService>().Config;
 
-        private ILocalizationService _localizationService => Mvx.Resolve<ILocalizationService>();
+        private ILocalizationService _localizationService => Mvx.IoCProvider.Resolve<ILocalizationService>();
 
         public override bool TryGetValue(IEnumerable<IMvxSourceStep> steps, out object value)
         {

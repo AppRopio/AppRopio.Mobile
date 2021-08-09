@@ -1,20 +1,21 @@
 ﻿using System;
+using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.Models.ThemeConfigs;
 using AppRopio.ECommerce.Products.Core.ViewModels.Categories.Items.Banners;
 using AppRopio.ECommerce.Products.iOS.Models;
 using AppRopio.ECommerce.Products.iOS.Services;
+using FFImageLoading.Cross;
 using Foundation;
+using MvvmCross;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using UIKit;
-using AppRopio.Base.iOS;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.Categories.Cells
 {
     public partial class BannerCell : MvxCollectionViewCell
     {
-        protected ProductsThemeConfig ThemeConfig { get { return Mvx.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
+        protected ProductsThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
 
         public static readonly NSString Key = new NSString("BannerCell");
         public static readonly UINib Nib = UINib.FromName("BannerCell", NSBundle.MainBundle);
@@ -58,9 +59,10 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Categories.Cells
 
         protected virtual void BindImage(UIImageView image, MvxFluentBindingDescriptionSet<BannerCell, IBannerItemVM> set)
         {
-            var imageLoader = new MvxImageViewLoader(() => image);
-
-            set.Bind(imageLoader).To(vm => vm.ImageUrl);
+            if (image is MvxCachedImageView imageView)
+            {
+                set.Bind(imageView).For(i => i.ImagePath).To(vm => vm.ImageUrl);
+            }
         }
 
         #endregion

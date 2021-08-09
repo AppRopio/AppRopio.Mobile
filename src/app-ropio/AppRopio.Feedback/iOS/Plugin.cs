@@ -1,4 +1,6 @@
-﻿using AppRopio.Base.Core.Services.ViewLookup;
+﻿using AppRopio.Base.Core.Plugins;
+using AppRopio.Base.Core.Services.ViewLookup;
+using AppRopio.Feedback.Core;
 using AppRopio.Feedback.Core.ViewModels.MyReviews;
 using AppRopio.Feedback.Core.ViewModels.ReviewDetails;
 using AppRopio.Feedback.Core.ViewModels.ReviewPost;
@@ -9,18 +11,24 @@ using AppRopio.Feedback.iOS.Views.MyReviews;
 using AppRopio.Feedback.iOS.Views.ReviewDetails;
 using AppRopio.Feedback.iOS.Views.ReviewPost;
 using AppRopio.Feedback.iOS.Views.Reviews;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.Feedback.iOS
 {
-    public class Plugin : IMvxPlugin
-	{
-		public void Load()
-		{
-            Mvx.RegisterSingleton<IFeedbackThemeConfigService>(() => new FeedbackThemeConfigService());
+    [MvxPlugin]
+    [Preserve(AllMembers = true)]
+    public class Plugin : BasePlugin<App>
+    {
+		protected override string Name => "Feedback";
 
-			var viewLookupService = Mvx.Resolve<IViewLookupService>();
+        public override void Load()
+        {
+            base.Load();
+
+            Mvx.IoCProvider.RegisterSingleton<IFeedbackThemeConfigService>(() => new FeedbackThemeConfigService());
+
+			var viewLookupService = Mvx.IoCProvider.Resolve<IViewLookupService>();
 
             viewLookupService.Register<IMyReviewsViewModel, MyReviewsViewController>();
             viewLookupService.Register<IReviewsViewModel, ReviewsViewController>();

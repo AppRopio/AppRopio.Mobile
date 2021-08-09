@@ -4,7 +4,7 @@ using AppRopio.Base.Map.Core.ViewModels.Points.List.Items;
 using AppRopio.Base.Map.iOS.Services;
 using CoreGraphics;
 using MapKit;
-using MvvmCross.Platform;
+using MvvmCross;
 using UIKit;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,7 @@ namespace AppRopio.Base.Map.iOS.Controls.Map.Native
         where T : class, IHasCoordinates
     {
         private Dictionary<IMKAnnotation, MKAnnotationView> _annotationViews = new Dictionary<IMKAnnotation, MKAnnotationView>();
-        private Image PinImage { get { return Mvx.Resolve<IMapThemeConfigService>().ThemeConfig.Points.Map.PinImage; } }
+        private Image PinImage { get { return Mvx.IoCProvider.Resolve<IMapThemeConfigService>().ThemeConfig.Points.Map.PinImage; } }
 
         private T _selectedItem;
         public T SelectedItem

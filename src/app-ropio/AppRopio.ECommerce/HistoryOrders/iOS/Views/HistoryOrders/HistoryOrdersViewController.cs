@@ -4,9 +4,9 @@ using AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrders;
 using AppRopio.ECommerce.HistoryOrders.iOS.Models;
 using AppRopio.ECommerce.HistoryOrders.iOS.Services;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding.Views;
+using MvvmCross.Platforms.Ios.Views;
+using MvvmCross;
 using UIKit;
 using AppRopio.ECommerce.HistoryOrders.Core;
 
@@ -16,7 +16,7 @@ namespace AppRopio.ECommerce.HistoryOrders.iOS.Views.HistoryOrders
     {
         protected MvxUIRefreshControl _refreshControl;
 
-		protected HistoryOrdersThemeConfig ThemeConfig { get { return Mvx.Resolve<IHistoryOrdersThemeConfigService>().ThemeConfig; } }
+		protected HistoryOrdersThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IHistoryOrdersThemeConfigService>().ThemeConfig; } }
 
         public HistoryOrdersViewController()
             : base("HistoryOrdersViewController", null)

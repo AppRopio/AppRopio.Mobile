@@ -4,13 +4,13 @@ using AppRopio.Base.API.Services;
 using AppRopio.Models.Base.Responses;
 using AppRopio.Models.Contacts.Enums;
 using AppRopio.Models.Contacts.Responses;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Base.Contacts.API.Services.Implementation
 {
     public class FakeContactsService : IContactsService
     {
-        public bool IsRussianCulture => Mvx.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
+        public bool IsRussianCulture => Mvx.IoCProvider.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
 
         public async Task<ListResponse> LoadContacts(Coordinates location)
         {

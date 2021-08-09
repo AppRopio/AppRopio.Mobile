@@ -7,7 +7,7 @@ using AppRopio.Payments.Core.ViewModels;
 using AppRopio.Payments.iOS.Models;
 using AppRopio.Payments.iOS.Services;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platform;
+using MvvmCross;
 using UIKit;
 using WebKit;
 
@@ -22,7 +22,7 @@ namespace AppRopio.Payments.CloudPayments.iOS.View
 
         private UIButton _accessoryButton;
 
-        protected PaymentsThemeConfig Theme { get { return Mvx.Resolve<IPaymentsThemeConfigService>().ThemeConfig; } }
+        protected PaymentsThemeConfig Theme { get { return Mvx.IoCProvider.Resolve<IPaymentsThemeConfigService>().ThemeConfig; } }
 
         protected WKWebView ThreeDSWebView
         {
@@ -40,7 +40,7 @@ namespace AppRopio.Payments.CloudPayments.iOS.View
         {
             Title = LocalizationService.GetLocalizableString(PaymentsConstants.RESX_NAME, "Card_Payment");
 
-            var threeDSService = Mvx.Resolve<IPayment3DSService>();
+            var threeDSService = Mvx.IoCProvider.Resolve<IPayment3DSService>();
             threeDSService.SetWebView(WebView);
 
 			SetupAccessoryButton(_accessoryButton ?? (_accessoryButton = new UIButton()));

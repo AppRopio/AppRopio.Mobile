@@ -7,15 +7,15 @@ using AppRopio.ECommerce.Products.iOS.Services;
 using AppRopio.ECommerce.Products.iOS.Views.ContentSearch.Cells.Autocomplete;
 using CoreGraphics;
 using Foundation;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding.Views;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.ContentSearch.ViewSources
 {
     public class AutocompleteCollectionViewSource : MvxCollectionViewSource
     {
-        protected ProductsThemeConfig ThemeConfig { get { return Mvx.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
+        protected ProductsThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
 
         public AutocompleteCollectionViewSource(UICollectionView collectionView, NSString defaultIdentifier)
             : base(collectionView, defaultIdentifier)

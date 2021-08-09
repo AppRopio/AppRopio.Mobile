@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using AppRopio.Base.Core.Services.Settings;
-using MvvmCross.Platform;
+using MvvmCross;
 using Newtonsoft.Json;
 
 namespace AppRopio.Base.iOS.Services.ThemeConfig
@@ -28,7 +28,7 @@ namespace AppRopio.Base.iOS.Services.ThemeConfig
         private TConfig LoadConfigFromJSON()
         {
             var path = Path.Combine(iOSConstants.THEME_CONFIGS_FOLDER, ConfigName);
-            var json = Mvx.Resolve<ISettingsService>().ReadStringFromFile(path);
+            var json = Mvx.IoCProvider.Resolve<ISettingsService>().ReadStringFromFile(path);
             return json.IsNullOrEmtpy() ? default(TConfig) : JsonConvert.DeserializeObject<TConfig>(json, new JsonSerializerSettings
             {
                 NullValueHandling = NullValueHandling.Ignore

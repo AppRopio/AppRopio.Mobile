@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -9,7 +9,7 @@ using AppRopio.ECommerce.Basket.API.Services;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Payment.Items;
 using AppRopio.Models.Basket.Responses.Order;
-using MvvmCross.Platform;
+using MvvmCross;
 using OrderModel = AppRopio.Models.Basket.Responses.Order.Order;
 using PaymentModel = AppRopio.Models.Basket.Responses.Order.Payment;
 
@@ -20,7 +20,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Services.Implementatio
         #region Services
 
         private IOrderService _apiService;
-        public IOrderService ApiService => _apiService ?? (_apiService = Mvx.Resolve<IOrderService>());
+        public IOrderService ApiService => _apiService ?? (_apiService = Mvx.IoCProvider.Resolve<IOrderService>());
 
         #endregion
 

@@ -4,9 +4,9 @@ using Android.Graphics;
 using Android.Graphics.Drawables;
 using Android.Util;
 using AppRopio.Models.HistoryOrders.Responses;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Converters;
-using MvvmCross.Platform.Droid.Platform;
+using MvvmCross;
+using MvvmCross.Converters;
+using MvvmCross.Platforms.Android;
 
 namespace AppRopio.ECommerce.HistoryOrders.Droid.ValueConverters
 {
@@ -20,7 +20,7 @@ namespace AppRopio.ECommerce.HistoryOrders.Droid.ValueConverters
             drawable.SetCornerRadius(Application.Context.Theme.Resources.GetDimension(Resource.Dimension.app_historyorders_item_badge_cornerRadius));
 
             var typedValue = new TypedValue();
-            if (Mvx.Resolve<IMvxAndroidCurrentTopActivity>()?.Activity?.Theme.ResolveAttribute((value == PaymentStatus.Paid ? Resource.Attribute.app_color_accent : Resource.Attribute.app_color_disabledControl), typedValue, true) ?? false)
+            if (Mvx.IoCProvider.Resolve<IMvxAndroidCurrentTopActivity>()?.Activity?.Theme.ResolveAttribute((value == PaymentStatus.Paid ? Resource.Attribute.app_color_accent : Resource.Attribute.app_color_disabledControl), typedValue, true) ?? false)
                 drawable.SetColor(new Color(typedValue.Data));
 
             return drawable;

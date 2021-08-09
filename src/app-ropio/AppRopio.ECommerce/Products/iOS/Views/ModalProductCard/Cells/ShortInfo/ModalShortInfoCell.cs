@@ -11,17 +11,17 @@ using AppRopio.ECommerce.Products.iOS.Services;
 using AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding.Views;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.ModalProductCard.Cells.ShortInfo
 {
     public partial class ModalShortInfoCell : MvxTableViewCell
     {
-        protected virtual ProductsConfig Config { get { return Mvx.Resolve<IProductConfigService>().Config; } }
+        protected virtual ProductsConfig Config { get { return Mvx.IoCProvider.Resolve<IProductConfigService>().Config; } }
 
-        protected ProductsThemeConfig ThemeConfig => Mvx.Resolve<IProductsThemeConfigService>().ThemeConfig;
+        protected ProductsThemeConfig ThemeConfig => Mvx.IoCProvider.Resolve<IProductsThemeConfigService>().ThemeConfig;
 
         public const float HEIGHT = 160;
         public const float BADGES_HEIGHT = 31;

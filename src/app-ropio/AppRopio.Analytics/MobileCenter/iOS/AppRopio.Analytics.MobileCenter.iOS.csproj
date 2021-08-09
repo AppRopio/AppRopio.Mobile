@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -31,7 +31,8 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release</OutputPath>
-    <DefineConstants></DefineConstants>
+    <DefineConstants>
+    </DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodesignKey>iPhone Developer</CodesignKey>
@@ -44,54 +45,9 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
-    <Reference Include="Microsoft.AppCenter">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\Microsoft.AppCenter.1.9.0\lib\Xamarin.iOS10\Microsoft.AppCenter.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AppCenter.iOS.Bindings">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\Microsoft.AppCenter.1.9.0\lib\Xamarin.iOS10\Microsoft.AppCenter.iOS.Bindings.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AppCenter.Analytics">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\Microsoft.AppCenter.Analytics.1.9.0\lib\Xamarin.iOS10\Microsoft.AppCenter.Analytics.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AppCenter.Analytics.iOS.Bindings">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\Microsoft.AppCenter.Analytics.1.9.0\lib\Xamarin.iOS10\Microsoft.AppCenter.Analytics.iOS.Bindings.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AppCenter.Crashes">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\Microsoft.AppCenter.Crashes.1.9.0\lib\Xamarin.iOS10\Microsoft.AppCenter.Crashes.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AppCenter.Crashes.iOS.Bindings">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\Microsoft.AppCenter.Crashes.1.9.0\lib\Xamarin.iOS10\Microsoft.AppCenter.Crashes.iOS.Bindings.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Platform">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Platform.5.7.0\lib\Xamarin.iOS10\MvvmCross.Platform.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Platform.iOS">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Platform.5.7.0\lib\Xamarin.iOS10\MvvmCross.Platform.iOS.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Core">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Core.5.7.0\lib\Xamarin.iOS10\MvvmCross.Core.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MvvmCross.iOS">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Core.5.7.0\lib\Xamarin.iOS10\MvvmCross.iOS.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MvvmCross.Binding">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.7.0\lib\Xamarin.iOS10\MvvmCross.Binding.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MvvmCross.Binding.iOS">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.7.0\lib\Xamarin.iOS10\MvvmCross.Binding.iOS.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MvvmCross.Localization">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.7.0\lib\Xamarin.iOS10\MvvmCross.Localization.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
-    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -109,7 +65,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <PackageReference Include="Microsoft.AppCenter.Analytics">
+      <Version>3.4.3</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AppCenter.Crashes">
+      <Version>3.4.3</Version>
+    </PackageReference>
+    <PackageReference Include="MvvmCross">
+      <Version>6.4.2</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

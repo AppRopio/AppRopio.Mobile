@@ -1,15 +1,22 @@
-﻿using System;
-using MvvmCross.Platform.Plugins;
-using MvvmCross.Platform;
+﻿using AppRopio.Analytics.GoogleAnalytics.Core;
 using AppRopio.Analytics.GoogleAnalytics.Core.Services;
+using AppRopio.Base.Core.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.Analytics.GoogleAnalytics.iOS
 {
-    public class Plugin : IMvxPlugin
+    [MvxPlugin]
+    [Preserve(AllMembers = true)]
+    public class Plugin : BasePlugin<App>
     {
-        public void Load()
+		protected override string Name => "GoogleAnalytics";
+
+        public override void Load()
         {
-            Mvx.RegisterSingleton<IGoogleAnalytics>(() => new Services.GoogleAnalytics());
+            base.Load();
+
+            Mvx.IoCProvider.RegisterSingleton<IGoogleAnalytics>(() => new Services.GoogleAnalytics());
         }
     }
 }

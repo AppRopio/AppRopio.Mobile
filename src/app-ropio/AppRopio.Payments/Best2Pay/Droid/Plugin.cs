@@ -12,20 +12,27 @@
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
-using System;
+using AppRopio.Base.Core.Plugins;
 using AppRopio.Base.Core.Services.ViewLookup;
+using AppRopio.Payments.Best2Pay.Core;
 using AppRopio.Payments.Best2Pay.Core.ViewModels.Best2Pay;
 using AppRopio.Payments.Best2Pay.Droid.Views;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Plugins;
+using MvvmCross;
+using MvvmCross.Plugin;
 
 namespace AppRopio.Payments.Best2Pay.Droid
 {
-    public class Plugin : IMvxPlugin
+    [MvxPlugin]
+    [Preserve(AllMembers = true)]
+    public class Plugin : BasePlugin<App>
     {
-        public void Load()
+		protected override string Name => "Best2Pay";
+
+        public override void Load()
         {
-            var viewLookupService = Mvx.Resolve<IViewLookupService>();
+            base.Load();
+
+            var viewLookupService = Mvx.IoCProvider.Resolve<IViewLookupService>();
 
             viewLookupService.Register<IBest2PayViewModel, Best2PayFragment>();
         }

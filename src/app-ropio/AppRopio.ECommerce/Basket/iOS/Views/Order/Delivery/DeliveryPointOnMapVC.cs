@@ -12,7 +12,7 @@ using CoreGraphics;
 using CoreLocation;
 using MapKit;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platform;
+using MvvmCross;
 using UIKit;
 using AppRopio.ECommerce.Basket.Core;
 
@@ -27,8 +27,8 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Delivery
         private nfloat _minInfoBlockTop;
         private nfloat _maxInfoBlockTop;
 
-        protected Models.DeliveryOnPointMap MapTheme { get { return Mvx.Resolve<IBasketThemeConfigService>().ThemeConfig.Order.DeliveryInfo.OnPoint.Map; } }
-        protected Models.DeliveryPointInfo InfoTheme { get { return MapTheme.Info ?? Mvx.Resolve<IBasketThemeConfigService>().ThemeConfig.Order.DeliveryInfo.OnPoint.BaseDeliveryPointInfo; } }
+        protected Models.DeliveryOnPointMap MapTheme { get { return Mvx.IoCProvider.Resolve<IBasketThemeConfigService>().ThemeConfig.Order.DeliveryInfo.OnPoint.Map; } }
+        protected Models.DeliveryPointInfo InfoTheme { get { return MapTheme.Info ?? Mvx.IoCProvider.Resolve<IBasketThemeConfigService>().ThemeConfig.Order.DeliveryInfo.OnPoint.BaseDeliveryPointInfo; } }
 
         public DeliveryPointOnMapVC() : base("DeliveryPointOnMapVC", null)
         {

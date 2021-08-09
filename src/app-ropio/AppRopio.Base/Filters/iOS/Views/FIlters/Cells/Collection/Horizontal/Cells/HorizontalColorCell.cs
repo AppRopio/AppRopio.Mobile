@@ -1,7 +1,7 @@
 ﻿using System;
 
 using Foundation;
-using MvvmCross.Binding.iOS.Views;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using UIKit;
 using MvvmCross.Binding.BindingContext;
 using AppRopio.Base.Filters.Core.ViewModels.Filters.Items.Collection.Items;

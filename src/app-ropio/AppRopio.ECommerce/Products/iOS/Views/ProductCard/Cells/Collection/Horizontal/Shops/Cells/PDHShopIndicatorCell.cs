@@ -7,15 +7,15 @@ using AppRopio.ECommerce.Products.iOS.Models;
 using AppRopio.ECommerce.Products.iOS.Services;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding.Views;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.Collection.Horizontal.Shops.Cells
 {
     public partial class PDHShopIndicatorCell : MvxCollectionViewCell
     {
-        protected ProductsThemeConfig ThemeConfig { get { return Mvx.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
+        protected ProductsThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IProductsThemeConfigService>().ThemeConfig; } }
 
         public static readonly NSString Key = new NSString("PDHShopIndicatorCell");
         public static readonly UINib Nib;

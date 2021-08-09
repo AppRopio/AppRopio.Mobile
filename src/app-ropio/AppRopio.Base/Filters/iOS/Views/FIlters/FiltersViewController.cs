@@ -14,9 +14,9 @@ using AppRopio.Base.Filters.iOS.Views.Filters.Cells.Selection.MultiSelection;
 using AppRopio.Base.Filters.iOS.Views.Filters.Cells.Selection.OneSelection;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross.Platforms.Ios.Binding.Views;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 using UIKit;
 using AppRopio.Base.Filters.iOS.Views.FIlters.Cells.Switch;
 using AppRopio.Base.Core.Services.Localization;
@@ -30,9 +30,9 @@ namespace AppRopio.Base.Filters.iOS.Views.Filters
 
         private MvxSubscriptionToken _subscriptionToken;
 
-        protected FiltersThemeConfig ThemeConfig { get { return Mvx.Resolve<IFiltersThemeConfigService>().ThemeConfig; } }
+        protected FiltersThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IFiltersThemeConfigService>().ThemeConfig; } }
 
-        protected IMvxMessenger MessengerService { get { return Mvx.Resolve<IMvxMessenger>(); } }
+        protected IMvxMessenger MessengerService { get { return Mvx.IoCProvider.Resolve<IMvxMessenger>(); } }
 
         public FiltersViewController()
             : base("FiltersViewController", null)
@@ -121,6 +121,7 @@ namespace AppRopio.Base.Filters.iOS.Views.Filters
         {
             set.Bind(applyBtn).To(vm => vm.ApplyCommand);
             set.Bind(applyBtn).For("Title").To(vm => vm.ApplyTitle);
+            set.Bind(applyBtn).For("HighlightedTitle").To(vm => vm.ApplyTitle);
         }
 
         #endregion

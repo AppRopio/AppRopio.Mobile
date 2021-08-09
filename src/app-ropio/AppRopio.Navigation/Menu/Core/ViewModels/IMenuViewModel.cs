@@ -3,7 +3,7 @@ using System.Collections.ObjectModel;
 using System.Windows.Input;
 using AppRopio.Base.Core.ViewModels;
 using AppRopio.Navigation.Menu.Core.ViewModels.Items;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.Navigation.Menu.Core.ViewModels
 {

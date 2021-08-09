@@ -5,11 +5,11 @@ using System.Windows.Input;
 using AppRopio.Base.Core.ViewModels.Search;
 using AppRopio.Base.Core.ViewModels.Selection.Items;
 using AppRopio.Base.Core.ViewModels.Selection.Services;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.Commands;
 
 namespace AppRopio.Base.Core.ViewModels.Selection
 {
-    public abstract class BaseSelectionViewModel<TValue, TSelectedValue> : SearchViewModel, IBaseSelectionViewModel
+	public abstract class BaseSelectionViewModel<TValue, TSelectedValue> : SearchViewModel, IBaseSelectionViewModel
         where TValue : class
         where TSelectedValue : class
     {
@@ -33,7 +33,7 @@ namespace AppRopio.Base.Core.ViewModels.Selection
         {
             get
             {
-                return _applyCommand ?? (_applyCommand = new MvxCommand(OnApplyExecute));
+                return _applyCommand ?? (_applyCommand = new MvxAsyncCommand(OnApplyExecute));
             }
         }
 
@@ -96,7 +96,7 @@ namespace AppRopio.Base.Core.ViewModels.Selection
 
         protected abstract void OnItemSelected(ISelectionItemVM item);
 
-        protected abstract void OnApplyExecute();
+        protected abstract Task OnApplyExecute();
 
         protected abstract void OnClearExecute();
 

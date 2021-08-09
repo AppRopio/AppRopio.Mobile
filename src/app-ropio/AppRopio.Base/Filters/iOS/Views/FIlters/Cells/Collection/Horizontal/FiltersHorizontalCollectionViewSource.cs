@@ -7,14 +7,14 @@ using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.ViewSources;
 using CoreGraphics;
 using Foundation;
-using MvvmCross.Platform;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.Base.Filters.iOS.Views.Filters.Cells.Collection.Horizontal
 {
     public class FiltersHorizontalCollectionViewSource : BaseCollectionViewSource
     {
-        protected FiltersThemeConfig ThemeConfig { get { return Mvx.Resolve<IFiltersThemeConfigService>().ThemeConfig; } }
+        protected FiltersThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IFiltersThemeConfigService>().ThemeConfig; } }
 
         public FiltersHorizontalCollectionViewSource(UICollectionView collectionView)
             : base(collectionView)

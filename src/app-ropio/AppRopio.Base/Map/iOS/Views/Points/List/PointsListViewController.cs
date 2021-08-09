@@ -8,7 +8,7 @@ using AppRopio.Base.Map.iOS.Services;
 using AppRopio.Base.Map.iOS.Views.Points.List.Cells;
 using CoreGraphics;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platform;
+using MvvmCross;
 using UIKit;
 using AppRopio.Base.Map.Core;
 
@@ -21,7 +21,7 @@ namespace AppRopio.Base.Map.iOS.Views.Points.List
 
         private UIBarButtonItem _mapBarButton;
 
-        protected Models.PointsList PointsListTheme { get { return Mvx.Resolve<IMapThemeConfigService>().ThemeConfig.Points.List; } }
+        protected Models.PointsList PointsListTheme { get { return Mvx.IoCProvider.Resolve<IMapThemeConfigService>().ThemeConfig.Points.List; } }
 
         public PointsListViewController() 
             : base("PointsListViewController", null)

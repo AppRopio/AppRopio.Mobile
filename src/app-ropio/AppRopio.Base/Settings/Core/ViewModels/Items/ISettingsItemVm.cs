@@ -1,6 +1,6 @@
 ﻿using System;
 using AppRopio.Base.Settings.Core.Models;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.Base.Settings.Core.ViewModels.Items
 {

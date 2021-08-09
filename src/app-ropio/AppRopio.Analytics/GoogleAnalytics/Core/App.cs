@@ -1,7 +1,7 @@
 ﻿using AppRopio.Analytics.GoogleAnalytics.Core.Services;
 using AppRopio.Analytics.GoogleAnalytics.Core.Services.Implementation;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.Analytics.GoogleAnalytics.Core
 {
@@ -9,9 +9,9 @@ namespace AppRopio.Analytics.GoogleAnalytics.Core
     {
         public override void Initialize()
         {
-            Mvx.RegisterSingleton<IGAConfigService>(new GAConfigService());
+            Mvx.IoCProvider.RegisterSingleton<IGAConfigService>(new GAConfigService());
 
-            Mvx.RegisterSingleton<INotificationsSubscriber>(new NotificationsSubscriber());
+            Mvx.IoCProvider.RegisterSingleton<INotificationsSubscriber>(new NotificationsSubscriber());
         }
     }
 }

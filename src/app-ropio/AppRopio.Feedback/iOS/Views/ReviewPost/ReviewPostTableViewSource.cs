@@ -4,7 +4,7 @@ using AppRopio.Feedback.iOS.Views.ReviewPost.Cell.Score;
 using AppRopio.Feedback.iOS.Views.ReviewPost.Cell.Text;
 using AppRopio.Feedback.iOS.Views.ReviewPost.Cell.TotalScore;
 using AppRopio.Models.Feedback.Responses;
-using MvvmCross.Binding.iOS.Views;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using UIKit;
 
 namespace AppRopio.Feedback.iOS.Views.ReviewPost

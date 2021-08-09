@@ -5,14 +5,14 @@ using AppRopio.ECommerce.Products.Core.Models;
 using AppRopio.ECommerce.Products.Core.Services;
 using MvvmCross.Binding.Bindings.SourceSteps;
 using MvvmCross.Binding.Combiners;
-using MvvmCross.Platform;
-using MvvmCross.Platform.UI;
+using MvvmCross;
+using MvvmCross.UI;
 
 namespace AppRopio.ECommerce.Products.Core.Combiners
 {
     public class PriceVisibilityCommonValueCombiner : MvxValueCombiner
     {
-        private ProductsConfig _config => Mvx.Resolve<IProductConfigService>().Config;
+        private ProductsConfig _config => Mvx.IoCProvider.Resolve<IProductConfigService>().Config;
 
         public override bool TryGetValue(IEnumerable<IMvxSourceStep> steps, out object value) {
             var values = steps.ToList();

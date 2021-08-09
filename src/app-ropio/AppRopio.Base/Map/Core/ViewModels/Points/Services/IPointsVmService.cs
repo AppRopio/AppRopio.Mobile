@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 using AppRopio.Base.Map.Core.ViewModels.Points.List.Items;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.Base.Map.Core.ViewModels.Points.Services
 {

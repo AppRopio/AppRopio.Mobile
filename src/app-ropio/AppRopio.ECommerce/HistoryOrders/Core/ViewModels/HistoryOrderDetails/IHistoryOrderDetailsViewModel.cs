@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using AppRopio.Base.Core.ViewModels;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.Commands;
 
 namespace AppRopio.ECommerce.HistoryOrders.Core.ViewModels.HistoryOrders
 {
-    public interface IHistoryOrderDetailsViewModel : IBaseViewModel
+	public interface IHistoryOrderDetailsViewModel : IBaseViewModel
     {
         IMvxCommand GoToItemsCommand { get; }
 

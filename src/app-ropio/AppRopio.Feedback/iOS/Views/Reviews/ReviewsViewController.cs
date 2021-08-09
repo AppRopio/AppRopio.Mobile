@@ -7,7 +7,7 @@ using AppRopio.Feedback.Core.ViewModels.Reviews;
 using AppRopio.Feedback.iOS.Models;
 using AppRopio.Feedback.iOS.Services;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platform;
+using MvvmCross;
 using UIKit;
 using AppRopio.Base.iOS.UIExtentions;
 
@@ -15,7 +15,7 @@ namespace AppRopio.Feedback.iOS.Views.Reviews
 {
     public partial class ReviewsViewController : CommonViewController<IReviewsViewModel>
     {
-		protected FeedbackThemeConfig ThemeConfig { get { return Mvx.Resolve<IFeedbackThemeConfigService>().ThemeConfig; } }
+		protected FeedbackThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IFeedbackThemeConfigService>().ThemeConfig; } }
 
 		public ReviewsViewController() : base("ReviewsViewController", null)
         {

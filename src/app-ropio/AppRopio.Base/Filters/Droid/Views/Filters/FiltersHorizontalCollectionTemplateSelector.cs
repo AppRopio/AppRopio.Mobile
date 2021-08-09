@@ -1,11 +1,12 @@
-﻿using System;
-using AppRopio.Base.Filters.Core.ViewModels.Filters.Items.Collection.Items;
+﻿using AppRopio.Base.Filters.Core.ViewModels.Filters.Items.Collection.Items;
 using MvvmCross.Droid.Support.V7.RecyclerView.ItemTemplates;
 
 namespace AppRopio.Base.Filters.Droid.Views.Filters
 {
     public class FiltersHorizontalCollectionTemplateSelector : IMvxTemplateSelector
     {
+        public int ItemTemplateId { get; set; }
+
         public int GetItemViewType(object forItemObject)
         {
             var itemVm = forItemObject as CollectionItemVM;

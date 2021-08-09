@@ -4,7 +4,7 @@ using AppRopio.Base.Auth.iOS.Services;
 using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.Views;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platform;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.Base.Auth.iOS.Views.Auth
@@ -17,7 +17,7 @@ namespace AppRopio.Base.Auth.iOS.Views.Auth
 		}
 
 		protected AuthThemeConfig ThemeConfig
-		{ get { return Mvx.Resolve<IAuthThemeConfigService>().ThemeConfig; } }
+		{ get { return Mvx.IoCProvider.Resolve<IAuthThemeConfigService>().ThemeConfig; } }
 
 		#region Protected
 

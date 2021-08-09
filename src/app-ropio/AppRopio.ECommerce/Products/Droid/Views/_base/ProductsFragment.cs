@@ -5,11 +5,11 @@ using AppRopio.Base.Droid.Views;
 using AppRopio.ECommerce.Products.Core.Models;
 using AppRopio.ECommerce.Products.Core.Services;
 using AppRopio.ECommerce.Products.Core.ViewModels;
+using MvvmCross;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.Droid.BindingContext;
-using MvvmCross.Droid.Views;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Platform;
+using MvvmCross.Logging;
+using MvvmCross.Platforms.Android.Binding.BindingContext;
+using MvvmCross.Platforms.Android.Views;
 
 namespace AppRopio.ECommerce.Products.Droid.Views
 {
@@ -26,7 +26,7 @@ namespace AppRopio.ECommerce.Products.Droid.Views
         #region Properties
 
         private ProductsConfig _config;
-        protected virtual ProductsConfig Config => _config ?? (_config = Mvx.Resolve<IProductConfigService>().Config);
+        protected virtual ProductsConfig Config => _config ?? (_config = Mvx.IoCProvider.Resolve<IProductConfigService>().Config);
 
         #endregion
 
@@ -69,7 +69,7 @@ namespace AppRopio.ECommerce.Products.Droid.Views
             {
                 var cartIndicatorType = Config.Basket.CartIndicator.TypeName;
 
-                var viewLookupService = Mvx.Resolve<IViewLookupService>();
+                var viewLookupService = Mvx.IoCProvider.Resolve<IViewLookupService>();
 
                 if (viewLookupService.IsRegistered(cartIndicatorType))
                 {
@@ -99,7 +99,7 @@ namespace AppRopio.ECommerce.Products.Droid.Views
                 }
                 catch
                 {
-                    MvxTrace.Trace(() => $"Not found drawable resource by id: {typedValue.ResourceId}");
+                    Mvx.IoCProvider.Resolve<IMvxLog>().Trace($"Not found drawable resource by id: {typedValue.ResourceId}");
                 }
 
                 menuItem.SetShowAsAction(Android.Views.ShowAsAction.Always);

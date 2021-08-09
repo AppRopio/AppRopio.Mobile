@@ -10,8 +10,8 @@ using AppRopio.Feedback.Core.ViewModels.Items.Score;
 using AppRopio.Feedback.Core.ViewModels.Items.Text;
 using AppRopio.Feedback.Core.ViewModels.Items.TotalScore;
 using AppRopio.Models.Feedback.Responses;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross;
 
 namespace AppRopio.Feedback.Core.ViewModels.ReviewPost.Services
 {
@@ -19,7 +19,7 @@ namespace AppRopio.Feedback.Core.ViewModels.ReviewPost.Services
     {
         #region Services
 
-        protected IReviewsService ApiService { get { return Mvx.Resolve<IReviewsService>(); } }
+        protected IReviewsService ApiService { get { return Mvx.IoCProvider.Resolve<IReviewsService>(); } }
 
         #endregion
 

@@ -3,7 +3,7 @@ using System.Linq;
 using System.Text;
 using Android.Widget;
 using MvvmCross.Binding;
-using MvvmCross.Binding.Droid.Target;
+using MvvmCross.Platforms.Android.Binding.Target;
 
 namespace AppRopio.Base.Droid.Bindings
 {

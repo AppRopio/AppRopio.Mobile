@@ -5,8 +5,8 @@ using AppRopio.Base.Settings.iOS.Models;
 using AppRopio.Base.Settings.iOS.Services;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding.Views;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.Base.Settings.iOS.Views.Cells.Switch
@@ -16,7 +16,7 @@ namespace AppRopio.Base.Settings.iOS.Views.Cells.Switch
         public static readonly NSString Key = new NSString("SettingsSwitchCell");
         public static readonly UINib Nib;
 
-		protected SettingsThemeConfig ThemeConfig { get { return Mvx.Resolve<ISettingsThemeConfigService>().ThemeConfig; } }
+		protected SettingsThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<ISettingsThemeConfigService>().ThemeConfig; } }
 
 		static SettingsSwitchCell()
         {

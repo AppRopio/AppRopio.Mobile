@@ -1,8 +1,8 @@
-﻿using System;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using AppRopio.Base.Core.Extentions;
 using AppRopio.Base.Core.Models.Bundle;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.Commands;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.Base.Core.ViewModels.WebContent
 {

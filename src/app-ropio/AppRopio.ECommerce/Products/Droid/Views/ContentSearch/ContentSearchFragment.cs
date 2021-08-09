@@ -5,10 +5,10 @@ using AppRopio.Base.Core.Services.ViewLookup;
 using AppRopio.Base.Droid.Listeners;
 using AppRopio.Base.Droid.Views;
 using AppRopio.ECommerce.Products.Core.ViewModels.ContentSearch;
-using MvvmCross.Binding.Droid.BindingContext;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Droid.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Android.Binding.BindingContext;
+using MvvmCross.ViewModels;
+using MvvmCross.Platforms.Android.Views;
+using MvvmCross;
 
 namespace AppRopio.ECommerce.Products.Droid.Views.ContentSearch
 {
@@ -73,7 +73,7 @@ namespace AppRopio.ECommerce.Products.Droid.Views.ContentSearch
 
         protected virtual void AddSearchContentFragment()
         {
-            var viewType = Mvx.Resolve<IViewLookupService>().Resolve<IContentSearchInternalViewModel>();
+            var viewType = Mvx.IoCProvider.Resolve<IViewLookupService>().Resolve<IContentSearchInternalViewModel>();
 
             var fragmentName = Java.Lang.Class.FromType(viewType).Name;
 
@@ -88,7 +88,7 @@ namespace AppRopio.ECommerce.Products.Droid.Views.ContentSearch
 
         protected virtual void RemoveSearchContentFragment()
         {
-            var viewType = Mvx.Resolve<IViewLookupService>().Resolve<IContentSearchInternalViewModel>();
+            var viewType = Mvx.IoCProvider.Resolve<IViewLookupService>().Resolve<IContentSearchInternalViewModel>();
 
             var fragmentName = Java.Lang.Class.FromType(viewType).Name;
 

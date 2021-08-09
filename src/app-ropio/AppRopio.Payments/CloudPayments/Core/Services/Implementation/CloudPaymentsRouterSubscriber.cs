@@ -2,7 +2,7 @@
 using AppRopio.Payments.CloudPayments.Core.ViewModels.CloudPayments.Services;
 using AppRopio.Payments.Core.Bundle;
 using AppRopio.Payments.Core.ViewModels.Services;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Payments.CloudPayments.Core.Services.Implementation
 {
@@ -15,10 +15,10 @@ namespace AppRopio.Payments.CloudPayments.Core.Services.Implementation
             {
                 var paymentVmService = new CloudPaymentsVmService();
 
-                Mvx.RegisterSingleton<ICardPaymentVmService>(paymentVmService);
-                Mvx.RegisterSingleton<ICloudPaymentsVmService>(paymentVmService);
+                Mvx.IoCProvider.RegisterSingleton<ICardPaymentVmService>(paymentVmService);
+                Mvx.IoCProvider.RegisterSingleton<ICloudPaymentsVmService>(paymentVmService);
 
-                Mvx.Resolve<ICloudPaymentsPaymentNavigationVmService>().NavigateToInAppPayment(paymentBundle);
+                Mvx.IoCProvider.Resolve<ICloudPaymentsPaymentNavigationVmService>().NavigateToInAppPayment(paymentBundle);
 
                 return true;
             }

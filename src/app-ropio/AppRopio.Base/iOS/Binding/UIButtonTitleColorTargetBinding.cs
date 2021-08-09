@@ -1,7 +1,8 @@
 ﻿using System;
+using MvvmCross;
 using MvvmCross.Binding;
 using MvvmCross.Binding.Bindings.Target;
-using MvvmCross.Platform.Platform;
+using MvvmCross.Logging;
 using UIKit;
 
 namespace AppRopio.Base.iOS.Binding
@@ -18,7 +19,7 @@ namespace AppRopio.Base.iOS.Binding
             this._state = state;
             if (button == null)
             {
-                MvxBindingTrace.Trace(MvxTraceLevel.Error, "Error - UIButton is null in UIButtonTitleColorTargetBinding");
+                Mvx.IoCProvider.Resolve<IMvxLog>().Error("Error - UIButton is null in UIButtonTitleColorTargetBinding");
             }
         }
 

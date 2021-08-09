@@ -4,15 +4,15 @@ using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Payment.Items;
 using AppRopio.ECommerce.Basket.iOS.Services;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding.Views;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Payment.Cells
 {
     public partial class PaymentCell : MvxTableViewCell
     {
-        protected Models.PaymentCell CellTheme { get { return Mvx.Resolve<IBasketThemeConfigService>().ThemeConfig.Order.Payments.Cell; } }
+        protected Models.PaymentCell CellTheme { get { return Mvx.IoCProvider.Resolve<IBasketThemeConfigService>().ThemeConfig.Order.Payments.Cell; } }
 
         public static readonly NSString Key = new NSString("PaymentCell");
         public static readonly UINib Nib = UINib.FromName("PaymentCell", NSBundle.MainBundle);

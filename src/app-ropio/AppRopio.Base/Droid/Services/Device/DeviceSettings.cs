@@ -1,19 +1,10 @@
 ﻿using System;
-using Plugin.Settings;
-using Plugin.Settings.Abstractions;
+using Xamarin.Essentials;
 
 namespace AppRopio.Base.Droid.Services.Device
 {
-    public class DeviceSettings
+	public class DeviceSettings
     {
-        private static ISettings Instance
-        {
-            get
-            {
-                return CrossSettings.Current;
-            }
-        }
-
         #region Setting Constants
 
         private const string Key = "device_token";
@@ -26,14 +17,14 @@ namespace AppRopio.Base.Droid.Services.Device
         {
             get
             {
-                if (!Instance.Contains(Key)) {
-                    Instance.AddOrUpdateValue(Key, Default);
+                if (!Preferences.ContainsKey(Key)) {
+                    Preferences.Set(Key, Default);
                 }
-                return Instance.GetValueOrDefault(Key, Default);
+                return Preferences.Get(Key, Default);
             }
             set
             {
-                Instance.AddOrUpdateValue(Key, value);
+                Preferences.Set(Key, value);
             }
         }
     }

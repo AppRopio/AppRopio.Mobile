@@ -6,7 +6,8 @@ using AppRopio.ECommerce.Basket.Core.Messages;
 using AppRopio.ECommerce.Basket.Core.Messages.Order;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items.Delivery;
 using AppRopio.Payments.Core.Messages;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.Commands;
+using MvvmCross.ViewModels;
 using PaymentModel = AppRopio.Models.Basket.Responses.Order.Payment;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
@@ -55,7 +56,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
 
         Task LoadContent();
 
-        void OnDeliveryChanged(IDeliveryTypeItemVM deliveryItem);
+        Task OnDeliveryChanged(IDeliveryTypeItemVM deliveryItem);
 
         Task<bool> ValidateDelivery(IEnumerable<IDeliveryTypeItemVM> deliveries);
 

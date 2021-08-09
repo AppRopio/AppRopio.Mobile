@@ -6,7 +6,7 @@ using AppRopio.Base.Auth.iOS.Services;
 using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.UIExtentions;
 using AppRopio.Base.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.Base.Auth.iOS.Views._base
@@ -24,9 +24,9 @@ namespace AppRopio.Base.Auth.iOS.Views._base
 
 		#region Properties
 
-		protected Models.AuthThemeConfig ThemeConfig { get { return Mvx.Resolve<IAuthThemeConfigService>().ThemeConfig; } }
+		protected Models.AuthThemeConfig ThemeConfig { get { return Mvx.IoCProvider.Resolve<IAuthThemeConfigService>().ThemeConfig; } }
 
-		protected AuthConfig Config { get { return Mvx.Resolve<IAuthConfigService>().Config; } }
+		protected AuthConfig Config { get { return Mvx.IoCProvider.Resolve<IAuthConfigService>().Config; } }
 
 		protected abstract string AccessoryButtonTitle { get; }
 

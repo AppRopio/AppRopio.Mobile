@@ -1,17 +1,17 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AppRopio.Models.Base.Responses;
 using AppRopio.Models.Map.Responses;
 using System.Linq;
-using MvvmCross.Platform;
+using MvvmCross;
 using AppRopio.Base.API.Services;
 
 namespace AppRopio.Base.Map.API.Services.Fakes
 {
     public class PointsFakeService : IPointsService
     {
-        public bool IsRussianCulture => Mvx.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
+        public bool IsRussianCulture => Mvx.IoCProvider.Resolve<IConnectionService>().Headers.ContainsValue("ru-RU");
 
         private List<Point> _points;
 

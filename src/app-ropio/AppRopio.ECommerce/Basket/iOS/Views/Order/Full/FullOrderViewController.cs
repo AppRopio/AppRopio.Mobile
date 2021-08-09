@@ -12,8 +12,8 @@ using AppRopio.ECommerce.Basket.iOS.Services;
 using AppRopio.ECommerce.Basket.iOS.Views.Order.Cells;
 using CoreGraphics;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Platform;
+using MvvmCross.Platforms.Ios.Binding.Views;
+using MvvmCross;
 using UIKit;
 
 namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Full
@@ -27,8 +27,8 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Full
 
         private UIButton _accessoryButton;
 
-        protected Models.Order OrderTheme { get { return Mvx.Resolve<IBasketThemeConfigService>().ThemeConfig.Order; } }
-        protected Models.OrderFieldCell CellTheme { get { return OrderTheme.UserInfo.Cell ?? Mvx.Resolve<IBasketThemeConfigService>().ThemeConfig.Order.BaseOrderFieldCell; } }
+        protected Models.Order OrderTheme { get { return Mvx.IoCProvider.Resolve<IBasketThemeConfigService>().ThemeConfig.Order; } }
+        protected Models.OrderFieldCell CellTheme { get { return OrderTheme.UserInfo.Cell ?? Mvx.IoCProvider.Resolve<IBasketThemeConfigService>().ThemeConfig.Order.BaseOrderFieldCell; } }
 
         public FullOrderViewController()
             : base("FullOrderViewController", null)
@@ -110,7 +110,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Full
                     .WithTune(tune =>
                     {
                         tune.SetupStyle(OrderTheme.DeliveryInfo.TimeCancelButton);
-                        tune.SetTitle(Mvx.Resolve<ILocalizationService>().GetLocalizableString("Base", "Cnacel"), UIControlState.Normal);
+                        tune.SetTitle(Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString("Base", "Cnacel"), UIControlState.Normal);
                         tune.HorizontalAlignment = UIControlContentHorizontalAlignment.Left;
                         tune.TouchUpInside += (sender, e) => HideDeliveryTimePicker(deliveryPickerView);
                     }),
@@ -119,7 +119,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Full
                     .WithTune(tune =>
                     {
                         tune.SetupStyle(OrderTheme.DeliveryInfo.TimeApplyButton);
-                        tune.SetTitle(Mvx.Resolve<ILocalizationService>().GetLocalizableString("Base", "Done"), UIControlState.Normal);
+                        tune.SetTitle(Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString("Base", "Done"), UIControlState.Normal);
                         tune.HorizontalAlignment = UIControlContentHorizontalAlignment.Right;
                         tune.TouchUpInside += (sender, e) => HideDeliveryTimePicker(deliveryPickerView);
 

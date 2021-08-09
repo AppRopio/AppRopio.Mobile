@@ -1,8 +1,8 @@
 ﻿using System;
 using AppRopio.Models.HistoryOrders.Responses;
-using MvvmCross.Platform.Converters;
+using MvvmCross.Converters;
 using AppRopio.Base.Core.Services.Localization;
-using MvvmCross.Platform;
+using MvvmCross;
 using AppRopio.ECommerce.HistoryOrders.Core;
 
 namespace AppRopio.ECommerce.HistoryOrders.Droid.ValueConverters
@@ -14,9 +14,9 @@ namespace AppRopio.ECommerce.HistoryOrders.Droid.ValueConverters
             switch (value)
             {
                 case PaymentStatus.Paid:
-                    return Mvx.Resolve<ILocalizationService>().GetLocalizableString(HistoryOrdersConstants.RESX_NAME, "Status_Paid");
+                    return Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString(HistoryOrdersConstants.RESX_NAME, "Status_Paid");
                 case PaymentStatus.NotPaid:
-                    return Mvx.Resolve<ILocalizationService>().GetLocalizableString(HistoryOrdersConstants.RESX_NAME, "Status_NotPaid");
+                    return Mvx.IoCProvider.Resolve<ILocalizationService>().GetLocalizableString(HistoryOrdersConstants.RESX_NAME, "Status_NotPaid");
                 default:
                     return string.Empty;
             }

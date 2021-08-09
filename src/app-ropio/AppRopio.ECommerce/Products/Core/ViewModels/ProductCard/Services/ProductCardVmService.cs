@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -28,9 +28,9 @@ using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.Switch;
 using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.Transition;
 using AppRopio.Models.Base.Responses;
 using AppRopio.Models.Products.Responses;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Platform;
+using MvvmCross;
+using MvvmCross.Logging;
+using MvvmCross.ViewModels;
 
 namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Services
 {
@@ -46,9 +46,9 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Services
 
         #region Services
 
-        protected API.Services.IProductService ProductService => Mvx.Resolve<API.Services.IProductService>();
+        protected API.Services.IProductService ProductService => Mvx.IoCProvider.Resolve<API.Services.IProductService>();
 
-        protected IProductConfigService ConfigService => Mvx.Resolve<IProductConfigService>();
+        protected IProductConfigService ConfigService => Mvx.IoCProvider.Resolve<IProductConfigService>();
 
         #endregion
 
@@ -269,7 +269,7 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Services
                 }
                 catch (Exception ex)
                 {
-                    MvxTrace.TaggedTrace(MvxTraceLevel.Warning, this.GetType().FullName, ex.BuildAllMessagesAndStackTrace());
+                    Mvx.IoCProvider.Resolve<IMvxLog>().Warn($"{this.GetType().FullName}: {ex.BuildAllMessagesAndStackTrace()}");
                 }
 
                 return dataSource;
@@ -342,7 +342,7 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Services
 
                     if (basketType.GetTypeInfo().IsInterface)
                     {
-                        var viewModelType = Mvx.Resolve<IViewModelLookupService>().Resolve(basketType);
+                        var viewModelType = Mvx.IoCProvider.Resolve<IViewModelLookupService>().Resolve(basketType);
                         basketInstance = Activator.CreateInstance(viewModelType);
                     }
                     else

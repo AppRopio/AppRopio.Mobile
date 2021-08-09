@@ -2,7 +2,7 @@
 using AppRopio.Analytics.GoogleAnalytics.Core.Services;
 using Foundation;
 using Google.Analytics;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Analytics.GoogleAnalytics.iOS.Services
 {
@@ -16,7 +16,7 @@ namespace AppRopio.Analytics.GoogleAnalytics.iOS.Services
             Gai.SharedInstance.TrackUncaughtExceptions = true;
             Gai.SharedInstance.DispatchInterval = 5;
 
-            _tracker = Gai.SharedInstance.GetTracker(Mvx.Resolve<IGAConfigService>().Config.AppId);
+            _tracker = Gai.SharedInstance.GetTracker(Mvx.IoCProvider.Resolve<IGAConfigService>().Config.AppId);
         }
 
         public void TrackScreen(string screenName)

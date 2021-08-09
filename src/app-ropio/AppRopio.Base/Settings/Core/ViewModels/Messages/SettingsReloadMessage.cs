@@ -1,6 +1,6 @@
 ﻿using System;
 using AppRopio.Base.Settings.Core.Models;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.Base.Settings.Core.ViewModels.Messages
 {

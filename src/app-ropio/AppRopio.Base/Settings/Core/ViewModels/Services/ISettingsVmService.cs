@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using AppRopio.Base.Settings.Core.ViewModels.Regions.Items;
 using AppRopio.Models.Settings.Responses;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 using System.Threading;
 
 namespace AppRopio.Base.Settings.Core.ViewModels.Services

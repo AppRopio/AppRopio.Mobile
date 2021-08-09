@@ -6,10 +6,10 @@ using AppRopio.ECommerce.Basket.API.Services;
 using AppRopio.ECommerce.Basket.Core.Messages;
 using AppRopio.ECommerce.Basket.Core.Messages.Order;
 using AppRopio.ECommerce.Basket.Core.Services;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross;
+using MvvmCross.Commands;
+using MvvmCross.Logging;
+using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.ECommerce.Basket.Core.ViewModels.CartIndicator
 {
@@ -50,10 +50,9 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.CartIndicator
         #region Services
 
         private IBasketService _apiService;
-        public IBasketService ApiService => _apiService ?? (_apiService = Mvx.Resolve<IBasketService>());
+        public IBasketService ApiService => _apiService ?? (_apiService = Mvx.IoCProvider.Resolve<IBasketService>());
 
-        private IBasketNavigationVmService _navigationVmService;
-        public IBasketNavigationVmService NavigationVmService => _navigationVmService ?? (_navigationVmService = Mvx.Resolve<IBasketNavigationVmService>());
+        public new IBasketNavigationVmService NavigationVmService => Mvx.IoCProvider.Resolve<IBasketNavigationVmService>();
 
         #endregion
 
@@ -65,7 +64,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.CartIndicator
             _quantityToken = Messenger.Subscribe<ProductQuantityChangedMessage>(OnQuantityChanged, tag: QUANTITY_TAG);
             _orderFinishedToken = Messenger.Subscribe<OrderCreationFinishedMessage>(OnQuantityChanged, tag: ORDER_TAG);
 
-            Mvx.CallbackWhenRegistered<IBasketService>(() => OnQuantityChanged(null));
+            Mvx.IoCProvider.CallbackWhenRegistered<IBasketService>(() => OnQuantityChanged(null));
         }
 
         private void ReleaseSubscriptionTokens()
@@ -103,7 +102,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.CartIndicator
                 }
                 catch (Exception ex)
                 {
-                    MvxTrace.Trace(MvxTraceLevel.Warning, this.GetType().FullName, ex.BuildAllMessagesAndStackTrace());
+                    Mvx.IoCProvider.Resolve<IMvxLog>().Warn($"{this.GetType().FullName}: {ex.BuildAllMessagesAndStackTrace()}");
                 }
             });
         }

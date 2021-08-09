@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -8,11 +8,13 @@
     <OutputType>Library</OutputType>
     <RootNamespace>AppRopio.Analytics.MobileCenter.Droid</RootNamespace>
     <AssemblyName>AppRopio.Analytics.MobileCenter.Droid</AssemblyName>
-    <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v10.0</TargetFrameworkVersion>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,45 +42,6 @@
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
     <Reference Include="Mono.Android.Export" />
-    <Reference Include="Microsoft.AppCenter.Android.Bindings">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\Microsoft.AppCenter.1.9.0\lib\MonoAndroid403\Microsoft.AppCenter.Android.Bindings.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AppCenter">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\Microsoft.AppCenter.1.9.0\lib\MonoAndroid403\Microsoft.AppCenter.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AppCenter.Analytics.Android.Bindings">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\Microsoft.AppCenter.Analytics.1.9.0\lib\MonoAndroid403\Microsoft.AppCenter.Analytics.Android.Bindings.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AppCenter.Analytics">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\Microsoft.AppCenter.Analytics.1.9.0\lib\MonoAndroid403\Microsoft.AppCenter.Analytics.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AppCenter.Crashes.Android.Bindings">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\Microsoft.AppCenter.Crashes.1.9.0\lib\MonoAndroid403\Microsoft.AppCenter.Crashes.Android.Bindings.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AppCenter.Crashes">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\Microsoft.AppCenter.Crashes.1.9.0\lib\MonoAndroid403\Microsoft.AppCenter.Crashes.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Platform">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Platform.5.7.0\lib\MonoAndroid\MvvmCross.Platform.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Platform.Droid">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Platform.5.7.0\lib\MonoAndroid\MvvmCross.Platform.Droid.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Core">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Core.5.7.0\lib\MonoAndroid\MvvmCross.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Droid">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Core.5.7.0\lib\MonoAndroid\MvvmCross.Droid.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Binding">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.7.0\lib\MonoAndroid\MvvmCross.Binding.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Binding.Droid">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.7.0\lib\MonoAndroid\MvvmCross.Binding.Droid.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Localization">
-      <HintPath>..\..\..\AppRopio.ECommerce\packages\MvvmCross.Binding.5.7.0\lib\MonoAndroid\MvvmCross.Localization.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
@@ -88,7 +51,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />
@@ -104,7 +66,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Services\" />
+    <PackageReference Include="Microsoft.AppCenter.Analytics">
+      <Version>3.4.3</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AppCenter.Crashes">
+      <Version>3.4.3</Version>
+    </PackageReference>
+    <PackageReference Include="MvvmCross">
+      <Version>6.4.2</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

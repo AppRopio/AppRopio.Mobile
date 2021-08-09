@@ -5,8 +5,8 @@ using AppRopio.Base.API.Services;
 using AppRopio.Base.Auth.API.Services;
 using AppRopio.Base.Auth.Core.Messages.Session;
 using AppRopio.Models.Auth.Responses;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.Base.Auth.Core.Services.Implementation
 {
@@ -68,13 +68,13 @@ namespace AppRopio.Base.Auth.Core.Services.Implementation
         #region Services
 
         private IMvxMessenger _messagerService;
-        protected IMvxMessenger MessagerService => _messagerService ?? (_messagerService = Mvx.Resolve<IMvxMessenger>());
+        protected IMvxMessenger MessagerService => _messagerService ?? (_messagerService = Mvx.IoCProvider.Resolve<IMvxMessenger>());
 
         private IUserService _userService;
-        protected IUserService UserService => _userService ?? (_userService = Mvx.Resolve<IUserService>());
+        protected IUserService UserService => _userService ?? (_userService = Mvx.IoCProvider.Resolve<IUserService>());
 
         private IConnectionService _connectionService;
-        protected IConnectionService ConnectionService => _connectionService ?? (_connectionService = Mvx.Resolve<IConnectionService>());
+        protected IConnectionService ConnectionService => _connectionService ?? (_connectionService = Mvx.IoCProvider.Resolve<IConnectionService>());
 
 		#endregion
 

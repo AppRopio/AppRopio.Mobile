@@ -14,7 +14,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.Images.Cells
     partial class ImageCollectionCell
     {
         [Outlet]
-        UIKit.UIImageView _image { get; set; }
+        FFImageLoading.Cross.MvxCachedImageView _image { get; set; }
 
         void ReleaseDesignerOutlets ()
         {

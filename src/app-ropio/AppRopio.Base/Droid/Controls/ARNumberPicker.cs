@@ -5,7 +5,7 @@ using Android.Content;
 using Android.Runtime;
 using Android.Util;
 using Android.Widget;
-using MvvmCross.Binding.ExtensionMethods;
+using MvvmCross.Binding.Extensions;
 
 namespace AppRopio.Base.Droid.Controls
 {

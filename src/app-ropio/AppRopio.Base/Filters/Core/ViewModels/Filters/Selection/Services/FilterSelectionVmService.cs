@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -7,8 +7,8 @@ using AppRopio.Base.Core.ViewModels.Selection.Items;
 using AppRopio.Base.Core.ViewModels.Services;
 using AppRopio.Base.Filters.Core.ViewModels.Filters.Messages;
 using AppRopio.Models.Filters.Responses;
-using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 
 namespace AppRopio.Base.Filters.Core.ViewModels.Filters.Selection.Services
 {
@@ -16,7 +16,7 @@ namespace AppRopio.Base.Filters.Core.ViewModels.Filters.Selection.Services
     {
         #region Services
 
-        protected IMvxMessenger MessengerService { get { return Mvx.Resolve<IMvxMessenger>(); } }
+        protected IMvxMessenger MessengerService { get { return Mvx.IoCProvider.Resolve<IMvxMessenger>(); } }
 
         #endregion
 

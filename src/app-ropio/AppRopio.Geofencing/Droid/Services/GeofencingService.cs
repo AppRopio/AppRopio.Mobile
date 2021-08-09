@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
 using AppRopio.Geofencing.Core.Service;
-using MvvmCross.Platform;
+using MvvmCross;
 
 namespace AppRopio.Geofencing.Droid.Services
 {

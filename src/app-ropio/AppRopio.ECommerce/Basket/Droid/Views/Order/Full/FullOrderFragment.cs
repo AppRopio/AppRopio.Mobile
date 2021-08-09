@@ -15,11 +15,11 @@ using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Full;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items.Delivery;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.Droid.BindingContext;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.Platforms.Android.Binding.BindingContext;
+using MvvmCross.ViewModels;
 using MvvmCross.Droid.Support.V7.AppCompat.Widget;
 using MvvmCross.Droid.Support.V7.RecyclerView;
-using MvvmCross.Platform;
+using MvvmCross;
 using AppRopio.Base.Core;
 
 namespace AppRopio.ECommerce.Basket.Droid.Views.Order.Full
@@ -60,6 +60,7 @@ namespace AppRopio.ECommerce.Basket.Droid.Views.Order.Full
                 TuneSectionHeaderOnBind = TuneSectionHeader,
                 TuneSectionFooterOnBind = TuneSectionFooter,
                 TuneViewHolderOnCreate = TuneItem,
+                TuneViewHolderOnRecycled = TuneRecycled
             };
         }
 
@@ -130,11 +131,11 @@ namespace AppRopio.ECommerce.Basket.Droid.Views.Order.Full
             if (dataContext != null)
             {
                 (viewHolder as IMvxRecyclerViewHolder).DataContext = BindingContext.DataContext;
-                viewHolder.ItemView.SetOnClickListener(new AROnClickListener(OnDateTimeViewClick));
+                viewHolder.ItemView.Click += OnDateTimeViewClick;
             }
         }
 
-        protected virtual void OnDateTimeViewClick()
+        protected virtual void OnDateTimeViewClick(object sender, EventArgs ev)
         {
             var dialogView = this.BindingInflate(Resource.Layout.app_basket_full_order_item_deliveryTime_dialog, null);
 
@@ -189,6 +190,11 @@ namespace AppRopio.ECommerce.Basket.Droid.Views.Order.Full
                 spinner.ItemTemplateId = Resource.Layout.app_basket_full_order_item_orderField_counter_spinner;
                 spinner.DropDownItemTemplateId = Resource.Layout.app_basket_full_order_item_orderField_counter_spinner_item;
             }
+        }
+
+        protected virtual void TuneRecycled(RecyclerView.ViewHolder viewHolder)
+        {
+            viewHolder.ItemView.Click -= OnDateTimeViewClick;
         }
 
         #endregion
